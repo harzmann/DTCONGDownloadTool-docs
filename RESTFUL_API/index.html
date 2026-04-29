@@ -1,0 +1,1591 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Endanwender-Dokumentation fuer das DLTNG Download Tool">
+      
+      
+      
+      
+        <link rel="prev" href="../README_DLTNG_DE/">
+      
+      
+        <link rel="next" href="../README_DEPLOY/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>RESTful API - DLTNG Download Tool Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dltng-download-tool-restful-api" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="DLTNG Download Tool Dokumentation" class="md-header__button md-logo" aria-label="DLTNG Download Tool Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DLTNG Download Tool Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RESTful API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Dunkles Design aktivieren"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dunkles Design aktivieren" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Helles Design aktivieren"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Helles Design aktivieren" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DLTNG Download Tool Dokumentation" class="md-nav__button md-logo" aria-label="DLTNG Download Tool Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DLTNG Download Tool Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ENDANWENDER_HANDBUCH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README_DLTNG_DE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funktionsuebersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RESTful API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ueberblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ueberblick
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-in-der-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start in der Anwendung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemeinsame-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemeinsame Filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antwortformate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antwortformate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fahrerkarte-direkt-parsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fahrerkarte direkt parsen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fahrerkarte direkt parsen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apidrivercardparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/drivercard/parse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importierte-fahrerkarten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importierte Fahrerkarten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importierte Fahrerkarten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardimports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/imports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zeitauswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zeitauswertung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zeitauswertung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardtime-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/time-summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aktivitaetsdatensaetze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aktivitaetsdatensaetze
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aktivitaetsdatensaetze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardactivities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ereignisse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ereignisse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardevents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stoerungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stoerungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stoerungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardfaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/faults
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benutzte-fahrzeuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzte Fahrzeuge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benutzte Fahrzeuge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardvehicles-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/vehicles-used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positionsdaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positionsdaten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positionsdaten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardpositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tagesuebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tagesuebersicht
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tagesuebersicht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardday-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/day-overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wochenuebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wochenuebersicht
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wochenuebersicht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardweek-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/week-overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eu-5612006-verstoesse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EU 561/2006 Verstoesse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EU 561/2006 Verstoesse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardeu561violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/eu561/violations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-statuscodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Statuscodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README_DEPLOY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment der Dokumentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dltng_drivercard_integration_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technische Integrationshinweise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ueberblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ueberblick
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-in-der-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start in der Anwendung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemeinsame-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemeinsame Filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antwortformate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antwortformate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Health Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fahrerkarte-direkt-parsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fahrerkarte direkt parsen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fahrerkarte direkt parsen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apidrivercardparse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/drivercard/parse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importierte-fahrerkarten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importierte Fahrerkarten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importierte Fahrerkarten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardimports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/imports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zeitauswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zeitauswertung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zeitauswertung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardtime-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/time-summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aktivitaetsdatensaetze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aktivitaetsdatensaetze
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aktivitaetsdatensaetze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardactivities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ereignisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ereignisse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ereignisse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardevents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/events
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stoerungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stoerungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stoerungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardfaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/faults
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benutzte-fahrzeuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzte Fahrzeuge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benutzte Fahrzeuge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardvehicles-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/vehicles-used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positionsdaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positionsdaten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positionsdaten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardpositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tagesuebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tagesuebersicht
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tagesuebersicht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardday-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/day-overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wochenuebersicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wochenuebersicht
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wochenuebersicht">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardweek-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/week-overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eu-5612006-verstoesse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EU 561/2006 Verstoesse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EU 561/2006 Verstoesse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidrivercardeu561violations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drivercard/eu561/violations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-statuscodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Statuscodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dltng-download-tool-restful-api">DLTNG Download Tool - RESTful API<a class="headerlink" href="#dltng-download-tool-restful-api" title="Permanent link">&para;</a></h1>
+<h2 id="ueberblick">Ueberblick<a class="headerlink" href="#ueberblick" title="Permanent link">&para;</a></h2>
+<p>Das DLTNG Download Tool stellt eine lokale RESTful API fuer Fahrerkarten-DDD-Dateien und bereits importierte Fahrerkartendaten bereit. Die API wird aus der Desktop-Anwendung gestartet und verwendet die in den Einstellungen konfigurierte SQLite-Datenbank.</p>
+<p>Standard-Basis-URL:</p>
+<div class="highlight"><pre><span></span><code>http://127.0.0.1:5055
+</code></pre></div>
+<p>Alle Endpunkte liefern JSON. Erfolgreiche Antworten enthalten <code>ok: true</code>; Fehlerantworten enthalten <code>ok: false</code> und <code>error</code>.</p>
+<h2 id="start-in-der-anwendung">Start in der Anwendung<a class="headerlink" href="#start-in-der-anwendung" title="Permanent link">&para;</a></h2>
+<p>Die API wird ueber das Menue bedient:</p>
+<ul>
+<li><code>DriverCard REST API starten</code></li>
+<li><code>DriverCard REST API stoppen</code></li>
+<li><code>DriverCard REST API im Browser oeffnen</code></li>
+<li><code>DriverCard REST API Log anzeigen</code></li>
+<li><code>DDD Wochenansicht Web-Demo</code></li>
+</ul>
+<p>Wenn <code>REST API beim Start automatisch starten</code> in den Einstellungen aktiv ist, startet die API beim Programmstart automatisch.</p>
+<h2 id="gemeinsame-filter">Gemeinsame Filter<a class="headerlink" href="#gemeinsame-filter" title="Permanent link">&para;</a></h2>
+<p>Die datenbankbasierten Auswertungsendpunkte unterstuetzen diese Query-Parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beschreibung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date_from</code></td>
+<td>Startdatum im Format <code>YYYY-MM-DD</code>; Standard ist heute minus 30 Tage.</td>
+<td><code>2026-04-01</code></td>
+</tr>
+<tr>
+<td><code>date_to</code></td>
+<td>Enddatum im Format <code>YYYY-MM-DD</code>; Standard ist heute.</td>
+<td><code>2026-04-30</code></td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>Nachname. Ohne <code>%</code> wird automatisch eine Enthalten-Suche genutzt.</td>
+<td><code>Davies</code></td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>Vorname. Ohne <code>%</code> wird automatisch eine Enthalten-Suche genutzt.</td>
+<td><code>John</code></td>
+</tr>
+<tr>
+<td><code>card_number</code></td>
+<td>Kartennummer. Ohne <code>%</code> wird automatisch eine Enthalten-Suche genutzt.</td>
+<td><code>UTO22</code></td>
+</tr>
+<tr>
+<td><code>driving_license_number</code></td>
+<td>Fuehrerscheinnummer. Ohne <code>%</code> wird automatisch eine Enthalten-Suche genutzt.</td>
+<td><code>ABC123</code></td>
+</tr>
+</tbody>
+</table>
+<p>Eigene SQL-LIKE-Muster koennen mit <code>%</code> oder <code>_</code> uebergeben werden, z. B. <code>last_name=%Dav%</code>.</p>
+<h2 id="antwortformate">Antwortformate<a class="headerlink" href="#antwortformate" title="Permanent link">&para;</a></h2>
+<p>Listenendpunkte antworten typischerweise so:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;activities&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;date_from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-01&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;date_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-30&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;last_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;first_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;card_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;driving_license_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Fehlerantwort:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beschreibung des Fehlers&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="health-check">Health Check<a class="headerlink" href="#health-check" title="Permanent link">&para;</a></h2>
+<h3 id="get-health"><code>GET /health</code><a class="headerlink" href="#get-health" title="Permanent link">&para;</a></h3>
+<p>Prueft, ob die API laeuft.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://127.0.0.1:5055/health
+</code></pre></div>
+<p>Antwort:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;ok&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;drivercard_rest_api&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5055</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-29T10:15:00&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="fahrerkarte-direkt-parsen">Fahrerkarte direkt parsen<a class="headerlink" href="#fahrerkarte-direkt-parsen" title="Permanent link">&para;</a></h2>
+<h3 id="post-apidrivercardparse"><code>POST /api/drivercard/parse</code><a class="headerlink" href="#post-apidrivercardparse" title="Permanent link">&para;</a></h3>
+<p>Parst eine Fahrerkarte direkt aus einem Upload oder aus Base64-Inhalt. Dieser Endpunkt benoetigt keine vorherige Archivierung.</p>
+<p>Multipart Upload:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://127.0.0.1:5055/api/drivercard/parse<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;file=@C:\temp\fahrerkarte.DDD&quot;</span>
+</code></pre></div>
+<p>Base64 JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fahrerkarte.DDD&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;ddd_base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BASE64_INHALT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Die Antwort enthaelt <code>card</code>, <code>activities</code>, <code>week_index</code>, <code>events</code>, <code>faults</code>, <code>vehicles_used</code>, <code>positions</code> und Parser-Metadaten.</p>
+<h2 id="importierte-fahrerkarten">Importierte Fahrerkarten<a class="headerlink" href="#importierte-fahrerkarten" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardimports"><code>GET /api/drivercard/imports</code><a class="headerlink" href="#get-apidrivercardimports" title="Permanent link">&para;</a></h3>
+<p>Liefert importierte Fahrerkarten inklusive Archivbezug und Aktivitaetszeitraum.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://127.0.0.1:5055/api/drivercard/imports
+</code></pre></div>
+<p>Wichtige Felder: <code>archive_id</code>, <code>imported_at</code>, <code>file_name</code>, <code>card_number</code>, <code>holder_name</code>, <code>first_name</code>, <code>last_name</code>, <code>driving_license_number</code>, <code>activity_count</code>, <code>activity_from</code>, <code>activity_to</code>.</p>
+<h2 id="zeitauswertung">Zeitauswertung<a class="headerlink" href="#zeitauswertung" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardtime-summary"><code>GET /api/drivercard/time-summary</code><a class="headerlink" href="#get-apidrivercardtime-summary" title="Permanent link">&para;</a></h3>
+<p>Liefert aggregierte Aktivitaetszeiten.</p>
+<p>Zusaetzlicher Parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beschreibung</th>
+<th>Werte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grouping</code></td>
+<td>Gruppierung der Auswertung; Standard ist <code>day</code>.</td>
+<td><code>day</code>, <code>week</code>, <code>month</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/time-summary?date_from=2026-04-01&amp;date_to=2026-04-30&amp;grouping=week&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>period</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>holder_name</code>, <code>driving_minutes</code>, <code>work_minutes</code>, <code>availability_minutes</code>, <code>rest_minutes</code>, <code>total_minutes</code>, <code>interval_count</code>.</p>
+<h2 id="aktivitaetsdatensaetze">Aktivitaetsdatensaetze<a class="headerlink" href="#aktivitaetsdatensaetze" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardactivities"><code>GET /api/drivercard/activities</code><a class="headerlink" href="#get-apidrivercardactivities" title="Permanent link">&para;</a></h3>
+<p>Liefert einzelne Aktivitaetsintervalle.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/activities?date_from=2026-04-01&amp;date_to=2026-04-30&amp;last_name=Davies&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>id</code>, <code>archive_id</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>activity_date</code>, <code>start_ts</code>, <code>end_ts</code>, <code>activity_type</code>, <code>duration_minutes</code>, <code>crew</code>, <code>slot</code>.</p>
+<p>Aktivitaetstypen:</p>
+<ul>
+<li><code>DRIVING</code>: Lenkzeit</li>
+<li><code>WORK</code>: Arbeit</li>
+<li><code>AVAILABILITY</code>: Bereitschaft</li>
+<li><code>BREAK_REST</code>: Pause/Ruhe</li>
+<li><code>REST</code>: Ruhe</li>
+</ul>
+<h2 id="ereignisse">Ereignisse<a class="headerlink" href="#ereignisse" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardevents"><code>GET /api/drivercard/events</code><a class="headerlink" href="#get-apidrivercardevents" title="Permanent link">&para;</a></h3>
+<p>Liefert Ereignisse aus importierten Fahrerkarten.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/events?date_from=2026-04-01&amp;date_to=2026-04-30&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>event_ts</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>event_group</code>, <code>event_type_name</code>, <code>event_type_display</code>, <code>event_code</code>, <code>vehicle_registration</code>, <code>place_text</code>.</p>
+<h2 id="stoerungen">Stoerungen<a class="headerlink" href="#stoerungen" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardfaults"><code>GET /api/drivercard/faults</code><a class="headerlink" href="#get-apidrivercardfaults" title="Permanent link">&para;</a></h3>
+<p>Liefert Stoerungen aus importierten Fahrerkarten.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/faults?date_from=2026-04-01&amp;date_to=2026-04-30&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>fault_ts</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>fault_group</code>, <code>fault_type_name</code>, <code>fault_type_display</code>, <code>fault_code</code>, <code>vehicle_registration</code>, <code>place_text</code>.</p>
+<h2 id="benutzte-fahrzeuge">Benutzte Fahrzeuge<a class="headerlink" href="#benutzte-fahrzeuge" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardvehicles-used"><code>GET /api/drivercard/vehicles-used</code><a class="headerlink" href="#get-apidrivercardvehicles-used" title="Permanent link">&para;</a></h3>
+<p>Liefert Fahrzeuge, die in den Fahrerkartendaten verwendet wurden.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/vehicles-used?date_from=2026-04-01&amp;date_to=2026-04-30&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>first_use_ts</code>, <code>last_use_ts</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>vehicle_registration</code>, <code>vin</code>, <code>odometer_begin</code>, <code>odometer_end</code>, <code>distance_km</code>, <code>vu_data_block_counter</code>.</p>
+<h2 id="positionsdaten">Positionsdaten<a class="headerlink" href="#positionsdaten" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardpositions"><code>GET /api/drivercard/positions</code><a class="headerlink" href="#get-apidrivercardpositions" title="Permanent link">&para;</a></h3>
+<p>Liefert Positionsdaten aus <code>EF.Places</code> und <code>EF.GNSS_Places</code>, sofern vorhanden.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/positions?date_from=2026-04-01&amp;date_to=2026-04-30&quot;</span>
+</code></pre></div>
+<p>Wichtige Felder: <code>record_ts</code>, <code>position_ts</code>, <code>card_number</code>, <code>last_name</code>, <code>first_name</code>, <code>source_type</code>, <code>entry_type</code>, <code>country_text</code>, <code>region_text</code>, <code>odometer_value</code>, <code>latitude</code>, <code>longitude</code>, <code>gnss_accuracy</code>, <code>authentication_status</code>, <code>map_label</code>.</p>
+<h2 id="tagesuebersicht">Tagesuebersicht<a class="headerlink" href="#tagesuebersicht" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardday-overview"><code>GET /api/drivercard/day-overview</code><a class="headerlink" href="#get-apidrivercardday-overview" title="Permanent link">&para;</a></h3>
+<p>Liefert Aktivitaeten nach Kalendertagen gruppiert. Dieser Endpunkt ist fuer Tages-Timelines geeignet.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/day-overview?date_from=2026-04-24&amp;date_to=2026-04-24&amp;card_number=UTO22&quot;</span>
+</code></pre></div>
+<p>Jeder Eintrag enthaelt <code>period</code>, <code>date</code>, <code>weekday</code>, <code>totals</code> und <code>activities</code>.</p>
+<p>Beispiel fuer <code>totals</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;driving_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;work_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;availability_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;rest_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;total_minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;interval_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="wochenuebersicht">Wochenuebersicht<a class="headerlink" href="#wochenuebersicht" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardweek-overview"><code>GET /api/drivercard/week-overview</code><a class="headerlink" href="#get-apidrivercardweek-overview" title="Permanent link">&para;</a></h3>
+<p>Liefert Aktivitaeten nach ISO-Kalenderwochen gruppiert. Innerhalb jeder Woche werden die Aktivitaeten zusaetzlich nach Tagen gruppiert.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/week-overview?date_from=2026-04-20&amp;date_to=2026-04-26&quot;</span>
+</code></pre></div>
+<p>Jeder Eintrag enthaelt <code>period</code>, <code>date_from</code>, <code>date_to</code>, <code>totals</code>, <code>days</code> und <code>activities</code>.</p>
+<h2 id="eu-5612006-verstoesse">EU 561/2006 Verstoesse<a class="headerlink" href="#eu-5612006-verstoesse" title="Permanent link">&para;</a></h2>
+<h3 id="get-apidrivercardeu561violations"><code>GET /api/drivercard/eu561/violations</code><a class="headerlink" href="#get-apidrivercardeu561violations" title="Permanent link">&para;</a></h3>
+<p>Fuehrt eine technische Vorpruefung nach VO (EG) Nr. 561/2006 aus.</p>
+<p>Zusaetzlicher Parameter:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beschreibung</th>
+<th>Werte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>multi_manning</code></td>
+<td>Bewertet bestimmte Ruhezeitfenster fuer Mehrfahrerbetrieb; Standard ist <code>false</code>.</td>
+<td><code>true</code>, <code>false</code>, <code>1</code>, <code>0</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:5055/api/drivercard/eu561/violations?date_from=2026-04-01&amp;date_to=2026-04-30&amp;card_number=UTO22&quot;</span>
+</code></pre></div>
+<p>Die Antwort enthaelt <code>card_number</code>, <code>holder_name</code>, <code>analyzed_from</code>, <code>analyzed_to</code>, <code>total_intervals</code>, <code>count</code>, <code>warnings</code>, <code>stats</code>, <code>legal_notice</code> und <code>violations</code>.</p>
+<p>Wichtige Felder je Verstoss:</p>
+<ul>
+<li><code>rule_code</code></li>
+<li><code>severity</code></li>
+<li><code>article</code></li>
+<li><code>title</code></li>
+<li><code>description</code></li>
+<li><code>start_ts</code></li>
+<li><code>end_ts</code></li>
+<li><code>actual_minutes</code></li>
+<li><code>allowed_minutes</code></li>
+<li><code>delta_minutes</code></li>
+<li><code>context</code></li>
+</ul>
+<p>Hinweis: Die EU-561-Auswertung ist eine technische Vorpruefung. Sonderfaelle, Ausnahmen und die rechtliche Wuerdigung muessen fachlich geprueft werden.</p>
+<h2 id="http-statuscodes">HTTP Statuscodes<a class="headerlink" href="#http-statuscodes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200</code></td>
+<td>Anfrage erfolgreich.</td>
+</tr>
+<tr>
+<td><code>400</code></td>
+<td>Ungueltige Parameter, z. B. falsches Datum oder unbekannte Gruppierung.</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td>Interner Fehler, z. B. Datenbank- oder Parserfehler.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
