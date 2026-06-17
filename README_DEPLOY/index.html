@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Endanwender-Dokumentation fuer das DLTNG Download Tool">
+        <meta name="description" content="Endanwender-Dokumentation für das DLTNG Download Tool">
       
       
       
@@ -297,7 +297,7 @@
   <span class="md-ellipsis">
     
   
-    Funktionsuebersicht
+    Funktionsübersicht
   
 
     
@@ -448,10 +448,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benoetigtes-github-secret" class="md-nav__link">
+  <a href="#benotigtes-github-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benoetigtes GitHub Secret
+        Benötigtes GitHub Secret
       
     </span>
   </a>
@@ -586,10 +586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benoetigtes-github-secret" class="md-nav__link">
+  <a href="#benotigtes-github-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benoetigtes GitHub Secret
+        Benötigtes GitHub Secret
       
     </span>
   </a>
@@ -637,11 +637,11 @@
 
 <h1 id="deployment-der-dokumentation">Deployment der Dokumentation<a class="headerlink" href="#deployment-der-dokumentation" title="Permanent link">&para;</a></h1>
 <h2 id="zweck">Zweck<a class="headerlink" href="#zweck" title="Permanent link">&para;</a></h2>
-<p>Die Markdown-Dokumentation aus diesem privaten Projekt wird mit MkDocs Material als statische Website gebaut und in das oeffentliche Dokumentations-Repository veroeffentlicht:</p>
+<p>Die Markdown-Dokumentation aus diesem privaten Projekt wird mit MkDocs Material als statische Website gebaut und in das öffentliche Dokumentations-Repository veröffentlicht:</p>
 <p><a href="https://github.com/harzmann/DTCONGDownloadTool-docs.git">https://github.com/harzmann/DTCONGDownloadTool-docs.git</a></p>
-<p>Das private Projekt bleibt privat. Veroeffentlicht wird ausschliesslich der generierte Inhalt aus dem lokalen Build-Ordner <code>site/</code>.</p>
+<p>Das private Projekt bleibt privat. Veröffentlicht wird ausschließlich der generierte Inhalt aus dem lokalen Build-Ordner <code>site/</code>.</p>
 <h2 id="lokale-vorschau">Lokale Vorschau<a class="headerlink" href="#lokale-vorschau" title="Permanent link">&para;</a></h2>
-<p>Installieren Sie die Dokumentations-Abhaengigkeiten:</p>
+<p>Installieren Sie die Dokumentations-Abhängigkeiten:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs-requirements.txt
 </code></pre></div>
 <p>Starten Sie die lokale Vorschau:</p>
@@ -652,17 +652,17 @@
 </code></pre></div>
 <p>Der Build erzeugt die statische Website im Ordner <code>site/</code>. Dieser Ordner ist in <code>.gitignore</code> eingetragen und soll nicht in dieses private Repository committed werden.</p>
 <h2 id="automatisches-deployment">Automatisches Deployment<a class="headerlink" href="#automatisches-deployment" title="Permanent link">&para;</a></h2>
-<p>Der Workflow <code>.github/workflows/publish-docs.yml</code> laeuft bei Push auf <code>master</code>, wenn sich Dokumentationsdateien, Screenshots, <code>mkdocs.yml</code>, <code>docs-requirements.txt</code> oder der Workflow selbst geaendert haben.</p>
+<p>Der Workflow <code>.github/workflows/publish-docs.yml</code> läuft bei Push auf <code>master</code>, wenn sich Dokumentationsdateien, Screenshots, <code>mkdocs.yml</code>, <code>docs-requirements.txt</code> oder der Workflow selbst geändert haben.</p>
 <p>Der Workflow:</p>
 <ol>
 <li>installiert Python,</li>
-<li>installiert die Abhaengigkeiten aus <code>docs-requirements.txt</code>,</li>
+<li>installiert die Abhängigkeiten aus <code>docs-requirements.txt</code>,</li>
 <li>baut die Dokumentation mit <code>mkdocs build --clean</code>,</li>
-<li>checkt das oeffentliche Docs-Repository aus,</li>
+<li>checkt das öffentliche Docs-Repository aus,</li>
 <li>ersetzt dessen Inhalt durch den generierten Inhalt aus <code>site/</code>,</li>
 <li>pusht das Ergebnis nach <code>harzmann/DTCONGDownloadTool-docs</code>, Branch <code>main</code>.</li>
 </ol>
-<h2 id="benoetigtes-github-secret">Benoetigtes GitHub Secret<a class="headerlink" href="#benoetigtes-github-secret" title="Permanent link">&para;</a></h2>
+<h2 id="benotigtes-github-secret">Benötigtes GitHub Secret<a class="headerlink" href="#benotigtes-github-secret" title="Permanent link">&para;</a></h2>
 <p>Im privaten Repository muss folgendes Secret angelegt werden:</p>
 <div class="highlight"><pre><span></span><code>DOCS_DEPLOY_TOKEN
 </code></pre></div>
@@ -670,19 +670,19 @@
 <div class="highlight"><pre><span></span><code>harzmann/DTCONGDownloadTool-docs
 </code></pre></div>
 <h2 id="github-pages-aktivieren">GitHub Pages aktivieren<a class="headerlink" href="#github-pages-aktivieren" title="Permanent link">&para;</a></h2>
-<p>Im oeffentlichen Docs-Repository muss GitHub Pages aktiviert werden:</p>
+<p>Im öffentlichen Docs-Repository muss GitHub Pages aktiviert werden:</p>
 <div class="highlight"><pre><span></span><code>Settings -&gt; Pages -&gt; Deploy from branch -&gt; main -&gt; root
 </code></pre></div>
 <h2 id="sicherheitsprinzip">Sicherheitsprinzip<a class="headerlink" href="#sicherheitsprinzip" title="Permanent link">&para;</a></h2>
-<p>Es wird niemals das komplette private Repository veroeffentlicht. Der Workflow kopiert ausschliesslich den generierten Inhalt aus <code>site/</code> in das oeffentliche Docs-Repository.</p>
-<p>Nicht veroeffentlicht werden insbesondere:</p>
+<p>Es wird niemals das komplette private Repository veröffentlicht. Der Workflow kopiert ausschließlich den generierten Inhalt aus <code>site/</code> in das öffentliche Docs-Repository.</p>
+<p>Nicht veröffentlicht werden insbesondere:</p>
 <ul>
 <li>Quellcodedateien</li>
-<li>Konfigurationsdateien ausserhalb der Dokumentation</li>
+<li>Konfigurationsdateien außerhalb der Dokumentation</li>
 <li><code>.env</code>-Dateien</li>
 <li>SQLite-Datenbanken</li>
 <li>Logs</li>
-<li>Build-Artefakte ausserhalb von <code>site/</code></li>
+<li>Build-Artefakte außerhalb von <code>site/</code></li>
 </ul>
 
 
