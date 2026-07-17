@@ -1,0 +1,1636 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+      
+        <link rel="prev" href="../guide/position-maps/">
+      
+      
+        <link rel="next" href="../api/drivercard-rest/">
+      
+      
+        
+          <link rel="alternate" href="../../administrator-integration-guide/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Administratoren- und Integratorenhandbuch - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#administratoren-und-integratorenhandbuch" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Administratoren- und Integratorenhandbuch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../administrator-integration-guide/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deploymentmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Deploymentmodell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Deploymentmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erstinstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erstinstallation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-benutzer-rollen-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Benutzer, Rollen und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sprachen-regionen-und-utc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sprachen, Regionen und UTC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlite-und-migrationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SQLite und Migrationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scheduler-quellen-und-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Scheduler, Quellen und Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tachodatenarchiv-und-signaturvertrauen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tachodatenarchiv und Signaturvertrauen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-und-diagnose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Audit und Diagnose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ui-jobbetrieb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. UI-Jobbetrieb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-fuhrerscheinkontrolle-und-benachrichtigung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Führerscheinkontrolle und Benachrichtigung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-finanzen-und-belegarchiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Finanzen und Belegarchiv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-backup-und-notfallwiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Backup und Notfallwiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rest-und-integrationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. REST und Integrationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-technische-legacy-kennungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Technische Legacy-Kennungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-sicherheitscheckliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Sicherheitscheckliste
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-storung-und-wiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Störung und Wiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-build-und-releaseprufung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Build- und Releaseprüfung
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dokumentations-Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deploymentmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Deploymentmodell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Deploymentmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erstinstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erstinstallation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-benutzer-rollen-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Benutzer, Rollen und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sprachen-regionen-und-utc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sprachen, Regionen und UTC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlite-und-migrationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SQLite und Migrationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scheduler-quellen-und-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Scheduler, Quellen und Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tachodatenarchiv-und-signaturvertrauen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tachodatenarchiv und Signaturvertrauen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-und-diagnose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Audit und Diagnose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ui-jobbetrieb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. UI-Jobbetrieb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-fuhrerscheinkontrolle-und-benachrichtigung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Führerscheinkontrolle und Benachrichtigung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-finanzen-und-belegarchiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Finanzen und Belegarchiv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-backup-und-notfallwiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Backup und Notfallwiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rest-und-integrationen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. REST und Integrationen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-technische-legacy-kennungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Technische Legacy-Kennungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-sicherheitscheckliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Sicherheitscheckliste
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-storung-und-wiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Störung und Wiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-build-und-releaseprufung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Build- und Releaseprüfung
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="administratoren-und-integratorenhandbuch">Administratoren- und Integratorenhandbuch<a class="headerlink" href="#administratoren-und-integratorenhandbuch" title="Permanent link">&para;</a></h1>
+<h2 id="1-deploymentmodell">1. Deploymentmodell<a class="headerlink" href="#1-deploymentmodell" title="Permanent link">&para;</a></h2>
+<p>FLEET Mira ist eine Windows-Desktopanwendung mit Hintergrundscheduler. Das Anwendungsverzeichnis enthält Python-Module beziehungsweise den PyInstaller-Build, Assets und Übersetzungen. Veränderliche Daten werden über <code>config.json</code> referenziert:</p>
+<table>
+<thead>
+<tr>
+<th>Bestandteil</th>
+<th>Standard/Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQLite-Datenbank</td>
+<td><code>state/archive.db</code>; Schema und Fachmetadaten</td>
+</tr>
+<tr>
+<td>Tachodatenarchiv</td>
+<td>komprimierte <code>.ddd.gz</code>-Objekte unterhalb des konfigurierten Archivpfads</td>
+</tr>
+<tr>
+<td>Logs</td>
+<td><code>logs/app.log</code>, REST-Logs und <code>native_crash.log</code></td>
+</tr>
+<tr>
+<td>Konfiguration</td>
+<td><code>config.json</code>; Pfade, Quellen, Tasks und Dienstvorgaben</td>
+</tr>
+<tr>
+<td>UI-Profil</td>
+<td>benutzerbezogenes JSON in SQLite plus lokale <code>QSettings</code>-Fenstergeometrie</td>
+</tr>
+</tbody>
+</table>
+<p>Verwenden Sie im Produktivbetrieb absolute Dienstpfade und vergeben Sie Schreibrechte nur an die Anwendungsidentität. Antivirus-Ausnahmen dürfen nur eng begrenzt und nachgewiesen sein; heruntergeladene Originale dürfen nicht pauschal von der Prüfung ausgeschlossen werden.</p>
+<h3 id="erstinstallation">Erstinstallation<a class="headerlink" href="#erstinstallation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Build und bereitgestellte leere Deploymentdatenbank ausrollen.</li>
+<li>Archiv-, Datenbank- und Logpfade vor dem ersten Import prüfen.</li>
+<li>FLEET Mira starten und <code>admin</code> / <code>admin</code> anmelden.</li>
+<li>Kennwort auf mindestens 12 Zeichen ändern.</li>
+<li>Namensbenutzer anlegen und Rollenbeschränkungen testen.</li>
+<li>Quellen/Tasks, SMTP und Backup in dieser Reihenfolge konfigurieren.</li>
+<li>Backup-/Restore- und Terminallöschtests durchführen und dokumentieren.</li>
+</ol>
+<h2 id="2-benutzer-rollen-und-berechtigungen">2. Benutzer, Rollen und Berechtigungen<a class="headerlink" href="#2-benutzer-rollen-und-berechtigungen" title="Permanent link">&para;</a></h2>
+<p>Kennwörter verwenden Argon2id. Fünf Fehlversuche sperren ein Konto für 15 Minuten. Der letzte aktive Administrator kann nicht deaktiviert werden.</p>
+<p><img alt="Benutzerverwaltung" src="/assets/screenshots/de/users.png" />
+<em>Abbildung: Verwaltung von Benutzern, Rollen, Sprachen und Kontostatus.</em></p>
+<table>
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Typischer Umfang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADMIN</td>
+<td>vollständige Administration, Finanzbuchung, Restore und Retention</td>
+</tr>
+<tr>
+<td>SUPPORT</td>
+<td>Geräte-/Quellen-/Taskbetrieb, Archivfehlerbehebung, Fuhrpark/Finanzen lesend</td>
+</tr>
+<tr>
+<td>OPERATOR</td>
+<td>operative Importe, Fuhrparkpflege, FSK und Finanzabläufe</td>
+</tr>
+<tr>
+<td>AUDITOR</td>
+<td>Lesen, Berichte und Exporte ohne Fachänderungen</td>
+</tr>
+</tbody>
+</table>
+<p>Die UI deaktiviert unberechtigte Aktionen; Repositories/Dienste prüfen zusätzlich <code>PermissionService.require(...)</code>. Ausgeblendete oder deaktivierte Schaltflächen sind nicht die Sicherheitsgrenze.</p>
+<p>Lokale Adminwiederherstellung erfolgt über <code>--reset-admin-password</code>, benötigt Windows-Administratorrechte, setzt nur den initialen Adminzugang auf <code>admin</code>, entsperrt das Konto und erzwingt ein neues Kennwort. Das Kennwort selbst wird nie auditiert.</p>
+<h2 id="3-sprachen-regionen-und-utc">3. Sprachen, Regionen und UTC<a class="headerlink" href="#3-sprachen-regionen-und-utc" title="Permanent link">&para;</a></h2>
+<p>Neue Installationen starten Englisch/<code>en-GB</code>. Benutzer können jede registrierte Sprache/Region wählen. Datepicker, Zahlen und Währung folgen der Region; Datenbank/API bleiben ISO. Tachographenzeitwerte, Vergleiche, Tages-/Wochengrenzen und Verstoßberechnungen bleiben aktuell ausschließlich UTC. Die Locale darf keine Zeitzonenumrechnung einführen.</p>
+<p>Kataloge liegen unter <code>translations/&lt;sprache&gt;.json</code>. Englisch ist Fallback. Fehlende Produktivschlüssel erzeugen <code>I18N_MISSING</code> und schlagen im Katalogparitätstest fehl.</p>
+<p><img alt="Anwendungseinstellungen" src="/assets/screenshots/de/settings.png" />
+<em>Abbildung: Administrative Anwendungseinstellungen.</em></p>
+<h2 id="4-sqlite-und-migrationen">4. SQLite und Migrationen<a class="headerlink" href="#4-sqlite-und-migrationen" title="Permanent link">&para;</a></h2>
+<p>Migrationen laufen einmal beim Start, bevor Repositories UI-Aufträge bedienen. Eine laufende Datenbankdatei darf nie direkt als Backup kopiert werden.</p>
+<p>Betriebsempfehlungen:</p>
+<ul>
+<li>Datenbank und Archiv auf zuverlässigem lokalen Speicher halten;</li>
+<li>freien Speicher und fehlgeschlagene Backupjobs überwachen;</li>
+<li>konsistente Snapshots nur über die integrierte SQLite-Backup-API erzeugen;</li>
+<li>nach Restore/Wartung <code>PRAGMA integrity_check</code> ausführen;</li>
+<li>vor manueller Dateiwartung Anwendung und Dienste beenden;</li>
+<li>Audit-, Signatur- und Finanztabellen niemals direkt ändern.</li>
+</ul>
+<p>Die Deploymentdatenbank darf nur Schema/Standardwerte enthalten, keine Personen, Fahrzeuge, DDD-Dateien, Belege, Zugangsdaten oder Auditverläufe.</p>
+<h2 id="5-scheduler-quellen-und-tasks">5. Scheduler, Quellen und Tasks<a class="headerlink" href="#5-scheduler-quellen-und-tasks" title="Permanent link">&para;</a></h2>
+<p>Der Hintergrundscheduler startet unabhängig von einer UI-Anmeldung als <code>SYSTEM</code>. Unterstützt werden FTP und DLT-API; jeder Netzwerkzugriff benötigt Verbindungs-/Lesetimeout.</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Zeitplan oder Sofort starten] --&gt; B[Passende Remoteobjekte listen]
+    B --&gt; C[Kontrolliert lokal herunterladen]
+    C --&gt; D[Hash, Klassifizierung und Archiv]
+    D --&gt; E[Parser/Signatur oder RFID-CSV]
+    E --&gt; F[Verknüpfungen und Fälligkeiten]
+    F --&gt; G[Cloudbackup einreihen]
+    G --&gt; H{Strenger Backupmodus?}
+    H --&gt;|Nein| I[Verarbeitet markieren / optional Terminal löschen]
+    H --&gt;|Ja| J[Verifiziertes Cloudobjekt abwarten]
+    J --&gt; I</code></pre>
+<p>Ein technischer Fehler vor dauerhafter Archivierung darf das Terminalobjekt weder markieren noch löschen. Hashdubletten setzen offene Backup-/Fälligkeitsarbeit fort, ohne ein zweites Archiv anzulegen.</p>
+<h2 id="6-tachodatenarchiv-und-signaturvertrauen">6. Tachodatenarchiv und Signaturvertrauen<a class="headerlink" href="#6-tachodatenarchiv-und-signaturvertrauen" title="Permanent link">&para;</a></h2>
+<p>Der Dispatcher klassifiziert <code>DRIVER_CARD</code>, <code>VEHICLE_UNIT</code> oder <code>UNKNOWN</code>. C-Dateien verwenden G1 RSA/SHA-1 beziehungsweise G2-ECDSA-Ketten; M-Dateien prüfen signierte Downloadsektionen für G1/G2/G2V2. <code>cryptography</code> ist Pflichtabhängigkeit.</p>
+<p>Priorität: <code>INVALID</code> → <code>UNVERIFIABLE</code> → <code>VALID</code>. Der Parserstatus wird auf verifiziert, verifiziert mit Warnungen oder Quarantäne abgebildet. Quarantäne löscht das Original nie, sperrt aber vertrauenswürdige Zuordnung, C-/M-Abgleich, Verstoßsnapshot und „neueste vertrauenswürdige Datei“.</p>
+<p>Truststore-Updates erfolgen administrativ, explizit und auditiert. Quelle, Manifest und festgelegte Fingerprints sind zu prüfen. Zertifikate dürfen nicht unbemerkt von beliebigen Servern vertraut werden.</p>
+<h2 id="7-audit-und-diagnose">7. Audit und Diagnose<a class="headerlink" href="#7-audit-und-diagnose" title="Permanent link">&para;</a></h2>
+<p>Das globale Audit normalisiert Geräte-, Tachodaten-, Fuhrpark-, Finanz-, Benutzer- und Backupergebnisse. Einträge enthalten UTC-Zeit, Akteur/User-ID, Rolle, Ursprung, Aktion, Objekttyp/-ID, Ergebnis, Korrelations-ID und bereinigte Vorher-/Nachherdaten. Kennwörter, Tokens, API-Keys und Binäroriginale sind verboten.</p>
+<p><code>app.log</code> ist das vollständige Applikationslog mit Scheduler, Downloads, Importen, Jobs, Cachezeiten, Backup und Dienstfehlern. Technische Texte sind immer Englisch. <code>native_crash.log</code> erfasst über <code>faulthandler</code> Prozessfehler nach Initialisierung der Diagnose; Fehler vor Pythonstart können dort nicht erscheinen.</p>
+<p><img alt="Globales Audit im Diagnosekontext" src="/assets/screenshots/de/audit.png" />
+<em>Abbildung: Auditnachweise im Zusammenspiel mit der technischen Diagnose.</em></p>
+<p>Der UI-Heartbeat schreibt <code>UI_STALL</code>, wenn die Ereignisschleife länger als eine Sekunde blockiert. Nach Erholung folgt die Dauer. Job-, Request- und Korrelations-IDs verbinden UI-, Dienst- und Auditvorgänge.</p>
+<h2 id="8-ui-jobbetrieb">8. UI-Jobbetrieb<a class="headerlink" href="#8-ui-jobbetrieb" title="Permanent link">&para;</a></h2>
+<p>Teure Abfragen/Berechnungen verwenden workerlokale SQLite-Verbindungen; Qt-Widgets werden nur im GUI-Thread verändert. Leseaufträge, serialisierte Schreibaufträge und niedrig priorisiertes Vorladen nutzen getrennte Spuren. Neue Filter-/Datumsanforderungen brechen alte Generationen ab; das Schließen eines Tabs bricht dessen Aufträge ab.</p>
+<p>Performanceprobleme werden über Warte-, Datenbank-, Rechen-, Render- und Gesamtdauer analysiert. <code>processEvents()</code>-Schleifen oder modale Wartefenster dürfen nicht als Ersatz für Hintergrundarbeit zurückkehren.</p>
+<h2 id="9-fuhrerscheinkontrolle-und-benachrichtigung">9. Führerscheinkontrolle und Benachrichtigung<a class="headerlink" href="#9-fuhrerscheinkontrolle-und-benachrichtigung" title="Permanent link">&para;</a></h2>
+<p>PC/SC liest die UID mit <code>FF CA 00 00 00</code> und normalisiert Großbuchstaben-Hex. Eine UID ist höchstens einer Person aktiv zugeordnet; eine Person besitzt höchstens eine aktive UID.</p>
+<p>Terminal-CSV: <code>UID;DD.MM.YYYY;HH:mm:ss;Hostname</code>. Datei-/Zeilenfingerprints sichern Idempotenz. Unbekannte, inaktive oder zeitlich unpassende UIDs bleiben Klärfälle.</p>
+<p>SMTP unterstützt STARTTLS/TLS; das Kennwort ist DPAPI-geschützt. Standardregeln erzeugen Fahrerhinweise und täglichen Verantwortlichenbericht. Für Zeitversand muss Desktop-/Trayprozess laufen; verpasste Läufe werden nur am selben Tag nachgeholt. Idempotenz verhindert doppelte automatische Mails je Regel/Objekt/Empfänger/Tag.</p>
+<p><img alt="Administration der Benachrichtigungen" src="/assets/screenshots/de/notifications.png" />
+<em>Abbildung: Administration von SMTP, Empfängern, Regeln und Versandprotokoll.</em></p>
+<h2 id="10-finanzen-und-belegarchiv">10. Finanzen und Belegarchiv<a class="headerlink" href="#10-finanzen-und-belegarchiv" title="Permanent link">&para;</a></h2>
+<p>Finanzdaten werden in Cent und EUR gespeichert. Fremdrechnungen benötigen exakte Kopf-/Positionssummen und mindestens einen cloudverifizierten Originalbeleg vor der Prüfung. Buchung macht Fachdatensätze unveränderlich; Korrekturen erfolgen per Storno/Gutschrift.</p>
+<p>Originale sind keine SQLite-BLOBs. Das Belegarchiv übernimmt, hasht, lädt hoch, liest zurück und verifiziert. Metadaten enthalten Ziel, Remote-Pfad/-ID, Hash, Größe, Version und Retention. Ein Ziel kann nicht gelöscht werden, solange Belege darauf verweisen.</p>
+<p>FiBu-Übergabe: <a href="../api/accounting-rest/">REST</a> oder <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Nur gebuchte Datensätze sind exportierbar; REST verwendet eine persistente idempotente Outbox.</p>
+<h2 id="11-backup-und-notfallwiederherstellung">11. Backup und Notfallwiederherstellung<a class="headerlink" href="#11-backup-und-notfallwiederherstellung" title="Permanent link">&para;</a></h2>
+<p>Genau ein Google-Drive- oder HTTPS-WebDAV-Ziel kann aktiv sein. AES-256-GCM ist optional und vorausgewählt. Vor Aktivierung ist Recovery-Key-Export/-Bestätigung Pflicht.</p>
+<p><img alt="Administration von Backupziel, Warteschlange und Wiederherstellung" src="/assets/screenshots/de/backup.png" />
+<em>Abbildung: Administration von Cloudziel, Backupwarteschlange und Restore.</em></p>
+<p>Archive werden unmittelbar gesichert, DB-Snapshots standardmäßig 02:00 UTC. Retention: 30 Tages- und 12 Monatsstände. DDD-Cloudobjekte werden nie automatisch gelöscht. Details: <a href="../operations/cloud-backup-restore/">Cloud-Backup und Restore</a>.</p>
+<p>Mindestens vierteljährlich sind Datenbanksnapshot und repräsentative C-/M-Objekte isoliert wiederherzustellen, Hash/Integrität zu prüfen und das Ergebnis zu dokumentieren.</p>
+<h2 id="12-rest-und-integrationen">12. REST und Integrationen<a class="headerlink" href="#12-rest-und-integrationen" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DriverCard REST bindet standardmäßig <code>127.0.0.1</code> und stellt Fahrerkartenauswertungen bereit.</li>
+<li>FiBu REST sendet gebuchte Rechnungsmetadaten und Originale an HTTPS.</li>
+<li>Mobile FSK-Endpunkte bilden bei Aktivierung eine separate Fleet-API.</li>
+</ul>
+<p>Lokale Entwicklungsendpunkte dürfen nicht direkt öffentlich erreichbar sein. Externe APIs benötigen Authentifizierung, TLS, Rate-Limit und Netzwerkzugriffskontrolle.</p>
+<h2 id="13-technische-legacy-kennungen">13. Technische Legacy-Kennungen<a class="headerlink" href="#13-technische-legacy-kennungen" title="Permanent link">&para;</a></h2>
+<p>Der sichtbare Produktname ist <strong>FLEET Mira</strong>. Aus Kompatibilitätsgründen bleiben erhalten:</p>
+<ul>
+<li>Repository-/Projektverzeichnis und <code>DLTNGDownloadTool.spec</code>;</li>
+<li>technische EXE-/InternalNames, soweit Upgrades betroffen sind;</li>
+<li>SQLite-Tabellen/-Spalten, Konfigurationsschlüssel und Ereigniscodes;</li>
+<li>DriverCard/API-Pfade und Payloadfelder;</li>
+<li>Remotepräfix <code>DLTNG/&lt;Installations-ID&gt;/...</code>, Manifest-Magic und bestehende User-Agents.</li>
+</ul>
+<p>Dies sind Protokoll-/Speicherkennungen, kein sichtbares Produktbranding. Änderungen erfordern eine separat versionierte Migration.</p>
+<h2 id="14-sicherheitscheckliste">14. Sicherheitscheckliste<a class="headerlink" href="#14-sicherheitscheckliste" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Namensbenutzer; Initialkennwort geändert</li>
+<li>[ ] Rollenmatrix mit Nicht-Admin getestet</li>
+<li>[ ] Datenbank-/Archiv-ACLs eingeschränkt</li>
+<li>[ ] Quellen-, SMTP-, Backup- und REST-Secrets geschützt</li>
+<li>[ ] WebDAV-HTTPS-Zertifikat/Google-OAuth-Client geprüft</li>
+<li>[ ] Recovery-Key offline verwahrt und Zugriff dokumentiert</li>
+<li>[ ] strenger Terminallöschmodus gemäß Richtlinie gewählt</li>
+<li>[ ] Audit-/Logretention und Rotation überwacht</li>
+<li>[ ] Signatur-Truststore kontrolliert aktuell</li>
+<li>[ ] DB-Backup und Archivwarteschlange überwacht</li>
+<li>[ ] Restore-Test durchgeführt und dokumentiert</li>
+<li>[ ] Verfahrensdokumentation deckt Retention, Scan und rechtliche Prüfung ab</li>
+</ul>
+<h2 id="15-storung-und-wiederherstellung">15. Störung und Wiederherstellung<a class="headerlink" href="#15-storung-und-wiederherstellung" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bei Integritäts-, Ransomware- oder Credentialverdacht automatische Schreibvorgänge stoppen.</li>
+<li><code>app.log</code>, <code>native_crash.log</code>, Konfiguration und relevante Auditexporte sichern.</li>
+<li>Betroffene Quellen-, SMTP-, Google/WebDAV- und API-Zugänge sperren/rotieren.</li>
+<li>Lokale Archivhashes und Remotemanifeste prüfen.</li>
+<li>Zuerst isoliert wiederherstellen; nie die einzige DB-Kopie überschreiben.</li>
+<li>Integrität/Hashes prüfen und Backupstatus abgleichen.</li>
+<li>Dienste erst nach dokumentierter Ursache, Credentialbereinigung und erfolgreichem Recovery starten.</li>
+</ol>
+<h2 id="16-build-und-releaseprufung">16. Build- und Releaseprüfung<a class="headerlink" href="#16-build-und-releaseprufung" title="Permanent link">&para;</a></h2>
+<p>Vor Release: Anwendungstests, Katalogparität, Dokumentationsprüfung, <code>mkdocs build --strict --clean</code>, PyInstaller-Smoke-Test und Start mit leerer Deploymentdatenbank. Deutsche/englische Screenshots müssen FLEET Mira zeigen und frei von Betriebsdaten sein.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

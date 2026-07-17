@@ -1,0 +1,1090 @@
+[
+  {
+    "language": "de",
+    "feature": "audit",
+    "file": "audit.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "backup",
+    "file": "backup.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "dashboard",
+    "file": "dashboard.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "deadlines",
+    "file": "deadlines.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "device-management",
+    "file": "device-management.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-activities",
+    "file": "drivercard-activities.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Aktivitäten",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-analysis",
+    "file": "drivercard-analysis.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-daily-chart",
+    "file": "drivercard-daily-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Tagesgrafik",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-ddd-week-web",
+    "file": "drivercard-ddd-week-web.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "DDD-Wochenansicht Web",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-events-faults",
+    "file": "drivercard-events-faults.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Ereignisse / Störungen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-overview",
+    "file": "drivercard-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Übersicht",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-position-map",
+    "file": "drivercard-position-map.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "position-maps",
+    "tab": "drivercard",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-positions",
+    "file": "drivercard-positions.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Positionen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-signatures",
+    "file": "drivercard-signatures.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Signaturen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-used-vehicles",
+    "file": "drivercard-used-vehicles.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Benutzte Fahrzeuge",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-violations",
+    "file": "drivercard-violations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Verstöße",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "drivercard-weekly-chart",
+    "file": "drivercard-weekly-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Wochengrafik",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "fleet-navigation",
+    "file": "fleet-navigation.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "foreign-invoice-audit",
+    "file": "foreign-invoice-audit.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Audit",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "foreign-invoice-export-history",
+    "file": "foreign-invoice-export-history.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Exporthistorie",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "foreign-invoice-original-documents",
+    "file": "foreign-invoice-original-documents.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Originalbelege",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "foreign-invoice-positions",
+    "file": "foreign-invoice-positions.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Positionen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "foreign-invoices",
+    "file": "foreign-invoices.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "license-check-evaluation",
+    "file": "license-check-evaluation.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "login",
+    "file": "login.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "notifications",
+    "file": "notifications.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "people",
+    "file": "people.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "person-record",
+    "file": "person-record.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "profile",
+    "file": "profile.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "settings",
+    "file": "settings.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "sources",
+    "file": "sources.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "splash",
+    "file": "splash.png",
+    "source_profile": "product-asset",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "suppliers",
+    "file": "suppliers.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "tachodata-archive",
+    "file": "tachodata-archive.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "tachodata-fleet-expanded",
+    "file": "tachodata-fleet-expanded.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "expanded",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "tachodata-fleet-overview",
+    "file": "tachodata-fleet-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "tachodata-personnel-expanded",
+    "file": "tachodata-personnel-expanded.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "expanded",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "tachodata-personnel-overview",
+    "file": "tachodata-personnel-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "tasks",
+    "file": "tasks.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "users",
+    "file": "users.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-record",
+    "file": "vehicle-record.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-activities",
+    "file": "vehicle-unit-activities.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Aktivitäten",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-analysis",
+    "file": "vehicle-unit-analysis.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-calibrations",
+    "file": "vehicle-unit-calibrations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Kalibrierungen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-daily-chart",
+    "file": "vehicle-unit-daily-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Tagesgrafik",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-drivers",
+    "file": "vehicle-unit-drivers.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Fahrer",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-events-faults",
+    "file": "vehicle-unit-events-faults.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Ereignisse / Störungen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-overview",
+    "file": "vehicle-unit-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Übersicht",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-position-map",
+    "file": "vehicle-unit-position-map.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "position-maps",
+    "tab": "vehicle-unit",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-positions-borders-loading",
+    "file": "vehicle-unit-positions-borders-loading.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Positionen / Grenzen / Laden",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-signatures",
+    "file": "vehicle-unit-signatures.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Signaturen",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-speed",
+    "file": "vehicle-unit-speed.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Geschwindigkeit",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-technical-data",
+    "file": "vehicle-unit-technical-data.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Technische Daten",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-violations",
+    "file": "vehicle-unit-violations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Verstöße",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicle-unit-weekly-chart",
+    "file": "vehicle-unit-weekly-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Wochengrafik",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "de",
+    "feature": "vehicles",
+    "file": "vehicles.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "audit",
+    "file": "audit.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "backup",
+    "file": "backup.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "dashboard",
+    "file": "dashboard.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "deadlines",
+    "file": "deadlines.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "device-management",
+    "file": "device-management.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-activities",
+    "file": "drivercard-activities.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Activities",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-analysis",
+    "file": "drivercard-analysis.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-daily-chart",
+    "file": "drivercard-daily-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Daily chart",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-ddd-week-web",
+    "file": "drivercard-ddd-week-web.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "DDD week view (web)",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-events-faults",
+    "file": "drivercard-events-faults.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Events / faults",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-overview",
+    "file": "drivercard-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-position-map",
+    "file": "drivercard-position-map.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "position-maps",
+    "tab": "drivercard",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-positions",
+    "file": "drivercard-positions.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Positions",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-signatures",
+    "file": "drivercard-signatures.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Signatures",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-used-vehicles",
+    "file": "drivercard-used-vehicles.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Vehicles used",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-violations",
+    "file": "drivercard-violations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Violations",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "drivercard-weekly-chart",
+    "file": "drivercard-weekly-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "drivercard",
+    "tab": "Weekly chart",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "fleet-navigation",
+    "file": "fleet-navigation.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "foreign-invoice-audit",
+    "file": "foreign-invoice-audit.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Audit",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "foreign-invoice-export-history",
+    "file": "foreign-invoice-export-history.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Export history",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "foreign-invoice-original-documents",
+    "file": "foreign-invoice-original-documents.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Original documents",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "foreign-invoice-positions",
+    "file": "foreign-invoice-positions.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "invoice",
+    "tab": "Positions",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "foreign-invoices",
+    "file": "foreign-invoices.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "license-check-evaluation",
+    "file": "license-check-evaluation.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "login",
+    "file": "login.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "notifications",
+    "file": "notifications.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "people",
+    "file": "people.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "person-record",
+    "file": "person-record.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "profile",
+    "file": "profile.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "settings",
+    "file": "settings.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "sources",
+    "file": "sources.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "splash",
+    "file": "splash.png",
+    "source_profile": "product-asset",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "suppliers",
+    "file": "suppliers.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "tachodata-archive",
+    "file": "tachodata-archive.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "tachodata-fleet-expanded",
+    "file": "tachodata-fleet-expanded.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "expanded",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "tachodata-fleet-overview",
+    "file": "tachodata-fleet-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "tachodata-personnel-expanded",
+    "file": "tachodata-personnel-expanded.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "expanded",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "tachodata-personnel-overview",
+    "file": "tachodata-personnel-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "tachodata-overviews",
+    "tab": "overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "tasks",
+    "file": "tasks.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "users",
+    "file": "users.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-record",
+    "file": "vehicle-record.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-activities",
+    "file": "vehicle-unit-activities.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Activities",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-analysis",
+    "file": "vehicle-unit-analysis.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-calibrations",
+    "file": "vehicle-unit-calibrations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Calibrations",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-daily-chart",
+    "file": "vehicle-unit-daily-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Daily chart",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-drivers",
+    "file": "vehicle-unit-drivers.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Driver",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-events-faults",
+    "file": "vehicle-unit-events-faults.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Events / faults",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-overview",
+    "file": "vehicle-unit-overview.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Overview",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-position-map",
+    "file": "vehicle-unit-position-map.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "position-maps",
+    "tab": "vehicle-unit",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-positions-borders-loading",
+    "file": "vehicle-unit-positions-borders-loading.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Positions / borders / loading",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-signatures",
+    "file": "vehicle-unit-signatures.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Signatures",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-speed",
+    "file": "vehicle-unit-speed.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Speed",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-technical-data",
+    "file": "vehicle-unit-technical-data.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Technical data",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-violations",
+    "file": "vehicle-unit-violations.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Violations",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicle-unit-weekly-chart",
+    "file": "vehicle-unit-weekly-chart.png",
+    "source_profile": "anonymized-development-copy",
+    "captured_on": "2026-07-17",
+    "anonymized": true,
+    "section": "vehicle-unit",
+    "tab": "Weekly chart",
+    "anonymization_revision": "fleet-mira-docs-v1"
+  },
+  {
+    "language": "en",
+    "feature": "vehicles",
+    "file": "vehicles.png",
+    "source_profile": "isolated-demo",
+    "captured_on": "2026-07-17",
+    "anonymized": true
+  }
+]

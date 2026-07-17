@@ -1,0 +1,1637 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
+      
+      
+      
+      
+        <link rel="prev" href="../guide/position-maps/">
+      
+      
+        <link rel="next" href="../api/drivercard-rest/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../de/administrator-integration-guide/" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Administrator and integrator guide - FLEET Mira Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#administrator-and-integrator-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Administrator and integrator guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../de/administrator-integration-guide/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detailed guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodata evaluations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver-card analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle-unit analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Position maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator and integrator guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator and integrator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deployment-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Deployment model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Deployment model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-users-roles-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Users, roles and permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-languages-regions-and-utc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Languages, regions and UTC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlite-and-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SQLite and migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scheduler-sources-and-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Scheduler, sources and tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tachograph-archive-and-signature-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tachograph archive and signature trust
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Audit and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ui-job-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. UI job operation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-driving-licence-checks-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Driving-licence checks and notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-finance-and-document-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Finance and document vault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-backup-and-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Backup and disaster recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rest-and-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. REST and integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-legacy-technical-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Legacy technical identifiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-security-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Security checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-incident-and-recovery-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Incident and recovery checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-build-and-release-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Build and release checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APIs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deployment-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Deployment model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Deployment model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-users-roles-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Users, roles and permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-languages-regions-and-utc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Languages, regions and UTC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sqlite-and-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SQLite and migrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-scheduler-sources-and-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Scheduler, sources and tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tachograph-archive-and-signature-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tachograph archive and signature trust
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-audit-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Audit and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ui-job-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. UI job operation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-driving-licence-checks-and-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Driving-licence checks and notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-finance-and-document-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Finance and document vault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-backup-and-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Backup and disaster recovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-rest-and-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. REST and integrations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-legacy-technical-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Legacy technical identifiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-security-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Security checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-incident-and-recovery-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Incident and recovery checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-build-and-release-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Build and release checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="administrator-and-integrator-guide">Administrator and integrator guide<a class="headerlink" href="#administrator-and-integrator-guide" title="Permanent link">&para;</a></h1>
+<h2 id="1-deployment-model">1. Deployment model<a class="headerlink" href="#1-deployment-model" title="Permanent link">&para;</a></h2>
+<p>FLEET Mira is a Windows desktop application with background schedulers. The application directory contains Python modules or the PyInstaller build, static assets and translations. Mutable data is referenced by <code>config.json</code> and normally includes:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Default/role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQLite database</td>
+<td><code>state/archive.db</code>; schema and business metadata</td>
+</tr>
+<tr>
+<td>Tachograph archive</td>
+<td>compressed <code>.ddd.gz</code> objects below the configured archive root</td>
+</tr>
+<tr>
+<td>Logs</td>
+<td><code>logs/app.log</code>, REST logs and <code>native_crash.log</code></td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td><code>config.json</code>; paths, sources, tasks and service defaults</td>
+</tr>
+<tr>
+<td>UI profile</td>
+<td>SQLite per-user JSON plus machine-local <code>QSettings</code> geometry</td>
+</tr>
+</tbody>
+</table>
+<p>Use absolute service paths in production and grant write access only to the application service/user identity. Antivirus exclusions should be narrowly limited to proven performance bottlenecks and must never disable scanning of downloaded originals.</p>
+<h3 id="initial-deployment">Initial deployment<a class="headerlink" href="#initial-deployment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Deploy the build and the supplied empty deployment database.</li>
+<li>Review archive, database and log paths before importing data.</li>
+<li>Start FLEET Mira and sign in with <code>admin</code> / <code>admin</code>.</li>
+<li>Change the password to at least 12 characters.</li>
+<li>Create named users and test role restrictions.</li>
+<li>Configure sources/tasks, SMTP and backup in that order.</li>
+<li>Execute and document backup/restore and terminal-retention tests.</li>
+</ol>
+<h2 id="2-users-roles-and-permissions">2. Users, roles and permissions<a class="headerlink" href="#2-users-roles-and-permissions" title="Permanent link">&para;</a></h2>
+<p>Passwords use Argon2id. Five failed attempts lock an account for 15 minutes. The last active administrator cannot be deactivated.</p>
+<p><img alt="User administration" src="/assets/screenshots/en/users.png" />
+<em>Figure: User, role, language and account administration.</em></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Typical scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADMIN</td>
+<td>complete administration, finance booking, restore and retention</td>
+</tr>
+<tr>
+<td>SUPPORT</td>
+<td>device/source/task operations, archive troubleshooting, read-only fleet/finance</td>
+</tr>
+<tr>
+<td>OPERATOR</td>
+<td>operational imports, fleet maintenance, licence checks, finance workflows</td>
+</tr>
+<tr>
+<td>AUDITOR</td>
+<td>read/report/export without business changes</td>
+</tr>
+</tbody>
+</table>
+<p>The UI disables unauthorised actions, while repositories/services call <code>PermissionService.require(...)</code> again. Do not treat hidden/disabled controls as the security boundary.</p>
+<p>Local administrator recovery is available with <code>--reset-admin-password</code>. It requires Windows administrator rights, resets only the initial admin credential to <code>admin</code>, unlocks the account and forces a new password. The password itself is never audited.</p>
+<h2 id="3-languages-regions-and-utc">3. Languages, regions and UTC<a class="headerlink" href="#3-languages-regions-and-utc" title="Permanent link">&para;</a></h2>
+<p>New deployments default to English and <code>en-GB</code>. User profiles may select any registered language/region. Date pickers, numbers and currency follow the region. Database/API dates remain ISO. All tachograph timestamps, comparisons, day/week boundaries and compliance calculations currently remain UTC; locale must not introduce a time-zone conversion.</p>
+<p>Translation catalogues live under <code>translations/&lt;language&gt;.json</code>. English is the fallback catalogue. Missing production keys log <code>I18N_MISSING</code> and fail the catalogue parity test.</p>
+<p><img alt="Application settings" src="/assets/screenshots/en/settings.png" />
+<em>Figure: Administrative application settings.</em></p>
+<h2 id="4-sqlite-and-migrations">4. SQLite and migrations<a class="headerlink" href="#4-sqlite-and-migrations" title="Permanent link">&para;</a></h2>
+<p>Migrations run once at startup before repositories serve UI jobs. Use SQLite WAL/default locking as configured by the application; never copy a live database file for backup.</p>
+<p>Operational recommendations:</p>
+<ul>
+<li>keep database and archive on reliable local storage;</li>
+<li>monitor free space and failed backup jobs;</li>
+<li>use the built-in SQLite backup API snapshot;</li>
+<li>test <code>PRAGMA integrity_check</code> after restore and during maintenance;</li>
+<li>stop application and services before manual file-level maintenance;</li>
+<li>never edit audit, signature or finance tables directly.</li>
+</ul>
+<p>The deployment database must contain schema/default rows but no operational persons, vehicles, DDD files, documents, credentials or audit history.</p>
+<h2 id="5-scheduler-sources-and-tasks">5. Scheduler, sources and tasks<a class="headerlink" href="#5-scheduler-sources-and-tasks" title="Permanent link">&para;</a></h2>
+<p>Background scheduling starts independently of an authenticated UI session and runs as <code>SYSTEM</code>. Supported source types are FTP and DLT API. Every network operation must have connect/read timeouts.</p>
+<p>Task processing sequence:</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Schedule or Run now] --&gt; B[List matching remote objects]
+    B --&gt; C[Download to controlled local path]
+    C --&gt; D[Hash, classify and archive]
+    D --&gt; E[Parse/signature verify or RFID CSV import]
+    E --&gt; F[Create/update business links and deadlines]
+    F --&gt; G[Queue cloud backup]
+    G --&gt; H{Strict backup mode?}
+    H --&gt;|No| I[Mark processed / optional terminal deletion]
+    H --&gt;|Yes| J[Wait for verified cloud object]
+    J --&gt; I</code></pre>
+<p>A technical failure before durable archiving must not mark or delete the terminal object. Duplicate hashes resume pending backup/deadline work without creating duplicate archives.</p>
+<h2 id="6-tachograph-archive-and-signature-trust">6. Tachograph archive and signature trust<a class="headerlink" href="#6-tachograph-archive-and-signature-trust" title="Permanent link">&para;</a></h2>
+<p>The content dispatcher classifies <code>DRIVER_CARD</code>, <code>VEHICLE_UNIT</code> or <code>UNKNOWN</code>. C files use G1 RSA/SHA-1 or G2 ECDSA chains; M files verify signed download sections for G1/G2/G2V2. <code>cryptography</code> is a required runtime dependency.</p>
+<p>Signature result priority is <code>INVALID</code> → <code>UNVERIFIABLE</code> → <code>VALID</code>. Parser status maps to verified, verified-with-warnings or quarantine. Quarantine never deletes the original but blocks trusted linking, C/M comparison, compliance snapshots and “latest trusted” selection.</p>
+<p>Trust-store updates are administrative, explicit and audited. Validate package source, manifest and pinned fingerprints. Do not silently fetch or trust certificates from an arbitrary server.</p>
+<h2 id="7-audit-and-diagnostics">7. Audit and diagnostics<a class="headerlink" href="#7-audit-and-diagnostics" title="Permanent link">&para;</a></h2>
+<p>The global audit normalises device, tachograph, fleet, finance, user and backup events. Each entry should include UTC time, actor/user ID, role, origin, action, object type/ID, result, correlation ID and sanitised before/after data. Passwords, tokens, API keys and binary originals are prohibited.</p>
+<p><code>app.log</code> is the complete application log. It includes scheduler, downloads, imports, jobs, cache timings, backup and service errors. Technical messages are always English. <code>native_crash.log</code> is written by <code>faulthandler</code> for process-level failures after diagnostics initialisation; failures before Python startup cannot be captured there.</p>
+<p><img alt="Global audit and diagnostic context" src="/assets/screenshots/en/audit.png" />
+<em>Figure: Audit evidence used together with technical diagnostics.</em></p>
+<p>The UI heartbeat logs <code>UI_STALL</code> if the main event loop is blocked for more than one second. A recovery entry records the duration. Use job/request/correlation IDs to join UI, service and audit events.</p>
+<h2 id="8-ui-job-operation">8. UI job operation<a class="headerlink" href="#8-ui-job-operation" title="Permanent link">&para;</a></h2>
+<p>Expensive reads/calculations use worker-local SQLite connections. Qt widgets are changed only in the GUI thread. Read jobs, serialised writes and low-priority prefetch use separate lanes. New filter/date requests cancel stale generations; tab closure cancels owned work.</p>
+<p>Performance incidents should be investigated by separating queue, database, compute, render and total time from the job log. Do not reintroduce <code>processEvents()</code> loops or modal busy dialogs for long work.</p>
+<h2 id="9-driving-licence-checks-and-notifications">9. Driving-licence checks and notifications<a class="headerlink" href="#9-driving-licence-checks-and-notifications" title="Permanent link">&para;</a></h2>
+<p>PC/SC reads UID with <code>FF CA 00 00 00</code>, normalises to uppercase hexadecimal and assigns at most one active UID per person. A UID cannot be active for multiple persons.</p>
+<p>Terminal CSV fields are <code>UID;DD.MM.YYYY;HH:mm:ss;hostname</code>. File- and row-level fingerprints provide idempotency. Unknown/inactive/time-incompatible UIDs remain clarification records.</p>
+<p>SMTP supports STARTTLS or TLS. Passwords are DPAPI-protected. Default rules produce driver reminders and a daily fleet-responsible report. A desktop/tray process must be running for scheduled sends; missed runs are caught up only on the same day. Outbox idempotency prevents duplicate automatic mail per rule/object/recipient/day.</p>
+<p><img alt="Notification administration" src="/assets/screenshots/en/notifications.png" />
+<em>Figure: SMTP recipients, rules and send-log administration.</em></p>
+<h2 id="10-finance-and-document-vault">10. Finance and document vault<a class="headerlink" href="#10-finance-and-document-vault" title="Permanent link">&para;</a></h2>
+<p>Financial data is stored in cents and EUR. Foreign invoices require exact header/position totals and at least one cloud-verified original before verification. Booking makes business records immutable; corrections use cancellations or credits.</p>
+<p>Original documents are never SQLite BLOBs. The financial vault stages, hashes, uploads, reads back and verifies each object. Metadata stores target, remote path/ID, hash, size, version and retention. Target deletion is blocked while documents reference it.</p>
+<p>Accounting delivery is available through <a href="../api/accounting-rest/">REST</a> and <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Only booked records are exportable. REST uses a persistent idempotent outbox.</p>
+<h2 id="11-backup-and-disaster-recovery">11. Backup and disaster recovery<a class="headerlink" href="#11-backup-and-disaster-recovery" title="Permanent link">&para;</a></h2>
+<p>Exactly one Google Drive or HTTPS WebDAV target may be active. Client-side AES-256-GCM is optional and preselected. Activation requires exporting and confirming a recovery key.</p>
+<p><img alt="Backup target, queue and restore administration" src="/assets/screenshots/en/backup.png" />
+<em>Figure: Cloud target, backup queue and restore administration.</em></p>
+<p>Archives are backed up immediately; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD cloud objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Cloud backup and restore</a>.</p>
+<p>At least quarterly, restore a database snapshot and representative C/M objects to an isolated test directory, verify hashes/integrity and document the result.</p>
+<h2 id="12-rest-and-integrations">12. REST and integrations<a class="headerlink" href="#12-rest-and-integrations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DriverCard REST binds to <code>127.0.0.1</code> by default and exposes parsed card evaluations.</li>
+<li>Accounting REST sends booked invoice metadata and originals to a configured HTTPS endpoint.</li>
+<li>Mobile licence-check endpoints remain a separate fleet API surface when enabled.</li>
+</ul>
+<p>Do not expose a local development endpoint directly to the Internet. Place authentication, TLS, rate limiting and network access controls in front of any externally reachable API.</p>
+<h2 id="13-legacy-technical-identifiers">13. Legacy technical identifiers<a class="headerlink" href="#13-legacy-technical-identifiers" title="Permanent link">&para;</a></h2>
+<p>The visible product is <strong>FLEET Mira</strong>. The following are intentionally retained for compatibility:</p>
+<ul>
+<li>repository/project folder and PyInstaller file <code>DLTNGDownloadTool.spec</code>;</li>
+<li>technical executable/internal names where changing them would break upgrades;</li>
+<li>SQLite table/column names, configuration keys and event codes;</li>
+<li>DriverCard/API paths and payload fields;</li>
+<li>remote root <code>DLTNG/&lt;installation-id&gt;/...</code>, manifest magic values and existing User-Agent identifiers.</li>
+</ul>
+<p>These are protocol/storage identifiers, not user-facing product branding. Renaming them requires a separately versioned migration.</p>
+<h2 id="14-security-checklist">14. Security checklist<a class="headerlink" href="#14-security-checklist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] named users only; initial admin password changed;</li>
+<li>[ ] role matrix tested with a non-admin account;</li>
+<li>[ ] database/archive ACLs restricted;</li>
+<li>[ ] source, SMTP, backup and REST secrets protected;</li>
+<li>[ ] WebDAV HTTPS certificate and Google OAuth client validated;</li>
+<li>[ ] recovery key stored offline and access logged;</li>
+<li>[ ] strict terminal deletion selected where policy requires it;</li>
+<li>[ ] audit/log retention and log rotation monitored;</li>
+<li>[ ] signature trust store current and controlled;</li>
+<li>[ ] daily database backup and archive backlog monitored;</li>
+<li>[ ] restore test completed and documented;</li>
+<li>[ ] operator procedural documentation covers retention, scan and legal review.</li>
+</ul>
+<h2 id="15-incident-and-recovery-checklist">15. Incident and recovery checklist<a class="headerlink" href="#15-incident-and-recovery-checklist" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Stop automatic writes if integrity, ransomware or credential compromise is suspected.</li>
+<li>Preserve <code>app.log</code>, <code>native_crash.log</code>, configuration and relevant audit exports.</li>
+<li>Revoke/rotate affected source, SMTP, Google/WebDAV and API credentials.</li>
+<li>Verify local archive hashes and remote object manifests.</li>
+<li>Restore into an isolated path first; never overwrite the only remaining database copy.</li>
+<li>Run integrity/hash checks and reconcile backup states.</li>
+<li>Resume services only after root cause, credentials and recovery result are documented.</li>
+</ol>
+<h2 id="16-build-and-release-checks">16. Build and release checks<a class="headerlink" href="#16-build-and-release-checks" title="Permanent link">&para;</a></h2>
+<p>Before release, run application tests, translation parity, documentation verification, <code>mkdocs build --strict --clean</code>, PyInstaller smoke tests and a clean deployment-database start. Verify both German and English screenshots contain FLEET Mira branding and no operational data.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

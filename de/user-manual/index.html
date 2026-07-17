@@ -1,0 +1,1940 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+      
+        <link rel="prev" href="../product-overview/">
+      
+      
+        <link rel="next" href="../guide/tachodata-overviews/">
+      
+      
+        
+          <link rel="alternate" href="../../user-manual/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Benutzerhandbuch - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#benutzerhandbuch" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Benutzerhandbuch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../user-manual/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detaillierte-fachkapitel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detaillierte Fachkapitel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-anmeldung-und-arbeitsbereich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Anmeldung und Arbeitsbereich
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Anmeldung und Arbeitsbereich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benutzerprofil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzerprofil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabellen-und-kontextmenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabellen und Kontextmenüs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gerateverwaltung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Geräteverwaltung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-quellen-und-downloadtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Quellen und Downloadtasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tachodaten-archiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tachodaten-Archiv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tachodaten-Archiv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-und-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import und Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offnen-export-und-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Öffnen, Export und Löschen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backupstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backupstatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fahrerkarten-auswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fahrerkarten-Auswertung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-massenspeicher-auswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Massenspeicher-Auswertung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fuhrpark-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fuhrpark-Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Fuhrpark-Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stammdaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stammdaten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalakte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personalakte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fahrzeugakte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fahrzeugakte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-falligkeiten-und-downloadtermine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fälligkeiten und Downloadtermine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuhrerscheinkontrolle-und-rfid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Führerscheinkontrolle und RFID
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-benachrichtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Benachrichtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-kosten-gutschriften-und-fremdrechnungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Kosten, Gutschriften und Fremdrechnungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Kosten, Gutschriften und Fremdrechnungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direkte-fahrzeugkosten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direkte Fahrzeugkosten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fremdrechnungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fremdrechnungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-audit-berichte-und-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Audit, Berichte und Logs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-systray-und-beenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Systray und Beenden
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fehlerbehebung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fehlerbehebung
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dokumentations-Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detaillierte-fachkapitel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detaillierte Fachkapitel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-anmeldung-und-arbeitsbereich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Anmeldung und Arbeitsbereich
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Anmeldung und Arbeitsbereich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benutzerprofil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzerprofil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabellen-und-kontextmenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabellen und Kontextmenüs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gerateverwaltung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Geräteverwaltung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-quellen-und-downloadtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Quellen und Downloadtasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tachodaten-archiv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tachodaten-Archiv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tachodaten-Archiv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-und-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import und Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offnen-export-und-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Öffnen, Export und Löschen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backupstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backupstatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fahrerkarten-auswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fahrerkarten-Auswertung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-massenspeicher-auswertung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Massenspeicher-Auswertung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fuhrpark-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fuhrpark-Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Fuhrpark-Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stammdaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stammdaten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalakte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personalakte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fahrzeugakte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fahrzeugakte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-falligkeiten-und-downloadtermine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fälligkeiten und Downloadtermine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fuhrerscheinkontrolle-und-rfid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Führerscheinkontrolle und RFID
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-benachrichtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Benachrichtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-kosten-gutschriften-und-fremdrechnungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Kosten, Gutschriften und Fremdrechnungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Kosten, Gutschriften und Fremdrechnungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direkte-fahrzeugkosten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direkte Fahrzeugkosten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fremdrechnungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fremdrechnungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-audit-berichte-und-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Audit, Berichte und Logs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-systray-und-beenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Systray und Beenden
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fehlerbehebung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fehlerbehebung
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="benutzerhandbuch">Benutzerhandbuch<a class="headerlink" href="#benutzerhandbuch" title="Permanent link">&para;</a></h1>
+<h2 id="detaillierte-fachkapitel">Detaillierte Fachkapitel<a class="headerlink" href="#detaillierte-fachkapitel" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../guide/tachodata-overviews/">Tachodaten-Auswertung Personal und Fuhrpark</a></li>
+<li><a href="../guide/drivercard-analysis/">Fahrerkarten-Auswertung – alle Tabs</a></li>
+<li><a href="../guide/vehicle-unit-analysis/">Massenspeicher-Auswertung – alle Tabs</a></li>
+<li><a href="../guide/foreign-invoices/">Fremdrechnungen – Workflow und alle Tabs</a></li>
+<li><a href="../guide/position-maps/">Positionskarten für C- und M-Daten</a></li>
+</ul>
+<p>Diese Kapitel verwenden eine ausschließlich temporär erzeugte, anonymisierte Kopie der Entwicklungsdatenbank. Aktivitäten, Zeitangaben, Beträge und freigegebene Koordinaten bleiben fachlich repräsentativ; Personen-, Karten- und Fahrzeugidentitäten wurden deterministisch ersetzt.</p>
+<h2 id="1-anmeldung-und-arbeitsbereich">1. Anmeldung und Arbeitsbereich<a class="headerlink" href="#1-anmeldung-und-arbeitsbereich" title="Permanent link">&para;</a></h2>
+<p>Starten Sie FLEET Mira über die installierte Verknüpfung. Nach dem Splash-Screen erscheint die Anmeldung. Eine neue Installation verwendet einmalig <code>admin</code> / <code>admin</code> und verlangt anschließend ein sicheres neues Kennwort.</p>
+<p><img alt="Splash-Screen von FLEET Mira" src="/assets/screenshots/de/splash.png" />
+<em>Abbildung: Splash-Screen von FLEET Mira vor der Anmeldung.</em></p>
+<p><img alt="Anmeldung von FLEET Mira" src="/assets/screenshots/de/login.png" />
+<em>Abbildung: Lokale Benutzeranmeldung.</em></p>
+<p>Nach jeder Anmeldung ist das <strong>Dashboard</strong> aktiv. Über die obere Navigation wechseln Sie zwischen den fünf Hauptbereichen. Längere Vorgänge zeigen einen nichtmodalen Ladestatus und können abgebrochen werden; andere Tabs bleiben bedienbar.</p>
+<h3 id="benutzerprofil">Benutzerprofil<a class="headerlink" href="#benutzerprofil" title="Permanent link">&para;</a></h3>
+<p>Unter <strong>Benutzer → Mein Profil</strong> ändern Sie Anzeigename, E-Mail, Sprache und Region. Sprache oder Region werden nach der nächsten Anmeldung vollständig aktiv. Tabellenlayouts, Filter, Splitterpositionen und Spaltenreihenfolgen werden benutzerbezogen gespeichert.</p>
+<p><img alt="Benutzerprofil mit Sprach- und Regionseinstellungen" src="/assets/screenshots/de/profile.png" />
+<em>Abbildung: Benutzerbezogene Sprach-, Regions- und Profileinstellungen.</em></p>
+<h3 id="tabellen-und-kontextmenus">Tabellen und Kontextmenüs<a class="headerlink" href="#tabellen-und-kontextmenus" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ein Klick auf den Spaltenkopf sortiert; ein weiterer Klick kehrt die Richtung um.</li>
+<li>Spaltenköpfe lassen sich per Drag&amp;Drop verschieben, Begrenzungen ändern die Breite.</li>
+<li>Über das Kontextmenü eines Spaltenkopfs können Spalten ein-/ausgeblendet werden, sofern angeboten.</li>
+<li>Rechtsklick auf eine Datenzeile öffnet fachliche Aktionen; zuerst wird immer die Zeile unter dem Mauszeiger markiert.</li>
+<li>Markierte Zeilen verwenden dunkelblauen Hintergrund und weiße Schrift und bleiben trotz Statusfarben lesbar.</li>
+</ul>
+<h2 id="2-dashboard">2. Dashboard<a class="headerlink" href="#2-dashboard" title="Permanent link">&para;</a></h2>
+<p>Die sechs Kacheln führen direkt zu gefilterten Arbeitsbereichen:</p>
+<p><img alt="Dashboard von FLEET Mira mit anonymisierten Demonstrationsdaten" src="/assets/screenshots/de/dashboard.png" />
+<em>Abbildung: Dashboard mit anonymisierten Demonstrationsdaten und direkten Sprungzielen.</em></p>
+<ul>
+<li><strong>FLEET Mira-Geräte:</strong> Gesamtzahl, online und offline.</li>
+<li><strong>Personal/Fahrzeuge:</strong> aktive Stammdatensätze.</li>
+<li><strong>Tachodateien:</strong> Gesamt, C-/M-Dateien, Backuprückstand/-fehler und letzte Importe.</li>
+<li><strong>Fälligkeiten Personal / Fahrzeuge:</strong> bald anstehend, heute fällig und überfällig.</li>
+<li><strong>Führerscheinkontrolle:</strong> offene Klärfälle, bald anstehende/überfällige FSK und letzte erfolgreiche Kontrolle.</li>
+</ul>
+<p>Klicken Sie eine einzelne Kennzahl an, um die exakt vorgefilterte Liste zu öffnen. Nach umfangreichen Importen kann <strong>Dashboard aktualisieren</strong> verwendet werden.</p>
+<h2 id="3-gerateverwaltung">3. Geräteverwaltung<a class="headerlink" href="#3-gerateverwaltung" title="Permanent link">&para;</a></h2>
+<p><img alt="Geräteverwaltung" src="/assets/screenshots/de/device-management.png" />
+<em>Abbildung: Geräteliste und Arbeitsbereich der Geräteverwaltung.</em></p>
+<p>Die Geräteliste lässt sich nach Name, Mandant, Standort, Gruppe und Status filtern. Abhängig von der Berechtigung stehen Werkzeugleiste und Kontextmenü zur Verfügung:</p>
+<ol>
+<li>Gerät anlegen, bearbeiten oder duplizieren;</li>
+<li>Status eines Geräts oder der Trefferliste prüfen;</li>
+<li>eingebettete oder externe Weboberfläche öffnen;</li>
+<li>Systeminformationen, entfernte Dateien und Website-Log abrufen;</li>
+<li>Gerät nach Bestätigung deaktivieren oder archivieren.</li>
+</ol>
+<p>Die unteren Detailtabs zeigen Stammdaten, Dateien, Statushistorie und Audit. Heruntergeladene Gerätedateien durchlaufen erst über den regulären Importpfad das Archiv.</p>
+<h2 id="4-quellen-und-downloadtasks">4. Quellen und Downloadtasks<a class="headerlink" href="#4-quellen-und-downloadtasks" title="Permanent link">&para;</a></h2>
+<p>Unter <strong>Administration → Quellen</strong> richten Sie FTP- oder DLT-API-Zugänge ein. Testen Sie die Verbindung, bevor Sie die Quelle einem Task zuordnen. Zugangsdaten werden geschützt und nicht protokolliert.</p>
+<p><img alt="Verwaltung der Downloadquellen" src="/assets/screenshots/de/sources.png" />
+<em>Abbildung: Verwaltung von FTP- und DLT-API-Quellen.</em></p>
+<p>Unter <strong>Administration → Tasks</strong> konfigurieren Sie Quellen, Dateimuster, Rekursion, Zeitplan, Archivverhalten und optional den strengen Cloud-Backupmodus. <strong>Sofort starten</strong> zeigt je Quelle Status, Fortschritt und laufend aktualisierte Logmeldungen. RFID-Terminaldateien benötigen das Muster <code>RFID_*.CSV</code>.</p>
+<p><img alt="Verwaltung der Downloadtasks" src="/assets/screenshots/de/tasks.png" />
+<em>Abbildung: Zeitgesteuerte und manuell ausführbare Downloadtasks.</em></p>
+<p>Im strengen Modus wird eine Terminaldatei erst nach verifiziertem Cloudbackup als verarbeitet markiert oder gelöscht.</p>
+<h2 id="5-tachodaten-archiv">5. Tachodaten-Archiv<a class="headerlink" href="#5-tachodaten-archiv" title="Permanent link">&para;</a></h2>
+<p><img alt="Tachodaten-Archiv" src="/assets/screenshots/de/tachodata-archive.png" />
+<em>Abbildung: Filterbares C-/M-Tachodaten-Archiv mit Statusspalten.</em></p>
+<p>Das Archiv enthält Fahrerkarten-C-Dateien und Massenspeicher-M-Dateien. Filter stehen für Datum, Dateiname, Fahrer/Fahrzeug, DDD-Art, Generation, Parserstatus, Signaturstatus, Lösch- und Backupstatus zur Verfügung.</p>
+<h3 id="import-und-status">Import und Status<a class="headerlink" href="#import-und-status" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>DDD-Dateien importieren</strong> übernimmt eine oder mehrere lokale Dateien.</li>
+<li>Der binäre Inhalt bestimmt C/M; der Dateiname ist nur ein Hinweis.</li>
+<li>Nach erfolgreichem Parse werden strukturierte Details gespeichert, ohne das Original zu verändern.</li>
+<li><code>VALID</code> bedeutet: alle vorhandenen Signaturen und die Zertifikatskette wurden verifiziert.</li>
+<li><code>INVALID</code> oder <code>UNVERIFIABLE</code> führen zur Quarantäne. Die Datei bleibt sichtbar/exportierbar, darf aber keine vertrauenswürdige Verknüpfung oder kombinierte Auswertung speisen.</li>
+</ul>
+<h3 id="offnen-export-und-loschen">Öffnen, Export und Löschen<a class="headerlink" href="#offnen-export-und-loschen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Per Doppelklick oder <strong>Auswertung öffnen</strong> startet die passende C-/M-Auswertung.</li>
+<li>Eine markierte Zeile exportiert die Original-DDD; mehrere Zeilen oder die aktuelle Ansicht werden als ZIP exportiert.</li>
+<li>Logisches Löschen benötigt einen Grund und wird auditiert; ein verifiziertes Cloudbackup wird nicht automatisch gelöscht.</li>
+<li><strong>Details / Signatur / Audit</strong> erläutert Hashwerte, Parserwarnungen, Signatursektionen und Historie.</li>
+</ul>
+<h3 id="backupstatus">Backupstatus<a class="headerlink" href="#backupstatus" title="Permanent link">&para;</a></h3>
+<p><code>Verifiziert</code> erscheint erst nach vollständigem Upload und Remote-Hashprüfung. Über das Kontextmenü kann die Sicherung erneut gestartet, geprüft oder wiederhergestellt werden. Backupfehler sind auch vom Dashboard erreichbar.</p>
+<h2 id="6-fahrerkarten-auswertung">6. Fahrerkarten-Auswertung<a class="headerlink" href="#6-fahrerkarten-auswertung" title="Permanent link">&para;</a></h2>
+<p>Der Kopf zeigt Fahrer, Kartennummer und ausgewählte Archivdatei. Ausschließlich die ausgewählte C-Datei ist Basis der Auswertung.</p>
+<p><img alt="Tagesgrafik der Fahrerkarten-Auswertung" src="/assets/screenshots/de/drivercard-analysis.png" />
+<em>Abbildung: Fahrerkarten-Auswertung für ein ausgewähltes C-Archiv.</em></p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Übersicht</td>
+<td>Identität, Gültigkeit, Behörden, Generation und Datenzeitraum</td>
+</tr>
+<tr>
+<td>Aktivitäten</td>
+<td>sortierbare UTC-Intervalle mit C-/M-Datenlage</td>
+</tr>
+<tr>
+<td>Tages-/Wochengrafik</td>
+<td>Zeitstrahl, Summen und Details des gewählten Zeitraums</td>
+</tr>
+<tr>
+<td>DDD-Wochenansicht Web</td>
+<td>interaktive Webansicht der ausgewählten Datei</td>
+</tr>
+<tr>
+<td>Ereignisse/Störungen</td>
+<td>technische Datensätze der Karte</td>
+</tr>
+<tr>
+<td>Benutzte Fahrzeuge</td>
+<td>auf der Karte erkannte Fahrzeuge</td>
+</tr>
+<tr>
+<td>Positionen</td>
+<td>Positionsliste und interaktive Karte</td>
+</tr>
+<tr>
+<td>Verstöße</td>
+<td>technische Vorprüfung nach VO (EG) Nr. 561/2006</td>
+</tr>
+<tr>
+<td>Signaturen</td>
+<td>Zertifikatskette und EF-Einzelergebnisse</td>
+</tr>
+</tbody>
+</table>
+<p>Der Filter <strong>Datenlage</strong> unterscheidet alle Aktivitäten, C und M vorhanden, nur Fahrerkarte und nur Massenspeicher. Die Gegenquelle dient ausschließlich als Vergleichsnachweis und ersetzt die gewählte Basisdatei nicht. Alle Tachographenberechnungen verwenden UTC.</p>
+<h2 id="7-massenspeicher-auswertung">7. Massenspeicher-Auswertung<a class="headerlink" href="#7-massenspeicher-auswertung" title="Permanent link">&para;</a></h2>
+<p><img alt="Wochengrafik der Massenspeicher-Auswertung" src="/assets/screenshots/de/vehicle-unit-analysis.png" />
+<em>Abbildung: Massenspeicher-Auswertung für ein ausgewähltes M-Archiv.</em></p>
+<p>Die M-Auswertung zeigt Fahrzeugidentität und ausgewählte M-Datei. Fahrersitzungen werden nach normalisierter Kartennummer und Generation getrennt. Bei Teamfahrt bleiben Slot 1 und Slot 2 getrennt sichtbar.</p>
+<p>Tabs umfassen Fahrer, Aktivitäten, Tages-/Wochengrafik, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen/Grenzen/Laden, Signaturen und Verstöße. <strong>Technische Daten</strong> werden als Feldbaum dargestellt; <strong>Kalibrierungen</strong> zeigen Kalibrierzeit, nächste Kalibrierung, Werkstatt, FIN und Kennzeichen. Die Positionen öffnen eine interaktive Karte.</p>
+<p>„Ohne zugeordnete Fahrerkarte“ bedeutet, dass die M-Datei für Slot und Zeitraum kein aktives Kartensteckintervall mit verwertbarer Kartennummer enthält. Es bedeutet nicht nur, dass eine passende C-Datei im Archiv fehlt; ein Tooltip erläutert dies in Tages- und Wochenansicht.</p>
+<h2 id="8-fuhrpark-management">8. Fuhrpark-Management<a class="headerlink" href="#8-fuhrpark-management" title="Permanent link">&para;</a></h2>
+<p>Die linke Iconnavigation öffnet eindeutige Arbeitstabs. Eine neue Sitzung startet mit leerem Fuhrpark-Arbeitsbereich.</p>
+<p><img alt="Iconnavigation und Arbeitstabs des Fuhrpark-Managements" src="/assets/screenshots/de/fleet-navigation.png" />
+<em>Abbildung: Iconnavigation und eindeutige Arbeitstabs im Fuhrpark-Management.</em></p>
+<h3 id="stammdaten">Stammdaten<a class="headerlink" href="#stammdaten" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Personal:</strong> Personalnummer, Identität, Kontaktdaten, Führerscheindaten, FSK-Regel und Status.</li>
+<li><strong>Fahrzeuge:</strong> interne Nummer, Kennzeichen, FIN, Art und Status.</li>
+<li><strong>Fälligkeitsarten:</strong> System- und benutzerdefinierte Arten für Personal/Fahrzeuge.</li>
+<li><strong>Lieferanten / Kostenarten:</strong> Finanzstammdaten.</li>
+</ul>
+<p><img alt="Personalstammliste" src="/assets/screenshots/de/people.png" />
+<em>Abbildung: Personalstammliste.</em></p>
+<p><img alt="Fahrzeugstammliste" src="/assets/screenshots/de/vehicles.png" />
+<em>Abbildung: Fahrzeugstammliste.</em></p>
+<p>Doppelklick öffnet die jeweilige Akte. Kontextmenüs springen zu Fälligkeiten, Tachodaten, RFID oder Finanzdaten.</p>
+<h3 id="personalakte">Personalakte<a class="headerlink" href="#personalakte" title="Permanent link">&para;</a></h3>
+<p><img alt="Personalakte" src="/assets/screenshots/de/person-record.png" />
+<em>Abbildung: Personalakte mit den zugehörigen Fachreitern.</em></p>
+<p>Die Akte enthält Stammdaten, Fälligkeiten, Führerscheinkontrollen, RFID-Historie, Fahrerkartenverknüpfungen/-dateien, Tages-/Wochen-/Aktivitätsansicht und Audit. <strong>RFID/NFC zuordnen</strong> liest eine UID über PC/SC. <strong>FSK per PC/SC</strong> erzeugt nur dann eine Kontrolle, wenn die gelesene UID zur Person gehört.</p>
+<h3 id="fahrzeugakte">Fahrzeugakte<a class="headerlink" href="#fahrzeugakte" title="Permanent link">&para;</a></h3>
+<p><img alt="Fahrzeugakte" src="/assets/screenshots/de/vehicle-record.png" />
+<em>Abbildung: Fahrzeugakte mit Tachodaten-, Finanz- und Positionsreitern.</em></p>
+<p>Tabs enthalten Fälligkeiten, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
+<h2 id="9-falligkeiten-und-downloadtermine">9. Fälligkeiten und Downloadtermine<a class="headerlink" href="#9-falligkeiten-und-downloadtermine" title="Permanent link">&para;</a></h2>
+<p>Personal- und Fahrzeugauswertung sind getrennt, verwenden aber dieselbe sortier-/filterbare Komponente. Jede Fälligkeit besitzt einen individuellen Vorlauf; Standard sind zehn Tage. Farben:</p>
+<ul>
+<li>grün: außerhalb des Vorlaufs;</li>
+<li>blau/orange: bald anstehend oder heute fällig;</li>
+<li>rot: überfällig;</li>
+<li>erledigt: mit Erledigungsdatum geschlossen.</li>
+</ul>
+<p>Automatische Downloadfälligkeiten werden durch das System verwaltet:</p>
+<p><img alt="Fälligkeitsauswertung Personal" src="/assets/screenshots/de/deadlines.png" />
+<em>Abbildung: Filterbare Fälligkeitsauswertung für Personal.</em></p>
+<ul>
+<li>aktuelle Fahrerkarte: Auslesedatum + 28 Tage;</li>
+<li>per FIN zugeordnete Fahrzeugeinheit: Auslesedatum + 90 Tage.</li>
+</ul>
+<p>Das Auslesedatum stammt aus einem gültigen <code>C_YYYYMMDD_HHmm...</code>-/<code>M_YYYYMMDD_HHmm...</code>-Namen, ersatzweise aus UTC-Quelldatei-, Download- und Archivzeit. Automatische Fälligkeiten sind nicht manuell verschieb-/erledigbar. Die Tachographenkalibrierung bleibt eine separate Fahrzeugfälligkeit.</p>
+<h2 id="10-fuhrerscheinkontrolle-und-rfid">10. Führerscheinkontrolle und RFID<a class="headerlink" href="#10-fuhrerscheinkontrolle-und-rfid" title="Permanent link">&para;</a></h2>
+<p>Der Personalbereich bietet FSK-Auswertung, Kontrollhistorie und RFID-Prüfliste. Das Standardintervall beträgt 28 Tage. Erfolgreiche PC/SC-, Terminal-CSV- und aufgelöste mobile Kontrollen aktualisieren über denselben Service genau eine verwaltete FSK-Fälligkeit. Die RFID-Zuordnung allein ist keine Kontrolle.</p>
+<p><img alt="Auswertung der Führerscheinkontrollen" src="/assets/screenshots/de/license-check-evaluation.png" />
+<em>Abbildung: Termin- und Statusauswertung der Führerscheinkontrollen.</em></p>
+<p>Unbekannte Terminal-UIDs verbleiben als Klärfall. Eine Zuordnung erzeugt die wirksame Kontrolle; Verwerfen benötigt einen Grund und erzeugt keine dauerhafte RFID-Verknüpfung.</p>
+<h2 id="11-benachrichtigungen">11. Benachrichtigungen<a class="headerlink" href="#11-benachrichtigungen" title="Permanent link">&para;</a></h2>
+<p>Unter <strong>Administration → Benachrichtigungen</strong> finden Sie SMTP, Verantwortliche, Regeln/Vorlagen und Versandprotokoll. Bis zum getesteten SMTP-Zugang, vorhandenen Empfängern und der ausdrücklichen Aktivierung bleibt der Versand deaktiviert.</p>
+<p><img alt="Benachrichtigungsregeln und Vorlagen" src="/assets/screenshots/de/notifications.png" />
+<em>Abbildung: Benachrichtigungsregeln, Vorlagen und Zeitpläne.</em></p>
+<p>Standardregeln umfassen Wocheninformation, tägliche Erinnerung ab zehn Tagen, dringende Erinnerung ab drei Tagen, Überfälligwarnung und täglichen Verantwortlichenbericht. Regeln können mit Berechtigung vorgeprüft oder manuell versendet werden.</p>
+<h2 id="12-kosten-gutschriften-und-fremdrechnungen">12. Kosten, Gutschriften und Fremdrechnungen<a class="headerlink" href="#12-kosten-gutschriften-und-fremdrechnungen" title="Permanent link">&para;</a></h2>
+<h3 id="direkte-fahrzeugkosten">Direkte Fahrzeugkosten<a class="headerlink" href="#direkte-fahrzeugkosten" title="Permanent link">&para;</a></h3>
+<p>Öffnen Sie Fahrzeugakte → <strong>Kosten/Gutschriften</strong>. Wählen Sie Kostenart und Typ und erfassen Sie Belegdatum, Netto und Steuer. Beträge werden centgenau gespeichert und rechtsbündig dargestellt. Direkte Positionen können je Richtlinie auch ohne Originalbeleg geprüft/gebucht werden.</p>
+<p><img alt="Lieferantenstammliste" src="/assets/screenshots/de/suppliers.png" />
+<em>Abbildung: Lieferantenstammdaten für Finanzbelege.</em></p>
+<h3 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h3>
+<p>Öffnen Sie <strong>Fuhrpark → Fremdrechnungen</strong> und per Doppelklick einen eigenen Arbeitstab.</p>
+<p><img alt="Arbeitsbereich Fremdrechnungen" src="/assets/screenshots/de/foreign-invoices.png" />
+<em>Abbildung: Fremdrechnungsliste und Einstieg in den Arbeitstab.</em></p>
+<pre class="mermaid"><code>flowchart LR
+    A[Entwurfskopf anlegen] --&gt; B[Fahrzeugpositionen erfassen]
+    B --&gt; C[Originalbelege hinzufügen]
+    C --&gt; D[Cloud-Hash verifiziert]
+    D --&gt; E[Summen prüfen]
+    E --&gt; F[Buchen]
+    F --&gt; G[FiBu-Export per REST oder CSV/ZIP]</code></pre>
+<p>Die Statuszeile vergleicht Gesamtbrutto, Splitbetrag und Differenz. Null ist grün; jede Centabweichung rot und sperrt die Prüfung. Rechnungspositionen übernehmen Belegdatum als Beleg-/Gültigkeitsdatum und sind immer variabel. Gebuchte Datensätze sind unveränderlich; Korrekturen erfolgen per Storno oder verknüpfter Gutschrift.</p>
+<h2 id="13-audit-berichte-und-logs">13. Audit, Berichte und Logs<a class="headerlink" href="#13-audit-berichte-und-logs" title="Permanent link">&para;</a></h2>
+<p>Das globale Audit unter <strong>Administration → Audit</strong> vereinigt Geräte-, Tachodaten- und Fuhrparkereignisse. Filter stehen nach Datum, Benutzer, Aktion und Text zur Verfügung. Doppelklick öffnet das aktuell zugehörige Fachobjekt, wenn die stabile ID auflösbar ist. Navigation wird nicht auditiert.</p>
+<p><img alt="Globales Audit-Log" src="/assets/screenshots/de/audit.png" />
+<em>Abbildung: Globales Audit-Log mit objektbezogener Navigation.</em></p>
+<p>Fälligkeits- und Auswertungslisten unterstützen Vorschau, Systemdruck und PDF. Ausgegeben werden sichtbare gefilterte Zeilen/Spalten.</p>
+<p><strong>Administration → Logs</strong> zeigt <code>app.log</code>, REST-Logs und native Crashdiagnose. Technische Logtexte sind unabhängig von der UI-Sprache Englisch.</p>
+<h2 id="14-systray-und-beenden">14. Systray und Beenden<a class="headerlink" href="#14-systray-und-beenden" title="Permanent link">&para;</a></h2>
+<p>Das Schließen des Hauptfensters lässt Hintergrunddienste üblicherweise im Systray weiterlaufen. Über das Traymenü wird die Oberfläche wiederhergestellt. <strong>System → Anwendung und Dienste beenden</strong> beziehungsweise die gleichnamige Trayaktion führt den sauberen Shutdown von Scheduler, REST-API, Benachrichtigung, Backup und Logging aus.</p>
+<h2 id="15-fehlerbehebung">15. Fehlerbehebung<a class="headerlink" href="#15-fehlerbehebung" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Maßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datei quarantänisiert</td>
+<td>Details/Signaturen öffnen; fehlende Kryptografie/Trustdaten installieren oder Quelle prüfen. Status nicht manuell ändern.</td>
+</tr>
+<tr>
+<td>Backup bleibt ausstehend</td>
+<td>aktives Ziel testen, Quota/Authentifizierung prüfen und <strong>Jetzt sichern</strong> verwenden.</td>
+</tr>
+<tr>
+<td>Kein PC/SC-Leser</td>
+<td>Treiber installieren, Leser neu verbinden und Dialog neu öffnen.</td>
+</tr>
+<tr>
+<td>Kein C-/M-Vergleich</td>
+<td>Kartennummer, Generation, UTC-Zeitraum und gültigen Signaturstatus prüfen.</td>
+</tr>
+<tr>
+<td>Fremdrechnung nicht prüfbar</td>
+<td>Splitdifferenz auflösen und mindestens einen cloudverifizierten Originalbeleg sicherstellen.</td>
+</tr>
+<tr>
+<td>UI-Auftrag fehlgeschlagen</td>
+<td><strong>Erneut versuchen</strong>, danach <code>app.log</code> anhand Job-/Request-ID prüfen.</td>
+</tr>
+</tbody>
+</table>
+<p>Für Wiederherstellung und Betrieb siehe <a href="../administrator-integration-guide/">Administratoren- und Integratorenhandbuch</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
