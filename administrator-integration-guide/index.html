@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/administrator-integration-guide/">
+      
       
         <link rel="prev" href="../guide/position-maps/">
       
@@ -1433,7 +1435,7 @@
 </ol>
 <h2 id="2-users-roles-and-permissions">2. Users, roles and permissions<a class="headerlink" href="#2-users-roles-and-permissions" title="Permanent link">&para;</a></h2>
 <p>Passwords use Argon2id. Five failed attempts lock an account for 15 minutes. The last active administrator cannot be deactivated.</p>
-<p><img alt="User administration" src="/assets/screenshots/en/users.png" />
+<p><img alt="User administration" src="../assets/screenshots/users.png" />
 <em>Figure: User, role, language and account administration.</em></p>
 <table>
 <thead>
@@ -1466,7 +1468,7 @@
 <h2 id="3-languages-regions-and-utc">3. Languages, regions and UTC<a class="headerlink" href="#3-languages-regions-and-utc" title="Permanent link">&para;</a></h2>
 <p>New deployments default to English and <code>en-GB</code>. User profiles may select any registered language/region. Date pickers, numbers and currency follow the region. Database/API dates remain ISO. All tachograph timestamps, comparisons, day/week boundaries and compliance calculations currently remain UTC; locale must not introduce a time-zone conversion.</p>
 <p>Translation catalogues live under <code>translations/&lt;language&gt;.json</code>. English is the fallback catalogue. Missing production keys log <code>I18N_MISSING</code> and fail the catalogue parity test.</p>
-<p><img alt="Application settings" src="/assets/screenshots/en/settings.png" />
+<p><img alt="Application settings" src="../assets/screenshots/settings.png" />
 <em>Figure: Administrative application settings.</em></p>
 <h2 id="4-sqlite-and-migrations">4. SQLite and migrations<a class="headerlink" href="#4-sqlite-and-migrations" title="Permanent link">&para;</a></h2>
 <p>Migrations run once at startup before repositories serve UI jobs. Use SQLite WAL/default locking as configured by the application; never copy a live database file for backup.</p>
@@ -1502,7 +1504,7 @@
 <h2 id="7-audit-and-diagnostics">7. Audit and diagnostics<a class="headerlink" href="#7-audit-and-diagnostics" title="Permanent link">&para;</a></h2>
 <p>The global audit normalises device, tachograph, fleet, finance, user and backup events. Each entry should include UTC time, actor/user ID, role, origin, action, object type/ID, result, correlation ID and sanitised before/after data. Passwords, tokens, API keys and binary originals are prohibited.</p>
 <p><code>app.log</code> is the complete application log. It includes scheduler, downloads, imports, jobs, cache timings, backup and service errors. Technical messages are always English. <code>native_crash.log</code> is written by <code>faulthandler</code> for process-level failures after diagnostics initialisation; failures before Python startup cannot be captured there.</p>
-<p><img alt="Global audit and diagnostic context" src="/assets/screenshots/en/audit.png" />
+<p><img alt="Global audit and diagnostic context" src="../assets/screenshots/audit.png" />
 <em>Figure: Audit evidence used together with technical diagnostics.</em></p>
 <p>The UI heartbeat logs <code>UI_STALL</code> if the main event loop is blocked for more than one second. A recovery entry records the duration. Use job/request/correlation IDs to join UI, service and audit events.</p>
 <h2 id="8-ui-job-operation">8. UI job operation<a class="headerlink" href="#8-ui-job-operation" title="Permanent link">&para;</a></h2>
@@ -1512,7 +1514,7 @@
 <p>PC/SC reads UID with <code>FF CA 00 00 00</code>, normalises to uppercase hexadecimal and assigns at most one active UID per person. A UID cannot be active for multiple persons.</p>
 <p>Terminal CSV fields are <code>UID;DD.MM.YYYY;HH:mm:ss;hostname</code>. File- and row-level fingerprints provide idempotency. Unknown/inactive/time-incompatible UIDs remain clarification records.</p>
 <p>SMTP supports STARTTLS or TLS. Passwords are DPAPI-protected. Default rules produce driver reminders and a daily fleet-responsible report. A desktop/tray process must be running for scheduled sends; missed runs are caught up only on the same day. Outbox idempotency prevents duplicate automatic mail per rule/object/recipient/day.</p>
-<p><img alt="Notification administration" src="/assets/screenshots/en/notifications.png" />
+<p><img alt="Notification administration" src="../assets/screenshots/notifications.png" />
 <em>Figure: SMTP recipients, rules and send-log administration.</em></p>
 <h2 id="10-finance-and-document-vault">10. Finance and document vault<a class="headerlink" href="#10-finance-and-document-vault" title="Permanent link">&para;</a></h2>
 <p>Financial data is stored in cents and EUR. Foreign invoices require exact header/position totals and at least one cloud-verified original before verification. Booking makes business records immutable; corrections use cancellations or credits.</p>
@@ -1520,7 +1522,7 @@
 <p>Accounting delivery is available through <a href="../api/accounting-rest/">REST</a> and <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Only booked records are exportable. REST uses a persistent idempotent outbox.</p>
 <h2 id="11-backup-and-disaster-recovery">11. Backup and disaster recovery<a class="headerlink" href="#11-backup-and-disaster-recovery" title="Permanent link">&para;</a></h2>
 <p>Exactly one Google Drive or HTTPS WebDAV target may be active. Client-side AES-256-GCM is optional and preselected. Activation requires exporting and confirming a recovery key.</p>
-<p><img alt="Backup target, queue and restore administration" src="/assets/screenshots/en/backup.png" />
+<p><img alt="Backup target, queue and restore administration" src="../assets/screenshots/backup.png" />
 <em>Figure: Cloud target, backup queue and restore administration.</em></p>
 <p>Archives are backed up immediately; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD cloud objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Cloud backup and restore</a>.</p>
 <p>At least quarterly, restore a database snapshot and representative C/M objects to an isolated test directory, verify hashes/integrity and document the result.</p>

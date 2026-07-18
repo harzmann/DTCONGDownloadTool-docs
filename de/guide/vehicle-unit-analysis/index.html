@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/vehicle-unit-analysis/">
+      
       
         <link rel="prev" href="../drivercard-analysis/">
       
@@ -1270,49 +1272,49 @@
 <h1 id="massenspeicher-auswertung">Massenspeicher-Auswertung<a class="headerlink" href="#massenspeicher-auswertung" title="Permanent link">&para;</a></h1>
 <p>Die Massenspeicher-Auswertung verwendet genau eine ausgewählte M-Datei als Basis. Fahrer, Slots und Kartensitzungen bleiben getrennt; C-Dateien ergänzen nur den Vergleich innerhalb nachweisbarer Steckzeiten.</p>
 <h2 id="ubersicht">Übersicht<a class="headerlink" href="#ubersicht" title="Permanent link">&para;</a></h2>
-<p><img alt="Übersicht einer M-Datei" src="/assets/screenshots/de/vehicle-unit-overview.png" />
+<p><img alt="Übersicht einer M-Datei" src="../../assets/screenshots/vehicle-unit-overview.png" />
 <em>Abbildung: Generation, Signatur, Fahrzeugidentität, Datenzeitraum und Parserwarnungen.</em></p>
 <p>Warnungen benennen optionale oder unvollständige Downloadsektionen. Fehlt beispielsweise die sekundengenaue Geschwindigkeit, bleibt die vorhandene M-Datei dennoch unverändert archiviert.</p>
 <h2 id="fahrer">Fahrer<a class="headerlink" href="#fahrer" title="Permanent link">&para;</a></h2>
-<p><img alt="Fahrersitzungen der M-Datei" src="/assets/screenshots/de/vehicle-unit-drivers.png" />
+<p><img alt="Fahrersitzungen der M-Datei" src="../../assets/screenshots/vehicle-unit-drivers.png" />
 <em>Abbildung: Einsteck-/Entnahmezeit, Slot, Karte, Generation und Name.</em></p>
 <p>„Ohne zugeordnete Fahrerkarte“ bedeutet, dass für Slot und Zeitraum kein verwertbares Kartensteckintervall ermittelt wurde. Es bedeutet nicht lediglich, dass keine C-Datei archiviert ist; der Tooltip in den Grafiken erläutert die Unterscheidung.</p>
 <h2 id="aktivitaten">Aktivitäten<a class="headerlink" href="#aktivitaten" title="Permanent link">&para;</a></h2>
-<p><img alt="Aktivitäten der M-Datei" src="/assets/screenshots/de/vehicle-unit-activities.png" />
+<p><img alt="Aktivitäten der M-Datei" src="../../assets/screenshots/vehicle-unit-activities.png" />
 <em>Abbildung: Fahrzeugbezogene Aktivitätsintervalle mit Datenlage.</em></p>
 <p>Fahrerwechsel und Teamfahrt werden nach Kartennummer, Generation und Slot getrennt. Zwei parallele Fahreraktivitäten werden niemals zu einer Fahrerzeile verschmolzen.</p>
 <h2 id="tagesgrafik">Tagesgrafik<a class="headerlink" href="#tagesgrafik" title="Permanent link">&para;</a></h2>
-<p><img alt="Tagesgrafik der M-Datei" src="/assets/screenshots/de/vehicle-unit-daily-chart.png" />
+<p><img alt="Tagesgrafik der M-Datei" src="../../assets/screenshots/vehicle-unit-daily-chart.png" />
 <em>Abbildung: Fahrergruppen, Steckzeit und Aktivitätsspuren eines UTC-Tages.</em></p>
 <p>Die Navigation ist ausschließlich an das Datum gekoppelt. Fahrername und Kartennummer stehen in den Gruppen. Tooltips auf unbekannten Kartengruppen erklären deren Datenbasis.</p>
 <h2 id="wochengrafik">Wochengrafik<a class="headerlink" href="#wochengrafik" title="Permanent link">&para;</a></h2>
-<p><img alt="Wochengrafik der M-Datei" src="/assets/screenshots/de/vehicle-unit-weekly-chart.png" />
+<p><img alt="Wochengrafik der M-Datei" src="../../assets/screenshots/vehicle-unit-weekly-chart.png" />
 <em>Abbildung: Eine ISO-Woche mit getrennten Fahrer-Panels.</em></p>
 <p>Jede Kalenderwoche erscheint einmal. Mehrere Steckzeiten desselben Fahrers werden innerhalb seines Wochenpanels zusammengeführt; Fahrerwechsel und Teamfahrer bleiben getrennt.</p>
 <h2 id="ereignisse-und-storungen">Ereignisse und Störungen<a class="headerlink" href="#ereignisse-und-storungen" title="Permanent link">&para;</a></h2>
-<p><img alt="Ereignisse und Störungen der M-Datei" src="/assets/screenshots/de/vehicle-unit-events-faults.png" />
+<p><img alt="Ereignisse und Störungen der M-Datei" src="../../assets/screenshots/vehicle-unit-events-faults.png" />
 <em>Abbildung: Records mit Code, Klartextmeldung, Beginn, Ende und Sektion.</em></p>
 <h2 id="geschwindigkeit">Geschwindigkeit<a class="headerlink" href="#geschwindigkeit" title="Permanent link">&para;</a></h2>
-<p><img alt="Geschwindigkeitsdaten der M-Datei" src="/assets/screenshots/de/vehicle-unit-speed.png" />
+<p><img alt="Geschwindigkeitsdaten der M-Datei" src="../../assets/screenshots/vehicle-unit-speed.png" />
 <em>Abbildung: Sekundengenaue Geschwindigkeit oder dokumentierter Leerzustand.</em></p>
 <p>Der Tab zeigt ausschließlich tatsächlich enthaltene Geschwindigkeitsrecords. Ein Leerzustand wird nicht durch berechnete oder künstliche Daten ersetzt.</p>
 <h2 id="technische-daten">Technische Daten<a class="headerlink" href="#technische-daten" title="Permanent link">&para;</a></h2>
-<p><img alt="Technische Daten der Fahrzeugeinheit" src="/assets/screenshots/de/vehicle-unit-technical-data.png" />
+<p><img alt="Technische Daten der Fahrzeugeinheit" src="../../assets/screenshots/vehicle-unit-technical-data.png" />
 <em>Abbildung: Verständlicher Feldbaum für Hersteller, Gerät, Software und Zulassung.</em></p>
 <p>Der Baum erhält den Bezug zur Downloadsektion. Unbekannte optionale Records bleiben als begrenzter Rohbezug erhalten.</p>
 <h2 id="kalibrierungen">Kalibrierungen<a class="headerlink" href="#kalibrierungen" title="Permanent link">&para;</a></h2>
-<p><img alt="Kalibrierungen der Fahrzeugeinheit" src="/assets/screenshots/de/vehicle-unit-calibrations.png" />
+<p><img alt="Kalibrierungen der Fahrzeugeinheit" src="../../assets/screenshots/vehicle-unit-calibrations.png" />
 <em>Abbildung: Kalibrierzeit, nächste Kalibrierung, Zweck, Werkstatt, FIN und Kennzeichen.</em></p>
 <p>Bei der Fahrzeuganlage verwendet FLEET Mira den chronologisch neuesten geeigneten Datensatz für die separate Kalibrierungsfälligkeit.</p>
 <h2 id="positionen-grenzen-und-laden">Positionen, Grenzen und Laden<a class="headerlink" href="#positionen-grenzen-und-laden" title="Permanent link">&para;</a></h2>
-<p><img alt="Positionen, Grenzübertritte und Ladevorgänge" src="/assets/screenshots/de/vehicle-unit-positions-borders-loading.png" />
+<p><img alt="Positionen, Grenzübertritte und Ladevorgänge" src="../../assets/screenshots/vehicle-unit-positions-borders-loading.png" />
 <em>Abbildung: Zeit- und Ortsrecords der ausgewählten M-Datei.</em></p>
 <p>Die Liste kombiniert GNSS-Positionen, Grenzübertritte sowie Be-/Entladevorgänge, ohne ihre fachliche Art zu verlieren. Koordinierte Records können gemeinsam auf der Karte geöffnet werden.</p>
 <h2 id="signaturen">Signaturen<a class="headerlink" href="#signaturen" title="Permanent link">&para;</a></h2>
-<p><img alt="Signaturprüfung der M-Datei" src="/assets/screenshots/de/vehicle-unit-signatures.png" />
+<p><img alt="Signaturprüfung der M-Datei" src="../../assets/screenshots/vehicle-unit-signatures.png" />
 <em>Abbildung: Einzelprüfung der signierten Downloadsektionen.</em></p>
 <h2 id="verstoe">Verstöße<a class="headerlink" href="#verstoe" title="Permanent link">&para;</a></h2>
-<p><img alt="Technische Verstoßvorprüfung der M-Datei" src="/assets/screenshots/de/vehicle-unit-violations.png" />
+<p><img alt="Technische Verstoßvorprüfung der M-Datei" src="../../assets/screenshots/vehicle-unit-violations.png" />
 <em>Abbildung: Fahrergetrennte Vorprüfung und Hinweise zur Datenabdeckung.</em></p>
 <p>Im Modus <strong>Ausgewählte M-Datei</strong> werden nur Fahrten dieses Fahrzeugs geprüft. <strong>Vollständige Fahrerhistorie</strong> kann weitere vertrauenswürdige C-/M-Archive ergänzen. Unbekannte Kartenintervalle werden als Hinweis, nicht als personenbezogener Verstoß behandelt.</p>
 

@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/vehicle-unit-analysis/">
+      
       
         <link rel="prev" href="../drivercard-analysis/">
       
@@ -1270,49 +1272,49 @@
 <h1 id="vehicle-unit-analysis">Vehicle-unit analysis<a class="headerlink" href="#vehicle-unit-analysis" title="Permanent link">&para;</a></h1>
 <p>Vehicle-unit analysis uses one selected M file as its base. Drivers, slots and card sessions remain separate; C files supplement comparison only within proven card insertion periods.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><img alt="Vehicle-unit overview" src="/assets/screenshots/en/vehicle-unit-overview.png" />
+<p><img alt="Vehicle-unit overview" src="../../assets/screenshots/vehicle-unit-overview.png" />
 <em>Figure: Generation, signature, vehicle identity, data range and parser warnings.</em></p>
 <p>Warnings identify optional or incomplete download sections. Missing second-by-second speed data, for example, does not change the preserved M file.</p>
 <h2 id="drivers">Drivers<a class="headerlink" href="#drivers" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver sessions in the M file" src="/assets/screenshots/en/vehicle-unit-drivers.png" />
+<p><img alt="Driver sessions in the M file" src="../../assets/screenshots/vehicle-unit-drivers.png" />
 <em>Figure: Insertion/withdrawal, slot, card, generation and name.</em></p>
 <p>“No assigned driver card” means no usable active card-insertion interval was found for the slot and period. It does not merely mean that a C file is absent; timeline tooltips explain this distinction.</p>
 <h2 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file activities" src="/assets/screenshots/en/vehicle-unit-activities.png" />
+<p><img alt="M-file activities" src="../../assets/screenshots/vehicle-unit-activities.png" />
 <em>Figure: Vehicle activity intervals with data availability.</em></p>
 <p>Driver changes and team driving are separated by card, generation and slot. Parallel activities from two drivers are never collapsed into one driver row.</p>
 <h2 id="day-chart">Day chart<a class="headerlink" href="#day-chart" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file day chart" src="/assets/screenshots/en/vehicle-unit-daily-chart.png" />
+<p><img alt="M-file day chart" src="../../assets/screenshots/vehicle-unit-daily-chart.png" />
 <em>Figure: Driver groups, insertion period and activity tracks for one UTC day.</em></p>
 <p>Navigation depends only on the date. Driver and card appear in group headings. Tooltips on unknown-card groups explain their evidence basis.</p>
 <h2 id="week-chart">Week chart<a class="headerlink" href="#week-chart" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file week chart" src="/assets/screenshots/en/vehicle-unit-weekly-chart.png" />
+<p><img alt="M-file week chart" src="../../assets/screenshots/vehicle-unit-weekly-chart.png" />
 <em>Figure: One ISO week with separate driver panels.</em></p>
 <p>Each calendar week appears once. Multiple sessions for the same driver are combined in that weekly panel; driver changes and team drivers stay separate.</p>
 <h2 id="events-and-faults">Events and faults<a class="headerlink" href="#events-and-faults" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file events and faults" src="/assets/screenshots/en/vehicle-unit-events-faults.png" />
+<p><img alt="M-file events and faults" src="../../assets/screenshots/vehicle-unit-events-faults.png" />
 <em>Figure: Records with code, description, start, end and section.</em></p>
 <h2 id="speed">Speed<a class="headerlink" href="#speed" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file speed data" src="/assets/screenshots/en/vehicle-unit-speed.png" />
+<p><img alt="M-file speed data" src="../../assets/screenshots/vehicle-unit-speed.png" />
 <em>Figure: Second-by-second speed or a documented empty state.</em></p>
 <p>Only speed records present in the file are shown. An empty state is never replaced by calculated or synthetic data.</p>
 <h2 id="technical-data">Technical data<a class="headerlink" href="#technical-data" title="Permanent link">&para;</a></h2>
-<p><img alt="Vehicle-unit technical data" src="/assets/screenshots/en/vehicle-unit-technical-data.png" />
+<p><img alt="Vehicle-unit technical data" src="../../assets/screenshots/vehicle-unit-technical-data.png" />
 <em>Figure: Readable field tree for manufacturer, device, software and approval.</em></p>
 <p>The tree retains its download-section reference. Unknown optional records remain available through a bounded raw reference.</p>
 <h2 id="calibrations">Calibrations<a class="headerlink" href="#calibrations" title="Permanent link">&para;</a></h2>
-<p><img alt="Vehicle-unit calibrations" src="/assets/screenshots/en/vehicle-unit-calibrations.png" />
+<p><img alt="Vehicle-unit calibrations" src="../../assets/screenshots/vehicle-unit-calibrations.png" />
 <em>Figure: Calibration time, next calibration, purpose, workshop, VIN and registration.</em></p>
 <p>When a vehicle is created, FLEET Mira uses the chronologically latest suitable record for the separate calibration deadline.</p>
 <h2 id="positions-borders-and-loading">Positions, borders and loading<a class="headerlink" href="#positions-borders-and-loading" title="Permanent link">&para;</a></h2>
-<p><img alt="Positions, border crossings and loading operations" src="/assets/screenshots/en/vehicle-unit-positions-borders-loading.png" />
+<p><img alt="Positions, border crossings and loading operations" src="../../assets/screenshots/vehicle-unit-positions-borders-loading.png" />
 <em>Figure: Time and location records from the selected M file.</em></p>
 <p>The list combines GNSS positions, border crossings and loading/unloading without losing the record type. Coordinate-bearing rows can be opened together on the map.</p>
 <h2 id="signatures">Signatures<a class="headerlink" href="#signatures" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file signature verification" src="/assets/screenshots/en/vehicle-unit-signatures.png" />
+<p><img alt="M-file signature verification" src="../../assets/screenshots/vehicle-unit-signatures.png" />
 <em>Figure: Verification results for signed download sections.</em></p>
 <h2 id="violations">Violations<a class="headerlink" href="#violations" title="Permanent link">&para;</a></h2>
-<p><img alt="M-file technical compliance pre-check" src="/assets/screenshots/en/vehicle-unit-violations.png" />
+<p><img alt="M-file technical compliance pre-check" src="../../assets/screenshots/vehicle-unit-violations.png" />
 <em>Figure: Per-driver pre-check and data-coverage notes.</em></p>
 <p><strong>Selected M file</strong> checks trips on this vehicle only. <strong>Full driver history</strong> may supplement other trusted C/M archives. Unknown-card intervals are reported as notes, not personal violations.</p>
 

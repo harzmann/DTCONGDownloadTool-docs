@@ -1,213 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>None./</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/"/>
     </url>
     <url>
-        <loc>Noneadministrator-integration-guide/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/administrator-integration-guide/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneadministrator-integration-guide/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/administrator-integration-guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/administrator-integration-guide/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/administrator-integration-guide/"/>
     </url>
     <url>
-        <loc>Noneproduct-overview/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/product-overview/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneproduct-overview/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/product-overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/product-overview/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/product-overview/"/>
     </url>
     <url>
-        <loc>Noneuser-manual/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/user-manual/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneuser-manual/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/user-manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/user-manual/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/user-manual/"/>
     </url>
     <url>
-        <loc>Noneapi/accounting-rest/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/api/accounting-rest/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi/accounting-rest/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/api/accounting-rest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/accounting-rest/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/accounting-rest/"/>
     </url>
     <url>
-        <loc>Noneapi/drivercard-rest/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/api/drivercard-rest/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi/drivercard-rest/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/api/drivercard-rest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/drivercard-rest/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/drivercard-rest/"/>
     </url>
     <url>
-        <loc>Noneguide/drivercard-analysis/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/drivercard-analysis/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/drivercard-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/drivercard-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/drivercard-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/drivercard-analysis/"/>
     </url>
     <url>
-        <loc>Noneguide/foreign-invoices/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/foreign-invoices/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/foreign-invoices/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/foreign-invoices/"/>
     </url>
     <url>
-        <loc>Noneguide/position-maps/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/position-maps/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/position-maps/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/position-maps/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/position-maps/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/position-maps/"/>
     </url>
     <url>
-        <loc>Noneguide/tachodata-overviews/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/tachodata-overviews/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/tachodata-overviews/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/tachodata-overviews/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/tachodata-overviews/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/tachodata-overviews/"/>
     </url>
     <url>
-        <loc>Noneguide/vehicle-unit-analysis/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/vehicle-unit-analysis/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/vehicle-unit-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/vehicle-unit-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/vehicle-unit-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/vehicle-unit-analysis/"/>
     </url>
     <url>
-        <loc>Noneintegration/accounting-csv-zip/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/integration/accounting-csv-zip/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneintegration/accounting-csv-zip/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/integration/accounting-csv-zip/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/integration/accounting-csv-zip/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/accounting-csv-zip/"/>
     </url>
     <url>
-        <loc>Noneintegration/drivercard-parser/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/integration/drivercard-parser/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneintegration/drivercard-parser/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/integration/drivercard-parser/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/integration/drivercard-parser/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/drivercard-parser/"/>
     </url>
     <url>
-        <loc>Noneoperations/cloud-backup-restore/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/cloud-backup-restore/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneoperations/cloud-backup-restore/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/operations/cloud-backup-restore/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/cloud-backup-restore/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/cloud-backup-restore/"/>
     </url>
     <url>
-        <loc>Noneoperations/documentation-deployment/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneoperations/documentation-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/operations/documentation-deployment/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/"/>
     </url>
     <url>
-        <loc>Nonede/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/"/>
     </url>
     <url>
-        <loc>Nonede/administrator-integration-guide/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/administrator-integration-guide/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/administrator-integration-guide/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneadministrator-integration-guide/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/administrator-integration-guide/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/administrator-integration-guide/"/>
     </url>
     <url>
-        <loc>Nonede/product-overview/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/product-overview/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/product-overview/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneproduct-overview/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/product-overview/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/product-overview/"/>
     </url>
     <url>
-        <loc>Nonede/user-manual/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/user-manual/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/user-manual/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneuser-manual/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/user-manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/user-manual/"/>
     </url>
     <url>
-        <loc>Nonede/api/accounting-rest/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/accounting-rest/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/api/accounting-rest/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi/accounting-rest/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/accounting-rest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/accounting-rest/"/>
     </url>
     <url>
-        <loc>Nonede/api/drivercard-rest/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/drivercard-rest/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/api/drivercard-rest/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi/drivercard-rest/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/api/drivercard-rest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/drivercard-rest/"/>
     </url>
     <url>
-        <loc>Nonede/guide/drivercard-analysis/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/drivercard-analysis/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/drivercard-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/drivercard-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/drivercard-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/drivercard-analysis/"/>
     </url>
     <url>
-        <loc>Nonede/guide/foreign-invoices/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/foreign-invoices/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/foreign-invoices/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/foreign-invoices/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/foreign-invoices/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/"/>
     </url>
     <url>
-        <loc>Nonede/guide/position-maps/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/position-maps/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/position-maps/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/position-maps/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/position-maps/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/position-maps/"/>
     </url>
     <url>
-        <loc>Nonede/guide/tachodata-overviews/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/tachodata-overviews/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/tachodata-overviews/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/tachodata-overviews/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/tachodata-overviews/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/tachodata-overviews/"/>
     </url>
     <url>
-        <loc>Nonede/guide/vehicle-unit-analysis/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/vehicle-unit-analysis/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/guide/vehicle-unit-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguide/vehicle-unit-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/vehicle-unit-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/vehicle-unit-analysis/"/>
     </url>
     <url>
-        <loc>Nonede/integration/accounting-csv-zip/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/accounting-csv-zip/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/integration/accounting-csv-zip/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneintegration/accounting-csv-zip/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/accounting-csv-zip/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/integration/accounting-csv-zip/"/>
     </url>
     <url>
-        <loc>Nonede/integration/drivercard-parser/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/drivercard-parser/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/integration/drivercard-parser/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneintegration/drivercard-parser/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/drivercard-parser/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/integration/drivercard-parser/"/>
     </url>
     <url>
-        <loc>Nonede/operations/cloud-backup-restore/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/cloud-backup-restore/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/operations/cloud-backup-restore/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneoperations/cloud-backup-restore/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/cloud-backup-restore/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/cloud-backup-restore/"/>
     </url>
     <url>
-        <loc>Nonede/operations/documentation-deployment/</loc>
-        <lastmod>2026-07-17</lastmod>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/</loc>
+        <lastmod>2026-07-18</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="Nonede/operations/documentation-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneoperations/documentation-deployment/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/"/>
     </url>
 </urlset>

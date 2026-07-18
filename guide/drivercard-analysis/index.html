@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/drivercard-analysis/">
+      
       
         <link rel="prev" href="../tachodata-overviews/">
       
@@ -1226,43 +1228,43 @@
 <h1 id="driver-card-analysis">Driver-card analysis<a class="headerlink" href="#driver-card-analysis" title="Permanent link">&para;</a></h1>
 <p>The analysis is always bound to one selected C file and archive ID. M data is comparison evidence only. Quarantined files remain viewable but cannot feed an effective combined evaluation.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card overview" src="/assets/screenshots/en/drivercard-overview.png" />
+<p><img alt="Driver-card overview" src="../../assets/screenshots/drivercard-overview.png" />
 <em>Figure: Card identity, validity, authorities, generation and data range.</em></p>
 <p>The header identifies the anonymised driver, card and file. A quarantine banner explains missing or invalid signature verification. Empty values mean that the selected file does not contain the information or it could not be read safely.</p>
 <h2 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card activity intervals" src="/assets/screenshots/en/drivercard-activities.png" />
+<p><img alt="Driver-card activity intervals" src="../../assets/screenshots/drivercard-activities.png" />
 <em>Figure: Sortable UTC intervals with C/M availability.</em></p>
 <p><strong>Data availability</strong> filters all intervals, C and M available, C only or M only. C remains the base. Rows include start, end, duration, activity, card, slot and counterpart archives; double-click and context actions open unambiguous sources.</p>
 <h2 id="day-chart">Day chart<a class="headerlink" href="#day-chart" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card day chart" src="/assets/screenshots/en/drivercard-daily-chart.png" />
+<p><img alt="Driver-card day chart" src="../../assets/screenshots/drivercard-daily-chart.png" />
 <em>Figure: One UTC day with driving, work, availability and rest/break.</em></p>
 <p>The date, arrow buttons and <strong>Go to</strong> change the visible day. The availability track indicates C/M coverage, while activity tracks show business intervals. The detail grid remains sortable.</p>
 <h2 id="week-chart">Week chart<a class="headerlink" href="#week-chart" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card week chart" src="/assets/screenshots/en/drivercard-weekly-chart.png" />
+<p><img alt="Driver-card week chart" src="../../assets/screenshots/drivercard-weekly-chart.png" />
 <em>Figure: ISO week from Monday to Sunday.</em></p>
 <p>Seven UTC days are shown together. Empty days remain visible and are not interpreted as activity. Totals and tooltips refer to the selected file and visible period.</p>
 <h2 id="ddd-week-view-web">DDD week view Web<a class="headerlink" href="#ddd-week-view-web" title="Permanent link">&para;</a></h2>
-<p><img alt="In-app hand-off to DDD week view Web" src="/assets/screenshots/en/drivercard-ddd-week-web.png" />
+<p><img alt="In-app hand-off to DDD week view Web" src="../../assets/screenshots/drivercard-ddd-week-web.png" />
 <em>Figure: Secure in-app entry point to the browser-based week view.</em></p>
 <p>The page starts the local web view through a tokenised hand-off; local archive paths do not appear in its URL. Documentation deliberately does not load a signed original DDD into an external page.</p>
 <h2 id="events-and-faults">Events and faults<a class="headerlink" href="#events-and-faults" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card events and faults" src="/assets/screenshots/en/drivercard-events-faults.png" />
+<p><img alt="Driver-card events and faults" src="../../assets/screenshots/drivercard-events-faults.png" />
 <em>Figure: Technical event and fault records.</em></p>
 <p>Codes, periods, vehicles and descriptions come from the selected card. An empty page means no matching record exists; it does not mean records were removed.</p>
 <h2 id="vehicles-used">Vehicles used<a class="headerlink" href="#vehicles-used" title="Permanent link">&para;</a></h2>
-<p><img alt="Vehicles used from the driver card" src="/assets/screenshots/en/drivercard-used-vehicles.png" />
+<p><img alt="Vehicles used from the driver card" src="../../assets/screenshots/drivercard-used-vehicles.png" />
 <em>Figure: Vehicle references with usage range and odometer values.</em></p>
 <p>Only vehicles reported by this C file are listed. A vehicle-record link is offered only for an unambiguous master-data match.</p>
 <h2 id="positions">Positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card position list" src="/assets/screenshots/en/drivercard-positions.png" />
+<p><img alt="Driver-card position list" src="../../assets/screenshots/drivercard-positions.png" />
 <em>Figure: PLACE and GNSS records with nation, region and coordinates.</em></p>
 <p><strong>Open position map</strong> displays visible coordinates. Nation and region are shown as readable text plus technical value where possible. See <a href="../position-maps/">Position maps</a>.</p>
 <h2 id="violations">Violations<a class="headerlink" href="#violations" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card technical compliance pre-check" src="/assets/screenshots/en/drivercard-violations.png" />
+<p><img alt="Driver-card technical compliance pre-check" src="../../assets/screenshots/drivercard-violations.png" />
 <em>Figure: Reproducible technical pre-check for the selected C file.</em></p>
 <p>The list explains rule, article, actual/target value, deviation and legal basis. It does not replace legal assessment of national exemptions, AETR or Article 12 cases. Saving a snapshot requires <code>archive.manage</code>; export requires <code>archive.export</code>.</p>
 <h2 id="signatures">Signatures<a class="headerlink" href="#signatures" title="Permanent link">&para;</a></h2>
-<p><img alt="Driver-card signature verification" src="/assets/screenshots/en/drivercard-signatures.png" />
+<p><img alt="Driver-card signature verification" src="../../assets/screenshots/drivercard-signatures.png" />
 <em>Figure: Certificate chain and signed-EF results.</em></p>
 <p><code>VALID</code> confirms a verified chain and all present signatures. <code>INVALID</code> and <code>UNVERIFIABLE</code> quarantine the file; the unchanged archive object remains available for evidence-preserving export.</p>
 

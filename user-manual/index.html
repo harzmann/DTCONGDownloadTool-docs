@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/user-manual/">
+      
       
         <link rel="prev" href="../product-overview/">
       
@@ -1633,14 +1635,14 @@
 <p>These guides use a temporary anonymised copy of the development database. Activities, timestamps, amounts and approved coordinates remain representative; person, card and vehicle identities were replaced deterministically.</p>
 <h2 id="1-sign-in-and-workspace">1. Sign-in and workspace<a class="headerlink" href="#1-sign-in-and-workspace" title="Permanent link">&para;</a></h2>
 <p>Start FLEET Mira from the installed shortcut. The splash screen is followed by the sign-in dialog. A new installation uses <code>admin</code> / <code>admin</code> once and forces a secure replacement password.</p>
-<p><img alt="FLEET Mira splash screen" src="/assets/screenshots/en/splash.png" />
+<p><img alt="FLEET Mira splash screen" src="../assets/screenshots/splash.png" />
 <em>Figure: FLEET Mira splash screen before sign-in.</em></p>
-<p><img alt="FLEET Mira sign-in" src="/assets/screenshots/en/login.png" />
+<p><img alt="FLEET Mira sign-in" src="../assets/screenshots/login.png" />
 <em>Figure: Local user sign-in.</em></p>
 <p>After every sign-in, the <strong>Dashboard</strong> is the active page. The top navigation switches between the five main areas. Long operations show a non-modal loading status and may be cancelled; other tabs remain usable.</p>
 <h3 id="user-profile">User profile<a class="headerlink" href="#user-profile" title="Permanent link">&para;</a></h3>
 <p>Open <strong>User → My profile</strong> to change display name, email, language and region. Language or region changes take effect after the next sign-in. Table layouts, filters, splitter positions and column order are stored per user.</p>
-<p><img alt="User profile with language and region settings" src="/assets/screenshots/en/profile.png" />
+<p><img alt="User profile with language and region settings" src="../assets/screenshots/profile.png" />
 <em>Figure: User-specific language, region and profile settings.</em></p>
 <h3 id="tables-and-context-menus">Tables and context menus<a class="headerlink" href="#tables-and-context-menus" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1652,7 +1654,7 @@
 </ul>
 <h2 id="2-dashboard">2. Dashboard<a class="headerlink" href="#2-dashboard" title="Permanent link">&para;</a></h2>
 <p>The six photo-backed cards provide direct navigation:</p>
-<p><img alt="FLEET Mira dashboard with anonymised demonstration data" src="/assets/screenshots/en/dashboard.png" />
+<p><img alt="FLEET Mira dashboard with anonymised demonstration data" src="../assets/screenshots/dashboard.png" />
 <em>Figure: Dashboard with anonymised demonstration data and direct navigation figures.</em></p>
 <ul>
 <li><strong>FLEET Mira devices:</strong> total, online and offline devices.</li>
@@ -1663,7 +1665,7 @@
 </ul>
 <p>Click an individual figure, not only the card, to open the corresponding pre-filtered list. Select <strong>Refresh dashboard</strong> after major imports when an immediate refresh is needed.</p>
 <h2 id="3-device-management">3. Device Management<a class="headerlink" href="#3-device-management" title="Permanent link">&para;</a></h2>
-<p><img alt="Device management" src="/assets/screenshots/en/device-management.png" />
+<p><img alt="Device management" src="../assets/screenshots/device-management.png" />
 <em>Figure: Device list and device-management workspace.</em></p>
 <p>The device list can be filtered by name, tenant, site, group and status. Depending on permission, the toolbar and context menu allow you to:</p>
 <ol>
@@ -1676,14 +1678,14 @@
 <p>The lower detail pages show master data, files, status history and audit. Remote file downloads use the configured destination and never alter the archive until the normal import path processes them.</p>
 <h2 id="4-sources-and-download-tasks">4. Sources and download tasks<a class="headerlink" href="#4-sources-and-download-tasks" title="Permanent link">&para;</a></h2>
 <p>Open <strong>Administration → Sources</strong> to configure FTP or DLT API endpoints. Test the connection before assigning a source to a task. Credentials are protected and do not appear in logs.</p>
-<p><img alt="Download-source management" src="/assets/screenshots/en/sources.png" />
+<p><img alt="Download-source management" src="../assets/screenshots/sources.png" />
 <em>Figure: Administration of FTP and DLT API sources.</em></p>
 <p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
-<p><img alt="Download-task management" src="/assets/screenshots/en/tasks.png" />
+<p><img alt="Download-task management" src="../assets/screenshots/tasks.png" />
 <em>Figure: Scheduled and manually executable download tasks.</em></p>
 <p>In strict mode, a terminal file is not marked as processed or deleted until its cloud copy is verified.</p>
 <h2 id="5-tachodata-archive">5. Tachodata Archive<a class="headerlink" href="#5-tachodata-archive" title="Permanent link">&para;</a></h2>
-<p><img alt="Tachodata archive" src="/assets/screenshots/en/tachodata-archive.png" />
+<p><img alt="Tachodata archive" src="../assets/screenshots/tachodata-archive.png" />
 <em>Figure: Filterable C/M tachodata archive with status columns.</em></p>
 <p>The archive contains driver-card C files and vehicle-unit M files. Filter by date, name, driver/vehicle, file type, generation, parser status, signature status, deletion state or backup state.</p>
 <h3 id="import-and-status">Import and status<a class="headerlink" href="#import-and-status" title="Permanent link">&para;</a></h3>
@@ -1705,7 +1707,7 @@
 <p><code>Verified</code> is shown only after complete upload and remote hash verification. Use the context menu to retry, verify or restore a file. Backup errors are also linked from the dashboard.</p>
 <h2 id="6-driver-card-analysis">6. Driver-card analysis<a class="headerlink" href="#6-driver-card-analysis" title="Permanent link">&para;</a></h2>
 <p>The header identifies the driver, card number and selected archive file. The analysis always uses the selected C file as its base.</p>
-<p><img alt="Driver-card day timeline" src="/assets/screenshots/en/drivercard-analysis.png" />
+<p><img alt="Driver-card day timeline" src="../assets/screenshots/drivercard-analysis.png" />
 <em>Figure: Driver-card analysis for one selected C archive.</em></p>
 <table>
 <thead>
@@ -1755,14 +1757,14 @@
 </table>
 <p>The <strong>Data availability</strong> filter distinguishes all activities, C and M available, driver card only and vehicle unit only. The other source is comparison evidence; it never replaces the selected base file. All displayed tachograph calculations use UTC.</p>
 <h2 id="7-vehicle-unit-analysis">7. Vehicle-unit analysis<a class="headerlink" href="#7-vehicle-unit-analysis" title="Permanent link">&para;</a></h2>
-<p><img alt="Vehicle-unit week timeline" src="/assets/screenshots/en/vehicle-unit-analysis.png" />
+<p><img alt="Vehicle-unit week timeline" src="../assets/screenshots/vehicle-unit-analysis.png" />
 <em>Figure: Vehicle-unit analysis for one selected M archive.</em></p>
 <p>The M analysis shows vehicle identity and the selected M file. Driver sessions are grouped by normalised card number and generation. Team driving displays slot 1 and slot 2 separately.</p>
 <p>Tabs include drivers, activities, day/week timelines, events/faults, speed, technical data, calibrations, positions/borders/loading, signatures and violations. <strong>Technical data</strong> uses a field tree; <strong>Calibrations</strong> lists calibration time, next calibration, workshop, VIN and registration. Position tabs can open the interactive map.</p>
 <p>“No assigned driver card” means the M file contains slot activity for which no active card-insertion interval with a usable card number was found. It does not mean that a matching C archive is merely missing; the tooltip in day/week views explains this distinction.</p>
 <h2 id="8-fleet-management">8. Fleet Management<a class="headerlink" href="#8-fleet-management" title="Permanent link">&para;</a></h2>
 <p>The left icon navigation opens non-duplicated work tabs. A new session starts with an empty fleet workspace.</p>
-<p><img alt="Fleet Management icon navigation and work tabs" src="/assets/screenshots/en/fleet-navigation.png" />
+<p><img alt="Fleet Management icon navigation and work tabs" src="../assets/screenshots/fleet-navigation.png" />
 <em>Figure: Fleet Management icon navigation and non-duplicated work tabs.</em></p>
 <h3 id="master-data">Master data<a class="headerlink" href="#master-data" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1771,17 +1773,17 @@
 <li><strong>Due types:</strong> system and user-defined deadline categories for people or vehicles.</li>
 <li><strong>Suppliers / Cost categories:</strong> finance master data.</li>
 </ul>
-<p><img alt="Personnel master-data list" src="/assets/screenshots/en/people.png" />
+<p><img alt="Personnel master-data list" src="../assets/screenshots/people.png" />
 <em>Figure: Personnel master-data list.</em></p>
-<p><img alt="Vehicle master-data list" src="/assets/screenshots/en/vehicles.png" />
+<p><img alt="Vehicle master-data list" src="../assets/screenshots/vehicles.png" />
 <em>Figure: Vehicle master-data list.</em></p>
 <p>Double-click a person or vehicle to open its record. Context menus jump directly to deadlines, tachodata, RFID or finance pages.</p>
 <h3 id="person-record">Person record<a class="headerlink" href="#person-record" title="Permanent link">&para;</a></h3>
-<p><img alt="Person record" src="/assets/screenshots/en/person-record.png" />
+<p><img alt="Person record" src="../assets/screenshots/person-record.png" />
 <em>Figure: Person record with related business tabs.</em></p>
 <p>The record contains master data, deadlines, licence checks, RFID history, card links/files, day/week/activity views and audit. Use <strong>Assign RFID/NFC</strong> to read a UID from a local PC/SC reader. <strong>FSK via PC/SC</strong> records a successful check only when the read UID belongs to the selected person.</p>
 <h3 id="vehicle-record">Vehicle record<a class="headerlink" href="#vehicle-record" title="Permanent link">&para;</a></h3>
-<p><img alt="Vehicle record" src="/assets/screenshots/en/vehicle-record.png" />
+<p><img alt="Vehicle record" src="../assets/screenshots/vehicle-record.png" />
 <em>Figure: Vehicle record with tachograph, finance and position tabs.</em></p>
 <p>Tabs include deadlines, costs/credits, foreign invoices, tachograph links, M files, drivers/activities, events/faults, speed, technical data, calibrations, positions and audit. Position rows can be opened together on the map.</p>
 <h2 id="9-deadlines-and-download-due-dates">9. Deadlines and download due dates<a class="headerlink" href="#9-deadlines-and-download-due-dates" title="Permanent link">&para;</a></h2>
@@ -1793,7 +1795,7 @@
 <li>completed: closed with completion date.</li>
 </ul>
 <p>Automatic download deadlines are managed by the system:</p>
-<p><img alt="Personnel deadline evaluation" src="/assets/screenshots/en/deadlines.png" />
+<p><img alt="Personnel deadline evaluation" src="../assets/screenshots/deadlines.png" />
 <em>Figure: Filterable personnel deadline evaluation.</em></p>
 <ul>
 <li>current driver card: readout date + 28 days;</li>
@@ -1802,7 +1804,7 @@
 <p>The readout date is taken from a valid <code>C_YYYYMMDD_HHmm...</code> or <code>M_YYYYMMDD_HHmm...</code> filename, then falls back to source creation, download and archive UTC dates. Automatic deadlines cannot be manually moved or completed. Tachograph calibration remains a separate vehicle deadline.</p>
 <h2 id="10-driving-licence-checks-and-rfid">10. Driving-licence checks and RFID<a class="headerlink" href="#10-driving-licence-checks-and-rfid" title="Permanent link">&para;</a></h2>
 <p>The <strong>Personnel</strong> navigation provides:</p>
-<p><img alt="Driving-licence-check evaluation" src="/assets/screenshots/en/license-check-evaluation.png" />
+<p><img alt="Driving-licence-check evaluation" src="../assets/screenshots/license-check-evaluation.png" />
 <em>Figure: Driving-licence-check (FSK) due-date evaluation.</em></p>
 <ul>
 <li>FSK evaluation with interval, last check, next due date, terminal and status;</li>
@@ -1813,17 +1815,17 @@
 <p>Unknown terminal UIDs remain pending. Assigning them creates the effective check; discarding requires a reason and never creates a permanent RFID assignment.</p>
 <h2 id="11-notifications">11. Notifications<a class="headerlink" href="#11-notifications" title="Permanent link">&para;</a></h2>
 <p>Under <strong>Administration → Notifications</strong>, configure SMTP, responsible recipients, rules/templates and the send log. The system is disabled until SMTP and recipients have been tested and sending is explicitly enabled.</p>
-<p><img alt="Notification rules and templates" src="/assets/screenshots/en/notifications.png" />
+<p><img alt="Notification rules and templates" src="../assets/screenshots/notifications.png" />
 <em>Figure: Notification rules, templates and schedules.</em></p>
 <p>Standard rules cover weekly information, daily reminders from ten days, urgent reminders from three days, overdue warnings and a daily responsible-person report. Rules may be previewed or sent manually when the user has permission.</p>
 <h2 id="12-costs-credits-and-foreign-invoices">12. Costs, credits and foreign invoices<a class="headerlink" href="#12-costs-credits-and-foreign-invoices" title="Permanent link">&para;</a></h2>
 <h3 id="direct-vehicle-costs">Direct vehicle costs<a class="headerlink" href="#direct-vehicle-costs" title="Permanent link">&para;</a></h3>
 <p>Open a vehicle record → <strong>Costs / Credits</strong>. Create a cost or credit, choose a cost category and enter document date, net amount and tax rate. Amounts are stored in cents and displayed right-aligned. Direct entries may be verified and booked without an original document if policy permits.</p>
-<p><img alt="Supplier master-data list" src="/assets/screenshots/en/suppliers.png" />
+<p><img alt="Supplier master-data list" src="../assets/screenshots/suppliers.png" />
 <em>Figure: Supplier master data for financial documents.</em></p>
 <h3 id="foreign-invoices">Foreign invoices<a class="headerlink" href="#foreign-invoices" title="Permanent link">&para;</a></h3>
 <p>Open <strong>Fleet → Foreign invoices</strong>. Double-click an invoice to open it as a work tab.</p>
-<p><img alt="Foreign-invoice workspace" src="/assets/screenshots/en/foreign-invoices.png" />
+<p><img alt="Foreign-invoice workspace" src="../assets/screenshots/foreign-invoices.png" />
 <em>Figure: Foreign-invoice list and work-tab entry point.</em></p>
 <pre class="mermaid"><code>flowchart LR
     A[Create draft header] --&gt; B[Add vehicle positions]
@@ -1835,7 +1837,7 @@
 <p>The status row compares gross invoice amount, split amount and difference. Zero difference is green; any cent difference is red and blocks verification. Invoice-bound positions inherit the invoice date for document/valid-from/valid-to and are always variable. Booked data is immutable; corrections use cancellation or linked credits.</p>
 <h2 id="13-audit-reports-and-logs">13. Audit, reports and logs<a class="headerlink" href="#13-audit-reports-and-logs" title="Permanent link">&para;</a></h2>
 <p>The global audit under <strong>Administration → Audit</strong> combines device, tachograph and fleet events. Filter by date, user, action or text. Double-click an entry to open its current related object when the stable ID can be resolved. Navigation itself is not audited.</p>
-<p><img alt="Global audit log" src="/assets/screenshots/en/audit.png" />
+<p><img alt="Global audit log" src="../assets/screenshots/audit.png" />
 <em>Figure: Global audit log with object-based navigation.</em></p>
 <p>Deadline and evaluation grids support print preview, system printing and PDF. Only visible filtered rows and columns are included.</p>
 <p><strong>Administration → Logs</strong> shows <code>app.log</code>, REST logs and native crash diagnostics. Logs use English technical messages regardless of the selected UI language.</p>

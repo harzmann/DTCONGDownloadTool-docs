@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/foreign-invoices/">
+      
       
         <link rel="prev" href="../vehicle-unit-analysis/">
       
@@ -1116,19 +1118,19 @@
 <h1 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h1>
 <p>Eine Fremdrechnung wird als Arbeitstab geöffnet. Die Statuszeile zeigt Workflow, Beleg- und Exportstatus sowie Gesamt brutto, Splitbetrag und Differenz. Grün bedeutet centgenauen Ausgleich, Rot eine noch zu klärende Differenz.</p>
 <h2 id="positionen">Positionen<a class="headerlink" href="#positionen" title="Permanent link">&para;</a></h2>
-<p><img alt="Positionen einer Fremdrechnung" src="/assets/screenshots/de/foreign-invoice-positions.png" />
+<p><img alt="Positionen einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-positions.png" />
 <em>Abbildung: Fahrzeugbezogene Aufteilung und Summenstatus.</em></p>
 <p>Jede Position gehört genau einem Fahrzeug. Belegdatum, Gültig von/bis und <strong>Variabel</strong> werden aus dem Rechnungskopf übernommen und sind bei Rechnungspositionen gesperrt. Währungswerte sind rechtsbündig; Kosten erhöhen, Gutschriften vermindern den Splitbetrag.</p>
 <h2 id="originalbelege">Originalbelege<a class="headerlink" href="#originalbelege" title="Permanent link">&para;</a></h2>
-<p><img alt="Originalbelege einer Fremdrechnung" src="/assets/screenshots/de/foreign-invoice-original-documents.png" />
+<p><img alt="Originalbelege einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
 <em>Abbildung: Version, Dateiname, Herkunft, Cloudstatus und Aufbewahrung.</em></p>
 <p>Der Originalbeleg bleibt bytegenau im Cloud-Belegarchiv. <strong>Belege jetzt sichern</strong> lädt offene Dokumente hoch und verifiziert sie durch Rücklesen und SHA-256. Vorschau lädt eine temporäre, nach dem Schließen sicher zu bereinigende Kopie. Ohne cloud-verifizierten Originalbeleg kann eine Fremdrechnung nicht geprüft werden.</p>
 <h2 id="exporthistorie">Exporthistorie<a class="headerlink" href="#exporthistorie" title="Permanent link">&para;</a></h2>
-<p><img alt="Exporthistorie einer Fremdrechnung" src="/assets/screenshots/de/foreign-invoice-export-history.png" />
+<p><img alt="Exporthistorie einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-export-history.png" />
 <em>Abbildung: Adapter, Status, Übergabezeit, externe ID und Fehler.</em></p>
 <p>Nur gebuchte oder stornierte Rechnungen dürfen per FiBu-REST oder CSV/ZIP übergeben werden. Idempotenzschlüssel verhindern Doppelübergaben; technische Fehler bleiben für Wiederholung sichtbar.</p>
 <h2 id="audit">Audit<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
-<p><img alt="Audit einer Fremdrechnung" src="/assets/screenshots/de/foreign-invoice-audit.png" />
+<p><img alt="Audit einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-audit.png" />
 <em>Abbildung: Chronologische, unveränderbare Fachhistorie.</em></p>
 <p>Erfassung, Änderung, Prüfung, Buchung, Storno, Belegverifikation und Export werden nachvollziehbar protokolliert. Reine Navigation und Vorschau erzeugen keinen neuen Auditdatensatz.</p>
 <h2 id="workflow-und-berechtigungen">Workflow und Berechtigungen<a class="headerlink" href="#workflow-und-berechtigungen" title="Permanent link">&para;</a></h2>

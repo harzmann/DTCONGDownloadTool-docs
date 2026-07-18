@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/">
+      
       
         <link rel="prev" href="../vehicle-unit-analysis/">
       
@@ -1116,19 +1118,19 @@
 <h1 id="foreign-invoices">Foreign invoices<a class="headerlink" href="#foreign-invoices" title="Permanent link">&para;</a></h1>
 <p>A foreign invoice opens as a work tab. Its status strip shows workflow, document and export states plus gross total, split amount and difference. Green means an exact cent-level match; red means an unresolved difference.</p>
 <h2 id="positions">Positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice positions" src="/assets/screenshots/en/foreign-invoice-positions.png" />
+<p><img alt="Foreign-invoice positions" src="../../assets/screenshots/foreign-invoice-positions.png" />
 <em>Figure: Vehicle allocation and totals status.</em></p>
 <p>Every position belongs to exactly one vehicle. Document date, valid from/to and <strong>Variable</strong> are inherited from the header and locked for invoice positions. Money is right-aligned; costs increase and credits reduce the split amount.</p>
 <h2 id="original-documents">Original documents<a class="headerlink" href="#original-documents" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice original documents" src="/assets/screenshots/en/foreign-invoice-original-documents.png" />
+<p><img alt="Foreign-invoice original documents" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
 <em>Figure: Version, filename, origin, cloud state and retention.</em></p>
 <p>The original remains byte-identical in the cloud document vault. <strong>Back up documents now</strong> uploads pending files, reads them back and verifies SHA-256. Preview uses a temporary copy that is safely cleaned after the external viewer closes. Verification is blocked until an original is cloud-verified.</p>
 <h2 id="export-history">Export history<a class="headerlink" href="#export-history" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice export history" src="/assets/screenshots/en/foreign-invoice-export-history.png" />
+<p><img alt="Foreign-invoice export history" src="../../assets/screenshots/foreign-invoice-export-history.png" />
 <em>Figure: Adapter, state, transfer time, external ID and error.</em></p>
 <p>Only booked or cancelled invoices may be transferred by accounting REST or CSV/ZIP. Idempotency keys prevent duplicate transfers; technical failures remain visible for retry.</p>
 <h2 id="audit">Audit<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice audit" src="/assets/screenshots/en/foreign-invoice-audit.png" />
+<p><img alt="Foreign-invoice audit" src="../../assets/screenshots/foreign-invoice-audit.png" />
 <em>Figure: Chronological, immutable business history.</em></p>
 <p>Creation, edits, verification, booking, cancellation, document verification and export are traceable. Navigation and preview do not create a new audit record.</p>
 <h2 id="workflow-and-permissions">Workflow and permissions<a class="headerlink" href="#workflow-and-permissions" title="Permanent link">&para;</a></h2>
