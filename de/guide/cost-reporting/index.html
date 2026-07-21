@@ -1,44 +1,44 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="de" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/drivercard-rest/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/cost-reporting/">
       
       
-        <link rel="prev" href="../../administrator-integration-guide/">
+        <link rel="prev" href="../foreign-invoices/">
       
       
-        <link rel="next" href="../accounting-rest/">
+        <link rel="next" href="../position-maps/">
       
       
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../../../guide/cost-reporting/" hreflang="en">
         
-          <link rel="alternate" href="../../de/api/drivercard-rest/" hreflang="de">
+          <link rel="alternate" href="./" hreflang="de">
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>DriverCard REST API - FLEET Mira Documentation</title>
+        <title>Kostenanalyse und Reporting - FLEET Mira Dokumentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,9 +57,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#drivercard-rest-api" class="md-skip">
-          Skip to content
+        <a href="#kostenanalyse-und-reporting" class="md-skip">
+          Zum Inhalt
         </a>
       
     </div>
@@ -99,8 +99,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,13 +114,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            FLEET Mira Documentation
+            FLEET Mira Dokumentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DriverCard REST API
+              Kostenanalyse und Reporting
             
           </span>
         </div>
@@ -160,20 +160,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../../guide/cost-reporting/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../de/api/drivercard-rest/" hreflang="de" class="md-select__link">
+            <a href="./" hreflang="de" class="md-select__link">
               Deutsch
             </a>
           </li>
@@ -194,16 +194,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Suche">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -216,7 +216,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Suche wird initialisiert
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    FLEET Mira Documentation
+    FLEET Mira Dokumentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -270,14 +270,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    Start
   
 
     
@@ -304,7 +304,7 @@
   <span class="md-ellipsis">
     
   
-    Product overview
+    Produktübersicht
   
 
     
@@ -331,261 +331,7 @@
   <span class="md-ellipsis">
     
   
-    User manual
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Detailed guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Detailed guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tachodata evaluations
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Driver-card analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vehicle-unit analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/foreign-invoices/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Foreign invoices
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/cost-reporting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cost analysis and reporting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../guide/position-maps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Position maps
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../administrator-integration-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Administrator and integrator guide
+    Benutzerhandbuch
   
 
     
@@ -620,17 +366,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    APIs
+    Detaillierte Anleitungen
   
 
     
@@ -641,16 +387,128 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    APIs
+    Detaillierte Anleitungen
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -675,7 +533,7 @@
   <span class="md-ellipsis">
     
   
-    DriverCard REST API
+    Kostenanalyse und Reporting
   
 
     
@@ -693,7 +551,7 @@
   <span class="md-ellipsis">
     
   
-    DriverCard REST API
+    Kostenanalyse und Reporting
   
 
     
@@ -705,7 +563,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
   
@@ -714,15 +572,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-purpose" class="md-nav__link">
+  <a href="#kilometerbasis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Purpose
+        Kilometerbasis
       
     </span>
   </a>
@@ -730,10 +588,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-time-formats-and-filters" class="md-nav__link">
+  <a href="#kostenlogik" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Time, formats and filters
+        Kostenlogik
       
     </span>
   </a>
@@ -741,87 +599,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-endpoints" class="md-nav__link">
+  <a href="#stimulsoft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Endpoints
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-health" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Health
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parse-a-driver-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Parse a driver card
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-activities-and-summaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Activities and summaries
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-events-faults-vehicles-and-positions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Events, faults, vehicles and positions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-eu-5612006-pre-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. EU 561/2006 pre-check
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-http-status-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. HTTP status codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-security-and-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Security and operation
+        Stimulsoft
       
     </span>
   </a>
@@ -844,14 +625,156 @@
   
   
     <li class="md-nav__item">
-      <a href="../accounting-rest/" class="md-nav__link">
+      <a href="../position-maps/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Accounting REST API
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
   
 
     
@@ -902,7 +825,7 @@
   <span class="md-ellipsis">
     
   
-    Integrations
+    Integrationen
   
 
     
@@ -918,7 +841,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Integrations
+    Integrationen
   
 
           </label>
@@ -938,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Accounting CSV/ZIP
+    FiBu CSV/ZIP
   
 
     
@@ -966,7 +889,7 @@
   <span class="md-ellipsis">
     
   
-    Tachograph parser
+    Tachographen-Parser
   
 
     
@@ -1017,7 +940,7 @@
   <span class="md-ellipsis">
     
   
-    Architecture
+    Architektur
   
 
     
@@ -1033,7 +956,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architecture
+    Architektur
   
 
           </label>
@@ -1053,7 +976,7 @@
   <span class="md-ellipsis">
     
   
-    Tachograph data storage and access
+    Tachographendaten: Speicherung und Zugriff
   
 
     
@@ -1081,7 +1004,7 @@
   <span class="md-ellipsis">
     
   
-    Asynchronous UI and background services
+    Asynchrone UI und Hintergrunddienste
   
 
     
@@ -1132,7 +1055,7 @@
   <span class="md-ellipsis">
     
   
-    Operations
+    Betrieb
   
 
     
@@ -1148,7 +1071,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Operations
+    Betrieb
   
 
           </label>
@@ -1168,7 +1091,7 @@
   <span class="md-ellipsis">
     
   
-    Archiving, backup and restore
+    Archivierung, Backup und Wiederherstellung
   
 
     
@@ -1196,7 +1119,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation deployment
+    Dokumentations-Deployment
   
 
     
@@ -1230,7 +1153,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
   
@@ -1239,15 +1162,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-purpose" class="md-nav__link">
+  <a href="#kilometerbasis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Purpose
+        Kilometerbasis
       
     </span>
   </a>
@@ -1255,10 +1178,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-time-formats-and-filters" class="md-nav__link">
+  <a href="#kostenlogik" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Time, formats and filters
+        Kostenlogik
       
     </span>
   </a>
@@ -1266,87 +1189,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-endpoints" class="md-nav__link">
+  <a href="#stimulsoft" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Endpoints
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-health" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Health
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parse-a-driver-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Parse a driver card
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-activities-and-summaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Activities and summaries
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-events-faults-vehicles-and-positions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Events, faults, vehicles and positions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-eu-5612006-pre-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. EU 561/2006 pre-check
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-http-status-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. HTTP status codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-security-and-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Security and operation
+        Stimulsoft
       
     </span>
   </a>
@@ -1370,179 +1216,37 @@
 
 
 
-<h1 id="drivercard-rest-api">DriverCard REST API<a class="headerlink" href="#drivercard-rest-api" title="Permanent link">&para;</a></h1>
-<h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
-<p>The DriverCard API exposes the same parsed driver-card data used by the FLEET Mira desktop analysis. It is intended for local integration and the bundled web week view. It does not modify archived originals.</p>
-<p>Default base URL: <code>http://127.0.0.1:5055</code>. Start/stop/open/log commands are available under <strong>System</strong>. Binding beyond loopback requires an external TLS/authentication gateway and an explicit risk assessment.</p>
-<h2 id="2-time-formats-and-filters">2. Time, formats and filters<a class="headerlink" href="#2-time-formats-and-filters" title="Permanent link">&para;</a></h2>
+<h1 id="kostenanalyse-und-reporting">Kostenanalyse und Reporting<a class="headerlink" href="#kostenanalyse-und-reporting" title="Permanent link">&para;</a></h1>
+<p>Die Arbeitsfläche <strong>Kostenanalyse</strong> wertet ausschließlich gebuchte Fahrzeugkosten aus. Gutschriften und Stornobuchungen werden mit ihrem Vorzeichen berücksichtigt. Als Betragsbasis kann Netto oder Brutto gewählt werden.</p>
+<p>Die Arbeitsfläche wird über <strong>Fuhrpark-Management &gt; Fuhrpark &gt; Kostenanalyse</strong> geöffnet. Beim Öffnen reicht der Auswertezeitraum standardmäßig vom 1. Januar des aktuellen Jahres bis zum heutigen Tag. Administratoren können unter <strong>Administration &gt; Kostenanalyse &gt; Berechnungsparameter</strong> stattdessen die letzten zwölf Monate oder eine frei festgelegte Anzahl rollierender Tage als globalen Standard wählen. Die Änderung gilt beim nächsten Öffnen der Kostenanalyse; ein bereits geänderter Filter bleibt während der geöffneten Sitzung erhalten.</p>
+<h2 id="kilometerbasis">Kilometerbasis<a class="headerlink" href="#kilometerbasis" title="Permanent link">&para;</a></h2>
+<p>M-Dateien liefern für jeden enthaltenen UTC-Tag einen Tagesabschluss-Kilometerstand. FLEET Mira speichert diesen Wert als Grenze zum Folgetag um <code>00:00 UTC</code>. C-Daten aus Fahrzeugnutzungen, Orts- und Drei-Stunden-GNSS-Datensätzen ergänzen die Historie.</p>
+<p>Die M-Zeitreihe ist maßgeblich und wird ausschließlich anhand anderer signaturgültiger M-Stände plausibilisiert. Manuelle und C-Stände können fehlende exakte Periodengrenzen ergänzen, einen vorhandenen M-Stand jedoch weder ersetzen noch entwerten.</p>
+<p>Die Quellenpriorität lautet:</p>
+<ol>
+<li>signaturgültiger M-Tagesabschluss;</li>
+<li>freigegebener manueller Stand;</li>
+<li>plausibilisierte C-Daten;</li>
+<li>sonstige Importe.</li>
+</ol>
+<p>Kosten je Kilometer werden auf Ebene eines Fahrzeug-Monats berechnet. Der erste und letzte Monat werden dabei auf den ausgewählten Zeitraum zugeschnitten. Ein Fahrzeug-Monat fließt nur ein, wenn er mindestens eine Kostenbuchung, belastbare UTC-Grenzstände und eine positive Fahrleistung besitzt. Fehlende Werte werden nicht interpoliert und nicht als null behandelt.</p>
+<p>Die Gesamtkosten enthalten weiterhin alle Kosten des ausgewählten Zeitraums. <strong>Auswertbare Kosten</strong>, <strong>auswertbare Kilometer</strong> und <strong>Kosten/km</strong> enthalten dagegen nur gemeinsam auswertbare Fahrzeug-Monate. Fahrzeuge oder Monate ohne Kosten beziehungsweise Kilometer verhindern deshalb nicht mehr die Berechnung für vollständige Teilmengen.</p>
+<p>Die Abdeckung wird als Anzahl auswertbarer kostenführender Fahrzeug-Monate dargestellt. Der Spaltenkopf erklärt die Kennzahl allgemein; der Tooltip jedes Werts nennt die tatsächliche Anzahl vorhandener und auswertbarer Kostenmonate sowie die konkreten Monats-/Kilometerwarnungen des Fahrzeugs. Die Oberfläche bezeichnet eine vollständige Abdeckung als <strong>Vollständig</strong>, eine auswertbare Teilmenge als <strong>Teilweise</strong> und fehlende Kosten/km-Basis trotz vorhandener Kosten als <strong>Kilometerdaten fehlen</strong>. <strong>Keine Kosten</strong> und <strong>Keine Daten</strong> kennzeichnen einzelne Fahrzeuge oder Monate ohne Kosten beziehungsweise ohne beide Datenarten.</p>
+<p>Über <strong>Tachographendaten übernehmen</strong> werden ältere M-Dateien ohne Tageskilometer erneut verarbeitet. Nicht eindeutig über FIN oder Kennzeichen zuordenbare Werte bleiben in der Klärungsliste sichtbar.</p>
+<h2 id="kostenlogik">Kostenlogik<a class="headerlink" href="#kostenlogik" title="Permanent link">&para;</a></h2>
 <ul>
-<li>timestamps are ISO 8601 UTC;</li>
-<li>dates are <code>YYYY-MM-DD</code>;</li>
-<li>durations are integer seconds unless stated otherwise;</li>
-<li>card numbers are normalised strings;</li>
-<li>JSON uses UTF-8;</li>
-<li>validation errors return JSON with <code>error</code> and a readable <code>message</code>.</li>
+<li>Variable Kosten werden anhand des Belegdatums vollständig einer Periode zugeordnet.</li>
+<li>Fixe Kosten werden über ihren Gültigkeitszeitraum taggenau verteilt.</li>
+<li>Fixe Kosten ohne vollständigen Gültigkeitszeitraum erscheinen als Datenqualitätswarnung.</li>
+<li>Fahrzeug-Monate mit Kilometern, aber ohne Kostenbuchung werden nicht als Nullkosten in den Flottenquotienten aufgenommen.</li>
+<li>Buchungen, die sich auf null Euro saldieren, gelten weiterhin als vorhandene Kostenbasis.</li>
+<li>Bei einer Stornierung werden die stornierte Ursprungsbuchung und die gebuchte Gegenbuchung gemeinsam ausgewertet und saldieren sich dadurch auf null.</li>
+<li>Vergleiche zeigen die unmittelbar vorherige gleich lange Periode und den Vorjahreszeitraum.</li>
 </ul>
-<p>Common query parameters:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>import_id</code></td>
-<td>parsed import identifier</td>
-</tr>
-<tr>
-<td><code>archive_id</code></td>
-<td>stable tachodata archive identifier</td>
-</tr>
-<tr>
-<td><code>card_number</code></td>
-<td>exact normalised card number</td>
-</tr>
-<tr>
-<td><code>date_from</code>, <code>date_to</code></td>
-<td>inclusive UTC date range</td>
-</tr>
-<tr>
-<td><code>limit</code>, <code>offset</code></td>
-<td>bounded pagination where supported</td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-endpoints">3. Endpoints<a class="headerlink" href="#3-endpoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Method and path</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GET /health</code></td>
-<td>process and database readiness</td>
-</tr>
-<tr>
-<td><code>POST /api/drivercard/parse</code></td>
-<td>parse a supplied DDD payload and persist/reuse its import</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/imports</code></td>
-<td>list parsed driver-card imports</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/time-summary</code></td>
-<td>activity totals by type</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/activities</code></td>
-<td>activity intervals</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/events</code></td>
-<td>card events</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/faults</code></td>
-<td>card faults</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/vehicles-used</code></td>
-<td>vehicles recorded on the card</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/positions</code></td>
-<td>recorded positions</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/day-overview</code></td>
-<td>prepared day data</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/week-overview</code></td>
-<td>prepared ISO-week data</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/eu561/violations</code></td>
-<td>technical EU 561/2006 pre-check</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-health">4. Health<a class="headerlink" href="#4-health" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/health</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">127.0.0.1:5055</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="s2">&quot;drivercard-rest&quot;</span><span class="p">,</span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="s2">&quot;available&quot;</span><span class="p">}</span>
-</code></pre></div>
-<h2 id="5-parse-a-driver-card">5. Parse a driver card<a class="headerlink" href="#5-parse-a-driver-card" title="Permanent link">&para;</a></h2>
-<p><code>POST /api/drivercard/parse</code> accepts JSON. The desktop web preload uses base64 so no local archive path appears in the browser URL.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C_20250715_0615_Demo_1000000000000001.DDD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;content_base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BASE64_DATA&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;archive_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;optional-stable-id&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The response identifies import/archive, driver/card metadata, activity range and parser warnings. Binary input, signatures and certificates are never echoed. A repeated identical payload is idempotent by hash.</p>
-<h2 id="6-activities-and-summaries">6. Activities and summaries<a class="headerlink" href="#6-activities-and-summaries" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="err">GET /api/drivercard/activities?archive_id=ARCHIVE_ID&amp;date_from=2025-07-14&amp;date_to=2025-07-20</span>
-</code></pre></div>
-<p>Activity rows contain start/end UTC, activity code (<code>DRIVING</code>, <code>WORK</code>, <code>AVAILABILITY</code>, <code>REST</code>), duration, card, crew and slot information. Day/week endpoints return the same source intervals grouped for visualisation; they are not separate evidence records.</p>
-<h2 id="7-events-faults-vehicles-and-positions">7. Events, faults, vehicles and positions<a class="headerlink" href="#7-events-faults-vehicles-and-positions" title="Permanent link">&para;</a></h2>
-<p>Event/fault responses include technical type/code, start/end and readable description where known. Unknown standard extensions remain represented by the technical code. Position rows contain timestamp, latitude, longitude, source/type, country/region codes and optional odometer.</p>
-<h2 id="8-eu-5612006-pre-check">8. EU 561/2006 pre-check<a class="headerlink" href="#8-eu-5612006-pre-check" title="Permanent link">&para;</a></h2>
-<p>The endpoint evaluates only the selected data basis. Its response includes driver summary, violations, warnings, rule/algorithm version and data-gap notices. It is a technical pre-check, not an authority/legal decision. National exceptions, AETR and Article 12 circumstances are not decided automatically.</p>
-<h2 id="9-http-status-codes">9. HTTP status codes<a class="headerlink" href="#9-http-status-codes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>200</code></td>
-<td>successful query or idempotent parse</td>
-</tr>
-<tr>
-<td><code>400</code></td>
-<td>malformed payload/filter</td>
-</tr>
-<tr>
-<td><code>404</code></td>
-<td>archive/import not found</td>
-</tr>
-<tr>
-<td><code>409</code></td>
-<td>conflicting or quarantined data for the requested trusted operation</td>
-</tr>
-<tr>
-<td><code>413</code></td>
-<td>payload too large for configured limit</td>
-</tr>
-<tr>
-<td><code>422</code></td>
-<td>DDD content cannot be parsed</td>
-</tr>
-<tr>
-<td><code>500</code></td>
-<td>unexpected internal failure; correlate with REST log</td>
-</tr>
-</tbody>
-</table>
-<h2 id="10-security-and-operation">10. Security and operation<a class="headerlink" href="#10-security-and-operation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Keep loopback binding unless a protected integration gateway is deployed.</li>
-<li>Do not put DDD data or local paths in query strings.</li>
-<li>Restrict REST log access; logs are English and exclude raw DDD/secrets.</li>
-<li>Stop the API through FLEET Mira before maintenance.</li>
-<li>API paths and response field names retain their technical compatibility even though the visible product is FLEET Mira.</li>
-</ul>
+<h2 id="stimulsoft">Stimulsoft<a class="headerlink" href="#stimulsoft" title="Permanent link">&para;</a></h2>
+<p><strong>Bericht anzeigen</strong> öffnet den lokalen Reports.JS-Viewer. Der Export ist nur mit <code>finance.reporting.export</code> verfügbar. Benutzer mit <code>reporting.templates.write</code> können eine Systemvorlage klonen und die Kopie im Designer bearbeiten. Systemvorlagen selbst bleiben unveränderlich.</p>
+<p>Die Reports.JS-Laufzeit liegt unter <code>assets/stimulsoft</code> oder wird über <code>STIMULSOFT_ASSET_DIR</code> angegeben. Die Lizenz wird ausschließlich aus <code>STIMULSOFT_LICENSE_KEY</code> oder <code>STIMULSOFT_LICENSE_FILE</code> gelesen.</p>
+<p>Der Berichtshost lauscht ausschließlich auf <code>127.0.0.1</code> und verwendet pro geöffnetem Bericht ein zufälliges Sitzungstoken.</p>
 
 
 
@@ -1566,7 +1270,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Zurück zum Seitenanfang
 </button>
         
       </main>
@@ -1602,12 +1306,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../javascripts/image-lightbox.js"></script>
+        <script src="../../../javascripts/image-lightbox.js"></script>
       
     
   </body>

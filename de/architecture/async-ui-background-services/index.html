@@ -10,17 +10,17 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/cloud-backup-restore/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/async-ui-background-services/">
       
       
-        <link rel="prev" href="../../architecture/async-ui-background-services/">
+        <link rel="prev" href="../tachograph-data-storage/">
       
       
-        <link rel="next" href="../documentation-deployment/">
+        <link rel="next" href="../../operations/cloud-backup-restore/">
       
       
         
-          <link rel="alternate" href="../../../operations/cloud-backup-restore/" hreflang="en">
+          <link rel="alternate" href="../../../architecture/async-ui-background-services/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="de">
         
@@ -31,7 +31,7 @@
     
     
       
-        <title>Archivierung, Backup und Wiederherstellung - FLEET Mira Dokumentation</title>
+        <title>Asynchrone UI und Hintergrunddienste - FLEET Mira Dokumentation</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#archivierung-backup-und-wiederherstellung" class="md-skip">
+        <a href="#asynchrone-ui-lazy-tabs-und-hintergrunddienste" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Archivierung, Backup und Wiederherstellung
+              Asynchrone UI und Hintergrunddienste
             
           </span>
         </div>
@@ -167,7 +167,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../operations/cloud-backup-restore/" hreflang="en" class="md-select__link">
+            <a href="../../../architecture/async-ui-background-services/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -832,8 +832,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -844,11 +846,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -869,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -887,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+      <a href="../tachograph-data-storage/" class="md-nav__link">
         
   
   
@@ -912,95 +914,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Asynchrone UI und Hintergrunddienste
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Betrieb
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Betrieb
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
     
   
   
@@ -1020,7 +933,7 @@
   <span class="md-ellipsis">
     
   
-    Archivierung, Backup und Wiederherstellung
+    Asynchrone UI und Hintergrunddienste
   
 
     
@@ -1038,7 +951,7 @@
   <span class="md-ellipsis">
     
   
-    Archivierung, Backup und Wiederherstellung
+    Asynchrone UI und Hintergrunddienste
   
 
     
@@ -1064,10 +977,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-umfang-und-verantwortung" class="md-nav__link">
+  <a href="#1-zielbild" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Umfang und Verantwortung
+        1. Zielbild
       
     </span>
   </a>
@@ -1075,10 +988,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-primararchiv-und-backupstruktur" class="md-nav__link">
+  <a href="#2-startreihenfolge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Primärarchiv und Backupstruktur
+        2. Startreihenfolge
       
     </span>
   </a>
@@ -1086,66 +999,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-statusmodell" class="md-nav__link">
+  <a href="#3-lazy-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Statusmodell
+        3. Lazy Tabs
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-archivierungs-und-backupablauf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Archivierungs- und Backupablauf
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-ablaufe-nach-dokumentart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Abläufe nach Dokumentart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Abläufe nach Dokumentart">
+    <nav class="md-nav" aria-label="3. Lazy Tabs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tachodaten" class="md-nav__link">
+  <a href="#entwicklerregeln-fur-lazy-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tachodaten
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fremdrechnungen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fremdrechnungen
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xml-xrechnung-und-hybrid-pdf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        XML-XRechnung und Hybrid-PDF
+        Entwicklerregeln für Lazy Tabs
       
     </span>
   </a>
@@ -1158,10 +1027,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-backupziel-einrichten" class="md-nav__link">
+  <a href="#4-uijobcontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Backupziel einrichten
+        4. UiJobController
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. UiJobController">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-jobbeschreibung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Jobbeschreibung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-generationen-und-veraltete-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Generationen und veraltete Ergebnisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ergebnis-und-fortschrittsmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Ergebnis- und Fortschrittsmodell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-datenbankarbeit-in-workern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Datenbankarbeit in Workern
       
     </span>
   </a>
@@ -1169,10 +1088,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-optionales-backup-und-wiederholung" class="md-nav__link">
+  <a href="#6-hintergrunddienste" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Optionales Backup und Wiederholung
+        6. Hintergrunddienste
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Hintergrunddienste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-gemeinsame-aktivitatsregistrierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Gemeinsame Aktivitätsregistrierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-backupcoordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 BackupCoordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-scheduler-benachrichtigungen-und-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Scheduler, Benachrichtigungen und REST
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ui-heartbeat-und-ui_stall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. UI-Heartbeat und UI_STALL
       
     </span>
   </a>
@@ -1180,10 +1149,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-datenbanksnapshots" class="md-nav__link">
+  <a href="#8-kontrollierter-shutdown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Datenbanksnapshots
+        8. Kontrollierter Shutdown
       
     </span>
   </a>
@@ -1191,10 +1160,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-migration-bestehender-cloudbelege" class="md-nav__link">
+  <a href="#9-fehlersuche" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Migration bestehender Cloudbelege
+        9. Fehlersuche
       
     </span>
   </a>
@@ -1202,54 +1171,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-einzelobjekt-wiederherstellen" class="md-nav__link">
+  <a href="#10-abnahmekriterien-fur-neue-ansichten-und-dienste" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Einzelobjekt wiederherstellen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-datenbankrestore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. Datenbankrestore
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-vollstandige-notfallwiederherstellung" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. Vollständige Notfallwiederherstellung
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-zielwechsel-berechtigungen-und-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        13. Zielwechsel, Berechtigungen und Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-betriebscheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        14. Betriebscheckliste
+        10. Abnahmekriterien für neue Ansichten und Dienste
       
     </span>
   </a>
@@ -1265,6 +1190,65 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1272,7 +1256,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../documentation-deployment/" class="md-nav__link">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/documentation-deployment/" class="md-nav__link">
         
   
   
@@ -1327,10 +1339,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-umfang-und-verantwortung" class="md-nav__link">
+  <a href="#1-zielbild" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Umfang und Verantwortung
+        1. Zielbild
       
     </span>
   </a>
@@ -1338,10 +1350,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-primararchiv-und-backupstruktur" class="md-nav__link">
+  <a href="#2-startreihenfolge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Primärarchiv und Backupstruktur
+        2. Startreihenfolge
       
     </span>
   </a>
@@ -1349,66 +1361,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-statusmodell" class="md-nav__link">
+  <a href="#3-lazy-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Statusmodell
+        3. Lazy Tabs
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-archivierungs-und-backupablauf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Archivierungs- und Backupablauf
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-ablaufe-nach-dokumentart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Abläufe nach Dokumentart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Abläufe nach Dokumentart">
+    <nav class="md-nav" aria-label="3. Lazy Tabs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tachodaten" class="md-nav__link">
+  <a href="#entwicklerregeln-fur-lazy-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tachodaten
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fremdrechnungen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fremdrechnungen
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xml-xrechnung-und-hybrid-pdf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        XML-XRechnung und Hybrid-PDF
+        Entwicklerregeln für Lazy Tabs
       
     </span>
   </a>
@@ -1421,10 +1389,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-backupziel-einrichten" class="md-nav__link">
+  <a href="#4-uijobcontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Backupziel einrichten
+        4. UiJobController
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. UiJobController">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-jobbeschreibung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Jobbeschreibung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-generationen-und-veraltete-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Generationen und veraltete Ergebnisse
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ergebnis-und-fortschrittsmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Ergebnis- und Fortschrittsmodell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-datenbankarbeit-in-workern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Datenbankarbeit in Workern
       
     </span>
   </a>
@@ -1432,10 +1450,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-optionales-backup-und-wiederholung" class="md-nav__link">
+  <a href="#6-hintergrunddienste" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Optionales Backup und Wiederholung
+        6. Hintergrunddienste
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Hintergrunddienste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-gemeinsame-aktivitatsregistrierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Gemeinsame Aktivitätsregistrierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-backupcoordinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 BackupCoordinator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-scheduler-benachrichtigungen-und-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Scheduler, Benachrichtigungen und REST
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ui-heartbeat-und-ui_stall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. UI-Heartbeat und UI_STALL
       
     </span>
   </a>
@@ -1443,10 +1511,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-datenbanksnapshots" class="md-nav__link">
+  <a href="#8-kontrollierter-shutdown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Datenbanksnapshots
+        8. Kontrollierter Shutdown
       
     </span>
   </a>
@@ -1454,10 +1522,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-migration-bestehender-cloudbelege" class="md-nav__link">
+  <a href="#9-fehlersuche" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Migration bestehender Cloudbelege
+        9. Fehlersuche
       
     </span>
   </a>
@@ -1465,54 +1533,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-einzelobjekt-wiederherstellen" class="md-nav__link">
+  <a href="#10-abnahmekriterien-fur-neue-ansichten-und-dienste" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Einzelobjekt wiederherstellen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-datenbankrestore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. Datenbankrestore
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-vollstandige-notfallwiederherstellung" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. Vollständige Notfallwiederherstellung
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#13-zielwechsel-berechtigungen-und-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        13. Zielwechsel, Berechtigungen und Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#14-betriebscheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        14. Betriebscheckliste
+        10. Abnahmekriterien für neue Ansichten und Dienste
       
     </span>
   </a>
@@ -1536,235 +1560,279 @@
 
 
 
-<h1 id="archivierung-backup-und-wiederherstellung">Archivierung, Backup und Wiederherstellung<a class="headerlink" href="#archivierung-backup-und-wiederherstellung" title="Permanent link">&para;</a></h1>
-<h2 id="1-umfang-und-verantwortung">1. Umfang und Verantwortung<a class="headerlink" href="#1-umfang-und-verantwortung" title="Permanent link">&para;</a></h2>
-<p>FLEET Mira archiviert Tachodaten und Finanzbelege zuerst vollständig lokal. Das lokale Primärarchiv ist die führende Quelle; ein externes Backup ist optional und schaltet keine Fachfunktion frei.</p>
-<ul>
-<li><code>archive_dir</code> enthält unveränderte, komprimierte Tachographenoriginale.</li>
-<li><code>financial_archive_dir</code> enthält Originale und Manifeste von Fremd- und E-Rechnungen.</li>
-<li>SQLite speichert Metadaten, Verknüpfungen, Status und Auditdaten.</li>
-<li>Ein Backupziel enthält nur nachgelagerte, verifizierte Replikate und Datenbanksnapshots.</li>
-</ul>
-<p>Ohne Backupziel bleiben Import, Anzeige, Auswertung, Prüfung, Buchung und Export vollständig verfügbar. Remoteänderungen werden nie automatisch in das lokale Primärarchiv zurücksynchronisiert.</p>
-<h2 id="2-primararchiv-und-backupstruktur">2. Primärarchiv und Backupstruktur<a class="headerlink" href="#2-primararchiv-und-backupstruktur" title="Permanent link">&para;</a></h2>
-<p>Die lokalen Primärarchive verwenden getrennte konfigurierbare Pfade:</p>
-<div class="highlight"><pre><span></span><code>archive_dir/
-  YYYY/MM/&lt;Archiv-ID&gt;.ddd.gz
+<h1 id="asynchrone-ui-lazy-tabs-und-hintergrunddienste">Asynchrone UI, Lazy Tabs und Hintergrunddienste<a class="headerlink" href="#asynchrone-ui-lazy-tabs-und-hintergrunddienste" title="Permanent link">&para;</a></h1>
+<h2 id="1-zielbild">1. Zielbild<a class="headerlink" href="#1-zielbild" title="Permanent link">&para;</a></h2>
+<p>Die Qt-Oberfläche muss auch bei großen SQLite-Datenbanken, Backups, Signaturprüfungen und umfangreichen Tachodaten bedienbar bleiben. Deshalb gelten drei Architekturregeln:</p>
+<ol>
+<li>Der Qt-Hauptthread konstruiert und verändert ausschließlich Widgets und Modelle.</li>
+<li>Datenbank-, Datei-, Netzwerk- und Rechenarbeit läuft in Workern oder dedizierten Diensten.</li>
+<li>Nicht sichtbare Arbeitsbereiche und Detailtabs werden erst bei Bedarf erzeugt und geladen.</li>
+</ol>
+<pre class="mermaid"><code>flowchart LR
+    U["Benutzereingabe"] --&gt; Q["Qt-Hauptthread"]
+    Q --&gt; L["Lazy-Tab-Factory"]
+    Q --&gt; J["UiJobController"]
+    J --&gt; R["Read-Pool 4 Worker"]
+    J --&gt; W["Write-Lane 1 Worker"]
+    J --&gt; P["Prefetch-Lane 1 Worker"]
+    R --&gt; D["Eigene SQLite-Verbindung"]
+    W --&gt; D
+    P --&gt; D
+    D --&gt; C["DTO / Liste / Dictionary"]
+    C --&gt; Q
+    B["Hintergrunddienste"] --&gt; A["Activity Registry"]
+    J --&gt; A
+    A --&gt; S["Statusleiste"]
+    H["UI-Heartbeat"] --&gt; S</code></pre>
+<h2 id="2-startreihenfolge">2. Startreihenfolge<a class="headerlink" href="#2-startreihenfolge" title="Permanent link">&para;</a></h2>
+<p>Die Reihenfolge in <code>main.py</code> verhindert, dass Migrationen und Runtime-Abfragen gleichzeitig stattfinden:</p>
+<ol>
+<li>Konfiguration und Logger laden.</li>
+<li>Einen vorgemerkten Datenbankrestore anwenden.</li>
+<li>Zentralen Datenbank-Bootstrap und komponentenbezogene Migrationen ausführen.</li>
+<li>Runtime-Repositories mit <code>ensure_schema=False</code> öffnen.</li>
+<li><code>UiJobController</code> und <code>UiHeartbeatMonitor</code> installieren.</li>
+<li>Hauptfenster mit einer tatsächlichen beziehungsweise temporären Systemsitzung erstellen.</li>
+<li>Login durchführen und nur benötigte Startansichten laden.</li>
+<li>Backup, Benachrichtigungen, Scheduler und optionale REST-Dienste starten.</li>
+</ol>
+<pre class="mermaid"><code>sequenceDiagram
+    participant App as QApplication
+    participant Restore as Pending Restore
+    participant Bootstrap as Database Bootstrap
+    participant Jobs as UiJobController
+    participant Window as MainWindow
+    participant Services as Hintergrunddienste
 
-financial_archive_dir/
-  YYYY/&lt;Rechnungs-ID&gt;/&lt;Dokument-ID&gt;/
-    original.&lt;ext&gt;
-    manifest.json
-</code></pre></div>
-<p>Ein optionales Backupziel verwendet weiterhin das kompatible Präfix:</p>
-<div class="highlight"><pre><span></span><code>DLTNG/&lt;Installations-ID&gt;/
-  archives/YYYY/MM/&lt;Archiv-ID&gt;.ddd.gz[.enc]
-  financial-documents/YYYY/&lt;Rechnungs-ID&gt;/&lt;Dokument-ID&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
-  manifests/...
-  database/YYYY/MM/archive_YYYY-MM-DD_HHmmssZ.db.gz[.enc]
-</code></pre></div>
-<p><code>DLTNG</code> wird nicht umbenannt, damit Bestandsobjekte erreichbar bleiben. Primärarchiv und Backupziel dürfen nicht auf denselben aufgelösten Pfad zeigen.</p>
-<h2 id="3-statusmodell">3. Statusmodell<a class="headerlink" href="#3-statusmodell" title="Permanent link">&para;</a></h2>
-<p>Archivstatus und Backupstatus sind unabhängig.</p>
+    App-&gt;&gt;Restore: Marker prüfen und ggf. atomar austauschen
+    App-&gt;&gt;Bootstrap: WAL konfigurieren und Migrationen einmalig ausführen
+    Bootstrap--&gt;&gt;App: quick_check = ok
+    App-&gt;&gt;Jobs: Pools und Heartbeat installieren
+    App-&gt;&gt;Window: UI ohne Runtime-Migration erzeugen
+    Window-&gt;&gt;Window: Login und Sitzungsanzeige
+    Window-&gt;&gt;Services: Backup, Timer, Benachrichtigungen und REST starten
+    Window-&gt;&gt;Jobs: nur sichtbare Startansicht laden</code></pre>
+<h2 id="3-lazy-tabs">3. Lazy Tabs<a class="headerlink" href="#3-lazy-tabs" title="Permanent link">&para;</a></h2>
+<p>Ein Lazy Tab enthält zunächst nur einen leichten Platzhalter und eine Factoryfunktion. Erst <code>currentChanged</code> erzeugt das echte Widget.</p>
+<p>Der Ablauf in <code>FileWidget</code> ist:</p>
+<ol>
+<li><code>_add_lazy_tab(title, factory)</code> legt Platzhalter und <code>_fleet_lazy_factory</code> an.</li>
+<li>Beim Tabwechsel wird der vorherige Tab über <code>cancel_load()</code> zur kooperativen Stornierung aufgefordert.</li>
+<li>Ein <code>QSignalBlocker</code> verhindert rekursive <code>currentChanged</code>-Signale.</li>
+<li>Die Factory erzeugt das echte Widget.</li>
+<li>Platzhalter und echter Tab werden positionsgleich ausgetauscht.</li>
+<li><code>ensure_loaded()</code> startet bei Bedarf genau einen Ladevorgang.</li>
+<li>Bereits erzeugte Tabs bleiben erhalten, bis die Akte vollständig neu aufgebaut wird.</li>
+</ol>
+<p>Lazy sind insbesondere Fahrzeugfälligkeiten, Kosten, Rechnungen, Tachodatenbezüge, M-Dateien, Aktivitäten, Ereignisse, Geschwindigkeit, Technik, Kalibrierungen, Positionen und Audit.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Placeholder: Tab registriert
+    Placeholder --&gt; Constructing: Benutzer aktiviert Tab
+    Constructing --&gt; LoadedWidget: Factory erfolgreich
+    LoadedWidget --&gt; LoadingData: ensure_loaded / refresh
+    LoadingData --&gt; Ready: aktueller Job erfolgreich
+    LoadingData --&gt; Cancelled: Tabwechsel oder Akte geschlossen
+    Cancelled --&gt; LoadingData: erneute Aktivierung
+    Ready --&gt; LoadingData: Aktualisieren
+    Ready --&gt; Disposed: Akte wird neu aufgebaut
+    Disposed --&gt; [*]</code></pre>
+<h3 id="entwicklerregeln-fur-lazy-tabs">Entwicklerregeln für Lazy Tabs<a class="headerlink" href="#entwicklerregeln-fur-lazy-tabs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Konstruktoren dürfen keine umfangreiche Datenbankabfrage ausführen.</li>
+<li>Ein Tab braucht einen stabilen Job-Key und möglichst <code>ensure_loaded()</code> sowie <code>cancel_load()</code>.</li>
+<li>Filterwerte werden im UI gelesen, bevor der Worker startet.</li>
+<li>Beim Wiederaufbau müssen laufende Jobs storniert und Widgets mit <code>deleteLater()</code> freigegeben werden.</li>
+<li>Ein Tab darf keine globale <code>refresh_all()</code>-Kaskade auslösen.</li>
+</ul>
+<h2 id="4-uijobcontroller">4. UiJobController<a class="headerlink" href="#4-uijobcontroller" title="Permanent link">&para;</a></h2>
+<h3 id="41-jobbeschreibung">4.1 Jobbeschreibung<a class="headerlink" href="#41-jobbeschreibung" title="Permanent link">&para;</a></h3>
+<p>Ein <code>UiJobSpec</code> enthält:</p>
 <table>
 <thead>
 <tr>
-<th>Archivstatus</th>
+<th>Feld</th>
 <th>Bedeutung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>STAGING</code></td>
-<td>lokale, noch nicht bestätigte Ablage läuft</td>
+<td><code>key</code></td>
+<td>stabile Identität der Ansicht/Operation; neuer Job ersetzt den alten</td>
 </tr>
 <tr>
-<td><code>LOCAL_VERIFIED</code></td>
-<td>lokales Original wurde vollständig zurückgelesen und per SHA-256 verifiziert</td>
+<td><code>name</code></td>
+<td>sichtbarer und protokollierter Taskname</td>
 </tr>
 <tr>
-<td><code>LOCAL_MISSING</code></td>
-<td>erwartetes lokales Original fehlt</td>
+<td><code>work(token, report)</code></td>
+<td>Workerfunktion ohne Widgetzugriff</td>
 </tr>
 <tr>
-<td><code>LOCAL_CORRUPT</code></td>
-<td>lokale Größe oder Prüfsumme stimmt nicht</td>
+<td><code>lane</code></td>
+<td><code>read</code>, <code>write</code> oder <code>prefetch</code></td>
 </tr>
 <tr>
-<td><code>REMOVED_AFTER_RETENTION</code></td>
-<td>Original wurde nach Aufbewahrungsprüfung administrativ entfernt</td>
+<td><code>priority</code></td>
+<td>Qt-Threadpool-Priorität</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>Diagnose- und Fachkontext</td>
 </tr>
 </tbody>
 </table>
-<table>
-<thead>
-<tr>
-<th>Backupstatus</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>NOT_CONFIGURED</code></td>
-<td>kein aktives Backupziel; kein fachlicher Fehler</td>
-</tr>
-<tr>
-<td><code>PENDING</code></td>
-<td>dauerhafter Backupauftrag vorhanden</td>
-</tr>
-<tr>
-<td><code>UPLOADING</code></td>
-<td>Transfer aktiv</td>
-</tr>
-<tr>
-<td><code>VERIFIED</code></td>
-<td>Backupobjekt wurde vollständig zurückgelesen und verifiziert</td>
-</tr>
-<tr>
-<td><code>FAILED</code></td>
-<td>Fehler protokolliert; Wiederholung möglich</td>
-</tr>
-<tr>
-<td><code>REMOTE_MISSING</code></td>
-<td>zuvor verifiziertes Backupobjekt fehlt</td>
-</tr>
-</tbody>
-</table>
-<p><code>LOCAL_VERIFIED</code> ist die Voraussetzung für Fachfunktionen. <code>backup_status</code> beschreibt ausschließlich die zusätzliche Sicherung.</p>
-<h2 id="4-archivierungs-und-backupablauf">4. Archivierungs- und Backupablauf<a class="headerlink" href="#4-archivierungs-und-backupablauf" title="Permanent link">&para;</a></h2>
+<p>Die Pools sind bewusst begrenzt:</p>
+<ul>
+<li>Read-Pool: maximal 4 parallele Jobs.</li>
+<li>Write-Lane: genau 1 Job, damit Benutzeränderungen seriell committen.</li>
+<li>Prefetch-Lane: genau 1 spekulativer Ladevorgang.</li>
+</ul>
+<h3 id="42-generationen-und-veraltete-ergebnisse">4.2 Generationen und veraltete Ergebnisse<a class="headerlink" href="#42-generationen-und-veraltete-ergebnisse" title="Permanent link">&para;</a></h3>
+<p>Für jeden Job-Key führt der Controller eine Generation. Beim erneuten Submit desselben Keys wird der vorherige Token storniert und die Generation erhöht. Progress-, Erfolgs- und Fehlersignale werden nur ausgeliefert, wenn Handle, Generation und Key noch aktuell sind. Ein langsames altes Ergebnis kann daher keine inzwischen gewechselte Ansicht überschreiben.</p>
+<p>Wird das besitzende Widget zerstört, storniert dessen <code>destroyed</code>-Signal den Token. Worker prüfen <code>token.throw_if_cancelled()</code> vor, während und nach längeren Phasen. SQLite-Abfragen sollten zusätzlich über Progress Handler oder zwischen Teilabfragen kooperativ abbrechbar bleiben.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant View as Ansicht
+    participant Controller as UiJobController
+    participant Pool as Worker-Pool
+    participant DB as SQLite
+
+    View-&gt;&gt;Controller: submit(key, generation n)
+    Controller-&gt;&gt;Controller: älteren Job mit gleichem Key stornieren
+    Controller-&gt;&gt;Pool: QRunnable starten
+    Pool-&gt;&gt;DB: eigene Verbindung öffnen
+    DB--&gt;&gt;Pool: Zeilen / DTOs
+    Pool-&gt;&gt;Controller: succeeded(request_id, result)
+    Controller-&gt;&gt;Controller: Key, Generation und Token prüfen
+    alt Ergebnis ist aktuell
+        Controller--&gt;&gt;View: aktuelles Ergebnis als Qt-Signal
+    else Ergebnis ist veraltet
+        Controller-&gt;&gt;Controller: Ergebnis verwerfen
+    end
+    View-&gt;&gt;View: Modell/Widgets im Hauptthread aktualisieren</code></pre>
+<h3 id="43-ergebnis-und-fortschrittsmodell">4.3 Ergebnis- und Fortschrittsmodell<a class="headerlink" href="#43-ergebnis-und-fortschrittsmodell" title="Permanent link">&para;</a></h3>
+<p><code>JobProgress</code> kann Text, Phase sowie <code>current/total</code> melden. <code>JobResult</code> enthält Wert, Request-ID, Jobname, Laufzeit und Metadaten. Der Controller protokolliert Wartezeit, Workerzeit, Phasenzeiten, Recordanzahl und Cachetreffer. Worker dürfen ausschließlich threadunabhängige Werte zurückgeben: Listen, Dictionaries, unveränderliche DTOs, Bytes oder Skalare. <code>QObject</code>, Modelle und Widgets dürfen den Thread nicht wechseln.</p>
+<h2 id="5-datenbankarbeit-in-workern">5. Datenbankarbeit in Workern<a class="headerlink" href="#5-datenbankarbeit-in-workern" title="Permanent link">&para;</a></h2>
+<p>Jeder Worker öffnet seine SQLite-Verbindung selbst über die gemeinsame Runtime-Factory. Verbindungen werden niemals vom UI-Thread an Worker weitergereicht. Runtime-Repositories verwenden <code>ensure_schema=False</code>; DDL und Datenmigrationen gehören ausschließlich in den Start-Bootstrap.</p>
+<p>Empfohlenes Muster:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
+    <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">VehicleUnitRepository</span><span class="p">(</span><span class="n">db_path</span><span class="p">,</span> <span class="n">ensure_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">&quot;Kalibrierungen werden geladen&quot;</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">))</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">&quot;ddd_vu_calibration&quot;</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">date_from</span><span class="p">,</span> <span class="n">date_to</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+</code></pre></div>
+<p>Der Erfolgs-Callback setzt anschließend Zeilen, Seitennummern und Schaltflächen im Hauptthread. Schreibjobs committen vollständig in der Write-Lane und stoßen erst danach einen neuen Read-Job für die betroffene Ansicht an.</p>
+<h2 id="6-hintergrunddienste">6. Hintergrunddienste<a class="headerlink" href="#6-hintergrunddienste" title="Permanent link">&para;</a></h2>
+<h3 id="61-gemeinsame-aktivitatsregistrierung">6.1 Gemeinsame Aktivitätsregistrierung<a class="headerlink" href="#61-gemeinsame-aktivitatsregistrierung" title="Permanent link">&para;</a></h3>
+<p><code>BackgroundActivityRegistry</code> ist threadsicher und speichert pro stabilem Schlüssel einen sichtbaren Text, optional mit <code>aktuell/gesamt</code>. UI-Jobs, Backup und Benachrichtigungen liefern daraus einen gemeinsamen Snapshot. <code>set()</code> registriert oder aktualisiert, <code>clear()</code> entfernt die Aktivität zwingend in einem <code>finally</code>-Block.</p>
+<p>Die Statusleiste fragt alle 400 ms ab und zeigt höchstens zwei Namen sowie die Zahl weiterer Tasks. Ihre Priorität ist:</p>
+<ol>
+<li>Shutdown;</li>
+<li>aktiver oder gerade beendeter UI-Stall;</li>
+<li>UI-Jobs, Scheduler, Backup, Verifizierung und Benachrichtigungen;</li>
+<li>temporäre Meldung;</li>
+<li><code>Hintergrund: bereit</code>.</li>
+</ol>
+<p>Links bleiben Benutzer, Rolle, Sprache und Region sichtbar; rechts stehen Fortschrittsbalken und Aktivität.</p>
+<h3 id="62-backupcoordinator">6.2 BackupCoordinator<a class="headerlink" href="#62-backupcoordinator" title="Permanent link">&para;</a></h3>
+<p>Der BackupCoordinator besitzt einen dedizierten Daemon-Thread und läuft höchstens einmal gleichzeitig. Ein Durchlauf verarbeitet kleine Batches:</p>
+<ul>
+<li>maximal 5 Tachographenarchive;</li>
+<li>bis zu 20 lokale Finanzarchivmigrationen und 20 Finanzbackups;</li>
+<li>bis zu 10 ausstehende REST-Buchungsexporte;</li>
+<li>maximal 50 Remote-Präsenzprüfungen;</li>
+<li>gegebenenfalls einen konsistenten Datenbanksnapshot.</li>
+</ul>
+<p>Wartet ein Benutzer-Schreibjob, pausiert der Archivfortschritt in 100-ms-Schritten und zeigt <code>Backup wartet auf eine Benutzeraktion</code>. Datenbanksnapshots verwenden die SQLite-Backup-API in kleinen Seitenpaketen. Netzwerktransfer und Read-back finden außerhalb fachlicher SQLite-Transaktionen statt.</p>
+<h3 id="63-scheduler-benachrichtigungen-und-rest">6.3 Scheduler, Benachrichtigungen und REST<a class="headerlink" href="#63-scheduler-benachrichtigungen-und-rest" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ein Qt-Timer prüft alle 30 Sekunden fällige Tasks und Benachrichtigungen.</li>
+<li>Benachrichtigungen verwenden einen nichtblockierenden Lock und einen Daemon-Worker; parallele Läufe werden verworfen.</li>
+<li>Geplante Tasks starten ihre Arbeit in eigenen Threads und melden laufende Tasknamen.</li>
+<li>Die DriverCard REST API besitzt einen eigenen Serverthread und wird optional nach dem UI-Start aktiviert.</li>
+<li>Signaturnachprüfung und Fristenabgleich starten als serialisierte UiJobs in der Write-Lane.</li>
+</ul>
 <pre class="mermaid"><code>flowchart TD
-    A["Import: DDD, Fremdbeleg oder E-Rechnung"] --&gt; B{"Dokumentart"}
-
-    B --&gt;|"Tachodaten"| C["DDD lokal komprimieren und Original-/Speicherhash bilden"]
-    B --&gt;|"Fremdrechnung"| D["Originalbeleg im lokalen Finanzarchiv ablegen"]
-    B --&gt;|"XRechnung"| E["Original, strukturiertes XML und Prüfbericht vorbereiten"]
-
-    C --&gt; F["Datei und Manifest lokal rücklesen und prüfen"]
-    D --&gt; F
-    E --&gt; F
-
-    F --&gt; G{"Lokale Prüfung erfolgreich?"}
-    G --&gt;|"Nein"| H["Import abbrechen, temporäre Objekte bereinigen und Fehler auditieren"]
-    G --&gt;|"Ja"| I["Metadaten, Verknüpfungen und Audit in SQLite bestätigen"]
-
-    I --&gt; J["Status LOCAL_VERIFIED"]
-    J --&gt; K["Anzeige, Auswertung, Prüfung, Buchung und Export verfügbar"]
-    J --&gt; L{"Externes Backup konfiguriert?"}
-
-    L --&gt;|"Nein"| M["Vollständiger lokaler Betrieb"]
-    L --&gt;|"Ja"| N["Backupauftrag dauerhaft einreihen"]
-    N --&gt; O["Optional verschlüsseln und zum Ziel übertragen"]
-    O --&gt; P["Backup vollständig zurücklesen und Hash prüfen"]
-    P --&gt; Q{"Backupprüfung erfolgreich?"}
-    Q --&gt;|"Ja"| R["Backupstatus VERIFIED und Audit"]
-    Q --&gt;|"Nein"| S["Backupstatus FAILED und automatische Wiederholung"]
-
-    S --&gt; K
-    R --&gt; K</code></pre>
-<ol>
-<li>Jeder Import wird zuerst vollständig lokal archiviert.</li>
-<li>DDD-Dateien behalten ihre GZIP-Ablage; Finanz- und E-Rechnungsbelege erhalten Original und Manifest im Finanzarchiv.</li>
-<li>Erst eine erfolgreiche lokale Rücklese- und Hashprüfung erzeugt <code>LOCAL_VERIFIED</code>.</li>
-<li><code>LOCAL_VERIFIED</code> schaltet sämtliche Fachfunktionen frei.</li>
-<li>Ohne Backupziel endet der Ablauf erfolgreich im lokalen Betrieb.</li>
-<li>Mit Backupziel wird asynchron eine zusätzliche Kopie erstellt.</li>
-<li>Backupfehler ändern nur den Backupstatus und blockieren keine lokal verifizierten Dokumente.</li>
-<li>Lokale Originale werden nach erfolgreicher Sicherung nicht gelöscht.</li>
-<li>Bei Verlust oder Beschädigung kann ein verifiziertes Backup das lokale Primärarchiv wiederherstellen.</li>
-</ol>
-<h2 id="5-ablaufe-nach-dokumentart">5. Abläufe nach Dokumentart<a class="headerlink" href="#5-ablaufe-nach-dokumentart" title="Permanent link">&para;</a></h2>
-<h3 id="tachodaten">Tachodaten<a class="headerlink" href="#tachodaten" title="Permanent link">&para;</a></h3>
-<p>DDD-Dateien werden unter <code>archive_dir</code> lokal komprimiert. Original- und Speicherhash, Archiv-ID, Quelle und Audit werden in SQLite gespeichert. Suche, Analyse, Export und logisches Löschen arbeiten ohne Backupziel. Die bestehende Ablagestruktur wird nicht migriert.</p>
-<h3 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h3>
-<p>Originalbelege werden unter <code>financial_archive_dir</code> atomar mit Manifest abgelegt und zurückgelesen. Prüfung, Buchung, Vorschau und FiBu-Export verlangen einen lokal verifizierten Originalbeleg, nicht ein Cloudobjekt. Aufbewahrung und Legal Hold gelten für das lokale Original und dessen Manifest.</p>
-<h3 id="xml-xrechnung-und-hybrid-pdf">XML-XRechnung und Hybrid-PDF<a class="headerlink" href="#xml-xrechnung-und-hybrid-pdf" title="Permanent link">&para;</a></h3>
-<p>Der Import bereitet Empfangsoriginal, bei Hybrid-PDF das eingebettete XML und den Validierungsbericht gemeinsam vor. Erst wenn alle erforderlichen Objekte lokal verifiziert sind, werden Rechnung, Positionen, Zuordnungen und Dokumentverweise bestätigt. Ein Fehler entfernt temporäre Objekte und lässt keine Teilrechnung zurück.</p>
-<h2 id="6-backupziel-einrichten">6. Backupziel einrichten<a class="headerlink" href="#6-backupziel-einrichten" title="Permanent link">&para;</a></h2>
-<p>Unter <strong>Administration → Backups</strong> kann genau ein aktives Ziel eingerichtet werden:</p>
+    A["Dienst beginnt Arbeit"] --&gt; B["Activity Registry: set"]
+    B --&gt; C{"Benutzer-Schreibjob aktiv?"}
+    C --&gt;|"Ja, Backup"| D["Kurz warten und Wartestatus anzeigen"]
+    C --&gt;|"Nein"| E["Kleinen Batch verarbeiten"]
+    D --&gt; C
+    E --&gt; F["DB-Transaktion kurz halten"]
+    F --&gt; G["Netzwerk/Read-back außerhalb der Transaktion"]
+    G --&gt; H{"Weitere Arbeit?"}
+    H --&gt;|"Ja"| E
+    H --&gt;|"Nein/Fehler"| I["Activity Registry: clear im finally"]</code></pre>
+<h2 id="7-ui-heartbeat-und-ui_stall">7. UI-Heartbeat und UI_STALL<a class="headerlink" href="#7-ui-heartbeat-und-ui_stall" title="Permanent link">&para;</a></h2>
+<p>Ein Qt-Timer schlägt alle 250 ms im Hauptthread. Ein separater Watcher prüft den Abstand zum letzten Beat. Ab einer Sekunde wird ein <code>UI_STALL</code> markiert und in der Statusleiste angezeigt. Zusätzliche Stack-Snapshots werden nach 5, 15 und 30 Sekunden protokolliert.</p>
+<p>Ein Stall-Log enthält:</p>
 <ul>
-<li><code>LOCAL_FILESYSTEM</code>: zweites lokales Laufwerk oder UNC-/NAS-Freigabe;</li>
-<li>HTTPS-WebDAV;</li>
-<li>Google Drive.</li>
+<li>Phase <code>detected</code>, <code>sample_5s</code>, <code>sample_15s</code>, <code>sample_30s</code> oder <code>recovered</code>;</li>
+<li>Verzögerung in Millisekunden;</li>
+<li>aktive UiJobs und registrierte Hintergrundaktivitäten;</li>
+<li>kompakten Stack des Qt-Hauptthreads.</li>
 </ul>
-<p>Der Assistent prüft Erreichbarkeit, Schreibrecht, Upload, vollständiges Rücklesen und SHA-256. Für <code>LOCAL_FILESYSTEM</code> muss das Ziel physisch oder administrativ vom Primärarchiv getrennt sein. HTTP-WebDAV wird abgewiesen. Google Drive verwendet <code>drive.file</code>; OAuth-Tokens werden DPAPI-geschützt.</p>
-<p>Clientseitige AES-256-GCM-Verschlüsselung ist eine Eigenschaft des Backupziels. Das lokale Primärarchiv wird über Windows-, Volume- und Dateisystemschutz abgesichert. Ein exportierter Recovery-Key muss separat und offline verwahrt werden.</p>
-<h2 id="7-optionales-backup-und-wiederholung">7. Optionales Backup und Wiederholung<a class="headerlink" href="#7-optionales-backup-und-wiederholung" title="Permanent link">&para;</a></h2>
-<p>Nach <code>LOCAL_VERIFIED</code> wird bei aktivem Ziel ein dauerhafter Auftrag erzeugt. Das Objekt wird optional verschlüsselt, übertragen, vollständig zurückgelesen und geprüft. Erst danach gilt der Backupstatus als <code>VERIFIED</code>.</p>
-<p>Wiederholungen erfolgen nach 1, 5, 15 und 60 Minuten, danach höchstens alle sechs Stunden. Ein Neustart setzt offene Aufträge fort. Abweichender Inhalt unter derselben Objekt-ID ist ein Konflikt und wird nicht überschrieben.</p>
-<p>Die Taskoption <strong>Externes Backup vor Löschen an der Quelle abwarten</strong> verschiebt bei Tachodaten <code>mark_processed</code> und die Löschung am Terminal bis <code>VERIFIED</code>. Ohne aktives Ziel ist die Option deaktiviert. Im Standardbetrieb beendet die lokale Archivierung den Download; das Backup folgt asynchron.</p>
-<h2 id="8-datenbanksnapshots">8. Datenbanksnapshots<a class="headerlink" href="#8-datenbanksnapshots" title="Permanent link">&para;</a></h2>
-<p>Snapshots werden standardmäßig täglich um 02:00 UTC erstellt:</p>
+<p>Der Heartbeat ist Diagnose, keine Parallelisierung. Ein sichtbarer Stall bedeutet weiterhin, dass Arbeit im Hauptthread verblieben ist. Der Stack im <code>app.log</code> ist dann der Ausgangspunkt für die Korrektur.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Responsive
+    Responsive --&gt; Suspected: Beat älter als 1 s
+    Suspected --&gt; Stalled: UI_STALL detected protokollieren
+    Stalled --&gt; Stalled: Stack bei 5/15/30 s protokollieren
+    Stalled --&gt; Recovered: nächster Qt-Beat
+    Recovered --&gt; Responsive: Hinweis nach Haltezeit ausblenden</code></pre>
+<h2 id="8-kontrollierter-shutdown">8. Kontrollierter Shutdown<a class="headerlink" href="#8-kontrollierter-shutdown" title="Permanent link">&para;</a></h2>
+<p>Systemmenü und Tray verwenden denselben idempotenten Shutdownpfad. Normale Statusaktualisierungen und Timer werden gesperrt. Vor jedem potenziell blockierenden Stop wird die Qt-Oberfläche ohne neue Benutzereingaben aktualisiert.</p>
+<p>Reihenfolge:</p>
 <ol>
-<li>konsistente Datei über die SQLite Backup API erzeugen;</li>
-<li><code>PRAGMA integrity_check</code> ausführen;</li>
-<li>SHA-256 bilden und GZIP komprimieren;</li>
-<li>optional verschlüsseln;</li>
-<li>zum aktiven Dateisystem-, WebDAV- oder Google-Drive-Ziel übertragen und zurückprüfen.</li>
+<li><code>Anwendung wird beendet</code>;</li>
+<li>Scheduler- und Benachrichtigungstimer stoppen;</li>
+<li>DriverCard REST API stoppen;</li>
+<li>BackupCoordinator stoppen;</li>
+<li>Tray-Icon ausblenden;</li>
+<li><code>Dienste beendet – Anwendung wird geschlossen</code> anzeigen;</li>
+<li>UiJobs stornieren und Threadpools begrenzt auslaufen lassen;</li>
+<li>Heartbeat stoppen und Qt beenden.</li>
 </ol>
-<p>Die Retention behält 30 Tagesstände und einen Monatsstand für 12 Monate. Automatisch gelöscht werden nur abgelaufene Datenbanksnapshots, nie DDD- oder Finanzarchivobjekte.</p>
-<h2 id="9-migration-bestehender-cloudbelege">9. Migration bestehender Cloudbelege<a class="headerlink" href="#9-migration-bestehender-cloudbelege" title="Permanent link">&para;</a></h2>
-<p>Bestehende Belege ohne lokales Original werden automatisch und wiederaufnehmbar migriert:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User as Benutzer/Tray
+    participant UI as MainWindow
+    participant REST as DriverCard REST
+    participant Backup as BackupCoordinator
+    participant Jobs as UiJobController
+    participant App as QApplication
+
+    User-&gt;&gt;UI: Beenden
+    UI-&gt;&gt;UI: Shutdownstatus sperren und Fenster anzeigen
+    UI-&gt;&gt;UI: Scheduler/Benachrichtigungstimer stoppen
+    UI-&gt;&gt;REST: stop()
+    UI-&gt;&gt;Backup: stop(timeout)
+    UI-&gt;&gt;Jobs: laufende Tokens stornieren
+    Jobs-&gt;&gt;Jobs: Pools clear / waitForDone begrenzt
+    UI-&gt;&gt;App: schließen</code></pre>
+<h2 id="9-fehlersuche">9. Fehlersuche<a class="headerlink" href="#9-fehlersuche" title="Permanent link">&para;</a></h2>
+<p>Bei einer trägen oder eingefrorenen Oberfläche:</p>
 <ol>
-<li>vorhandene Spooldateien anhand des gespeicherten SHA-256 übernehmen;</li>
-<li>ausschließlich remote vorhandene Originale herunterladen und gegebenenfalls entschlüsseln;</li>
-<li>Größe und Originalhash prüfen;</li>
-<li>Original und Manifest atomar unter <code>financial_archive_dir</code> ablegen;</li>
-<li><code>LOCAL_VERIFIED</code> und Audit setzen.</li>
+<li><code>app.log</code> nach <code>UI_STALL detected</code> und den Folgesamples durchsuchen.</li>
+<li>Den letzten <code>main_stack</code> prüfen; Datenbank-, Datei- oder Netzaufrufe im UI-Thread sind ein Architekturfehler.</li>
+<li><code>active_jobs</code> mit der Statusleiste vergleichen. Ein aktiver Worker erklärt Last, aber nicht automatisch einen blockierten Qt-Thread.</li>
+<li>Nach <code>UI_JOB start/success/failed/cancelled</code> mit gleicher Request-ID suchen.</li>
+<li>Prüfen, ob Repository-Konstruktoren versehentlich <code>ensure_schema=True</code> verwenden.</li>
+<li>Lange Schreibtransaktionen, fehlende Tokenprüfungen oder unbegrenzte Resultsets identifizieren.</li>
+<li>Erst nach Korrektur unter parallelem Backup und schnellem Tabwechsel testen.</li>
 </ol>
-<p>Fehler werden als <code>LOCAL_MISSING</code> oder <code>LOCAL_CORRUPT</code> sichtbar. Altbelege bleiben bis zur Migration remote lesbar; fachliche Verarbeitung setzt die erfolgreiche lokale Übernahme voraus. Der Administrationsbereich zeigt Gesamtzahl, migriert, ausstehend und fehlerhaft.</p>
-<h2 id="10-einzelobjekt-wiederherstellen">10. Einzelobjekt wiederherstellen<a class="headerlink" href="#10-einzelobjekt-wiederherstellen" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Objekt und verifiziertes Backup auswählen.</li>
-<li>Adminberechtigung und Pflichtgrund bestätigen.</li>
-<li>Backup in eine temporäre Datei laden.</li>
-<li>Backuphash prüfen, gegebenenfalls entschlüsseln und Originalhash prüfen.</li>
-<li>In das erwartete lokale Primärarchiv atomar verschieben.</li>
-<li>Lokales Objekt erneut vollständig lesen und verifizieren.</li>
-<li>Erst danach Archiv- und Backupstatus abgleichen und den Restore auditieren.</li>
-</ol>
-<p>Ein Fehler lässt vorhandene lokale Objekte unverändert und entfernt Teildateien. Eine logisch gelöschte Fachzeile wird nicht automatisch reaktiviert.</p>
-<h2 id="11-datenbankrestore">11. Datenbankrestore<a class="headerlink" href="#11-datenbankrestore" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    A["Snapshot auswählen"] --&gt; B["Temporär vom Backupziel lesen"]
-    B --&gt; C["Hash prüfen, entschlüsseln und dekomprimieren"]
-    C --&gt; D["SQLite integrity_check"]
-    D --&gt; E["Scheduler und Writer stoppen"]
-    E --&gt; F["Sicherheitskopie der aktuellen DB"]
-    F --&gt; G["Datenbank atomar ersetzen"]
-    G --&gt; H["Anwendung neu starten und Migrationen ausführen"]
-    H --&gt; I["Primärarchive und Backupstatus abgleichen"]</code></pre>
-<p>Kann die Liveverbindung nicht sicher geschlossen werden, wird der Austausch für den Neustart vorgemerkt. Eine fehlgeschlagene Vorprüfung schreibt keinen Austauschauftrag.</p>
-<h2 id="12-vollstandige-notfallwiederherstellung">12. Vollständige Notfallwiederherstellung<a class="headerlink" href="#12-vollstandige-notfallwiederherstellung" title="Permanent link">&para;</a></h2>
-<ol>
-<li>kompatible FLEET-Mira-Version isoliert installieren;</li>
-<li>Backupziel ohne normale Importe konfigurieren;</li>
-<li>gegebenenfalls Recovery-Key bereitstellen;</li>
-<li>Datenbanksnapshot wiederherstellen und prüfen;</li>
-<li>DDD-Primärarchiv und Finanzprimärarchiv aus den Manifesten rekonstruieren;</li>
-<li>alle komprimierten/dekomprimierten DDD-Hashes und Dokument-SHA-256 prüfen;</li>
-<li>Datenbankverknüpfungen, lokale Archivstatus, Backupstatus, Retention und Audit abgleichen;</li>
-<li>C-/M-Auswertung, Anmeldung, Fremdrechnung und XRechnung repräsentativ testen;</li>
-<li>Freigabe vor Produktivumschaltung dokumentieren.</li>
-</ol>
-<h2 id="13-zielwechsel-berechtigungen-und-audit">13. Zielwechsel, Berechtigungen und Audit<a class="headerlink" href="#13-zielwechsel-berechtigungen-und-audit" title="Permanent link">&para;</a></h2>
-<p>Ein Ziel kann nicht gelöscht werden, solange Aufbewahrungsobjekte darauf verweisen. Beim Zielwechsel werden Objekte kopiert, zurückgelesen und verifiziert; Referenzen ändern sich erst nach Erfolg. Das alte Ziel bleibt bis zur Freigabe des Abgleichberichts erhalten.</p>
+<h2 id="10-abnahmekriterien-fur-neue-ansichten-und-dienste">10. Abnahmekriterien für neue Ansichten und Dienste<a class="headerlink" href="#10-abnahmekriterien-fur-neue-ansichten-und-dienste" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>backup.read</code>: Status lesen;</li>
-<li><code>backup.run</code>: Aufträge wiederholen und prüfen;</li>
-<li><code>backup.manage</code>: Ziele und Verschlüsselung verwalten;</li>
-<li><code>backup.restore</code>: Objekte wiederherstellen.</li>
+<li>Konstruktion und Tabwechsel führen keine umfangreiche SQLite-Abfrage im Hauptthread aus.</li>
+<li>Jeder Ladevorgang besitzt einen stabilen, ansichtsspezifischen Job-Key.</li>
+<li>Alte Ergebnisse können keine neuere Ansicht aktualisieren.</li>
+<li>SQLite-Verbindungen werden im ausführenden Thread geöffnet und geschlossen.</li>
+<li>Write-Jobs sind serialisiert und lösen Aktualisierung erst nach Commit aus.</li>
+<li>Große Tabellen verwenden fachlich korrekte Filter und Pagination.</li>
+<li>Hintergrunddienste registrieren Aktivität und löschen sie auch bei Fehlern.</li>
+<li>Shutdown kann mehrfach aufgerufen werden, beendet Dienste aber nur einmal.</li>
+<li>Ein Lasttest mit parallelem Backup erzeugt keinen <code>UI_STALL</code> über eine Sekunde.</li>
 </ul>
-<p>Zieländerungen, Verbindungstests, Key-Exportbestätigungen, Fehler, Snapshots, Retentionslöschungen, Migrationen und Restores werden ohne Secrets, Tokens oder Schlüssel auditiert.</p>
-<h2 id="14-betriebscheckliste">14. Betriebscheckliste<a class="headerlink" href="#14-betriebscheckliste" title="Permanent link">&para;</a></h2>
-<ul>
-<li>täglich: Erreichbarkeit und freier Speicher der Primärarchive, lokale Integritätsfehler, Backupstau und letzter Datenbanksnapshot;</li>
-<li>wöchentlich: Zielerreichbarkeit, Quota, Authentifizierung und zufällige Hashprüfung;</li>
-<li>monatlich: Datenbankretention, Vollständigkeit des Finanzarchivs und Migrationsfortschritt;</li>
-<li>vierteljährlich: isolierter Restore von Datenbank, DDD-Archiv und Finanzarchiv;</li>
-<li>nach Pfad-, Credential-, Ziel- oder Versionsänderung: Verbindungstest und Sofortsnapshot;</li>
-<li>bei Incident: Logs und Audit sichern und die letzte gültige Datenbank nicht überschreiben.</li>
-</ul>
-<p>Diese Mechanismen unterstützen Integrität, Nachvollziehbarkeit und Aufbewahrung. Eine formale GoBD-Konformität hängt zusätzlich von Betrieb, Berechtigungen und Verfahrensdokumentation ab.</p>
 
 
 

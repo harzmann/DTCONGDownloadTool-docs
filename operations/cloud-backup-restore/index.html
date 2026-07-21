@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/cloud-backup-restore/">
       
       
-        <link rel="prev" href="../../integration/drivercard-parser/">
+        <link rel="prev" href="../../architecture/async-ui-background-services/">
       
       
         <link rel="next" href="../documentation-deployment/">
@@ -31,7 +31,7 @@
     
     
       
-        <title>Cloud backup and restore - FLEET Mira Documentation</title>
+        <title>Archiving, backup and restore - FLEET Mira Documentation</title>
       
     
     
@@ -56,6 +56,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cloud-backup-and-restore" class="md-skip">
+        <a href="#archiving-backup-and-restore" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud backup and restore
+              Archiving, backup and restore
             
           </span>
         </div>
@@ -513,6 +515,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/position-maps/" class="md-nav__link">
         
   
@@ -802,6 +832,121 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -820,10 +965,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -841,8 +986,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -875,7 +1020,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud backup and restore
+    Archiving, backup and restore
   
 
     
@@ -893,7 +1038,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud backup and restore
+    Archiving, backup and restore
   
 
     
@@ -930,10 +1075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-remote-layout" class="md-nav__link">
+  <a href="#2-primary-archive-and-backup-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Remote layout
+        2. Primary archive and backup layout
       
     </span>
   </a>
@@ -952,22 +1097,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-target-setup" class="md-nav__link">
+  <a href="#4-archiving-and-backup-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Target setup
+        4. Archiving and backup flow
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Target setup">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-document-specific-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Document-specific flows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Document-specific flows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#webdav" class="md-nav__link">
+  <a href="#tachograph-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WebDAV
+        Tachograph data
       
     </span>
   </a>
@@ -975,10 +1131,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#google-drive" class="md-nav__link">
+  <a href="#supplier-invoices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google Drive
+        Supplier invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml-xrechnung-and-hybrid-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML XRechnung and hybrid PDF
       
     </span>
   </a>
@@ -991,10 +1158,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-encryption" class="md-nav__link">
+  <a href="#6-configure-a-backup-target" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Encryption
+        6. Configure a backup target
       
     </span>
   </a>
@@ -1002,21 +1169,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-archive-backup-flow" class="md-nav__link">
+  <a href="#7-optional-backup-and-retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Archive backup flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strict-terminal-deletion-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strict terminal-deletion mode
+        7. Optional backup and retry
       
     </span>
   </a>
@@ -1035,10 +1191,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-restore-one-archive-object" class="md-nav__link">
+  <a href="#9-migrate-existing-cloud-documents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Restore one archive object
+        9. Migrate existing cloud documents
       
     </span>
   </a>
@@ -1046,10 +1202,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-database-restore" class="md-nav__link">
+  <a href="#10-restore-one-object" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Database restore
+        10. Restore one object
       
     </span>
   </a>
@@ -1057,10 +1213,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-full-disaster-recovery" class="md-nav__link">
+  <a href="#11-database-restore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Full disaster recovery
+        11. Database restore
       
     </span>
   </a>
@@ -1068,10 +1224,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-target-change" class="md-nav__link">
+  <a href="#12-full-disaster-recovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Target change
+        12. Full disaster recovery
       
     </span>
   </a>
@@ -1079,10 +1235,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-permissions-and-audit" class="md-nav__link">
+  <a href="#13-target-change-permissions-and-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13. Permissions and audit
+        13. Target change, permissions and audit
       
     </span>
   </a>
@@ -1182,10 +1338,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-remote-layout" class="md-nav__link">
+  <a href="#2-primary-archive-and-backup-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Remote layout
+        2. Primary archive and backup layout
       
     </span>
   </a>
@@ -1204,22 +1360,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-target-setup" class="md-nav__link">
+  <a href="#4-archiving-and-backup-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Target setup
+        4. Archiving and backup flow
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Target setup">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-document-specific-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Document-specific flows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Document-specific flows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#webdav" class="md-nav__link">
+  <a href="#tachograph-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        WebDAV
+        Tachograph data
       
     </span>
   </a>
@@ -1227,10 +1394,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#google-drive" class="md-nav__link">
+  <a href="#supplier-invoices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google Drive
+        Supplier invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml-xrechnung-and-hybrid-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XML XRechnung and hybrid PDF
       
     </span>
   </a>
@@ -1243,10 +1421,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-encryption" class="md-nav__link">
+  <a href="#6-configure-a-backup-target" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Encryption
+        6. Configure a backup target
       
     </span>
   </a>
@@ -1254,21 +1432,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-archive-backup-flow" class="md-nav__link">
+  <a href="#7-optional-backup-and-retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Archive backup flow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strict-terminal-deletion-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strict terminal-deletion mode
+        7. Optional backup and retry
       
     </span>
   </a>
@@ -1287,10 +1454,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-restore-one-archive-object" class="md-nav__link">
+  <a href="#9-migrate-existing-cloud-documents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Restore one archive object
+        9. Migrate existing cloud documents
       
     </span>
   </a>
@@ -1298,10 +1465,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-database-restore" class="md-nav__link">
+  <a href="#10-restore-one-object" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Database restore
+        10. Restore one object
       
     </span>
   </a>
@@ -1309,10 +1476,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-full-disaster-recovery" class="md-nav__link">
+  <a href="#11-database-restore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Full disaster recovery
+        11. Database restore
       
     </span>
   </a>
@@ -1320,10 +1487,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-target-change" class="md-nav__link">
+  <a href="#12-full-disaster-recovery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Target change
+        12. Full disaster recovery
       
     </span>
   </a>
@@ -1331,10 +1498,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-permissions-and-audit" class="md-nav__link">
+  <a href="#13-target-change-permissions-and-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13. Permissions and audit
+        13. Target change, permissions and audit
       
     </span>
   </a>
@@ -1369,155 +1536,235 @@
 
 
 
-<h1 id="cloud-backup-and-restore">Cloud backup and restore<a class="headerlink" href="#cloud-backup-and-restore" title="Permanent link">&para;</a></h1>
+<h1 id="archiving-backup-and-restore">Archiving, backup and restore<a class="headerlink" href="#archiving-backup-and-restore" title="Permanent link">&para;</a></h1>
 <h2 id="1-scope-and-responsibility">1. Scope and responsibility<a class="headerlink" href="#1-scope-and-responsibility" title="Permanent link">&para;</a></h2>
-<p>FLEET Mira backs up immutable tachograph archive objects and consistent SQLite snapshots to one active Google Drive or HTTPS WebDAV target. The local archive remains primary. Backup is one-way; remote changes are never synchronised back automatically.</p>
-<p>Financial originals use the same active provider infrastructure but a separate <code>financial-documents/...</code> namespace and retention rules.</p>
-<h2 id="2-remote-layout">2. Remote layout<a class="headerlink" href="#2-remote-layout" title="Permanent link">&para;</a></h2>
+<p>FLEET Mira archives tachograph data and financial documents locally before performing any backup. The local primary archive is authoritative; an external backup is optional and does not enable business functions.</p>
+<ul>
+<li><code>archive_dir</code> contains immutable compressed tachograph originals.</li>
+<li><code>financial_archive_dir</code> contains originals and manifests for supplier invoices and e-invoices.</li>
+<li>SQLite stores metadata, relationships, statuses and audit data.</li>
+<li>A backup target contains only downstream verified replicas and database snapshots.</li>
+</ul>
+<p>Import, display, analysis, verification, booking and export remain fully available without a backup target. Remote changes are never synchronised automatically into the local primary archive.</p>
+<h2 id="2-primary-archive-and-backup-layout">2. Primary archive and backup layout<a class="headerlink" href="#2-primary-archive-and-backup-layout" title="Permanent link">&para;</a></h2>
+<p>The local primary archives use separate configurable paths:</p>
+<div class="highlight"><pre><span></span><code>archive_dir/
+  YYYY/MM/&lt;archive-id&gt;.ddd.gz
+
+financial_archive_dir/
+  YYYY/&lt;invoice-id&gt;/&lt;document-id&gt;/
+    original.&lt;ext&gt;
+    manifest.json
+</code></pre></div>
+<p>An optional backup target continues to use the compatible prefix:</p>
 <div class="highlight"><pre><span></span><code>DLTNG/&lt;installation-id&gt;/
   archives/YYYY/MM/&lt;archive-id&gt;.ddd.gz[.enc]
-  database/YYYY/MM/archive_YYYY-MM-DD_HHmmssZ.db.gz[.enc]
-  manifests/...
   financial-documents/YYYY/&lt;invoice-id&gt;/&lt;document-id&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
+  manifests/...
+  database/YYYY/MM/archive_YYYY-MM-DD_HHmmssZ.db.gz[.enc]
 </code></pre></div>
-<p><code>DLTNG</code> is the compatibility storage prefix and is not renamed to FLEET Mira. Renaming it would orphan existing objects.</p>
+<p><code>DLTNG</code> is not renamed so existing objects remain reachable. The primary archive and backup target must not resolve to the same path.</p>
 <h2 id="3-status-model">3. Status model<a class="headerlink" href="#3-status-model" title="Permanent link">&para;</a></h2>
+<p>Archive status and backup status are independent.</p>
 <table>
 <thead>
 <tr>
-<th>Status</th>
+<th>Archive status</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Not configured</td>
-<td>no active target</td>
+<td><code>STAGING</code></td>
+<td>local storage has not yet been confirmed</td>
 </tr>
 <tr>
-<td>Pending</td>
-<td>durable upload job exists</td>
+<td><code>LOCAL_VERIFIED</code></td>
+<td>the local original was fully read back and SHA-256 verified</td>
 </tr>
 <tr>
-<td>Uploading</td>
-<td>provider transfer in progress</td>
+<td><code>LOCAL_MISSING</code></td>
+<td>the expected local original is missing</td>
 </tr>
 <tr>
-<td>Verified</td>
-<td>remote object has expected size/hash</td>
+<td><code>LOCAL_CORRUPT</code></td>
+<td>local size or checksum does not match</td>
 </tr>
 <tr>
-<td>Failed</td>
-<td>retryable/permanent error recorded</td>
-</tr>
-<tr>
-<td>Missing remotely</td>
-<td>previously verified object no longer exists</td>
-</tr>
-<tr>
-<td>Retained after local deletion</td>
-<td>remote DDD retained by policy</td>
+<td><code>REMOVED_AFTER_RETENTION</code></td>
+<td>an administrator removed the original after retention review</td>
 </tr>
 </tbody>
 </table>
-<p>The archive list shows “backup present” only for <code>Verified</code>.</p>
-<h2 id="4-target-setup">4. Target setup<a class="headerlink" href="#4-target-setup" title="Permanent link">&para;</a></h2>
-<p>Open <strong>Administration → Backups</strong>:</p>
-<ol>
-<li>choose Google Drive or WebDAV;</li>
-<li>authenticate/select target folder;</li>
-<li>keep client-side encryption enabled unless policy explicitly permits plaintext;</li>
-<li>upload/read back a random test object;</li>
-<li>export and safely store the recovery key;</li>
-<li>confirm the recovery-key procedure;</li>
-<li>activate target and start initial database backup;</li>
-<li>monitor initial archive queue until verified.</li>
-</ol>
-<h3 id="webdav">WebDAV<a class="headerlink" href="#webdav" title="Permanent link">&para;</a></h3>
-<p>Provide HTTPS URL, username, app password and root folder. HTTP is rejected. The test performs <code>OPTIONS</code>, <code>PROPFIND</code>, collection creation, upload and read-back. Upload prefers temporary object + <code>MOVE</code>; if unsupported, direct upload is not published as verified until full read-back succeeds.</p>
-<h3 id="google-drive">Google Drive<a class="headerlink" href="#google-drive" title="Permanent link">&para;</a></h3>
-<p>Use the published FLEET Mira desktop OAuth client or import an approved organisation client definition. Scope is limited to <code>drive.file</code>. My Drive and Shared Drives are supported. Refresh tokens are DPAPI-protected. Uploads are resumable.</p>
-<h2 id="5-encryption">5. Encryption<a class="headerlink" href="#5-encryption" title="Permanent link">&para;</a></h2>
-<p>Client-side encryption uses AES-256-GCM with authenticated metadata. The target key is DPAPI-protected locally. The exported recovery-key file is the disaster-recovery dependency and must be stored offline/separately.</p>
-<p>Never store the recovery key only in the same cloud target. Losing both Windows DPAPI context and recovery key makes encrypted backups unrecoverable.</p>
-<h2 id="6-archive-backup-flow">6. Archive backup flow<a class="headerlink" href="#6-archive-backup-flow" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Backup status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NOT_CONFIGURED</code></td>
+<td>no active target; not a business error</td>
+</tr>
+<tr>
+<td><code>PENDING</code></td>
+<td>a durable backup job exists</td>
+</tr>
+<tr>
+<td><code>UPLOADING</code></td>
+<td>transfer is active</td>
+</tr>
+<tr>
+<td><code>VERIFIED</code></td>
+<td>the backup object was fully read back and verified</td>
+</tr>
+<tr>
+<td><code>FAILED</code></td>
+<td>a retryable failure was recorded</td>
+</tr>
+<tr>
+<td><code>REMOTE_MISSING</code></td>
+<td>a previously verified backup object is missing</td>
+</tr>
+</tbody>
+</table>
+<p><code>LOCAL_VERIFIED</code> is the prerequisite for business functions. <code>backup_status</code> describes only the additional copy.</p>
+<h2 id="4-archiving-and-backup-flow">4. Archiving and backup flow<a class="headerlink" href="#4-archiving-and-backup-flow" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
-    A[Local archive transaction] --&gt; B[Archive row + backup job committed]
-    B --&gt; C[Compute/confirm compressed SHA-256]
-    C --&gt; D[Optional AES-GCM encryption]
-    D --&gt; E[Upload temporary/resumable object]
-    E --&gt; F[Remote stat/read-back]
-    F --&gt; G{Size and hash match?}
-    G --&gt;|Yes| H[Verified status + audit]
-    G --&gt;|No| I[Failed/conflict + retry]</code></pre>
-<p>Retries occur after 1, 5, 15 and 60 minutes and then no more often than every six hours. A process restart resumes durable pending jobs. Same archive ID with different remote content is a conflict and is never overwritten silently.</p>
-<h2 id="7-strict-terminal-deletion-mode">7. Strict terminal-deletion mode<a class="headerlink" href="#7-strict-terminal-deletion-mode" title="Permanent link">&para;</a></h2>
-<p>Normally local archiving completes the download and cloud backup follows asynchronously. A task may enable <strong>Wait for cloud backup before deleting from terminal</strong>. In strict mode, <code>mark_processed</code> and deletion are deferred until <code>Verified</code>. A later run recognises the local duplicate, continues its pending backup and deletes the terminal object only after verification.</p>
-<h2 id="8-database-snapshots">8. Database snapshots<a class="headerlink" href="#8-database-snapshots" title="Permanent link">&para;</a></h2>
-<p>Default schedule: daily 02:00 UTC, with same-day catch-up after application restart.</p>
+    A["Import: DDD, supplier document or e-invoice"] --&gt; B{"Document type"}
+
+    B --&gt;|"Tachograph data"| C["Compress DDD locally and calculate original/stored hashes"]
+    B --&gt;|"Supplier invoice"| D["Store original in the local financial archive"]
+    B --&gt;|"XRechnung"| E["Prepare original, structured XML and validation report"]
+
+    C --&gt; F["Read back and verify local file and manifest"]
+    D --&gt; F
+    E --&gt; F
+
+    F --&gt; G{"Local verification successful?"}
+    G --&gt;|"No"| H["Abort import, clean temporary objects and audit the error"]
+    G --&gt;|"Yes"| I["Commit metadata, relationships and audit to SQLite"]
+
+    I --&gt; J["Status LOCAL_VERIFIED"]
+    J --&gt; K["Display, analysis, verification, booking and export available"]
+    J --&gt; L{"External backup configured?"}
+
+    L --&gt;|"No"| M["Complete local operation"]
+    L --&gt;|"Yes"| N["Persist backup job"]
+    N --&gt; O["Optionally encrypt and transfer to target"]
+    O --&gt; P["Read back complete backup and verify hash"]
+    P --&gt; Q{"Backup verification successful?"}
+    Q --&gt;|"Yes"| R["Backup status VERIFIED and audit"]
+    Q --&gt;|"No"| S["Backup status FAILED and automatic retry"]
+
+    S --&gt; K
+    R --&gt; K</code></pre>
 <ol>
-<li>create a consistent file using SQLite Backup API;</li>
-<li>run <code>PRAGMA integrity_check</code>;</li>
-<li>hash SHA-256;</li>
-<li>GZIP compress;</li>
-<li>optionally encrypt;</li>
-<li>upload and verify remotely.</li>
+<li>Every import is archived locally first.</li>
+<li>DDD files retain their GZIP layout; financial and e-invoice documents receive an original and manifest in the financial archive.</li>
+<li>Only successful local read-back and hash verification produces <code>LOCAL_VERIFIED</code>.</li>
+<li><code>LOCAL_VERIFIED</code> enables every business function.</li>
+<li>Without a backup target, the workflow completes successfully in local mode.</li>
+<li>With a target, an additional copy is created asynchronously.</li>
+<li>Backup failures change only backup status and do not block locally verified documents.</li>
+<li>Local originals are not deleted after successful backup.</li>
+<li>A verified backup can restore the local primary archive after loss or corruption.</li>
 </ol>
-<p>Retention keeps the latest 30 daily snapshots and one monthly snapshot for 12 months. Only expired database snapshots are automatically removed; DDD archive objects are never automatically deleted.</p>
-<h2 id="9-restore-one-archive-object">9. Restore one archive object<a class="headerlink" href="#9-restore-one-archive-object" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select the archive row and choose <strong>Restore from backup</strong>.</li>
-<li>Confirm administrative permission and reason where required.</li>
-<li>Download to a temporary file.</li>
-<li>Verify remote size/hash, decrypt and verify authenticated data.</li>
-<li>Verify compressed and decompressed hashes.</li>
-<li>Atomically move to the expected local archive path.</li>
-<li>Reconcile status; do not automatically re-activate a logically deleted business row.</li>
-</ol>
-<p>Failure leaves the current local object untouched and removes temporary partial data.</p>
-<h2 id="10-database-restore">10. Database restore<a class="headerlink" href="#10-database-restore" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-    A[Select remote snapshot] --&gt; B[Download to temporary location]
-    B --&gt; C[Hash/decrypt/decompress]
-    C --&gt; D[SQLite integrity_check]
-    D --&gt; E[Stop schedulers and background writers]
-    E --&gt; F[Create safety copy of current DB]
-    F --&gt; G[Atomically replace database]
-    G --&gt; H[Restart application and run migrations]
-    H --&gt; I[Reconcile archive/backup state]</code></pre>
-<p>Database replacement is staged for application restart when the live connection cannot be safely closed. If preflight validation fails, no replacement request is committed.</p>
-<h2 id="11-full-disaster-recovery">11. Full disaster recovery<a class="headerlink" href="#11-full-disaster-recovery" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Install the same or compatible FLEET Mira version on an isolated host/path.</li>
-<li>Configure provider access without starting normal imports.</li>
-<li>Supply the recovery key if encrypted.</li>
-<li>restore and validate the selected database snapshot;</li>
-<li>start once, apply compatible migrations and stop background writes;</li>
-<li>enumerate manifests and restore all missing archive/document objects;</li>
-<li>verify compressed/decompressed archive hashes and document SHA-256;</li>
-<li>reconcile database links, backup status, retention and audit;</li>
-<li>test representative C/M analysis, user sign-in and finance originals;</li>
-<li>document approval before production cutover.</li>
-</ol>
-<h2 id="12-target-change">12. Target change<a class="headerlink" href="#12-target-change" title="Permanent link">&para;</a></h2>
-<p>A target cannot be deleted while documents reference it. Use the target-change workflow to copy every retained object to the new target, read back/verify it and update references only after success. Keep the old target until a complete reconciliation report is approved.</p>
-<h2 id="13-permissions-and-audit">13. Permissions and audit<a class="headerlink" href="#13-permissions-and-audit" title="Permanent link">&para;</a></h2>
+<h2 id="5-document-specific-flows">5. Document-specific flows<a class="headerlink" href="#5-document-specific-flows" title="Permanent link">&para;</a></h2>
+<h3 id="tachograph-data">Tachograph data<a class="headerlink" href="#tachograph-data" title="Permanent link">&para;</a></h3>
+<p>DDD files are compressed locally under <code>archive_dir</code>. Original and stored hashes, archive ID, source and audit are stored in SQLite. Search, analysis, export and logical deletion work without a backup target. The existing layout is not migrated.</p>
+<h3 id="supplier-invoices">Supplier invoices<a class="headerlink" href="#supplier-invoices" title="Permanent link">&para;</a></h3>
+<p>Original documents are stored atomically with a manifest under <code>financial_archive_dir</code> and read back. Verification, booking, preview and accounting export require a locally verified original rather than a cloud object. Retention and legal hold apply to the local original and manifest.</p>
+<h3 id="xml-xrechnung-and-hybrid-pdf">XML XRechnung and hybrid PDF<a class="headerlink" href="#xml-xrechnung-and-hybrid-pdf" title="Permanent link">&para;</a></h3>
+<p>Import prepares the received original, embedded XML for a hybrid PDF, and validation report as one unit. Invoice, lines, allocations and document relationships are committed only after every required object is locally verified. Failure removes temporary objects and leaves no partial invoice.</p>
+<h2 id="6-configure-a-backup-target">6. Configure a backup target<a class="headerlink" href="#6-configure-a-backup-target" title="Permanent link">&para;</a></h2>
+<p>Exactly one active target can be configured under <strong>Administration → Backups</strong>:</p>
 <ul>
-<li><code>backup.read</code>: view status;</li>
-<li><code>backup.run</code>: retry/verify jobs;</li>
-<li><code>backup.manage</code>: configure target/encryption;</li>
-<li><code>backup.restore</code>: restore data.</li>
+<li><code>LOCAL_FILESYSTEM</code>: a second local drive or UNC/NAS share;</li>
+<li>HTTPS WebDAV;</li>
+<li>Google Drive.</li>
 </ul>
-<p>Target changes, tests, key export confirmation, durable failures, snapshots, retention deletion and restore are audited. Secrets, OAuth tokens and keys are never included.</p>
+<p>The wizard tests availability, write access, upload, complete read-back and SHA-256. A <code>LOCAL_FILESYSTEM</code> target must be physically or administratively separate from the primary archive. HTTP WebDAV is rejected. Google Drive uses <code>drive.file</code>; OAuth tokens are DPAPI-protected.</p>
+<p>Client-side AES-256-GCM encryption is a backup-target property. The local primary archive is protected through Windows, volume and filesystem controls. An exported recovery key must be stored separately and offline.</p>
+<h2 id="7-optional-backup-and-retry">7. Optional backup and retry<a class="headerlink" href="#7-optional-backup-and-retry" title="Permanent link">&para;</a></h2>
+<p>After <code>LOCAL_VERIFIED</code>, an active target receives a durable job. The object is optionally encrypted, transferred, fully read back and checked. Only then is backup status <code>VERIFIED</code>.</p>
+<p>Retries occur after 1, 5, 15 and 60 minutes and then no more often than every six hours. A restart resumes pending jobs. Different content under the same object ID is a conflict and is not overwritten.</p>
+<p>The task option <strong>Wait for external backup before deleting at source</strong> defers tachograph <code>mark_processed</code> and terminal deletion until <code>VERIFIED</code>. It is disabled without an active target. In standard mode, local archiving completes the download and backup follows asynchronously.</p>
+<h2 id="8-database-snapshots">8. Database snapshots<a class="headerlink" href="#8-database-snapshots" title="Permanent link">&para;</a></h2>
+<p>Snapshots run daily at 02:00 UTC by default:</p>
+<ol>
+<li>create a consistent file through the SQLite Backup API;</li>
+<li>run <code>PRAGMA integrity_check</code>;</li>
+<li>calculate SHA-256 and GZIP compress;</li>
+<li>optionally encrypt;</li>
+<li>transfer to the active filesystem, WebDAV or Google Drive target and read it back.</li>
+</ol>
+<p>Retention keeps 30 daily snapshots and one monthly snapshot for 12 months. Only expired database snapshots are deleted automatically, never DDD or financial archive objects.</p>
+<h2 id="9-migrate-existing-cloud-documents">9. Migrate existing cloud documents<a class="headerlink" href="#9-migrate-existing-cloud-documents" title="Permanent link">&para;</a></h2>
+<p>Existing documents without a local original are migrated automatically and resumably:</p>
+<ol>
+<li>adopt existing spool files after checking stored SHA-256;</li>
+<li>download and, where necessary, decrypt remote-only originals;</li>
+<li>verify size and original hash;</li>
+<li>atomically store original and manifest under <code>financial_archive_dir</code>;</li>
+<li>set <code>LOCAL_VERIFIED</code> and audit the migration.</li>
+</ol>
+<p>Failures become visible as <code>LOCAL_MISSING</code> or <code>LOCAL_CORRUPT</code>. Legacy documents remain remotely readable until migration; business processing requires successful local adoption. Administration shows total, migrated, pending and failed counts.</p>
+<h2 id="10-restore-one-object">10. Restore one object<a class="headerlink" href="#10-restore-one-object" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select the object and a verified backup.</li>
+<li>Confirm administrative permission and required reason.</li>
+<li>Read the backup into a temporary file.</li>
+<li>Verify backup hash, decrypt where necessary and verify the original hash.</li>
+<li>Atomically move it into the expected local primary archive.</li>
+<li>Fully read and verify the restored local object.</li>
+<li>Only then reconcile archive and backup statuses and audit the restore.</li>
+</ol>
+<p>Failure leaves existing local objects unchanged and removes partial files. A logically deleted business row is not reactivated automatically.</p>
+<h2 id="11-database-restore">11. Database restore<a class="headerlink" href="#11-database-restore" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart TD
+    A["Select snapshot"] --&gt; B["Read temporarily from backup target"]
+    B --&gt; C["Verify hash, decrypt and decompress"]
+    C --&gt; D["SQLite integrity_check"]
+    D --&gt; E["Stop schedulers and writers"]
+    E --&gt; F["Create safety copy of current DB"]
+    F --&gt; G["Atomically replace database"]
+    G --&gt; H["Restart application and run migrations"]
+    H --&gt; I["Reconcile primary archives and backup status"]</code></pre>
+<p>Database replacement is staged for restart if the live connection cannot be closed safely. Failed preflight validation does not create a replacement request.</p>
+<h2 id="12-full-disaster-recovery">12. Full disaster recovery<a class="headerlink" href="#12-full-disaster-recovery" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Install a compatible FLEET Mira version in isolation.</li>
+<li>Configure the backup target without starting normal imports.</li>
+<li>Supply the recovery key where necessary.</li>
+<li>Restore and verify the database snapshot.</li>
+<li>Reconstruct the DDD and financial primary archives from manifests.</li>
+<li>Verify all compressed/decompressed DDD hashes and document SHA-256 values.</li>
+<li>Reconcile database relationships, local archive status, backup status, retention and audit.</li>
+<li>Test representative C/M analysis, sign-in, supplier invoice and XRechnung workflows.</li>
+<li>Document approval before production cutover.</li>
+</ol>
+<h2 id="13-target-change-permissions-and-audit">13. Target change, permissions and audit<a class="headerlink" href="#13-target-change-permissions-and-audit" title="Permanent link">&para;</a></h2>
+<p>A target cannot be deleted while retained objects reference it. Target change copies, reads back and verifies objects; references change only after success. Keep the old target until the reconciliation report is approved.</p>
+<ul>
+<li><code>backup.read</code>: read status;</li>
+<li><code>backup.run</code>: retry and verify jobs;</li>
+<li><code>backup.manage</code>: manage targets and encryption;</li>
+<li><code>backup.restore</code>: restore objects.</li>
+</ul>
+<p>Target changes, connection tests, key-export confirmations, failures, snapshots, retention deletion, migration and restore are audited without secrets, tokens or keys.</p>
 <h2 id="14-operational-checklist">14. Operational checklist<a class="headerlink" href="#14-operational-checklist" title="Permanent link">&para;</a></h2>
 <ul>
-<li>daily: pending/failed counts and last DB snapshot;</li>
-<li>weekly: target quota/authentication and random archive verification;</li>
-<li>monthly: database retention and document-vault completeness;</li>
-<li>quarterly: isolated database + C/M + financial-document restore;</li>
-<li>after credential/target/version change: connection test and immediate snapshot;</li>
-<li>incident: preserve logs/audit and do not overwrite the last known-good database.</li>
+<li>daily: primary archive availability and free space, local integrity errors, backup backlog and latest database snapshot;</li>
+<li>weekly: target availability, quota, authentication and random hash verification;</li>
+<li>monthly: database retention, financial archive completeness and migration progress;</li>
+<li>quarterly: isolated restore of database, DDD archive and financial archive;</li>
+<li>after path, credential, target or version changes: connection test and immediate snapshot;</li>
+<li>incident: preserve logs and audit and do not overwrite the last known-good database.</li>
 </ul>
+<p>These mechanisms support integrity, traceability and retention. Formal GoBD compliance additionally depends on operations, permissions and procedural documentation.</p>
 
 
 
@@ -1581,6 +1828,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

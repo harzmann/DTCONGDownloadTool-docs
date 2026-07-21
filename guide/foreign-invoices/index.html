@@ -16,7 +16,7 @@
         <link rel="prev" href="../vehicle-unit-analysis/">
       
       
-        <link rel="next" href="../position-maps/">
+        <link rel="next" href="../cost-reporting/">
       
       
         
@@ -56,6 +56,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -617,6 +619,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../position-maps/" class="md-nav__link">
         
   
@@ -932,7 +962,7 @@
   <span class="md-ellipsis">
     
   
-    Operations
+    Architecture
   
 
     
@@ -945,6 +975,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -968,7 +1113,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud backup and restore
+    Archiving, backup and restore
   
 
     
@@ -1124,7 +1269,7 @@
 <h2 id="original-documents">Original documents<a class="headerlink" href="#original-documents" title="Permanent link">&para;</a></h2>
 <p><img alt="Foreign-invoice original documents" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
 <em>Figure: Version, filename, origin, cloud state and retention.</em></p>
-<p>The original remains byte-identical in the cloud document vault. <strong>Back up documents now</strong> uploads pending files, reads them back and verifies SHA-256. Preview uses a temporary copy that is safely cleaned after the external viewer closes. Verification is blocked until an original is cloud-verified.</p>
+<p>The original remains byte-identical in the local financial archive. Local storage is read back and SHA-256 verified before verification, booking, preview and export are enabled. <strong>Back up documents now</strong> optionally transfers pending files to the configured backup target. Preview uses a temporary copy that is safely cleaned after the external viewer closes. A missing or failed backup does not block the invoice.</p>
 <h2 id="export-history">Export history<a class="headerlink" href="#export-history" title="Permanent link">&para;</a></h2>
 <p><img alt="Foreign-invoice export history" src="../../assets/screenshots/foreign-invoice-export-history.png" />
 <em>Figure: Adapter, state, transfer time, external ID and error.</em></p>
@@ -1205,6 +1350,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

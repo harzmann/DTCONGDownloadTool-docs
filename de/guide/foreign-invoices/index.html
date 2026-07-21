@@ -16,7 +16,7 @@
         <link rel="prev" href="../vehicle-unit-analysis/">
       
       
-        <link rel="next" href="../position-maps/">
+        <link rel="next" href="../cost-reporting/">
       
       
         
@@ -56,6 +56,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -617,6 +619,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../position-maps/" class="md-nav__link">
         
   
@@ -932,7 +962,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Architektur
   
 
     
@@ -945,6 +975,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -968,7 +1113,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud-Backup und Wiederherstellung
+    Archivierung, Backup und Wiederherstellung
   
 
     
@@ -1124,7 +1269,7 @@
 <h2 id="originalbelege">Originalbelege<a class="headerlink" href="#originalbelege" title="Permanent link">&para;</a></h2>
 <p><img alt="Originalbelege einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
 <em>Abbildung: Version, Dateiname, Herkunft, Cloudstatus und Aufbewahrung.</em></p>
-<p>Der Originalbeleg bleibt bytegenau im Cloud-Belegarchiv. <strong>Belege jetzt sichern</strong> lädt offene Dokumente hoch und verifiziert sie durch Rücklesen und SHA-256. Vorschau lädt eine temporäre, nach dem Schließen sicher zu bereinigende Kopie. Ohne cloud-verifizierten Originalbeleg kann eine Fremdrechnung nicht geprüft werden.</p>
+<p>Der Originalbeleg bleibt bytegenau im lokalen Finanzarchiv. Die lokale Ablage wird durch Rücklesen und SHA-256 verifiziert und schaltet anschließend Prüfung, Buchung, Vorschau und Export frei. <strong>Belege jetzt sichern</strong> überträgt offene Dokumente optional an das konfigurierte Backupziel. Vorschau verwendet eine temporäre, nach dem Schließen sicher zu bereinigende Kopie. Ein fehlendes oder fehlerhaftes Backup blockiert die Fremdrechnung nicht.</p>
 <h2 id="exporthistorie">Exporthistorie<a class="headerlink" href="#exporthistorie" title="Permanent link">&para;</a></h2>
 <p><img alt="Exporthistorie einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-export-history.png" />
 <em>Abbildung: Adapter, Status, Übergabezeit, externe ID und Fehler.</em></p>
@@ -1205,6 +1350,8 @@
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
       
     
   </body>

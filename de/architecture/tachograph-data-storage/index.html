@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/tachograph-data-storage/">
+      
+      
+        <link rel="prev" href="../../integration/drivercard-parser/">
+      
+      
+        <link rel="next" href="../async-ui-background-services/">
+      
+      
+        
+          <link rel="alternate" href="../../../architecture/tachograph-data-storage/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Tachographendaten: Speicherung und Zugriff - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tachographendaten-parsing-speicherung-und-zugriff" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tachographendaten: Speicherung und Zugriff
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../architecture/tachograph-data-storage/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-zweck-und-geltungsbereich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Zweck und Geltungsbereich
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-archivierung-und-gemeinsame-importpipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Archivierung und gemeinsame Importpipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-parsing-von-c-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Parsing von C-Dateien
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Parsing von C-Dateien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-segmentierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Segmentierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ef-zuordnung-und-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 EF-Zuordnung und Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fachliche-dekodierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Fachliche Dekodierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parsing-von-m-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Parsing von M-Dateien
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Parsing von M-Dateien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-trep-klassifizierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 TREP-Klassifizierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-g1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 G1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-g2-v1-und-g2-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 G2 v1 und G2 v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-geschwindigkeitsblocke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Geschwindigkeitsblöcke
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-signaturen-und-trust-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Signaturen und Trust Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Signaturen und Trust Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M-Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-physisches-datenmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Physisches Datenmodell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Physisches Datenmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-archiv-und-nachweistabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Archiv- und Nachweistabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-c-tabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 C-Tabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-m-tabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 M-Tabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-indizes-und-sqlite-konfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Indizes und SQLite-Konfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-archivubergreifende-deduplizierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Archivübergreifende Deduplizierung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Archivübergreifende Deduplizierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-zwei-zugriffspfade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Zwei Zugriffspfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-normalisierung-und-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Normalisierung und Hashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-deduplizierung-im-sql-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Deduplizierung im SQL-Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-datenzugriff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Datenzugriff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Datenzugriff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-repository-schnittstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Repository-Schnittstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-filter-und-pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Filter und Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-zugriff-aus-der-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Zugriff aus der UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-idempotenz-migration-und-wiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Idempotenz, Migration und Wiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-diagnose-fur-administratoren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Diagnose für Administratoren
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dokumentations-Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-zweck-und-geltungsbereich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Zweck und Geltungsbereich
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-archivierung-und-gemeinsame-importpipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Archivierung und gemeinsame Importpipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-parsing-von-c-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Parsing von C-Dateien
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Parsing von C-Dateien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-segmentierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Segmentierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ef-zuordnung-und-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 EF-Zuordnung und Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-fachliche-dekodierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Fachliche Dekodierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parsing-von-m-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Parsing von M-Dateien
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Parsing von M-Dateien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-trep-klassifizierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 TREP-Klassifizierung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-g1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 G1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-g2-v1-und-g2-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 G2 v1 und G2 v2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-geschwindigkeitsblocke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Geschwindigkeitsblöcke
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-signaturen-und-trust-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Signaturen und Trust Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Signaturen und Trust Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M-Dateien
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-physisches-datenmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Physisches Datenmodell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Physisches Datenmodell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-archiv-und-nachweistabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Archiv- und Nachweistabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-c-tabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 C-Tabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-m-tabellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 M-Tabellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-indizes-und-sqlite-konfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Indizes und SQLite-Konfiguration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-archivubergreifende-deduplizierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Archivübergreifende Deduplizierung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Archivübergreifende Deduplizierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-zwei-zugriffspfade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Zwei Zugriffspfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-normalisierung-und-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Normalisierung und Hashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-deduplizierung-im-sql-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Deduplizierung im SQL-Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-datenzugriff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Datenzugriff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Datenzugriff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-repository-schnittstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Repository-Schnittstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-filter-und-pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Filter und Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-zugriff-aus-der-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Zugriff aus der UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-idempotenz-migration-und-wiederherstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Idempotenz, Migration und Wiederherstellung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-diagnose-fur-administratoren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Diagnose für Administratoren
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tachographendaten-parsing-speicherung-und-zugriff">Tachographendaten: Parsing, Speicherung und Zugriff<a class="headerlink" href="#tachographendaten-parsing-speicherung-und-zugriff" title="Permanent link">&para;</a></h1>
+<h2 id="1-zweck-und-geltungsbereich">1. Zweck und Geltungsbereich<a class="headerlink" href="#1-zweck-und-geltungsbereich" title="Permanent link">&para;</a></h2>
+<p>Dieses Dokument beschreibt den technischen Datenweg von Fahrerkarte-C-Dateien und Massenspeicher-M-Dateien: vom unveränderten DDD-Original über Klassifizierung, Parsing und Signaturprüfung bis zur Speicherung, archivübergreifenden Deduplizierung und Abfrage durch UI, Reporting und Compliance. Es richtet sich an Entwickler und Administratoren.</p>
+<p>Die wichtigsten Garantien sind:</p>
+<ul>
+<li>Das komprimierte DDD-Original bleibt die revisionssichere Beweisquelle.</li>
+<li>Archiv-, Signatur-, Abschnitts- und Rohdatensatznachweise bleiben archivbezogen.</li>
+<li>Erneutes Parsen ersetzt nur abgeleitete Daten des betreffenden Archivs.</li>
+<li>Fahrer- und Fahrzeuggesamtsichten deduplizieren über alle zugeordneten Archive.</li>
+<li>Eine Einzelarchivansicht zeigt weiterhin ausschließlich Beobachtungen dieser Datei.</li>
+<li>Parser- und Signaturstatus werden nicht durch die Deduplizierung verändert.</li>
+</ul>
+<pre class="mermaid"><code>flowchart LR
+    A["DDD-Eingang"] --&gt; B["Lokales GZIP-Original"]
+    B --&gt; C["Archivmetadaten und SHA-256"]
+    B --&gt; D{"Binäre Klassifizierung"}
+    D --&gt;|"C-Datei"| E["DriverCardFullParser"]
+    D --&gt;|"M-Datei"| F["VehicleUnitParser"]
+    E --&gt; G["Signaturprüfung C"]
+    F --&gt; H["Signaturprüfung M"]
+    G --&gt; I["Archivbezogene C-Tabellen"]
+    H --&gt; J["Archivbezogene M-Tabellen"]
+    I --&gt; K["Kanonische Gesamtsicht"]
+    J --&gt; K
+    K --&gt; L["Repository"]
+    L --&gt; M["UI / Reporting / Compliance"]
+    I --&gt; N["Einzelarchivansicht"]
+    J --&gt; N</code></pre>
+<h2 id="2-archivierung-und-gemeinsame-importpipeline">2. Archivierung und gemeinsame Importpipeline<a class="headerlink" href="#2-archivierung-und-gemeinsame-importpipeline" title="Permanent link">&para;</a></h2>
+<p><code>ddd_archive</code> ist der Einstiegspunkt für jede archivierte Datei. Die Tabelle enthält unter anderem Archiv-ID, Dateiname, Original- und Speicherhash, Ablagepfad, Größen, Quelle, Zeitstempel, DDD-Art, Generation, Parserstatus, Signaturstatus, Identitätsfelder und fachlichen Datenzeitraum.</p>
+<p>Der normale Import läuft über <code>TachographImportService.import_archive_id()</code>:</p>
+<ol>
+<li>Archivzeile laden und logischen Löschstatus prüfen.</li>
+<li>GZIP-Datei aus <code>stored_path</code> lesen.</li>
+<li>Binärinhalt klassifizieren; Dateiname oder Präfix allein entscheidet nicht.</li>
+<li>Klassifizierung und Audit mit einer neuen Korrelations-ID speichern.</li>
+<li>C- oder M-Parser ausführen.</li>
+<li>Signaturen gegen den Trust Store prüfen.</li>
+<li>Abgeleitete Archivdaten ersetzen und Archivstatus aktualisieren.</li>
+<li>Fahrzeug-/Personenverknüpfungen, Downloadfristen und Auswertungscaches nachführen.</li>
+</ol>
+<p>Die beiden Hashes in <code>ddd_archive</code> haben unterschiedliche Aufgaben:</p>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Inhalt</th>
+<th>Verwendung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file_hash_sha256</code></td>
+<td>SHA-256 der unkomprimierten DDD-Bytes</td>
+<td>Beweist den unveränderten fachlichen Dateiinhalt</td>
+</tr>
+<tr>
+<td><code>stored_hash_sha256</code></td>
+<td>SHA-256 der tatsächlich abgelegten GZIP-Datei</td>
+<td>Erkennt Änderungen oder Beschädigungen der Archivdatei</td>
+</tr>
+</tbody>
+</table>
+<p>Die Wartungsmigration prüft bei jedem aktiven C-/M-Archiv beide Ebenen: erst die gespeicherte Datei, dann den dekomprimierten Originalinhalt.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Import as TachographImportService
+    participant Archive as ddd_archive
+    participant File as GZIP-Original
+    participant Parser as C-/M-Parser
+    participant Verify as Signaturdienst
+    participant DB as Fachtabellen
+
+    Import-&gt;&gt;Archive: Archiv-ID und Metadaten laden
+    Import-&gt;&gt;File: GZIP öffnen und DDD-Bytes lesen
+    Import-&gt;&gt;Import: Inhalt klassifizieren
+    Import-&gt;&gt;Parser: Exakte Bytes parsen
+    Parser--&gt;&gt;Import: Struktur, Identität, Beobachtungen, Rohbezüge
+    Import-&gt;&gt;Verify: Signierte Blöcke/Sektionen prüfen
+    Verify--&gt;&gt;Import: VALID / INVALID / UNVERIFIABLE / MISSING
+    Import-&gt;&gt;DB: Archivbezogene Daten ersetzen
+    Import-&gt;&gt;Archive: Generation, Zeitraum und Status aktualisieren
+    Import-&gt;&gt;Archive: Audit mit Korrelations-ID schreiben</code></pre>
+<h2 id="3-parsing-von-c-dateien">3. Parsing von C-Dateien<a class="headerlink" href="#3-parsing-von-c-dateien" title="Permanent link">&para;</a></h2>
+<h3 id="31-segmentierung">3.1 Segmentierung<a class="headerlink" href="#31-segmentierung" title="Permanent link">&para;</a></h3>
+<p><code>DriverCardFullParser</code> liest die Datei vollständig in Bytes und zerlegt sie ohne Verlust der EF- und Signaturgrenzen. Jedes Segment besitzt einen 5-Byte-Kopf:</p>
+<ol>
+<li>zwei Byte <code>file_id</code>;</li>
+<li>ein Byte <code>kind</code> (<code>0</code> G1-Daten, <code>1</code> G1-Signatur, <code>2</code> G2-Daten, <code>3</code> G2-Signatur);</li>
+<li>zwei Byte Payloadlänge in Big-Endian;</li>
+<li>exakt <code>length</code> Payloadbytes.</li>
+</ol>
+<p>Eine Payload, die über das Dateiende hinausläuft, oder Restbytes nach dem letzten Segment führen zum Parsefehler. Für jedes Segment werden Offset, Länge und SHA-256 der Payload ermittelt. Der Parser hält zusätzlich die exakten Segmentbytes für die spätere kryptografische Prüfung vor.</p>
+<h3 id="32-ef-zuordnung-und-generation">3.2 EF-Zuordnung und Generation<a class="headerlink" href="#32-ef-zuordnung-und-generation" title="Permanent link">&para;</a></h3>
+<p>Bekannte EFs werden über ihre Datei-ID einem Decoder zugeordnet. Wesentliche EFs sind:</p>
+<table>
+<thead>
+<tr>
+<th>EF</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0501</code>, <code>0525</code></td>
+<td>Anwendungsidentifikation, Generation und Recordanzahlen</td>
+</tr>
+<tr>
+<td><code>0520</code>, <code>0521</code></td>
+<td>Karteninhaber- und Führerscheinidentität</td>
+</tr>
+<tr>
+<td><code>0504</code></td>
+<td>tägliche Fahreraktivitätsdaten</td>
+</tr>
+<tr>
+<td><code>0502</code>, <code>0503</code></td>
+<td>Ereignisse und Störungen</td>
+</tr>
+<tr>
+<td><code>0505</code></td>
+<td>verwendete Fahrzeuge und Kilometerstände</td>
+</tr>
+<tr>
+<td><code>0506</code>, <code>0524</code></td>
+<td>Orte und GNSS-Positionen</td>
+</tr>
+<tr>
+<td><code>0507</code>, <code>050E</code></td>
+<td>aktuelle Nutzung und letzter Download</td>
+</tr>
+<tr>
+<td><code>0526</code>–<code>0530</code></td>
+<td>G2V2-Authentifizierung, Grenzen und Be-/Entladung</td>
+</tr>
+<tr>
+<td><code>C100</code>, <code>C101</code>, <code>C108</code>, <code>C109</code></td>
+<td>Karten-, CA-, CardSign- und Linkzertifikate</td>
+</tr>
+</tbody>
+</table>
+<p>Die Generation wird aus vorhandenen Anwendungs- und G2V2-EFs abgeleitet und intern als <code>G1</code>, <code>G2</code> oder <code>G2V2</code> geführt. In <code>ddd_archive</code> wird daraus <code>G1</code>, <code>G2_V1</code> oder <code>G2_V2</code>.</p>
+<h3 id="33-fachliche-dekodierung">3.3 Fachliche Dekodierung<a class="headerlink" href="#33-fachliche-dekodierung" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Identitäts- und Kartendaten werden aus den vorgesehenen EFs zusammengesetzt; es werden keine Werte aus benachbarten Bytebereichen geschätzt.</li>
+<li><code>EF.Driver_Activity_Data</code> wird anhand der Ringpufferzeiger gelesen. Header und Nutzdaten eines Tagesrecords werden zyklisch gelesen: Ein Record darf in den letzten Bytes des EF beginnen und bei Offset null fortgesetzt werden. Der Durchlauf endet erst nach dem durch <code>activityPointerNewestRecord</code> bezeichneten Record. Falls die Zeiger nicht verwendbar sind, erfolgt ein längengeführter linearer Durchlauf. Tagesrecords werden über Datum und Presence Counter dedupliziert.</li>
+<li>Aktivitätswechsel werden nach Minute, Slot, Crew und Aktivitätscode dekodiert und zu Intervallen <code>BREAK_REST</code>, <code>AVAILABILITY</code>, <code>WORK</code> oder <code>DRIVING</code> aufgebaut.</li>
+<li>Ereignis- und Störungsrecords werden anhand der in der Anwendungsidentifikation angegebenen Gruppengrößen geschnitten. Leere Records werden verworfen.</li>
+<li>Fahrzeugeinsätze enthalten Nutzungsbeginn/-ende, Kilometerstände, Kennzeichen, Land, optional FIN und VU-Blockzähler.</li>
+<li>Orte und GNSS-Records liefern UTC-Zeit, Länder-/Regionscodes, Kilometerstand, Koordinaten, Genauigkeit und gegebenenfalls Authentifizierungsstatus.</li>
+<li>Texte werden codepagebewusst dekodiert, von Steuerzeichen bereinigt und mit stabiler Leerzeichennormalisierung gespeichert.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A["C-Datei als Bytes"] --&gt; B["5-Byte-Köpfe und Payloadgrenzen prüfen"]
+    B --&gt; C["EF-Segmente mit Offset und SHA-256 bilden"]
+    C --&gt; D["Anwendungsidentifikation lesen"]
+    D --&gt; E["Generation und Recordanzahlen bestimmen"]
+    E --&gt; F["Identität und Kartenmetadaten"]
+    E --&gt; G["Ringpuffer der Aktivitäten"]
+    E --&gt; H["Ereignisse / Störungen"]
+    E --&gt; I["Fahrzeuge / Orte / GNSS"]
+    F --&gt; J["Normalisierte C-Beobachtungen"]
+    G --&gt; J
+    H --&gt; J
+    I --&gt; J
+    J --&gt; K["Signierte EF-Blöcke prüfen"]
+    K --&gt; L["Archivbezogene Tabellen ersetzen"]</code></pre>
+<h2 id="4-parsing-von-m-dateien">4. Parsing von M-Dateien<a class="headerlink" href="#4-parsing-von-m-dateien" title="Permanent link">&para;</a></h2>
+<h3 id="41-trep-klassifizierung">4.1 TREP-Klassifizierung<a class="headerlink" href="#41-trep-klassifizierung" title="Permanent link">&para;</a></h3>
+<p>Jede Sektion beginnt mit <code>0x76</code> und einem TREP-Code. Unterstützt werden:</p>
+<table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>TREP-Codes</th>
+<th>Bereiche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td><code>01</code>–<code>05</code></td>
+<td>Übersicht, Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, Technik</td>
+</tr>
+<tr>
+<td>G2 v1</td>
+<td><code>21</code>–<code>25</code></td>
+<td>dieselben fünf logischen Bereiche als RecordArrays</td>
+</tr>
+<tr>
+<td>G2 v2</td>
+<td><code>31</code>–<code>35</code></td>
+<td>G2-v2-Struktur einschließlich zusätzlicher GNSS-/Grenz-/Ladedaten</td>
+</tr>
+</tbody>
+</table>
+<p>Gemischte Generationen, ungültige Längen, Daten hinter einer Signatur oder unvollständige Pflichtstrukturen führen zum Parsefehler. Eine fehlende detaillierte Geschwindigkeitssektion ist als optionaler Downloadumfang eine Warnung, kein Signaturfehler.</p>
+<h3 id="42-g1">4.2 G1<a class="headerlink" href="#42-g1" title="Permanent link">&para;</a></h3>
+<p>G1-Sektionen haben feste beziehungsweise zählergesteuerte Strukturen und am Ende eine 128-Byte-Signatur. In der Übersicht werden zwei 194-Byte-Zertifikate gelesen. Diese Zertifikate gehören gemäß Annex IB nicht zum VU-signierten Bereich; die signierten Daten beginnen deshalb erst nach den 388 Zertifikatsbytes.</p>
+<p>Wichtige G1-Regeln:</p>
+<ul>
+<li>FIN: exakt 17 Zeichen aus der Übersicht.</li>
+<li>Kennzeichen: Staat und Codepage werden übersprungen; gespeichert werden die 13 Zeichen der Registration Number.</li>
+<li>Datenzeitraum: <code>VuDownloadablePeriod</code>, nicht <code>CurrentDateTime</code>.</li>
+<li>Kartensitzungen: Namen, Kartennummer, Generation, Ablauf, Einstecken, Entnehmen und Slot.</li>
+<li>Aktivitätswechsel: 2-Byte-Wort mit Minute, Slot, Crew, Kartenzustand und Aktivität.</li>
+<li>Ereignisse, Störungen und Überschreitungen: zählergesteuerte Records mit UTC-Zeiten.</li>
+<li>Geschwindigkeit: Startzeit plus exakt 60 Geschwindigkeitsbytes.</li>
+<li>Technik und Kalibrierung: VU-Identität, Werkstatt, FIN, Kennzeichen und Kalibrierzeiten.</li>
+</ul>
+<h3 id="43-g2-v1-und-g2-v2">4.3 G2 v1 und G2 v2<a class="headerlink" href="#43-g2-v1-und-g2-v2" title="Permanent link">&para;</a></h3>
+<p>G2-Sektionen bestehen nach dem TREP-Kopf aus RecordArrays. Jedes Array enthält Recordtyp, Recordgröße und Recordanzahl. Der Parser prüft <code>record_size × record_count</code> vor dem Lesen. Zertifikate (<code>0x04</code>, <code>0x0F</code>) und Signatur (<code>0x08</code>) werden separat gehalten; pro Sektion ist genau ein Signaturrecord zulässig.</p>
+<p>Jeder Fachrecord erhält <code>section_index</code>, <code>section_code</code>, <code>record_index</code> und einen SHA-256 des exakten Recordinhalts. Dekodiert werden unter anderem Identität, Zeitraum, Tages-/Kilometerdaten, Aktivitäten, Kartensitzungen, Ereignisse, Störungen, Überschreitungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen, Grenzübertritte und Be-/Entladungen. Unbekannte begrenzte Recordtypen werden als Rohbezug und Warnung erhalten.</p>
+<h3 id="44-geschwindigkeitsblocke">4.4 Geschwindigkeitsblöcke<a class="headerlink" href="#44-geschwindigkeitsblocke" title="Permanent link">&para;</a></h3>
+<p>G1, G2 v1 und G2 v2 werden identisch gespeichert:</p>
+<ul>
+<li><code>start_epoch</code>: Unix-Zeit der ersten Sekunde;</li>
+<li><code>speeds_blob</code>: exakt 60 Bytes, ein Byte pro Sekunde;</li>
+<li><code>0xFF</code>: fehlender Messwert, bleibt im Block erhalten;</li>
+<li><code>raw_sha256</code>: einmalig als 32-Byte-BLOB über den Rohblock;</li>
+<li>Primärschlüssel: Archiv, Startzeit, Sektion und Recordindex.</li>
+</ul>
+<p>Die sekundengenaue Ansicht expandiert nur passende Blöcke. <code>0xFF</code> wird nicht ausgegeben; Datumsfilter, Offset und Limit werden auf die expandierten gültigen Sekundenwerte angewendet.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["M-Datei als Bytes"] --&gt; B{"TREP-Generation"}
+    B --&gt;|"G1 01-05"| C["Feste/zählergesteuerte Sektionen"]
+    B --&gt;|"G2 v1 21-25"| D["RecordArrays"]
+    B --&gt;|"G2 v2 31-35"| D
+    C --&gt; E["Signierten Bereich und 128-Byte-Signatur trennen"]
+    D --&gt; F["Recordgröße und Anzahl validieren"]
+    F --&gt; G["Zertifikate, Fachrecords und Signatur trennen"]
+    E --&gt; H["Fachrecords normalisieren"]
+    G --&gt; H
+    H --&gt; I["SHA-256 je Rohrecord"]
+    H --&gt; J["60-Sekunden-Geschwindigkeitsblöcke"]
+    I --&gt; K["Sektionen einzeln verifizieren"]
+    J --&gt; K
+    K --&gt; L["M-Tabellen archivbezogen ersetzen"]</code></pre>
+<h2 id="5-signaturen-und-trust-store">5. Signaturen und Trust Store<a class="headerlink" href="#5-signaturen-und-trust-store" title="Permanent link">&para;</a></h2>
+<p>Der Trust Store liegt in <code>tachograph_trust_anchor</code>. Er speichert Generation, Schlüssel-ID, SHA-256-Fingerprint, Originalmaterial, Gültigkeitszeitraum, Widerruf, Quelle und Aktivstatus. Offizielle Trustanker werden ausschließlich beim zentralen Datenbank-Bootstrap beziehungsweise bei einer administrativen Aktualisierung eingespielt.</p>
+<h3 id="c-dateien">C-Dateien<a class="headerlink" href="#c-dateien" title="Permanent link">&para;</a></h3>
+<ul>
+<li>G1 verwendet Karten- und CA-Zertifikate sowie RSA PKCS#1 mit SHA-1 über die exakten Datenblockbytes.</li>
+<li>G2/G2V2 verwendet CardSign-/MSCA- und gegebenenfalls Linkzertifikate sowie ECDSA über die exakten signierten EFs.</li>
+<li>Das Ergebnis jedes Blocks wird in <code>ddd_drivercard_signature</code> gespeichert.</li>
+</ul>
+<h3 id="m-dateien">M-Dateien<a class="headerlink" href="#m-dateien" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Jede Sektion wird getrennt über die ERCA/MSCA/VU-Kette geprüft.</li>
+<li>G1 verwendet RSA PKCS#1/SHA-1; G2 verwendet die im Zertifikat beschriebene ECC-/Hashkombination.</li>
+<li>Das Ergebnis jeder Sektion wird in <code>ddd_vu_signature</code> gespeichert.</li>
+</ul>
+<p>Als Zertifikatsreferenzzeit wird der jüngste plausible signierte Fachzeitpunkt verwendet. Fehlt dieser, wird mit Warnung auf den Archivzeitpunkt zurückgefallen. Gesamtpriorität: <code>INVALID</code>, dann <code>UNVERIFIABLE</code>, dann <code>MISSING</code>, dann <code>VALID</code>. Ein fehlender Trustanker oder eine technisch nicht mögliche Prüfung wird niemals als <code>VALID</code> behandelt.</p>
+<table>
+<thead>
+<tr>
+<th>Parserstatus</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PARSED_VERIFIED</code></td>
+<td>Struktur und alle erforderlichen Signaturen gültig</td>
+</tr>
+<tr>
+<td><code>PARSED_VERIFIED_WITH_WARNINGS</code></td>
+<td>gültig, aber nichtfatale Parser-/Zeitwarnung</td>
+</tr>
+<tr>
+<td><code>QUARANTINED_INVALID_SIGNATURE</code></td>
+<td>kryptografisch ungültig</td>
+</tr>
+<tr>
+<td><code>QUARANTINED_UNVERIFIABLE</code></td>
+<td>Prüfung nicht vollständig möglich</td>
+</tr>
+<tr>
+<td><code>PARSE_ERROR</code></td>
+<td>Struktur oder Verarbeitung fehlgeschlagen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-physisches-datenmodell">6. Physisches Datenmodell<a class="headerlink" href="#6-physisches-datenmodell" title="Permanent link">&para;</a></h2>
+<h3 id="61-archiv-und-nachweistabellen">6.1 Archiv- und Nachweistabellen<a class="headerlink" href="#61-archiv-und-nachweistabellen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tabelle</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ddd_archive</code></td>
+<td>unveränderliche Archivmetadaten, Hashes und Gesamtstatus</td>
+</tr>
+<tr>
+<td><code>ddd_audit_log</code>, <code>fleet_audit_log</code></td>
+<td>Import-, Prüf-, Verknüpfungs- und Administrationsaudit</td>
+</tr>
+<tr>
+<td><code>tachograph_trust_anchor</code></td>
+<td>aktive und historische Trustanker</td>
+</tr>
+<tr>
+<td><code>app_schema_migration</code></td>
+<td>komponentenbezogene Schemaversionen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-c-tabellen">6.2 C-Tabellen<a class="headerlink" href="#62-c-tabellen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tabelle</th>
+<th>Wesentliche Inhalte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ddd_drivercard_import</code></td>
+<td>Parser, Kartenidentität, Generation, Gültigkeit und Signaturgesamtstatus</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_activity</code></td>
+<td>Intervalle, Aktivität, Slot, Crew, Karte</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_event</code></td>
+<td>Ereignisart, UTC-Intervall, Fahrzeugbezug</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_fault</code></td>
+<td>Störungsart, UTC-Intervall, Fahrzeugbezug</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_vehicle_used</code></td>
+<td>Nutzung, Kilometer, Kennzeichen, FIN</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_position</code></td>
+<td>Ort/GNSS, Zeit, Kilometer, Koordinate und Authentifizierung</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_signature</code></td>
+<td>Blockergebnisse, Algorithmen und Zertifikatsfingerprints</td>
+</tr>
+</tbody>
+</table>
+<p>Die historisch vorhandenen Spalten <code>raw_json</code> und <code>source_json</code> bleiben aus Kompatibilitätsgründen im Schema, neue Imports schreiben dort jedoch <code>NULL</code>. Die Werte sind aus Original-DDD und regulären Fachspalten reproduzierbar und werden nicht als Cache dupliziert.</p>
+<h3 id="63-m-tabellen">6.3 M-Tabellen<a class="headerlink" href="#63-m-tabellen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tabelle</th>
+<th>Wesentliche Inhalte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ddd_vehicle_unit_import</code></td>
+<td>Generation, Gesamtstatus, FIN, Kennzeichen, Seriennummer, Zeitraum und Warnungen</td>
+</tr>
+<tr>
+<td><code>ddd_vu_section</code></td>
+<td>Sektionscode, Generation, Byteoffsets und SHA-256 des signierten Bereichs</td>
+</tr>
+<tr>
+<td><code>ddd_vu_signature</code></td>
+<td>Signaturstatus je Sektion</td>
+</tr>
+<tr>
+<td><code>ddd_vu_raw_record</code></td>
+<td>Rohrecordposition, Größe, SHA-256 und optional Payload</td>
+</tr>
+<tr>
+<td><code>ddd_vu_activity</code>, <code>ddd_vu_card_session</code></td>
+<td>Aktivitätswechsel und Kartensitzungen</td>
+</tr>
+<tr>
+<td><code>ddd_vu_event</code>, <code>ddd_vu_fault</code>, <code>ddd_vu_overspeed</code></td>
+<td>Ereignisse, Störungen und Überschreitungen</td>
+</tr>
+<tr>
+<td><code>ddd_vu_speed_block</code></td>
+<td>kompakte 60-Sekunden-Blöcke als <code>WITHOUT ROWID</code></td>
+</tr>
+<tr>
+<td><code>ddd_vu_technical</code></td>
+<td>technische Werte; <code>details_json</code> enthält die vollständige strukturierte VU-Identifikation für die Feldbaumdarstellung</td>
+</tr>
+<tr>
+<td><code>ddd_vu_calibration</code></td>
+<td>Kalibrierzeit, Zweck, Werkstatt, FIN, Kennzeichen und nächste Kalibrierung</td>
+</tr>
+<tr>
+<td><code>ddd_vu_position</code>, <code>ddd_vu_border_crossing</code>, <code>ddd_vu_load_operation</code></td>
+<td>GNSS-, Grenz- und Ladevorgänge</td>
+</tr>
+<tr>
+<td><code>ddd_vu_odometer_midnight</code></td>
+<td>Tageskilometerstand am folgenden UTC-Mitternachtspunkt</td>
+</tr>
+<tr>
+<td><code>fleet_vehicle_vu_link</code></td>
+<td>Zuordnung aller passenden M-Archive zu einem Fahrzeugstammsatz</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>erDiagram
+    DDD_ARCHIVE ||--o| DDD_DRIVERCARD_IMPORT : "klassifiziert als C"
+    DDD_ARCHIVE ||--o| DDD_VEHICLE_UNIT_IMPORT : "klassifiziert als M"
+    DDD_DRIVERCARD_IMPORT ||--o{ DDD_DRIVERCARD_ACTIVITY : enthält
+    DDD_DRIVERCARD_IMPORT ||--o{ DDD_DRIVERCARD_SIGNATURE : belegt
+    DDD_VEHICLE_UNIT_IMPORT ||--o{ DDD_VU_SECTION : enthält
+    DDD_VEHICLE_UNIT_IMPORT ||--o{ DDD_VU_ACTIVITY : enthält
+    DDD_VEHICLE_UNIT_IMPORT ||--o{ DDD_VU_SPEED_BLOCK : enthält
+    DDD_VEHICLE_UNIT_IMPORT ||--o{ DDD_VU_CALIBRATION : enthält
+    DDD_ARCHIVE ||--o{ DDD_FACT_PROVENANCE : liefert
+    DDD_CANONICAL_FACT ||--o{ DDD_FACT_PROVENANCE : wird_belegt_durch
+    DDD_FACT_KIND ||--o{ DDD_CANONICAL_FACT : typisiert
+    FLEET_VEHICLE ||--o{ FLEET_VEHICLE_VU_LINK : besitzt
+    DDD_ARCHIVE ||--o| FLEET_VEHICLE_VU_LINK : zugeordnet</code></pre>
+<h2 id="7-indizes-und-sqlite-konfiguration">7. Indizes und SQLite-Konfiguration<a class="headerlink" href="#7-indizes-und-sqlite-konfiguration" title="Permanent link">&para;</a></h2>
+<p>Zentrale Indizes sind:</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Abfragepfad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idx_ddd_archive_name</code>, <code>idx_ddd_archive_archived_at</code></td>
+<td>Archivsuche und Chronologie</td>
+</tr>
+<tr>
+<td><code>idx_ddd_archive_type</code></td>
+<td>DDD-Art und Archivdatum</td>
+</tr>
+<tr>
+<td><code>idx_ddd_archive_parse_status</code></td>
+<td>Parser-/Signaturfilter</td>
+</tr>
+<tr>
+<td><code>idx_ddd_drivercard_import_normalized</code></td>
+<td>Kartennummer + Generation + Archiv</td>
+</tr>
+<tr>
+<td><code>idx_ddd_drivercard_activity_archive_time</code></td>
+<td>C-Aktivitäten eines Archivs im Zeitraum</td>
+</tr>
+<tr>
+<td><code>idx_ddd_drivercard_*_card</code></td>
+<td>globale Kartenabfragen nach Fachzeit</td>
+</tr>
+<tr>
+<td><code>ix_ddd_vu_activity_normalized_time</code></td>
+<td>C-/M-Abgleich nach normalisierter Kartennummer</td>
+</tr>
+<tr>
+<td><code>ix_ddd_vu_activity_archive_time</code></td>
+<td>M-Aktivitäten eines Archivs</td>
+</tr>
+<tr>
+<td><code>ix_ddd_vu_session_archive_time</code></td>
+<td>Kartensitzungen eines Archivs</td>
+</tr>
+<tr>
+<td><code>ix_fleet_vehicle_vu_vehicle</code></td>
+<td>alle M-Archive eines Fahrzeugs</td>
+</tr>
+<tr>
+<td><code>ix_ddd_fact_time</code>, <code>ix_ddd_fact_cluster</code></td>
+<td>materialisierte Fakten nach Typ/Zeit beziehungsweise Konfliktcluster</td>
+</tr>
+<tr>
+<td><code>ix_ddd_provenance_fact</code></td>
+<td>Quellen eines materialisierten Fakts</td>
+</tr>
+</tbody>
+</table>
+<p><code>ddd_vu_speed_block</code> benötigt keinen zusätzlichen Zeitindex: Der zusammengesetzte Primärschlüssel beginnt mit <code>archive_id,start_epoch</code> und ist als <code>WITHOUT ROWID</code> bereits die physische Suchstruktur.</p>
+<p>Alle Runtime-Verbindungen verwenden <code>foreign_keys=ON</code>, <code>busy_timeout=30000</code>, <code>synchronous=NORMAL</code> und einen begrenzten WAL-Autocheckpoint von 1.000 Seiten. Beim exklusiven Start wird <code>journal_mode=WAL</code> gesetzt. Schemaänderungen laufen vor dem Hauptfenster genau einmal über <code>app_schema_migration</code>; Runtime-Repositories werden mit <code>ensure_schema=False</code> geöffnet.</p>
+<h2 id="8-archivubergreifende-deduplizierung">8. Archivübergreifende Deduplizierung<a class="headerlink" href="#8-archivubergreifende-deduplizierung" title="Permanent link">&para;</a></h2>
+<h3 id="81-zwei-zugriffspfade">8.1 Zwei Zugriffspfade<a class="headerlink" href="#81-zwei-zugriffspfade" title="Permanent link">&para;</a></h3>
+<p>Die archivbezogenen C-/M-Tabellen bleiben der genaue Herkunftsnachweis. Für Gesamtsichten existieren zwei kompatible Deduplizierungspfade:</p>
+<ol>
+<li><strong>Materialisierte Fakten:</strong> <code>ddd_canonical_fact</code> plus <code>ddd_fact_provenance</code> speichert einen normalisierten Fakt einmal und verbindet ihn mit beliebig vielen Archiven.</li>
+<li><strong>Kompakter SQL-Fallback:</strong> Ist für eine Datenart keine materialisierte Provenienz vorhanden, dedupliziert das Repository direkt über die typisierten Archivtabellen mittels <code>ROW_NUMBER()</code>, <code>COUNT()</code> und <code>GROUP_CONCAT()</code>.</li>
+</ol>
+<p>Die kompakte Produktivmigration verwendet den zweiten Pfad, weil eine zusätzliche vollständige Payloadmaterialisierung die Datenbank vergrößern würde. Die Schnittstellen und Ergebnisse sind gleich: <code>source_count</code>, <code>source_archive_ids</code>, <code>preferred_source_archive_id</code> und <code>has_conflict</code>.</p>
+<h3 id="82-normalisierung-und-hashes">8.2 Normalisierung und Hashes<a class="headerlink" href="#82-normalisierung-und-hashes" title="Permanent link">&para;</a></h3>
+<p>Für materialisierte Fakten gilt:</p>
+<ul>
+<li>Text: Unicode NFC, trimmen und mehrfache Zwischenräume reduzieren.</li>
+<li>FIN, Kennzeichen und Kartennummer: Großschreibung; Leerzeichen, Bindestriche, Doppelpunkte und sonstige Nicht-Alphanumerik entfernen.</li>
+<li>reine Platzhalter aus <code>?</code>, <code>0</code>, <code>F</code>, Trennzeichen oder leeren Werten: fehlende Information.</li>
+<li>Zeit: UTC auf Sekundengenauigkeit.</li>
+<li>Zahlen, Koordinaten und Binärdaten: exakt, ohne Toleranz.</li>
+<li><code>fact_hash</code>: binärer SHA-256 aus Datenart und vollständig normalisiertem Fachinhalt; bei Geschwindigkeit einschließlich <code>speeds_blob</code>.</li>
+<li><code>cluster_hash</code>: binärer SHA-256 aus den identitätsbildenden Clusterfeldern, etwa Kalibrierzeit und Zweck.</li>
+<li><code>source_sha256</code>: binärer 32-Byte-Hash des Quellrecords.</li>
+</ul>
+<p>Bei Kartenbeobachtungen ist ausschließlich die vollständig normalisierte Kartennummer die
+archiv- und quellenübergreifende Identität. <code>card_generation</code> bleibt als
+Herkunftsmerkmal in Rohdatensatz und Provenienz erhalten, ist aber weder Bestandteil des
+Faktenhashes noch ein Filter für den C-/M-Abgleich. Damit werden G1-Karte/G1-Fahrzeug,
+G1-Karte/G2-Fahrzeug, G2-Karte/G1-Fahrzeug und G2-Karte/G2-Fahrzeug gleich behandelt.</p>
+<p><code>ddd_canonical_fact</code> besitzt <code>UNIQUE(kind_id,fact_hash)</code>. <code>ddd_fact_provenance</code> ist <code>WITHOUT ROWID</code> und verwendet <code>(archive_ref,fact_id,source_ordinal)</code> als Primärschlüssel. Varianten mit gleichem <code>cluster_hash</code>, aber verschiedenem <code>fact_hash</code>, bleiben getrennt und werden bei materialisiertem Zugriff als Konflikt markiert.</p>
+<h3 id="83-deduplizierung-im-sql-fallback">8.3 Deduplizierung im SQL-Fallback<a class="headerlink" href="#83-deduplizierung-im-sql-fallback" title="Permanent link">&para;</a></h3>
+<p>Der Fallback partitioniert nach allen fachlichen Feldern der jeweiligen Datenart. Innerhalb einer Partition wird genau eine Navigationsquelle gewählt:</p>
+<ol>
+<li><code>PARSED_VERIFIED</code> und <code>VALID</code>;</li>
+<li>höhere Generation: G2 v2, G2 v1, G1;</li>
+<li>jüngstes Archivdatum.</li>
+</ol>
+<p>Diese Reihenfolge entscheidet nur, welches Archiv beim Öffnen angeboten wird. Sie verändert keine fachlichen Werte. <code>COUNT(*) OVER (...)</code> liefert die Quellenanzahl, <code>GROUP_CONCAT(...)</code> alle Archiv-IDs. Die C-Views <code>ddd_drivercard_*_dedup</code> verwenden dasselbe Prinzip für globale Kartenabfragen.</p>
+<p>Exakte Geschwindigkeitsduplikate werden nach <code>start_epoch</code> und dem vollständigen 60-Byte-Blob gruppiert. Erst danach werden die Blöcke zu Sekundenwerten expandiert.</p>
+<p>Technische Fahrzeugdaten werden anhand von <code>record_type</code>, Wert und der vollständig normalisierten Detailstruktur dedupliziert. Ältere Bestandszeilen ohne <code>details_json</code> werden im Hintergrund aus dem unveränderten, komprimierten M-Original rekonstruiert. Die Fahrzeugakte zeigt jede identische Variante einmal und nennt die Anzahl ihrer Quellarchive; Archiv-ID und Dateiname bleiben ausschließlich als Navigationsmetadaten erhalten. Neue Imports schreiben <code>details_json</code> direkt und beziehen es in den technischen Faktenhash ein.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Fahrzeug oder Person"] --&gt; B["Zugeordnete aktive Archive ermitteln"]
+    B --&gt; C{"Materialisierte Provenienz vorhanden?"}
+    C --&gt;|"Ja"| D["fact_hash auswählen und Quellen gruppieren"]
+    C --&gt;|"Nein"| E["Archivtabellen per Window Function partitionieren"]
+    D --&gt; F["Konfliktvarianten über cluster_hash bestimmen"]
+    E --&gt; G["Exakte Dubletten und Quellenanzahl bestimmen"]
+    F --&gt; H["Datumsfilter auf kanonische Fakten"]
+    G --&gt; H
+    H --&gt; I["Sortierung"]
+    I --&gt; J["Limit und Offset"]
+    J --&gt; K["DTOs an UI/Reporting"]</code></pre>
+<h2 id="9-datenzugriff">9. Datenzugriff<a class="headerlink" href="#9-datenzugriff" title="Permanent link">&para;</a></h2>
+<h3 id="91-repository-schnittstellen">9.1 Repository-Schnittstellen<a class="headerlink" href="#91-repository-schnittstellen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Schnittstelle</th>
+<th>Semantik</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list_vehicle_facts(kind, vehicle_id, ...)</code></td>
+<td>deduplizierte Gesamtsicht aller verknüpften M-Archive</td>
+</tr>
+<tr>
+<td><code>count_vehicle_facts(...)</code></td>
+<td>Anzahl nach Deduplizierung und Datumsfilter</td>
+</tr>
+<tr>
+<td><code>list_vehicle_speed_seconds(...)</code></td>
+<td>deduplizierte Blöcke, danach sekundengenaue Expansion</td>
+</tr>
+<tr>
+<td><code>list_person_facts(kind, person_id, ...)</code></td>
+<td>deduplizierte C-Gesamtsicht über verknüpfte Kartennummern</td>
+</tr>
+<tr>
+<td><code>list_archive_observations(kind, archive_id, ...)</code></td>
+<td>genaue Beobachtungen eines einzelnen Archivs</td>
+</tr>
+<tr>
+<td><code>list_rows(table, archive_id, ...)</code></td>
+<td>kompatibler M-Einzelarchivzugriff</td>
+</tr>
+<tr>
+<td><code>replace_archive_facts(...)</code></td>
+<td>materialisierte Fakten/Provenienz eines Archivs ersetzen</td>
+</tr>
+</tbody>
+</table>
+<p>Fahrzeugarchive werden ausschließlich über <code>fleet_vehicle_vu_link</code> ermittelt. Personenarchive sowie passende M-Beobachtungen werden über <code>fleet_drivercard_link</code> und die normalisierte Kartennummer bestimmt. Die Kartengeneration dient nur der Anzeige und dem Herkunftsnachweis. Logisch gelöschte Archive sind aus Gesamtsichten ausgeschlossen.</p>
+<h3 id="92-filter-und-pagination">9.2 Filter und Pagination<a class="headerlink" href="#92-filter-und-pagination" title="Permanent link">&para;</a></h3>
+<p>Gesamtsichten führen die Operationen in dieser Reihenfolge aus:</p>
+<ol>
+<li>Entität und aktive Quellarchive bestimmen.</li>
+<li>Fachlich deduplizieren.</li>
+<li>Datumsbereich auf dem Faktzeitfeld anwenden.</li>
+<li>Chronologisch sortieren.</li>
+<li><code>LIMIT</code> und <code>OFFSET</code> anwenden.</li>
+</ol>
+<p>Dadurch kann ein Duplikat nicht auf zwei Seiten erscheinen und die Gesamtzahl entspricht der sichtbaren Ergebnismenge. Die Einzelarchivansicht filtert dagegen direkt mit <code>archive_id</code> und bewahrt Recordreihenfolge beziehungsweise Sektionsbezug.</p>
+<h3 id="93-zugriff-aus-der-ui">9.3 Zugriff aus der UI<a class="headerlink" href="#93-zugriff-aus-der-ui" title="Permanent link">&para;</a></h3>
+<p>Repository-Abfragen erfolgen in <code>UiJobController</code>-Workern. Der Worker öffnet seine eigene SQLite-Verbindung und liefert nur Listen, Dictionaries oder DTOs zurück. Qt-Widgets und Modelle werden ausschließlich im UI-Callback verändert. Detailtabs werden erst bei ihrer ersten Aktivierung erzeugt; Geschwindigkeit, Aktivitäten und andere große Tabellen laden seitenweise.</p>
+<h2 id="10-idempotenz-migration-und-wiederherstellung">10. Idempotenz, Migration und Wiederherstellung<a class="headerlink" href="#10-idempotenz-migration-und-wiederherstellung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein M-Reimport löscht und ersetzt Import-, Abschnitts-, Signatur-, Rohrecord- und Fachtabellen des Archivs innerhalb der Repository-Transaktion.</li>
+<li>C-Fachbereiche werden archivbezogen gelöscht und neu geschrieben; Signatur- und Archivstatus werden anschließend aktualisiert.</li>
+<li>Nicht mehr referenzierte materialisierte Fakten werden entfernt.</li>
+<li>Ein Parserfehler überschreibt einen zuvor verifizierten Archivstatus nicht mit unvollständigen Detaildaten.</li>
+<li><code>raw_json</code>-/<code>source_json</code>-Caches werden nicht neu aufgebaut.</li>
+<li>Wartungsmigrationen arbeiten auf einer SQLite-Kopie, prüfen Originalhashes, Zählungen und <code>PRAGMA quick_check</code>, erzeugen mit <code>VACUUM INTO</code> eine kompakte Kandidatin und tauschen sie nur nach erfolgreicher Abnahme aus.</li>
+<li>Ist die Anwendung geöffnet, wird die Kandidatin über einen Hash- und Integritäts-geprüften Restore-Marker für den nächsten Start vorgemerkt. Vor dem Austausch entsteht eine zusätzliche Pre-Restore-Sicherung.</li>
+</ul>
+<h2 id="11-diagnose-fur-administratoren">11. Diagnose für Administratoren<a class="headerlink" href="#11-diagnose-fur-administratoren" title="Permanent link">&para;</a></h2>
+<p>Empfohlene Nur-Lese-Prüfungen:</p>
+<div class="highlight"><pre><span></span><code><span class="n">PRAGMA</span><span class="w"> </span><span class="n">quick_check</span><span class="p">;</span>
+<span class="n">PRAGMA</span><span class="w"> </span><span class="n">journal_mode</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">component</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">applied_at</span><span class="p">,</span><span class="w"> </span><span class="n">duration_ms</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">app_schema_migration</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">component</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">ddd_type</span><span class="p">,</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span><span class="w"> </span><span class="n">parse_status</span><span class="p">,</span><span class="w"> </span><span class="n">signature_status</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ddd_archive</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">is_deleted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ddd_type</span><span class="p">,</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span><span class="w"> </span><span class="n">parse_status</span><span class="p">,</span><span class="w"> </span><span class="n">signature_status</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">speed_blocks</span><span class="p">,</span>
+<span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">stored_seconds</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ddd_vu_speed_block</span><span class="p">;</span>
+</code></pre></div>
+<p>Direkte Schreibzugriffe auf die Datenbank sind im Betrieb nicht zulässig. Reparse, Migration, Restore und Linkkorrekturen müssen über die vorgesehenen Services erfolgen, damit Audit, Hashprüfung, Cacheinvalidierung und Status konsistent bleiben.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>

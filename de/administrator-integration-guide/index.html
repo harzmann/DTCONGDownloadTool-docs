@@ -57,6 +57,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -493,6 +495,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
   
 
     
@@ -1068,7 +1098,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Architektur
   
 
     
@@ -1081,6 +1111,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1104,7 +1249,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud-Backup und Wiederherstellung
+    Archivierung, Backup und Wiederherstellung
   
 
     
@@ -1516,7 +1661,7 @@
 <p><img alt="Administration der Benachrichtigungen" src="../assets/screenshots/notifications.png" />
 <em>Abbildung: Administration von SMTP, Empfängern, Regeln und Versandprotokoll.</em></p>
 <h2 id="10-finanzen-und-belegarchiv">10. Finanzen und Belegarchiv<a class="headerlink" href="#10-finanzen-und-belegarchiv" title="Permanent link">&para;</a></h2>
-<p>Finanzdaten werden in Cent und EUR gespeichert. Fremdrechnungen benötigen exakte Kopf-/Positionssummen und mindestens einen cloudverifizierten Originalbeleg vor der Prüfung. Buchung macht Fachdatensätze unveränderlich; Korrekturen erfolgen per Storno/Gutschrift.</p>
+<p>Finanzdaten werden in Cent und EUR gespeichert. Fremdrechnungen benötigen exakte Kopf-/Positionssummen und mindestens einen lokal verifizierten Originalbeleg vor der Prüfung. Der Backupstatus ist dafür unerheblich. Buchung macht Fachdatensätze unveränderlich; Korrekturen erfolgen per Storno/Gutschrift.</p>
 <p>Originale sind keine SQLite-BLOBs. Das Belegarchiv übernimmt, hasht, lädt hoch, liest zurück und verifiziert. Metadaten enthalten Ziel, Remote-Pfad/-ID, Hash, Größe, Version und Retention. Ein Ziel kann nicht gelöscht werden, solange Belege darauf verweisen.</p>
 <p>FiBu-Übergabe: <a href="../api/accounting-rest/">REST</a> oder <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Nur gebuchte Datensätze sind exportierbar; REST verwendet eine persistente idempotente Outbox.</p>
 <h2 id="11-backup-und-notfallwiederherstellung">11. Backup und Notfallwiederherstellung<a class="headerlink" href="#11-backup-und-notfallwiederherstellung" title="Permanent link">&para;</a></h2>
@@ -1632,6 +1777,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

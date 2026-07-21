@@ -10,19 +10,19 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/api/drivercard-rest/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/async-ui-background-services/">
       
       
-        <link rel="prev" href="../../administrator-integration-guide/">
+        <link rel="prev" href="../tachograph-data-storage/">
       
       
-        <link rel="next" href="../accounting-rest/">
+        <link rel="next" href="../../operations/cloud-backup-restore/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../../de/api/drivercard-rest/" hreflang="de">
+          <link rel="alternate" href="../../de/architecture/async-ui-background-services/" hreflang="de">
         
       
       
@@ -31,7 +31,7 @@
     
     
       
-        <title>DriverCard REST API - FLEET Mira Documentation</title>
+        <title>Asynchronous UI and background services - FLEET Mira Documentation</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#drivercard-rest-api" class="md-skip">
+        <a href="#asynchronous-ui-lazy-tabs-and-background-services" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DriverCard REST API
+              Asynchronous UI and background services
             
           </span>
         </div>
@@ -173,7 +173,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../de/api/drivercard-rest/" hreflang="de" class="md-select__link">
+            <a href="../../de/architecture/async-ui-background-services/" hreflang="de" class="md-select__link">
               Deutsch
             </a>
           </li>
@@ -602,8 +602,6 @@
       
   
   
-    
-  
   
   
     
@@ -616,11 +614,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -641,7 +639,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -656,37 +654,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DriverCard REST API
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
         
   
   
@@ -702,136 +673,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Purpose
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-time-formats-and-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Time, formats and filters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Endpoints
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-health" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Health
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-parse-a-driver-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Parse a driver card
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-activities-and-summaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Activities and summaries
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-events-faults-vehicles-and-positions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Events, faults, vehicles and positions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-eu-5612006-pre-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. EU 561/2006 pre-check
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-http-status-codes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. HTTP status codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-security-and-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Security and operation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -844,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../accounting-rest/" class="md-nav__link">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
         
   
   
@@ -991,8 +832,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1003,11 +846,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -1028,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1046,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+      <a href="../tachograph-data-storage/" class="md-nav__link">
         
   
   
@@ -1071,10 +914,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1090,6 +960,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-design-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Design rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-startup-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Startup order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lazy-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lazy tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-uijobcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. UiJobController
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-worker-database-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Worker database pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-background-services-and-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Background services and status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ui-heartbeat-and-ui_stall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. UI heartbeat and UI_STALL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-controlled-shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Controlled shutdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-troubleshooting-and-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Troubleshooting and acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1244,10 +1233,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-purpose" class="md-nav__link">
+  <a href="#1-design-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Purpose
+        1. Design rules
       
     </span>
   </a>
@@ -1255,10 +1244,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-time-formats-and-filters" class="md-nav__link">
+  <a href="#2-startup-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Time, formats and filters
+        2. Startup order
       
     </span>
   </a>
@@ -1266,10 +1255,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-endpoints" class="md-nav__link">
+  <a href="#3-lazy-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Endpoints
+        3. Lazy tabs
       
     </span>
   </a>
@@ -1277,10 +1266,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-health" class="md-nav__link">
+  <a href="#4-uijobcontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Health
+        4. UiJobController
       
     </span>
   </a>
@@ -1288,10 +1277,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-parse-a-driver-card" class="md-nav__link">
+  <a href="#5-worker-database-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Parse a driver card
+        5. Worker database pattern
       
     </span>
   </a>
@@ -1299,10 +1288,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-activities-and-summaries" class="md-nav__link">
+  <a href="#6-background-services-and-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Activities and summaries
+        6. Background services and status
       
     </span>
   </a>
@@ -1310,10 +1299,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-events-faults-vehicles-and-positions" class="md-nav__link">
+  <a href="#7-ui-heartbeat-and-ui_stall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Events, faults, vehicles and positions
+        7. UI heartbeat and UI_STALL
       
     </span>
   </a>
@@ -1321,10 +1310,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-eu-5612006-pre-check" class="md-nav__link">
+  <a href="#8-controlled-shutdown" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. EU 561/2006 pre-check
+        8. Controlled shutdown
       
     </span>
   </a>
@@ -1332,21 +1321,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-http-status-codes" class="md-nav__link">
+  <a href="#9-troubleshooting-and-acceptance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. HTTP status codes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-security-and-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Security and operation
+        9. Troubleshooting and acceptance
       
     </span>
   </a>
@@ -1370,179 +1348,134 @@
 
 
 
-<h1 id="drivercard-rest-api">DriverCard REST API<a class="headerlink" href="#drivercard-rest-api" title="Permanent link">&para;</a></h1>
-<h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
-<p>The DriverCard API exposes the same parsed driver-card data used by the FLEET Mira desktop analysis. It is intended for local integration and the bundled web week view. It does not modify archived originals.</p>
-<p>Default base URL: <code>http://127.0.0.1:5055</code>. Start/stop/open/log commands are available under <strong>System</strong>. Binding beyond loopback requires an external TLS/authentication gateway and an explicit risk assessment.</p>
-<h2 id="2-time-formats-and-filters">2. Time, formats and filters<a class="headerlink" href="#2-time-formats-and-filters" title="Permanent link">&para;</a></h2>
-<ul>
-<li>timestamps are ISO 8601 UTC;</li>
-<li>dates are <code>YYYY-MM-DD</code>;</li>
-<li>durations are integer seconds unless stated otherwise;</li>
-<li>card numbers are normalised strings;</li>
-<li>JSON uses UTF-8;</li>
-<li>validation errors return JSON with <code>error</code> and a readable <code>message</code>.</li>
-</ul>
-<p>Common query parameters:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>import_id</code></td>
-<td>parsed import identifier</td>
-</tr>
-<tr>
-<td><code>archive_id</code></td>
-<td>stable tachodata archive identifier</td>
-</tr>
-<tr>
-<td><code>card_number</code></td>
-<td>exact normalised card number</td>
-</tr>
-<tr>
-<td><code>date_from</code>, <code>date_to</code></td>
-<td>inclusive UTC date range</td>
-</tr>
-<tr>
-<td><code>limit</code>, <code>offset</code></td>
-<td>bounded pagination where supported</td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-endpoints">3. Endpoints<a class="headerlink" href="#3-endpoints" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Method and path</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GET /health</code></td>
-<td>process and database readiness</td>
-</tr>
-<tr>
-<td><code>POST /api/drivercard/parse</code></td>
-<td>parse a supplied DDD payload and persist/reuse its import</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/imports</code></td>
-<td>list parsed driver-card imports</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/time-summary</code></td>
-<td>activity totals by type</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/activities</code></td>
-<td>activity intervals</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/events</code></td>
-<td>card events</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/faults</code></td>
-<td>card faults</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/vehicles-used</code></td>
-<td>vehicles recorded on the card</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/positions</code></td>
-<td>recorded positions</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/day-overview</code></td>
-<td>prepared day data</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/week-overview</code></td>
-<td>prepared ISO-week data</td>
-</tr>
-<tr>
-<td><code>GET /api/drivercard/eu561/violations</code></td>
-<td>technical EU 561/2006 pre-check</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-health">4. Health<a class="headerlink" href="#4-health" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/health</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="na">Host</span><span class="o">:</span> <span class="l">127.0.0.1:5055</span>
+<h1 id="asynchronous-ui-lazy-tabs-and-background-services">Asynchronous UI, lazy tabs and background services<a class="headerlink" href="#asynchronous-ui-lazy-tabs-and-background-services" title="Permanent link">&para;</a></h1>
+<h2 id="1-design-rules">1. Design rules<a class="headerlink" href="#1-design-rules" title="Permanent link">&para;</a></h2>
+<p>The Qt event loop must remain responsive while SQLite queries, backups, signature verification and tachograph processing run. Three rules enforce this:</p>
+<ol>
+<li>The Qt main thread constructs and changes widgets/models only.</li>
+<li>Database, file, network and CPU work runs in workers or dedicated services.</li>
+<li>Invisible workspaces and detail tabs are constructed and loaded only when needed.</li>
+</ol>
+<pre class="mermaid"><code>flowchart LR
+    U["User input"] --&gt; Q["Qt main thread"]
+    Q --&gt; L["Lazy-tab factory"]
+    Q --&gt; J["UiJobController"]
+    J --&gt; R["Read pool: 4"]
+    J --&gt; W["Write lane: 1"]
+    J --&gt; P["Prefetch lane: 1"]
+    R --&gt; D["Worker-owned SQLite connection"]
+    W --&gt; D
+    P --&gt; D
+    D --&gt; C["DTO / list / dictionary"]
+    C --&gt; Q
+    B["Background services"] --&gt; A["Activity registry"]
+    J --&gt; A
+    A --&gt; S["Status bar"]
+    H["UI heartbeat"] --&gt; S</code></pre>
+<h2 id="2-startup-order">2. Startup order<a class="headerlink" href="#2-startup-order" title="Permanent link">&para;</a></h2>
+<p>The application applies a pending restore, runs central versioned database bootstrap, opens runtime repositories with <code>ensure_schema=False</code>, installs <code>UiJobController</code> and <code>UiHeartbeatMonitor</code>, creates the window, authenticates the user, loads only the visible start view and then starts background services.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant App as QApplication
+    participant Restore as Pending restore
+    participant Bootstrap as DB bootstrap
+    participant Jobs as UiJobController
+    participant Window as MainWindow
+    participant Services as Background services
+
+    App-&gt;&gt;Restore: Verify marker and atomically replace if present
+    App-&gt;&gt;Bootstrap: Configure WAL and run migrations once
+    Bootstrap--&gt;&gt;App: quick_check = ok
+    App-&gt;&gt;Jobs: Install pools and heartbeat
+    App-&gt;&gt;Window: Build UI without runtime DDL
+    Window-&gt;&gt;Services: Start timers, backup and optional REST
+    Window-&gt;&gt;Jobs: Load visible view only</code></pre>
+<h2 id="3-lazy-tabs">3. Lazy tabs<a class="headerlink" href="#3-lazy-tabs" title="Permanent link">&para;</a></h2>
+<p><code>FileWidget._add_lazy_tab()</code> stores a lightweight placeholder and factory. On <code>currentChanged</code>, the previous page is asked to <code>cancel_load()</code>, a <code>QSignalBlocker</code> prevents recursion, the factory creates the real widget, and the placeholder is replaced at the same index. <code>ensure_loaded()</code> then starts one data job if required.</p>
+<p>Vehicle deadlines, costs, invoices, tachograph references, M files, activities, events, speed, technical data, calibrations, positions and audit are lazy. Constructors must not perform large queries. Each page should provide a stable job key, <code>ensure_loaded()</code> and <code>cancel_load()</code>.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Placeholder
+    Placeholder --&gt; Constructing: tab activated
+    Constructing --&gt; LoadedWidget: factory completes
+    LoadedWidget --&gt; LoadingData: ensure_loaded / refresh
+    LoadingData --&gt; Ready: current job succeeds
+    LoadingData --&gt; Cancelled: tab changed or closed
+    Cancelled --&gt; LoadingData: activated again
+    Ready --&gt; LoadingData: refresh
+    Ready --&gt; Disposed: record rebuilt</code></pre>
+<h2 id="4-uijobcontroller">4. UiJobController<a class="headerlink" href="#4-uijobcontroller" title="Permanent link">&para;</a></h2>
+<p>A <code>UiJobSpec</code> defines a stable key, visible name, <code>work(token, report)</code>, lane, priority and metadata. Read jobs use a four-thread pool. Writes are serialised through one worker. Prefetch has one worker.</p>
+<p>Submitting the same key cancels the previous token and increments a generation. Signals are delivered only when handle, generation and key are still current. Destroying the owner cancels its token, so an old slow result cannot update a new or closed view.</p>
+<p><code>JobProgress</code> reports text, phase and optional current/total. <code>JobResult</code> includes request ID, duration and metadata such as wait time, phase time, record count and cache hit. Workers return thread-neutral values only; no widget, model or other <code>QObject</code> may cross the worker boundary.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant View
+    participant Controller as UiJobController
+    participant Pool as Worker pool
+    participant DB as SQLite
+
+    View-&gt;&gt;Controller: submit(key, next generation)
+    Controller-&gt;&gt;Controller: cancel old token for key
+    Controller-&gt;&gt;Pool: start QRunnable
+    Pool-&gt;&gt;DB: open connection in worker
+    DB--&gt;&gt;Pool: rows / DTOs
+    Pool-&gt;&gt;Controller: success(request_id, result)
+    Controller-&gt;&gt;Controller: validate key, generation and token
+    Controller--&gt;&gt;View: emit only current result
+    View-&gt;&gt;View: update model in Qt thread</code></pre>
+<h2 id="5-worker-database-pattern">5. Worker database pattern<a class="headerlink" href="#5-worker-database-pattern" title="Permanent link">&para;</a></h2>
+<p>Every worker opens and closes its own connection through the shared runtime factory. Connections are never passed from the UI thread. Schema changes belong to startup bootstrap only.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">work</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">report</span><span class="p">):</span>
+    <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
+    <span class="n">repo</span> <span class="o">=</span> <span class="n">VehicleUnitRepository</span><span class="p">(</span><span class="n">db_path</span><span class="p">,</span> <span class="n">ensure_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">report</span><span class="p">(</span><span class="n">JobProgress</span><span class="p">(</span><span class="s2">&quot;Loading calibrations&quot;</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">))</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">list_vehicle_facts</span><span class="p">(</span><span class="s2">&quot;ddd_vu_calibration&quot;</span><span class="p">,</span> <span class="n">vehicle_id</span><span class="p">,</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">offset</span><span class="p">)</span>
+    <span class="n">token</span><span class="o">.</span><span class="n">throw_if_cancelled</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;ok&quot;</span><span class="p">,</span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="s2">&quot;drivercard-rest&quot;</span><span class="p">,</span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="s2">&quot;available&quot;</span><span class="p">}</span>
-</code></pre></div>
-<h2 id="5-parse-a-driver-card">5. Parse a driver card<a class="headerlink" href="#5-parse-a-driver-card" title="Permanent link">&para;</a></h2>
-<p><code>POST /api/drivercard/parse</code> accepts JSON. The desktop web preload uses base64 so no local archive path appears in the browser URL.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C_20250715_0615_Demo_1000000000000001.DDD&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;content_base64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BASE64_DATA&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;archive_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;optional-stable-id&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The response identifies import/archive, driver/card metadata, activity range and parser warnings. Binary input, signatures and certificates are never echoed. A repeated identical payload is idempotent by hash.</p>
-<h2 id="6-activities-and-summaries">6. Activities and summaries<a class="headerlink" href="#6-activities-and-summaries" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="err">GET /api/drivercard/activities?archive_id=ARCHIVE_ID&amp;date_from=2025-07-14&amp;date_to=2025-07-20</span>
-</code></pre></div>
-<p>Activity rows contain start/end UTC, activity code (<code>DRIVING</code>, <code>WORK</code>, <code>AVAILABILITY</code>, <code>REST</code>), duration, card, crew and slot information. Day/week endpoints return the same source intervals grouped for visualisation; they are not separate evidence records.</p>
-<h2 id="7-events-faults-vehicles-and-positions">7. Events, faults, vehicles and positions<a class="headerlink" href="#7-events-faults-vehicles-and-positions" title="Permanent link">&para;</a></h2>
-<p>Event/fault responses include technical type/code, start/end and readable description where known. Unknown standard extensions remain represented by the technical code. Position rows contain timestamp, latitude, longitude, source/type, country/region codes and optional odometer.</p>
-<h2 id="8-eu-5612006-pre-check">8. EU 561/2006 pre-check<a class="headerlink" href="#8-eu-5612006-pre-check" title="Permanent link">&para;</a></h2>
-<p>The endpoint evaluates only the selected data basis. Its response includes driver summary, violations, warnings, rule/algorithm version and data-gap notices. It is a technical pre-check, not an authority/legal decision. National exceptions, AETR and Article 12 circumstances are not decided automatically.</p>
-<h2 id="9-http-status-codes">9. HTTP status codes<a class="headerlink" href="#9-http-status-codes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>200</code></td>
-<td>successful query or idempotent parse</td>
-</tr>
-<tr>
-<td><code>400</code></td>
-<td>malformed payload/filter</td>
-</tr>
-<tr>
-<td><code>404</code></td>
-<td>archive/import not found</td>
-</tr>
-<tr>
-<td><code>409</code></td>
-<td>conflicting or quarantined data for the requested trusted operation</td>
-</tr>
-<tr>
-<td><code>413</code></td>
-<td>payload too large for configured limit</td>
-</tr>
-<tr>
-<td><code>422</code></td>
-<td>DDD content cannot be parsed</td>
-</tr>
-<tr>
-<td><code>500</code></td>
-<td>unexpected internal failure; correlate with REST log</td>
-</tr>
-</tbody>
-</table>
-<h2 id="10-security-and-operation">10. Security and operation<a class="headerlink" href="#10-security-and-operation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Keep loopback binding unless a protected integration gateway is deployed.</li>
-<li>Do not put DDD data or local paths in query strings.</li>
-<li>Restrict REST log access; logs are English and exclude raw DDD/secrets.</li>
-<li>Stop the API through FLEET Mira before maintenance.</li>
-<li>API paths and response field names retain their technical compatibility even though the visible product is FLEET Mira.</li>
-</ul>
+<p>Write jobs commit in the write lane and trigger a new read job only after commit. Filters are captured before worker submission, and large result sets are paginated.</p>
+<h2 id="6-background-services-and-status">6. Background services and status<a class="headerlink" href="#6-background-services-and-status" title="Permanent link">&para;</a></h2>
+<p><code>BackgroundActivityRegistry</code> is a thread-safe map from stable task key to display text and optional progress. Every service must clear its entry in <code>finally</code>. The status bar polls at 400 ms and prioritises shutdown, active/recent UI stall, background work, transient messages and finally <code>Background: ready</code>.</p>
+<p>The <code>BackupCoordinator</code> owns one daemon thread and one non-reentrant run lock. A cycle handles small batches: up to 5 tachograph archives, 20 local financial migrations, 20 financial backups, 10 REST export retries and 50 remote presence checks, plus a due database snapshot. Backup progress pauses in 100-ms increments while a user write job is waiting. SQLite backup uses small page batches; network transfer and read-back occur outside functional transactions.</p>
+<p>The scheduler and notification timer runs every 30 seconds. Notification delivery uses a non-blocking lock and daemon worker. Scheduled tasks and the DriverCard REST API run in dedicated threads. Signature re-verification and deadline reconciliation use the serial write lane.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Service starts"] --&gt; B["Activity registry: set"]
+    B --&gt; C{"User write waiting?"}
+    C --&gt;|"Yes, backup"| D["Wait briefly and expose status"]
+    C --&gt;|"No"| E["Process bounded batch"]
+    D --&gt; C
+    E --&gt; F["Keep DB transaction short"]
+    F --&gt; G["Network/read-back outside transaction"]
+    G --&gt; H{"More work?"}
+    H --&gt;|"Yes"| E
+    H --&gt;|"No/error"| I["Activity registry: clear in finally"]</code></pre>
+<h2 id="7-ui-heartbeat-and-ui_stall">7. UI heartbeat and UI_STALL<a class="headerlink" href="#7-ui-heartbeat-and-ui_stall" title="Permanent link">&para;</a></h2>
+<p>A Qt timer beats every 250 ms. A separate watcher marks <code>UI_STALL</code> after one second without a beat and logs additional main-thread stack samples after 5, 15 and 30 seconds. The log includes delay, active jobs/background tasks and a compact main-thread stack. Recovery is logged on the next beat.</p>
+<p>The heartbeat diagnoses blocking; it does not make blocking code asynchronous. A stack ending in SQLite, file or network code in the main thread must be moved to a worker.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Responsive
+    Responsive --&gt; Stalled: no beat for 1 s
+    Stalled --&gt; Stalled: stack samples at 5/15/30 s
+    Stalled --&gt; Recovered: next Qt beat
+    Recovered --&gt; Responsive: retention expires</code></pre>
+<h2 id="8-controlled-shutdown">8. Controlled shutdown<a class="headerlink" href="#8-controlled-shutdown" title="Permanent link">&para;</a></h2>
+<p>System and tray exits share one idempotent path. Normal status timers are stopped and the visible shutdown sequence is: stop scheduler/notification timer, stop DriverCard REST, stop backup coordinator, hide tray, display completion, cancel UiJobs, wait for pools for a bounded period, stop heartbeat, then close Qt.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User
+    participant UI as MainWindow
+    participant REST as DriverCard REST
+    participant Backup as BackupCoordinator
+    participant Jobs as UiJobController
+    participant App as QApplication
+
+    User-&gt;&gt;UI: Exit
+    UI-&gt;&gt;UI: Lock shutdown status and stop timers
+    UI-&gt;&gt;REST: stop()
+    UI-&gt;&gt;Backup: stop(timeout)
+    UI-&gt;&gt;Jobs: cancel tokens and clear queues
+    Jobs-&gt;&gt;Jobs: bounded waitForDone
+    UI-&gt;&gt;App: close</code></pre>
+<h2 id="9-troubleshooting-and-acceptance">9. Troubleshooting and acceptance<a class="headerlink" href="#9-troubleshooting-and-acceptance" title="Permanent link">&para;</a></h2>
+<p>Search <code>app.log</code> for <code>UI_STALL</code>, inspect <code>main_stack</code>, correlate active task names and follow the same request ID through <code>UI_JOB start/success/failed/cancelled</code>. Verify that repositories use <code>ensure_schema=False</code>, result sets are bounded, cancellation is checked between phases and no UI callback performs blocking I/O.</p>
+<p>A new page or service is accepted only when construction and tab switching perform no substantial main-thread query, stale results are ignored, worker connections are thread-owned, writes are serial and committed before refresh, activity state is always cleared, shutdown remains idempotent, and navigation remains responsive during parallel backup load.</p>
 
 
 

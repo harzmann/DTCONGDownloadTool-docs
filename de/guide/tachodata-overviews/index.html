@@ -57,6 +57,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -595,6 +597,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../position-maps/" class="md-nav__link">
         
   
@@ -910,7 +940,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Architektur
   
 
     
@@ -923,6 +953,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -946,7 +1091,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud-Backup und Wiederherstellung
+    Archivierung, Backup und Wiederherstellung
   
 
     
@@ -1076,14 +1221,14 @@
 <h2 id="personal">Personal<a class="headerlink" href="#personal" title="Permanent link">&para;</a></h2>
 <p><img alt="Tachodaten-Auswertung Personal" src="../../assets/screenshots/tachodata-personnel-overview.png" />
 <em>Abbildung: Personenbezogene Übersicht mit Downloadtermin und Datenabdeckung.</em></p>
-<p>Die Parent-Zeile zeigt Fahrername, Personalnummer, Dateianzahl, frühesten und spätesten Datenzeitpunkt, nächsten Download und Lückenstatus. Die Suche berücksichtigt Person, Karte, Datei und Archiv-ID. Datums-, Lücken- und Dateistatusfilter lassen sich kombinieren.</p>
+<p>Die Parent-Zeile zeigt Fahrername, Personalnummer, Dateianzahl, Daten- und Aktivitätszeitraum, nächsten Download und Lückenstatus. <strong>Daten von/bis</strong> bezeichnet den gesamten in der Datei ausgewiesenen Datenbereich. <strong>Aktivitäten von/bis</strong> zeigt dagegen den tatsächlich ausgelesenen Zeitraum der Aktivitätsdatensätze. Die Suche berücksichtigt Person, Karte, Datei und Archiv-ID. Datums-, Lücken- und Dateistatusfilter lassen sich kombinieren.</p>
 <p><img alt="Aufgeklappte Tachodaten-Auswertung Personal" src="../../assets/screenshots/tachodata-personnel-expanded.png" />
 <em>Abbildung: Aufgeklappte Fahrerkartendateien und Archivierungslücken.</em></p>
 <p>Unter <strong>Tachodateien</strong> stehen die zugeordneten C-Dateien mit Kartennummer, Archivdatum, Zeitraum, Dateiname, Größe, Task, Status, Archiv-ID und Archivpfad. <strong>Archivierungslücken</strong> enthält nicht abgedeckte Intervalle zwischen zwei bekannten Datenbereichen. Vor dem ersten und nach dem letzten Archivbereich wird ohne fachlichen Sollzeitraum keine Lücke konstruiert.</p>
 <h2 id="fuhrpark">Fuhrpark<a class="headerlink" href="#fuhrpark" title="Permanent link">&para;</a></h2>
 <p><img alt="Tachodaten-Auswertung Fuhrpark" src="../../assets/screenshots/tachodata-fleet-overview.png" />
 <em>Abbildung: Fahrzeugbezogene Übersicht nach Kennzeichen und interner Nummer.</em></p>
-<p>Die Fuhrparkansicht arbeitet analog, ordnet M-Dateien jedoch über die bestätigte Fahrzeugverknüpfung beziehungsweise FIN zu. Generation, Parse- und Signaturstatus bleiben je Datei sichtbar.</p>
+<p>Die Fuhrparkansicht arbeitet analog, ordnet M-Dateien jedoch über die bestätigte Fahrzeugverknüpfung beziehungsweise FIN zu. Der separate Aktivitätszeitraum wird aus den tatsächlichen M-Aktivitätsänderungen gebildet. Generation, Parse- und Signaturstatus bleiben je Datei sichtbar.</p>
 <p><img alt="Aufgeklappte Tachodaten-Auswertung Fuhrpark" src="../../assets/screenshots/tachodata-fleet-expanded.png" />
 <em>Abbildung: M-Datei und berechnete Fahrzeug-Datenabdeckung.</em></p>
 <h2 id="downloadtermin-und-bedienung">Downloadtermin und Bedienung<a class="headerlink" href="#downloadtermin-und-bedienung" title="Permanent link">&para;</a></h2>
@@ -1157,6 +1302,8 @@
     
     
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
       
     
   </body>

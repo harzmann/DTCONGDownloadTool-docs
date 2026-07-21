@@ -57,6 +57,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -870,6 +872,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/position-maps/" class="md-nav__link">
         
   
@@ -1185,7 +1215,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Architektur
   
 
     
@@ -1198,6 +1228,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1221,7 +1366,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud-Backup und Wiederherstellung
+    Archivierung, Backup und Wiederherstellung
   
 
     
@@ -1778,14 +1923,16 @@
 <p><img alt="Fahrzeugstammliste" src="../assets/screenshots/vehicles.png" />
 <em>Abbildung: Fahrzeugstammliste.</em></p>
 <p>Doppelklick öffnet die jeweilige Akte. Kontextmenüs springen zu Fälligkeiten, Tachodaten, RFID oder Finanzdaten.</p>
+<p>Unter <strong>Fuhrpark &gt; Kostenanalyse</strong> werden die gebuchten Fahrzeugkosten ausgewertet. Der anfängliche Zeitraum reicht vom Jahresbeginn bis heute; Administratoren ändern die globale Vorgabe unter <strong>Administration &gt; Kostenanalyse &gt; Berechnungsparameter</strong>.</p>
 <h3 id="personalakte">Personalakte<a class="headerlink" href="#personalakte" title="Permanent link">&para;</a></h3>
 <p><img alt="Personalakte" src="../assets/screenshots/person-record.png" />
 <em>Abbildung: Personalakte mit den zugehörigen Fachreitern.</em></p>
 <p>Die Akte enthält Stammdaten, Fälligkeiten, Führerscheinkontrollen, RFID-Historie, Fahrerkartenverknüpfungen/-dateien, Tages-/Wochen-/Aktivitätsansicht und Audit. <strong>RFID/NFC zuordnen</strong> liest eine UID über PC/SC. <strong>FSK per PC/SC</strong> erzeugt nur dann eine Kontrolle, wenn die gelesene UID zur Person gehört.</p>
+<p>Tagesansicht, Wochenansicht und Verstöße sind aktenbezogen: Bei Personal werden alle verknüpften Fahrerkarten einschließlich Kartenwechsel berücksichtigt, bei Fahrzeugen alle gültigen M-Dateien der verknüpften FIN. Der Befehl <strong>Einzelne Datei auswerten</strong> öffnet dagegen ausschließlich das gewählte C- oder M-Archiv.</p>
 <h3 id="fahrzeugakte">Fahrzeugakte<a class="headerlink" href="#fahrzeugakte" title="Permanent link">&para;</a></h3>
 <p><img alt="Fahrzeugakte" src="../assets/screenshots/vehicle-record.png" />
 <em>Abbildung: Fahrzeugakte mit Tachodaten-, Finanz- und Positionsreitern.</em></p>
-<p>Tabs enthalten Fälligkeiten, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
+<p>Tabs enthalten Fälligkeiten, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Die aggregierten Fachtabellen blenden die technische Quellspalte standardmäßig aus; das Quellarchiv bleibt über das Kontextmenü erreichbar. Identische technische Daten werden einmal mit ihrer Quellenanzahl und dem vollständigen Detailbaum dargestellt. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
 <h2 id="9-falligkeiten-und-downloadtermine">9. Fälligkeiten und Downloadtermine<a class="headerlink" href="#9-falligkeiten-und-downloadtermine" title="Permanent link">&para;</a></h2>
 <p>Personal- und Fahrzeugauswertung sind getrennt, verwenden aber dieselbe sortier-/filterbare Komponente. Jede Fälligkeit besitzt einen individuellen Vorlauf; Standard sind zehn Tage. Farben:</p>
 <ul>
@@ -1864,7 +2011,7 @@
 </tr>
 <tr>
 <td>Fremdrechnung nicht prüfbar</td>
-<td>Splitdifferenz auflösen und mindestens einen cloudverifizierten Originalbeleg sicherstellen.</td>
+<td>Splitdifferenz auflösen und mindestens einen lokal verifizierten Originalbeleg sicherstellen. Der Backupstatus blockiert die Prüfung nicht.</td>
 </tr>
 <tr>
 <td>UI-Auftrag fehlgeschlagen</td>
@@ -1936,6 +2083,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

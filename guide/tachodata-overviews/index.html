@@ -57,6 +57,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -595,6 +597,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../position-maps/" class="md-nav__link">
         
   
@@ -910,7 +940,7 @@
   <span class="md-ellipsis">
     
   
-    Operations
+    Architecture
   
 
     
@@ -923,6 +953,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -946,7 +1091,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud backup and restore
+    Archiving, backup and restore
   
 
     
@@ -1076,14 +1221,14 @@
 <h2 id="personnel">Personnel<a class="headerlink" href="#personnel" title="Permanent link">&para;</a></h2>
 <p><img alt="Personnel tachodata evaluation" src="../../assets/screenshots/tachodata-personnel-overview.png" />
 <em>Figure: Personnel overview with download due date and data coverage.</em></p>
-<p>Each parent row shows driver, personnel number, file count, earliest and latest data timestamp, next download and gap status. Search covers person, card, filename and archive ID. Date, gap and file-status filters can be combined.</p>
+<p>Each parent row shows driver, personnel number, file count, data and activity ranges, next download and gap status. <strong>Data from/to</strong> is the complete range declared by the file, while <strong>Activities from/to</strong> is the range actually covered by parsed activity records. Search covers person, card, filename and archive ID. Date, gap and file-status filters can be combined.</p>
 <p><img alt="Expanded personnel tachodata evaluation" src="../../assets/screenshots/tachodata-personnel-expanded.png" />
 <em>Figure: Expanded driver-card files and archive coverage gaps.</em></p>
 <p><strong>Tachograph files</strong> lists linked C files with card number, archive date, period, filename, size, task, status, archive ID and path. <strong>Archive coverage gaps</strong> lists uncovered intervals between known data ranges. No gap is invented before the first or after the last range unless a business target period exists.</p>
 <h2 id="fleet">Fleet<a class="headerlink" href="#fleet" title="Permanent link">&para;</a></h2>
 <p><img alt="Fleet tachodata evaluation" src="../../assets/screenshots/tachodata-fleet-overview.png" />
 <em>Figure: Vehicle overview by registration and internal number.</em></p>
-<p>The fleet view works the same way, but assigns M files through the confirmed vehicle link or VIN. Generation, parser and signature state remain visible per file.</p>
+<p>The fleet view works the same way, but assigns M files through the confirmed vehicle link or VIN. Its separate activity range is derived from the actual M-file activity changes. Generation, parser and signature state remain visible per file.</p>
 <p><img alt="Expanded fleet tachodata evaluation" src="../../assets/screenshots/tachodata-fleet-expanded.png" />
 <em>Figure: Expanded M file and calculated vehicle data coverage.</em></p>
 <h2 id="due-date-and-operation">Due date and operation<a class="headerlink" href="#due-date-and-operation" title="Permanent link">&para;</a></h2>
@@ -1157,6 +1302,8 @@
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

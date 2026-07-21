@@ -57,6 +57,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/image-lightbox.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -493,6 +495,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
   
 
     
@@ -1068,7 +1098,7 @@
   <span class="md-ellipsis">
     
   
-    Operations
+    Architecture
   
 
     
@@ -1081,6 +1111,121 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1104,7 +1249,7 @@
   <span class="md-ellipsis">
     
   
-    Cloud backup and restore
+    Archiving, backup and restore
   
 
     
@@ -1517,14 +1662,14 @@
 <p><img alt="Notification administration" src="../assets/screenshots/notifications.png" />
 <em>Figure: SMTP recipients, rules and send-log administration.</em></p>
 <h2 id="10-finance-and-document-vault">10. Finance and document vault<a class="headerlink" href="#10-finance-and-document-vault" title="Permanent link">&para;</a></h2>
-<p>Financial data is stored in cents and EUR. Foreign invoices require exact header/position totals and at least one cloud-verified original before verification. Booking makes business records immutable; corrections use cancellations or credits.</p>
+<p>Financial data is stored in cents and EUR. Foreign invoices require exact header/position totals and at least one locally verified original before verification. Backup status is irrelevant to that decision. Booking makes business records immutable; corrections use cancellations or credits.</p>
 <p>Original documents are never SQLite BLOBs. The financial vault stages, hashes, uploads, reads back and verifies each object. Metadata stores target, remote path/ID, hash, size, version and retention. Target deletion is blocked while documents reference it.</p>
 <p>Accounting delivery is available through <a href="../api/accounting-rest/">REST</a> and <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Only booked records are exportable. REST uses a persistent idempotent outbox.</p>
 <h2 id="11-backup-and-disaster-recovery">11. Backup and disaster recovery<a class="headerlink" href="#11-backup-and-disaster-recovery" title="Permanent link">&para;</a></h2>
 <p>Exactly one Google Drive or HTTPS WebDAV target may be active. Client-side AES-256-GCM is optional and preselected. Activation requires exporting and confirming a recovery key.</p>
 <p><img alt="Backup target, queue and restore administration" src="../assets/screenshots/backup.png" />
 <em>Figure: Cloud target, backup queue and restore administration.</em></p>
-<p>Archives are backed up immediately; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD cloud objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Cloud backup and restore</a>.</p>
+<p>Archives are backed up asynchronously when a target is configured; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD backup objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Archiving, backup and restore</a>.</p>
 <p>At least quarterly, restore a database snapshot and representative C/M objects to an isolated test directory, verify hashes/integrity and document the result.</p>
 <h2 id="12-rest-and-integrations">12. REST and integrations<a class="headerlink" href="#12-rest-and-integrations" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1633,6 +1778,8 @@
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/image-lightbox.js"></script>
       
     
   </body>
