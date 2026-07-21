@@ -50,6 +50,13 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/async-ui-background-services/"/>
     </url>
     <url>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/database-schema-v2/"/>
+    </url>
+    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/tachograph-data-storage/</loc>
         <lastmod>2026-07-21</lastmod>
         <changefreq>daily</changefreq>
@@ -174,6 +181,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/async-ui-background-services/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/async-ui-background-services/"/>
+    </url>
+    <url>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/database-schema-v2/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/database-schema-v2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/tachograph-data-storage/</loc>

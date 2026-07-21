@@ -1,0 +1,3052 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/">
+      
+      
+        <link rel="prev" href="../../integration/drivercard-parser/">
+      
+      
+        <link rel="next" href="../tachograph-data-storage/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../de/architecture/database-schema-v2/" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Database schema V2 - FLEET Mira Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database-schema-v2-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database schema V2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../de/architecture/database-schema-v2/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detailed guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detailed guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodata evaluations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver-card analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle-unit analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cost analysis and reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Position maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrator and integrator guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APIs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    APIs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accounting CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database schema V2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database schema V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose and scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-v2-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. V2 invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-physical-sqlite-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Physical SQLite configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-versioned-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Versioned bootstrap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Versioned bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration ledger
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-high-level-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. High-level data model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-archive-and-evidence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Archive and evidence layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Archive and evidence layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddd_archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ddd_archive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-and-signature-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser and signature evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-normalized-fact-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Normalized fact model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Normalized fact model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fact-and-cluster-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fact and cluster hashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reparse-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reparse transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fact-kind-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fact-kind catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-query-semantics-and-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Query semantics and indexes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Query semantics and indexes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-archive-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-archive queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required indexes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-compliance-and-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Compliance and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-business-schema-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Business schema catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Business schema catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-application-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and application state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management-and-transfer-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device management and transfer state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fleet-master-data-and-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet master data and links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-and-e-invoices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance and e-invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odometer-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Odometer and reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup and restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-complete-table-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Complete table inventory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-legacy-to-v2-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Legacy-to-V2 migration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Legacy-to-V2 migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rebuild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atomic-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atomic activation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-deployment-database-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Deployment database contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-operational-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Operational checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachograph data storage and access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchronous UI and background services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose and scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-v2-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. V2 invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-physical-sqlite-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Physical SQLite configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-versioned-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Versioned bootstrap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Versioned bootstrap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration ledger
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-high-level-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. High-level data model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-archive-and-evidence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Archive and evidence layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Archive and evidence layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ddd_archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ddd_archive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-and-signature-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser and signature evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-normalized-fact-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Normalized fact model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Normalized fact model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encodings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fact-and-cluster-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fact and cluster hashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reparse-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reparse transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fact-kind-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fact-kind catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-query-semantics-and-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Query semantics and indexes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Query semantics and indexes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-archive-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single-archive queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required indexes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-compliance-and-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Compliance and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-business-schema-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Business schema catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Business schema catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-application-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and application state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management-and-transfer-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device management and transfer state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fleet-master-data-and-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fleet master data and links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finance-and-e-invoices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finance and e-invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#odometer-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Odometer and reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup and restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-complete-table-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Complete table inventory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-legacy-to-v2-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Legacy-to-V2 migration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Legacy-to-V2 migration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rebuild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atomic-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atomic activation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-deployment-database-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Deployment database contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-operational-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Operational checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="database-schema-v2-reference">Database schema V2 reference<a class="headerlink" href="#database-schema-v2-reference" title="Permanent link">&para;</a></h1>
+<h2 id="1-purpose-and-scope">1. Purpose and scope<a class="headerlink" href="#1-purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document is the technical reference for the SQLite database format used by FLEET Mira storage format V2. It covers the physical database contract, versioned bootstrap, the normalized tachograph fact model, provenance and deduplication, the surrounding business schemas, integrity rules, migration from the legacy format, and supported operational access.</p>
+<p>The schema is an internal application contract. Integrations must use the documented application services and APIs for writes. Read-only SQL is useful for diagnostics and controlled reporting, but direct inserts, updates, deletes, schema changes, or trigger changes are unsupported because they can bypass audit, hash verification, derived-data refresh, and migration bookkeeping.</p>
+<p>Related documents:</p>
+<ul>
+<li><a href="../tachograph-data-storage/">Tachograph data parsing, storage and access</a></li>
+<li><a href="../async-ui-background-services/">Asynchronous UI and background services</a></li>
+<li><a href="../../operations/cloud-backup-restore/">Archiving, backup and restore</a></li>
+</ul>
+<h2 id="2-v2-invariants">2. V2 invariants<a class="headerlink" href="#2-v2-invariants" title="Permanent link">&para;</a></h2>
+<p>Storage format V2 is identified by all of the following conditions:</p>
+<ol>
+<li><code>app_schema_state.storage_format</code> is <code>2</code>.</li>
+<li><code>ddd_archive</code> has the integer surrogate key <code>archive_pk</code> in addition to the stable public text ID <code>id</code>.</li>
+<li>The normalized fact core (<code>ddd_fact_kind</code>, <code>ddd_fact</code>, <code>ddd_fact_source</code>, and all typed payload tables) is complete.</li>
+<li>Required fact and card/time indexes exist.</li>
+<li>No legacy archive-owned fact table listed by the migration map remains in the database.</li>
+<li>The stored schema fingerprint matches the SQL definitions of the V2 archive, fact, payload, and fact-index objects.</li>
+</ol>
+<p>The bootstrap rejects a populated <code>ddd_archive</code> table without <code>archive_pk</code>. A legacy database must therefore be rebuilt with the dedicated V2 migration; it is never upgraded in place by normal application startup.</p>
+<pre class="mermaid"><code>flowchart LR
+    S["SQLite file"] --&gt; M["app_schema_state"]
+    M --&gt; F{"storage_format = 2"}
+    F --&gt; A["ddd_archive.archive_pk"]
+    F --&gt; C["normalized fact core"]
+    F --&gt; I["required indexes"]
+    F --&gt; H["schema fingerprint"]
+    A --&gt; V["validate_storage_schema"]
+    C --&gt; V
+    I --&gt; V
+    H --&gt; V</code></pre>
+<h2 id="3-physical-sqlite-configuration">3. Physical SQLite configuration<a class="headerlink" href="#3-physical-sqlite-configuration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th style="text-align: right;">Runtime value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Page size</td>
+<td style="text-align: right;">8 KiB for newly created databases</td>
+<td>Reduces B-tree depth and page overhead for the fact store.</td>
+</tr>
+<tr>
+<td>Journal mode</td>
+<td style="text-align: right;">WAL during application runtime</td>
+<td>Allows readers to continue while the serialized write lane commits.</td>
+</tr>
+<tr>
+<td><code>synchronous</code></td>
+<td style="text-align: right;"><code>NORMAL</code></td>
+<td>WAL durability/performance balance.</td>
+</tr>
+<tr>
+<td>Busy timeout</td>
+<td style="text-align: right;">30,000 ms</td>
+<td>Gives bounded concurrent work time to finish instead of immediately returning <code>SQLITE_BUSY</code>.</td>
+</tr>
+<tr>
+<td>WAL auto-checkpoint</td>
+<td style="text-align: right;">1,000 pages</td>
+<td>Bounds WAL growth during ordinary operation.</td>
+</tr>
+<tr>
+<td>Foreign keys</td>
+<td style="text-align: right;">Enabled on every application connection</td>
+<td>Enforces declared relationships and cascades.</td>
+</tr>
+<tr>
+<td>Auto-vacuum</td>
+<td style="text-align: right;"><code>INCREMENTAL</code> on a new database</td>
+<td>Permits controlled space reclamation.</td>
+</tr>
+</tbody>
+</table>
+<p>The distributable empty database is finalized as a compact single file in <code>DELETE</code> journal mode and vacuumed. Application startup switches it to WAL. The <code>-wal</code> and <code>-shm</code> files are therefore normal runtime companions and must be included in shutdown/checkpoint planning, but not copied independently as a database backup.</p>
+<p><code>PRAGMA user_version</code> is not the migration authority. FLEET Mira uses component rows in <code>app_schema_migration</code> and format state in <code>app_schema_state</code>.</p>
+<h2 id="4-versioned-bootstrap">4. Versioned bootstrap<a class="headerlink" href="#4-versioned-bootstrap" title="Permanent link">&para;</a></h2>
+<p><code>bootstrap_database()</code> is the only supported schema initialization entry point. It runs before the UI and background services construct repositories. Each component migration is recorded once with component, version, UTC application time, and duration.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align: right;">Current bootstrap version</th>
+<th>Schema owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archive</code></td>
+<td style="text-align: right;">2</td>
+<td>archive metadata, transfer state, and global audit dependencies</td>
+</tr>
+<tr>
+<td><code>authentication</code></td>
+<td style="text-align: right;">1</td>
+<td>users, roles, permissions, login security, and UI state</td>
+</tr>
+<tr>
+<td><code>device_management</code></td>
+<td style="text-align: right;">1</td>
+<td>devices, tenants, locations, groups, and status history</td>
+</tr>
+<tr>
+<td><code>drivercard</code></td>
+<td style="text-align: right;">2</td>
+<td>driver-card import identity and signature evidence</td>
+</tr>
+<tr>
+<td><code>fleet</code></td>
+<td style="text-align: right;">2</td>
+<td>persons, vehicles, links, due dates, RFID, licence checks, and notifications</td>
+</tr>
+<tr>
+<td><code>finance</code></td>
+<td style="text-align: right;">1</td>
+<td>suppliers, invoices, costs, financial originals, e-invoices, and exports</td>
+</tr>
+<tr>
+<td><code>vehicle_unit</code></td>
+<td style="text-align: right;">4</td>
+<td>VU import evidence, trust anchors, and normalized V2 fact schema</td>
+</tr>
+<tr>
+<td><code>compliance</code></td>
+<td style="text-align: right;">4</td>
+<td>snapshots, rule-module configuration, and immutable catalog metadata</td>
+</tr>
+<tr>
+<td><code>backup</code></td>
+<td style="text-align: right;">1</td>
+<td>targets, replication state, jobs, and database snapshots</td>
+</tr>
+<tr>
+<td><code>reporting</code></td>
+<td style="text-align: right;">3</td>
+<td>odometer history, cost-report parameters, and report templates</td>
+</tr>
+</tbody>
+</table>
+<p>The version is a per-component migration level, not the product version and not the storage-format number. A schema change must increment the owning component version. After migrations, startup validates V2, calculates its schema fingerprint, updates <code>app_schema_state</code>, commits, and runs <code>PRAGMA quick_check</code> when any migration was applied.</p>
+<h3 id="migration-ledger">Migration ledger<a class="headerlink" href="#migration-ledger" title="Permanent link">&para;</a></h3>
+<p><code>app_schema_migration</code> uses <code>(component, version)</code> as its primary key. <code>app_schema_state</code> is a key/value registry and currently owns at least:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>storage_format</code></td>
+<td>Physical tachograph storage generation; must equal <code>2</code>.</td>
+</tr>
+<tr>
+<td><code>storage_schema_fingerprint</code></td>
+<td>SHA-256 over the normalized schema object's SQL definitions in deterministic order.</td>
+</tr>
+</tbody>
+</table>
+<p>If no component migration ran and the calculated fingerprint differs from the registered fingerprint, startup fails. This prevents an unversioned manual DDL change from being silently accepted.</p>
+<h2 id="5-high-level-data-model">5. High-level data model<a class="headerlink" href="#5-high-level-data-model" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>erDiagram
+    DDD_ARCHIVE ||--o{ DDD_FACT_SOURCE : contains
+    DDD_FACT_KIND ||--o{ DDD_FACT : classifies
+    DDD_FACT_KIND ||--o{ DDD_FACT_SOURCE : classifies
+    DDD_FACT ||--o{ DDD_FACT_SOURCE : proven_by
+    DDD_FACT ||--|| TYPED_PAYLOAD : stores
+    DDD_CARD_IDENTITY ||--o{ TYPED_PAYLOAD : normalizes
+    DDD_ARCHIVE ||--o| DDD_DRIVERCARD_IMPORT : describes
+    DDD_ARCHIVE ||--o| DDD_VEHICLE_UNIT_IMPORT : describes
+    DDD_ARCHIVE ||--o{ DDD_VU_SECTION : segments
+    DDD_ARCHIVE ||--o{ DDD_COMPLIANCE_SNAPSHOT : evaluates
+    FLEET_PERSON ||--o{ FLEET_DRIVERCARD_LINK : owns
+    FLEET_VEHICLE ||--o{ FLEET_VEHICLE_VU_LINK : owns
+    DDD_ARCHIVE ||--o{ FLEET_VEHICLE_VU_LINK : links
+    FLEET_FOREIGN_INVOICE ||--o{ FLEET_VEHICLE_COST_ENTRY : allocates
+    FLEET_FINANCIAL_DOCUMENT }o--|| FLEET_FOREIGN_INVOICE : evidences
+    BACKUP_TARGET ||--o{ BACKUP_ARCHIVE_STATE : replicates</code></pre>
+<p>The schema separates four concerns:</p>
+<ul>
+<li><strong>Evidence:</strong> immutable originals, archive metadata, parser/signature records, raw hashes, and audit.</li>
+<li><strong>Canonical facts:</strong> deduplicated observations independent of any one archive.</li>
+<li><strong>Provenance:</strong> every occurrence of a fact in an archive, including section and raw-record identity.</li>
+<li><strong>Business projections:</strong> people, vehicles, due dates, odometers, costs, reports, and backup state derived from or linked to evidence.</li>
+</ul>
+<h2 id="6-archive-and-evidence-layer">6. Archive and evidence layer<a class="headerlink" href="#6-archive-and-evidence-layer" title="Permanent link">&para;</a></h2>
+<h3 id="ddd_archive"><code>ddd_archive</code><a class="headerlink" href="#ddd_archive" title="Permanent link">&para;</a></h3>
+<p><code>ddd_archive</code> is the root for every C- or M-file import.</p>
+<table>
+<thead>
+<tr>
+<th>Column group</th>
+<th>Important columns</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keys</td>
+<td><code>archive_pk</code>, <code>id</code></td>
+<td>Internal integer join key and stable public archive ID.</td>
+</tr>
+<tr>
+<td>File identity</td>
+<td><code>file_name</code>, <code>file_name_normalized</code>, <code>file_hash_sha256</code></td>
+<td>Display/search name and SHA-256 of uncompressed DDD bytes.</td>
+</tr>
+<tr>
+<td>Stored object</td>
+<td><code>stored_path</code>, <code>compressed_size</code>, <code>stored_hash_sha256</code></td>
+<td>GZIP object location, size, and hash.</td>
+</tr>
+<tr>
+<td>Source</td>
+<td><code>source_id</code>, <code>task_id</code>, <code>source_host</code>, <code>remote_path</code>, source/download timestamps</td>
+<td>Transfer provenance.</td>
+</tr>
+<tr>
+<td>Lifecycle</td>
+<td><code>archived_at</code>, <code>is_deleted</code>, deletion actor/time/reason</td>
+<td>Logical archive lifecycle.</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td><code>ddd_type</code>, <code>generation</code>, <code>parse_status</code>, <code>signature_status</code></td>
+<td>Parser and trust outcome.</td>
+</tr>
+<tr>
+<td>Identity/range</td>
+<td><code>identity_label</code>, VIN, registration, <code>data_from</code>, <code>data_to</code></td>
+<td>Search and entity-linking projection.</td>
+</tr>
+<tr>
+<td>Parser result</td>
+<td><code>parsed_at</code>, <code>parser_message</code></td>
+<td>Last parse attempt.</td>
+</tr>
+</tbody>
+</table>
+<p>Active archives are unique by uncompressed <code>file_hash_sha256</code>. Logical deletion preserves the archive and audit row while removing it from active aggregate queries.</p>
+<h3 id="parser-and-signature-evidence">Parser and signature evidence<a class="headerlink" href="#parser-and-signature-evidence" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ddd_drivercard_import</code></td>
+<td>Parsed card identity, generation, holder/licence metadata, parser version, signature summary, and import result.</td>
+</tr>
+<tr>
+<td><code>ddd_drivercard_signature</code></td>
+<td>Per signed EF block: generation, file ID, algorithm, certificate/trust fingerprints, verification time, and result.</td>
+</tr>
+<tr>
+<td><code>ddd_vehicle_unit_import</code></td>
+<td>VU generation, VIN, registration, serial, covered range, warnings, signature summary, and correlation ID.</td>
+</tr>
+<tr>
+<td><code>ddd_vu_section</code></td>
+<td>Section index/code, generation, source byte range, and SHA-256 of the exact signed bytes.</td>
+</tr>
+<tr>
+<td><code>ddd_vu_signature</code></td>
+<td>Per VU section signature result and certificate evidence.</td>
+</tr>
+<tr>
+<td><code>ddd_vu_unknown_record</code></td>
+<td>Bounded unsupported records with offsets, raw payload, and 32-byte raw hash so parsing remains loss-aware.</td>
+</tr>
+<tr>
+<td><code>tachograph_trust_anchor</code></td>
+<td>Versioned trust material used by signature verification.</td>
+</tr>
+</tbody>
+</table>
+<p>Archive-owned evidence tables reference the public archive ID and normally use <code>ON DELETE CASCADE</code>. The compressed original remains the authoritative source for a future reparse.</p>
+<h2 id="7-normalized-fact-model">7. Normalized fact model<a class="headerlink" href="#7-normalized-fact-model" title="Permanent link">&para;</a></h2>
+<h3 id="core-tables">Core tables<a class="headerlink" href="#core-tables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Key</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ddd_fact_kind</code></td>
+<td><code>kind_id</code></td>
+<td>Stable registry of typed fact kinds.</td>
+</tr>
+<tr>
+<td><code>ddd_card_identity</code></td>
+<td><code>card_pk</code></td>
+<td>Deduplicated normalized card number plus the best display form.</td>
+</tr>
+<tr>
+<td><code>ddd_fact</code></td>
+<td><code>fact_pk</code></td>
+<td>One canonical semantic observation, its full hash, cluster hash, kind, and optional event epoch.</td>
+</tr>
+<tr>
+<td><code>ddd_fact_source</code></td>
+<td>archive/kind/time/ordinal</td>
+<td>One occurrence of a fact in one archive, including section, record, raw hash, and source-only generation.</td>
+</tr>
+<tr>
+<td><code>ddd_fact_&lt;kind&gt;</code></td>
+<td><code>fact_pk</code></td>
+<td>Typed payload in compact SQLite-native fields.</td>
+</tr>
+</tbody>
+</table>
+<p><code>ddd_fact_source</code> is a <code>WITHOUT ROWID</code> table. Its composite primary key is ordered for deterministic per-archive replacement. It references <code>ddd_archive</code>, <code>ddd_fact_kind</code>, and <code>ddd_fact</code>; deleting an archive cascades its source rows. Orphan canonical facts are removed explicitly after archive replacement or removal.</p>
+<h3 id="encodings">Encodings<a class="headerlink" href="#encodings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Logical value</th>
+<th>Stored form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UTC timestamp</td>
+<td>Signed integer Unix seconds.</td>
+</tr>
+<tr>
+<td>Calendar day</td>
+<td>Integer day offset from <code>1970-01-01</code>.</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td><code>0=BREAK_REST</code>, <code>1=AVAILABILITY</code>, <code>2=WORK</code>, <code>3=DRIVING</code>.</td>
+</tr>
+<tr>
+<td>Card number</td>
+<td><code>card_pk</code> into <code>ddd_card_identity</code>.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Unicode NFC, control-character removal, and collapsed whitespace.</td>
+</tr>
+<tr>
+<td>Raw digest</td>
+<td>Exactly 32 bytes.</td>
+</tr>
+<tr>
+<td>Speed data</td>
+<td>One BLOB containing the complete 60-second block; <code>0xFF</code> remains a missing sample.</td>
+</tr>
+</tbody>
+</table>
+<p>Card normalization uppercases and retains alphanumeric characters only. All-placeholder values are treated as absent. The longer available display representation wins without changing the normalized identity.</p>
+<h3 id="fact-and-cluster-hashes">Fact and cluster hashes<a class="headerlink" href="#fact-and-cluster-hashes" title="Permanent link">&para;</a></h3>
+<p>The canonical <code>fact_hash</code> is SHA-256 over:</p>
+<ol>
+<li>ASCII fact-kind name and a zero byte;</li>
+<li>deterministic compact JSON of all encoded payload fields, sorted by key;</li>
+<li>a zero byte and the raw BLOB for fact kinds such as speed blocks.</li>
+</ol>
+<p><code>UNIQUE(kind_id, fact_hash)</code> stores an identical observation once even when many archives contain it.</p>
+<p>The <code>cluster_hash</code> uses only the fact kind's domain-specific cluster fields. It groups records that represent the same logical slot/time/key but may disagree in other values. If a cluster has more than one distinct full fact hash, aggregate queries set <code>has_conflict=true</code>; variants are retained rather than overwritten.</p>
+<h3 id="provenance">Provenance<a class="headerlink" href="#provenance" title="Permanent link">&para;</a></h3>
+<p><code>ddd_fact_source</code> records:</p>
+<ul>
+<li>archive and kind;</li>
+<li>source ordinal;</li>
+<li>canonical fact;</li>
+<li>event epoch or the reserved no-event sentinel for time-free facts;</li>
+<li>section index and code;</li>
+<li>record index;</li>
+<li>SHA-256 of the exact raw record, or a deterministic fallback hash;</li>
+<li>card generation when generation belongs to source evidence rather than semantic identity.</li>
+</ul>
+<p>This design allows a canonical row to be deduplicated without losing which files, sections, records, or generations proved it.</p>
+<h3 id="reparse-transaction">Reparse transaction<a class="headerlink" href="#reparse-transaction" title="Permanent link">&para;</a></h3>
+<p>For one archive and one fact kind, <code>replace_archive_records()</code> performs:</p>
+<ol>
+<li>delete the old <code>ddd_fact_source</code> rows for that archive/kind;</li>
+<li>normalize and encode each parser record;</li>
+<li>calculate full and cluster hashes;</li>
+<li>insert or reuse <code>ddd_fact</code>;</li>
+<li>insert the typed payload if this is a new fact;</li>
+<li>insert the archive-specific source row;</li>
+<li>remove canonical facts no longer referenced by any archive.</li>
+</ol>
+<p>The original archive row, signature evidence, and other archives remain unchanged.</p>
+<h2 id="8-fact-kind-catalog">8. Fact-kind catalog<a class="headerlink" href="#8-fact-kind-catalog" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kind / payload table</th>
+<th>Stored semantic fields</th>
+<th>Cluster identity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vu.activity</code> / <code>ddd_fact_vu_activity</code></td>
+<td>slot, change time, activity, card-present flag, crew flag, card</td>
+<td>slot + change time</td>
+</tr>
+<tr>
+<td><code>vu.card_session</code> / <code>ddd_fact_vu_card_session</code></td>
+<td>slot, card, names, expiry, insert/withdraw times</td>
+<td>slot + card + insert/withdraw times</td>
+</tr>
+<tr>
+<td><code>vu.event</code> / <code>ddd_fact_vu_event</code></td>
+<td>type, begin, end</td>
+<td>type + begin + end</td>
+</tr>
+<tr>
+<td><code>vu.fault</code> / <code>ddd_fact_vu_fault</code></td>
+<td>type, begin, end</td>
+<td>type + begin + end</td>
+</tr>
+<tr>
+<td><code>vu.overspeed</code> / <code>ddd_fact_vu_overspeed</code></td>
+<td>begin/end, maximum and average speed</td>
+<td>begin + end</td>
+</tr>
+<tr>
+<td><code>vu.speed_block</code> / <code>ddd_fact_vu_speed_block</code></td>
+<td>start epoch, 60-byte speed BLOB</td>
+<td>start epoch</td>
+</tr>
+<tr>
+<td><code>vu.technical</code> / <code>ddd_fact_vu_technical</code></td>
+<td>record type, value, detail JSON</td>
+<td>record type</td>
+</tr>
+<tr>
+<td><code>vu.calibration</code> / <code>ddd_fact_vu_calibration</code></td>
+<td>purpose, workshop, VIN, registration, calibration times</td>
+<td>purpose + calibration time</td>
+</tr>
+<tr>
+<td><code>vu.position</code> / <code>ddd_fact_vu_position</code></td>
+<td>position type, time, coordinates, raw hex</td>
+<td>type + time</td>
+</tr>
+<tr>
+<td><code>vu.border</code> / <code>ddd_fact_vu_border</code></td>
+<td>crossing time, coordinates, raw hex</td>
+<td>crossing time</td>
+</tr>
+<tr>
+<td><code>vu.load</code> / <code>ddd_fact_vu_load</code></td>
+<td>time, operation, coordinates, raw hex</td>
+<td>time + operation</td>
+</tr>
+<tr>
+<td><code>vu.odometer</code> / <code>ddd_fact_vu_odometer</code></td>
+<td>source day, midnight time, odometer</td>
+<td>source day</td>
+</tr>
+<tr>
+<td><code>card.activity</code> / <code>ddd_fact_card_activity</code></td>
+<td>card, activity, start/end, duration, day, crew, slot</td>
+<td>card + start/end + slot</td>
+</tr>
+<tr>
+<td><code>card.event</code> / <code>ddd_fact_card_event</code></td>
+<td>card, event codes/text, begin/end, vehicle, place</td>
+<td>card + numeric type + begin/end</td>
+</tr>
+<tr>
+<td><code>card.fault</code> / <code>ddd_fact_card_fault</code></td>
+<td>card, fault codes/text, begin/end, vehicle, place</td>
+<td>card + numeric type + begin/end</td>
+</tr>
+<tr>
+<td><code>card.vehicle</code> / <code>ddd_fact_card_vehicle</code></td>
+<td>card, use interval, odometers, distance, registration, VIN, block counter</td>
+<td>card + use interval + registration</td>
+</tr>
+<tr>
+<td><code>card.position</code> / <code>ddd_fact_card_position</code></td>
+<td>card, source, record/position times, country/region, odometer, coordinates, accuracy, authentication</td>
+<td>card + source + record/position times</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-query-semantics-and-indexes">9. Query semantics and indexes<a class="headerlink" href="#9-query-semantics-and-indexes" title="Permanent link">&para;</a></h2>
+<h3 id="aggregate-queries">Aggregate queries<a class="headerlink" href="#aggregate-queries" title="Permanent link">&para;</a></h3>
+<p><code>list_facts()</code> returns one canonical fact across a caller-supplied archive scope. It:</p>
+<ul>
+<li>ignores logically deleted archives;</li>
+<li>filters by <code>ddd_fact.event_epoch</code>;</li>
+<li>returns source count and archive IDs;</li>
+<li>chooses a preferred source by verified parse/signature status, then generation (<code>G2_V2</code>, <code>G2_V1</code>, older), then newest archive;</li>
+<li>reports conflicting variants by cluster;</li>
+<li>caps a page at 1,000,000 rows.</li>
+</ul>
+<h3 id="single-archive-queries">Single-archive queries<a class="headerlink" href="#single-archive-queries" title="Permanent link">&para;</a></h3>
+<p><code>list_archive_observations()</code> starts at <code>ddd_fact_source</code>, preserves the source ordinal, section/record identity, raw hash, and generation, and returns only observations from that file. It deliberately does not collapse repeated source records.</p>
+<h3 id="required-indexes">Required indexes<a class="headerlink" href="#required-indexes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ix_ddd_fact_kind_time</code> supports kind/time pagination.</li>
+<li><code>ix_ddd_fact_source_fact</code> supports source aggregation and orphan checks.</li>
+<li>Card-bearing, time-bearing payloads have <code>(card_pk, time, fact_pk)</code> indexes.</li>
+<li>Archive search indexes cover active hash uniqueness, type/date, parse/signature status, normalized name, and archive time.</li>
+</ul>
+<p>Indexes are dropped during bulk V2 rebuild and recreated only after all archives have been reparsed, followed by <code>ANALYZE</code> and <code>PRAGMA optimize</code>.</p>
+<h2 id="10-compliance-and-audit">10. Compliance and audit<a class="headerlink" href="#10-compliance-and-audit" title="Permanent link">&para;</a></h2>
+<p><code>ddd_compliance_snapshot</code> stores immutable, reproducible evaluation output: archive or subject scope, assessed range, ruleset and algorithm versions, source manifest, module manifest, configuration hash, report JSON, report SHA-256, creator, and time. Triggers reject updates and deletes.</p>
+<p><code>compliance_rule_module_config</code> stores the global enabled state and JSON settings per rule module. <code>compliance_balm_catalog</code> stores immutable catalog-version metadata; triggers reject update and delete operations.</p>
+<p>Audit is split by responsibility:</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audit_log</code></td>
+<td>Global user, administration, and cross-domain actions.</td>
+</tr>
+<tr>
+<td><code>ddd_audit_log</code></td>
+<td>Archive, parser, signature, export, and tachograph lifecycle.</td>
+</tr>
+<tr>
+<td><code>fleet_audit_log</code></td>
+<td>Fleet, deadline, RFID, finance, and related business objects.</td>
+</tr>
+</tbody>
+</table>
+<p>Audit rows store technical object IDs and actors. They are append-oriented and are resolved by the UI to the current business record.</p>
+<h2 id="11-business-schema-catalog">11. Business schema catalog<a class="headerlink" href="#11-business-schema-catalog" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-and-application-state">Authentication and application state<a class="headerlink" href="#authentication-and-application-state" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_role</code>, <code>app_permission</code>, <code>app_role_permission</code></td>
+<td>Fixed roles and permission grants.</td>
+</tr>
+<tr>
+<td><code>app_user</code></td>
+<td>Argon2id login identity, role, locale, lock state, and password lifecycle.</td>
+</tr>
+<tr>
+<td><code>app_login_attempt</code></td>
+<td>Authentication attempt history and lockout evidence.</td>
+</tr>
+<tr>
+<td><code>app_user_ui_state</code></td>
+<td>Per-user view, table, filter, and layout state.</td>
+</tr>
+<tr>
+<td><code>app_user_migration</code>, <code>user_roles</code></td>
+<td>Controlled compatibility/migration state for earlier user models.</td>
+</tr>
+<tr>
+<td><code>app_schema_migration</code>, <code>app_schema_state</code></td>
+<td>Version ledger and physical-format contract.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="device-management-and-transfer-state">Device management and transfer state<a class="headerlink" href="#device-management-and-transfer-state" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customers</code>, <code>locations</code></td>
+<td>Tenant/site reference data.</td>
+</tr>
+<tr>
+<td><code>devices</code></td>
+<td>Device identity, endpoint configuration, protected access fields, inventory, status projection, and lifecycle.</td>
+</tr>
+<tr>
+<td><code>device_status_history</code></td>
+<td>Time-ordered status checks per device.</td>
+</tr>
+<tr>
+<td><code>device_groups</code>, <code>device_group_members</code></td>
+<td>Operational grouping.</td>
+</tr>
+<tr>
+<td><code>processed_files</code></td>
+<td>Download/import idempotency state for source files.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fleet-master-data-and-links">Fleet master data and links<a class="headerlink" href="#fleet-master-data-and-links" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fleet_person</code>, <code>fleet_vehicle</code></td>
+<td>Person and vehicle master records with logical archival.</td>
+</tr>
+<tr>
+<td><code>fleet_drivercard_link</code></td>
+<td>Unique card-to-person assignment and source archive evidence.</td>
+</tr>
+<tr>
+<td><code>fleet_vehicle_vu_link</code></td>
+<td>Vehicle-to-M-file assignment, match basis, and confirmation state.</td>
+</tr>
+<tr>
+<td><code>fleet_mobile_device</code></td>
+<td>Fleet-related mobile-device assignments.</td>
+</tr>
+<tr>
+<td><code>fleet_due_type</code>, <code>fleet_due</code></td>
+<td>Configurable person/vehicle due dates and managed download schedules.</td>
+</tr>
+<tr>
+<td><code>fleet_license_check</code></td>
+<td>Driving-licence check results.</td>
+</tr>
+<tr>
+<td><code>fleet_rfid_assignment</code></td>
+<td>Current and historical RFID-to-person assignments.</td>
+</tr>
+<tr>
+<td><code>fleet_rfid_import_file</code>, <code>fleet_rfid_import_row</code></td>
+<td>Imported terminal files, row fingerprints, validation, and processing results.</td>
+</tr>
+</tbody>
+</table>
+<p>Open tachograph download schedules are protected by a partial unique index on object, manager, and active state. Active RFID UIDs and current person assignments are also unique.</p>
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fleet_notification_rule</code></td>
+<td>Enabled rules, schedules, thresholds, and message configuration.</td>
+</tr>
+<tr>
+<td><code>fleet_notification_recipient</code></td>
+<td>Rule recipients and delivery targets.</td>
+</tr>
+<tr>
+<td><code>fleet_notification_delivery</code></td>
+<td>Durable delivery attempt, retry, and result history.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="finance-and-e-invoices">Finance and e-invoices<a class="headerlink" href="#finance-and-e-invoices" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fleet_supplier</code></td>
+<td>Supplier identity, contact, tax, VAT, endpoint, and company identifiers.</td>
+</tr>
+<tr>
+<td><code>fleet_cost_category</code></td>
+<td>Cost classification and fixed/variable defaults.</td>
+</tr>
+<tr>
+<td><code>fleet_foreign_invoice</code></td>
+<td>Invoice/credit-note header, dates, totals, workflow, duplicate override, reversal, and audit actors.</td>
+</tr>
+<tr>
+<td><code>fleet_vehicle_cost_entry</code></td>
+<td>Vehicle/category allocation, validity period, signed amounts, tax, workflow, and reversal links.</td>
+</tr>
+<tr>
+<td><code>fleet_financial_document</code></td>
+<td>Local original/manifest identity, SHA-256, archive status, optional backup state, retention, legal hold, and supersession.</td>
+</tr>
+<tr>
+<td><code>fleet_einvoice_import</code></td>
+<td>Syntax/profile, original/XML hashes, validator result, documents, and supplier match.</td>
+</tr>
+<tr>
+<td><code>fleet_einvoice_line</code></td>
+<td>Structured source lines and adjustments with exact monetary values and allocation status.</td>
+</tr>
+<tr>
+<td><code>fleet_einvoice_allocation</code></td>
+<td>Cent-accurate line split into vehicle cost entries, including confirmed suggestions.</td>
+</tr>
+<tr>
+<td><code>fleet_finance_export</code></td>
+<td>Durable accounting export/outbox state and retries.</td>
+</tr>
+<tr>
+<td><code>fleet_finance_settings</code></td>
+<td>Finance/export/report calculation settings.</td>
+</tr>
+</tbody>
+</table>
+<p>Money uses integer cents; VAT rates use integer basis points. Reversal objects retain links to their originals. A non-overridden active invoice is unique by supplier, case-insensitive document number, and document date. Original files live in the financial archive, not in SQLite; the database stores paths, hashes, sizes, manifests, and state.</p>
+<h3 id="odometer-and-reporting">Odometer and reporting<a class="headerlink" href="#odometer-and-reporting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fleet_vehicle_odometer_reading</code></td>
+<td>M-, C-, manual, and imported readings with source, quality, approval, and archive link.</td>
+</tr>
+<tr>
+<td><code>fleet_report_template</code></td>
+<td>Versioned system/user report templates, context, ownership, defaults, and JSON definition.</td>
+</tr>
+</tbody>
+</table>
+<p>M-file midnight readings are authoritative. Manual and C-file values may fill missing boundaries but cannot replace a valid M value. Cost/km is calculated from complete vehicle-month intersections rather than persisted as an uncontrolled aggregate.</p>
+<h3 id="backup-and-restore">Backup and restore<a class="headerlink" href="#backup-and-restore" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>backup_target</code></td>
+<td>Provider, root, active state, protected credentials/key, encryption, and health timestamps.</td>
+</tr>
+<tr>
+<td><code>backup_archive_state</code></td>
+<td>Per-target tachograph archive replication state, attempts, hashes, and next retry.</td>
+</tr>
+<tr>
+<td><code>backup_database_snapshot</code></td>
+<td>Snapshot hashes, sizes, remote identity, retention class, verification, and correlation ID.</td>
+</tr>
+<tr>
+<td><code>backup_job</code></td>
+<td>Coarse-grained run progress and result.</td>
+</tr>
+</tbody>
+</table>
+<p>A partial unique index permits only one active backup target. Backup metadata does not replace the local archive state in <code>ddd_archive</code> or <code>fleet_financial_document</code>.</p>
+<h2 id="12-complete-table-inventory">12. Complete table inventory<a class="headerlink" href="#12-complete-table-inventory" title="Permanent link">&para;</a></h2>
+<p>The current V2 schema contains these logical groups. A deployed database may contain no business rows, but its reference rows and schema objects are initialized.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Tables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schema/authentication</td>
+<td><code>app_schema_migration</code>, <code>app_schema_state</code>, <code>app_role</code>, <code>app_permission</code>, <code>app_role_permission</code>, <code>app_user</code>, <code>app_login_attempt</code>, <code>app_user_migration</code>, <code>app_user_ui_state</code>, <code>user_roles</code></td>
+</tr>
+<tr>
+<td>Audit</td>
+<td><code>audit_log</code>, <code>ddd_audit_log</code>, <code>fleet_audit_log</code></td>
+</tr>
+<tr>
+<td>Device/transfer</td>
+<td><code>customers</code>, <code>locations</code>, <code>devices</code>, <code>device_status_history</code>, <code>device_groups</code>, <code>device_group_members</code>, <code>processed_files</code></td>
+</tr>
+<tr>
+<td>Archive/parser evidence</td>
+<td><code>ddd_archive</code>, <code>ddd_drivercard_import</code>, <code>ddd_drivercard_signature</code>, <code>ddd_vehicle_unit_import</code>, <code>ddd_vu_section</code>, <code>ddd_vu_signature</code>, <code>ddd_vu_unknown_record</code>, <code>tachograph_trust_anchor</code></td>
+</tr>
+<tr>
+<td>Fact core</td>
+<td><code>ddd_fact_kind</code>, <code>ddd_card_identity</code>, <code>ddd_fact</code>, <code>ddd_fact_source</code></td>
+</tr>
+<tr>
+<td>VU fact payloads</td>
+<td><code>ddd_fact_vu_activity</code>, <code>ddd_fact_vu_card_session</code>, <code>ddd_fact_vu_event</code>, <code>ddd_fact_vu_fault</code>, <code>ddd_fact_vu_overspeed</code>, <code>ddd_fact_vu_speed_block</code>, <code>ddd_fact_vu_technical</code>, <code>ddd_fact_vu_calibration</code>, <code>ddd_fact_vu_position</code>, <code>ddd_fact_vu_border</code>, <code>ddd_fact_vu_load</code>, <code>ddd_fact_vu_odometer</code></td>
+</tr>
+<tr>
+<td>Card fact payloads</td>
+<td><code>ddd_fact_card_activity</code>, <code>ddd_fact_card_event</code>, <code>ddd_fact_card_fault</code>, <code>ddd_fact_card_vehicle</code>, <code>ddd_fact_card_position</code></td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td><code>ddd_compliance_snapshot</code>, <code>compliance_rule_module_config</code>, <code>compliance_balm_catalog</code></td>
+</tr>
+<tr>
+<td>Fleet</td>
+<td><code>fleet_person</code>, <code>fleet_vehicle</code>, <code>fleet_drivercard_link</code>, <code>fleet_vehicle_vu_link</code>, <code>fleet_mobile_device</code>, <code>fleet_due_type</code>, <code>fleet_due</code>, <code>fleet_license_check</code>, <code>fleet_rfid_assignment</code>, <code>fleet_rfid_import_file</code>, <code>fleet_rfid_import_row</code></td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td><code>fleet_notification_rule</code>, <code>fleet_notification_recipient</code>, <code>fleet_notification_delivery</code></td>
+</tr>
+<tr>
+<td>Finance/e-invoice</td>
+<td><code>fleet_supplier</code>, <code>fleet_cost_category</code>, <code>fleet_foreign_invoice</code>, <code>fleet_vehicle_cost_entry</code>, <code>fleet_financial_document</code>, <code>fleet_einvoice_import</code>, <code>fleet_einvoice_line</code>, <code>fleet_einvoice_allocation</code>, <code>fleet_finance_export</code>, <code>fleet_finance_settings</code></td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td><code>fleet_vehicle_odometer_reading</code>, <code>fleet_report_template</code></td>
+</tr>
+<tr>
+<td>Backup</td>
+<td><code>backup_target</code>, <code>backup_archive_state</code>, <code>backup_database_snapshot</code>, <code>backup_job</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-legacy-to-v2-migration">13. Legacy-to-V2 migration<a class="headerlink" href="#13-legacy-to-v2-migration" title="Permanent link">&para;</a></h2>
+<p>The supported migration is an out-of-place rebuild performed by <code>scripts/migrate_demo_database_v2.py</code>.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Legacy database"] --&gt; B["Preflight quick/FK checks"]
+    B --&gt; C["Verify every GZIP and original DDD hash"]
+    C --&gt; D["Bootstrap empty V2 work database"]
+    D --&gt; E["Copy authoritative business rows"]
+    E --&gt; F["Reparse every active C/M original"]
+    F --&gt; G["Rebuild odometers and download due dates"]
+    G --&gt; H["Compare counts, distinct facts, ranges, speed digests, signatures"]
+    H --&gt; I["Create indexes, ANALYZE, optimize, FK/quick checks"]
+    I --&gt; J["VACUUM and size check"]
+    J --&gt; K{"--apply"}
+    K --&gt;|"no"| L["Keep validated candidate"]
+    K --&gt;|"yes"| M["Rename source to V1 backup, candidate to source"]</code></pre>
+<h3 id="preflight">Preflight<a class="headerlink" href="#preflight" title="Permanent link">&para;</a></h3>
+<ul>
+<li>source exists and is not already V2;</li>
+<li>work database, WAL, and SHM do not exist;</li>
+<li>a requested backup target does not already exist;</li>
+<li>free space is at least 512 MiB or 110% of source size, whichever is larger;</li>
+<li>source <code>quick_check</code> and <code>foreign_key_check</code> pass;</li>
+<li>each active C/M archive has a readable GZIP object;</li>
+<li>stored-object and uncompressed-original SHA-256 values match the archive row.</li>
+</ul>
+<h3 id="rebuild">Rebuild<a class="headerlink" href="#rebuild" title="Permanent link">&para;</a></h3>
+<p>Authoritative business tables are copied by common column name. Derived tachograph tables, migration state, audit projections, automatically managed download due dates, and non-manual odometer projections are rebuilt. Active archives are reparsed from original bytes into the new fact model. Fact indexes are created after bulk loading.</p>
+<h3 id="semantic-validation">Semantic validation<a class="headerlink" href="#semantic-validation" title="Permanent link">&para;</a></h3>
+<p>For every fact kind the migration compares:</p>
+<ul>
+<li>observation count;</li>
+<li>distinct semantic count;</li>
+<li>minimum and maximum event time;</li>
+<li>per-archive observation counts;</li>
+<li>exact expanded speed-byte count and digest;</li>
+<li>archive signature status.</li>
+</ul>
+<p>It then validates the schema, foreign keys, quick check, 8 KiB page size, and post-vacuum database. A large source must meet the migration's compaction threshold.</p>
+<h3 id="atomic-activation">Atomic activation<a class="headerlink" href="#atomic-activation" title="Permanent link">&para;</a></h3>
+<p><code>--apply</code> is refused while source WAL/SHM files exist. The source is renamed to the V1 backup, then the validated candidate is renamed to the source path. If the second rename fails, the backup is restored. The V1 backup is not deleted automatically.</p>
+<h2 id="14-deployment-database-contract">14. Deployment database contract<a class="headerlink" href="#14-deployment-database-contract" title="Permanent link">&para;</a></h2>
+<p><code>scripts/create_deployment_database.py</code> creates a fresh V2 database, validates integrity and foreign keys, validates the storage schema and 8 KiB page size, confirms format <code>2</code>, and verifies the expected seed counts. Business tables must be empty. The initial administrator is active, uses English/<code>en-GB</code>, and must change the initial password.</p>
+<p>After validation, the database is vacuumed into one file and accompanied by <code>archive.db.sha256</code>. Release tooling must verify that checksum against the exact database file after the final write.</p>
+<h2 id="15-operational-checks">15. Operational checks<a class="headerlink" href="#15-operational-checks" title="Permanent link">&para;</a></h2>
+<p>Use a read-only connection for diagnostics:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">app_schema_state</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">key</span><span class="p">;</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="n">component</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">,</span><span class="w"> </span><span class="n">applied_at</span><span class="p">,</span><span class="w"> </span><span class="n">duration_ms</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">app_schema_migration</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">component</span><span class="p">,</span><span class="w"> </span><span class="k">version</span><span class="p">;</span>
+
+<span class="n">PRAGMA</span><span class="w"> </span><span class="n">quick_check</span><span class="p">;</span>
+<span class="n">PRAGMA</span><span class="w"> </span><span class="n">foreign_key_check</span><span class="p">;</span>
+</code></pre></div>
+<p>Fact counts and provenance:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">fact_pk</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">canonical_facts</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">fact_pk</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">source_observations</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">archive_pk</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">source_archives</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ddd_fact_kind</span><span class="w"> </span><span class="n">k</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ddd_fact</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">kind_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">kind_id</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ddd_fact_source</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">fact_pk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">fact_pk</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">kind_id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">name</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">kind_id</span><span class="p">;</span>
+</code></pre></div>
+<p>Archive health:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">ddd_type</span><span class="p">,</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span><span class="w"> </span><span class="n">parse_status</span><span class="p">,</span><span class="w"> </span><span class="n">signature_status</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">archives</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">ddd_archive</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">is_deleted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ddd_type</span><span class="p">,</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span><span class="w"> </span><span class="n">parse_status</span><span class="p">,</span><span class="w"> </span><span class="n">signature_status</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ddd_type</span><span class="p">,</span><span class="w"> </span><span class="n">generation</span><span class="p">,</span><span class="w"> </span><span class="n">parse_status</span><span class="p">,</span><span class="w"> </span><span class="n">signature_status</span><span class="p">;</span>
+</code></pre></div>
+<p>Do not use diagnostic SQL to repair data. Restore a verified database or re-run the owning import, migration, reconciliation, or rebuild service so hashes, provenance, audit, and projections remain consistent.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>

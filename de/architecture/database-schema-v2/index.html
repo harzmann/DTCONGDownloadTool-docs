@@ -10,17 +10,17 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/integration/accounting-csv-zip/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/architecture/database-schema-v2/">
       
       
-        <link rel="prev" href="../../api/accounting-rest/">
+        <link rel="prev" href="../../integration/drivercard-parser/">
       
       
-        <link rel="next" href="../drivercard-parser/">
+        <link rel="next" href="../tachograph-data-storage/">
       
       
         
-          <link rel="alternate" href="../../../integration/accounting-csv-zip/" hreflang="en">
+          <link rel="alternate" href="../../../architecture/database-schema-v2/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="de">
         
@@ -31,7 +31,7 @@
     
     
       
-        <title>FiBu CSV/ZIP - FLEET Mira Dokumentation</title>
+        <title>Datenbankschema V2 - FLEET Mira Dokumentation</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fibu-csvzip-schnittstelle" class="md-skip">
+        <a href="#datenbankschema-v2" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FiBu CSV/ZIP
+              Datenbankschema V2
             
           </span>
         </div>
@@ -167,7 +167,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../integration/accounting-csv-zip/" hreflang="en" class="md-select__link">
+            <a href="../../../architecture/database-schema-v2/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -717,8 +717,6 @@
       
   
   
-    
-  
   
   
     
@@ -731,11 +729,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -756,7 +754,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -771,37 +769,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FiBu CSV/ZIP
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
         
   
   
@@ -817,147 +788,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-zweck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Zweck
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-fremdrechnungsablauf-in-fleet-mira" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Fremdrechnungsablauf in FLEET Mira
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-archivaufbau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Archivaufbau
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-manifestjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. manifest.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-invoicecsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. invoice.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-suppliercsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. supplier.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-positionscsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. positions.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-originalbelege" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Originalbelege
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-prufregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Prüfregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-audit-und-importhinweise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Audit und Importhinweise
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-kompatibilitat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. Kompatibilität
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -970,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivercard-parser/" class="md-nav__link">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
         
   
   
@@ -1002,8 +832,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1014,11 +846,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -1039,7 +871,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1054,10 +886,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../architecture/database-schema-v2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1073,6 +914,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1085,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+      <a href="../tachograph-data-storage/" class="md-nav__link">
         
   
   
@@ -1113,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+      <a href="../async-ui-background-services/" class="md-nav__link">
         
   
   
@@ -1276,135 +1118,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-zweck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Zweck
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-fremdrechnungsablauf-in-fleet-mira" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Fremdrechnungsablauf in FLEET Mira
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-archivaufbau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Archivaufbau
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-manifestjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. manifest.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-invoicecsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. invoice.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-suppliercsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. supplier.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-positionscsv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. positions.csv
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-originalbelege" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Originalbelege
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-prufregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Prüfregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-audit-und-importhinweise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Audit und Importhinweise
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-kompatibilitat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. Kompatibilität
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1420,288 +1133,10 @@
 
 
 
-<h1 id="fibu-csvzip-schnittstelle">FiBu CSV/ZIP-Schnittstelle<a class="headerlink" href="#fibu-csvzip-schnittstelle" title="Permanent link">&para;</a></h1>
-<h2 id="1-zweck">1. Zweck<a class="headerlink" href="#1-zweck" title="Permanent link">&para;</a></h2>
-<p>Der CSV/ZIP-Export ist eine transportneutrale Übergabe gebuchter Fremdrechnungen. Ein ZIP enthält Rechnungskopf, Lieferanten-Snapshot, alle Fahrzeugpositionen, Manifest und sämtliche verifizierten Originalbelege.</p>
-<h2 id="2-fremdrechnungsablauf-in-fleet-mira">2. Fremdrechnungsablauf in FLEET Mira<a class="headerlink" href="#2-fremdrechnungsablauf-in-fleet-mira" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Lieferant und Kostenarten anlegen.</li>
-<li>Rechnungsentwurf mit Nummer/Datum, Summen und Zahlungsdaten anlegen.</li>
-<li>Eine oder mehrere fahrzeugbezogene Kosten-/Gutschriftpositionen erfassen.</li>
-<li>Empfangene Originale hinzufügen; das Belegarchiv lädt hoch und verifiziert jeden Hash.</li>
-<li>Brutto-/Splitdifferenz auf exakt null Cent bringen.</li>
-<li>Rechnung prüfen und buchen.</li>
-<li>Einmal exportieren oder per REST übertragen. Korrekturen über Storno/Gutschrift, niemals Änderung gebuchter Zeilen.</li>
-</ol>
-<pre class="mermaid"><code>flowchart LR
-    H[Rechnungskopf] --&gt; P[Fahrzeugpositionen]
-    P --&gt; D[Originalbelege]
-    D --&gt; V[Cloudverifikation]
-    V --&gt; C[Centgenaue Prüfung]
-    C --&gt; B[Buchung]
-    B --&gt; Z[CSV/ZIP-Export]</code></pre>
-<h2 id="3-archivaufbau">3. Archivaufbau<a class="headerlink" href="#3-archivaufbau" title="Permanent link">&para;</a></h2>
-<p>Dateiname: <code>Accounting_&lt;Belegnummer&gt;_&lt;Rechnungs-ID&gt;.zip</code> (ungültige Dateisystemzeichen werden ersetzt).</p>
-<div class="highlight"><pre><span></span><code>manifest.json
-invoice.csv
-supplier.csv
-positions.csv
-documents/
-  &lt;Dokument-ID&gt;_&lt;Originaldateiname&gt;
-</code></pre></div>
-<p>CSV ist UTF-8 mit BOM, Semikolontrennung und CRLF. Erste Zeile: stabile Feldnamen. Trennzeichen, Anführungszeichen oder Zeilenumbrüche werden RFC-4180-gequotet.</p>
-<h2 id="4-manifestjson">4. <code>manifest.json</code><a class="headerlink" href="#4-manifestjson" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Feld</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>format</code></td>
-<td>Legacy-Vertragstoken <code>DLTNG-ACCOUNTING-EXPORT</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>Exportformatversion</td>
-</tr>
-<tr>
-<td><code>idempotency_key</code></td>
-<td>stabiler Dublettenvermeidungsschlüssel</td>
-</tr>
-<tr>
-<td><code>invoice_id</code></td>
-<td>Rechnungs-UUID von FLEET Mira</td>
-</tr>
-<tr>
-<td><code>documents[]</code></td>
-<td>geordnete Archivnamen der Originalbelege</td>
-</tr>
-</tbody>
-</table>
-<h2 id="5-invoicecsv">5. <code>invoice.csv</code><a class="headerlink" href="#5-invoicecsv" title="Permanent link">&para;</a></h2>
-<p>Genau eine Datenzeile.</p>
-<table>
-<thead>
-<tr>
-<th>Feld</th>
-<th>Bedeutung/Funktion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>unveränderliche Rechnungs-UUID</td>
-</tr>
-<tr>
-<td><code>document_type</code></td>
-<td><code>INVOICE</code> oder <code>CREDIT_NOTE</code></td>
-</tr>
-<tr>
-<td><code>correction_of_invoice_id</code></td>
-<td>korrigierte Rechnung, optional</td>
-</tr>
-<tr>
-<td><code>document_number</code></td>
-<td>Lieferanten-Belegnummer</td>
-</tr>
-<tr>
-<td><code>document_date</code></td>
-<td>ISO-Belegdatum</td>
-</tr>
-<tr>
-<td><code>delivery_date</code></td>
-<td>Leistungs-/Lieferdatum, optional</td>
-</tr>
-<tr>
-<td><code>delivery_note_number</code></td>
-<td>Lieferscheinnummer, optional</td>
-</tr>
-<tr>
-<td><code>cost_center</code></td>
-<td>Kostenstelle, optional</td>
-</tr>
-<tr>
-<td><code>payable_until</code></td>
-<td>Fälligkeit</td>
-</tr>
-<tr>
-<td><code>payment_term_days</code></td>
-<td>Nettozahlungsziel</td>
-</tr>
-<tr>
-<td><code>discount_term_days</code></td>
-<td>Skontofrist</td>
-</tr>
-<tr>
-<td><code>discount_rate_bp</code></td>
-<td>Skonto in Basispunkten</td>
-</tr>
-<tr>
-<td><code>net_cents</code></td>
-<td>deklarierter Nettobetrag</td>
-</tr>
-<tr>
-<td><code>tax_cents</code></td>
-<td>deklarierte Umsatzsteuer</td>
-</tr>
-<tr>
-<td><code>gross_cents</code></td>
-<td>berechnet Netto + Steuer</td>
-</tr>
-<tr>
-<td><code>currency</code></td>
-<td>aktuell <code>EUR</code></td>
-</tr>
-<tr>
-<td><code>status</code></td>
-<td>muss <code>BOOKED</code> sein</td>
-</tr>
-<tr>
-<td><code>booked_at_utc</code>, <code>booked_by</code></td>
-<td>Buchungsnachweis</td>
-</tr>
-<tr>
-<td><code>created_at_utc</code>, <code>updated_at_utc</code></td>
-<td>technische Historie</td>
-</tr>
-<tr>
-<td><code>description</code>, <code>note</code></td>
-<td>optionale Fachtexte</td>
-</tr>
-</tbody>
-</table>
-<h2 id="6-suppliercsv">6. <code>supplier.csv</code><a class="headerlink" href="#6-suppliercsv" title="Permanent link">&para;</a></h2>
-<p>Genau ein Snapshot.</p>
-<table>
-<thead>
-<tr>
-<th>Feld</th>
-<th>Bedeutung/Funktion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>Lieferanten-UUID</td>
-</tr>
-<tr>
-<td><code>supplier_number</code></td>
-<td>interne Lieferantennummer</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>Name</td>
-</tr>
-<tr>
-<td><code>creditor_number</code></td>
-<td>FiBu-Kreditorennummer</td>
-</tr>
-<tr>
-<td><code>street</code>, <code>postal_code</code>, <code>city</code>, <code>country</code></td>
-<td>Postanschrift</td>
-</tr>
-<tr>
-<td><code>tax_id</code></td>
-<td>Steuer-/USt-ID</td>
-</tr>
-<tr>
-<td><code>phone</code>, <code>email</code></td>
-<td>validierte Kontaktdaten</td>
-</tr>
-<tr>
-<td><code>payment_term_days</code></td>
-<td>Lieferantenstandard</td>
-</tr>
-</tbody>
-</table>
-<p>Es handelt sich um den aktuellen Stammsnapshot zum Export; Rechnungs-ID und Originale bleiben Auditanker.</p>
-<h2 id="7-positionscsv">7. <code>positions.csv</code><a class="headerlink" href="#7-positionscsv" title="Permanent link">&para;</a></h2>
-<p>Eine Zeile je aktiver Rechnungsposition.</p>
-<table>
-<thead>
-<tr>
-<th>Feld</th>
-<th>Bedeutung/Funktion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>Positions-UUID</td>
-</tr>
-<tr>
-<td><code>invoice_id</code></td>
-<td>Rechnungs-UUID</td>
-</tr>
-<tr>
-<td><code>vehicle_id</code></td>
-<td>Fahrzeug-UUID</td>
-</tr>
-<tr>
-<td><code>vehicle_internal_number</code></td>
-<td>interne Fuhrparknummer</td>
-</tr>
-<tr>
-<td><code>vehicle_registration</code></td>
-<td>Kennzeichen-Snapshot</td>
-</tr>
-<tr>
-<td><code>vehicle_vin</code></td>
-<td>FIN-Snapshot</td>
-</tr>
-<tr>
-<td><code>cost_category_id</code>, <code>cost_category_code</code>, <code>cost_category_name</code></td>
-<td>Kostenklassifikation</td>
-</tr>
-<tr>
-<td><code>entry_type</code></td>
-<td><code>COST</code> oder <code>CREDIT</code></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>Buchungstext</td>
-</tr>
-<tr>
-<td><code>valid_from</code>, <code>valid_to</code>, <code>document_date</code></td>
-<td>bei Rechnungspositionen das Belegdatum</td>
-</tr>
-<tr>
-<td><code>net_cents</code>, <code>tax_cents</code>, <code>gross_cents</code></td>
-<td>Centbeträge</td>
-</tr>
-<tr>
-<td><code>tax_rate_bp</code></td>
-<td>USt in Basispunkten</td>
-</tr>
-<tr>
-<td><code>variable</code></td>
-<td>bei Rechnungspositionen immer wahr</td>
-</tr>
-<tr>
-<td><code>note</code></td>
-<td>optionaler Text</td>
-</tr>
-</tbody>
-</table>
-<p>Für den Vergleich zählen Kosten positiv, Gutschriften negativ. Bei Gutschriftrechnung wird das Vorzeichen des Rechnungskopfs normalisiert.</p>
-<h2 id="8-originalbelege">8. Originalbelege<a class="headerlink" href="#8-originalbelege" title="Permanent link">&para;</a></h2>
-<p>Enthalten sind nur lokal verifizierte Originale. Bytes müssen zum gespeicherten SHA-256 passen; erzeugte Vorschauen ersetzen nie XML-/Hybridoriginale. Das ZIP ist Übergabepaket, nicht führendes Aufbewahrungsarchiv; dieses bleibt das lokale Finanzarchiv. Ein externes Backup ist optional.</p>
-<h2 id="9-prufregeln">9. Prüfregeln<a class="headerlink" href="#9-prufregeln" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>gross_cents = net_cents + tax_cents</code>;</li>
-<li>vorzeichenbehaftete Summe aktiver Positionen entspricht Rechnungsbrutto;</li>
-<li>jede Position referenziert genau ein Fahrzeug;</li>
-<li>jedes Manifestdokument existiert unter <code>documents/</code>;</li>
-<li>Dublette aus Lieferant/Nummer/Datum oder Dokumenthash benötigt Adminfreigabe vor Buchung;</li>
-<li>je Idempotenzschlüssel höchstens ein erfolgreicher Export.</li>
-</ul>
-<h2 id="10-audit-und-importhinweise">10. Audit und Importhinweise<a class="headerlink" href="#10-audit-und-importhinweise" title="Permanent link">&para;</a></h2>
-<p>FLEET Mira auditiert Start/Ergebnis, Rechnungs-/Dokument-IDs und Korrelations-ID, nicht den Beleginhalt. Importer müssen Manifestversion prüfen, Path Traversal verhindern, transaktional/staged verarbeiten, Idempotenzschlüssel speichern und einen Abgleich mit Rechnung/FiBu-ID liefern.</p>
-<h2 id="11-kompatibilitat">11. Kompatibilität<a class="headerlink" href="#11-kompatibilitat" title="Permanent link">&para;</a></h2>
-<p>Konsumenten ignorieren unbekannte additive Spalten. Entfernen/Umbenennen, Typ- oder Vorzeichenänderung erfordert neue Formatversion. <code>DLTNG-...</code> bleibt technische Legacy-Kennung.</p>
+<h1 id="datenbankschema-v2">Datenbankschema V2<a class="headerlink" href="#datenbankschema-v2" title="Permanent link">&para;</a></h1>
+<p>Die detaillierte technische Referenz zum Datenbankschema V2 wird in englischer Sprache gepflegt:</p>
+<p><a href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/">Open the English database schema V2 reference</a></p>
+<p>Sie beschreibt den versionierten Datenbank-Bootstrap, SQLite-Einstellungen, Tabellen und Beziehungen, die normalisierte Tachographen-Faktspeicherung, Provenienz und Deduplizierung, Integritätsregeln, die Migration aus dem Legacy-Format sowie unterstützte Diagnoseabfragen.</p>
 
 
 
