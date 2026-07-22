@@ -1850,10 +1850,11 @@
 </ol>
 <p>Die unteren Detailtabs zeigen Stammdaten, Dateien, Statushistorie und Audit. Heruntergeladene Gerätedateien durchlaufen erst über den regulären Importpfad das Archiv.</p>
 <h2 id="4-quellen-und-downloadtasks">4. Quellen und Downloadtasks<a class="headerlink" href="#4-quellen-und-downloadtasks" title="Permanent link">&para;</a></h2>
-<p>Unter <strong>Administration → Quellen</strong> richten Sie FTP- oder DLT-API-Zugänge ein. Testen Sie die Verbindung, bevor Sie die Quelle einem Task zuordnen. Zugangsdaten werden geschützt und nicht protokolliert.</p>
+<p>Unter <strong>Administration → Quellen</strong> richten Sie FTP-, DLT-API- und SFTP-Zugänge sowie lokale Ordner oder UNC-Serverfreigaben ein. Beim ersten SFTP-Verbindungstest liest die Anwendung den SSH-Host-Key aus und übernimmt dessen SHA-256-Fingerprint erst nach ausdrücklicher Bestätigung. Testen Sie die Verbindung, bevor Sie die Quelle einem Task zuordnen. Zugangsdaten und SFTP-Schlüsselpassphrasen werden geschützt und nicht protokolliert.</p>
 <p><img alt="Verwaltung der Downloadquellen" src="../assets/screenshots/sources.png" />
-<em>Abbildung: Verwaltung von FTP- und DLT-API-Quellen.</em></p>
+<em>Abbildung: Verwaltung der automatischen Importquellen.</em></p>
 <p>Unter <strong>Administration → Tasks</strong> konfigurieren Sie Quellen, Dateimuster, Rekursion, Zeitplan, Archivverhalten und optional den strengen Cloud-Backupmodus. <strong>Sofort starten</strong> zeigt je Quelle Status, Fortschritt und laufend aktualisierte Logmeldungen. RFID-Terminaldateien benötigen das Muster <code>RFID_*.CSV</code>.</p>
+<p>Die Option <strong>Administration → Einstellungen → USB-Wechseldatenträger automatisch importieren</strong> durchsucht neu eingesteckte Datenträger rekursiv nach DDD- und <code>RFID*.CSV</code>-Dateien. Sie wirkt nur, solange FLEET Mira geöffnet ist oder im System-Tray läuft; die Quelldateien bleiben auf dem Datenträger erhalten.</p>
 <p><img alt="Verwaltung der Downloadtasks" src="../assets/screenshots/tasks.png" />
 <em>Abbildung: Zeitgesteuerte und manuell ausführbare Downloadtasks.</em></p>
 <p>Im strengen Modus wird eine Terminaldatei erst nach verifiziertem Cloudbackup als verarbeitet markiert oder gelöscht.</p>

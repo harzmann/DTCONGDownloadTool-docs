@@ -1900,7 +1900,7 @@
 </ul>
 <p>The deployment database must contain schema/default rows but no operational persons, vehicles, DDD files, documents, credentials or audit history.</p>
 <h2 id="5-scheduler-sources-and-tasks">5. Scheduler, sources and tasks<a class="headerlink" href="#5-scheduler-sources-and-tasks" title="Permanent link">&para;</a></h2>
-<p>Background scheduling starts independently of an authenticated UI session and runs as <code>SYSTEM</code>. Supported source types are FTP and DLT API. Every network operation must have connect/read timeouts.</p>
+<p>Background scheduling starts independently of an authenticated UI session and runs as <code>SYSTEM</code>. Supported source types are FTP, DLT API, SFTP, local folders and UNC shares. Every network operation must have connect/read timeouts. USB monitoring is intentionally owned by the desktop process and stops when that process exits.</p>
 <p>Task processing sequence:</p>
 <pre class="mermaid"><code>flowchart TD
     A[Schedule or Run now] --&gt; B[List matching remote objects]

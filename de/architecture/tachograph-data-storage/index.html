@@ -2378,7 +2378,7 @@
 <p>Die archivbezogenen C-/M-Tabellen bleiben der genaue Herkunftsnachweis. Für Gesamtsichten existieren zwei kompatible Deduplizierungspfade:</p>
 <ol>
 <li><strong>Materialisierte Fakten:</strong> <code>ddd_canonical_fact</code> plus <code>ddd_fact_provenance</code> speichert einen normalisierten Fakt einmal und verbindet ihn mit beliebig vielen Archiven.</li>
-<li><strong>Kompakter SQL-Fallback:</strong> Ist für eine Datenart keine materialisierte Provenienz vorhanden, dedupliziert das Repository direkt über die typisierten Archivtabellen mittels <code>ROW_NUMBER()</code>, <code>COUNT()</code> und <code>GROUP_CONCAT()</code>.</li>
+<li><strong>Kompakter SQL-Fallback:</strong> Ist für eine Datenart keine materialisierte Quellenzuordnung vorhanden, dedupliziert das Repository direkt über die typisierten Archivtabellen mittels <code>ROW_NUMBER()</code>, <code>COUNT()</code> und <code>GROUP_CONCAT()</code>.</li>
 </ol>
 <p>Die kompakte Produktivmigration verwendet den zweiten Pfad, weil eine zusätzliche vollständige Payloadmaterialisierung die Datenbank vergrößern würde. Die Schnittstellen und Ergebnisse sind gleich: <code>source_count</code>, <code>source_archive_ids</code>, <code>preferred_source_archive_id</code> und <code>has_conflict</code>.</p>
 <h3 id="82-normalisierung-und-hashes">8.2 Normalisierung und Hashes<a class="headerlink" href="#82-normalisierung-und-hashes" title="Permanent link">&para;</a></h3>
@@ -2395,7 +2395,7 @@
 </ul>
 <p>Bei Kartenbeobachtungen ist ausschließlich die vollständig normalisierte Kartennummer die
 archiv- und quellenübergreifende Identität. <code>card_generation</code> bleibt als
-Herkunftsmerkmal in Rohdatensatz und Provenienz erhalten, ist aber weder Bestandteil des
+Herkunftsmerkmal im Rohdatensatz und in der Quellenzuordnung erhalten, ist aber weder Bestandteil des
 Faktenhashes noch ein Filter für den C-/M-Abgleich. Damit werden G1-Karte/G1-Fahrzeug,
 G1-Karte/G2-Fahrzeug, G2-Karte/G1-Fahrzeug und G2-Karte/G2-Fahrzeug gleich behandelt.</p>
 <p><code>ddd_canonical_fact</code> besitzt <code>UNIQUE(kind_id,fact_hash)</code>. <code>ddd_fact_provenance</code> ist <code>WITHOUT ROWID</code> und verwendet <code>(archive_ref,fact_id,source_ordinal)</code> als Primärschlüssel. Varianten mit gleichem <code>cluster_hash</code>, aber verschiedenem <code>fact_hash</code>, bleiben getrennt und werden bei materialisiertem Zugriff als Konflikt markiert.</p>
@@ -2411,7 +2411,7 @@ G1-Karte/G2-Fahrzeug, G2-Karte/G1-Fahrzeug und G2-Karte/G2-Fahrzeug gleich behan
 <p>Technische Fahrzeugdaten werden anhand von <code>record_type</code>, Wert und der vollständig normalisierten Detailstruktur dedupliziert. Ältere Bestandszeilen ohne <code>details_json</code> werden im Hintergrund aus dem unveränderten, komprimierten M-Original rekonstruiert. Die Fahrzeugakte zeigt jede identische Variante einmal und nennt die Anzahl ihrer Quellarchive; Archiv-ID und Dateiname bleiben ausschließlich als Navigationsmetadaten erhalten. Neue Imports schreiben <code>details_json</code> direkt und beziehen es in den technischen Faktenhash ein.</p>
 <pre class="mermaid"><code>flowchart TD
     A["Fahrzeug oder Person"] --&gt; B["Zugeordnete aktive Archive ermitteln"]
-    B --&gt; C{"Materialisierte Provenienz vorhanden?"}
+    B --&gt; C{"Materialisierte Quellenzuordnung vorhanden?"}
     C --&gt;|"Ja"| D["fact_hash auswählen und Quellen gruppieren"]
     C --&gt;|"Nein"| E["Archivtabellen per Window Function partitionieren"]
     D --&gt; F["Konfliktvarianten über cluster_hash bestimmen"]
@@ -2457,7 +2457,7 @@ G1-Karte/G2-Fahrzeug, G2-Karte/G1-Fahrzeug und G2-Karte/G2-Fahrzeug gleich behan
 </tr>
 <tr>
 <td><code>replace_archive_facts(...)</code></td>
-<td>materialisierte Fakten/Provenienz eines Archivs ersetzen</td>
+<td>materialisierte Fakten und Quellenzuordnungen eines Archivs ersetzen</td>
 </tr>
 </tbody>
 </table>

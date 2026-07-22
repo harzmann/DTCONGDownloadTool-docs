@@ -1850,10 +1850,11 @@
 </ol>
 <p>The lower detail pages show master data, files, status history and audit. Remote file downloads use the configured destination and never alter the archive until the normal import path processes them.</p>
 <h2 id="4-sources-and-download-tasks">4. Sources and download tasks<a class="headerlink" href="#4-sources-and-download-tasks" title="Permanent link">&para;</a></h2>
-<p>Open <strong>Administration → Sources</strong> to configure FTP or DLT API endpoints. Test the connection before assigning a source to a task. Credentials are protected and do not appear in logs.</p>
+<p>Open <strong>Administration → Sources</strong> to configure FTP, DLT API and SFTP endpoints, local folders, or UNC server shares. Test the connection before assigning a source to a task. Credentials and SFTP key passphrases are protected and do not appear in logs.</p>
 <p><img alt="Download-source management" src="../assets/screenshots/sources.png" />
-<em>Figure: Administration of FTP and DLT API sources.</em></p>
+<em>Figure: Administration of automatic import sources.</em></p>
 <p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
+<p>The <strong>Administration → Settings → Automatically import USB removable drives</strong> option recursively scans newly inserted drives for DDD and <code>RFID*.CSV</code> files. It operates only while FLEET Mira is open or running in the system tray; source files remain on the drive.</p>
 <p><img alt="Download-task management" src="../assets/screenshots/tasks.png" />
 <em>Figure: Scheduled and manually executable download tasks.</em></p>
 <p>In strict mode, a terminal file is not marked as processed or deleted until its cloud copy is verified.</p>
