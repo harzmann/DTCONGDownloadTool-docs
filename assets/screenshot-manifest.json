@@ -240,8 +240,8 @@
     "language": "de",
     "feature": "login",
     "file": "login.png",
-    "source_profile": "isolated-demo",
-    "captured_on": "2026-07-17",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {
@@ -298,6 +298,14 @@
     "file": "splash.png",
     "source_profile": "product-asset",
     "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "de",
+    "feature": "sso",
+    "file": "sso.png",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {
@@ -372,8 +380,8 @@
     "language": "de",
     "feature": "users",
     "file": "users.png",
-    "source_profile": "isolated-demo",
-    "captured_on": "2026-07-17",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {
@@ -784,8 +792,8 @@
     "language": "en",
     "feature": "login",
     "file": "login.png",
-    "source_profile": "isolated-demo",
-    "captured_on": "2026-07-17",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {
@@ -842,6 +850,14 @@
     "file": "splash.png",
     "source_profile": "product-asset",
     "captured_on": "2026-07-17",
+    "anonymized": true
+  },
+  {
+    "language": "en",
+    "feature": "sso",
+    "file": "sso.png",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {
@@ -916,8 +932,8 @@
     "language": "en",
     "feature": "users",
     "file": "users.png",
-    "source_profile": "isolated-demo",
-    "captured_on": "2026-07-17",
+    "source_profile": "isolated-sso-demo",
+    "captured_on": "2026-07-22",
     "anonymized": true
   },
   {

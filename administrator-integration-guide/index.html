@@ -674,6 +674,73 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Users, roles and permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-with-microsoft-entra-id-and-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single sign-on with Microsoft Entra ID and Google
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single sign-on with Microsoft Entra ID and Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-microsoft-entra-id-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register Microsoft Entra ID – Beta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-central-google-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable the central Google sign-in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-users-and-control-local-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign users and control local sign-in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-offboarding-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations, offboarding and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1389,6 +1456,73 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Users, roles and permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-with-microsoft-entra-id-and-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single sign-on with Microsoft Entra ID and Google
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single sign-on with Microsoft Entra ID and Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-microsoft-entra-id-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register Microsoft Entra ID – Beta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-central-google-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable the central Google sign-in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-users-and-control-local-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign users and control local sign-in
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-offboarding-and-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations, offboarding and incidents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1637,7 +1771,117 @@
 </tbody>
 </table>
 <p>The UI disables unauthorised actions, while repositories/services call <code>PermissionService.require(...)</code> again. Do not treat hidden/disabled controls as the security boundary.</p>
-<p>Local administrator recovery is available with <code>--reset-admin-password</code>. It requires Windows administrator rights, resets only the initial admin credential to <code>admin</code>, unlocks the account and forces a new password. The password itself is never audited.</p>
+<p>Local administrator recovery is available with <code>--reset-admin-password</code>. It requires Windows administrator rights, resets only the initial admin credential to <code>admin</code>, unlocks the account, enables its local sign-in method and forces a new password. The password itself is never audited. At least this local emergency account must remain available. SSO setup is described below.</p>
+<h3 id="single-sign-on-with-microsoft-entra-id-and-google">Single sign-on with Microsoft Entra ID and Google<a class="headerlink" href="#single-sign-on-with-microsoft-entra-id-and-google" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Microsoft Entra ID SSO: Beta – untested</p>
+<p>The Microsoft Entra integration has not yet been validated end-to-end in production with a real customer tenant. Use it only in pilot and test environments until customer-specific acceptance is complete. A tested local emergency administrator must remain available; do not disable local sign-in for an Entra user until WAM, browser fallback, MFA and Conditional Access have all been tested successfully. This beta notice does not apply to Google SSO.</p>
+</div>
+<p>FLEET Mira supports tenant-bound Entra work or school accounts and individually approved Google accounts. Windows domain accounts that are hybrid-connected to Entra can use the Windows Account Manager (WAM) for single sign-on. Pure AD DS without Entra and personal Microsoft accounts are not supported. Roles and permissions are assigned only in FLEET Mira; identity-provider groups or roles are never imported.</p>
+<p>Prerequisites:</p>
+<ul>
+<li>FLEET Mira administrator with <code>settings.manage</code> for providers and <code>users.manage</code> for assignments;</li>
+<li>customer-owned Entra app registration; the Google vendor client is already included in FLEET Mira;</li>
+<li>Windows 10/11 or Windows Server 2019 or later for WAM; otherwise the system-browser fallback is used;</li>
+<li>outbound HTTPS access to Microsoft or Google sign-in endpoints;</li>
+<li>loopback access to <code>127.0.0.1</code>/<code>localhost</code> for the browser callback;</li>
+<li>one tested local administrator account for emergency access.</li>
+</ul>
+<h4 id="register-microsoft-entra-id-beta">Register Microsoft Entra ID – Beta<a class="headerlink" href="#register-microsoft-entra-id-beta" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>App registrations &gt; New registration</strong> in the Entra admin centre.</li>
+<li>Enter a unique name and select <strong>Accounts in this organizational directory only</strong>.</li>
+<li>Open <strong>Authentication &gt; Add a platform</strong> and select <strong>Mobile and desktop applications</strong>.</li>
+<li>Register <code>http://localhost</code> and <code>ms-appx-web://Microsoft.AAD.BrokerPlugin/&lt;CLIENT_ID&gt;</code> as redirect URIs, replacing <code>&lt;CLIENT_ID&gt;</code> with the Application (client) ID.</li>
+<li>Enable <strong>Allow public client flows</strong>. Do not create a client secret: FLEET Mira is a public desktop client.</li>
+<li>Retain only the OIDC baseline permissions and delegated <code>User.Read</code> required by MSAL. Do not add mail, file or directory permissions.</li>
+<li>Copy the Application (client) ID and Directory (tenant) ID.</li>
+<li>In FLEET Mira, open <strong>Administration &gt; Single sign-on</strong>, enter both IDs, run <strong>Test Microsoft sign-in</strong>, and only then select <strong>Enabled</strong> and save.</li>
+</ol>
+<p>WAM is attempted first and supports Windows Hello, MFA and Conditional Access. If the broker is unavailable, MSAL opens the system browser with Authorization Code and PKCE. The immutable link key is <code>(tid, oid)</code>; UPN and email are used only as the initial assignment hint.</p>
+<p>These Entra steps describe the intended setup path but are not yet a production-validated reference configuration. Record the tenant, client ID, redirects, consent and Conditional Access policies, and all pilot results in the customer-specific acceptance record.</p>
+<h4 id="enable-the-central-google-sign-in">Enable the central Google sign-in<a class="headerlink" href="#enable-the-central-google-sign-in" title="Permanent link">&para;</a></h4>
+<p>Google requires no customer-side Cloud Console configuration. FLEET Mira contains a vendor-operated desktop OAuth client for personal Google and Google Workspace accounts.</p>
+<ol>
+<li>Open <strong>Administration &gt; Single sign-on</strong>.</li>
+<li>In the <strong>Google</strong> section, verify that the application is <strong>FLEET Mira</strong> and the diagnostic reads <strong>The integrated Google vendor client is ready.</strong></li>
+<li>Select <strong>Test Google sign-in</strong>. The system browser opens the central FLEET Mira consent dialog; Google may request consent for the basic profile and email on first use.</li>
+<li>After a successful test, select <strong>Enabled</strong> and choose <strong>Save SSO settings</strong>.</li>
+<li>Under <strong>Administration &gt; Users</strong>, pre-assign the Google email addresses of permitted users. No further Google credentials are required.</li>
+</ol>
+<p>If the integrated configuration is missing or damaged, the enable control remains unavailable and the diagnostic identifies a faulty software build. Contact the FLEET Mira vendor in this case; do not import or configure a customer OAuth client.</p>
+<p>The browser callback binds only to <code>127.0.0.1</code> on a random free port. FLEET Mira uses Authorization Code with PKCE and validates signature, issuer, audience, expiry, nonce and <code>email_verified</code>. The durable key is <code>(iss, sub)</code>; the email address is only used for initial assignment and may change afterwards. Google SSO stores no refresh tokens and does not reuse credentials, tokens or scopes from Google Drive backup. Scopes remain limited to <code>openid</code>, <code>email</code> and <code>profile</code>.</p>
+<p><img alt="SSO configuration" src="../assets/screenshots/sso.png" />
+<em>Figure: Entra configuration in untested beta status and the activatable, regularly supported Google vendor client.</em></p>
+<h4 id="assign-users-and-control-local-sign-in">Assign users and control local sign-in<a class="headerlink" href="#assign-users-and-control-local-sign-in" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open <strong>Administration &gt; Users</strong> and create or edit a user.</li>
+<li>Set the local role, language, region and account status.</li>
+<li>Enter the expected Microsoft UPN under <strong>Microsoft UPN</strong> or verified Google address under <strong>Google email</strong>.</li>
+<li>Clear <strong>Local sign-in</strong> for an SSO-only account. A new SSO-only user does not require a temporary password.</li>
+<li>On the first successful provider sign-in, FLEET Mira atomically binds the immutable provider ID to exactly that user. Status changes from <code>PENDING</code> to <code>LINKED</code>.</li>
+<li>After the pilot sign-in, verify the link, local role and audit events.</li>
+</ol>
+<p>Unknown identities are never provisioned automatically. Select <strong>Unlink SSO identity</strong> to relink an account; the approval returns to <code>PENDING</code> and the next matching provider sign-in binds it again. To remove the assignment completely, then clear the expected UPN/email in the user dialog. A disabled user cannot sign in locally or through SSO. The final local administrator cannot be converted to SSO-only.</p>
+<p><img alt="User administration with sign-in methods" src="../assets/screenshots/users.png" />
+<em>Figure: Local sign-in, pre-approved SSO accounts and link status.</em></p>
+<h4 id="operations-offboarding-and-incidents">Operations, offboarding and incidents<a class="headerlink" href="#operations-offboarding-and-incidents" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Signing out of the app ends only the local session; Windows, Microsoft and Google sessions remain active.</li>
+<li>During provider or network outages, only users with local sign-in enabled have a fallback.</li>
+<li>Microsoft Entra remains beta until WAM, browser fallback, MFA and Conditional Access have been tested and documented for the customer; no user should depend exclusively on Entra before then.</li>
+<li>For offboarding, disable the local user first, then block the provider account/consent and unlink the identity with an audit trail.</li>
+<li>Customer administrators rotate the Entra client as for initial setup. Only the vendor rotates the central Google client through a new FLEET Mira build; existing <code>(iss, sub)</code> links remain and must be verified with pilot accounts.</li>
+<li>ID, access and refresh tokens and complete claims must never appear in the database, audit or logs.</li>
+<li>Regularly review <code>SSO_LOGIN_*</code>, <code>SSO_IDENTITY_*</code> and <code>SSO_PROVIDER_CONFIG_UPDATED</code> together with provider sign-in logs.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Check and action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entra beta not yet accepted</td>
+<td>Keep local sign-in enabled and document the complete pilot flow with WAM, browser fallback, MFA and Conditional Access in a real customer tenant.</td>
+</tr>
+<tr>
+<td>Wrong Entra tenant</td>
+<td>Verify tenant ID and the account's <code>tid</code>; multi-tenant or personal accounts are not accepted.</td>
+</tr>
+<tr>
+<td>Redirect error</td>
+<td>Register <code>http://localhost</code> and the WAM redirect exactly on the desktop platform.</td>
+</tr>
+<tr>
+<td>Account not assigned</td>
+<td>Check expected UPN/email, provider and account status in user administration.</td>
+</tr>
+<tr>
+<td>WAM/broker unavailable</td>
+<td>Check Windows version and broker package; system-browser fallback must remain operational.</td>
+</tr>
+<tr>
+<td>Loopback/timeout</td>
+<td>Check local firewall, proxy, browser launch and binding to <code>127.0.0.1</code>, then retry.</td>
+</tr>
+<tr>
+<td>Google vendor client missing/invalid</td>
+<td>Check the diagnostic under <strong>Single sign-on</strong> and obtain a corrected FLEET Mira build from the vendor. Do not import a customer client file.</td>
+</tr>
+<tr>
+<td>Google consent expired/blocked</td>
+<td>Restart sign-in; for a Workspace restriction, check the organisation policy. The vendor checks branding, publication and central client status.</td>
+</tr>
+<tr>
+<td>Browser cancelled</td>
+<td>Start sign-in again; no local session or identity link is created.</td>
+</tr>
+</tbody>
+</table>
+<p>Pilot and production check: successful provider test, pilot identity <code>LINKED</code>, unknown identity rejected, audit inspected for token leakage, local recovery tested and offboarding rehearsed. Microsoft Entra may only be considered a production sign-in method after successful additional acceptance of WAM, browser fallback, MFA and Conditional Access in a real customer tenant; until then it remains beta and untested.</p>
 <h2 id="3-languages-regions-and-utc">3. Languages, regions and UTC<a class="headerlink" href="#3-languages-regions-and-utc" title="Permanent link">&para;</a></h2>
 <p>New deployments default to English and <code>en-GB</code>. User profiles may select any registered language/region. Date pickers, numbers and currency follow the region. Database/API dates remain ISO. All tachograph timestamps, comparisons, day/week boundaries and compliance calculations currently remain UTC; locale must not introduce a time-zone conversion.</p>
 <p>Translation catalogues live under <code>translations/&lt;language&gt;.json</code>. English is the fallback catalogue. Missing production keys log <code>I18N_MISSING</code> and fail the catalogue parity test.</p>
@@ -1698,6 +1942,7 @@
 <p><img alt="Backup target, queue and restore administration" src="../assets/screenshots/backup.png" />
 <em>Figure: Cloud target, backup queue and restore administration.</em></p>
 <p>Archives are backed up asynchronously when a target is configured; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD backup objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Archiving, backup and restore</a>.</p>
+<p>SSO activation, Entra configuration and identity assignments are stored in SQLite and are therefore included in database snapshots. The central Google client is part of the software build; provider tokens are not backed up. Test local emergency access and both SSO methods after every restore. Microsoft Entra remains beta after a successful restore until WAM, browser fallback, MFA and Conditional Access have been documented and accepted in the restored customer context.</p>
 <p>At least quarterly, restore a database snapshot and representative C/M objects to an isolated test directory, verify hashes/integrity and document the result.</p>
 <h2 id="12-rest-and-integrations">12. REST and integrations<a class="headerlink" href="#12-rest-and-integrations" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1722,7 +1967,8 @@
 <li>[ ] role matrix tested with a non-admin account;</li>
 <li>[ ] database/archive ACLs restricted;</li>
 <li>[ ] source, SMTP, backup and REST secrets protected;</li>
-<li>[ ] WebDAV HTTPS certificate and Google OAuth client validated;</li>
+<li>[ ] WebDAV HTTPS certificate, separate Google Drive client and integrated Google SSO diagnostic validated;</li>
+<li>[ ] Entra beta tested with WAM, browser fallback, MFA and Conditional Access in a real customer tenant; local fallback remains enabled;</li>
 <li>[ ] recovery key stored offline and access logged;</li>
 <li>[ ] strict terminal deletion selected where policy requires it;</li>
 <li>[ ] audit/log retention and log rotation monitored;</li>
@@ -1735,7 +1981,7 @@
 <ol>
 <li>Stop automatic writes if integrity, ransomware or credential compromise is suspected.</li>
 <li>Preserve <code>app.log</code>, <code>native_crash.log</code>, configuration and relevant audit exports.</li>
-<li>Revoke/rotate affected source, SMTP, Google/WebDAV and API credentials.</li>
+<li>Revoke/rotate affected source, SMTP, SSO app registrations, Google/WebDAV and API credentials; see <a href="#operations-offboarding-and-incidents">SSO operations and offboarding</a>.</li>
 <li>Verify local archive hashes and remote object manifests.</li>
 <li>Restore into an isolated path first; never overwrite the only remaining database copy.</li>
 <li>Run integrity/hash checks and reconcile backup states.</li>

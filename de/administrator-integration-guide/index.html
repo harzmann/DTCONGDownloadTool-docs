@@ -674,6 +674,73 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Benutzer, Rollen und Berechtigungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-mit-microsoft-entra-id-und-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Sign-on mit Microsoft Entra ID und Google
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Sign-on mit Microsoft Entra ID und Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-id-registrieren-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Entra ID registrieren – Beta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zentralen-google-login-aktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zentralen Google-Login aktivieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benutzer-zuordnen-und-lokalen-login-steuern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzer zuordnen und lokalen Login steuern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#betrieb-offboarding-und-storung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Betrieb, Offboarding und Störung
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1389,6 +1456,73 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. Benutzer, Rollen und Berechtigungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-sign-on-mit-microsoft-entra-id-und-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Sign-on mit Microsoft Entra ID und Google
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Sign-on mit Microsoft Entra ID und Google">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-entra-id-registrieren-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Entra ID registrieren – Beta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zentralen-google-login-aktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zentralen Google-Login aktivieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benutzer-zuordnen-und-lokalen-login-steuern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benutzer zuordnen und lokalen Login steuern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#betrieb-offboarding-und-storung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Betrieb, Offboarding und Störung
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1637,7 +1771,117 @@
 </tbody>
 </table>
 <p>Die UI deaktiviert unberechtigte Aktionen; Repositories/Dienste prüfen zusätzlich <code>PermissionService.require(...)</code>. Ausgeblendete oder deaktivierte Schaltflächen sind nicht die Sicherheitsgrenze.</p>
-<p>Lokale Adminwiederherstellung erfolgt über <code>--reset-admin-password</code>, benötigt Windows-Administratorrechte, setzt nur den initialen Adminzugang auf <code>admin</code>, entsperrt das Konto und erzwingt ein neues Kennwort. Das Kennwort selbst wird nie auditiert.</p>
+<p>Lokale Adminwiederherstellung erfolgt über <code>--reset-admin-password</code>, benötigt Windows-Administratorrechte, setzt nur den initialen Adminzugang auf <code>admin</code>, entsperrt das Konto, aktiviert dessen lokalen Login und erzwingt ein neues Kennwort. Das Kennwort selbst wird nie auditiert. Mindestens dieser lokale Notfallzugang muss erhalten bleiben. Details zur SSO-Einrichtung stehen im folgenden Abschnitt.</p>
+<h3 id="single-sign-on-mit-microsoft-entra-id-und-google">Single Sign-on mit Microsoft Entra ID und Google<a class="headerlink" href="#single-sign-on-mit-microsoft-entra-id-und-google" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Microsoft Entra ID SSO: Beta – ungetestet</p>
+<p>Die Microsoft-Entra-Integration wurde noch nicht Ende-zu-Ende mit einem realen Kundenmandanten produktiv validiert. Verwenden Sie sie bis zur kundenspezifischen Abnahme ausschließlich in Pilot- und Testumgebungen. Ein geprüfter lokaler Notfalladministrator muss verfügbar bleiben; deaktivieren Sie die lokale Anmeldung eines Entra-Benutzers erst nach erfolgreichen Tests mit WAM, Browser-Fallback, MFA und Conditional Access. Dieser Beta-Hinweis gilt nicht für Google-SSO.</p>
+</div>
+<p>FLEET Mira unterstützt mandantengebundene Entra-Arbeits- oder Schulkonten sowie einzeln freigegebene Google-Konten. Hybrid an Entra angebundene Windows-Domänenkonten können über den Windows Account Manager (WAM) Single Sign-on verwenden. Reines AD DS ohne Entra und private Microsoft-Konten sind nicht unterstützt. Rollen und Berechtigungen werden ausschließlich in FLEET Mira vergeben; Gruppen oder Rollen des Identitätsanbieters werden nicht übernommen.</p>
+<p>Voraussetzungen:</p>
+<ul>
+<li>FLEET-Mira-Administrator mit <code>settings.manage</code> für Provider und <code>users.manage</code> für Zuordnungen;</li>
+<li>kundeneigene Entra-App-Registrierung; der Google-Herstellerclient ist bereits in FLEET Mira enthalten;</li>
+<li>Windows 10/11 oder Windows Server ab 2019 für WAM; andernfalls wird der Systembrowser verwendet;</li>
+<li>ausgehender HTTPS-Zugriff zu den Microsoft- beziehungsweise Google-Anmeldeendpunkten;</li>
+<li>freier Loopback-Zugriff auf <code>127.0.0.1</code>/<code>localhost</code> für den Browser-Callback;</li>
+<li>ein geprüfter lokaler Administrator als Notfallzugang.</li>
+</ul>
+<h4 id="microsoft-entra-id-registrieren-beta">Microsoft Entra ID registrieren – Beta<a class="headerlink" href="#microsoft-entra-id-registrieren-beta" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Im Entra Admin Center <strong>App registrations &gt; New registration</strong> öffnen.</li>
+<li>Einen eindeutigen Namen vergeben und <strong>Accounts in this organizational directory only</strong> auswählen.</li>
+<li>Unter <strong>Authentication &gt; Add a platform</strong> den Typ <strong>Mobile and desktop applications</strong> wählen.</li>
+<li><code>http://localhost</code> und <code>ms-appx-web://Microsoft.AAD.BrokerPlugin/&lt;CLIENT_ID&gt;</code> als Redirect-URIs hinterlegen; <code>&lt;CLIENT_ID&gt;</code> durch die Application (client) ID ersetzen.</li>
+<li><strong>Allow public client flows</strong> aktivieren. Kein Client-Secret anlegen: FLEET Mira ist ein Public Desktop Client.</li>
+<li>Nur die OIDC-Basisberechtigungen und das von MSAL benötigte delegierte <code>User.Read</code> verwenden. Keine Mail-, Datei- oder Verzeichnisberechtigungen hinzufügen.</li>
+<li>Application (client) ID und Directory (tenant) ID kopieren.</li>
+<li>In FLEET Mira <strong>Administration &gt; Single Sign-on</strong> öffnen, beide IDs eintragen, <strong>Microsoft-Anmeldung testen</strong> ausführen und erst danach <strong>Aktiviert</strong> setzen und speichern.</li>
+</ol>
+<p>WAM wird zuerst verwendet und unterstützt Windows Hello, MFA und Conditional Access. Ist der Broker nicht verfügbar, öffnet MSAL den Systembrowser mit Authorization Code und PKCE. Der unveränderliche Schlüssel der Verknüpfung ist <code>(tid, oid)</code>; UPN und E-Mail dienen nur als erste Zuordnungshilfe.</p>
+<p>Die beschriebenen Entra-Schritte bilden den vorgesehenen Einrichtungsweg ab, sind jedoch noch keine produktiv validierte Referenzkonfiguration. Dokumentieren Sie Tenant, Client-ID, Redirects, Consent- und Conditional-Access-Regeln sowie alle Pilotresultate in der kundenspezifischen Abnahme.</p>
+<h4 id="zentralen-google-login-aktivieren">Zentralen Google-Login aktivieren<a class="headerlink" href="#zentralen-google-login-aktivieren" title="Permanent link">&para;</a></h4>
+<p>Für Google ist keine kundenseitige Cloud-Console-Konfiguration erforderlich. FLEET Mira enthält einen vom Hersteller betriebenen Desktop-OAuth-Client für persönliche Google- und Google-Workspace-Konten.</p>
+<ol>
+<li><strong>Administration &gt; Single Sign-on</strong> öffnen.</li>
+<li>Im Bereich <strong>Google</strong> prüfen, ob als Anwendung <strong>FLEET Mira</strong> und als Diagnose <strong>Der integrierte Google-Herstellerclient ist bereit.</strong> angezeigt werden.</li>
+<li><strong>Google-Anmeldung testen</strong> wählen. Der Systembrowser öffnet den zentralen FLEET-Mira-Zustimmungsdialog; bei der ersten Verwendung kann Google eine Zustimmung zu Basisprofil und E-Mail verlangen.</li>
+<li>Nach erfolgreichem Test <strong>Aktiviert</strong> auswählen und <strong>SSO-Einstellungen speichern</strong> wählen.</li>
+<li>Unter <strong>Administration &gt; Benutzer</strong> die Google-E-Mail der zugelassenen Personen vorab zuordnen. Weitere Google-Zugangsdaten sind nicht erforderlich.</li>
+</ol>
+<p>Fehlt die integrierte Konfiguration oder ist sie beschädigt, bleibt der Aktivierungsschalter gesperrt und die Diagnose weist auf einen fehlerhaften Software-Build hin. Wenden Sie sich in diesem Fall an den FLEET-Mira-Hersteller; importieren oder hinterlegen Sie keinen eigenen OAuth-Client.</p>
+<p>Der Browser-Callback bindet nur an <code>127.0.0.1</code> mit einem zufälligen freien Port. FLEET Mira verwendet Authorization Code mit PKCE und prüft Signatur, Aussteller, Zielgruppe, Ablauf, Nonce und <code>email_verified</code>. Der dauerhafte Schlüssel ist <code>(iss, sub)</code>; die E-Mail-Adresse dient nur der ersten Zuordnung und darf sich danach ändern. Google-SSO speichert keine Refresh-Tokens und verwendet weder Token noch Clientkonfiguration des Google-Drive-Backups. Die Scopes bleiben auf <code>openid</code>, <code>email</code> und <code>profile</code> beschränkt.</p>
+<p><img alt="SSO-Konfiguration" src="../assets/screenshots/sso.png" />
+<em>Abbildung: Entra-Konfiguration im ungetesteten Beta-Status und aktivierbarer, regulär unterstützter Google-Herstellerclient.</em></p>
+<h4 id="benutzer-zuordnen-und-lokalen-login-steuern">Benutzer zuordnen und lokalen Login steuern<a class="headerlink" href="#benutzer-zuordnen-und-lokalen-login-steuern" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Administration &gt; Benutzer</strong> öffnen und einen Benutzer neu anlegen oder bearbeiten.</li>
+<li>Lokale Rolle, Sprache, Region und Kontostatus festlegen.</li>
+<li>Für Microsoft die erwartete UPN unter <strong>Microsoft-UPN</strong>, für Google die verifizierte Adresse unter <strong>Google-E-Mail</strong> eintragen.</li>
+<li>Soll das Konto ausschließlich SSO verwenden, <strong>Lokale Anmeldung</strong> ausschalten. Bei einem neuen SSO-Konto ist dann kein temporäres Kennwort erforderlich.</li>
+<li>Beim ersten erfolgreichen Provider-Login bindet FLEET Mira die unveränderliche Provider-ID atomar an genau diesen Benutzer. Der Status wechselt von <code>PENDING</code> auf <code>LINKED</code>.</li>
+<li>Nach erfolgreicher Pilotanmeldung Zuordnung, lokale Rolle und Auditereignisse prüfen.</li>
+</ol>
+<p>Unbekannte Konten werden niemals automatisch angelegt. Für eine Neuverknüpfung <strong>SSO-Verknüpfung lösen</strong> wählen; die Freigabe bleibt <code>PENDING</code> und kann mit dem nächsten passenden Provider-Login neu gebunden werden. Zum vollständigen Entfernen anschließend die erwartete UPN/E-Mail im Benutzerdialog leeren. Ein deaktivierter Benutzer kann sich weder lokal noch per SSO anmelden. Der letzte lokale Administrator kann nicht auf SSO-only umgestellt werden.</p>
+<p><img alt="Benutzerverwaltung mit Anmeldemethoden" src="../assets/screenshots/users.png" />
+<em>Abbildung: Lokaler Login, vorab freigegebene SSO-Konten und Verknüpfungsstatus.</em></p>
+<h4 id="betrieb-offboarding-und-storung">Betrieb, Offboarding und Störung<a class="headerlink" href="#betrieb-offboarding-und-storung" title="Permanent link">&para;</a></h4>
+<ul>
+<li>App-Abmeldung beendet nur die lokale Sitzung; Windows-, Microsoft- und Google-Sitzungen bleiben bestehen.</li>
+<li>Bei Provider- oder Netzwerkausfall dürfen nur Benutzer mit aktiviertem lokalen Login ausweichen.</li>
+<li>Microsoft Entra bleibt bis zur dokumentierten kundenspezifischen Prüfung von WAM, Browser-Fallback, MFA und Conditional Access eine Beta-Funktion; bis dahin keinen Benutzer ausschließlich von Entra abhängig machen.</li>
+<li>Beim Offboarding zuerst den lokalen Benutzer deaktivieren, anschließend Providerkonto und Consent sperren und die Zuordnung dokumentiert lösen.</li>
+<li>Entra-Clientrotation führt der Kundenadministrator wie bei der Ersteinrichtung durch. Den zentralen Google-Client rotiert ausschließlich der Hersteller über einen neuen FLEET-Mira-Build; vorhandene <code>(iss, sub)</code>-Verknüpfungen bleiben erhalten und sind mit Pilotkonten zu prüfen.</li>
+<li>ID-, Access- und Refresh-Tokens sowie vollständige Claims dürfen weder in Datenbank noch Audit oder Logs erscheinen.</li>
+<li>SSO-Ereignisse <code>SSO_LOGIN_*</code>, <code>SSO_IDENTITY_*</code> und <code>SSO_PROVIDER_CONFIG_UPDATED</code> regelmäßig zusammen mit den Provider-Anmeldelogs prüfen.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Prüfung und Maßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entra-Beta noch nicht abgenommen</td>
+<td>Lokalen Login aktiviert lassen und den vollständigen Pilotablauf mit WAM, Browser-Fallback, MFA und Conditional Access in einem realen Kundenmandanten dokumentieren.</td>
+</tr>
+<tr>
+<td>Falscher Entra-Mandant</td>
+<td>Tenant-ID und <code>tid</code> des Kontos prüfen; Multi-Tenant- oder Privatkonto ist nicht zulässig.</td>
+</tr>
+<tr>
+<td>Redirect-Fehler</td>
+<td><code>http://localhost</code> und den WAM-Redirect exakt in der Desktopplattform registrieren.</td>
+</tr>
+<tr>
+<td>Konto nicht zugeordnet</td>
+<td>Erwartete UPN/E-Mail, Provider und Kontostatus in der Benutzerverwaltung prüfen.</td>
+</tr>
+<tr>
+<td>WAM/Broker nicht verfügbar</td>
+<td>Windows-Version und Brokerpaket prüfen; der Systembrowser-Fallback muss funktionieren.</td>
+</tr>
+<tr>
+<td>Loopback/Timeout</td>
+<td>Lokale Firewall, Proxy, Browserstart und Bindung an <code>127.0.0.1</code> prüfen; danach erneut anmelden.</td>
+</tr>
+<tr>
+<td>Google-Herstellerclient fehlt/ungültig</td>
+<td>Diagnose unter <strong>Single Sign-on</strong> prüfen und einen korrigierten FLEET-Mira-Build beim Hersteller beziehen. Keine kundeneigene Clientdatei importieren.</td>
+</tr>
+<tr>
+<td>Google-Consent abgelaufen/blockiert</td>
+<td>Anmeldung erneut starten; bei einer Workspace-Sperre die Organisationsrichtlinie prüfen. Branding, Veröffentlichung und zentralen Clientstatus prüft der Hersteller.</td>
+</tr>
+<tr>
+<td>Browserabbruch</td>
+<td>Anmeldung erneut starten; es wird keine lokale Sitzung und keine Identitätsbindung erzeugt.</td>
+</tr>
+</tbody>
+</table>
+<p>Pilot- und Produktivcheck: Provider-Test erfolgreich, Pilotidentität <code>LINKED</code>, unbekanntes Konto abgewiesen, Audit ohne Tokens kontrolliert, lokaler Recoveryzugang getestet und Offboarding probeweise durchgeführt. Microsoft Entra darf erst nach zusätzlicher erfolgreicher Abnahme von WAM, Browser-Fallback, MFA und Conditional Access in einem realen Kundenmandanten als produktiver Anmeldeweg bewertet werden; bis dahin bleibt es Beta und ungetestet.</p>
 <h2 id="3-sprachen-regionen-und-utc">3. Sprachen, Regionen und UTC<a class="headerlink" href="#3-sprachen-regionen-und-utc" title="Permanent link">&para;</a></h2>
 <p>Neue Installationen starten Englisch/<code>en-GB</code>. Benutzer können jede registrierte Sprache/Region wählen. Datepicker, Zahlen und Währung folgen der Region; Datenbank/API bleiben ISO. Tachographenzeitwerte, Vergleiche, Tages-/Wochengrenzen und Verstoßberechnungen bleiben aktuell ausschließlich UTC. Die Locale darf keine Zeitzonenumrechnung einführen.</p>
 <p>Kataloge liegen unter <code>translations/&lt;sprache&gt;.json</code>. Englisch ist Fallback. Fehlende Produktivschlüssel erzeugen <code>I18N_MISSING</code> und schlagen im Katalogparitätstest fehl.</p>
@@ -1697,6 +1941,7 @@
 <p><img alt="Administration von Backupziel, Warteschlange und Wiederherstellung" src="../assets/screenshots/backup.png" />
 <em>Abbildung: Administration von Cloudziel, Backupwarteschlange und Restore.</em></p>
 <p>Archive werden unmittelbar gesichert, DB-Snapshots standardmäßig 02:00 UTC. Retention: 30 Tages- und 12 Monatsstände. DDD-Cloudobjekte werden nie automatisch gelöscht. Details: <a href="../operations/cloud-backup-restore/">Cloud-Backup und Restore</a>.</p>
+<p>SSO-Aktivierung, Entra-Konfiguration und Identitätszuordnungen liegen in SQLite und sind damit Bestandteil des Datenbanksnapshots. Der zentrale Google-Client ist Teil des Software-Builds; Provider-Tokens werden nicht gesichert. Nach einer Wiederherstellung sind lokaler Notfallzugang und beide SSO-Verfahren erneut zu testen. Microsoft Entra bleibt auch nach einem erfolgreichen Restore im Beta-Status, bis WAM, Browser-Fallback, MFA und Conditional Access im wiederhergestellten Kundenkontext dokumentiert abgenommen wurden.</p>
 <p>Mindestens vierteljährlich sind Datenbanksnapshot und repräsentative C-/M-Objekte isoliert wiederherzustellen, Hash/Integrität zu prüfen und das Ergebnis zu dokumentieren.</p>
 <h2 id="12-rest-und-integrationen">12. REST und Integrationen<a class="headerlink" href="#12-rest-und-integrationen" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1721,7 +1966,8 @@
 <li>[ ] Rollenmatrix mit Nicht-Admin getestet</li>
 <li>[ ] Datenbank-/Archiv-ACLs eingeschränkt</li>
 <li>[ ] Quellen-, SMTP-, Backup- und REST-Secrets geschützt</li>
-<li>[ ] WebDAV-HTTPS-Zertifikat/Google-OAuth-Client geprüft</li>
+<li>[ ] WebDAV-HTTPS-Zertifikat, separater Google-Drive-Client und integrierte Google-SSO-Diagnose geprüft</li>
+<li>[ ] Entra-Beta mit WAM, Browser-Fallback, MFA und Conditional Access in einem realen Kundenmandanten getestet; lokaler Fallback weiterhin aktiv</li>
 <li>[ ] Recovery-Key offline verwahrt und Zugriff dokumentiert</li>
 <li>[ ] strenger Terminallöschmodus gemäß Richtlinie gewählt</li>
 <li>[ ] Audit-/Logretention und Rotation überwacht</li>
@@ -1734,7 +1980,7 @@
 <ol>
 <li>Bei Integritäts-, Ransomware- oder Credentialverdacht automatische Schreibvorgänge stoppen.</li>
 <li><code>app.log</code>, <code>native_crash.log</code>, Konfiguration und relevante Auditexporte sichern.</li>
-<li>Betroffene Quellen-, SMTP-, Google/WebDAV- und API-Zugänge sperren/rotieren.</li>
+<li>Betroffene Quellen-, SMTP-, SSO-App-Registrierungen, Google/WebDAV- und API-Zugänge sperren/rotieren; siehe <a href="#betrieb-offboarding-und-storung">SSO-Betrieb und Offboarding</a>.</li>
 <li>Lokale Archivhashes und Remotemanifeste prüfen.</li>
 <li>Zuerst isoliert wiederherstellen; nie die einzige DB-Kopie überschreiben.</li>
 <li>Integrität/Hashes prüfen und Backupstatus abgleichen.</li>
