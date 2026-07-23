@@ -646,6 +646,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -654,6 +710,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
   
 
     
@@ -1408,14 +1492,17 @@
 <p><img alt="Aktivitätsintervalle der Fahrerkarte" src="../../assets/screenshots/drivercard-activities.png" />
 <em>Abbildung: Sortierbare UTC-Intervalle mit C-/M-Datenlage.</em></p>
 <p>Der Filter <strong>Datenlage</strong> zeigt alle Intervalle, C und M vorhanden, nur C oder nur M. C bleibt stets Basis. Die Tabelle enthält Beginn, Ende, Dauer, Aktivität, Karte, Slot und Gegenarchive; Doppelklick und Kontextmenü öffnen eindeutige Quellen.</p>
+<p>Die Einzeldateiansicht bleibt archivbezogen. Öffnen Sie dagegen <strong>Personalakte &gt; Tagesansicht/Wochenansicht/Verstöße</strong>, werden alle gültig verknüpften Fahrerkarten der Person einschließlich Kartenwechsel zusammengeführt. Der gewählte Akten- oder Archivkontext steht im Kopf und muss bei der Interpretation berücksichtigt werden.</p>
 <h2 id="tagesgrafik">Tagesgrafik<a class="headerlink" href="#tagesgrafik" title="Permanent link">&para;</a></h2>
 <p><img alt="Tagesgrafik der Fahrerkarte" src="../../assets/screenshots/drivercard-daily-chart.png" />
 <em>Abbildung: Ein UTC-Tag mit Lenken, Arbeit, Bereitschaft und Ruhe/Pause.</em></p>
 <p>Datum, Pfeile und <strong>Gehe zu</strong> wechseln den sichtbaren Tag. Der Datenlage-Zeitstrahl kennzeichnet C-/M-Abdeckung, die Aktivitätsspuren zeigen die fachlichen Intervalle. Details unterhalb des Zeitstrahls bleiben sortierbar.</p>
+<p>Lesen Sie die Ansicht von links nach rechts in UTC. Farbe und Beschriftung unterscheiden Lenken, sonstige Arbeit, Bereitschaft und Ruhe/Pause; Überlappungen und Lücken werden nicht geglättet. Bewegen Sie den Mauszeiger über ein Segment, um Start, Ende, Dauer, Quelle und Datenlage zu sehen. Tagessummen beziehen sich auf den sichtbaren Tag, nicht auf die gesamte Datei.</p>
 <h2 id="wochengrafik">Wochengrafik<a class="headerlink" href="#wochengrafik" title="Permanent link">&para;</a></h2>
 <p><img alt="Wochengrafik der Fahrerkarte" src="../../assets/screenshots/drivercard-weekly-chart.png" />
 <em>Abbildung: ISO-Woche von Montag bis Sonntag.</em></p>
 <p>Die Ansicht fasst sieben UTC-Tage zusammen. Leere Tage sind sichtbar und werden nicht als Aktivität interpretiert. Summen und Tooltips beziehen sich auf die ausgewählte Datei und den sichtbaren Zeitraum.</p>
+<p>Mit den Wochenpfeilen wechseln Sie ISO-Wochen; <strong>Gehe zu</strong> springt zur Woche des gewählten Datums. Prüfen Sie zuerst Abdeckung und Kartenlaufzeit, danach Tagesmuster und Wochensummen. Ein leerer oder nur teilweise abgedeckter Tag ist kein Nachweis für Ruhezeit.</p>
 <h2 id="ddd-wochenansicht-web">DDD-Wochenansicht Web<a class="headerlink" href="#ddd-wochenansicht-web" title="Permanent link">&para;</a></h2>
 <p><img alt="In-App-Übergabe zur DDD-Wochenansicht Web" src="../../assets/screenshots/drivercard-ddd-week-web.png" />
 <em>Abbildung: Sicherer In-App-Einstieg in die browserbasierte Wochenansicht.</em></p>
@@ -1436,6 +1523,7 @@
 <p><img alt="Technische Verstoßvorprüfung der Fahrerkarte" src="../../assets/screenshots/drivercard-violations.png" />
 <em>Abbildung: Reproduzierbare technische Vorprüfung für die ausgewählte C-Datei.</em></p>
 <p>Die Liste erläutert Regel, Artikel, Ist-/Sollwert, Abweichung und Rechtsgrundlage. Sie ersetzt keine rechtliche Würdigung nationaler Ausnahmen, AETR- oder Art.-12-Fälle. Speichern eines Prüfsnapshots benötigt <code>archive.manage</code>, Export <code>archive.export</code>.</p>
+<p>Wählen Sie Prüfzeitraum und aktivierte Regelmodule und starten Sie die Berechnung erneut, wenn sich der Kontext ändert. Ergebnisse nennen Regelwerk/Modulversion, Bewertungszeitraum, Berechnungsgrundlage und Schweregrad; optionale BALM-Beträge sind Orientierung, keine Bußgeldfestsetzung. Prüfen Sie Datenabdeckung und Hinweise vor dem Treffer. Gleichartige modulübergreifende Treffer werden nur bei identischem Fahrer, Zeitraum und Sachverhalt konsolidiert.</p>
 <h2 id="signaturen">Signaturen<a class="headerlink" href="#signaturen" title="Permanent link">&para;</a></h2>
 <p><img alt="Signaturprüfung der Fahrerkarte" src="../../assets/screenshots/drivercard-signatures.png" />
 <em>Abbildung: Zertifikatskette und Einzelresultate signierter EF-Sektionen.</em></p>

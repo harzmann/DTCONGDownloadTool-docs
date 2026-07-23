@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/foreign-invoices/">
       
       
-        <link rel="prev" href="../vehicle-unit-analysis/">
+        <link rel="prev" href="../vehicle-costs/">
       
       
-        <link rel="next" href="../cost-reporting/">
+        <link rel="next" href="../einvoice-import/">
       
       
         
@@ -486,6 +486,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -549,6 +605,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#header-and-supplier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Header and supplier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#positions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -571,10 +638,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#export-history" class="md-nav__link">
+  <a href="#e-invoice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export history
+        E-invoice
       
     </span>
   </a>
@@ -582,10 +649,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit" class="md-nav__link">
+  <a href="#verify-book-and-correct" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit
+        Verify, book and correct
       
     </span>
   </a>
@@ -593,10 +660,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-and-permissions" class="md-nav__link">
+  <a href="#export-history-and-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow and permissions
+        Export history and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -607,6 +685,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1217,6 +1323,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#header-and-supplier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Header and supplier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#positions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1239,10 +1356,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#export-history" class="md-nav__link">
+  <a href="#e-invoice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export history
+        E-invoice
       
     </span>
   </a>
@@ -1250,10 +1367,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit" class="md-nav__link">
+  <a href="#verify-book-and-correct" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit
+        Verify, book and correct
       
     </span>
   </a>
@@ -1261,10 +1378,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-and-permissions" class="md-nav__link">
+  <a href="#export-history-and-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow and permissions
+        Export history and audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -1289,32 +1417,61 @@
 
 
 <h1 id="foreign-invoices">Foreign invoices<a class="headerlink" href="#foreign-invoices" title="Permanent link">&para;</a></h1>
-<p>A foreign invoice opens as a work tab. Its status strip shows workflow, document and export states plus gross total, split amount and difference. Green means an exact cent-level match; red means an unresolved difference.</p>
+<p>Double-click a foreign invoice to open its own work tab. The status strip shows workflow, validity, local document and export states plus net/gross total, allocated amount and difference. Green means an exact cent-level match; red blocks verification.</p>
+<h2 id="header-and-supplier">Header and supplier<a class="headerlink" href="#header-and-supplier" title="Permanent link">&para;</a></h2>
+<p>Under <strong>Fleet &gt; Foreign invoices &gt; New</strong>, enter supplier, document type, number and date, delivery/validity period, payment terms, net and VAT. A credit or cancellation also references its original invoice. Reversed periods and inconsistent totals are rejected.</p>
+<p><img alt="Foreign-invoice supplier" src="../../assets/screenshots/foreign-invoice-supplier.png" /></p>
+<p>The <strong>Supplier</strong> tab shows master data and e-invoice identifiers used for the document. Supplier-master changes do not retroactively alter a booked invoice.</p>
 <h2 id="positions">Positions<a class="headerlink" href="#positions" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice positions" src="../../assets/screenshots/foreign-invoice-positions.png" />
-<em>Figure: Vehicle allocation and totals status.</em></p>
-<p>Every position belongs to exactly one vehicle. Document date, valid from/to and <strong>Variable</strong> are inherited from the header and locked for invoice positions. Money is right-aligned; costs increase and credits reduce the split amount.</p>
+<p><img alt="Foreign-invoice positions" src="../../assets/screenshots/foreign-invoice-positions.png" /></p>
+<p>Every position belongs to one vehicle and category. Document date, valid from/to and <strong>Variable</strong> are inherited and locked. Costs increase and credits reduce the allocated amount. All positions must match invoice gross exactly.</p>
 <h2 id="original-documents">Original documents<a class="headerlink" href="#original-documents" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice original documents" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
-<em>Figure: Version, filename, origin, cloud state and retention.</em></p>
-<p>The original remains byte-identical in the local financial archive. Local storage is read back and SHA-256 verified before verification, booking, preview and export are enabled. <strong>Back up documents now</strong> optionally transfers pending files to the configured backup target. Preview uses a temporary copy that is safely cleaned after the external viewer closes. A missing or failed backup does not block the invoice.</p>
-<h2 id="export-history">Export history<a class="headerlink" href="#export-history" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice export history" src="../../assets/screenshots/foreign-invoice-export-history.png" />
-<em>Figure: Adapter, state, transfer time, external ID and error.</em></p>
-<p>Only booked or cancelled invoices may be transferred by accounting REST or CSV/ZIP. Idempotency keys prevent duplicate transfers; technical failures remain visible for retry.</p>
-<h2 id="audit">Audit<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
-<p><img alt="Foreign-invoice audit" src="../../assets/screenshots/foreign-invoice-audit.png" />
-<em>Figure: Chronological, immutable business history.</em></p>
-<p>Creation, edits, verification, booking, cancellation, document verification and export are traceable. Navigation and preview do not create a new audit record.</p>
-<h2 id="workflow-and-permissions">Workflow and permissions<a class="headerlink" href="#workflow-and-permissions" title="Permanent link">&para;</a></h2>
+<p><img alt="Foreign-invoice original documents" src="../../assets/screenshots/foreign-invoice-original-documents.png" /></p>
+<p><strong>Add original document</strong> first writes the file atomically to the local financial archive, reads it back and verifies SHA-256. <strong>Locally verified</strong> enables verification, booking, preview and export. <strong>Back up documents now</strong> optionally replicates pending objects; failed external backup never blocks the business workflow. Preview uses a temporary copy.</p>
+<h2 id="e-invoice">E-invoice<a class="headerlink" href="#e-invoice" title="Permanent link">&para;</a></h2>
+<p><img alt="Imported e-invoice data" src="../../assets/screenshots/foreign-invoice-einvoice.png" /></p>
+<p>For structured imports this tab shows syntax, profile, validator, errors/warnings and every source line with its allocation count. Original, XML and KoSIT report remain separate verified document roles. See <a href="../einvoice-import/">Importing e-invoices and XRechnung</a>.</p>
+<h2 id="verify-book-and-correct">Verify, book and correct<a class="headerlink" href="#verify-book-and-correct" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Enter header and vehicle positions in <strong>Draft</strong>.</li>
-<li>Attach and cloud-verify the original document.</li>
+<li>Complete header and positions in <strong>Draft</strong>.</li>
+<li>Ensure the required original is locally verified.</li>
 <li>Bring the difference to 0.00 and <strong>Verify</strong>.</li>
 <li>Use <code>finance.book</code> to <strong>Book</strong> immutably.</li>
 <li>Optionally export through accounting REST or CSV/ZIP.</li>
 </ol>
-<p>Booked records are not edited or deleted. Corrections use cancellation or a linked credit. Reading requires <code>finance.read</code>, editing <code>finance.manage</code>, verification <code>finance.verify</code>, booking <code>finance.book</code>, and export <code>finance.export</code>.</p>
+<p>Booked records are never overwritten or deleted. <strong>Cancel</strong> creates a counter-entry with a mandatory reason; a linked credit represents a commercial correction. Both preserve origin and use the correct sign in analysis.</p>
+<h2 id="export-history-and-audit">Export history and audit<a class="headerlink" href="#export-history-and-audit" title="Permanent link">&para;</a></h2>
+<p><img alt="Foreign-invoice export history" src="../../assets/screenshots/foreign-invoice-export-history.png" /></p>
+<p>Only booked or cancelled invoices may be exported. Idempotency keys prevent duplicates; external ID, timestamp and error remain visible for retries.</p>
+<p><img alt="Foreign-invoice audit" src="../../assets/screenshots/foreign-invoice-audit.png" /></p>
+<p>Creation, edits, verification, booking, cancellation, document verification and export are recorded. Navigation and preview create no event. Reading requires <code>finance.read</code>, editing <code>finance.manage</code>, verification <code>finance.verify</code>, booking <code>finance.book</code>, and export <code>finance.export</code>; Pro adapters also require their licence feature.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verify disabled</td>
+<td>Check local document state and difference; e-invoice lines must be assigned completely.</td>
+</tr>
+<tr>
+<td>Difference red</td>
+<td>Correct position amounts, signs and rounding residuals.</td>
+</tr>
+<tr>
+<td>Document backup failed</td>
+<td>The local original remains usable; fix the target and retry backup.</td>
+</tr>
+<tr>
+<td>Booked invoice locked</td>
+<td>Create a cancellation or linked credit instead of overwriting it.</td>
+</tr>
+</tbody>
+</table>
 
 
 

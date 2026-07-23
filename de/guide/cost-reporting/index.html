@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/cost-reporting/">
       
       
-        <link rel="prev" href="../foreign-invoices/">
+        <link rel="prev" href="../einvoice-import/">
       
       
         <link rel="next" href="../position-maps/">
@@ -489,6 +489,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -497,6 +553,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
   
 
     
@@ -592,6 +676,17 @@
     <span class="md-ellipsis">
       
         Kostenlogik
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansichten-und-kennzahlen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansichten und Kennzahlen
       
     </span>
   </a>
@@ -1217,6 +1312,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ansichten-und-kennzahlen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ansichten und Kennzahlen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stimulsoft" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1247,6 +1353,9 @@
 <h1 id="kostenanalyse-und-reporting">Kostenanalyse und Reporting<a class="headerlink" href="#kostenanalyse-und-reporting" title="Permanent link">&para;</a></h1>
 <p>Die Arbeitsfläche <strong>Kostenanalyse</strong> wertet ausschließlich gebuchte Fahrzeugkosten aus. Gutschriften und Stornobuchungen werden mit ihrem Vorzeichen berücksichtigt. Als Betragsbasis kann Netto oder Brutto gewählt werden.</p>
 <p>Die Arbeitsfläche wird über <strong>Fuhrpark-Management &gt; Fuhrpark &gt; Kostenanalyse</strong> geöffnet. Beim Öffnen reicht der Auswertezeitraum standardmäßig vom 1. Januar des aktuellen Jahres bis zum heutigen Tag. Administratoren können unter <strong>Administration &gt; Kostenanalyse &gt; Berechnungsparameter</strong> stattdessen die letzten zwölf Monate oder eine frei festgelegte Anzahl rollierender Tage als globalen Standard wählen. Die Änderung gilt beim nächsten Öffnen der Kostenanalyse; ein bereits geänderter Filter bleibt während der geöffneten Sitzung erhalten.</p>
+<p>Wählen Sie Zeitraum, optional ein Fahrzeug, <strong>Alle/Fix/Variabel</strong>, Netto oder Brutto und eine Berichtsvorlage und klicken Sie <strong>Auswertung aktualisieren</strong>. <strong>Gesamtkosten</strong> sind die periodengerecht zugeordneten gebuchten Kosten einschließlich Gutschriften und Stornos. Sie bilden die TCO-Datengrundlage für den gewählten Zeitraum; FLEET Mira behauptet damit keine Lebenszyklusvollständigkeit, wenn Kostenarten oder Zeiträume fehlen.</p>
+<p><img alt="Kostenanalyse nach Fahrzeug" src="../../assets/screenshots/cost-analysis-vehicles.png" /></p>
+<p>Die KPI-Leiste unterscheidet <strong>Gesamtkosten</strong>, <strong>auswertbare Kosten</strong>, <strong>auswertbare Kilometer</strong>, <strong>Kosten/km</strong> und <strong>Datenbasis</strong>. Gesamtkosten bleiben vollständig sichtbar, während Kosten/km nur gemeinsam belastbare Fahrzeug-Monate verwendet.</p>
 <h2 id="kilometerbasis">Kilometerbasis<a class="headerlink" href="#kilometerbasis" title="Permanent link">&para;</a></h2>
 <p>M-Dateien liefern für jeden enthaltenen UTC-Tag einen Tagesabschluss-Kilometerstand. FLEET Mira speichert diesen Wert als Grenze zum Folgetag um <code>00:00 UTC</code>. C-Daten aus Fahrzeugnutzungen, Orts- und Drei-Stunden-GNSS-Datensätzen ergänzen die Historie.</p>
 <p>Die M-Zeitreihe ist maßgeblich und wird ausschließlich anhand anderer signaturgültiger M-Stände plausibilisiert. Manuelle und C-Stände können fehlende exakte Periodengrenzen ergänzen, einen vorhandenen M-Stand jedoch weder ersetzen noch entwerten.</p>
@@ -1261,6 +1370,8 @@
 <p>Die Gesamtkosten enthalten weiterhin alle Kosten des ausgewählten Zeitraums. <strong>Auswertbare Kosten</strong>, <strong>auswertbare Kilometer</strong> und <strong>Kosten/km</strong> enthalten dagegen nur gemeinsam auswertbare Fahrzeug-Monate. Fahrzeuge oder Monate ohne Kosten beziehungsweise Kilometer verhindern deshalb nicht mehr die Berechnung für vollständige Teilmengen.</p>
 <p>Die Abdeckung wird als Anzahl auswertbarer kostenführender Fahrzeug-Monate dargestellt. Der Spaltenkopf erklärt die Kennzahl allgemein; der Tooltip jedes Werts nennt die tatsächliche Anzahl vorhandener und auswertbarer Kostenmonate sowie die konkreten Monats-/Kilometerwarnungen des Fahrzeugs. Die Oberfläche bezeichnet eine vollständige Abdeckung als <strong>Vollständig</strong>, eine auswertbare Teilmenge als <strong>Teilweise</strong> und fehlende Kosten/km-Basis trotz vorhandener Kosten als <strong>Kilometerdaten fehlen</strong>. <strong>Keine Kosten</strong> und <strong>Keine Daten</strong> kennzeichnen einzelne Fahrzeuge oder Monate ohne Kosten beziehungsweise ohne beide Datenarten.</p>
 <p>Über <strong>Tachographendaten übernehmen</strong> werden ältere M-Dateien ohne Tageskilometer erneut verarbeitet. Nicht eindeutig über FIN oder Kennzeichen zuordenbare Werte bleiben in der Klärungsliste sichtbar.</p>
+<p><img alt="Kilometerhistorie mit Quellen- und Qualitätsstatus" src="../../assets/screenshots/odometer-history.png" /></p>
+<p>Unter <strong>Administration &gt; Kostenanalyse &gt; Kilometerhistorie</strong> filtern Sie nach Fahrzeug, übernehmen ältere Tachographendaten oder erfassen einen manuellen Stand. Manuelle Werte benötigen Zeitpunkt, Kilometerstand und Hinweis und werden gegenüber M-Tagesabschlüssen niedriger priorisiert.</p>
 <h2 id="kostenlogik">Kostenlogik<a class="headerlink" href="#kostenlogik" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Variable Kosten werden anhand des Belegdatums vollständig einer Periode zugeordnet.</li>
@@ -1271,8 +1382,23 @@
 <li>Bei einer Stornierung werden die stornierte Ursprungsbuchung und die gebuchte Gegenbuchung gemeinsam ausgewertet und saldieren sich dadurch auf null.</li>
 <li>Vergleiche zeigen die unmittelbar vorherige gleich lange Periode und den Vorjahreszeitraum.</li>
 </ul>
+<h2 id="ansichten-und-kennzahlen">Ansichten und Kennzahlen<a class="headerlink" href="#ansichten-und-kennzahlen" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fahrzeuge</strong> zeigt fixe, variable und gesamte Kosten, auswertbare Teilmenge, Kilometer, Kosten/km, Abdeckung und Qualität je Fahrzeug.</li>
+<li><strong>Kostenarten</strong> beantwortet, welche Kategorien die TCO-Datengrundlage treiben.</li>
+<li><strong>Zeitverlauf</strong> stellt Monatswerte einschließlich Kosten/km und Abdeckung gegenüber.</li>
+<li><strong>Vergleiche</strong> gliedert aktuelle Periode, direkte Vorperiode und Vorjahr und bewertet Abweichungen anhand der administrativen Wesentlichkeitsschwelle.</li>
+<li><strong>Buchungen</strong> führt die einbezogenen Positionen mit Fahrzeug, Lieferant, Kostenart und Zuordnungsbetrag auf.</li>
+<li><strong>Datenqualität</strong> nennt fehlende Periodengrenzen, nicht zugeordnete Kilometer und unvollständige Fixkostenzeiträume.</li>
+</ul>
+<p><img alt="Kosten nach Kostenart" src="../../assets/screenshots/cost-analysis-categories.png" /></p>
+<p><img alt="Monatlicher Kostenverlauf" src="../../assets/screenshots/cost-analysis-trend.png" /></p>
+<p><img alt="Perioden- und Vorjahresvergleich" src="../../assets/screenshots/cost-analysis-comparisons.png" /></p>
+<p><img alt="Einbezogene Buchungen" src="../../assets/screenshots/cost-analysis-bookings.png" /></p>
+<p><img alt="Datenqualitäts- und Abdeckungsprüfung" src="../../assets/screenshots/cost-analysis-quality.png" /></p>
 <h2 id="stimulsoft">Stimulsoft<a class="headerlink" href="#stimulsoft" title="Permanent link">&para;</a></h2>
 <p><strong>Bericht anzeigen</strong> öffnet den lokalen Reports.JS-Viewer. Der Export ist nur mit <code>finance.reporting.export</code> verfügbar. Benutzer mit <code>reporting.templates.write</code> können eine Systemvorlage klonen und die Kopie im Designer bearbeiten. Systemvorlagen selbst bleiben unveränderlich.</p>
+<p><img alt="Verwaltung der Berichtsvorlagen" src="../../assets/screenshots/report-templates.png" /></p>
 <p>Die Reports.JS-Laufzeit liegt unter <code>assets/stimulsoft</code> oder wird über <code>STIMULSOFT_ASSET_DIR</code> angegeben. Die Lizenz wird ausschließlich aus <code>STIMULSOFT_LICENSE_KEY</code> oder <code>STIMULSOFT_LICENSE_FILE</code> gelesen.</p>
 <p>Der Berichtshost lauscht ausschließlich auf <code>127.0.0.1</code> und verwendet pro geöffnetem Bericht ein zufälliges Sitzungstoken.</p>
 

@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/foreign-invoices/">
       
       
-        <link rel="prev" href="../vehicle-unit-analysis/">
+        <link rel="prev" href="../vehicle-costs/">
       
       
-        <link rel="next" href="../cost-reporting/">
+        <link rel="next" href="../einvoice-import/">
       
       
         
@@ -486,6 +486,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -549,6 +605,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rechnungskopf-und-lieferant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rechnungskopf und Lieferant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#positionen" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -571,10 +638,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exporthistorie" class="md-nav__link">
+  <a href="#erechnung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exporthistorie
+        E‑Rechnung
       
     </span>
   </a>
@@ -582,10 +649,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit" class="md-nav__link">
+  <a href="#prufen-buchen-und-korrigieren" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit
+        Prüfen, buchen und korrigieren
       
     </span>
   </a>
@@ -593,10 +660,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-und-berechtigungen" class="md-nav__link">
+  <a href="#exporthistorie-und-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow und Berechtigungen
+        Exporthistorie und Audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehlerbehebung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fehlerbehebung
       
     </span>
   </a>
@@ -607,6 +685,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1217,6 +1323,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rechnungskopf-und-lieferant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rechnungskopf und Lieferant
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#positionen" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1239,10 +1356,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exporthistorie" class="md-nav__link">
+  <a href="#erechnung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exporthistorie
+        E‑Rechnung
       
     </span>
   </a>
@@ -1250,10 +1367,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit" class="md-nav__link">
+  <a href="#prufen-buchen-und-korrigieren" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit
+        Prüfen, buchen und korrigieren
       
     </span>
   </a>
@@ -1261,10 +1378,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-und-berechtigungen" class="md-nav__link">
+  <a href="#exporthistorie-und-audit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow und Berechtigungen
+        Exporthistorie und Audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehlerbehebung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fehlerbehebung
       
     </span>
   </a>
@@ -1289,32 +1417,61 @@
 
 
 <h1 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h1>
-<p>Eine Fremdrechnung wird als Arbeitstab geöffnet. Die Statuszeile zeigt Workflow, Beleg- und Exportstatus sowie Gesamt brutto, Splitbetrag und Differenz. Grün bedeutet centgenauen Ausgleich, Rot eine noch zu klärende Differenz.</p>
+<p>Eine Fremdrechnung wird per Doppelklick als eigener Arbeitstab geöffnet. Die Statuszeile zeigt Workflow, Gültigkeit, lokalen Beleg- und Exportstatus sowie Gesamt netto/brutto, Splitbetrag und Differenz. Grün bedeutet centgenauen Ausgleich; Rot blockiert die Prüfung.</p>
+<h2 id="rechnungskopf-und-lieferant">Rechnungskopf und Lieferant<a class="headerlink" href="#rechnungskopf-und-lieferant" title="Permanent link">&para;</a></h2>
+<p>Legen Sie unter <strong>Fuhrpark &gt; Fremdrechnungen &gt; Neu</strong> den Lieferanten, Dokumentart, Belegnummer und -datum, Liefer-/Gültigkeitszeitraum, Zahlungsziel, Netto und Steuer an. Bei Gutschrift oder Storno wählen Sie zusätzlich den Bezug zur Ursprungsrechnung. Umgekehrte Zeiträume und widersprüchliche Summen werden abgewiesen.</p>
+<p><img alt="Lieferant einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-supplier.png" /></p>
+<p>Der Tab <strong>Lieferant</strong> zeigt die zum Beleg verwendeten Stamm- und E‑Rechnungskennungen. Änderungen erfolgen im Lieferantenstamm und verändern keine bereits gebuchte Rechnung rückwirkend.</p>
 <h2 id="positionen">Positionen<a class="headerlink" href="#positionen" title="Permanent link">&para;</a></h2>
-<p><img alt="Positionen einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-positions.png" />
-<em>Abbildung: Fahrzeugbezogene Aufteilung und Summenstatus.</em></p>
-<p>Jede Position gehört genau einem Fahrzeug. Belegdatum, Gültig von/bis und <strong>Variabel</strong> werden aus dem Rechnungskopf übernommen und sind bei Rechnungspositionen gesperrt. Währungswerte sind rechtsbündig; Kosten erhöhen, Gutschriften vermindern den Splitbetrag.</p>
+<p><img alt="Positionen einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-positions.png" /></p>
+<p>Jede Position gehört genau einem Fahrzeug und einer Kostenart. Belegdatum, Gültig von/bis und <strong>Variabel</strong> werden aus dem Rechnungskopf übernommen und sind gesperrt. Kosten erhöhen, Gutschriften vermindern den Splitbetrag. Die Summe aller Positionen muss das Rechnungsbrutto centgenau erreichen.</p>
 <h2 id="originalbelege">Originalbelege<a class="headerlink" href="#originalbelege" title="Permanent link">&para;</a></h2>
-<p><img alt="Originalbelege einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-original-documents.png" />
-<em>Abbildung: Version, Dateiname, Herkunft, Cloudstatus und Aufbewahrung.</em></p>
-<p>Der Originalbeleg bleibt bytegenau im lokalen Finanzarchiv. Die lokale Ablage wird durch Rücklesen und SHA-256 verifiziert und schaltet anschließend Prüfung, Buchung, Vorschau und Export frei. <strong>Belege jetzt sichern</strong> überträgt offene Dokumente optional an das konfigurierte Backupziel. Vorschau verwendet eine temporäre, nach dem Schließen sicher zu bereinigende Kopie. Ein fehlendes oder fehlerhaftes Backup blockiert die Fremdrechnung nicht.</p>
-<h2 id="exporthistorie">Exporthistorie<a class="headerlink" href="#exporthistorie" title="Permanent link">&para;</a></h2>
-<p><img alt="Exporthistorie einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-export-history.png" />
-<em>Abbildung: Adapter, Status, Übergabezeit, externe ID und Fehler.</em></p>
-<p>Nur gebuchte oder stornierte Rechnungen dürfen per FiBu-REST oder CSV/ZIP übergeben werden. Idempotenzschlüssel verhindern Doppelübergaben; technische Fehler bleiben für Wiederholung sichtbar.</p>
-<h2 id="audit">Audit<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
-<p><img alt="Audit einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-audit.png" />
-<em>Abbildung: Chronologische, unveränderbare Fachhistorie.</em></p>
-<p>Erfassung, Änderung, Prüfung, Buchung, Storno, Belegverifikation und Export werden nachvollziehbar protokolliert. Reine Navigation und Vorschau erzeugen keinen neuen Auditdatensatz.</p>
-<h2 id="workflow-und-berechtigungen">Workflow und Berechtigungen<a class="headerlink" href="#workflow-und-berechtigungen" title="Permanent link">&para;</a></h2>
+<p><img alt="Originalbelege einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-original-documents.png" /></p>
+<p><strong>Originalbeleg hinzufügen</strong> schreibt die Datei zuerst atomar in das lokale Finanzarchiv, liest sie zurück und verifiziert SHA-256. Erst der Status <strong>Lokal verifiziert</strong> schaltet Prüfung, Buchung, Vorschau und Export frei. <strong>Belege jetzt sichern</strong> repliziert offene Objekte optional auf das konfigurierte Backupziel; ein fehlendes externes Backup blockiert den Workflow nicht. Vorschauen verwenden eine temporäre Kopie.</p>
+<h2 id="erechnung">E‑Rechnung<a class="headerlink" href="#erechnung" title="Permanent link">&para;</a></h2>
+<p><img alt="Importierte E‑Rechnungsdaten" src="../../assets/screenshots/foreign-invoice-einvoice.png" /></p>
+<p>Bei einem strukturierten Import zeigt dieser Tab Syntax, Profil, Validator, Fehler/Warnungen und alle Quellzeilen samt Anzahl ihrer Zuordnungen. Original, strukturiertes XML und KoSIT-Bericht bleiben als getrennte, verifizierte Dokumentrollen erhalten. Der geführte Import ist in <a href="../einvoice-import/">E‑Rechnung und XRechnung importieren</a> beschrieben.</p>
+<h2 id="prufen-buchen-und-korrigieren">Prüfen, buchen und korrigieren<a class="headerlink" href="#prufen-buchen-und-korrigieren" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Rechnungskopf und Fahrzeugpositionen im Status <strong>Entwurf</strong> erfassen.</li>
-<li>Originalbeleg hinzufügen und cloud-verifizieren.</li>
-<li>Summendifferenz auf 0,00 bringen und <strong>Prüfen</strong>.</li>
+<li>Kopf und Positionen im Status <strong>Entwurf</strong> vollständig erfassen.</li>
+<li>Mindestens einen erforderlichen Originalbeleg lokal verifizieren.</li>
+<li>Differenz auf 0,00 bringen und <strong>Prüfen</strong>.</li>
 <li>Mit <code>finance.book</code> unveränderlich <strong>Buchen</strong>.</li>
-<li>Optional über FiBu-REST oder CSV/ZIP exportieren.</li>
+<li>Optional per FiBu-REST oder CSV/ZIP exportieren.</li>
 </ol>
-<p>Gebuchte Datensätze werden nicht bearbeitet oder gelöscht. Korrekturen erfolgen per Storno oder verknüpfter Gutschrift. Lesen benötigt <code>finance.read</code>, Bearbeiten <code>finance.manage</code>, Prüfen <code>finance.verify</code>, Buchen <code>finance.book</code> und Export <code>finance.export</code>.</p>
+<p>Gebuchte Datensätze werden nicht bearbeitet oder gelöscht. <strong>Stornieren</strong> erzeugt eine Gegenbuchung mit Pflichtgrund; eine verknüpfte Gutschrift bildet eine fachliche Korrektur ab. Beide Wege bewahren den Ursprung und wirken mit korrektem Vorzeichen in der Kostenanalyse.</p>
+<h2 id="exporthistorie-und-audit">Exporthistorie und Audit<a class="headerlink" href="#exporthistorie-und-audit" title="Permanent link">&para;</a></h2>
+<p><img alt="Exporthistorie einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-export-history.png" /></p>
+<p>Nur gebuchte oder stornierte Rechnungen dürfen exportiert werden. Idempotenzschlüssel verhindern Doppelübergaben; externe ID, Zeitpunkt und Fehler bleiben für Wiederholung sichtbar.</p>
+<p><img alt="Audit einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-audit.png" /></p>
+<p>Erfassung, Änderung, Prüfung, Buchung, Storno, Belegverifikation und Export werden protokolliert. Reine Navigation und Vorschau erzeugen keinen Eintrag. Lesen benötigt <code>finance.read</code>, Bearbeiten <code>finance.manage</code>, Prüfen <code>finance.verify</code>, Buchen <code>finance.book</code> und Export <code>finance.export</code>; einzelne Pro-Adapter benötigen zusätzlich die zugehörige Lizenzfunktion.</p>
+<h2 id="fehlerbehebung">Fehlerbehebung<a class="headerlink" href="#fehlerbehebung" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Zustand</th>
+<th>Maßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prüfen deaktiviert</td>
+<td>Lokalen Belegstatus und Differenz prüfen; E‑Rechnungszeilen müssen vollständig zugeordnet sein.</td>
+</tr>
+<tr>
+<td>Differenz ist rot</td>
+<td>Positionsbeträge, Vorzeichen und Rundungsreste korrigieren.</td>
+</tr>
+<tr>
+<td>Beleg-Backup fehlgeschlagen</td>
+<td>Lokales Original bleibt nutzbar; Backupziel korrigieren und <strong>Belege jetzt sichern</strong> wiederholen.</td>
+</tr>
+<tr>
+<td>Gebuchte Rechnung ist gesperrt</td>
+<td>Storno oder verknüpfte Gutschrift anlegen, nicht den Ursprung überschreiben.</td>
+</tr>
+</tbody>
+</table>
 
 
 

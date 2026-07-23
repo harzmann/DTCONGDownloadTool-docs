@@ -16,7 +16,7 @@
         <link rel="prev" href="../drivercard-analysis/">
       
       
-        <link rel="next" href="../foreign-invoices/">
+        <link rel="next" href="../license-checks/">
       
       
         
@@ -668,6 +668,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -676,6 +732,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
   
 
     
@@ -1444,6 +1528,7 @@
 
 <h1 id="massenspeicher-auswertung">Massenspeicher-Auswertung<a class="headerlink" href="#massenspeicher-auswertung" title="Permanent link">&para;</a></h1>
 <p>Die Massenspeicher-Auswertung verwendet genau eine ausgewählte M-Datei als Basis. Fahrer, Slots und Kartensitzungen bleiben getrennt; C-Dateien ergänzen nur den Vergleich innerhalb nachweisbarer Steckzeiten.</p>
+<p>Die Einzeldateiansicht ist damit archivbezogen. <strong>Fahrzeugakte &gt; Tagesansicht/Wochenansicht/Verstöße</strong> verwendet dagegen alle der FIN zugeordneten gültigen M-Archive. Kontrollieren Sie den im Kopf angezeigten Kontext, bevor Sie Zeiträume oder Summen vergleichen.</p>
 <h2 id="ubersicht">Übersicht<a class="headerlink" href="#ubersicht" title="Permanent link">&para;</a></h2>
 <p><img alt="Übersicht einer M-Datei" src="../../assets/screenshots/vehicle-unit-overview.png" />
 <em>Abbildung: Generation, Signatur, Fahrzeugidentität, Datenzeitraum und Parserwarnungen.</em></p>
@@ -1460,10 +1545,12 @@
 <p><img alt="Tagesgrafik der M-Datei" src="../../assets/screenshots/vehicle-unit-daily-chart.png" />
 <em>Abbildung: Fahrergruppen, Steckzeit und Aktivitätsspuren eines UTC-Tages.</em></p>
 <p>Die Navigation ist ausschließlich an das Datum gekoppelt. Fahrername und Kartennummer stehen in den Gruppen. Tooltips auf unbekannten Kartengruppen erklären deren Datenbasis.</p>
+<p>Datum, Pfeile und <strong>Gehe zu</strong> steuern den UTC-Tag. Jede Fahrergruppe zeigt Kartensteckzeit und Aktivitätsspur; Farbe und Beschriftung unterscheiden Lenken, Arbeit, Bereitschaft und Ruhe/Pause. Hover-Details nennen Beginn, Ende, Dauer, Slot, Karte und C-/M-Datenlage. Unbekannte Kartenintervalle bleiben als eigene Gruppe sichtbar.</p>
 <h2 id="wochengrafik">Wochengrafik<a class="headerlink" href="#wochengrafik" title="Permanent link">&para;</a></h2>
 <p><img alt="Wochengrafik der M-Datei" src="../../assets/screenshots/vehicle-unit-weekly-chart.png" />
 <em>Abbildung: Eine ISO-Woche mit getrennten Fahrer-Panels.</em></p>
 <p>Jede Kalenderwoche erscheint einmal. Mehrere Steckzeiten desselben Fahrers werden innerhalb seines Wochenpanels zusammengeführt; Fahrerwechsel und Teamfahrer bleiben getrennt.</p>
+<p>Wechseln Sie per Pfeil zwischen ISO-Wochen und prüfen Sie zuerst die Abdeckung jedes Tages. Wochensummen gelten für sichtbaren Zeitraum und Akten-/Archivkontext. Fehlende Daten werden weder als Ruhe noch als Nullaktivität gerechnet.</p>
 <h2 id="ereignisse-und-storungen">Ereignisse und Störungen<a class="headerlink" href="#ereignisse-und-storungen" title="Permanent link">&para;</a></h2>
 <p><img alt="Ereignisse und Störungen der M-Datei" src="../../assets/screenshots/vehicle-unit-events-faults.png" />
 <em>Abbildung: Records mit Code, Klartextmeldung, Beginn, Ende und Sektion.</em></p>
@@ -1490,6 +1577,7 @@
 <p><img alt="Technische Verstoßvorprüfung der M-Datei" src="../../assets/screenshots/vehicle-unit-violations.png" />
 <em>Abbildung: Fahrergetrennte Vorprüfung und Hinweise zur Datenabdeckung.</em></p>
 <p>Im Modus <strong>Ausgewählte M-Datei</strong> werden nur Fahrten dieses Fahrzeugs geprüft. <strong>Vollständige Fahrerhistorie</strong> kann weitere vertrauenswürdige C-/M-Archive ergänzen. Unbekannte Kartenintervalle werden als Hinweis, nicht als personenbezogener Verstoß behandelt.</p>
+<p>Legen Sie Zeitraum und Regelmodule fest und berechnen Sie nach einer Änderung neu. Jeder Treffer nennt Regelwerk/Version, Rechtsgrundlage, Bewertungszeitraum, Ist-/Sollwert, Abweichung, Berechnungsgrundlage und Schweregrad. Optionale BALM-Orientierungsbeträge sind keine Bußgeldentscheidung. Bewerten Sie Treffer erst nach Datenabdeckung, unbekannten Kartenintervallen und Hinweisen zu nationalen Ausnahmen, AETR oder Artikel 12.</p>
 
 
 

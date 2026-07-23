@@ -655,6 +655,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#e-invoicexrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E-invoice/XRechnung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -844,6 +855,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/foreign-invoices/" class="md-nav__link">
         
   
@@ -852,6 +919,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
   
 
     
@@ -1741,6 +1836,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#e-invoicexrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E-invoice/XRechnung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1802,7 +1908,11 @@
 <li><a href="../guide/tachodata-overviews/">Personnel and fleet tachodata evaluations</a></li>
 <li><a href="../guide/drivercard-analysis/">Driver-card analysis – every tab</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Vehicle-unit analysis – every tab</a></li>
+<li><a href="../guide/license-checks/">Driving-licence checks and RFID/NFC</a></li>
+<li><a href="../guide/vehicle-costs/">Vehicle costs and credits</a></li>
 <li><a href="../guide/foreign-invoices/">Foreign invoices – workflow and every tab</a></li>
+<li><a href="../guide/einvoice-import/">E-invoice and XRechnung import</a></li>
+<li><a href="../guide/cost-reporting/">Cost analysis and reporting</a></li>
 <li><a href="../guide/position-maps/">Position maps for C and M data</a></li>
 </ul>
 <p>These guides use a temporary anonymised copy of the development database. Activities, timestamps, amounts and approved coordinates remain representative; person, card and vehicle identities were replaced deterministically.</p>
@@ -1978,6 +2088,7 @@
 </ul>
 <p>The readout date is taken from a valid <code>C_YYYYMMDD_HHmm...</code> or <code>M_YYYYMMDD_HHmm...</code> filename, then falls back to source creation, download and archive UTC dates. Automatic deadlines cannot be manually moved or completed. Tachograph calibration remains a separate vehicle deadline.</p>
 <h2 id="10-driving-licence-checks-and-rfid">10. Driving-licence checks and RFID<a class="headerlink" href="#10-driving-licence-checks-and-rfid" title="Permanent link">&para;</a></h2>
+<p>The complete workflow for check policy, UID assignment, PC/SC checks, automatic follow-up dates, terminal CSV and exceptions is documented in <a href="../guide/license-checks/">Driving-licence checks and RFID/NFC</a>. A system-managed deadline is completed only by a successful check; an unknown chip or a chip assigned to another person creates no success record.</p>
 <p>The <strong>Personnel</strong> navigation provides:</p>
 <p><img alt="Driving-licence-check evaluation" src="../assets/screenshots/license-check-evaluation.png" />
 <em>Figure: Driving-licence-check (FSK) due-date evaluation.</em></p>
@@ -1995,7 +2106,7 @@
 <p>Standard rules cover weekly information, daily reminders from ten days, urgent reminders from three days, overdue warnings and a daily responsible-person report. Rules may be previewed or sent manually when the user has permission.</p>
 <h2 id="12-costs-credits-and-foreign-invoices">12. Costs, credits and foreign invoices<a class="headerlink" href="#12-costs-credits-and-foreign-invoices" title="Permanent link">&para;</a></h2>
 <h3 id="direct-vehicle-costs">Direct vehicle costs<a class="headerlink" href="#direct-vehicle-costs" title="Permanent link">&para;</a></h3>
-<p>Open a vehicle record → <strong>Costs / Credits</strong>. Create a cost or credit, choose a cost category and enter document date, net amount and tax rate. Amounts are stored in cents and displayed right-aligned. Direct entries may be verified and booked without an original document if policy permits.</p>
+<p>Open a vehicle record → <strong>Costs / Credits</strong>. Select category and type and enter document date, validity period, net and VAT. <strong>Variable</strong> allocates the full amount to the document date; fixed entries are distributed by day over their complete validity period. Amounts are stored to the cent. Draft, verification, booking, cancellation and credit are covered in <a href="../guide/vehicle-costs/">Vehicle costs and credits</a>.</p>
 <p><img alt="Supplier master-data list" src="../assets/screenshots/suppliers.png" />
 <em>Figure: Supplier master data for financial documents.</em></p>
 <h3 id="foreign-invoices">Foreign invoices<a class="headerlink" href="#foreign-invoices" title="Permanent link">&para;</a></h3>
@@ -2010,6 +2121,8 @@
     E --&gt; F[Book]
     F --&gt; G[REST or CSV/ZIP accounting export]</code></pre>
 <p>The status row compares gross invoice amount, split amount and difference. Zero difference is green; any cent difference is red and blocks verification. Invoice-bound positions inherit the invoice date for document/valid-from/valid-to and are always variable. Booked data is immutable; corrections use cancellation or linked credits.</p>
+<h3 id="e-invoicexrechnung">E-invoice/XRechnung<a class="headerlink" href="#e-invoicexrechnung" title="Permanent link">&para;</a></h3>
+<p><strong>Fleet → Import XRechnung</strong> guides users through KoSIT validation, invoice and supplier data, vehicle/category allocation, line splitting and totals reconciliation. Only confirmed creation atomically writes a foreign-invoice draft and locally verified original, XML and report objects. See <a href="../guide/einvoice-import/">E-invoice and XRechnung import</a>.</p>
 <h2 id="13-audit-reports-and-logs">13. Audit, reports and logs<a class="headerlink" href="#13-audit-reports-and-logs" title="Permanent link">&para;</a></h2>
 <p>The global audit under <strong>Administration → Audit</strong> combines device, tachograph and fleet events. Filter by date, user, action or text. Double-click an entry to open its current related object when the stable ID can be resolved. Navigation itself is not audited.</p>
 <p><img alt="Global audit log" src="../assets/screenshots/audit.png" />

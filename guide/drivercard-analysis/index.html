@@ -646,6 +646,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -654,6 +710,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
   
 
     
@@ -1408,14 +1492,17 @@
 <p><img alt="Driver-card activity intervals" src="../../assets/screenshots/drivercard-activities.png" />
 <em>Figure: Sortable UTC intervals with C/M availability.</em></p>
 <p><strong>Data availability</strong> filters all intervals, C and M available, C only or M only. C remains the base. Rows include start, end, duration, activity, card, slot and counterpart archives; double-click and context actions open unambiguous sources.</p>
+<p>The single-file view remains archive-scoped. <strong>Personnel record &gt; Day/Week/Violations</strong>, by contrast, combines all valid card links for that person, including card changes. The heading identifies record or archive scope and must be considered when interpreting totals.</p>
 <h2 id="day-chart">Day chart<a class="headerlink" href="#day-chart" title="Permanent link">&para;</a></h2>
 <p><img alt="Driver-card day chart" src="../../assets/screenshots/drivercard-daily-chart.png" />
 <em>Figure: One UTC day with driving, work, availability and rest/break.</em></p>
 <p>The date, arrow buttons and <strong>Go to</strong> change the visible day. The availability track indicates C/M coverage, while activity tracks show business intervals. The detail grid remains sortable.</p>
+<p>Read left to right in UTC. Colour and label distinguish driving, other work, availability and rest/break; gaps and overlaps are not smoothed. Hover a segment for start, end, duration, source and availability. Day totals apply to the visible day, not the entire file.</p>
 <h2 id="week-chart">Week chart<a class="headerlink" href="#week-chart" title="Permanent link">&para;</a></h2>
 <p><img alt="Driver-card week chart" src="../../assets/screenshots/drivercard-weekly-chart.png" />
 <em>Figure: ISO week from Monday to Sunday.</em></p>
 <p>Seven UTC days are shown together. Empty days remain visible and are not interpreted as activity. Totals and tooltips refer to the selected file and visible period.</p>
+<p>Week arrows move between ISO weeks; <strong>Go to</strong> selects the week containing a date. Review coverage and card validity first, then daily patterns and weekly totals. An empty or partially covered day is not evidence of rest.</p>
 <h2 id="ddd-week-view-web">DDD week view Web<a class="headerlink" href="#ddd-week-view-web" title="Permanent link">&para;</a></h2>
 <p><img alt="In-app hand-off to DDD week view Web" src="../../assets/screenshots/drivercard-ddd-week-web.png" />
 <em>Figure: Secure in-app entry point to the browser-based week view.</em></p>
@@ -1436,6 +1523,7 @@
 <p><img alt="Driver-card technical compliance pre-check" src="../../assets/screenshots/drivercard-violations.png" />
 <em>Figure: Reproducible technical pre-check for the selected C file.</em></p>
 <p>The list explains rule, article, actual/target value, deviation and legal basis. It does not replace legal assessment of national exemptions, AETR or Article 12 cases. Saving a snapshot requires <code>archive.manage</code>; export requires <code>archive.export</code>.</p>
+<p>Select evaluation period and enabled rule modules and recalculate whenever context changes. Results identify ruleset/module version, assessment range, calculation basis and severity; optional BALM amounts are guidance, not a fine decision. Review coverage and notices before each finding. Cross-module findings are consolidated only for the same driver, period and fact pattern.</p>
 <h2 id="signatures">Signatures<a class="headerlink" href="#signatures" title="Permanent link">&para;</a></h2>
 <p><img alt="Driver-card signature verification" src="../../assets/screenshots/drivercard-signatures.png" />
 <em>Figure: Certificate chain and signed-EF results.</em></p>

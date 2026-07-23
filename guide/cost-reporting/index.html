@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/cost-reporting/">
       
       
-        <link rel="prev" href="../foreign-invoices/">
+        <link rel="prev" href="../einvoice-import/">
       
       
         <link rel="next" href="../position-maps/">
@@ -489,6 +489,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -497,6 +553,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
   
 
     
@@ -592,6 +676,17 @@
     <span class="md-ellipsis">
       
         Cost rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#views-and-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Views and KPIs
       
     </span>
   </a>
@@ -1217,6 +1312,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#views-and-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Views and KPIs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stimulsoft" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1247,6 +1353,9 @@
 <h1 id="cost-analysis-and-reporting">Cost analysis and reporting<a class="headerlink" href="#cost-analysis-and-reporting" title="Permanent link">&para;</a></h1>
 <p>The <strong>Cost analysis</strong> workspace evaluates booked vehicle costs only. Credits and reversal entries retain their accounting sign. Users can select net or gross amounts.</p>
 <p>Open the workspace through <strong>Fleet management &gt; Fleet &gt; Cost analysis</strong>. By default, a newly opened analysis covers January 1 of the current year through today. Administrators can select the last twelve months or a configurable rolling number of days as the global default under <strong>Administration &gt; Cost analysis &gt; Calculation parameters</strong>. A changed default applies the next time the cost analysis is opened; filters already edited in an open workspace remain unchanged.</p>
+<p>Choose period, optional vehicle, <strong>All/Fixed/Variable</strong>, net or gross and a report template, then select <strong>Refresh analysis</strong>. <strong>Total cost</strong> is the period-allocated booked cost including credits and cancellations. It is the TCO data basis for the selected period; it is not claimed to be lifetime-complete when categories or periods are missing.</p>
+<p><img alt="Cost analysis by vehicle" src="../../assets/screenshots/cost-analysis-vehicles.png" /></p>
+<p>The KPI strip separates <strong>Total cost</strong>, <strong>eligible cost</strong>, <strong>eligible kilometres</strong>, <strong>cost/km</strong> and <strong>data basis</strong>. Total cost remains complete while cost/km uses only jointly reliable vehicle-months.</p>
 <h2 id="mileage-basis">Mileage basis<a class="headerlink" href="#mileage-basis" title="Permanent link">&para;</a></h2>
 <p>M files provide an end-of-day odometer value for each included UTC day. FLEET Mira stores it at the following day's <code>00:00 UTC</code> boundary. Vehicle-use, place and three-hour GNSS records from C files supplement the history.</p>
 <p>The M-file series is authoritative and is checked only against other signature-valid M readings. Manual and C-file readings can fill a missing exact period boundary, but they can neither replace nor invalidate an available M reading.</p>
@@ -1261,6 +1370,8 @@
 <p>Total cost continues to include every cost in the selected range. <strong>Eligible cost</strong>, <strong>eligible mileage</strong> and <strong>cost/km</strong> include matching vehicle-months only. Vehicles or months without costs or mileage therefore no longer suppress metrics for complete subsets.</p>
 <p>Coverage is shown as eligible cost-bearing vehicle-months. The column heading explains the metric generally; each value's tooltip states the actual number of cost and eligible months and lists the vehicle's concrete monthly mileage warnings. The interface displays <strong>Complete</strong> for full coverage, <strong>Partial</strong> for a usable subset, and <strong>Mileage data missing</strong> when costs exist without a cost/km basis. <strong>No costs</strong> and <strong>No data</strong> identify individual vehicles or months without costs or without either data type.</p>
 <p><strong>Import tachograph data</strong> reparses older M archives that do not yet contain extracted daily odometer values. Values that cannot be matched uniquely by VIN or registration remain visible for resolution.</p>
+<p><img alt="Odometer history with source and quality" src="../../assets/screenshots/odometer-history.png" /></p>
+<p>Under <strong>Administration &gt; Cost analysis &gt; Odometer history</strong>, filter by vehicle, import older tachograph data or enter a manual reading. Manual readings require timestamp, value and note and rank below M-file midnight readings.</p>
 <h2 id="cost-rules">Cost rules<a class="headerlink" href="#cost-rules" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Variable costs belong to the period containing their document date.</li>
@@ -1271,8 +1382,23 @@
 <li>When an entry is cancelled, the cancelled original and its booked counter-entry are evaluated together and therefore net to zero.</li>
 <li>Comparisons cover the immediately preceding equal-length period and the previous-year period.</li>
 </ul>
+<h2 id="views-and-kpis">Views and KPIs<a class="headerlink" href="#views-and-kpis" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Vehicles</strong> shows fixed, variable and total cost, eligible subset, kilometres, cost/km, coverage and quality per vehicle.</li>
+<li><strong>Categories</strong> identifies the categories driving the TCO data basis.</li>
+<li><strong>Trend</strong> compares monthly values including cost/km and coverage.</li>
+<li><strong>Comparisons</strong> contrasts current period, direct predecessor and prior year and evaluates changes using the administrative materiality threshold.</li>
+<li><strong>Bookings</strong> lists included entries with vehicle, supplier, category and allocated amount.</li>
+<li><strong>Data quality</strong> explains missing boundaries, unassigned mileage and incomplete fixed-cost periods.</li>
+</ul>
+<p><img alt="Cost by category" src="../../assets/screenshots/cost-analysis-categories.png" /></p>
+<p><img alt="Monthly cost trend" src="../../assets/screenshots/cost-analysis-trend.png" /></p>
+<p><img alt="Period and prior-year comparison" src="../../assets/screenshots/cost-analysis-comparisons.png" /></p>
+<p><img alt="Included bookings" src="../../assets/screenshots/cost-analysis-bookings.png" /></p>
+<p><img alt="Data-quality and coverage review" src="../../assets/screenshots/cost-analysis-quality.png" /></p>
 <h2 id="stimulsoft">Stimulsoft<a class="headerlink" href="#stimulsoft" title="Permanent link">&para;</a></h2>
 <p><strong>View report</strong> opens the local Reports.JS viewer. Export requires <code>finance.reporting.export</code>. Users with <code>reporting.templates.write</code> can clone a system template and edit the copy. System templates remain immutable.</p>
+<p><img alt="Report-template management" src="../../assets/screenshots/report-templates.png" /></p>
 <p>The Reports.JS runtime is loaded from <code>assets/stimulsoft</code> or <code>STIMULSOFT_ASSET_DIR</code>. Licensing is read only from <code>STIMULSOFT_LICENSE_KEY</code> or <code>STIMULSOFT_LICENSE_FILE</code>.</p>
 <p>The report host listens on <code>127.0.0.1</code> only and uses a random session token for each opened report.</p>
 

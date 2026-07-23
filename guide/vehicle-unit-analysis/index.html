@@ -16,7 +16,7 @@
         <link rel="prev" href="../drivercard-analysis/">
       
       
-        <link rel="next" href="../foreign-invoices/">
+        <link rel="next" href="../license-checks/">
       
       
         
@@ -668,6 +668,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driving-licence checks and RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle costs and credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../foreign-invoices/" class="md-nav__link">
         
   
@@ -676,6 +732,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-invoice and XRechnung import
   
 
     
@@ -1444,6 +1528,7 @@
 
 <h1 id="vehicle-unit-analysis">Vehicle-unit analysis<a class="headerlink" href="#vehicle-unit-analysis" title="Permanent link">&para;</a></h1>
 <p>Vehicle-unit analysis uses one selected M file as its base. Drivers, slots and card sessions remain separate; C files supplement comparison only within proven card insertion periods.</p>
+<p>This makes the single-file view archive-scoped. <strong>Vehicle record &gt; Day/Week/Violations</strong>, by contrast, uses all valid M archives assigned to the VIN. Check the heading's record/archive context before comparing periods or totals.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p><img alt="Vehicle-unit overview" src="../../assets/screenshots/vehicle-unit-overview.png" />
 <em>Figure: Generation, signature, vehicle identity, data range and parser warnings.</em></p>
@@ -1460,10 +1545,12 @@
 <p><img alt="M-file day chart" src="../../assets/screenshots/vehicle-unit-daily-chart.png" />
 <em>Figure: Driver groups, insertion period and activity tracks for one UTC day.</em></p>
 <p>Navigation depends only on the date. Driver and card appear in group headings. Tooltips on unknown-card groups explain their evidence basis.</p>
+<p>Date, arrows and <strong>Go to</strong> control the UTC day. Each driver group shows card insertion and an activity track; colour and label distinguish driving, work, availability and rest/break. Hover details identify start, end, duration, slot, card and C/M availability. Unknown-card intervals remain a separate visible group.</p>
 <h2 id="week-chart">Week chart<a class="headerlink" href="#week-chart" title="Permanent link">&para;</a></h2>
 <p><img alt="M-file week chart" src="../../assets/screenshots/vehicle-unit-weekly-chart.png" />
 <em>Figure: One ISO week with separate driver panels.</em></p>
 <p>Each calendar week appears once. Multiple sessions for the same driver are combined in that weekly panel; driver changes and team drivers stay separate.</p>
+<p>Use arrows to move between ISO weeks and review each day's coverage first. Weekly totals apply to the visible range and record/archive context. Missing data is neither rest nor zero activity.</p>
 <h2 id="events-and-faults">Events and faults<a class="headerlink" href="#events-and-faults" title="Permanent link">&para;</a></h2>
 <p><img alt="M-file events and faults" src="../../assets/screenshots/vehicle-unit-events-faults.png" />
 <em>Figure: Records with code, description, start, end and section.</em></p>
@@ -1490,6 +1577,7 @@
 <p><img alt="M-file technical compliance pre-check" src="../../assets/screenshots/vehicle-unit-violations.png" />
 <em>Figure: Per-driver pre-check and data-coverage notes.</em></p>
 <p><strong>Selected M file</strong> checks trips on this vehicle only. <strong>Full driver history</strong> may supplement other trusted C/M archives. Unknown-card intervals are reported as notes, not personal violations.</p>
+<p>Select period and rule modules and recalculate after changes. Every finding identifies ruleset/version, legal basis, assessment period, actual/target value, deviation, calculation basis and severity. Optional BALM guidance is not a fine decision. Review coverage, unknown-card intervals and notices about national exemptions, AETR or Article 12 before assessing a result.</p>
 
 
 

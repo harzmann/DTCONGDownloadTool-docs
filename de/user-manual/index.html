@@ -655,6 +655,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#erechnungxrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E‑Rechnung/XRechnung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -844,6 +855,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/foreign-invoices/" class="md-nav__link">
         
   
@@ -852,6 +919,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
   
 
     
@@ -1741,6 +1836,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#erechnungxrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E‑Rechnung/XRechnung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1802,7 +1908,11 @@
 <li><a href="../guide/tachodata-overviews/">Tachodaten-Auswertung Personal und Fuhrpark</a></li>
 <li><a href="../guide/drivercard-analysis/">Fahrerkarten-Auswertung – alle Tabs</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Massenspeicher-Auswertung – alle Tabs</a></li>
+<li><a href="../guide/license-checks/">Führerscheinkontrolle und RFID/NFC</a></li>
+<li><a href="../guide/vehicle-costs/">Fahrzeugkosten und Gutschriften</a></li>
 <li><a href="../guide/foreign-invoices/">Fremdrechnungen – Workflow und alle Tabs</a></li>
+<li><a href="../guide/einvoice-import/">E‑Rechnung und XRechnung importieren</a></li>
+<li><a href="../guide/cost-reporting/">Kostenanalyse und Reporting</a></li>
 <li><a href="../guide/position-maps/">Positionskarten für C- und M-Daten</a></li>
 </ul>
 <p>Diese Kapitel verwenden eine ausschließlich temporär erzeugte, anonymisierte Kopie der Entwicklungsdatenbank. Aktivitäten, Zeitangaben, Beträge und freigegebene Koordinaten bleiben fachlich repräsentativ; Personen-, Karten- und Fahrzeugidentitäten wurden deterministisch ersetzt.</p>
@@ -1979,6 +2089,7 @@
 </ul>
 <p>Das Auslesedatum stammt aus einem gültigen <code>C_YYYYMMDD_HHmm...</code>-/<code>M_YYYYMMDD_HHmm...</code>-Namen, ersatzweise aus UTC-Quelldatei-, Download- und Archivzeit. Automatische Fälligkeiten sind nicht manuell verschieb-/erledigbar. Die Tachographenkalibrierung bleibt eine separate Fahrzeugfälligkeit.</p>
 <h2 id="10-fuhrerscheinkontrolle-und-rfid">10. Führerscheinkontrolle und RFID<a class="headerlink" href="#10-fuhrerscheinkontrolle-und-rfid" title="Permanent link">&para;</a></h2>
+<p>Die vollständige Bedienung von FSK-Regel, UID-Zuordnung, PC/SC-Kontrolle, automatischem Folgetermin, Terminal-CSV und Klärfällen beschreibt <a href="../guide/license-checks/">Führerscheinkontrolle und RFID/NFC</a>. Eine systemverwaltete FSK-Fälligkeit wird ausschließlich durch eine erfolgreiche Kontrolle erledigt; ein unbekannter oder einer anderen Person zugeordneter Chip erzeugt keinen Erfolgseintrag.</p>
 <p>Der Personalbereich bietet FSK-Auswertung, Kontrollhistorie und RFID-Prüfliste. Das Standardintervall beträgt 28 Tage. Erfolgreiche PC/SC-, Terminal-CSV- und aufgelöste mobile Kontrollen aktualisieren über denselben Service genau eine verwaltete FSK-Fälligkeit. Die RFID-Zuordnung allein ist keine Kontrolle.</p>
 <p><img alt="Auswertung der Führerscheinkontrollen" src="../assets/screenshots/license-check-evaluation.png" />
 <em>Abbildung: Termin- und Statusauswertung der Führerscheinkontrollen.</em></p>
@@ -1990,7 +2101,7 @@
 <p>Standardregeln umfassen Wocheninformation, tägliche Erinnerung ab zehn Tagen, dringende Erinnerung ab drei Tagen, Überfälligwarnung und täglichen Verantwortlichenbericht. Regeln können mit Berechtigung vorgeprüft oder manuell versendet werden.</p>
 <h2 id="12-kosten-gutschriften-und-fremdrechnungen">12. Kosten, Gutschriften und Fremdrechnungen<a class="headerlink" href="#12-kosten-gutschriften-und-fremdrechnungen" title="Permanent link">&para;</a></h2>
 <h3 id="direkte-fahrzeugkosten">Direkte Fahrzeugkosten<a class="headerlink" href="#direkte-fahrzeugkosten" title="Permanent link">&para;</a></h3>
-<p>Öffnen Sie Fahrzeugakte → <strong>Kosten/Gutschriften</strong>. Wählen Sie Kostenart und Typ und erfassen Sie Belegdatum, Netto und Steuer. Beträge werden centgenau gespeichert und rechtsbündig dargestellt. Direkte Positionen können je Richtlinie auch ohne Originalbeleg geprüft/gebucht werden.</p>
+<p>Öffnen Sie Fahrzeugakte → <strong>Kosten/Gutschriften</strong>. Wählen Sie Kostenart und Typ und erfassen Sie Belegdatum, Gültigkeitszeitraum, Netto und Steuer. <strong>Variabel</strong> ordnet den vollständigen Betrag dem Belegdatum zu; fixe Positionen werden taggenau über ihren vollständigen Gültigkeitszeitraum verteilt. Beträge werden centgenau gespeichert. Die Schritte von Entwurf über Prüfung und Buchung bis Storno oder Gutschrift beschreibt <a href="../guide/vehicle-costs/">Fahrzeugkosten und Gutschriften</a>.</p>
 <p><img alt="Lieferantenstammliste" src="../assets/screenshots/suppliers.png" />
 <em>Abbildung: Lieferantenstammdaten für Finanzbelege.</em></p>
 <h3 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h3>
@@ -2005,6 +2116,8 @@
     E --&gt; F[Buchen]
     F --&gt; G[FiBu-Export per REST oder CSV/ZIP]</code></pre>
 <p>Die Statuszeile vergleicht Gesamtbrutto, Splitbetrag und Differenz. Null ist grün; jede Centabweichung rot und sperrt die Prüfung. Rechnungspositionen übernehmen Belegdatum als Beleg-/Gültigkeitsdatum und sind immer variabel. Gebuchte Datensätze sind unveränderlich; Korrekturen erfolgen per Storno oder verknüpfter Gutschrift.</p>
+<h3 id="erechnungxrechnung">E‑Rechnung/XRechnung<a class="headerlink" href="#erechnungxrechnung" title="Permanent link">&para;</a></h3>
+<p><strong>Fuhrpark → XRechnung importieren</strong> führt durch KoSIT-Validierung, Rechnungs- und Lieferantendaten, Fahrzeug-/Kostenartzuordnung, Positionssplits und Summenabgleich. Erst die bestätigte Übernahme legt atomar einen Fremdrechnungsentwurf und die lokal verifizierten Original-, XML- und Prüfberichtobjekte an. Einzelheiten enthält <a href="../guide/einvoice-import/">E‑Rechnung und XRechnung importieren</a>.</p>
 <h2 id="13-audit-berichte-und-logs">13. Audit, Berichte und Logs<a class="headerlink" href="#13-audit-berichte-und-logs" title="Permanent link">&para;</a></h2>
 <p>Das globale Audit unter <strong>Administration → Audit</strong> vereinigt Geräte-, Tachodaten- und Fuhrparkereignisse. Filter stehen nach Datum, Benutzer, Aktion und Text zur Verfügung. Doppelklick öffnet das aktuell zugehörige Fachobjekt, wenn die stabile ID auflösbar ist. Navigation wird nicht auditiert.</p>
 <p><img alt="Globales Audit-Log" src="../assets/screenshots/audit.png" />
