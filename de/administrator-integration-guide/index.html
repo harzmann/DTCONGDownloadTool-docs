@@ -1838,7 +1838,7 @@
 
 <h1 id="administratoren-und-integratorenhandbuch">Administratoren- und Integratorenhandbuch<a class="headerlink" href="#administratoren-und-integratorenhandbuch" title="Permanent link">&para;</a></h1>
 <h2 id="1-deploymentmodell">1. Deploymentmodell<a class="headerlink" href="#1-deploymentmodell" title="Permanent link">&para;</a></h2>
-<p>FLEET Mira ist eine Windows-Desktopanwendung mit Hintergrundscheduler. Das Anwendungsverzeichnis enthält Python-Module beziehungsweise den PyInstaller-Build, Assets und Übersetzungen. Veränderliche Daten werden über <code>config.json</code> referenziert:</p>
+<p>FLEET Mira Basic/Pro ist eine lokal installierte Windows-10/11-Desktopanwendung mit Hintergrundscheduler. Windows Server sowie RDP-, Citrix- und andere Terminalserversitzungen werden durch Setup und Laufzeit blockiert. Das Anwendungsverzeichnis enthält Python-Module beziehungsweise den PyInstaller-Build, Assets und Übersetzungen. Veränderliche Daten werden über <code>config.json</code> referenziert:</p>
 <table>
 <thead>
 <tr>
@@ -1849,7 +1849,7 @@
 <tbody>
 <tr>
 <td>SQLite-Datenbank</td>
-<td><code>state/archive.db</code>; Schema und Fachmetadaten</td>
+<td><code>state/archive.db</code>; ausschließlich festes lokales Laufwerk, keine UNC-/Netz-/Wechseldatenträger</td>
 </tr>
 <tr>
 <td>Tachodatenarchiv</td>
@@ -1869,7 +1869,7 @@
 </tr>
 </tbody>
 </table>
-<p>Verwenden Sie im Produktivbetrieb absolute Dienstpfade und vergeben Sie Schreibrechte nur an die Anwendungsidentität. Antivirus-Ausnahmen dürfen nur eng begrenzt und nachgewiesen sein; heruntergeladene Originale dürfen nicht pauschal von der Prüfung ausgeschlossen werden.</p>
+<p>Der SQLite-Pfad wird beim Start und beim Speichern der Einstellungen kanonisch geprüft. Gemappte Netzlaufwerke und auf Netzwerkziele verweisende Reparse-Pfade sind auch dann unzulässig, wenn sie wie lokale Laufwerksbuchstaben aussehen. Bei einer Sperre bleibt nur der Rettungsdialog für eine lokal geprüfte SQLite-Sicherung verfügbar. Verwenden Sie im Produktivbetrieb absolute Dienstpfade und vergeben Sie Schreibrechte nur an die Anwendungsidentität.</p>
 <h3 id="erstinstallation">Erstinstallation<a class="headerlink" href="#erstinstallation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Build und bereitgestellte leere Deploymentdatenbank ausrollen.</li>
