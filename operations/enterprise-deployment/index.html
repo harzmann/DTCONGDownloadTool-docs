@@ -1,42 +1,44 @@
 
 <!doctype html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-deployment/">
       
       
-        <link rel="prev" href="../enterprise-open-points/">
+        <link rel="prev" href="../enterprise-installation-guide/">
       
+      
+        <link rel="next" href="../enterprise-open-points/">
       
       
         
-          <link rel="alternate" href="../../../operations/documentation-deployment/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="de">
+          <link rel="alternate" href="../../de/operations/enterprise-deployment/" hreflang="de">
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Dokumentations-Deployment - FLEET Mira Dokumentation</title>
+        <title>Enterprise deployment - FLEET Mira Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,9 +57,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#dokumentations-build-und-deployment" class="md-skip">
-          Zum Inhalt
+        <a href="#enterprise-deployment" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -97,8 +99,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +114,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            FLEET Mira Dokumentation
+            FLEET Mira Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dokumentations-Deployment
+              Enterprise deployment
             
           </span>
         </div>
@@ -158,20 +160,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../operations/documentation-deployment/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="de" class="md-select__link">
+            <a href="../../de/operations/enterprise-deployment/" hreflang="de" class="md-select__link">
               Deutsch
             </a>
           </li>
@@ -192,16 +194,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Suche">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -214,7 +216,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suche wird initialisiert
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -250,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+    <a href="../.." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    FLEET Mira Dokumentation
+    FLEET Mira Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -268,14 +270,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Start
+    Home
   
 
     
@@ -302,7 +304,7 @@
   <span class="md-ellipsis">
     
   
-    Produktübersicht
+    Product overview
   
 
     
@@ -329,7 +331,7 @@
   <span class="md-ellipsis">
     
   
-    Benutzerhandbuch
+    User manual
   
 
     
@@ -372,7 +374,7 @@
   <span class="md-ellipsis">
     
   
-    Detaillierte Anleitungen
+    Detailed guides
   
 
     
@@ -388,7 +390,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Detaillierte Anleitungen
+    Detailed guides
   
 
           </label>
@@ -408,7 +410,7 @@
   <span class="md-ellipsis">
     
   
-    Tachodaten-Auswertungen
+    Tachodata evaluations
   
 
     
@@ -436,7 +438,7 @@
   <span class="md-ellipsis">
     
   
-    Fahrerkarten-Auswertung
+    Driver-card analysis
   
 
     
@@ -464,7 +466,7 @@
   <span class="md-ellipsis">
     
   
-    Massenspeicher-Auswertung
+    Vehicle-unit analysis
   
 
     
@@ -492,7 +494,7 @@
   <span class="md-ellipsis">
     
   
-    Führerscheinkontrolle und RFID/NFC
+    Driving-licence checks and RFID/NFC
   
 
     
@@ -520,7 +522,7 @@
   <span class="md-ellipsis">
     
   
-    Fahrzeugkosten und Gutschriften
+    Vehicle costs and credits
   
 
     
@@ -548,7 +550,7 @@
   <span class="md-ellipsis">
     
   
-    Fremdrechnungen
+    Foreign invoices
   
 
     
@@ -576,7 +578,7 @@
   <span class="md-ellipsis">
     
   
-    E-Rechnung und XRechnung importieren
+    E-invoice and XRechnung import
   
 
     
@@ -604,7 +606,7 @@
   <span class="md-ellipsis">
     
   
-    Kostenanalyse und Reporting
+    Cost analysis and reporting
   
 
     
@@ -632,7 +634,7 @@
   <span class="md-ellipsis">
     
   
-    Verstoß-Dashboard und Fahrerbelehrungen
+    Violation dashboard and driver instructions
   
 
     
@@ -660,7 +662,7 @@
   <span class="md-ellipsis">
     
   
-    Berichts-Dashboard
+    Report dashboard
   
 
     
@@ -688,7 +690,7 @@
   <span class="md-ellipsis">
     
   
-    Positionskarten
+    Position maps
   
 
     
@@ -723,7 +725,7 @@
   <span class="md-ellipsis">
     
   
-    Administratoren- und Integratorenhandbuch
+    Administrator and integrator guide
   
 
     
@@ -766,7 +768,7 @@
   <span class="md-ellipsis">
     
   
-    Schnittstellen
+    APIs
   
 
     
@@ -782,7 +784,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Schnittstellen
+    APIs
   
 
           </label>
@@ -830,7 +832,7 @@
   <span class="md-ellipsis">
     
   
-    FiBu REST API
+    Accounting REST API
   
 
     
@@ -881,7 +883,7 @@
   <span class="md-ellipsis">
     
   
-    Integrationen
+    Integrations
   
 
     
@@ -897,7 +899,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Integrationen
+    Integrations
   
 
           </label>
@@ -917,7 +919,7 @@
   <span class="md-ellipsis">
     
   
-    FiBu CSV/ZIP
+    Accounting CSV/ZIP
   
 
     
@@ -945,7 +947,7 @@
   <span class="md-ellipsis">
     
   
-    Tachographen-Parser
+    Tachograph parser
   
 
     
@@ -996,7 +998,7 @@
   <span class="md-ellipsis">
     
   
-    Architektur
+    Architecture
   
 
     
@@ -1012,7 +1014,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architektur
+    Architecture
   
 
           </label>
@@ -1032,7 +1034,7 @@
   <span class="md-ellipsis">
     
   
-    Datenbankschema V2
+    Database schema V2
   
 
     
@@ -1060,7 +1062,7 @@
   <span class="md-ellipsis">
     
   
-    Tachographendaten: Speicherung und Zugriff
+    Tachograph data storage and access
   
 
     
@@ -1088,7 +1090,7 @@
   <span class="md-ellipsis">
     
   
-    Asynchrone UI und Hintergrunddienste
+    Asynchronous UI and background services
   
 
     
@@ -1141,7 +1143,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Operations
   
 
     
@@ -1157,7 +1159,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Betrieb
+    Operations
   
 
           </label>
@@ -1177,7 +1179,7 @@
   <span class="md-ellipsis">
     
   
-    Archivierung, Backup und Wiederherstellung
+    Archiving, backup and restore
   
 
     
@@ -1205,63 +1207,7 @@
   <span class="md-ellipsis">
     
   
-    Enterprise-Installationsanleitung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-deployment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Bereitstellung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-open-points/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Offene Enterprise-Punkte
+    Enterprise installation guide
   
 
     
@@ -1298,7 +1244,7 @@
   <span class="md-ellipsis">
     
   
-    Dokumentations-Deployment
+    Enterprise deployment
   
 
     
@@ -1316,7 +1262,7 @@
   <span class="md-ellipsis">
     
   
-    Dokumentations-Deployment
+    Enterprise deployment
   
 
     
@@ -1328,7 +1274,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1337,15 +1283,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
+  <a href="#installation-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Quellstruktur
+        Installation packages
       
     </span>
   </a>
@@ -1353,10 +1299,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
+  <a href="#first-application-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lokale Vorschau
+        First application start
       
     </span>
   </a>
@@ -1364,10 +1310,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
+  <a href="#migrating-sqlite-to-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Strikter Build
+        Migrating SQLite to PostgreSQL
       
     </span>
   </a>
@@ -1375,54 +1321,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
+  <a href="#operations-and-backup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Screenshots erzeugen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
+        Operations and backup
       
     </span>
   </a>
@@ -1433,6 +1335,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-open-points/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise open items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1458,7 +1416,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1467,15 +1425,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
+  <a href="#installation-packages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Quellstruktur
+        Installation packages
       
     </span>
   </a>
@@ -1483,10 +1441,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
+  <a href="#first-application-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lokale Vorschau
+        First application start
       
     </span>
   </a>
@@ -1494,10 +1452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
+  <a href="#migrating-sqlite-to-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Strikter Build
+        Migrating SQLite to PostgreSQL
       
     </span>
   </a>
@@ -1505,54 +1463,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
+  <a href="#operations-and-backup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Screenshots erzeugen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
+        Operations and backup
       
     </span>
   </a>
@@ -1576,71 +1490,44 @@
 
 
 
-<h1 id="dokumentations-build-und-deployment">Dokumentations-Build und Deployment<a class="headerlink" href="#dokumentations-build-und-deployment" title="Permanent link">&para;</a></h1>
-<h2 id="1-quellstruktur">1. Quellstruktur<a class="headerlink" href="#1-quellstruktur" title="Permanent link">&para;</a></h2>
-<p>Englisch ist Standardsprache der Website; Deutsch spiegelt jede Seite auf demselben relativen Pfad.</p>
-<div class="highlight"><pre><span></span><code>docs/
-  en/...
-  en/assets/screenshots/...
-  de/...
-  de/assets/screenshots/...
-  assets/screenshot-manifest.json
-</code></pre></div>
-<p><code>README.md</code> ist Englisch, <code>README_DE.md</code> Deutsch. Markdown/MkDocs ist verbindliche Quelle. Generiertes <code>site/</code> wird nicht manuell bearbeitet.</p>
-<h2 id="2-lokale-vorschau">2. Lokale Vorschau<a class="headerlink" href="#2-lokale-vorschau" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv-docs</span>
-<span class="p">.\.</span><span class="n">venv-docs</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">docs-requirements</span><span class="p">.</span><span class="n">txt</span>
-<span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">verify_documentation</span><span class="p">.</span><span class="n">py</span>
-<span class="n">mkdocs</span> <span class="n">serve</span>
-</code></pre></div>
-<p>Englisch liegt unter <code>/</code>, Deutsch unter <code>/de/</code>. Der Material-Sprachumschalter bleibt auf der gleichen relativen Seite.</p>
-<h2 id="3-strikter-build">3. Strikter Build<a class="headerlink" href="#3-strikter-build" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">mkdocs</span> <span class="n">build</span> <span class="p">-</span><span class="n">-strict</span> <span class="p">-</span><span class="n">-clean</span>
-</code></pre></div>
-<p><code>mkdocs-static-i18n</code> nutzt Ordnerstruktur ohne Fallback; ein fehlendes deutsches Gegenstück zeigt daher nicht still Englisch. <code>mkdocs-redirects</code> erhält frühere flache deutsche Dokumentations-URLs.</p>
-<h2 id="4-screenshots-erzeugen">4. Screenshots erzeugen<a class="headerlink" href="#4-screenshots-erzeugen" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">scripts</span><span class="p">\</span><span class="n">capture_documentation_screenshots</span><span class="p">.</span><span class="n">py</span>
-</code></pre></div>
-<p>Das Werkzeug verwendet isolierte temporäre Konfiguration/Datenbank, deaktiviert externe Dienste und schreibt stabile semantische PNG-Namen für <code>en-GB</code>/<code>de-DE</code>. Niemals auf <code>state/archive.db</code> oder produktive Cloud-/Quellenzugänge zeigen.</p>
-<p>Das Manifest protokolliert Locale, Programmpunkt, Datei und Profil. Visuell sind das Branding von FLEET Mira, nicht abgeschnittene Inhalte und das Fehlen personenbezogener Daten, produktiver Endpunkte und Zugangsdaten zu prüfen.</p>
-<h2 id="5-prufskript">5. Prüfskript<a class="headerlink" href="#5-prufskript" title="Permanent link">&para;</a></h2>
-<p><code>scripts/verify_documentation.py</code> prüft:</p>
+<h1 id="enterprise-deployment">Enterprise deployment<a class="headerlink" href="#enterprise-deployment" title="Permanent link">&para;</a></h1>
+<p>FLEET Mira Enterprise is functionally based on Pro and uses PostgreSQL instead of a local SQLite file. The application supports Windows 10/11, Windows Server 20xx, and RDP, Citrix, or comparable terminal-server environments. Basic and Pro remain separate and continue to require a local Windows 10/11 console session and local SQLite database.</p>
+<p>The complete client/server and all-in-one terminal-server procedures are in the <a href="../enterprise-installation-guide/">administrator installation guide</a>. Remaining work is prioritised under <a href="../enterprise-open-points/">Enterprise open items</a>.</p>
+<h2 id="installation-packages">Installation packages<a class="headerlink" href="#installation-packages" title="Permanent link">&para;</a></h2>
+<p>The Enterprise build creates two separate packages:</p>
 <ul>
-<li>exakte Pfadparität DE/EN;</li>
-<li>vorhandene referenzierte Bilder;</li>
-<li>gültige Screenshotmanifestdateien;</li>
-<li>keine Windows-Benutzerpfade/typischen Secretmuster;</li>
-<li>keine unerlaubte sichtbare Legacy-Produktbezeichnung;</li>
-<li>README-Sprachlinks und Pflichtseiten.</li>
+<li><code>FLEET-Mira-Enterprise-&lt;Version&gt;-Setup-x64.exe</code> installs the application and Enterprise installation marker;</li>
+<li><code>FLEET-Mira-PostgreSQL-Server-&lt;Version&gt;-Setup-x64.exe</code> embeds the official PostgreSQL Windows installer and provisions a local service, the empty <code>mira</code> database, and the <code>mira_app</code> login.</li>
 </ul>
-<p>Das Skript ist Leitplanke, ersetzt keine inhaltliche/visuelle Prüfung.</p>
-<h2 id="6-ci-publikation">6. CI-Publikation<a class="headerlink" href="#6-ci-publikation" title="Permanent link">&para;</a></h2>
-<p><code>.github/workflows/publish-docs.yml</code> installiert Dokumentationsabhängigkeiten, führt Verifikation und <code>mkdocs build --strict --clean</code> aus, checkt das öffentliche technische Dokumentationsrepository aus und ersetzt dessen generierte Inhalte.</p>
-<p><code>DOCS_DEPLOY_TOKEN</code> benötigt nur Schreibrecht am Zielrepository. Pull Requests sollen bauen, aber ohne vertrauenswürdigen Tokenkontext nicht veröffentlichen.</p>
-<p>Der Zielrepositoryname darf aus Kompatibilität die technische Altkennung <code>DTCONGDownloadTool-docs</code> behalten; Seitentitel/Inhalt heißen FLEET Mira.</p>
-<h2 id="7-autorenregeln">7. Autorenregeln<a class="headerlink" href="#7-autorenregeln" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Englisch/Deutsch in derselben Änderung aktualisieren.</li>
-<li>Identische relative Seiten-/Bildpfade je Sprache.</li>
-<li>Nur implementiertes Verhalten beschreiben.</li>
-<li>Stabile IDs/Status/API-Felder in Codeformat unverändert.</li>
-<li>Sichtbar FLEET Mira; DLTNG nur in erklärten Legacy-Kompatibilitätsstellen.</li>
-<li>Mermaidbeschriftung, Captions und Alttexte lokalisieren.</li>
-<li>Keine produktiven DDD, DB, Belege, Logs, Tokens, Servernamen oder Benutzerpfade committen.</li>
-<li>Nach sichtbarer UI-/Navigationsänderung Screenshots neu erzeugen.</li>
-</ul>
-<h2 id="8-releasecheckliste">8. Releasecheckliste<a class="headerlink" href="#8-releasecheckliste" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Dokumentationsprüfung erfolgreich;</li>
-<li>[ ] strikter MkDocs-Build erfolgreich;</li>
-<li>[ ] Sprachumschalter öffnet Gegenstück;</li>
-<li>[ ] alte flache URLs leiten weiter;</li>
-<li>[ ] Screenshots in beiden Locales;</li>
-<li>[ ] README/Navigation passen zum Release;</li>
-<li>[ ] APIs/Datenverträge passen zu Code/Version;</li>
-<li>[ ] keine Secrets/Betriebsdaten im Build.</li>
-</ul>
+<p>Run the PostgreSQL Server setup as administrator on the intended Windows Server. The wizard asks for the port, PostgreSQL administrator password, and a password of at least twelve characters for <code>mira_app</code>. Passwords are not written to a configuration file.</p>
+<p>For a reproducible build:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">build_enterprise_release</span><span class="p">.</span><span class="n">ps1</span> <span class="p">`</span>
+  <span class="n">-PostgreSQLInstaller</span> <span class="n">C</span><span class="p">:\</span><span class="n">Install</span><span class="p">\</span><span class="n">postgresql-windows-x64</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div>
+<p>The input must be a verified official PostgreSQL x64 installer. The resulting server package is standalone.</p>
+<h2 id="first-application-start">First application start<a class="headerlink" href="#first-application-start" title="Permanent link">&para;</a></h2>
+<p>Enterprise opens the PostgreSQL connection wizard on first start. Enter:</p>
+<ol>
+<li>server name or IP address;</li>
+<li>port, normally <code>5432</code>;</li>
+<li>database <code>mira</code>;</li>
+<li>user <code>mira_app</code>;</li>
+<li>password and the required SSL mode.</li>
+</ol>
+<p><strong>Test connection</strong> verifies the server version, database, and user. If the database is empty, the wizard creates the current Mira schema transactionally. A non-empty foreign database is rejected. After successful validation, Enterprise stores the settings below <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>; Windows DPAPI protects the password.</p>
+<p>For a remote database server, configure the firewall, <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS, and TLS according to customer policy. <code>verify-full</code> with a trusted server certificate chain is recommended for production networks.</p>
+<h2 id="migrating-sqlite-to-postgresql">Migrating SQLite to PostgreSQL<a class="headerlink" href="#migrating-sqlite-to-postgresql" title="Permanent link">&para;</a></h2>
+<p>Open <strong>Enterprise → Migrate SQLite database</strong>. The wizard:</p>
+<ol>
+<li>opens the source read-only;</li>
+<li>runs <code>PRAGMA quick_check</code> and counts tables and rows;</li>
+<li>requires explicit confirmation before replacing the PostgreSQL Mira schema;</li>
+<li>rebuilds tables, keys, and indexes and copies data in one PostgreSQL transaction;</li>
+<li>records the source path, SHA-256 digest, time, and object counts.</li>
+</ol>
+<p>PostgreSQL is rolled back on failure and the SQLite source remains unchanged. Restart the application after a successful migration.</p>
+<h2 id="operations-and-backup">Operations and backup<a class="headerlink" href="#operations-and-backup" title="Permanent link">&para;</a></h2>
+<p>The Basic/Pro SQLite snapshot and login restore functions are disabled in Enterprise. Back up PostgreSQL with operational PostgreSQL tools such as <code>pg_dump</code> and <code>pg_restore</code> and a monitored server-side backup policy. Application archives and external document stores must be protected separately according to their retention policies.</p>
 
 
 
@@ -1664,7 +1551,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Zurück zum Seitenanfang
+  Back to top
 </button>
         
       </main>
@@ -1700,12 +1587,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../../javascripts/image-lightbox.js"></script>
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

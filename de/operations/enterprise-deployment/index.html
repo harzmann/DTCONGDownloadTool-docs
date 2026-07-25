@@ -10,15 +10,17 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-deployment/">
       
       
-        <link rel="prev" href="../enterprise-open-points/">
+        <link rel="prev" href="../enterprise-installation-guide/">
       
+      
+        <link rel="next" href="../enterprise-open-points/">
       
       
         
-          <link rel="alternate" href="../../../operations/documentation-deployment/" hreflang="en">
+          <link rel="alternate" href="../../../operations/enterprise-deployment/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="de">
         
@@ -29,7 +31,7 @@
     
     
       
-        <title>Dokumentations-Deployment - FLEET Mira Dokumentation</title>
+        <title>Enterprise-Bereitstellung - FLEET Mira Dokumentation</title>
       
     
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dokumentations-build-und-deployment" class="md-skip">
+        <a href="#enterprise-bereitstellung" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dokumentations-Deployment
+              Enterprise-Bereitstellung
             
           </span>
         </div>
@@ -165,7 +167,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../operations/documentation-deployment/" hreflang="en" class="md-select__link">
+            <a href="../../../operations/enterprise-deployment/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -1223,10 +1225,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../enterprise-deployment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Bereitstellung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1242,6 +1271,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installationspakete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installationspakete
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erster-applikationsstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Erster Applikationsstart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-nach-postgresql-migrieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite nach PostgreSQL migrieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#betrieb-und-sicherung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Betrieb und Sicherung
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1279,37 +1372,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dokumentations-Deployment
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../documentation-deployment/" class="md-nav__link">
         
   
   
@@ -1325,114 +1391,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Quellstruktur
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Lokale Vorschau
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Strikter Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Screenshots erzeugen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1472,10 +1430,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
+  <a href="#installationspakete" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Quellstruktur
+        Installationspakete
       
     </span>
   </a>
@@ -1483,10 +1441,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
+  <a href="#erster-applikationsstart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lokale Vorschau
+        Erster Applikationsstart
       
     </span>
   </a>
@@ -1494,10 +1452,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
+  <a href="#sqlite-nach-postgresql-migrieren" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Strikter Build
+        SQLite nach PostgreSQL migrieren
       
     </span>
   </a>
@@ -1505,54 +1463,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
+  <a href="#betrieb-und-sicherung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Screenshots erzeugen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
+        Betrieb und Sicherung
       
     </span>
   </a>
@@ -1576,71 +1490,44 @@
 
 
 
-<h1 id="dokumentations-build-und-deployment">Dokumentations-Build und Deployment<a class="headerlink" href="#dokumentations-build-und-deployment" title="Permanent link">&para;</a></h1>
-<h2 id="1-quellstruktur">1. Quellstruktur<a class="headerlink" href="#1-quellstruktur" title="Permanent link">&para;</a></h2>
-<p>Englisch ist Standardsprache der Website; Deutsch spiegelt jede Seite auf demselben relativen Pfad.</p>
-<div class="highlight"><pre><span></span><code>docs/
-  en/...
-  en/assets/screenshots/...
-  de/...
-  de/assets/screenshots/...
-  assets/screenshot-manifest.json
-</code></pre></div>
-<p><code>README.md</code> ist Englisch, <code>README_DE.md</code> Deutsch. Markdown/MkDocs ist verbindliche Quelle. Generiertes <code>site/</code> wird nicht manuell bearbeitet.</p>
-<h2 id="2-lokale-vorschau">2. Lokale Vorschau<a class="headerlink" href="#2-lokale-vorschau" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv-docs</span>
-<span class="p">.\.</span><span class="n">venv-docs</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">docs-requirements</span><span class="p">.</span><span class="n">txt</span>
-<span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">verify_documentation</span><span class="p">.</span><span class="n">py</span>
-<span class="n">mkdocs</span> <span class="n">serve</span>
-</code></pre></div>
-<p>Englisch liegt unter <code>/</code>, Deutsch unter <code>/de/</code>. Der Material-Sprachumschalter bleibt auf der gleichen relativen Seite.</p>
-<h2 id="3-strikter-build">3. Strikter Build<a class="headerlink" href="#3-strikter-build" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">mkdocs</span> <span class="n">build</span> <span class="p">-</span><span class="n">-strict</span> <span class="p">-</span><span class="n">-clean</span>
-</code></pre></div>
-<p><code>mkdocs-static-i18n</code> nutzt Ordnerstruktur ohne Fallback; ein fehlendes deutsches Gegenstück zeigt daher nicht still Englisch. <code>mkdocs-redirects</code> erhält frühere flache deutsche Dokumentations-URLs.</p>
-<h2 id="4-screenshots-erzeugen">4. Screenshots erzeugen<a class="headerlink" href="#4-screenshots-erzeugen" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">scripts</span><span class="p">\</span><span class="n">capture_documentation_screenshots</span><span class="p">.</span><span class="n">py</span>
-</code></pre></div>
-<p>Das Werkzeug verwendet isolierte temporäre Konfiguration/Datenbank, deaktiviert externe Dienste und schreibt stabile semantische PNG-Namen für <code>en-GB</code>/<code>de-DE</code>. Niemals auf <code>state/archive.db</code> oder produktive Cloud-/Quellenzugänge zeigen.</p>
-<p>Das Manifest protokolliert Locale, Programmpunkt, Datei und Profil. Visuell sind das Branding von FLEET Mira, nicht abgeschnittene Inhalte und das Fehlen personenbezogener Daten, produktiver Endpunkte und Zugangsdaten zu prüfen.</p>
-<h2 id="5-prufskript">5. Prüfskript<a class="headerlink" href="#5-prufskript" title="Permanent link">&para;</a></h2>
-<p><code>scripts/verify_documentation.py</code> prüft:</p>
+<h1 id="enterprise-bereitstellung">Enterprise-Bereitstellung<a class="headerlink" href="#enterprise-bereitstellung" title="Permanent link">&para;</a></h1>
+<p>FLEET Mira Enterprise basiert funktional auf Pro und verwendet PostgreSQL statt einer lokalen SQLite-Datei. Die Applikation darf auf Windows 10/11, Windows Server 20xx sowie in RDP-, Citrix- und vergleichbaren Terminalserverumgebungen betrieben werden. Basic und Pro bleiben davon getrennt und erlauben weiterhin nur lokale Windows-10/11-Konsolensitzungen mit lokaler SQLite-Datenbank.</p>
+<p>Die vollständigen Abläufe für Client/Server- und All-in-one-Terminalserver-Installationen stehen in der <a href="../enterprise-installation-guide/">Installationsanleitung für Administratoren</a>. Noch ausstehende Arbeiten werden unter <a href="../enterprise-open-points/">Offene Enterprise-Punkte</a> priorisiert.</p>
+<h2 id="installationspakete">Installationspakete<a class="headerlink" href="#installationspakete" title="Permanent link">&para;</a></h2>
+<p>Der Enterprise-Build erzeugt zwei getrennte Pakete:</p>
 <ul>
-<li>exakte Pfadparität DE/EN;</li>
-<li>vorhandene referenzierte Bilder;</li>
-<li>gültige Screenshotmanifestdateien;</li>
-<li>keine Windows-Benutzerpfade/typischen Secretmuster;</li>
-<li>keine unerlaubte sichtbare Legacy-Produktbezeichnung;</li>
-<li>README-Sprachlinks und Pflichtseiten.</li>
+<li><code>FLEET-Mira-Enterprise-&lt;Version&gt;-Setup-x64.exe</code> installiert die Anwendung und den Enterprise-Installationsmarker;</li>
+<li><code>FLEET-Mira-PostgreSQL-Server-&lt;Version&gt;-Setup-x64.exe</code> enthält den offiziellen PostgreSQL-Windows-Installer und richtet einen lokalen Dienst, die leere Datenbank <code>mira</code> und den Login <code>mira_app</code> ein.</li>
 </ul>
-<p>Das Skript ist Leitplanke, ersetzt keine inhaltliche/visuelle Prüfung.</p>
-<h2 id="6-ci-publikation">6. CI-Publikation<a class="headerlink" href="#6-ci-publikation" title="Permanent link">&para;</a></h2>
-<p><code>.github/workflows/publish-docs.yml</code> installiert Dokumentationsabhängigkeiten, führt Verifikation und <code>mkdocs build --strict --clean</code> aus, checkt das öffentliche technische Dokumentationsrepository aus und ersetzt dessen generierte Inhalte.</p>
-<p><code>DOCS_DEPLOY_TOKEN</code> benötigt nur Schreibrecht am Zielrepository. Pull Requests sollen bauen, aber ohne vertrauenswürdigen Tokenkontext nicht veröffentlichen.</p>
-<p>Der Zielrepositoryname darf aus Kompatibilität die technische Altkennung <code>DTCONGDownloadTool-docs</code> behalten; Seitentitel/Inhalt heißen FLEET Mira.</p>
-<h2 id="7-autorenregeln">7. Autorenregeln<a class="headerlink" href="#7-autorenregeln" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Englisch/Deutsch in derselben Änderung aktualisieren.</li>
-<li>Identische relative Seiten-/Bildpfade je Sprache.</li>
-<li>Nur implementiertes Verhalten beschreiben.</li>
-<li>Stabile IDs/Status/API-Felder in Codeformat unverändert.</li>
-<li>Sichtbar FLEET Mira; DLTNG nur in erklärten Legacy-Kompatibilitätsstellen.</li>
-<li>Mermaidbeschriftung, Captions und Alttexte lokalisieren.</li>
-<li>Keine produktiven DDD, DB, Belege, Logs, Tokens, Servernamen oder Benutzerpfade committen.</li>
-<li>Nach sichtbarer UI-/Navigationsänderung Screenshots neu erzeugen.</li>
-</ul>
-<h2 id="8-releasecheckliste">8. Releasecheckliste<a class="headerlink" href="#8-releasecheckliste" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Dokumentationsprüfung erfolgreich;</li>
-<li>[ ] strikter MkDocs-Build erfolgreich;</li>
-<li>[ ] Sprachumschalter öffnet Gegenstück;</li>
-<li>[ ] alte flache URLs leiten weiter;</li>
-<li>[ ] Screenshots in beiden Locales;</li>
-<li>[ ] README/Navigation passen zum Release;</li>
-<li>[ ] APIs/Datenverträge passen zu Code/Version;</li>
-<li>[ ] keine Secrets/Betriebsdaten im Build.</li>
-</ul>
+<p>Das PostgreSQL-Server-Setup wird auf dem vorgesehenen Windows Server mit Administratorrechten ausgeführt. Der Assistent fragt Port, PostgreSQL-Administratorkennwort und ein mindestens zwölf Zeichen langes Kennwort für <code>mira_app</code> ab. Das Kennwort wird nicht in einer Konfigurationsdatei abgelegt.</p>
+<p>Für einen reproduzierbaren Build:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">build_enterprise_release</span><span class="p">.</span><span class="n">ps1</span> <span class="p">`</span>
+  <span class="n">-PostgreSQLInstaller</span> <span class="n">C</span><span class="p">:\</span><span class="n">Install</span><span class="p">\</span><span class="n">postgresql-windows-x64</span><span class="p">.</span><span class="n">exe</span>
+</code></pre></div>
+<p>Als Eingabe ist ein geprüfter offizieller PostgreSQL-x64-Installer erforderlich. Das fertige Serverpaket ist anschließend eigenständig ausführbar.</p>
+<h2 id="erster-applikationsstart">Erster Applikationsstart<a class="headerlink" href="#erster-applikationsstart" title="Permanent link">&para;</a></h2>
+<p>Beim ersten Start öffnet Enterprise den PostgreSQL-Verbindungsassistenten. Er benötigt:</p>
+<ol>
+<li>Servername oder IP-Adresse;</li>
+<li>Port, standardmäßig <code>5432</code>;</li>
+<li>Datenbank <code>mira</code>;</li>
+<li>Benutzer <code>mira_app</code>;</li>
+<li>Kennwort und gewünschten SSL-Modus.</li>
+</ol>
+<p><strong>Verbindung testen</strong> prüft Serverversion, Datenbank und Benutzer. Ist die Datenbank leer, legt der Assistent das aktuelle Mira-Schema transaktional an. Eine nicht leere fremde Datenbank wird abgewiesen. Nach erfolgreicher Prüfung speichert Enterprise die Einstellungen unter <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>; das Kennwort ist mit Windows DPAPI geschützt.</p>
+<p>Für entfernte Datenbankserver müssen Firewall, <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS und TLS entsprechend der Kundenrichtlinie konfiguriert werden. In produktiven Netzen wird <code>verify-full</code> mit einer vertrauenswürdigen Serverzertifikatskette empfohlen.</p>
+<h2 id="sqlite-nach-postgresql-migrieren">SQLite nach PostgreSQL migrieren<a class="headerlink" href="#sqlite-nach-postgresql-migrieren" title="Permanent link">&para;</a></h2>
+<p>Öffnen Sie <strong>Enterprise → SQLite-Datenbank migrieren</strong>. Der Assistent:</p>
+<ol>
+<li>öffnet die Quelle ausschließlich lesend;</li>
+<li>führt <code>PRAGMA quick_check</code> aus und zählt Tabellen sowie Datensätze;</li>
+<li>verlangt eine ausdrückliche Bestätigung zum Ersetzen des PostgreSQL-Mira-Schemas;</li>
+<li>erzeugt Tabellen, Schlüssel und Indizes neu und kopiert die Daten innerhalb einer PostgreSQL-Transaktion;</li>
+<li>protokolliert Quellpfad, SHA-256, Zeitpunkt und Mengengerüst.</li>
+</ol>
+<p>Bei einem Fehler wird die PostgreSQL-Transaktion zurückgerollt. Die SQLite-Quelle bleibt unverändert. Nach erfolgreicher Migration ist die Anwendung neu zu starten.</p>
+<h2 id="betrieb-und-sicherung">Betrieb und Sicherung<a class="headerlink" href="#betrieb-und-sicherung" title="Permanent link">&para;</a></h2>
+<p>Die SQLite-Snapshot-/Restore-Funktionen der Basic-/Pro-Anmeldung sind in Enterprise deaktiviert. PostgreSQL wird mit den betrieblichen PostgreSQL-Werkzeugen wie <code>pg_dump</code>, <code>pg_restore</code> und einer serverseitig überwachten Sicherungsstrategie gesichert. Applikationsarchive und externe Belegspeicher bleiben zusätzlich gemäß ihrer jeweiligen Aufbewahrungsrichtlinie zu sichern.</p>
 
 
 

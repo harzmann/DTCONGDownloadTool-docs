@@ -10,15 +10,17 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-installation-guide/">
       
       
-        <link rel="prev" href="../enterprise-open-points/">
+        <link rel="prev" href="../cloud-backup-restore/">
       
+      
+        <link rel="next" href="../enterprise-deployment/">
       
       
         
-          <link rel="alternate" href="../../../operations/documentation-deployment/" hreflang="en">
+          <link rel="alternate" href="../../../operations/enterprise-installation-guide/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="de">
         
@@ -29,7 +31,7 @@
     
     
       
-        <title>Dokumentations-Deployment - FLEET Mira Dokumentation</title>
+        <title>Enterprise-Installationsanleitung - FLEET Mira Dokumentation</title>
       
     
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dokumentations-build-und-deployment" class="md-skip">
+        <a href="#enterprise-installationsanleitung-fur-administratoren" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dokumentations-Deployment
+              Enterprise-Installationsanleitung
             
           </span>
         </div>
@@ -165,7 +167,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../operations/documentation-deployment/" hreflang="en" class="md-select__link">
+            <a href="../../../operations/enterprise-installation-guide/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -1195,10 +1197,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../enterprise-installation-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1214,6 +1243,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installationsdateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installationsdateien
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemeinsame-planung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemeinsame Planung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szenario-1-clientserver-mit-serverseitigem-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Szenario 1: Client/Server mit serverseitigem Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szenario 1: Client/Server mit serverseitigem Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielbild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielbild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server installieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clients-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clients installieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-betreiben" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker betreiben
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szenario-2-terminalserver-mit-allen-komponenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Szenario 2: Terminalserver mit allen Komponenten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szenario 2: Terminalserver mit allen Komponenten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielbild_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielbild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestehende-sqlite-daten-migrieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bestehende SQLite-Daten migrieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sicherung-update-und-ruckfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sicherung, Update und Rückfall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abnahmecheckliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abnahmecheckliste
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1279,37 +1483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dokumentations-Deployment
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../documentation-deployment/" class="md-nav__link">
         
   
   
@@ -1325,114 +1502,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Quellstruktur
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Lokale Vorschau
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Strikter Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Screenshots erzeugen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1472,10 +1541,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-quellstruktur" class="md-nav__link">
+  <a href="#installationsdateien" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Quellstruktur
+        Installationsdateien
       
     </span>
   </a>
@@ -1483,10 +1552,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lokale-vorschau" class="md-nav__link">
+  <a href="#gemeinsame-planung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Lokale Vorschau
+        Gemeinsame Planung
       
     </span>
   </a>
@@ -1494,10 +1563,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-strikter-build" class="md-nav__link">
+  <a href="#szenario-1-clientserver-mit-serverseitigem-worker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Strikter Build
+        Szenario 1: Client/Server mit serverseitigem Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szenario 1: Client/Server mit serverseitigem Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielbild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielbild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server installieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clients-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clients installieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-betreiben" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker betreiben
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szenario-2-terminalserver-mit-allen-komponenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Szenario 2: Terminalserver mit allen Komponenten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szenario 2: Terminalserver mit allen Komponenten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielbild_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielbild
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bestehende-sqlite-daten-migrieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bestehende SQLite-Daten migrieren
       
     </span>
   </a>
@@ -1505,10 +1674,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-screenshots-erzeugen" class="md-nav__link">
+  <a href="#sicherung-update-und-ruckfall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Screenshots erzeugen
+        Sicherung, Update und Rückfall
       
     </span>
   </a>
@@ -1516,43 +1685,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-prufskript" class="md-nav__link">
+  <a href="#abnahmecheckliste" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Prüfskript
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-ci-publikation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. CI-Publikation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-autorenregeln" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Autorenregeln
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-releasecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Releasecheckliste
+        Abnahmecheckliste
       
     </span>
   </a>
@@ -1576,71 +1712,121 @@
 
 
 
-<h1 id="dokumentations-build-und-deployment">Dokumentations-Build und Deployment<a class="headerlink" href="#dokumentations-build-und-deployment" title="Permanent link">&para;</a></h1>
-<h2 id="1-quellstruktur">1. Quellstruktur<a class="headerlink" href="#1-quellstruktur" title="Permanent link">&para;</a></h2>
-<p>Englisch ist Standardsprache der Website; Deutsch spiegelt jede Seite auf demselben relativen Pfad.</p>
-<div class="highlight"><pre><span></span><code>docs/
-  en/...
-  en/assets/screenshots/...
-  de/...
-  de/assets/screenshots/...
-  assets/screenshot-manifest.json
-</code></pre></div>
-<p><code>README.md</code> ist Englisch, <code>README_DE.md</code> Deutsch. Markdown/MkDocs ist verbindliche Quelle. Generiertes <code>site/</code> wird nicht manuell bearbeitet.</p>
-<h2 id="2-lokale-vorschau">2. Lokale Vorschau<a class="headerlink" href="#2-lokale-vorschau" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv-docs</span>
-<span class="p">.\.</span><span class="n">venv-docs</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">docs-requirements</span><span class="p">.</span><span class="n">txt</span>
-<span class="n">python</span> <span class="n">scripts</span><span class="p">/</span><span class="n">verify_documentation</span><span class="p">.</span><span class="n">py</span>
-<span class="n">mkdocs</span> <span class="n">serve</span>
-</code></pre></div>
-<p>Englisch liegt unter <code>/</code>, Deutsch unter <code>/de/</code>. Der Material-Sprachumschalter bleibt auf der gleichen relativen Seite.</p>
-<h2 id="3-strikter-build">3. Strikter Build<a class="headerlink" href="#3-strikter-build" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">mkdocs</span> <span class="n">build</span> <span class="p">-</span><span class="n">-strict</span> <span class="p">-</span><span class="n">-clean</span>
-</code></pre></div>
-<p><code>mkdocs-static-i18n</code> nutzt Ordnerstruktur ohne Fallback; ein fehlendes deutsches Gegenstück zeigt daher nicht still Englisch. <code>mkdocs-redirects</code> erhält frühere flache deutsche Dokumentations-URLs.</p>
-<h2 id="4-screenshots-erzeugen">4. Screenshots erzeugen<a class="headerlink" href="#4-screenshots-erzeugen" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">scripts</span><span class="p">\</span><span class="n">capture_documentation_screenshots</span><span class="p">.</span><span class="n">py</span>
-</code></pre></div>
-<p>Das Werkzeug verwendet isolierte temporäre Konfiguration/Datenbank, deaktiviert externe Dienste und schreibt stabile semantische PNG-Namen für <code>en-GB</code>/<code>de-DE</code>. Niemals auf <code>state/archive.db</code> oder produktive Cloud-/Quellenzugänge zeigen.</p>
-<p>Das Manifest protokolliert Locale, Programmpunkt, Datei und Profil. Visuell sind das Branding von FLEET Mira, nicht abgeschnittene Inhalte und das Fehlen personenbezogener Daten, produktiver Endpunkte und Zugangsdaten zu prüfen.</p>
-<h2 id="5-prufskript">5. Prüfskript<a class="headerlink" href="#5-prufskript" title="Permanent link">&para;</a></h2>
-<p><code>scripts/verify_documentation.py</code> prüft:</p>
+<h1 id="enterprise-installationsanleitung-fur-administratoren">Enterprise-Installationsanleitung für Administratoren<a class="headerlink" href="#enterprise-installationsanleitung-fur-administratoren" title="Permanent link">&para;</a></h1>
+<p>Diese Anleitung beschreibt die Installation von FLEET Mira Enterprise 1.1.0-beta6 in zwei unterstützten Topologien. Enterprise verwendet PostgreSQL und darf auf Windows Server sowie in RDP-, Citrix- und vergleichbaren Mehrbenutzerumgebungen ausgeführt werden. Für Server und Terminalserver darf ausschließlich das Enterprise-Setup verwendet werden; das Basic/Pro-Setup sperrt diese Umgebungen.</p>
+<h2 id="installationsdateien">Installationsdateien<a class="headerlink" href="#installationsdateien" title="Permanent link">&para;</a></h2>
 <ul>
-<li>exakte Pfadparität DE/EN;</li>
-<li>vorhandene referenzierte Bilder;</li>
-<li>gültige Screenshotmanifestdateien;</li>
-<li>keine Windows-Benutzerpfade/typischen Secretmuster;</li>
-<li>keine unerlaubte sichtbare Legacy-Produktbezeichnung;</li>
-<li>README-Sprachlinks und Pflichtseiten.</li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/FLEET-Mira-Enterprise-1.1.0-beta6-Setup-x64.exe">Enterprise-Applikationssetup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/FLEET-Mira-PostgreSQL-Server-1.1.0-beta6-Setup-x64.exe">PostgreSQL-Server-Setup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/SHA256SUMS-Enterprise.txt">SHA-256-Prüfsummen herunterladen</a></li>
 </ul>
-<p>Das Skript ist Leitplanke, ersetzt keine inhaltliche/visuelle Prüfung.</p>
-<h2 id="6-ci-publikation">6. CI-Publikation<a class="headerlink" href="#6-ci-publikation" title="Permanent link">&para;</a></h2>
-<p><code>.github/workflows/publish-docs.yml</code> installiert Dokumentationsabhängigkeiten, führt Verifikation und <code>mkdocs build --strict --clean</code> aus, checkt das öffentliche technische Dokumentationsrepository aus und ersetzt dessen generierte Inhalte.</p>
-<p><code>DOCS_DEPLOY_TOKEN</code> benötigt nur Schreibrecht am Zielrepository. Pull Requests sollen bauen, aber ohne vertrauenswürdigen Tokenkontext nicht veröffentlichen.</p>
-<p>Der Zielrepositoryname darf aus Kompatibilität die technische Altkennung <code>DTCONGDownloadTool-docs</code> behalten; Seitentitel/Inhalt heißen FLEET Mira.</p>
-<h2 id="7-autorenregeln">7. Autorenregeln<a class="headerlink" href="#7-autorenregeln" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Betastatus und Worker-Betrieb</p>
+<p>Die Setups sind noch nicht codesigniert. Prüfen Sie deshalb vor der Installation die SHA-256-Prüfsummen. Der FLEET Mira Worker ist in dieser Beta noch kein eigenständiger Windows-Dienst. Geplante Hintergrundaufgaben laufen in einer gestarteten Enterprise-Anwendungsinstanz. Aktivieren Sie solche Aufgaben in einer Mehrbenutzerumgebung ausschließlich in genau einer dauerhaft angemeldeten, dedizierten Worker-Sitzung. Der Windows-Dienst und eine technische Mehrinstanz-Sperre sind als offene Punkte dokumentiert.</p>
+</div>
+<h2 id="gemeinsame-planung">Gemeinsame Planung<a class="headerlink" href="#gemeinsame-planung" title="Permanent link">&para;</a></h2>
+<p>Planen Sie vor der Installation:</p>
+<ol>
+<li>einen stabilen DNS-Namen für den PostgreSQL-Server;</li>
+<li>ein mindestens zwölf Zeichen langes Kennwort für den Datenbankbenutzer <code>mira_app</code> und ein getrenntes PostgreSQL-Administratorkennwort;</li>
+<li>ein dediziertes Windows-Konto für die Worker-Sitzung;</li>
+<li>lokale NTFS-Speicherorte für die PostgreSQL-Daten und zentrale Speicherorte für Tachodaten- und Belegarchive;</li>
+<li>eine Sicherung für PostgreSQL und eine getrennte Sicherung der Dateiarchive;</li>
+<li>Wartungsfenster, Firewallregeln und – für Verbindungen über das Netzwerk – ein vertrauenswürdiges TLS-Serverzertifikat.</li>
+</ol>
+<p>PostgreSQL-Daten müssen auf einem lokalen, festen Datenträger des Datenbankservers liegen. Tachodateien und Originalbelege werden nicht vollständig in PostgreSQL gespeichert. In einer Client/Server-Installation müssen deshalb alle Clients und der Worker dieselben kanonischen UNC-Pfade verwenden und mit den erforderlichen NTFS- und Freigaberechten ausgestattet sein.</p>
+<h2 id="szenario-1-clientserver-mit-serverseitigem-worker">Szenario 1: Client/Server mit serverseitigem Worker<a class="headerlink" href="#szenario-1-clientserver-mit-serverseitigem-worker" title="Permanent link">&para;</a></h2>
+<h3 id="zielbild">Zielbild<a class="headerlink" href="#zielbild" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart LR
+    C1["Enterprise-Client 1"] --&gt;|TLS / TCP 5432| DB[("PostgreSQL: mira")]
+    C2["Enterprise-Client n"] --&gt;|TLS / TCP 5432| DB
+    W["Enterprise-App als dedizierter FLEET Mira Worker"] --&gt;|TLS / TCP 5432| DB
+    W --&gt; A["Gemeinsames Dateiarchiv (UNC)"]
+    C1 --&gt; A
+    C2 --&gt; A</code></pre>
+<p>Der Windows Server hostet PostgreSQL und eine dedizierte Enterprise-Anwendungsinstanz für die Hintergrundaufgaben. Die Benutzer arbeiten mit Enterprise-Clients auf Windows-10/11-Arbeitsplätzen oder zugelassenen Server-Sitzungen.</p>
+<h3 id="server-installieren">Server installieren<a class="headerlink" href="#server-installieren" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Melden Sie sich am Windows Server mit lokalen Administratorrechten an.</li>
+<li>Kopieren Sie beide Setups lokal auf den Server und vergleichen Sie deren SHA-256-Werte mit <code>SHA256SUMS-Enterprise.txt</code>.</li>
+<li>Starten Sie <code>FLEET-Mira-PostgreSQL-Server-1.1.0-beta6-Setup-x64.exe</code> als Administrator.</li>
+<li>Erfassen Sie Port, PostgreSQL-Administratorkennwort und das Kennwort für <code>mira_app</code>. Das Setup installiert PostgreSQL, legt den Dienst, die leere Datenbank <code>mira</code> und den Anwendungsbenutzer <code>mira_app</code> an.</li>
+<li>Konfigurieren Sie <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS und TLS nach Ihrer Sicherheitsrichtlinie. Öffnen Sie TCP 5432 in der Windows-Firewall ausschließlich für die vorgesehenen Client- und Worker-Netze.</li>
+<li>Starten Sie <code>FLEET-Mira-Enterprise-1.1.0-beta6-Setup-x64.exe</code> als Administrator. Installieren Sie die Anwendung systemweit.</li>
+<li>Melden Sie das dedizierte Worker-Konto an und starten Sie FLEET Mira Enterprise.</li>
+<li>Tragen Sie im PostgreSQL-Assistenten DNS-Name, Port, Datenbank <code>mira</code>, Benutzer <code>mira_app</code>, Kennwort und den SSL-Modus ein. Für Produktivnetze wird <code>verify-full</code> empfohlen.</li>
+<li>Testen Sie die Verbindung. Bei einer leeren Mira-Datenbank legt der Assistent das Anwendungsschema transaktional an.</li>
+<li>Konfigurieren Sie die gemeinsamen Archiv-, Import- und Belegpfade. Verwenden Sie dieselben UNC-Pfade, die später auf den Clients eingetragen werden.</li>
+</ol>
+<h3 id="clients-installieren">Clients installieren<a class="headerlink" href="#clients-installieren" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Starten Sie auf jedem Client ausschließlich das Enterprise-Applikationssetup als Administrator.</li>
+<li>Öffnen Sie FLEET Mira und verbinden Sie die Anwendung über den Assistenten mit derselben Datenbank <code>mira</code>.</li>
+<li>Prüfen Sie den Zugriff auf alle gemeinsamen Archive mit dem jeweiligen Benutzerkonto.</li>
+<li>Lassen Sie geplante Download-, Import-, Benachrichtigungs- und Sicherungsaufgaben auf den Benutzer-Clients deaktiviert. Diese Aufgaben werden nur in der dedizierten Worker-Sitzung aktiviert.</li>
+</ol>
+<h3 id="worker-betreiben">Worker betreiben<a class="headerlink" href="#worker-betreiben" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Englisch/Deutsch in derselben Änderung aktualisieren.</li>
-<li>Identische relative Seiten-/Bildpfade je Sprache.</li>
-<li>Nur implementiertes Verhalten beschreiben.</li>
-<li>Stabile IDs/Status/API-Felder in Codeformat unverändert.</li>
-<li>Sichtbar FLEET Mira; DLTNG nur in erklärten Legacy-Kompatibilitätsstellen.</li>
-<li>Mermaidbeschriftung, Captions und Alttexte lokalisieren.</li>
-<li>Keine produktiven DDD, DB, Belege, Logs, Tokens, Servernamen oder Benutzerpfade committen.</li>
-<li>Nach sichtbarer UI-/Navigationsänderung Screenshots neu erzeugen.</li>
+<li>Verwenden Sie ein getrenntes Windows-Konto mit „Anmelden über Remotedesktopdienste“ und den minimal notwendigen Zugriffen auf Quellen, Archive und Zertifikate.</li>
+<li>Halten Sie genau eine Worker-Sitzung angemeldet und die Anwendung gestartet.</li>
+<li>Konfigurieren Sie keine identischen Zeitpläne in weiteren Sitzungen.</li>
+<li>Überwachen Sie <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> sowie die PostgreSQL- und Windows-Ereignisprotokolle.</li>
+<li>Planen Sie nach Serverneustarts die kontrollierte Wiederanmeldung der Worker-Sitzung ein.</li>
 </ul>
-<h2 id="8-releasecheckliste">8. Releasecheckliste<a class="headerlink" href="#8-releasecheckliste" title="Permanent link">&para;</a></h2>
+<h2 id="szenario-2-terminalserver-mit-allen-komponenten">Szenario 2: Terminalserver mit allen Komponenten<a class="headerlink" href="#szenario-2-terminalserver-mit-allen-komponenten" title="Permanent link">&para;</a></h2>
+<h3 id="zielbild_1">Zielbild<a class="headerlink" href="#zielbild_1" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TB
+    U1["RDP-/Citrix-Benutzersitzung 1"] --&gt; DB[("Lokales PostgreSQL: mira")]
+    U2["RDP-/Citrix-Benutzersitzung n"] --&gt; DB
+    W["Dedizierte Worker-Sitzung"] --&gt; DB
+    U1 --&gt; A["Zentrales Dateiarchiv auf lokalem NTFS-Datenträger"]
+    U2 --&gt; A
+    W --&gt; A</code></pre>
+<p>PostgreSQL, Enterprise-Anwendung, Benutzer-Sitzungen und Worker-Sitzung befinden sich auf demselben Windows Server.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Legen Sie lokale NTFS-Verzeichnisse für PostgreSQL-Daten und die Dateiarchive an. Verwenden Sie weder Benutzerprofile noch UNC- oder Netzlaufwerke für das PostgreSQL-Datenverzeichnis.</li>
+<li>Installieren Sie zuerst das PostgreSQL-Server-Setup als Administrator und legen Sie <code>mira</code>, <code>mira_app</code> und die Kennwörter an.</li>
+<li>Installieren Sie danach das Enterprise-Applikationssetup einmal systemweit als Administrator.</li>
+<li>Starten Sie FLEET Mira in einer administrativen Einrichtungs-Sitzung und verbinden Sie es mit <code>localhost</code>, dem gewählten Port und der Datenbank <code>mira</code>.</li>
+<li>Testen und initialisieren Sie die leere Datenbank. Die Verbindungskonfiguration wird maschinenweit unter <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code> gespeichert und das Kennwort mit Windows DPAPI geschützt.</li>
+<li>Konfigurieren Sie die Dateiarchive auf einem für alle vorgesehenen Sitzungen erreichbaren lokalen NTFS-Pfad, beispielsweise <code>D:\FLEET-Mira-Data</code>.</li>
+<li>Melden Sie eine normale Benutzersitzung an und prüfen Sie Anmeldung, Lese-/Schreibrechte, Berichtsausgabe und Archivzugriff.</li>
+<li>Richten Sie eine getrennte Worker-Sitzung ein. Nur dort dürfen geplante Hintergrundaufgaben aktiviert werden.</li>
+</ol>
+<p>Da die maschinenweite Konfiguration von allen Terminalserversitzungen gemeinsam verwendet wird, dürfen nicht mehrere gleichzeitig gestartete Anwendungen dieselben Zeitpläne ausführen. Bis zur Einführung des Windows-Dienstes und der Mehrinstanz-Sperre ist diese Betriebsregel verbindlich.</p>
+<h2 id="bestehende-sqlite-daten-migrieren">Bestehende SQLite-Daten migrieren<a class="headerlink" href="#bestehende-sqlite-daten-migrieren" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Erstellen und prüfen Sie vorab eine unveränderte Sicherung der SQLite-Datei sowie der zugehörigen Dateiarchive.</li>
+<li>Beenden Sie alle anderen FLEET-Mira-Instanzen und deaktivieren Sie geplante Aufgaben.</li>
+<li>Öffnen Sie in Enterprise <strong>Enterprise → SQLite-Datenbank migrieren</strong>.</li>
+<li>Wählen Sie die SQLite-Quelle. Der Assistent öffnet sie schreibgeschützt, führt <code>PRAGMA quick_check</code> aus und zeigt Tabellen- und Datensatzanzahlen.</li>
+<li>Bestätigen Sie das Ersetzen des leeren beziehungsweise vorgesehenen Mira-Schemas. Die Übertragung erfolgt in einer PostgreSQL-Transaktion; Fehler führen zum Rollback.</li>
+<li>Starten Sie Enterprise neu und vergleichen Sie Benutzer, Fahrzeuge, Tachodaten, Belege und Stichprobenberichte mit dem Altsystem.</li>
+<li>Aktivieren Sie den Worker erst nach schriftlicher Abnahme der Migration.</li>
+</ol>
+<h2 id="sicherung-update-und-ruckfall">Sicherung, Update und Rückfall<a class="headerlink" href="#sicherung-update-und-ruckfall" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] Dokumentationsprüfung erfolgreich;</li>
-<li>[ ] strikter MkDocs-Build erfolgreich;</li>
-<li>[ ] Sprachumschalter öffnet Gegenstück;</li>
-<li>[ ] alte flache URLs leiten weiter;</li>
-<li>[ ] Screenshots in beiden Locales;</li>
-<li>[ ] README/Navigation passen zum Release;</li>
-<li>[ ] APIs/Datenverträge passen zu Code/Version;</li>
-<li>[ ] keine Secrets/Betriebsdaten im Build.</li>
+<li>Sichern Sie PostgreSQL regelmäßig mit <code>pg_dump</code> oder einem zentral überwachten PostgreSQL-Sicherungssystem und testen Sie <code>pg_restore</code>.</li>
+<li>Sichern Sie Tachodaten-, Finanzbeleg- und weitere Dateiarchive getrennt und konsistent.</li>
+<li>Erstellen Sie vor jedem Update ein PostgreSQL-Dump und eine Archiv-Sicherung; beenden Sie dabei alle Clients und den Worker.</li>
+<li>Die SQLite-Snapshot-/Restore-Funktion von Basic/Pro ist in Enterprise deaktiviert.</li>
+<li>Bewahren Sie die ursprüngliche SQLite-Datenbank bis zum Ende der vereinbarten Rückfallfrist unverändert und offline auf.</li>
 </ul>
+<h2 id="abnahmecheckliste">Abnahmecheckliste<a class="headerlink" href="#abnahmecheckliste" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Setups und Prüfsummen stimmen überein.</li>
+<li>[ ] PostgreSQL-Daten liegen auf einem lokalen festen NTFS-Datenträger.</li>
+<li>[ ] <code>mira_app</code> kann nur aus den vorgesehenen Netzen beziehungsweise lokal zugreifen.</li>
+<li>[ ] TLS, Firewall, <code>pg_hba.conf</code> und DNS sind dokumentiert und getestet.</li>
+<li>[ ] Jeder Client verwendet dieselbe PostgreSQL-Datenbank und dieselben kanonischen Archivpfade.</li>
+<li>[ ] Genau eine dedizierte Worker-Sitzung führt geplante Aufgaben aus.</li>
+<li>[ ] Mehrere Benutzer können gleichzeitig lesen und schreiben.</li>
+<li>[ ] PostgreSQL- und Dateiarchiv-Sicherung sowie Rücksicherung wurden getestet.</li>
+<li>[ ] Migration und fachliche Stichproben wurden protokolliert.</li>
+<li>[ ] Notfallzugang, Kennwortablage, Monitoring und Neustartverfahren sind dokumentiert.</li>
+</ul>
+<p>Die bekannten Einschränkungen und noch erforderlichen Produktionsarbeiten stehen unter <a href="../enterprise-open-points/">Offene Enterprise-Punkte</a>.</p>
 
 
 
