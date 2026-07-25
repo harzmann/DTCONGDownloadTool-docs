@@ -627,6 +627,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verstoß-Dashboard und Fahrerbelehrungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Berichts-Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/position-maps/" class="md-nav__link">
         
   
@@ -828,10 +884,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-sprachen-regionen-und-utc" class="md-nav__link">
+  <a href="#3-sprachen-regionen-und-zeitbasis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Sprachen, Regionen und UTC
+        3. Sprachen, Regionen und Zeitbasis
       
     </span>
   </a>
@@ -1610,10 +1666,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-sprachen-regionen-und-utc" class="md-nav__link">
+  <a href="#3-sprachen-regionen-und-zeitbasis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Sprachen, Regionen und UTC
+        3. Sprachen, Regionen und Zeitbasis
       
     </span>
   </a>
@@ -1966,8 +2022,8 @@
 </tbody>
 </table>
 <p>Pilot- und Produktivcheck: Provider-Test erfolgreich, Pilotidentität <code>LINKED</code>, unbekanntes Konto abgewiesen, Audit ohne Tokens kontrolliert, lokaler Recoveryzugang getestet und Offboarding probeweise durchgeführt. Microsoft Entra darf erst nach zusätzlicher erfolgreicher Abnahme von WAM, Browser-Fallback, MFA und Conditional Access in einem realen Kundenmandanten als produktiver Anmeldeweg bewertet werden; bis dahin bleibt es Beta und ungetestet.</p>
-<h2 id="3-sprachen-regionen-und-utc">3. Sprachen, Regionen und UTC<a class="headerlink" href="#3-sprachen-regionen-und-utc" title="Permanent link">&para;</a></h2>
-<p>Neue Installationen starten Englisch/<code>en-GB</code>. Benutzer können jede registrierte Sprache/Region wählen. Datepicker, Zahlen und Währung folgen der Region; Datenbank/API bleiben ISO. Tachographenzeitwerte, Vergleiche, Tages-/Wochengrenzen und Verstoßberechnungen bleiben aktuell ausschließlich UTC. Die Locale darf keine Zeitzonenumrechnung einführen.</p>
+<h2 id="3-sprachen-regionen-und-zeitbasis">3. Sprachen, Regionen und Zeitbasis<a class="headerlink" href="#3-sprachen-regionen-und-zeitbasis" title="Permanent link">&para;</a></h2>
+<p>Neue Installationen starten Englisch/<code>en-GB</code>. Benutzer können jede registrierte Sprache/Region wählen. Datepicker, Zahlen und Währung folgen der Region; Datenbank/API bleiben ISO. Tachographen-Quelldaten werden unverändert in UTC aufbewahrt. Optional kann unter <strong>System → Einstellungen</strong> eine lokale Aktivitätszeitzone gewählt werden; Tages-/Wochengrenzen, Anzeigen und Compliance-Auswertungen verwenden dann dieselbe DST-sichere Projektion. Die gewählte Zeitbasis wird in Auswertungsläufen und Auditdaten gespeichert und ist unabhängig von der UI-Locale.</p>
 <p>Kataloge liegen unter <code>translations/&lt;sprache&gt;.json</code>. Englisch ist Fallback. Fehlende Produktivschlüssel erzeugen <code>I18N_MISSING</code> und schlagen im Katalogparitätstest fehl.</p>
 <p><img alt="Anwendungseinstellungen" src="../assets/screenshots/settings.png" />
 <em>Abbildung: Administrative Anwendungseinstellungen.</em></p>

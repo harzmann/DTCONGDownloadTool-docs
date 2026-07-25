@@ -995,6 +995,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verstoß-Dashboard und Fahrerbelehrungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Berichts-Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/position-maps/" class="md-nav__link">
         
   
@@ -2098,7 +2154,7 @@
 <p>Unter <strong>Administration → Benachrichtigungen</strong> finden Sie SMTP, Verantwortliche, Regeln/Vorlagen und Versandprotokoll. Bis zum getesteten SMTP-Zugang, vorhandenen Empfängern und der ausdrücklichen Aktivierung bleibt der Versand deaktiviert.</p>
 <p><img alt="Benachrichtigungsregeln und Vorlagen" src="../assets/screenshots/notifications.png" />
 <em>Abbildung: Benachrichtigungsregeln, Vorlagen und Zeitpläne.</em></p>
-<p>Standardregeln umfassen Wocheninformation, tägliche Erinnerung ab zehn Tagen, dringende Erinnerung ab drei Tagen, Überfälligwarnung und täglichen Verantwortlichenbericht. Regeln können mit Berechtigung vorgeprüft oder manuell versendet werden.</p>
+<p>Standardregeln umfassen Wocheninformation, tägliche Erinnerung ab zehn Tagen, dringende Erinnerung ab drei Tagen, Überfälligwarnung und täglichen Verantwortlichenbericht. Zusätzliche Regeln können Verstoß-Dashboards an Verantwortliche und eine neue Fahrerbelehrung genau einmal mit PDF-Anhang zustellen. Regeln können mit Berechtigung vorgeprüft oder manuell versendet werden.</p>
 <h2 id="12-kosten-gutschriften-und-fremdrechnungen">12. Kosten, Gutschriften und Fremdrechnungen<a class="headerlink" href="#12-kosten-gutschriften-und-fremdrechnungen" title="Permanent link">&para;</a></h2>
 <h3 id="direkte-fahrzeugkosten">Direkte Fahrzeugkosten<a class="headerlink" href="#direkte-fahrzeugkosten" title="Permanent link">&para;</a></h3>
 <p>Öffnen Sie Fahrzeugakte → <strong>Kosten/Gutschriften</strong>. Wählen Sie Kostenart und Typ und erfassen Sie Belegdatum, Gültigkeitszeitraum, Netto und Steuer. <strong>Variabel</strong> ordnet den vollständigen Betrag dem Belegdatum zu; fixe Positionen werden taggenau über ihren vollständigen Gültigkeitszeitraum verteilt. Beträge werden centgenau gespeichert. Die Schritte von Entwurf über Prüfung und Buchung bis Storno oder Gutschrift beschreibt <a href="../guide/vehicle-costs/">Fahrzeugkosten und Gutschriften</a>.</p>
@@ -2119,9 +2175,10 @@
 <h3 id="erechnungxrechnung">E‑Rechnung/XRechnung<a class="headerlink" href="#erechnungxrechnung" title="Permanent link">&para;</a></h3>
 <p><strong>Fuhrpark → XRechnung importieren</strong> führt durch KoSIT-Validierung, Rechnungs- und Lieferantendaten, Fahrzeug-/Kostenartzuordnung, Positionssplits und Summenabgleich. Erst die bestätigte Übernahme legt atomar einen Fremdrechnungsentwurf und die lokal verifizierten Original-, XML- und Prüfberichtobjekte an. Einzelheiten enthält <a href="../guide/einvoice-import/">E‑Rechnung und XRechnung importieren</a>.</p>
 <h2 id="13-audit-berichte-und-logs">13. Audit, Berichte und Logs<a class="headerlink" href="#13-audit-berichte-und-logs" title="Permanent link">&para;</a></h2>
-<p>Das globale Audit unter <strong>Administration → Audit</strong> vereinigt Geräte-, Tachodaten- und Fuhrparkereignisse. Filter stehen nach Datum, Benutzer, Aktion und Text zur Verfügung. Doppelklick öffnet das aktuell zugehörige Fachobjekt, wenn die stabile ID auflösbar ist. Navigation wird nicht auditiert.</p>
+<p>Das globale Audit unter <strong>Administration → Audit</strong> vereinigt Geräte-, Tachodaten- und Fuhrparkereignisse. Filter stehen nach Datum, Benutzer, Aktion und Text zur Verfügung. Doppelklick öffnet das aktuell zugehörige Fachobjekt, wenn die stabile ID auflösbar ist. Strukturierte JSON-/XML-Details können als Baum geöffnet, als JSON exportiert und gedruckt werden. Navigation wird nicht auditiert.</p>
 <p><img alt="Globales Audit-Log" src="../assets/screenshots/audit.png" />
 <em>Abbildung: Globales Audit-Log mit objektbezogener Navigation.</em></p>
+<p>Unter <strong>Fuhrpark → Verstoß-Dashboard 💎</strong> stehen periodenbezogene Risikobewertung, Verstoßdetails, Dashboard-Bericht und revisionssichere Fahrerbelehrung bereit. <strong>Fuhrpark → Berichts-Dashboard 💎</strong> enthält sechs Arbeitszeit- und Rückkehrberichte mit Favoriten, Laufhistorie sowie PDF-/Excel-Ausgabe. Einzelheiten beschreiben <a href="../guide/violation-dashboard/">Verstoß-Dashboard und Fahrerbelehrungen</a> sowie <a href="../guide/report-dashboard/">Berichts-Dashboard</a>.</p>
 <p>Fälligkeits- und Auswertungslisten unterstützen Vorschau, Systemdruck und PDF. Ausgegeben werden sichtbare gefilterte Zeilen/Spalten.</p>
 <p><strong>Administration → Logs</strong> zeigt <code>app.log</code>, REST-Logs und native Crashdiagnose. Technische Logtexte sind unabhängig von der UI-Sprache Englisch.</p>
 <h2 id="14-systray-und-beenden">14. Systray und Beenden<a class="headerlink" href="#14-systray-und-beenden" title="Permanent link">&para;</a></h2>

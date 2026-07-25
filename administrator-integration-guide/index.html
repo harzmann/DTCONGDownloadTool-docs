@@ -627,6 +627,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Violation dashboard and driver instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/position-maps/" class="md-nav__link">
         
   
@@ -828,10 +884,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-languages-regions-and-utc" class="md-nav__link">
+  <a href="#3-languages-regions-and-time-basis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Languages, regions and UTC
+        3. Languages, regions and time basis
       
     </span>
   </a>
@@ -1610,10 +1666,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-languages-regions-and-utc" class="md-nav__link">
+  <a href="#3-languages-regions-and-time-basis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Languages, regions and UTC
+        3. Languages, regions and time basis
       
     </span>
   </a>
@@ -1966,8 +2022,8 @@
 </tbody>
 </table>
 <p>Pilot and production check: successful provider test, pilot identity <code>LINKED</code>, unknown identity rejected, audit inspected for token leakage, local recovery tested and offboarding rehearsed. Microsoft Entra may only be considered a production sign-in method after successful additional acceptance of WAM, browser fallback, MFA and Conditional Access in a real customer tenant; until then it remains beta and untested.</p>
-<h2 id="3-languages-regions-and-utc">3. Languages, regions and UTC<a class="headerlink" href="#3-languages-regions-and-utc" title="Permanent link">&para;</a></h2>
-<p>New deployments default to English and <code>en-GB</code>. User profiles may select any registered language/region. Date pickers, numbers and currency follow the region. Database/API dates remain ISO. All tachograph timestamps, comparisons, day/week boundaries and compliance calculations currently remain UTC; locale must not introduce a time-zone conversion.</p>
+<h2 id="3-languages-regions-and-time-basis">3. Languages, regions and time basis<a class="headerlink" href="#3-languages-regions-and-time-basis" title="Permanent link">&para;</a></h2>
+<p>New deployments default to English and <code>en-GB</code>. User profiles may select any registered language/region. Date pickers, numbers and currency follow the region. Database/API dates remain ISO. Tachograph source data remains stored unchanged in UTC. Administrators may optionally select a local activity time zone under <strong>System → Settings</strong>; day/week boundaries, displays and compliance evaluations then use the same DST-safe projection. Evaluation runs and audit data record the selected time basis independently of the UI locale.</p>
 <p>Translation catalogues live under <code>translations/&lt;language&gt;.json</code>. English is the fallback catalogue. Missing production keys log <code>I18N_MISSING</code> and fail the catalogue parity test.</p>
 <p><img alt="Application settings" src="../assets/screenshots/settings.png" />
 <em>Figure: Administrative application settings.</em></p>
