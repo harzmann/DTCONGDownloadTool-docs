@@ -1200,6 +1200,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1475,33 +1503,40 @@
 <thead>
 <tr>
 <th>Item</th>
-<th>Target</th>
+<th>Current state</th>
+<th>Still required</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Standalone FLEET Mira Worker</td>
-<td>Headless Windows service with a dedicated service account, automatic start, recovery rules, clean shutdown and central logging instead of a permanently signed-in GUI session.</td>
+<td>Windows service, virtual account, automatic start, recovery, shutdown, logging and heartbeat are implemented.</td>
+<td>Accept the full Actions run and customer-like server operation.</td>
 </tr>
 <tr>
 <td>Multi-instance protection</td>
-<td>Database-backed leader election or PostgreSQL advisory locks, idempotent jobs and lease timeouts so clients and terminal sessions cannot execute jobs twice.</td>
+<td>Advisory locks, PostgreSQL queue, leases, heartbeats, idempotency keys and fencing tokens are implemented.</td>
+<td>Verify business idempotency for every newly added job type.</td>
 </tr>
 <tr>
-<td>Node roles</td>
-<td>Locally protected <code>Client</code>, <code>Worker</code> and <code>Combined</code> roles; only workers may start schedulers, automatic imports and notifications.</td>
+<td>Process roles</td>
+<td>Enterprise Client and Worker are separate; co-location creates no third runtime mode.</td>
+<td>Confirm role behaviour in the RDS/Citrix acceptance environment.</td>
 </tr>
 <tr>
 <td>PostgreSQL compatibility acceptance</td>
-<td>Complete end-to-end verification of all repository, reporting, audit, migration and background paths under real multi-user load.</td>
+<td>A manual all-in-one Actions test covers migration and concurrent workers.</td>
+<td>Complete real multi-user load and customer-data acceptance.</td>
 </tr>
 <tr>
 <td>Secure setup secrets</td>
-<td>No passwords in process arguments; concealed hand-off, restrictive ACLs, log redaction, generated initial passwords and documented rotation.</td>
+<td>Protected INI, secret-free process arguments, DPAPI and diagnostic scanning are implemented.</td>
+<td>Document password rotation and customer-specific secret distribution.</td>
 </tr>
 <tr>
 <td>Code signing and supply chain</td>
-<td>Authenticode signatures for application and setups, pinned PostgreSQL installer with publisher/hash verification, SBOM and licence evidence.</td>
+<td>PostgreSQL is pinned by version, SHA-256 and EDB publisher.</td>
+<td>Add Authenticode for Mira executables/setups, SBOM and licence evidence for the first stable build.</td>
 </tr>
 </tbody>
 </table>
@@ -1575,7 +1610,7 @@
 </tr>
 </tbody>
 </table>
-<p>Until all Priority 0 items are complete, Enterprise must be operated as a controlled beta. The single-worker rule in the <a href="../enterprise-installation-guide/">installation guide</a> is mandatory.</p>
+<p>Enterprise remains a controlled beta until the remaining Priority 0 acceptance work is documented.</p>
 
 
 

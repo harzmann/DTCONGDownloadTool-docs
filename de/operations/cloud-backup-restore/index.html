@@ -16,7 +16,7 @@
         <link rel="prev" href="../../architecture/async-ui-background-services/">
       
       
-        <link rel="next" href="../enterprise-installation-guide/">
+        <link rel="next" href="../enterprise-backup-restore/">
       
       
         
@@ -1334,6 +1334,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="6. Backupziel einrichten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielunabhangiges-quick-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielunabhängiges Quick Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1428,6 +1445,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1681,6 +1726,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="6. Backupziel einrichten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zielunabhangiges-quick-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zielunabhängiges Quick Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1794,6 +1856,7 @@
 <ul>
 <li><code>archive_dir</code> enthält unveränderte, komprimierte Tachographenoriginale.</li>
 <li><code>financial_archive_dir</code> enthält Originale und Manifeste von Fremd- und E-Rechnungen.</li>
+<li><code>document_archive</code> neben der Datenbank enthält Originale und Manifeste der Personal- und Fahrzeugakten.</li>
 <li>SQLite speichert Metadaten, Verknüpfungen, Status und Auditdaten.</li>
 <li>Ein Backupziel enthält nur nachgelagerte, verifizierte Replikate und Datenbanksnapshots.</li>
 </ul>
@@ -1812,6 +1875,7 @@ financial_archive_dir/
 <div class="highlight"><pre><span></span><code>DLTNG/&lt;Installations-ID&gt;/
   archives/YYYY/MM/&lt;Archiv-ID&gt;.ddd.gz[.enc]
   financial-documents/YYYY/&lt;Rechnungs-ID&gt;/&lt;Dokument-ID&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
+  documents/YYYY/&lt;personal|vehicle&gt;/&lt;Akten-ID&gt;/&lt;Dokument-ID&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
   manifests/...
   database/YYYY/MM/archive_YYYY-MM-DD_HHmmssZ.db.gz[.enc]
 </code></pre></div>
@@ -1932,6 +1996,14 @@ financial_archive_dir/
 <h3 id="xml-xrechnung-und-hybrid-pdf">XML-XRechnung und Hybrid-PDF<a class="headerlink" href="#xml-xrechnung-und-hybrid-pdf" title="Permanent link">&para;</a></h3>
 <p>Der Import bereitet Empfangsoriginal, bei Hybrid-PDF das eingebettete XML und den Validierungsbericht gemeinsam vor. Erst wenn alle erforderlichen Objekte lokal verifiziert sind, werden Rechnung, Positionen, Zuordnungen und Dokumentverweise bestätigt. Ein Fehler entfernt temporäre Objekte und lässt keine Teilrechnung zurück.</p>
 <h2 id="6-backupziel-einrichten">6. Backupziel einrichten<a class="headerlink" href="#6-backupziel-einrichten" title="Permanent link">&para;</a></h2>
+<h3 id="zielunabhangiges-quick-backup">Zielunabhängiges Quick Backup<a class="headerlink" href="#zielunabhangiges-quick-backup" title="Permanent link">&para;</a></h3>
+<p>Basic und Pro können unter <strong>Administration → Sicherungen → Quick Backup</strong> jederzeit
+eine konsistente SQLite-Datenbanksicherung als lokale ZIP-Datei erstellen. Das ZIP
+enthält <code>archive.db</code> und ein Manifest mit SHA-256, Größe und Prüfergebnis. Dafür ist
+kein Backupziel erforderlich.</p>
+<p>Das Quick Backup enthält keine DDD-, PDF-, Finanz- oder Dokumentarchive. Für eine
+vollständige Sicherung müssen deshalb zusätzlich die konfigurierten Archivordner
+kopiert oder die nachfolgend beschriebene Pro-Sicherung verwendet werden.</p>
 <p>Unter <strong>Administration → Backups</strong> kann genau ein aktives Ziel eingerichtet werden:</p>
 <ul>
 <li><code>LOCAL_FILESYSTEM</code>: zweites lokales Laufwerk oder UNC-/NAS-Freigabe;</li>

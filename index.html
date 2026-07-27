@@ -1309,6 +1309,34 @@
   
   
     <li class="md-nav__item">
+      <a href="operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1541,7 +1569,7 @@
 <p><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/SHA256SUMS.txt">Basic/Pro checksums</a> · <a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/SHA256SUMS-Enterprise.txt">Enterprise checksums</a> · <a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/tag/v1.1.0-beta6">Release notes and all files</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Unsigned beta release</p>
-<p>The setups are not yet code-signed, so Windows SmartScreen may display a warning. Enterprise scheduled work currently requires exactly one dedicated, signed-in worker application session; the standalone Windows service remains open work. Microsoft Entra ID SSO is Beta and has not yet been validated end to end with a real customer tenant. A local emergency administrator must remain available.</p>
+<p>The setups are not yet code-signed, so Windows SmartScreen may display a warning. Enterprise background work runs in the standalone <code>FleetMiraWorker</code> Windows service; clients do not start an integrated worker. Microsoft Entra ID SSO is Beta and has not yet been validated end to end with a real customer tenant. A local emergency administrator must remain available.</p>
 </div>
 <p><img alt="FLEET Mira dashboard with anonymised demonstration data" src="assets/screenshots/dashboard.png" />
 <em>Figure: FLEET Mira start dashboard with anonymised demonstration data.</em></p>

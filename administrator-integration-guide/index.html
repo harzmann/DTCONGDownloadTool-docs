@@ -1505,6 +1505,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1953,7 +1981,8 @@
 </tr>
 </tbody>
 </table>
-<p>The SQLite location is canonicalised and checked at startup and when settings are saved. Mapped drives and reparse paths targeting network storage are rejected even when they appear to use a local drive letter. A blocked environment exposes only the rescue dialog for a verified local SQLite copy. Use absolute service paths in production and grant write access only to the application service/user identity.</p>
+<p>Under <strong>Administration → Settings</strong>, FLEET Mira displays the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These paths are read-only in Basic, Pro and Enterprise until a controlled relocation wizard can move data, database references and permissions as one operation. Raw configuration cannot bypass this restriction. Enterprise marks the SQLite path as unused because that edition uses PostgreSQL.</p>
+<p>The Basic and Pro SQLite location is canonicalised and checked at startup. Mapped drives and reparse paths targeting network storage are rejected even when they appear to use a local drive letter. A blocked environment exposes only the rescue dialog for a verified local SQLite copy. Do not edit or move the data root manually. Grant write access only to the relevant application identity.</p>
 <h3 id="initial-deployment">Initial deployment<a class="headerlink" href="#initial-deployment" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Deploy the build and the supplied empty deployment database.</li>

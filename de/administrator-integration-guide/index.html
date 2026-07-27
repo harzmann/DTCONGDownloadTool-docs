@@ -1505,6 +1505,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1953,7 +1981,8 @@
 </tr>
 </tbody>
 </table>
-<p>Der SQLite-Pfad wird beim Start und beim Speichern der Einstellungen kanonisch geprüft. Gemappte Netzlaufwerke und auf Netzwerkziele verweisende Reparse-Pfade sind auch dann unzulässig, wenn sie wie lokale Laufwerksbuchstaben aussehen. Bei einer Sperre bleibt nur der Rettungsdialog für eine lokal geprüfte SQLite-Sicherung verfügbar. Verwenden Sie im Produktivbetrieb absolute Dienstpfade und vergeben Sie Schreibrechte nur an die Anwendungsidentität.</p>
+<p>Unter <strong>Administration → Einstellungen</strong> werden der aktive Datenstamm sowie die daraus aufgelösten Pfade für Logs, SQLite, DDD-Archive, Dokumentarchive und Finanzarchive vollständig angezeigt. Diese Pfade sind in Basic, Pro und Enterprise schreibgeschützt, bis ein kontrollierter Umzugsassistent Daten, Datenbankreferenzen und Berechtigungen gemeinsam verlagern kann. Auch die Rohkonfiguration darf diese Felder nicht umgehen. Enterprise kennzeichnet den SQLite-Pfad als nicht verwendet, da diese Edition PostgreSQL nutzt.</p>
+<p>Der SQLite-Pfad von Basic und Pro wird beim Start kanonisch geprüft. Gemappte Netzlaufwerke und auf Netzwerkziele verweisende Reparse-Pfade sind auch dann unzulässig, wenn sie wie lokale Laufwerksbuchstaben aussehen. Bei einer Sperre bleibt nur der Rettungsdialog für eine lokal geprüfte SQLite-Sicherung verfügbar. Ändern oder verschieben Sie den Datenstamm nicht manuell. Vergeben Sie Schreibrechte nur an die jeweilige Anwendungsidentität.</p>
 <h3 id="erstinstallation">Erstinstallation<a class="headerlink" href="#erstinstallation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Build und bereitgestellte leere Deploymentdatenbank ausrollen.</li>

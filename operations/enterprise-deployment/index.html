@@ -1200,6 +1200,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1499,7 +1527,7 @@
 <li><code>FLEET-Mira-Enterprise-&lt;Version&gt;-Setup-x64.exe</code> installs the application and Enterprise installation marker;</li>
 <li><code>FLEET-Mira-PostgreSQL-Server-&lt;Version&gt;-Setup-x64.exe</code> embeds the official PostgreSQL Windows installer and provisions a local service, the empty <code>mira</code> database, and the <code>mira_app</code> login.</li>
 </ul>
-<p>Run the PostgreSQL Server setup as administrator on the intended Windows Server. The wizard asks for the port, PostgreSQL administrator password, and a password of at least twelve characters for <code>mira_app</code>. Passwords are not written to a configuration file.</p>
+<p>Run the PostgreSQL Server setup as administrator on the intended Windows Server. The wizard asks for the port, PostgreSQL administrator password, and a password of at least twelve characters for <code>mira_app</code>. Secrets are passed to subprocesses only through temporary ACL-protected option files, never as process arguments, and are deleted after installation.</p>
 <p>For a reproducible build:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">build_enterprise_release</span><span class="p">.</span><span class="n">ps1</span> <span class="p">`</span>
   <span class="n">-PostgreSQLInstaller</span> <span class="n">C</span><span class="p">:\</span><span class="n">Install</span><span class="p">\</span><span class="n">postgresql-windows-x64</span><span class="p">.</span><span class="n">exe</span>

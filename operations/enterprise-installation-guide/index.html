@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-installation-guide/">
       
       
-        <link rel="prev" href="../cloud-backup-restore/">
+        <link rel="prev" href="../enterprise-backup-restore/">
       
       
         <link rel="next" href="../enterprise-deployment/">
@@ -1197,6 +1197,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1378,6 +1406,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnosing-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosing sign-in
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1663,6 +1702,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#diagnosing-sign-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnosing sign-in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#migrating-an-existing-sqlite-database" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1722,14 +1772,14 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Beta status and worker operation</p>
-<p>The setups are not yet code-signed. Verify their SHA-256 checksums before installation. In this beta, the FLEET Mira Worker is not a standalone Windows service. Scheduled background work runs in a started Enterprise application instance. In a multi-user environment, enable these tasks only in exactly one permanently signed-in, dedicated worker session. The Windows service and a technical multi-instance lock are documented as open work.</p>
+<p>The setups are not yet code-signed. Verify their SHA-256 checksums before installation. Central background work runs only in the <code>FleetMiraWorker</code> Windows service; Enterprise clients do not start an integrated worker. An all-in-one server co-locates client and worker without introducing a separate combined runtime mode.</p>
 </div>
 <h2 id="common-planning">Common planning<a class="headerlink" href="#common-planning" title="Permanent link">&para;</a></h2>
 <p>Before installation, define:</p>
 <ol>
 <li>a stable DNS name for the PostgreSQL server;</li>
-<li>a password of at least twelve characters for database user <code>mira_app</code> and a separate PostgreSQL administrator password;</li>
-<li>a dedicated Windows account for the worker session;</li>
+<li>passwords of at least twelve characters for <code>mira_app</code>, <code>mira_backup</code>, <code>mira_restore</code>, and the PostgreSQL administrator;</li>
+<li>permissions for the virtual <code>NT SERVICE\FleetMiraWorker</code> account or a designated gMSA;</li>
 <li>local NTFS storage for PostgreSQL data and central locations for tachograph and document archives;</li>
 <li>a PostgreSQL backup and a separate backup for file archives;</li>
 <li>a maintenance window, firewall rules and, for network connections, a trusted TLS server certificate.</li>
@@ -1740,73 +1790,85 @@
 <pre class="mermaid"><code>flowchart LR
     C1["Enterprise client 1"] --&gt;|TLS / TCP 5432| DB[("PostgreSQL: mira")]
     C2["Enterprise client n"] --&gt;|TLS / TCP 5432| DB
-    W["Enterprise app as dedicated FLEET Mira Worker"] --&gt;|TLS / TCP 5432| DB
+    W["FleetMiraWorker service"] --&gt;|TLS / TCP 5432| DB
     W --&gt; A["Shared file archive (UNC)"]
     C1 --&gt; A
     C2 --&gt; A</code></pre>
-<p>The Windows Server hosts PostgreSQL and a dedicated Enterprise application instance for background work. Users work with Enterprise clients on Windows 10/11 workstations or approved server sessions.</p>
+<p>The Windows Server hosts PostgreSQL and the standalone worker service. Users work with Enterprise clients on Windows 10/11 workstations or approved server sessions.</p>
 <h3 id="install-the-server">Install the server<a class="headerlink" href="#install-the-server" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Sign in to Windows Server with local administrator privileges.</li>
 <li>Copy both setups to a local server folder and compare their SHA-256 values with <code>SHA256SUMS-Enterprise.txt</code>.</li>
 <li>Run <code>FLEET-Mira-PostgreSQL-Server-1.1.0-beta6-Setup-x64.exe</code> as administrator.</li>
-<li>Enter the port, PostgreSQL administrator password and the password for <code>mira_app</code>. The setup installs PostgreSQL and creates the service, empty <code>mira</code> database and <code>mira_app</code> application login.</li>
+<li>Enter the port and the passwords for the PostgreSQL administrator, <code>mira_app</code>, <code>mira_backup</code>, and <code>mira_restore</code>. The setup installs PostgreSQL, creates the service, database and roles, and then imports the complete but business-empty Mira application schema.</li>
 <li>Configure <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS and TLS according to your security policy. Open Windows Firewall TCP port 5432 only to the intended client and worker networks.</li>
-<li>Run <code>FLEET-Mira-Enterprise-1.1.0-beta6-Setup-x64.exe</code> as administrator and install the application for all users.</li>
-<li>Sign in with the dedicated worker account and start FLEET Mira Enterprise.</li>
-<li>In the PostgreSQL wizard, enter the DNS name, port, database <code>mira</code>, user <code>mira_app</code>, password and SSL mode. <code>verify-full</code> is recommended for production networks.</li>
-<li>Test the connection. For an empty Mira database, the wizard creates the application schema transactionally.</li>
-<li>Configure the shared archive, import and document paths. Use the same UNC paths that will be configured on the clients.</li>
+<li>Run the Enterprise setup as administrator and select <strong>Fleet Mira Worker</strong>. <code>/COMPONENTS=worker</code> is the unattended equivalent.</li>
+<li>In an administrative Enterprise client, enter the DNS name, port, database <code>mira</code>, user <code>mira_app</code>, password and SSL mode. <code>verify-full</code> is recommended for production networks.</li>
+<li>Test the connection. No subsequent schema initialisation is required; before reporting success, the Server setup verifies the application, worker, and Enterprise backup schemas. <code>mira_app</code> neither needs nor receives DDL or <code>CREATE</code> privileges on the <code>public</code> schema.</li>
+<li>Verify <code>FleetMiraWorker</code>, its heartbeat and <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code>.</li>
+<li>Configure shared archive, import and document paths and grant the service identity the required UNC and NTFS permissions.</li>
 </ol>
 <h3 id="install-the-clients">Install the clients<a class="headerlink" href="#install-the-clients" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Run only the Enterprise application setup as administrator on every client.</li>
 <li>Open FLEET Mira and use the wizard to connect to the same <code>mira</code> database.</li>
 <li>Verify access to every shared archive under the respective user account.</li>
-<li>Keep scheduled download, import, notification and backup jobs disabled on user clients. Enable them only in the dedicated worker session.</li>
+<li>The client automatically queues central manual jobs in PostgreSQL and never starts a local scheduler.</li>
 </ol>
 <h3 id="operate-the-worker">Operate the worker<a class="headerlink" href="#operate-the-worker" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Use a separate Windows account with “Allow log on through Remote Desktop Services” and only the permissions required for sources, archives and certificates.</li>
-<li>Keep exactly one worker session signed in with the application running.</li>
-<li>Do not configure identical schedules in any other session.</li>
+<li>Use <code>NT SERVICE\FleetMiraWorker</code> by default; grant the machine account UNC access or switch to a gMSA/domain account when required.</li>
+<li>Monitor service state, PostgreSQL heartbeat, queue, leases and failed jobs.</li>
+<li>Multiple workers are supported; advisory locks and leases prevent duplicate processing.</li>
 <li>Monitor <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> plus PostgreSQL and Windows event logs.</li>
-<li>Include a controlled worker-session sign-in in the server restart procedure.</li>
+<li>The service starts delayed after a reboot and has configured recovery actions.</li>
 </ul>
 <h2 id="scenario-2-terminal-server-with-all-components">Scenario 2: terminal server with all components<a class="headerlink" href="#scenario-2-terminal-server-with-all-components" title="Permanent link">&para;</a></h2>
 <h3 id="target-topology_1">Target topology<a class="headerlink" href="#target-topology_1" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart TB
     U1["RDP/Citrix user session 1"] --&gt; DB[("Local PostgreSQL: mira")]
     U2["RDP/Citrix user session n"] --&gt; DB
-    W["Dedicated worker session"] --&gt; DB
+    W["FleetMiraWorker service"] --&gt; DB
     U1 --&gt; A["Central file archive on a local NTFS disk"]
     U2 --&gt; A
     W --&gt; A</code></pre>
-<p>PostgreSQL, the Enterprise application, user sessions and the worker session all reside on the same Windows Server.</p>
+<p>PostgreSQL, the Enterprise application, user sessions and the worker service all reside on the same Windows Server.</p>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Create local NTFS directories for PostgreSQL data and file archives. Do not use user profiles, UNC paths or mapped drives for the PostgreSQL data directory.</li>
-<li>First install the PostgreSQL Server setup as administrator and provision <code>mira</code>, <code>mira_app</code> and the passwords.</li>
+<li>First install the PostgreSQL Server setup as administrator. It provisions <code>mira</code>, the complete application schema, and the <code>mira_owner</code>, <code>mira_app</code>, <code>mira_backup</code>, and <code>mira_restore</code> roles.</li>
 <li>Then install the Enterprise application setup once, system-wide, as administrator.</li>
 <li>Start FLEET Mira in an administrative setup session and connect it to <code>localhost</code>, the selected port and database <code>mira</code>.</li>
-<li>Test and initialise the empty database. The connection configuration is stored machine-wide below <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>; Windows DPAPI protects the password.</li>
+<li>Test the already initialised database. The connection configuration is stored machine-wide below <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>; Windows DPAPI protects the password.</li>
 <li>Configure the file archives on a local NTFS path accessible to all intended sessions, for example <code>D:\FLEET-Mira-Data</code>.</li>
 <li>Sign in to a normal user session and test login, read/write permissions, report output and archive access.</li>
-<li>Create a separate worker session. Scheduled background work may be enabled only there.</li>
+<li>Install client and service together with <code>/COMPONENTS=client,worker</code> and verify that only the service executes background work.</li>
 </ol>
-<p>Because every terminal-server session shares the machine-wide configuration, multiple concurrently running application instances must not execute the same schedules. This operating rule remains mandatory until the Windows service and multi-instance lock are available.</p>
+<p>The co-located installation does not create another runtime mode. Every terminal-server session remains a client; schedules, notifications and central imports run only in the service.</p>
+<h2 id="diagnosing-sign-in">Diagnosing sign-in<a class="headerlink" href="#diagnosing-sign-in" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Check <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> first.</li>
+<li><code>POSTGRESQL_SCHEMA verified</code> confirms the connection and complete startup verification, but not the user login itself.</li>
+<li>Locate the first <code>CRITICAL</code> entry immediately after selecting <strong>Sign in</strong>. Its traceback identifies the repository, SQL statement, and PostgreSQL error class.</li>
+<li>The client also displays unexpected database failures directly in the login dialog. Passwords are written neither there nor to the log.</li>
+<li><code>permission denied for schema public</code> must not occur with a current setup: <code>mira_app</code> writes application data but executes no DDL statements.</li>
+</ul>
 <h2 id="migrating-an-existing-sqlite-database">Migrating an existing SQLite database<a class="headerlink" href="#migrating-an-existing-sqlite-database" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Create and verify an unchanged backup of the SQLite file and the associated file archives.</li>
-<li>Stop all other FLEET Mira instances and disable scheduled jobs.</li>
+<li>Stop all other FLEET Mira instances and stop the <code>FleetMiraWorker</code> service on every worker host.</li>
 <li>In Enterprise, open <strong>Enterprise → Migrate SQLite database</strong>.</li>
 <li>Select the SQLite source. The wizard opens it read-only, runs <code>PRAGMA quick_check</code>, and displays table and row counts.</li>
-<li>Confirm replacement of the empty or designated Mira schema. Transfer runs in a PostgreSQL transaction and rolls back on error.</li>
+<li>The mandatory option <strong>Copy DDD, record-document and financial archives to the FLEET Mira ProgramData directory</strong> atomically copies the related files to <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\state</code>. The wizard checks existing targets against the stored SHA-256 values and stops when a reference is missing or changed. Only then are all DDD, document, manifest and financial-archive paths normalized to portable <code>state/...</code> references inside the same PostgreSQL transaction. No new business hashes or signatures are generated.</li>
+<li>Enter user <code>mira_restore</code> and the restore password selected during PostgreSQL setup. These credentials are used only for the current migration and are not stored.</li>
+<li>Confirm replacement of the empty or designated Mira schema. Transfer assumes <code>mira_owner</code> and runs in a PostgreSQL transaction that rolls back on error. The Enterprise worker/backup objects and privileges for <code>mira_app</code> and <code>mira_backup</code> are restored afterwards.</li>
 <li>Restart Enterprise and compare users, vehicles, tachograph records, documents and sample reports with the legacy system.</li>
 <li>Enable the worker only after migration acceptance has been recorded.</li>
 </ol>
 <h2 id="backup-update-and-rollback">Backup, update and rollback<a class="headerlink" href="#backup-update-and-rollback" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Under <strong>Administration → Backups → Quick Backup</strong>, an authorised administrator can export a PostgreSQL custom dump as a ZIP file to a selected local directory without configuring a backup target. The ZIP contains <code>mira.dump</code> and a checksum manifest. The dialog requests the <code>mira_backup</code> user and password and does not store the password. This diagnostic export contains only the database and does not replace a complete Enterprise backup of the file archives.</li>
+<li>The target configuration displays only fields required by the selected provider. It provides a directory picker for file system/UNC targets and a JSON file picker for the Google OAuth configuration.</li>
 <li>Back up PostgreSQL regularly with <code>pg_dump</code> or a centrally monitored PostgreSQL backup system, and test <code>pg_restore</code>.</li>
 <li>Back up tachograph, finance-document and other file archives separately and consistently.</li>
 <li>Before every update, create a PostgreSQL dump and archive backup while all clients and the worker are stopped.</li>
@@ -1820,7 +1882,7 @@
 <li>[ ] <code>mira_app</code> can connect only from approved networks or locally.</li>
 <li>[ ] TLS, firewall, <code>pg_hba.conf</code> and DNS are documented and tested.</li>
 <li>[ ] Every client uses the same PostgreSQL database and canonical archive paths.</li>
-<li>[ ] Exactly one dedicated worker session executes scheduled jobs.</li>
+<li>[ ] <code>FleetMiraWorker</code> is running and Enterprise clients do not start an integrated worker.</li>
 <li>[ ] Multiple users can read and write concurrently.</li>
 <li>[ ] PostgreSQL and file-archive backup and restore have been tested.</li>
 <li>[ ] Migration and business-level samples have been recorded.</li>

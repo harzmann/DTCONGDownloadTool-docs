@@ -464,6 +464,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Sources and download tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-root-and-storage-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data root and storage paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1566,6 +1583,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1784,6 +1829,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Sources and download tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-root-and-storage-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data root and storage paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2105,6 +2167,8 @@
 <em>Figure: Administration of automatic import sources.</em></p>
 <p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
 <p>The <strong>Administration → Settings → Automatically import USB removable drives</strong> option recursively scans newly inserted drives for DDD and <code>RFID*.CSV</code> files. It operates only while FLEET Mira is open or running in the system tray; source files remain on the drive.</p>
+<h3 id="data-root-and-storage-paths">Data root and storage paths<a class="headerlink" href="#data-root-and-storage-paths" title="Permanent link">&para;</a></h3>
+<p>Under <strong>Administration → Settings</strong>, administrators can see the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These fields are intentionally read-only: changing one path in isolation would separate files, database references and access permissions. Until the controlled relocation wizard is available, these paths cannot be changed through either the settings page or raw configuration. Enterprise displays the SQLite path as unused because its database is held in PostgreSQL.</p>
 <p><img alt="Download-task management" src="../assets/screenshots/tasks.png" />
 <em>Figure: Scheduled and manually executable download tasks.</em></p>
 <p>In strict mode, a terminal file is not marked as processed or deleted until its cloud copy is verified.</p>
@@ -2206,13 +2270,16 @@
 <h3 id="person-record">Person record<a class="headerlink" href="#person-record" title="Permanent link">&para;</a></h3>
 <p><img alt="Person record" src="../assets/screenshots/person-record.png" />
 <em>Figure: Person record with related business tabs.</em></p>
-<p>The record contains master data, deadlines, licence checks, RFID history, card links/files, day/week/activity views and audit. Use <strong>Assign RFID/NFC</strong> to read a UID from a local PC/SC reader. <strong>FSK via PC/SC</strong> records a successful check only when the read UID belongs to the selected person.</p>
+<p>The record contains master data, deadlines, documents, licence checks, RFID history, card links/files, day/week/activity views and audit. The Audit tab uses the same context menu as the global Audit Log: open the related record, show the XML tree view, or copy details, rows and cells. The <strong>Documents</strong> tab accepts drag-and-drop or file selection, versioning and metadata; PDF and image files can be previewed directly. Document and validity dates use date pickers formatted for the signed-in user's region. The immutable local original is created when the document is added, while the configured backup task handles external backup. Logical archiving remains available from the context menu. Local restore and permanent purge are visible only to appropriately authorised administrators. Use <strong>Assign RFID/NFC</strong> to read a UID from a local PC/SC reader. <strong>FSK via PC/SC</strong> records a successful check only when the read UID belongs to the selected person.</p>
+<p>For a new record document, the document date defaults to today. <strong>Valid until</strong> is calculated from the document date plus the period configured under <strong>Administration → Receipts/Documents → Document retention period</strong>. The financial-document retention period remains independent.</p>
+<p>The <strong>Audit</strong> tab covers the complete record. In addition to personnel or vehicle master-data changes, it includes logged events for related deadlines, documents, driving-licence checks and tachograph links. Vehicle records additionally include odometer readings, costs/credits, associated supplier invoices, financial documents and accounting exports. The <strong>Area</strong> column identifies the related sub-object.</p>
 <h3 id="vehicle-record">Vehicle record<a class="headerlink" href="#vehicle-record" title="Permanent link">&para;</a></h3>
 <p><img alt="Vehicle record" src="../assets/screenshots/vehicle-record.png" />
 <em>Figure: Vehicle record with tachograph, finance and position tabs.</em></p>
-<p>Tabs include deadlines, costs/credits, foreign invoices, tachograph links, M files, drivers/activities, events/faults, speed, technical data, calibrations, positions and audit. Aggregate functional tables hide the source-file column by default; the source archive remains available from the context menu. Identical technical records appear once with their source count and complete detail tree. Position rows can be opened together on the map.</p>
+<p>Tabs include deadlines, documents, costs/credits, foreign invoices, tachograph links, M files, drivers/activities, events/faults, speed, technical data, calibrations, positions and audit. The Audit tab uses the same context menu as the global Audit Log: open the related record, show the XML tree view, or copy details, rows and cells. Record documents use the same audit-oriented archive and configured local, UNC or cloud backup destination. Aggregate functional tables hide the source-file column by default; the source archive remains available from the context menu. Identical technical records appear once with their source count and complete detail tree. Position rows can be opened together on the map.</p>
 <h2 id="9-deadlines-and-download-due-dates">9. Deadlines and download due dates<a class="headerlink" href="#9-deadlines-and-download-due-dates" title="Permanent link">&para;</a></h2>
-<p>Personnel and vehicle deadline evaluations are separate but use the same sortable/filterable component. Every deadline has an individual lead time; the default is ten days. Colours mean:</p>
+<p>Personnel and vehicle deadline evaluations are separate but use the same sortable/filterable component. Personnel deadlines remain time-based. Vehicle deadlines can be time-based, mileage-based or combined; a combined deadline becomes due when the first limit is reached. Time and mileage lead values and recurrence intervals can be configured per deadline or as due-type defaults.</p>
+<p>The fleet evaluation displays the latest reliable odometer reading, measurement time and source, target and remaining mileage, trigger and data quality. Filters cover due type, status, basis, trigger, mileage quality and evaluability. If a combined deadline has no valid mileage reading, its time condition remains usable while the mileage condition is marked only partially evaluable. Colours mean:</p>
 <ul>
 <li>green: outside the lead time;</li>
 <li>blue/orange status: approaching or due today;</li>

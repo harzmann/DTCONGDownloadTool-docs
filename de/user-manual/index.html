@@ -464,6 +464,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Quellen und Downloadtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenstamm-und-speicherpfade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenstamm und Speicherpfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1566,6 +1583,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1784,6 +1829,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Quellen und Downloadtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenstamm-und-speicherpfade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenstamm und Speicherpfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2105,6 +2167,8 @@
 <em>Abbildung: Verwaltung der automatischen Importquellen.</em></p>
 <p>Unter <strong>Administration → Tasks</strong> konfigurieren Sie Quellen, Dateimuster, Rekursion, Zeitplan, Archivverhalten und optional den strengen Cloud-Backupmodus. <strong>Sofort starten</strong> zeigt je Quelle Status, Fortschritt und laufend aktualisierte Logmeldungen. RFID-Terminaldateien benötigen das Muster <code>RFID_*.CSV</code>.</p>
 <p>Die Option <strong>Administration → Einstellungen → USB-Wechseldatenträger automatisch importieren</strong> durchsucht neu eingesteckte Datenträger rekursiv nach DDD- und <code>RFID*.CSV</code>-Dateien. Sie wirkt nur, solange FLEET Mira geöffnet ist oder im System-Tray läuft; die Quelldateien bleiben auf dem Datenträger erhalten.</p>
+<h3 id="datenstamm-und-speicherpfade">Datenstamm und Speicherpfade<a class="headerlink" href="#datenstamm-und-speicherpfade" title="Permanent link">&para;</a></h3>
+<p>Unter <strong>Administration → Einstellungen</strong> sehen Administratoren den aktiven Datenstamm sowie die vollständig aufgelösten Pfade für Logs, SQLite, DDD-Archive, Dokumentarchive und Finanzarchive. Die Felder sind bewusst schreibgeschützt: Ein einzelner geänderter Pfad würde Dateien, Datenbankreferenzen und Zugriffsrechte auseinanderlaufen lassen. Bis der kontrollierte Umzugsassistent verfügbar ist, dürfen diese Pfade weder in der Einstellungsmaske noch über die Rohkonfiguration verändert werden. In Enterprise wird der SQLite-Pfad lediglich als nicht verwendet angezeigt, weil die Datenbank in PostgreSQL liegt.</p>
 <p><img alt="Verwaltung der Downloadtasks" src="../assets/screenshots/tasks.png" />
 <em>Abbildung: Zeitgesteuerte und manuell ausführbare Downloadtasks.</em></p>
 <p>Im strengen Modus wird eine Terminaldatei erst nach verifiziertem Cloudbackup als verarbeitet markiert oder gelöscht.</p>
@@ -2206,14 +2270,17 @@
 <h3 id="personalakte">Personalakte<a class="headerlink" href="#personalakte" title="Permanent link">&para;</a></h3>
 <p><img alt="Personalakte" src="../assets/screenshots/person-record.png" />
 <em>Abbildung: Personalakte mit den zugehörigen Fachreitern.</em></p>
-<p>Die Akte enthält Stammdaten, Fälligkeiten, Führerscheinkontrollen, RFID-Historie, Fahrerkartenverknüpfungen/-dateien, Tages-/Wochen-/Aktivitätsansicht und Audit. <strong>RFID/NFC zuordnen</strong> liest eine UID über PC/SC. <strong>FSK per PC/SC</strong> erzeugt nur dann eine Kontrolle, wenn die gelesene UID zur Person gehört.</p>
+<p>Die Akte enthält Stammdaten, Fälligkeiten, Dokumente, Führerscheinkontrollen, RFID-Historie, Fahrerkartenverknüpfungen/-dateien, Tages-/Wochen-/Aktivitätsansicht und Audit. Das Kontextmenü des Audit-Reiters entspricht dem globalen Audit-Protokoll und ermöglicht das Öffnen des zugehörigen Datensatzes, die XML-Treeview sowie das Kopieren von Details, Zeilen und Zellen. Im Reiter <strong>Dokumente</strong> lassen sich Dateien per Drag&amp;Drop oder Dateiauswahl ablegen, versionieren, mit Metadaten versehen und – bei PDF- und Bilddateien – direkt anzeigen. Dokumentdatum und Gültigkeitsdatum werden über Datepicker im regionalen Datumsformat des angemeldeten Benutzers erfasst. Das unveränderliche lokale Original entsteht bereits beim Hinzufügen; die externe Sicherung übernimmt der konfigurierte Backup-Task. Das fachliche Archivieren befindet sich im Kontextmenü. Lokale Wiederherstellung und endgültige Bereinigung sind ausschließlich entsprechend berechtigten Administratoren zugänglich. <strong>RFID/NFC zuordnen</strong> liest eine UID über PC/SC. <strong>FSK per PC/SC</strong> erzeugt nur dann eine Kontrolle, wenn die gelesene UID zur Person gehört.</p>
+<p>Bei einem neuen Dokument ist das Dokumentdatum mit dem aktuellen Tagesdatum vorbelegt. <strong>Gültig bis</strong> wird aus Dokumentdatum plus der unter <strong>Administration → Belege/Dokumente → Aufbewahrungsfrist Dokumente</strong> konfigurierten Frist berechnet. Die separate Aufbewahrungsfrist für Finanzbelege bleibt davon unabhängig.</p>
+<p>Der Reiter <strong>Audit</strong> bildet die gesamte Akte ab. Neben Änderungen am Personal- beziehungsweise Fahrzeugstamm erscheinen dort auch die protokollierten Vorgänge der zugehörigen Fälligkeiten, Dokumente, Führerscheinkontrollen und Tachodatenverknüpfungen. Bei Fahrzeugen werden zusätzlich Kilometerstände, Kosten/Gutschriften, zugeordnete Fremdrechnungen, Finanzbelege und FiBu-Exporte einbezogen. Über die Spalte <strong>Bereich</strong> ist erkennbar, auf welches Teilobjekt sich ein Ereignis bezieht.</p>
 <p>Tagesansicht, Wochenansicht und Verstöße sind aktenbezogen: Bei Personal werden alle verknüpften Fahrerkarten einschließlich Kartenwechsel berücksichtigt, bei Fahrzeugen alle gültigen M-Dateien der verknüpften FIN. Der Befehl <strong>Einzelne Datei auswerten</strong> öffnet dagegen ausschließlich das gewählte C- oder M-Archiv.</p>
 <h3 id="fahrzeugakte">Fahrzeugakte<a class="headerlink" href="#fahrzeugakte" title="Permanent link">&para;</a></h3>
 <p><img alt="Fahrzeugakte" src="../assets/screenshots/vehicle-record.png" />
 <em>Abbildung: Fahrzeugakte mit Tachodaten-, Finanz- und Positionsreitern.</em></p>
-<p>Tabs enthalten Fälligkeiten, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Die aggregierten Fachtabellen blenden die technische Quellspalte standardmäßig aus; das Quellarchiv bleibt über das Kontextmenü erreichbar. Identische technische Daten werden einmal mit ihrer Quellenanzahl und dem vollständigen Detailbaum dargestellt. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
+<p>Tabs enthalten Fälligkeiten, Dokumente, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Das Kontextmenü des Audit-Reiters entspricht dem globalen Audit-Protokoll und ermöglicht das Öffnen des zugehörigen Datensatzes, die XML-Treeview sowie das Kopieren von Details, Zeilen und Zellen. Dokumente verwenden dasselbe revisionsnahe Archiv- und Backupziel wie die konfigurierte lokale, UNC- oder Cloud-Sicherung. Die aggregierten Fachtabellen blenden die technische Quellspalte standardmäßig aus; das Quellarchiv bleibt über das Kontextmenü erreichbar. Identische technische Daten werden einmal mit ihrer Quellenanzahl und dem vollständigen Detailbaum dargestellt. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
 <h2 id="9-falligkeiten-und-downloadtermine">9. Fälligkeiten und Downloadtermine<a class="headerlink" href="#9-falligkeiten-und-downloadtermine" title="Permanent link">&para;</a></h2>
-<p>Personal- und Fahrzeugauswertung sind getrennt, verwenden aber dieselbe sortier-/filterbare Komponente. Jede Fälligkeit besitzt einen individuellen Vorlauf; Standard sind zehn Tage. Farben:</p>
+<p>Personal- und Fahrzeugauswertung sind getrennt, verwenden aber dieselbe sortier-/filterbare Komponente. Personalfälligkeiten bleiben zeitbezogen. Fahrzeugfälligkeiten können zeitbezogen, kilometerbezogen oder kombiniert angelegt werden; bei einer kombinierten Fälligkeit entscheidet die zuerst erreichte Grenze. Zeit- und Kilometer-Vorlauf sowie Wiederholungsintervalle lassen sich je Fälligkeit oder als Standard der Fälligkeitsart festlegen.</p>
+<p>Die Fahrzeugauswertung zeigt den letzten verlässlichen Kilometerstand, Messzeitpunkt und Quelle sowie Ziel-, Restkilometer, auslösende Bedingung und Datenqualität. Sie kann nach Fälligkeitsart, Status, Basis, Auslöser, Kilometerqualität und Auswertbarkeit gefiltert werden. Fehlt bei einer kombinierten Fälligkeit ein gültiger Kilometerstand, bleibt die Zeitbedingung auswertbar und die Kilometerbedingung wird als teilweise auswertbar gekennzeichnet. Farben:</p>
 <ul>
 <li>grün: außerhalb des Vorlaufs;</li>
 <li>blau/orange: bald anstehend oder heute fällig;</li>

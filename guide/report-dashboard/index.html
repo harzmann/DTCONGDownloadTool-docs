@@ -1313,6 +1313,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1535,7 +1563,7 @@
 
 
 <h1 id="report-dashboard">Report dashboard<a class="headerlink" href="#report-dashboard" title="Permanent link">&para;</a></h1>
-<p>The <strong>Report dashboard 💎</strong> provides reproducible working-time and return reports. Every run stores its filters, time basis, calculation version and result without changing tachograph or master data.</p>
+<p>The <strong>Report dashboard 💎</strong> provides reproducible working-time, return and deadline reports. Every run stores its filters, time basis, calculation version and result without changing tachograph or master data.</p>
 <h2 id="report-catalogue">Report catalogue<a class="headerlink" href="#report-catalogue" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1576,16 +1604,27 @@
 <td>Vehicle return to Member State of establishment</td>
 <td>last and next return for selected vehicles</td>
 </tr>
+<tr>
+<td>Deadlines</td>
+<td>Personnel deadlines</td>
+<td>personnel number, driver name, due type, date, remaining days and status</td>
+</tr>
+<tr>
+<td>Deadlines</td>
+<td>Fleet deadlines</td>
+<td>date and mileage limits, current mileage, trigger, data quality and status</td>
+</tr>
 </tbody>
 </table>
 <h2 id="create-a-report">Create a report<a class="headerlink" href="#create-a-report" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open <strong>Fleet → Report dashboard 💎</strong>.</li>
-<li>Select <strong>Favourites</strong>, <strong>Working time</strong> or <strong>Planning</strong>, then choose a report.</li>
+<li>Select <strong>Favourites</strong>, <strong>Working time</strong>, <strong>Planning</strong> or <strong>Deadlines</strong>, then choose a report.</li>
 <li>Set the report-specific filters that appear. No object selection means all permitted drivers or vehicles.</li>
 <li>Choose <strong>Create report</strong>.</li>
 </ol>
 <p>The result view explains the calculation basis and time basis. Stored runs can be reopened unchanged from history. Favourites only affect the personal catalogue view.</p>
+<p>Deadline reports can be filtered by period, object, due type, status and lifecycle. The fleet report additionally filters by basis, trigger, mileage data quality and evaluability. If the period is not enabled, mileage-only deadlines without a date remain included.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>Use <strong>Configuration</strong> to maintain establishment/holiday country, optional subdivision, night-time window and return intervals. A stored report version retains the configuration in effect when it was created; later changes do not rewrite previous results.</p>
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>

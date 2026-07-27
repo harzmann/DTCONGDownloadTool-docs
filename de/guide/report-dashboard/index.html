@@ -1313,6 +1313,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1535,7 +1563,7 @@
 
 
 <h1 id="berichts-dashboard">Berichts-Dashboard<a class="headerlink" href="#berichts-dashboard" title="Permanent link">&para;</a></h1>
-<p>Das <strong>Berichts-Dashboard 💎</strong> bündelt reproduzierbare Arbeitszeit- und Rückkehrberichte. Jeder Lauf speichert Filter, Zeitbasis, Berechnungsversion und Ergebnis, ohne Tachographen- oder Stammdaten zu verändern.</p>
+<p>Das <strong>Berichts-Dashboard 💎</strong> bündelt reproduzierbare Arbeitszeit-, Rückkehr- und Fälligkeitsberichte. Jeder Lauf speichert Filter, Zeitbasis, Berechnungsversion und Ergebnis, ohne Tachographen- oder Stammdaten zu verändern.</p>
 <h2 id="berichtskatalog">Berichtskatalog<a class="headerlink" href="#berichtskatalog" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1576,16 +1604,27 @@
 <td>Fahrzeug-Rückkehr in Niederlassungsmitgliedstaat</td>
 <td>letzte und nächste Rückkehr ausgewählter Fahrzeuge</td>
 </tr>
+<tr>
+<td>Fälligkeiten</td>
+<td>Fälligkeiten nach Personal</td>
+<td>Personalnummer, Fahrername, Fälligkeitsart, Termin, Resttage und Status</td>
+</tr>
+<tr>
+<td>Fälligkeiten</td>
+<td>Fälligkeiten Fuhrpark</td>
+<td>Termin- und Kilometergrenzen, aktueller Kilometerstand, Auslöser, Datenqualität und Status</td>
+</tr>
 </tbody>
 </table>
 <h2 id="bericht-erstellen">Bericht erstellen<a class="headerlink" href="#bericht-erstellen" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Öffnen Sie <strong>Fuhrpark → Berichts-Dashboard 💎</strong>.</li>
-<li>Wählen Sie links <strong>Favoriten</strong>, <strong>Arbeitszeit</strong> oder <strong>Planung</strong> und anschließend einen Bericht.</li>
+<li>Wählen Sie links <strong>Favoriten</strong>, <strong>Arbeitszeit</strong>, <strong>Planung</strong> oder <strong>Fälligkeiten</strong> und anschließend einen Bericht.</li>
 <li>Setzen Sie die eingeblendeten berichtsspezifischen Filter. Keine Objektselektion bedeutet alle zulässigen Fahrer oder Fahrzeuge.</li>
 <li>Wählen Sie <strong>Bericht erstellen</strong>.</li>
 </ol>
 <p>Die Ergebnisanzeige erläutert Berechnungsbasis und Zeitbasis. Gespeicherte Läufe lassen sich aus der Historie unverändert wieder öffnen. Favoriten beeinflussen nur die persönliche Katalogansicht.</p>
+<p>Fälligkeitsberichte können nach Zeitraum, Objekt, Fälligkeitsart, Status und Lebenszyklus gefiltert werden. Der Fuhrparkbericht bietet zusätzlich Basis, Auslöser, Kilometerdatenqualität und Auswertbarkeit. Wird der Zeitraum nicht aktiviert, werden auch rein kilometerbezogene Fälligkeiten ohne Datum berücksichtigt.</p>
 <h2 id="konfiguration">Konfiguration<a class="headerlink" href="#konfiguration" title="Permanent link">&para;</a></h2>
 <p>Unter <strong>Konfiguration</strong> werden Niederlassungs-/Feiertagsland, optionale Unterteilung, Nachtzeit sowie Rückkehrintervalle gepflegt. Eine gespeicherte Berichtsversion behält die bei ihrer Erstellung geltende Konfiguration; spätere Änderungen schreiben alte Ergebnisse nicht um.</p>
 <h2 id="ausgabe">Ausgabe<a class="headerlink" href="#ausgabe" title="Permanent link">&para;</a></h2>

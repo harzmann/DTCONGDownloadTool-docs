@@ -10,17 +10,17 @@
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-installation-guide/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-backup-restore/">
       
       
-        <link rel="prev" href="../enterprise-backup-restore/">
+        <link rel="prev" href="../cloud-backup-restore/">
       
       
-        <link rel="next" href="../enterprise-deployment/">
+        <link rel="next" href="../enterprise-installation-guide/">
       
       
         
-          <link rel="alternate" href="../../../operations/enterprise-installation-guide/" hreflang="en">
+          <link rel="alternate" href="../../../operations/enterprise-backup-restore/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="de">
         
@@ -31,7 +31,7 @@
     
     
       
-        <title>Enterprise-Installationsanleitung - FLEET Mira Dokumentation</title>
+        <title>Enterprise-Backup und Wiederherstellung - FLEET Mira Dokumentation</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enterprise-installationsanleitung-fur-administratoren" class="md-skip">
+        <a href="#enterprise-backup-und-wiederherstellung" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enterprise-Installationsanleitung
+              Enterprise-Backup und Wiederherstellung
             
           </span>
         </div>
@@ -167,7 +167,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../operations/enterprise-installation-guide/" hreflang="en" class="md-select__link">
+            <a href="../../../operations/enterprise-backup-restore/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -1197,34 +1197,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../enterprise-backup-restore/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Backup und Wiederherstellung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1244,7 +1216,7 @@
   <span class="md-ellipsis">
     
   
-    Enterprise-Installationsanleitung
+    Enterprise-Backup und Wiederherstellung
   
 
     
@@ -1262,7 +1234,7 @@
   <span class="md-ellipsis">
     
   
-    Enterprise-Installationsanleitung
+    Enterprise-Backup und Wiederherstellung
   
 
     
@@ -1288,10 +1260,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installationsdateien" class="md-nav__link">
+  <a href="#architektur" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installationsdateien
+        Architektur
       
     </span>
   </a>
@@ -1299,10 +1271,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gemeinsame-planung" class="md-nav__link">
+  <a href="#voraussetzungen-und-rollen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gemeinsame Planung
+        Voraussetzungen und Rollen
       
     </span>
   </a>
@@ -1310,110 +1282,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#szenario-1-clientserver-mit-serverseitigem-worker" class="md-nav__link">
+  <a href="#ziel-konfigurieren" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Szenario 1: Client/Server mit serverseitigem Worker
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Szenario 1: Client/Server mit serverseitigem Worker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zielbild" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zielbild
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#server-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Server installieren
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clients-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clients installieren
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#worker-betreiben" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worker betreiben
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#szenario-2-terminalserver-mit-allen-komponenten" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Szenario 2: Terminalserver mit allen Komponenten
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Szenario 2: Terminalserver mit allen Komponenten">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zielbild_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zielbild
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anmeldung-diagnostizieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anmeldung diagnostizieren
+        Ziel konfigurieren
       
     </span>
   </a>
@@ -1421,32 +1293,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bestehende-sqlite-daten-migrieren" class="md-nav__link">
+  <a href="#kontrollierte-wiederherstellung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bestehende SQLite-Daten migrieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sicherung-update-und-ruckfall" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sicherung, Update und Rückfall
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abnahmecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Abnahmecheckliste
+        Kontrollierte Wiederherstellung
       
     </span>
   </a>
@@ -1457,6 +1307,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1580,10 +1458,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installationsdateien" class="md-nav__link">
+  <a href="#architektur" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installationsdateien
+        Architektur
       
     </span>
   </a>
@@ -1591,10 +1469,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gemeinsame-planung" class="md-nav__link">
+  <a href="#voraussetzungen-und-rollen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gemeinsame Planung
+        Voraussetzungen und Rollen
       
     </span>
   </a>
@@ -1602,110 +1480,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#szenario-1-clientserver-mit-serverseitigem-worker" class="md-nav__link">
+  <a href="#ziel-konfigurieren" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Szenario 1: Client/Server mit serverseitigem Worker
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Szenario 1: Client/Server mit serverseitigem Worker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zielbild" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zielbild
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#server-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Server installieren
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clients-installieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clients installieren
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#worker-betreiben" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worker betreiben
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#szenario-2-terminalserver-mit-allen-komponenten" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Szenario 2: Terminalserver mit allen Komponenten
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Szenario 2: Terminalserver mit allen Komponenten">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#zielbild_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zielbild
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anmeldung-diagnostizieren" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Anmeldung diagnostizieren
+        Ziel konfigurieren
       
     </span>
   </a>
@@ -1713,32 +1491,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bestehende-sqlite-daten-migrieren" class="md-nav__link">
+  <a href="#kontrollierte-wiederherstellung" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bestehende SQLite-Daten migrieren
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sicherung-update-und-ruckfall" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sicherung, Update und Rückfall
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#abnahmecheckliste" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Abnahmecheckliste
+        Kontrollierte Wiederherstellung
       
     </span>
   </a>
@@ -1762,133 +1518,48 @@
 
 
 
-<h1 id="enterprise-installationsanleitung-fur-administratoren">Enterprise-Installationsanleitung für Administratoren<a class="headerlink" href="#enterprise-installationsanleitung-fur-administratoren" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung beschreibt die Installation von FLEET Mira Enterprise 1.1.0-beta6 in zwei unterstützten Topologien. Enterprise verwendet PostgreSQL und darf auf Windows Server sowie in RDP-, Citrix- und vergleichbaren Mehrbenutzerumgebungen ausgeführt werden. Für Server und Terminalserver darf ausschließlich das Enterprise-Setup verwendet werden; das Basic/Pro-Setup sperrt diese Umgebungen.</p>
-<h2 id="installationsdateien">Installationsdateien<a class="headerlink" href="#installationsdateien" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/FLEET-Mira-Enterprise-1.1.0-beta6-Setup-x64.exe">Enterprise-Applikationssetup herunterladen</a></li>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/FLEET-Mira-PostgreSQL-Server-1.1.0-beta6-Setup-x64.exe">PostgreSQL-Server-Setup herunterladen</a></li>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta6/SHA256SUMS-Enterprise.txt">SHA-256-Prüfsummen herunterladen</a></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Betastatus und Worker-Betrieb</p>
-<p>Die Setups sind noch nicht codesigniert. Prüfen Sie deshalb vor der Installation die SHA-256-Prüfsummen. Zentrale Hintergrundaufgaben laufen ausschließlich im Windows-Dienst <code>FleetMiraWorker</code>; Enterprise-Clients starten keinen integrierten Worker. Ein All-in-One-Server installiert Client und Worker gemeinsam, verwendet aber keinen besonderen Kombiniert-Modus.</p>
-</div>
-<h2 id="gemeinsame-planung">Gemeinsame Planung<a class="headerlink" href="#gemeinsame-planung" title="Permanent link">&para;</a></h2>
-<p>Planen Sie vor der Installation:</p>
+<h1 id="enterprise-backup-und-wiederherstellung">Enterprise-Backup und Wiederherstellung<a class="headerlink" href="#enterprise-backup-und-wiederherstellung" title="Permanent link">&para;</a></h1>
+<h2 id="architektur">Architektur<a class="headerlink" href="#architektur" title="Permanent link">&para;</a></h2>
+<p>Enterprise verwendet ausschließlich PostgreSQL. Der Enterprise Client konfiguriert und
+beauftragt Sicherungen; <code>FleetMiraWorker</code> führt Datenbank-, Archiv-, Upload-,
+Verifikations-, Retentions- und Restore-Arbeiten aus. Der Client startet keinen lokalen
+Backupworker und verwendet nie den SQLite-Snapshotdienst.</p>
+<p>Ein Sicherungssatz enthält einen PostgreSQL-17-Custom-Dump, versioniertes Manifest,
+Commit-Marker und die anhand SHA-256 deduplizierten DDD-, Finanz- und Aktenarchive.
+<code>VERIFIED</code> wird erst nach vollständigem Upload, Rücklesen, Entschlüsselung und Prüfung
+aller Bestandteile gesetzt.</p>
+<h2 id="voraussetzungen-und-rollen">Voraussetzungen und Rollen<a class="headerlink" href="#voraussetzungen-und-rollen" title="Permanent link">&para;</a></h2>
+<p>Das Server-Setup erzeugt <code>mira_owner</code> (ohne Anmeldung), <code>mira_app</code>, <code>mira_backup</code> und
+<code>mira_restore</code>. Das Worker-Setup installiert <code>pg_dump</code>, <code>pg_restore</code> und <code>psql</code> 17.
+Kennwörter erscheinen nicht in Argumenten, Logs oder PostgreSQL-Konfigurationstabellen.</p>
+<p>Der erste Worker erzeugt einen RSA-3072-Deployment-Schlüssel. Privates Material wird
+maschinengebunden geschützt und per ACL auf System, Administratoren und
+<code>FleetMiraWorker</code> beschränkt; PostgreSQL enthält nur den öffentlichen Schlüssel. Für
+weitere Worker dient <code>tools\manage-enterprise-backup-key.ps1</code> zum geschützten Export
+und Import.</p>
+<h2 id="ziel-konfigurieren">Ziel konfigurieren<a class="headerlink" href="#ziel-konfigurieren" title="Permanent link">&para;</a></h2>
+<p>Unter <strong>Administration → Backups</strong> wird genau ein aktives Ziel angelegt: Dateisystem
+oder UNC, HTTPS-WebDAV oder Google Drive (<code>drive.file</code>, My Drive oder Shared Drive).
+Google Drive ist eine einseitige Sicherung, keine Synchronisierung. Den Recovery-Key
+beim Speichern exportieren, offline verwahren und anschließend den Upload- und
+Rücklesetest ausführen.</p>
+<p>Standard sind täglich 02:00 Uhr Serverzeit sowie 14 tägliche, 8 wöchentliche und
+12 monatliche Stände. Archive werden nicht durch die Datenbankretention gelöscht.
+PITR/WAL-Archivierung ist in beta6 nicht enthalten.</p>
+<h2 id="kontrollierte-wiederherstellung">Kontrollierte Wiederherstellung<a class="headerlink" href="#kontrollierte-wiederherstellung" title="Permanent link">&para;</a></h2>
 <ol>
-<li>einen stabilen DNS-Namen für den PostgreSQL-Server;</li>
-<li>jeweils ein mindestens zwölf Zeichen langes Kennwort für <code>mira_app</code>, <code>mira_backup</code>, <code>mira_restore</code> und den PostgreSQL-Administrator;</li>
-<li>die Berechtigungen des virtuellen Dienstkontos <code>NT SERVICE\FleetMiraWorker</code> beziehungsweise eines vorgesehenen gMSA;</li>
-<li>lokale NTFS-Speicherorte für die PostgreSQL-Daten und zentrale Speicherorte für Tachodaten- und Belegarchive;</li>
-<li>eine Sicherung für PostgreSQL und eine getrennte Sicherung der Dateiarchive;</li>
-<li>Wartungsfenster, Firewallregeln und – für Verbindungen über das Netzwerk – ein vertrauenswürdiges TLS-Serverzertifikat.</li>
+<li>Verifizierten Stand wählen, Pflichtgrund erfassen und <strong>Prepare restore</strong> ausführen.</li>
+<li>Der Worker prüft Dump und Archive und restauriert in eine Staging-Datenbank.</li>
+<li>Nach Schema-, Tabellen- und Archivreferenzprüfung folgt <code>READY_FOR_APPROVAL</code>.</li>
+<li>Ein Benutzer mit <code>backup.restore</code> bestätigt <strong>Approve production switch</strong>.</li>
+<li>Wartungsmodus wird aktiviert; Produktion wird als Rollback-Datenbank erhalten und
+   das Staging kontrolliert aktiviert.</li>
+<li>Archive werden atomar vorbereitet und ersetzt; Fehler lösen die Rückschaltung aus.</li>
+<li>Der vorherige Datenbankstand bleibt sieben Tage erhalten.</li>
 </ol>
-<p>PostgreSQL-Daten müssen auf einem lokalen, festen Datenträger des Datenbankservers liegen. Tachodateien und Originalbelege werden nicht vollständig in PostgreSQL gespeichert. In einer Client/Server-Installation müssen deshalb alle Clients und der Worker dieselben kanonischen UNC-Pfade verwenden und mit den erforderlichen NTFS- und Freigaberechten ausgestattet sein.</p>
-<h2 id="szenario-1-clientserver-mit-serverseitigem-worker">Szenario 1: Client/Server mit serverseitigem Worker<a class="headerlink" href="#szenario-1-clientserver-mit-serverseitigem-worker" title="Permanent link">&para;</a></h2>
-<h3 id="zielbild">Zielbild<a class="headerlink" href="#zielbild" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart LR
-    C1["Enterprise-Client 1"] --&gt;|TLS / TCP 5432| DB[("PostgreSQL: mira")]
-    C2["Enterprise-Client n"] --&gt;|TLS / TCP 5432| DB
-    W["FleetMiraWorker-Dienst"] --&gt;|TLS / TCP 5432| DB
-    W --&gt; A["Gemeinsames Dateiarchiv (UNC)"]
-    C1 --&gt; A
-    C2 --&gt; A</code></pre>
-<p>Der Windows Server hostet PostgreSQL und den eigenständigen Worker-Dienst. Die Benutzer arbeiten mit Enterprise-Clients auf Windows-10/11-Arbeitsplätzen oder zugelassenen Server-Sitzungen.</p>
-<h3 id="server-installieren">Server installieren<a class="headerlink" href="#server-installieren" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Melden Sie sich am Windows Server mit lokalen Administratorrechten an.</li>
-<li>Kopieren Sie beide Setups lokal auf den Server und vergleichen Sie deren SHA-256-Werte mit <code>SHA256SUMS-Enterprise.txt</code>.</li>
-<li>Starten Sie <code>FLEET-Mira-PostgreSQL-Server-1.1.0-beta6-Setup-x64.exe</code> als Administrator.</li>
-<li>Erfassen Sie Port sowie die Kennwörter für PostgreSQL-Administrator, <code>mira_app</code>, <code>mira_backup</code> und <code>mira_restore</code>. Das Setup installiert PostgreSQL, legt Dienst, Datenbank und Rollen an und importiert anschließend das vollständige, fachlich leere Mira-Anwendungsschema.</li>
-<li>Konfigurieren Sie <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS und TLS nach Ihrer Sicherheitsrichtlinie. Öffnen Sie TCP 5432 in der Windows-Firewall ausschließlich für die vorgesehenen Client- und Worker-Netze.</li>
-<li>Starten Sie das Enterprise-Setup als Administrator und wählen Sie die Komponente <strong>Fleet Mira Worker</strong>. <code>/COMPONENTS=worker</code> ist die unbeaufsichtigte Entsprechung.</li>
-<li>Tragen Sie in einer administrativen Enterprise-Clientinstallation DNS-Name, Port, Datenbank <code>mira</code>, Benutzer <code>mira_app</code>, Kennwort und SSL-Modus ein. Für Produktivnetze wird <code>verify-full</code> empfohlen.</li>
-<li>Testen Sie die Verbindung. Eine nachträgliche Schemainitialisierung ist nicht erforderlich; das Server-Setup prüft vor seiner Erfolgsmeldung das Anwendungs-, Worker- und Enterprise-Backup-Schema. <code>mira_app</code> benötigt und erhält dafür kein DDL- beziehungsweise <code>CREATE</code>-Recht auf dem Schema <code>public</code>.</li>
-<li>Prüfen Sie den Dienst <code>FleetMiraWorker</code>, seinen Heartbeat und <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code>.</li>
-<li>Konfigurieren Sie gemeinsame Archiv-, Import- und Belegpfade. Gewähren Sie dem Dienstkonto die benötigten UNC- und NTFS-Rechte.</li>
-</ol>
-<h3 id="clients-installieren">Clients installieren<a class="headerlink" href="#clients-installieren" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Starten Sie auf jedem Client ausschließlich das Enterprise-Applikationssetup als Administrator.</li>
-<li>Öffnen Sie FLEET Mira und verbinden Sie die Anwendung über den Assistenten mit derselben Datenbank <code>mira</code>.</li>
-<li>Prüfen Sie den Zugriff auf alle gemeinsamen Archive mit dem jeweiligen Benutzerkonto.</li>
-<li>Der Client übergibt manuell ausgelöste zentrale Aufgaben automatisch an die PostgreSQL-Queue; ein lokaler Scheduler wird nicht gestartet.</li>
-</ol>
-<h3 id="worker-betreiben">Worker betreiben<a class="headerlink" href="#worker-betreiben" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Verwenden Sie standardmäßig <code>NT SERVICE\FleetMiraWorker</code>; für UNC kann dem Computerkonto Zugriff gegeben oder auf gMSA/Domänenkonto umgestellt werden.</li>
-<li>Überwachen Sie Dienststatus, PostgreSQL-Heartbeat, Queue, Leases und fehlgeschlagene Jobs.</li>
-<li>Mehrere Worker sind technisch zulässig; Advisory Locks und Leases verhindern doppelte Verarbeitung.</li>
-<li>Überwachen Sie <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> sowie die PostgreSQL- und Windows-Ereignisprotokolle.</li>
-<li>Der Dienst startet nach einem Serverneustart verzögert automatisch und besitzt konfigurierte Recovery-Aktionen.</li>
-</ul>
-<h2 id="szenario-2-terminalserver-mit-allen-komponenten">Szenario 2: Terminalserver mit allen Komponenten<a class="headerlink" href="#szenario-2-terminalserver-mit-allen-komponenten" title="Permanent link">&para;</a></h2>
-<h3 id="zielbild_1">Zielbild<a class="headerlink" href="#zielbild_1" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TB
-    U1["RDP-/Citrix-Benutzersitzung 1"] --&gt; DB[("Lokales PostgreSQL: mira")]
-    U2["RDP-/Citrix-Benutzersitzung n"] --&gt; DB
-    W["FleetMiraWorker-Dienst"] --&gt; DB
-    U1 --&gt; A["Zentrales Dateiarchiv auf lokalem NTFS-Datenträger"]
-    U2 --&gt; A
-    W --&gt; A</code></pre>
-<p>PostgreSQL, Enterprise-Anwendung, Benutzer-Sitzungen und Worker-Dienst befinden sich auf demselben Windows Server.</p>
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Legen Sie lokale NTFS-Verzeichnisse für PostgreSQL-Daten und die Dateiarchive an. Verwenden Sie weder Benutzerprofile noch UNC- oder Netzlaufwerke für das PostgreSQL-Datenverzeichnis.</li>
-<li>Installieren Sie zuerst das PostgreSQL-Server-Setup als Administrator. Es legt <code>mira</code>, das vollständige Anwendungsschema und die Rollen <code>mira_owner</code>, <code>mira_app</code>, <code>mira_backup</code> und <code>mira_restore</code> an.</li>
-<li>Installieren Sie danach das Enterprise-Applikationssetup einmal systemweit als Administrator.</li>
-<li>Starten Sie FLEET Mira in einer administrativen Einrichtungs-Sitzung und verbinden Sie es mit <code>localhost</code>, dem gewählten Port und der Datenbank <code>mira</code>.</li>
-<li>Testen Sie die bereits initialisierte Datenbank. Die Verbindungskonfiguration wird maschinenweit unter <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code> gespeichert und das Kennwort mit Windows DPAPI geschützt.</li>
-<li>Konfigurieren Sie die Dateiarchive auf einem für alle vorgesehenen Sitzungen erreichbaren lokalen NTFS-Pfad, beispielsweise <code>D:\FLEET-Mira-Data</code>.</li>
-<li>Melden Sie eine normale Benutzersitzung an und prüfen Sie Anmeldung, Lese-/Schreibrechte, Berichtsausgabe und Archivzugriff.</li>
-<li>Installieren Sie Client und Dienst gemeinsam über <code>/COMPONENTS=client,worker</code> und prüfen Sie, dass nur der Dienst Hintergrundaufgaben ausführt.</li>
-</ol>
-<p>Die gemeinsame Installation erzeugt keinen eigenen Kombiniert-Modus. Jede Terminalserversitzung bleibt ein Client; Scheduler, Benachrichtigungen und zentrale Importe laufen ausschließlich im Dienst.</p>
-<h2 id="anmeldung-diagnostizieren">Anmeldung diagnostizieren<a class="headerlink" href="#anmeldung-diagnostizieren" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Prüfen Sie zuerst <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code>.</li>
-<li><code>POSTGRESQL_SCHEMA verified</code> bestätigt Verbindung und vollständige Startprüfung, aber noch nicht den eigentlichen Benutzerlogin.</li>
-<li>Suchen Sie nach dem ersten <code>CRITICAL</code>-Eintrag unmittelbar nach dem Klick auf <strong>Anmelden</strong>. Der zugehörige Traceback nennt Repository, SQL-Anweisung und PostgreSQL-Fehlerklasse.</li>
-<li>Der Client zeigt unerwartete Datenbankfehler zusätzlich direkt im Anmeldedialog an. Kennwörter werden weder dort noch im Log ausgegeben.</li>
-<li>Ein <code>permission denied for schema public</code> darf mit einem aktuellen Setup nicht auftreten: <code>mira_app</code> schreibt Anwendungsdaten, führt aber keine DDL-Anweisungen aus.</li>
-</ul>
-<h2 id="bestehende-sqlite-daten-migrieren">Bestehende SQLite-Daten migrieren<a class="headerlink" href="#bestehende-sqlite-daten-migrieren" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Erstellen und prüfen Sie vorab eine unveränderte Sicherung der SQLite-Datei sowie der zugehörigen Dateiarchive.</li>
-<li>Beenden Sie alle anderen FLEET-Mira-Instanzen und stoppen Sie den Dienst <code>FleetMiraWorker</code> auf allen Worker-Hosts.</li>
-<li>Öffnen Sie in Enterprise <strong>Enterprise → SQLite-Datenbank migrieren</strong>.</li>
-<li>Wählen Sie die SQLite-Quelle. Der Assistent öffnet sie schreibgeschützt, führt <code>PRAGMA quick_check</code> aus und zeigt Tabellen- und Datensatzanzahlen.</li>
-<li>Die verpflichtende Option <strong>DDD-, Dokument- und Finanzarchive in das FLEET-Mira-ProgramData-Verzeichnis kopieren</strong> übernimmt die zugehörigen Dateien atomar nach <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\state</code>. Der Assistent prüft vorhandene Zieldateien anhand der bestehenden SHA-256-Werte und bricht bei fehlenden oder veränderten Referenzen ab. Erst danach werden alle DDD-, Dokument-, Manifest- und Finanzarchivpfade innerhalb derselben PostgreSQL-Transaktion auf portable <code>state/...</code>-Pfade normalisiert. Es werden keine neuen fachlichen Hashwerte oder Signaturen erzeugt.</li>
-<li>Geben Sie Benutzer <code>mira_restore</code> und das beim PostgreSQL-Setup festgelegte Restore-Kennwort ein. Diese Zugangsdaten werden ausschließlich für die aktuelle Migration verwendet und nicht gespeichert.</li>
-<li>Bestätigen Sie das Ersetzen des leeren beziehungsweise vorgesehenen Mira-Schemas. Die Übertragung erfolgt als <code>mira_owner</code> in einer PostgreSQL-Transaktion; Fehler führen zum Rollback. Danach werden Enterprise-Worker-/Backupobjekte und die Rechte für <code>mira_app</code> und <code>mira_backup</code> wiederhergestellt.</li>
-<li>Starten Sie Enterprise neu und vergleichen Sie Benutzer, Fahrzeuge, Tachodaten, Belege und Stichprobenberichte mit dem Altsystem.</li>
-<li>Aktivieren Sie den Worker erst nach schriftlicher Abnahme der Migration.</li>
-</ol>
-<h2 id="sicherung-update-und-ruckfall">Sicherung, Update und Rückfall<a class="headerlink" href="#sicherung-update-und-ruckfall" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Unter <strong>Administration → Sicherungen → Quick Backup</strong> kann ein berechtigter Administrator unabhängig vom konfigurierten Sicherungsziel einen PostgreSQL-Custom-Dump als ZIP-Datei in ein ausgewähltes lokales Verzeichnis exportieren. Die ZIP-Datei enthält <code>mira.dump</code> und ein Prüfsummenmanifest. Dafür werden Benutzer <code>mira_backup</code> und dessen Kennwort abgefragt; das Kennwort wird nicht gespeichert. Diese Diagnosesicherung enthält ausschließlich die Datenbank und ersetzt keine vollständige Enterprise-Sicherung der Dateiarchive.</li>
-<li>Die Zielkonfiguration blendet abhängig vom Provider nur die jeweils benötigten Felder ein. Für Dateisystem/UNC steht eine Verzeichnisauswahl, für die Google-OAuth-Konfiguration eine JSON-Dateiauswahl zur Verfügung.</li>
-<li>Sichern Sie PostgreSQL regelmäßig mit <code>pg_dump</code> oder einem zentral überwachten PostgreSQL-Sicherungssystem und testen Sie <code>pg_restore</code>.</li>
-<li>Sichern Sie Tachodaten-, Finanzbeleg- und weitere Dateiarchive getrennt und konsistent.</li>
-<li>Erstellen Sie vor jedem Update ein PostgreSQL-Dump und eine Archiv-Sicherung; beenden Sie dabei alle Clients und den Worker.</li>
-<li>Die SQLite-Snapshot-/Restore-Funktion von Basic/Pro ist in Enterprise deaktiviert.</li>
-<li>Bewahren Sie die ursprüngliche SQLite-Datenbank bis zum Ende der vereinbarten Rückfallfrist unverändert und offline auf.</li>
-</ul>
-<h2 id="abnahmecheckliste">Abnahmecheckliste<a class="headerlink" href="#abnahmecheckliste" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Setups und Prüfsummen stimmen überein.</li>
-<li>[ ] PostgreSQL-Daten liegen auf einem lokalen festen NTFS-Datenträger.</li>
-<li>[ ] <code>mira_app</code> kann nur aus den vorgesehenen Netzen beziehungsweise lokal zugreifen.</li>
-<li>[ ] TLS, Firewall, <code>pg_hba.conf</code> und DNS sind dokumentiert und getestet.</li>
-<li>[ ] Jeder Client verwendet dieselbe PostgreSQL-Datenbank und dieselben kanonischen Archivpfade.</li>
-<li>[ ] Der Dienst <code>FleetMiraWorker</code> läuft und Enterprise-Clients starten keinen integrierten Worker.</li>
-<li>[ ] Mehrere Benutzer können gleichzeitig lesen und schreiben.</li>
-<li>[ ] PostgreSQL- und Dateiarchiv-Sicherung sowie Rücksicherung wurden getestet.</li>
-<li>[ ] Migration und fachliche Stichproben wurden protokolliert.</li>
-<li>[ ] Notfallzugang, Kennwortablage, Monitoring und Neustartverfahren sind dokumentiert.</li>
-</ul>
-<p>Die bekannten Einschränkungen und noch erforderlichen Produktionsarbeiten stehen unter <a href="../enterprise-open-points/">Offene Enterprise-Punkte</a>.</p>
+<p>Danach Anmeldung, Worker-Heartbeat, Import, DDD-Ausgabe, Finanz- und Aktenarchive sowie
+eine neue Sicherung prüfen. Für UNC/gMSA, OAuth, große Datenmengen und absichtliche
+Netzwerkabbrüche bleibt die Abnahme auf einer kundennahen Windows-Server-VM Pflicht.</p>
 
 
 

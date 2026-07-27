@@ -16,7 +16,7 @@
         <link rel="prev" href="../../architecture/async-ui-background-services/">
       
       
-        <link rel="next" href="../enterprise-installation-guide/">
+        <link rel="next" href="../enterprise-backup-restore/">
       
       
         
@@ -1334,6 +1334,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="6. Configure a backup target">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-independent-quick-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target-independent Quick Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1428,6 +1445,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1681,6 +1726,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="6. Configure a backup target">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-independent-quick-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target-independent Quick Backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1794,6 +1856,7 @@
 <ul>
 <li><code>archive_dir</code> contains immutable compressed tachograph originals.</li>
 <li><code>financial_archive_dir</code> contains originals and manifests for supplier invoices and e-invoices.</li>
+<li><code>document_archive</code> beside the database contains originals and manifests for personnel and vehicle records.</li>
 <li>SQLite stores metadata, relationships, statuses and audit data.</li>
 <li>A backup target contains only downstream verified replicas and database snapshots.</li>
 </ul>
@@ -1812,6 +1875,7 @@ financial_archive_dir/
 <div class="highlight"><pre><span></span><code>DLTNG/&lt;installation-id&gt;/
   archives/YYYY/MM/&lt;archive-id&gt;.ddd.gz[.enc]
   financial-documents/YYYY/&lt;invoice-id&gt;/&lt;document-id&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
+  documents/YYYY/&lt;person|vehicle&gt;/&lt;record-id&gt;/&lt;document-id&gt;_&lt;sha256&gt;.&lt;ext&gt;[.enc]
   manifests/...
   database/YYYY/MM/archive_YYYY-MM-DD_HHmmssZ.db.gz[.enc]
 </code></pre></div>
@@ -1932,6 +1996,14 @@ financial_archive_dir/
 <h3 id="xml-xrechnung-and-hybrid-pdf">XML XRechnung and hybrid PDF<a class="headerlink" href="#xml-xrechnung-and-hybrid-pdf" title="Permanent link">&para;</a></h3>
 <p>Import prepares the received original, embedded XML for a hybrid PDF, and validation report as one unit. Invoice, lines, allocations and document relationships are committed only after every required object is locally verified. Failure removes temporary objects and leaves no partial invoice.</p>
 <h2 id="6-configure-a-backup-target">6. Configure a backup target<a class="headerlink" href="#6-configure-a-backup-target" title="Permanent link">&para;</a></h2>
+<h3 id="target-independent-quick-backup">Target-independent Quick Backup<a class="headerlink" href="#target-independent-quick-backup" title="Permanent link">&para;</a></h3>
+<p>Basic and Pro can create a consistent SQLite database backup as a local ZIP at any
+time under <strong>Administration → Backups → Quick Backup</strong>. The ZIP contains
+<code>archive.db</code> and a manifest with SHA-256, size and verification result. No backup
+target is required.</p>
+<p>Quick Backup does not contain DDD, PDF, financial or record-document archives. A
+complete backup must therefore also copy the configured archive directories or use
+the Pro backup described below.</p>
 <p>Exactly one active target can be configured under <strong>Administration → Backups</strong>:</p>
 <ul>
 <li><code>LOCAL_FILESYSTEM</code>: a second local drive or UNC/NAS share;</li>

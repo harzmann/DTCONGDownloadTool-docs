@@ -1200,6 +1200,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enterprise-installation-guide/" class="md-nav__link">
         
   
@@ -1499,7 +1527,7 @@
 <li><code>FLEET-Mira-Enterprise-&lt;Version&gt;-Setup-x64.exe</code> installiert die Anwendung und den Enterprise-Installationsmarker;</li>
 <li><code>FLEET-Mira-PostgreSQL-Server-&lt;Version&gt;-Setup-x64.exe</code> enthält den offiziellen PostgreSQL-Windows-Installer und richtet einen lokalen Dienst, die leere Datenbank <code>mira</code> und den Login <code>mira_app</code> ein.</li>
 </ul>
-<p>Das PostgreSQL-Server-Setup wird auf dem vorgesehenen Windows Server mit Administratorrechten ausgeführt. Der Assistent fragt Port, PostgreSQL-Administratorkennwort und ein mindestens zwölf Zeichen langes Kennwort für <code>mira_app</code> ab. Das Kennwort wird nicht in einer Konfigurationsdatei abgelegt.</p>
+<p>Das PostgreSQL-Server-Setup wird auf dem vorgesehenen Windows Server mit Administratorrechten ausgeführt. Der Assistent fragt Port, PostgreSQL-Administratorkennwort und ein mindestens zwölf Zeichen langes Kennwort für <code>mira_app</code> ab. Geheimnisse werden nur in temporären, ACL-geschützten Optionsdateien an Unterprozesse übergeben, nie als Prozessargumente, und nach der Installation gelöscht.</p>
 <p>Für einen reproduzierbaren Build:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">build_enterprise_release</span><span class="p">.</span><span class="n">ps1</span> <span class="p">`</span>
   <span class="n">-PostgreSQLInstaller</span> <span class="n">C</span><span class="p">:\</span><span class="n">Install</span><span class="p">\</span><span class="n">postgresql-windows-x64</span><span class="p">.</span><span class="n">exe</span>
