@@ -395,6 +395,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edition-and-processing-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edition and processing model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-sign-in-and-workspace" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -472,6 +483,17 @@
     <span class="md-ellipsis">
       
         Data root and storage paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-backup-and-central-backup-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Backup and central backup jobs
       
     </span>
   </a>
@@ -852,6 +874,34 @@
     
   
     Vehicle-unit analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deadlines and record documents
   
 
     
@@ -1677,6 +1727,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edition-and-processing-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edition and processing model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-sign-in-and-workspace" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1754,6 +1815,17 @@
     <span class="md-ellipsis">
       
         Data root and storage paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-backup-and-central-backup-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Backup and central backup jobs
       
     </span>
   </a>
@@ -2026,6 +2098,7 @@
 <li><a href="../guide/tachodata-overviews/">Personnel and fleet tachodata evaluations</a></li>
 <li><a href="../guide/drivercard-analysis/">Driver-card analysis – every tab</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Vehicle-unit analysis – every tab</a></li>
+<li><a href="../guide/deadlines-record-documents/">Deadlines and record documents</a></li>
 <li><a href="../guide/license-checks/">Driving-licence checks and RFID/NFC</a></li>
 <li><a href="../guide/vehicle-costs/">Vehicle costs and credits</a></li>
 <li><a href="../guide/foreign-invoices/">Foreign invoices – workflow and every tab</a></li>
@@ -2033,7 +2106,9 @@
 <li><a href="../guide/cost-reporting/">Cost analysis and reporting</a></li>
 <li><a href="../guide/position-maps/">Position maps for C and M data</a></li>
 </ul>
-<p>These guides use a temporary anonymised copy of the development database. Activities, timestamps, amounts and approved coordinates remain representative; person, card and vehicle identities were replaced deterministically.</p>
+<p>These guides use a temporary anonymised copy of the development database. Activities, timestamps, amounts and approved coordinates remain representative. Driver names, dates of birth, card identities, registrations and VINs are replaced deterministically with recognisable demonstration values.</p>
+<h2 id="edition-and-processing-model">Edition and processing model<a class="headerlink" href="#edition-and-processing-model" title="Permanent link">&para;</a></h2>
+<p>Basic and Pro use a local SQLite database and process background tasks in the application. Enterprise uses PostgreSQL exclusively. Its client places central work in the database queue; the independent <code>FleetMiraWorker</code> service performs imports, notifications, backup and other scheduled work. The same user workflow therefore produces the same business result, but Enterprise jobs may continue after the client window is closed.</p>
 <h2 id="1-sign-in-and-workspace">1. Sign-in and workspace<a class="headerlink" href="#1-sign-in-and-workspace" title="Permanent link">&para;</a></h2>
 <p>Start FLEET Mira from the installed shortcut. The splash screen is followed by the sign-in dialog. A new installation uses <code>admin</code> / <code>admin</code> once and forces a secure replacement password. If an administrator has configured SSO and pre-assigned your account, select <strong>Sign in with Microsoft</strong> or <strong>Sign in with Google</strong> instead. <strong>Microsoft Entra ID SSO is currently beta and has not yet been validated end-to-end with a real customer tenant.</strong> Keep local sign-in available as a fallback until customer-specific acceptance is complete and contact your administrator if sign-in fails. Setup and troubleshooting are covered by the <a href="../administrator-integration-guide/#single-sign-on-with-microsoft-entra-id-and-google">Administrator and integrator guide</a>.</p>
 <p><img alt="FLEET Mira splash screen" src="../assets/screenshots/splash.png" />
@@ -2086,6 +2161,11 @@
 <p>The <strong>Administration → Settings → Automatically import USB removable drives</strong> option recursively scans newly inserted drives for DDD and <code>RFID*.CSV</code> files. It operates only while FLEET Mira is open or running in the system tray; source files remain on the drive.</p>
 <h3 id="data-root-and-storage-paths">Data root and storage paths<a class="headerlink" href="#data-root-and-storage-paths" title="Permanent link">&para;</a></h3>
 <p>Under <strong>Administration → Settings</strong>, administrators can see the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These fields are intentionally read-only: changing one path in isolation would separate files, database references and access permissions. Until the controlled relocation wizard is available, these paths cannot be changed through either the settings page or raw configuration. Enterprise displays the SQLite path as unused because its database is held in PostgreSQL.</p>
+<h3 id="quick-backup-and-central-backup-jobs">Quick Backup and central backup jobs<a class="headerlink" href="#quick-backup-and-central-backup-jobs" title="Permanent link">&para;</a></h3>
+<p>Under <strong>Administration → Backups → Quick Backup</strong>, Basic and Pro create a consistent, read-back-verified SQLite ZIP with a SHA-256 manifest without requiring a configured backup target. The ZIP contains the database only; DDD, financial and record-document archives must be protected separately.</p>
+<p>In Enterprise, Quick Backup requests the dedicated backup credentials and creates a PostgreSQL custom dump through the worker. Complete Enterprise backup jobs additionally process the configured DDD, financial and record-document archives. Closing the Enterprise client does not cancel a job already accepted by <code>FleetMiraWorker</code>.</p>
+<p><img alt="Backup configuration and status" src="../assets/screenshots/backup.png" />
+<em>Figure: Backup configuration, verification state and manual actions.</em></p>
 <p><img alt="Download-task management" src="../assets/screenshots/tasks.png" />
 <em>Figure: Scheduled and manually executable download tasks.</em></p>
 <p>In strict mode, a terminal file is not marked as processed or deleted until its cloud copy is verified.</p>

@@ -395,6 +395,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edition-und-verarbeitungsmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edition und Verarbeitungsmodell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-anmeldung-und-arbeitsbereich" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -472,6 +483,17 @@
     <span class="md-ellipsis">
       
         Datenstamm und Speicherpfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-backup-und-zentrale-sicherungsauftrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Backup und zentrale Sicherungsaufträge
       
     </span>
   </a>
@@ -852,6 +874,34 @@
     
   
     Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fälligkeiten und Akten-Dokumente
   
 
     
@@ -1677,6 +1727,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edition-und-verarbeitungsmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edition und Verarbeitungsmodell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-anmeldung-und-arbeitsbereich" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1754,6 +1815,17 @@
     <span class="md-ellipsis">
       
         Datenstamm und Speicherpfade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-backup-und-zentrale-sicherungsauftrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Backup und zentrale Sicherungsaufträge
       
     </span>
   </a>
@@ -2026,6 +2098,7 @@
 <li><a href="../guide/tachodata-overviews/">Tachodaten-Auswertung Personal und Fuhrpark</a></li>
 <li><a href="../guide/drivercard-analysis/">Fahrerkarten-Auswertung – alle Tabs</a></li>
 <li><a href="../guide/vehicle-unit-analysis/">Massenspeicher-Auswertung – alle Tabs</a></li>
+<li><a href="../guide/deadlines-record-documents/">Fälligkeiten und Akten-Dokumente</a></li>
 <li><a href="../guide/license-checks/">Führerscheinkontrolle und RFID/NFC</a></li>
 <li><a href="../guide/vehicle-costs/">Fahrzeugkosten und Gutschriften</a></li>
 <li><a href="../guide/foreign-invoices/">Fremdrechnungen – Workflow und alle Tabs</a></li>
@@ -2033,7 +2106,9 @@
 <li><a href="../guide/cost-reporting/">Kostenanalyse und Reporting</a></li>
 <li><a href="../guide/position-maps/">Positionskarten für C- und M-Daten</a></li>
 </ul>
-<p>Diese Kapitel verwenden eine ausschließlich temporär erzeugte, anonymisierte Kopie der Entwicklungsdatenbank. Aktivitäten, Zeitangaben, Beträge und freigegebene Koordinaten bleiben fachlich repräsentativ; Personen-, Karten- und Fahrzeugidentitäten wurden deterministisch ersetzt.</p>
+<p>Diese Kapitel verwenden eine ausschließlich temporär erzeugte, anonymisierte Kopie der Entwicklungsdatenbank. Aktivitäten, Zeitangaben, Beträge und freigegebene Koordinaten bleiben fachlich repräsentativ. Fahrernamen, Geburtstage, Kartenidentitäten, Kennzeichen und FIN werden deterministisch durch erkennbare Demonstrationswerte ersetzt.</p>
+<h2 id="edition-und-verarbeitungsmodell">Edition und Verarbeitungsmodell<a class="headerlink" href="#edition-und-verarbeitungsmodell" title="Permanent link">&para;</a></h2>
+<p>Basic und Pro verwenden eine lokale SQLite-Datenbank und verarbeiten Hintergrundaufgaben in der Anwendung. Enterprise verwendet ausschließlich PostgreSQL. Der Client stellt zentrale Arbeit in die Datenbankwarteschlange; der eigenständige Dienst <code>FleetMiraWorker</code> führt Importe, Benachrichtigungen, Sicherungen und weitere geplante Aufgaben aus. Derselbe Bedienablauf erzeugt damit dasselbe fachliche Ergebnis, Enterprise-Aufträge können jedoch nach dem Schließen des Clientfensters weiterlaufen.</p>
 <h2 id="1-anmeldung-und-arbeitsbereich">1. Anmeldung und Arbeitsbereich<a class="headerlink" href="#1-anmeldung-und-arbeitsbereich" title="Permanent link">&para;</a></h2>
 <p>Starten Sie FLEET Mira über die installierte Verknüpfung. Nach dem Splash-Screen erscheint die Anmeldung. Eine neue Installation verwendet einmalig <code>admin</code> / <code>admin</code> und verlangt anschließend ein sicheres neues Kennwort. Wenn ein Administrator Single Sign-on eingerichtet und Ihr Konto vorab zugeordnet hat, verwenden Sie stattdessen <strong>Mit Microsoft anmelden</strong> oder <strong>Mit Google anmelden</strong>. <strong>Microsoft Entra ID SSO ist derzeit Beta und noch nicht mit einem realen Kundenmandanten Ende-zu-Ende validiert.</strong> Verwenden Sie bis zur kundenspezifischen Abnahme den lokalen Login als Rückfallmöglichkeit und wenden Sie sich bei Problemen an Ihren Administrator. Einrichtung und Fehlerbehebung beschreibt das <a href="../administrator-integration-guide/#single-sign-on-mit-microsoft-entra-id-und-google">Administratoren- und Integratorenhandbuch</a>.</p>
 <p><img alt="Splash-Screen von FLEET Mira" src="../assets/screenshots/splash.png" />
@@ -2086,6 +2161,11 @@
 <p>Die Option <strong>Administration → Einstellungen → USB-Wechseldatenträger automatisch importieren</strong> durchsucht neu eingesteckte Datenträger rekursiv nach DDD- und <code>RFID*.CSV</code>-Dateien. Sie wirkt nur, solange FLEET Mira geöffnet ist oder im System-Tray läuft; die Quelldateien bleiben auf dem Datenträger erhalten.</p>
 <h3 id="datenstamm-und-speicherpfade">Datenstamm und Speicherpfade<a class="headerlink" href="#datenstamm-und-speicherpfade" title="Permanent link">&para;</a></h3>
 <p>Unter <strong>Administration → Einstellungen</strong> sehen Administratoren den aktiven Datenstamm sowie die vollständig aufgelösten Pfade für Logs, SQLite, DDD-Archive, Dokumentarchive und Finanzarchive. Die Felder sind bewusst schreibgeschützt: Ein einzelner geänderter Pfad würde Dateien, Datenbankreferenzen und Zugriffsrechte auseinanderlaufen lassen. Bis der kontrollierte Umzugsassistent verfügbar ist, dürfen diese Pfade weder in der Einstellungsmaske noch über die Rohkonfiguration verändert werden. In Enterprise wird der SQLite-Pfad lediglich als nicht verwendet angezeigt, weil die Datenbank in PostgreSQL liegt.</p>
+<h3 id="quick-backup-und-zentrale-sicherungsauftrage">Quick Backup und zentrale Sicherungsaufträge<a class="headerlink" href="#quick-backup-und-zentrale-sicherungsauftrage" title="Permanent link">&para;</a></h3>
+<p>Unter <strong>Administration → Sicherungen → Quick Backup</strong> erzeugen Basic und Pro ohne konfiguriertes Sicherungsziel eine konsistente, zurückgelesene SQLite-ZIP-Datei mit SHA-256-Manifest. Die ZIP-Datei enthält nur die Datenbank; DDD-, Finanz- und Akten-Dokumentarchive müssen getrennt geschützt werden.</p>
+<p>In Enterprise fragt Quick Backup die eigenen Backup-Zugangsdaten ab und erzeugt über den Worker einen PostgreSQL-Custom-Dump. Vollständige Enterprise-Sicherungsaufträge verarbeiten zusätzlich die konfigurierten DDD-, Finanz- und Akten-Dokumentarchive. Das Schließen des Enterprise-Clients bricht einen bereits vom <code>FleetMiraWorker</code> angenommenen Auftrag nicht ab.</p>
+<p><img alt="Sicherungskonfiguration und Status" src="../assets/screenshots/backup.png" />
+<em>Abbildung: Sicherungskonfiguration, Prüfstatus und manuelle Aktionen.</em></p>
 <p><img alt="Verwaltung der Downloadtasks" src="../assets/screenshots/tasks.png" />
 <em>Abbildung: Zeitgesteuerte und manuell ausführbare Downloadtasks.</em></p>
 <p>Im strengen Modus wird eine Terminaldatei erst nach verifiziertem Cloudbackup als verarbeitet markiert oder gelöscht.</p>

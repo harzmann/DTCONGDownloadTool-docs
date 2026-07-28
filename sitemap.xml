@@ -71,6 +71,13 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/cost-reporting/"/>
     </url>
     <url>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/deadlines-record-documents/</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/deadlines-record-documents/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/deadlines-record-documents/"/>
+    </url>
+    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/guide/drivercard-analysis/</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>daily</changefreq>
@@ -256,6 +263,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/cost-reporting/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/cost-reporting/"/>
+    </url>
+    <url>
+        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/deadlines-record-documents/</loc>
+        <lastmod>2026-07-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/deadlines-record-documents/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/guide/deadlines-record-documents/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/drivercard-analysis/</loc>

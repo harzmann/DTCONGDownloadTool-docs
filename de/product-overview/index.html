@@ -407,6 +407,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enterprise-laufzeitmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enterprise-Laufzeitmodell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schwerpunkte-in-110-beta7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schwerpunkte in 1.1.0-beta7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#datenfluss" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -608,6 +630,34 @@
     
   
     Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fälligkeiten und Akten-Dokumente
   
 
     
@@ -1472,6 +1522,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enterprise-laufzeitmodell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enterprise-Laufzeitmodell
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schwerpunkte-in-110-beta7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schwerpunkte in 1.1.0-beta7
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#datenfluss" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1534,7 +1606,7 @@
 
 <h1 id="produktubersicht">Produktübersicht<a class="headerlink" href="#produktubersicht" title="Permanent link">&para;</a></h1>
 <h2 id="zweck">Zweck<a class="headerlink" href="#zweck" title="Permanent link">&para;</a></h2>
-<p>FLEET Mira Basic/Pro unterstützt Verkehrsunternehmen beim Abruf, bei der Archivierung und bei der Auswertung digitaler Tachographendaten und verbindet diese Daten mit operativen Fuhrparkakten. Die Anwendung läuft ausschließlich lokal unter Windows 10/11 in einer Konsolensitzung mit SQLite-Datenbank auf einem festen lokalen Laufwerk. Windows Server, RDP, Citrix, UNC- und Netzlaufwerke sind für die SQLite-Datenbank nicht zulässig.</p>
+<p>FLEET Mira unterstützt Verkehrsunternehmen beim Abruf, bei der Archivierung und bei der Auswertung digitaler Tachographendaten und verbindet diese Daten mit operativen Fuhrparkakten. Basic und Pro laufen lokal unter Windows 10/11 in einer Konsolensitzung mit SQLite auf einem festen lokalen Laufwerk. Enterprise stellt den Pro-Fachumfang mit PostgreSQL, einem eigenständigen Windows-Dienst <code>FleetMiraWorker</code> sowie Unterstützung für Windows Server, RDP, Citrix und Mehrbenutzerinstallationen bereit.</p>
 <h2 id="hauptnavigation">Hauptnavigation<a class="headerlink" href="#hauptnavigation" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1922,6 +1994,58 @@
 </tbody>
 </table>
 <p>Die lokale, revisionsnahe Primärablage von Tachodaten und Finanzbelegen ist Bestandteil von Basic und nicht mit einem Backup gleichzusetzen. Sämtliche mit <code>💎</code> markierten Einträge werden auch in Menüs, Tabs, Schaltflächen, Einstellungen und Kontextaktionen der Anwendung einheitlich mit diesem Symbol gekennzeichnet.</p>
+<h2 id="enterprise-laufzeitmodell">Enterprise-Laufzeitmodell<a class="headerlink" href="#enterprise-laufzeitmodell" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Basic / Pro</th>
+<th>Enterprise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datenbank</td>
+<td>ausschließlich lokales SQLite</td>
+<td>ausschließlich PostgreSQL</td>
+</tr>
+<tr>
+<td>Hintergrundverarbeitung</td>
+<td>integrierter Worker bei laufender Anwendung</td>
+<td>eigenständiger Windows-Dienst <code>FleetMiraWorker</code></td>
+</tr>
+<tr>
+<td>Arbeitsplätze</td>
+<td>lokale Windows-10/11-Konsole</td>
+<td>Windows-10/11-Clients oder Windows-Server-Sitzungen</td>
+</tr>
+<tr>
+<td>Gemeinsamer Server</td>
+<td>Anwendung und SQLite auf einem Arbeitsplatz</td>
+<td>Client, Worker und PostgreSQL dürfen auf einem Server liegen, bleiben aber unabhängige Komponenten</td>
+</tr>
+<tr>
+<td>Zentrale Aufträge</td>
+<td>Verarbeitung in der Anwendungslaufzeit</td>
+<td>PostgreSQL-Warteschlange mit exklusiver Worker-Lease</td>
+</tr>
+<tr>
+<td>Sicherung</td>
+<td>SQLite-Snapshot plus konfigurierte Archivsicherung</td>
+<td>PostgreSQL-Custom-Dump plus DDD-, Finanz- und Akten-Dokumentarchive</td>
+</tr>
+</tbody>
+</table>
+<p>Enterprise fällt niemals auf SQLite zurück. Clientaktionen mit Hintergrundverarbeitung erzeugen einen zentralen Auftrag; Advisory Locks, Leases und Idempotenzschlüssel verhindern doppelte externe Wirkungen bei mehreren verfügbaren Workern.</p>
+<h2 id="schwerpunkte-in-110-beta7">Schwerpunkte in 1.1.0-beta7<a class="headerlink" href="#schwerpunkte-in-110-beta7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>zeit-, kilometer- und kombiniert auslösbare Fahrzeugfälligkeiten mit Vorläufen, Wiederholungen, Kilometerdatenqualität sowie Personal-/Fuhrparkberichten;</li>
+<li>Akten-Dokumente für Personal und Fahrzeuge mit Drag&amp;Drop, Versionen, Metadaten, Vorschau, eigener Aufbewahrungsfrist, Sicherung und Audit;</li>
+<li>zielunabhängiges Quick Backup für Basic/Pro-SQLite sowie Enterprise-PostgreSQL-Diagnosen;</li>
+<li>vollständiges aktenbezogenes Audit für Fälligkeiten, Dokumente, Führerscheinkontrollen, Tachodatenverknüpfungen, Kilometerstände, Kosten, Rechnungen, Belege und Exporte;</li>
+<li>sprachabhängige Eingabehilfen bei weiterhin unabhängiger regionaler Formatierung von Datum, Zeit und Zahlen;</li>
+<li>übliche PC/SC-Byte-Reihenfolge der RFID-/NFC-UID bei Anzeige, Zuordnung und Kontrolle.</li>
+</ul>
 <h2 id="datenfluss">Datenfluss<a class="headerlink" href="#datenfluss" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[FTP, DLT-API oder manueller Import] --&gt; B[Hash und unverändertes lokales Archiv]
