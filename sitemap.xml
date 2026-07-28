@@ -162,13 +162,6 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/cloud-backup-restore/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-backup-restore/</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>daily</changefreq>
@@ -176,25 +169,11 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-backup-restore/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-deployment/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-deployment/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-installation-guide/</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-installation-guide/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-installation-guide/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-open-points/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-open-points/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-open-points/"/>
     </url>
     <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/marketing/dtco-kategorietexte-fleet-mira/</loc>
@@ -370,13 +349,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/cloud-backup-restore/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/documentation-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/documentation-deployment/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-backup-restore/</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>daily</changefreq>
@@ -384,24 +356,10 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-backup-restore/"/>
     </url>
     <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-deployment/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-deployment/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-deployment/"/>
-    </url>
-    <url>
         <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-installation-guide/</loc>
         <lastmod>2026-07-28</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-installation-guide/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-installation-guide/"/>
-    </url>
-    <url>
-        <loc>https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-open-points/</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/enterprise-open-points/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/enterprise-open-points/"/>
     </url>
 </urlset>
