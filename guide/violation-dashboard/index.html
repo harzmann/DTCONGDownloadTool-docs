@@ -717,6 +717,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dashboard-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-an-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -728,10 +739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#time-basis" class="md-nav__link">
+  <a href="#stimulsoft-dashboard-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time basis
+        Stimulsoft dashboard report
       
     </span>
   </a>
@@ -739,32 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dashboard-report" class="md-nav__link">
+  <a href="#stimulsoft-driver-instruction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dashboard report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#driver-instruction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Driver instruction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-and-evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Permissions and evidence
+        Stimulsoft driver instruction
       
     </span>
   </a>
@@ -1413,6 +1402,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dashboard-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard screen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-an-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1424,10 +1424,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#time-basis" class="md-nav__link">
+  <a href="#stimulsoft-dashboard-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time basis
+        Stimulsoft dashboard report
       
     </span>
   </a>
@@ -1435,32 +1435,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dashboard-report" class="md-nav__link">
+  <a href="#stimulsoft-driver-instruction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dashboard report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#driver-instruction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Driver instruction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-and-evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Permissions and evidence
+        Stimulsoft driver instruction
       
     </span>
   </a>
@@ -1485,27 +1463,41 @@
 
 
 <h1 id="violation-dashboard-and-driver-instructions">Violation dashboard and driver instructions<a class="headerlink" href="#violation-dashboard-and-driver-instructions" title="Permanent link">&para;</a></h1>
-<p>The <strong>Violation dashboard 💎</strong> consolidates technical compliance findings into a period-based work list. It does not replace an authority or legal assessment.</p>
+<p>The <strong>Violation dashboard 💎</strong> consolidates technical compliance findings into a period-based work list. It does not replace an authority or legal assessment. The screen and report previews come from an anonymised copy of the demo database; driver identities were replaced while activity and finding data were retained.</p>
+<h2 id="dashboard-screen">Dashboard screen<a class="headerlink" href="#dashboard-screen" title="Permanent link">&para;</a></h2>
+<p><img alt="Violation dashboard with risk assessment and details" src="../../assets/screenshots/violation-dashboard-overview.png" />
+<em>Figure: Period and severity filters, weekly trend, driver risk and findings for the selected person.</em></p>
+<p>The screen has four working areas:</p>
+<ul>
+<li><strong>Filters and actions</strong> select the period, visible severities and metric and start the evaluation, dashboard report or driver instruction.</li>
+<li><strong>Summary</strong> shows the development of findings by calendar week.</li>
+<li><strong>Driver risk assessment</strong> shows score, trend, count by severity, possible indicative amount and data quality.</li>
+<li><strong>Violation details</strong> explain timestamp, severity, deviation, legal basis and possible amount for the selected person.</li>
+</ul>
 <h2 id="create-an-evaluation">Create an evaluation<a class="headerlink" href="#create-an-evaluation" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open <strong>Fleet → Violation dashboard 💎</strong>.</li>
 <li>Select 90 days, 56 days, the current calendar year or a custom period.</li>
 <li>Enable the required severities and select <strong>Refresh evaluation</strong>.</li>
+<li>Select a driver to inspect that person's findings in the lower area.</li>
 </ol>
-<p>The summary shows the trend over time. The driver table contains risk, trend, findings by severity, possible indicative amount and data quality. Selecting one person displays the corresponding finding details with timestamp, deviation, legal basis and amount.</p>
 <p>The run stores its period, rulebooks, algorithm version, time basis, filters, sources and checksums. Failed or cancelled runs are audited as well.</p>
-<h2 id="time-basis">Time basis<a class="headerlink" href="#time-basis" title="Permanent link">&para;</a></h2>
-<p>Tachograph values are evaluated in UTC by default. When local activity time is enabled under <strong>System → Settings</strong>, the dashboard uses the selected IANA time zone for day and week boundaries. Daylight-saving transitions change neither source values nor elapsed durations. A notice above the result identifies the active time basis.</p>
-<h2 id="dashboard-report">Dashboard report<a class="headerlink" href="#dashboard-report" title="Permanent link">&para;</a></h2>
-<p><strong>Show dashboard report</strong> opens the Stimulsoft output with the current filters, risk values and trends. It requires compliance export permission and both the Violation dashboard and Stimulsoft Pro features.</p>
-<h2 id="driver-instruction">Driver instruction<a class="headerlink" href="#driver-instruction" title="Permanent link">&para;</a></h2>
+<p>Tachograph values are evaluated in UTC by default. When local activity time is enabled under <strong>System → Settings</strong>, the dashboard uses the selected IANA time zone for day and week boundaries. Daylight-saving transitions change neither source values nor elapsed durations.</p>
+<h2 id="stimulsoft-dashboard-report">Stimulsoft dashboard report<a class="headerlink" href="#stimulsoft-dashboard-report" title="Permanent link">&para;</a></h2>
+<p>Purpose: Provides the period, rulebooks, risk assessment for all affected drivers, violation details and data quality as a printable record. Possible fines are explicitly presented as non-binding indicative values.</p>
+<p><a href="../../assets/reports/violation-dashboard.pdf"><img alt="Stimulsoft violation-dashboard preview" src="../../assets/reports/violation-dashboard-preview.png" /></a></p>
+<p><a href="../../assets/reports/violation-dashboard.pdf">Open the violation-dashboard PDF example</a></p>
+<p><strong>Show dashboard report</strong> opens this output with the current filters, risk values and trends. It requires compliance export permission and both the Violation dashboard and Stimulsoft Pro features.</p>
+<h2 id="stimulsoft-driver-instruction">Stimulsoft driver instruction<a class="headerlink" href="#stimulsoft-driver-instruction" title="Permanent link">&para;</a></h2>
+<p>Purpose: Brings together the findings to discuss, legal bases, deviations and open personnel deadlines for exactly one driver. Signature fields support a documented instruction record.</p>
+<p><a href="../../assets/reports/driver-instruction.pdf"><img alt="Stimulsoft driver-instruction preview" src="../../assets/reports/driver-instruction-preview.png" /></a></p>
+<p><a href="../../assets/reports/driver-instruction.pdf">Open the driver-instruction PDF example</a></p>
 <ol>
-<li>Select exactly one person.</li>
+<li>Select exactly one person with findings.</li>
 <li>Choose <strong>Create driver instruction</strong>.</li>
 <li>Review the generated PDF and confirm the print status after printing.</li>
 </ol>
 <p>The PDF, checksum, person, findings and creation timestamp are stored as tamper-evident evidence. Findings that have already been delivered are not sent again as new findings in a later instruction. A matching notification rule can deliver each instruction exactly once with its PDF attachment.</p>
-<h2 id="permissions-and-evidence">Permissions and evidence<a class="headerlink" href="#permissions-and-evidence" title="Permanent link">&para;</a></h2>
 <p>Read access, report export and driver-instruction management use separate permissions. Opening, evaluating, exporting, creating and confirming print status produce audit events. Structured details are available as a tree, JSON export and printable output under <strong>Administration → Audit</strong>.</p>
 
 

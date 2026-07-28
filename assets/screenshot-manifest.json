@@ -413,6 +413,96 @@
   },
   {
     "language": "de",
+    "feature": "report-dashboard-catalog",
+    "file": "report-dashboard-catalog.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-configuration",
+    "file": "report-dashboard-configuration.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-country-work-time-summary",
+    "file": "report-dashboard-country-work-time-summary.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-driver-return-planning",
+    "file": "report-dashboard-driver-return-planning.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-driver-work-time-summary",
+    "file": "report-dashboard-driver-work-time-summary.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-fleet-deadlines",
+    "file": "report-dashboard-fleet-deadlines.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-monthly-driver-work-time",
+    "file": "report-dashboard-monthly-driver-work-time.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-person-deadlines",
+    "file": "report-dashboard-person-deadlines.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-vehicle-return-planning",
+    "file": "report-dashboard-vehicle-return-planning.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "report-dashboard-weekly-driver-work-time",
+    "file": "report-dashboard-weekly-driver-work-time.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
     "feature": "report-templates",
     "file": "report-templates.png",
     "source_profile": "anonymized-development-copy",
@@ -726,6 +816,15 @@
     "feature": "vehicles",
     "file": "vehicles.png",
     "source_profile": "isolated-demo",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "violation-dashboard-overview",
+    "file": "violation-dashboard-overview.png",
+    "source_profile": "anonymized-dashboard-copy",
     "captured_on": "2026-07-28",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
@@ -1221,6 +1320,96 @@
   },
   {
     "language": "en",
+    "feature": "report-dashboard-catalog",
+    "file": "report-dashboard-catalog.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-configuration",
+    "file": "report-dashboard-configuration.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-country-work-time-summary",
+    "file": "report-dashboard-country-work-time-summary.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-driver-return-planning",
+    "file": "report-dashboard-driver-return-planning.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-driver-work-time-summary",
+    "file": "report-dashboard-driver-work-time-summary.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-fleet-deadlines",
+    "file": "report-dashboard-fleet-deadlines.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-monthly-driver-work-time",
+    "file": "report-dashboard-monthly-driver-work-time.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-person-deadlines",
+    "file": "report-dashboard-person-deadlines.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-vehicle-return-planning",
+    "file": "report-dashboard-vehicle-return-planning.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "report-dashboard-weekly-driver-work-time",
+    "file": "report-dashboard-weekly-driver-work-time.png",
+    "source_profile": "anonymized-dashboard-copy",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
     "feature": "report-templates",
     "file": "report-templates.png",
     "source_profile": "anonymized-development-copy",
@@ -1534,6 +1723,15 @@
     "feature": "vehicles",
     "file": "vehicles.png",
     "source_profile": "isolated-demo",
+    "captured_on": "2026-07-28",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "violation-dashboard-overview",
+    "file": "violation-dashboard-overview.png",
+    "source_profile": "anonymized-dashboard-copy",
     "captured_on": "2026-07-28",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
