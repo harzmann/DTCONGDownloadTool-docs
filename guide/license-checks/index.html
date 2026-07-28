@@ -1574,6 +1574,7 @@
 <li>Place the chip on a PC/SC-compatible reader and verify UID, reader and person in the confirmation dialog.</li>
 <li>Save the assignment. A UID can be active for only one person; assigning a new UID ends the previous assignment with an audit trail.</li>
 </ol>
+<p>The PC/SC UID is displayed and stored in the conventional byte order. For example, the byte-reversed sequence <code>A3 BC 06 02 00 03 04 E0</code> returned by the reader appears as <code>E0 04 03 00 02 06 BC A3</code>.</p>
 <p><img alt="RFID history in the personnel record" src="../../assets/screenshots/person-rfid-history.png" />
 <em>Figure: Active and ended UID assignments with their validity period.</em></p>
 <h2 id="perform-a-pcsc-check">Perform a PC/SC check<a class="headerlink" href="#perform-a-pcsc-check" title="Permanent link">&para;</a></h2>

@@ -1574,6 +1574,7 @@
 <li>Legen Sie den Chip auf einen PC/SC-kompatiblen Leser und prüfen Sie UID, Leser und Person im Bestätigungsdialog.</li>
 <li>Speichern Sie die Zuordnung. Eine UID kann gleichzeitig nur einer Person zugeordnet sein; eine neue UID beendet die bisherige aktive Zuordnung nachvollziehbar.</li>
 </ol>
+<p>Die PC/SC-UID wird in der üblichen Byte-Reihenfolge angezeigt und gespeichert. Beispielsweise erscheint die vom Leser byteverkehrt gelieferte Folge <code>A3 BC 06 02 00 03 04 E0</code> als <code>E0 04 03 00 02 06 BC A3</code>.</p>
 <p><img alt="RFID-Historie der Personalakte" src="../../assets/screenshots/person-rfid-history.png" />
 <em>Abbildung: Aktive und beendete UID-Zuordnungen mit Gültigkeitszeitraum.</em></p>
 <h2 id="kontrolle-am-pcsc-leser">Kontrolle am PC/SC-Leser<a class="headerlink" href="#kontrolle-am-pcsc-leser" title="Permanent link">&para;</a></h2>
