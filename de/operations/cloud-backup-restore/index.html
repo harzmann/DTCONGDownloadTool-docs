@@ -2057,7 +2057,19 @@ kopiert oder die nachfolgend beschriebene Pro-Sicherung verwendet werden.</p>
     F --&gt; G["Datenbank atomar ersetzen"]
     G --&gt; H["Anwendung neu starten und Migrationen ausführen"]
     H --&gt; I["Primärarchive und Backupstatus abgleichen"]</code></pre>
-<p>Kann die Liveverbindung nicht sicher geschlossen werden, wird der Austausch für den Neustart vorgemerkt. Eine fehlgeschlagene Vorprüfung schreibt keinen Austauschauftrag.</p>
+<p>Kann die Liveverbindung nicht sicher geschlossen werden, wird der Austausch für den
+Neustart vorgemerkt. Vor dem Startmarker prüft Mira zusätzlich alle DDD-, Akten-,
+Finanz- und Manifestreferenzen. Fehlende oder beschädigte Archivobjekte werden
+gesammelt angezeigt. Mit <code>backup.restore</code>, Sammelbestätigung und Pflichtbegründung
+kann die konsistente Datenbank dennoch wiederhergestellt werden; die Verweise werden
+auf sichere portable Sollpfade normalisiert und bleiben als reparaturbedürftig
+sichtbar. Beschädigte lesbare Dateien werden unverändert quarantänisiert. Eine
+fehlgeschlagene Datenbankprüfung schreibt keinen Austauschauftrag.</p>
+<p>Beim Enterprise-Restore beendet <code>mira_restore</code> für die kontrollierte
+PostgreSQL-Umschaltung ausschließlich normale Anwendungs- und Worker-Sitzungen.
+Aktive DBA-/Superuser-Sitzungen werden aus Sicherheitsgründen nicht automatisch
+beendet. Der Administrator muss solche Sitzungen vor der finalen Freigabe
+schließen; andernfalls wird die Umschaltung ohne Datenverlust abgebrochen.</p>
 <h2 id="12-vollstandige-notfallwiederherstellung">12. Vollständige Notfallwiederherstellung<a class="headerlink" href="#12-vollstandige-notfallwiederherstellung" title="Permanent link">&para;</a></h2>
 <ol>
 <li>kompatible FLEET-Mira-Version isoliert installieren;</li>

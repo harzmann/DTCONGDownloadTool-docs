@@ -1303,6 +1303,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automatisierte-installationsabnahme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatisierte Installationsabnahme
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1501,6 +1512,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automatisierte-installationsabnahme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatisierte Installationsabnahme
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1550,16 +1572,38 @@ PITR/WAL-Archivierung ist in beta6 nicht enthalten.</p>
 <ol>
 <li>Verifizierten Stand wählen, Pflichtgrund erfassen und <strong>Prepare restore</strong> ausführen.</li>
 <li>Der Worker prüft Dump und Archive und restauriert in eine Staging-Datenbank.</li>
-<li>Nach Schema-, Tabellen- und Archivreferenzprüfung folgt <code>READY_FOR_APPROVAL</code>.</li>
-<li>Ein Benutzer mit <code>backup.restore</code> bestätigt <strong>Approve production switch</strong>.</li>
+<li>Nach Schema-, Tabellen- und Archivreferenzprüfung folgt <code>READY_FOR_APPROVAL</code>.
+   Fehlende oder beschädigte Archivartefakte werden einzeln protokolliert und führen
+   stattdessen zu <code>READY_FOR_APPROVAL_WITH_WARNINGS</code>; ein beschädigter Dump bleibt
+   immer ein Abbruchgrund.</li>
+<li>Ein Benutzer mit <code>backup.restore</code> bestätigt <strong>Approve production switch</strong>. Bei
+   Archivwarnungen sind eine zusätzliche Sammelbestätigung und Pflichtbegründung
+   erforderlich.</li>
 <li>Wartungsmodus wird aktiviert; Produktion wird als Rollback-Datenbank erhalten und
    das Staging kontrolliert aktiviert.</li>
-<li>Archive werden atomar vorbereitet und ersetzt; Fehler lösen die Rückschaltung aus.</li>
+<li>Archive werden unter dem aktuellen ProgramData-Datenstamm atomar vorbereitet und
+   ersetzt. Alte absolute <code>local_path</code>-Werte werden nicht als Ziel übernommen.
+   Beschädigte Downloads verbleiben in Quarantäne, offene Referenzen werden in den
+   Integritätstabellen sichtbar gehalten; Fehler lösen die Rückschaltung aus.</li>
 <li>Der vorherige Datenbankstand bleibt sieben Tage erhalten.</li>
 </ol>
 <p>Danach Anmeldung, Worker-Heartbeat, Import, DDD-Ausgabe, Finanz- und Aktenarchive sowie
 eine neue Sicherung prüfen. Für UNC/gMSA, OAuth, große Datenmengen und absichtliche
 Netzwerkabbrüche bleibt die Abnahme auf einer kundennahen Windows-Server-VM Pflicht.</p>
+<h2 id="automatisierte-installationsabnahme">Automatisierte Installationsabnahme<a class="headerlink" href="#automatisierte-installationsabnahme" title="Permanent link">&para;</a></h2>
+<p>Der manuell startbare GitHub-Actions-All-in-One-Test installiert PostgreSQL, Client
+und Worker aus den realen Setup-Paketen. Anschließend konfiguriert er ein
+AES-256-GCM-verschlüsseltes lokales Ziel und lässt den installierten
+<code>FleetMiraWorker</code> einen vollständigen Sicherungs- und Wiederherstellungszyklus
+ausführen.</p>
+<p>Der Test verändert nach dem verifizierten Backup gezielt fachliche
+PostgreSQL-Daten und eine DDD-Archivdatei. Nach Staging, Freigabe und produktiver
+Umschaltung müssen die kanonischen Tabellenhashes und der Datei-Hash wieder exakt
+der Baseline entsprechen. Zusätzlich werden Commit-Marker, Rollback-Datenbank und
+ein neuer Worker-Auftrag nach der Umschaltung geprüft. Markdown-/JSON-Protokoll und
+bereinigte Logs stehen 14 Tage als Workflow-Artefakt zur Verfügung.</p>
+<p>WebDAV, Google Drive, UNC-/gMSA-Rechte und kundenspezifische Sicherheitssoftware
+werden dadurch nicht real nachgebildet und bleiben Gegenstand der VM-Abnahme.</p>
 
 
 

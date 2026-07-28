@@ -1303,6 +1303,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automated-installation-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated installation acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1501,6 +1512,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automated-installation-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated installation acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1549,16 +1571,36 @@ archiving.</p>
 <li>Select a verified set, enter the mandatory reason and choose <strong>Prepare restore</strong>.</li>
 <li>The worker verifies the dump and archives and restores a staging database.</li>
 <li>Schema, tables and archive references are checked; status becomes
-   <code>READY_FOR_APPROVAL</code>.</li>
-<li>A user with <code>backup.restore</code> selects <strong>Approve production switch</strong>.</li>
+   <code>READY_FOR_APPROVAL</code>. Individually missing or damaged archive artifacts are
+   reported and produce <code>READY_FOR_APPROVAL_WITH_WARNINGS</code>; a damaged dump always
+   remains a hard failure.</li>
+<li>A user with <code>backup.restore</code> selects <strong>Approve production switch</strong>. Archive
+   warnings require an additional collective confirmation and mandatory reason.</li>
 <li>Maintenance mode is enabled, production is retained as a rollback database, and
    staging becomes production.</li>
-<li>Archive replacement is prepared atomically; failure triggers rollback.</li>
+<li>Archive replacement is prepared atomically below the current ProgramData data
+   root. Old absolute <code>local_path</code> values are never trusted as targets. Damaged
+   downloads remain in quarantine, open references remain visible in the integrity
+   tables, and failure triggers rollback.</li>
 <li>The previous database is retained for seven days.</li>
 </ol>
 <p>After cutover, verify sign-in, worker heartbeat, imports, DDD output, financial and
 record archives, and create a fresh backup. Customer-like Windows Server VM acceptance
 remains mandatory for UNC/gMSA, OAuth, large datasets and network interruption.</p>
+<h2 id="automated-installation-acceptance">Automated installation acceptance<a class="headerlink" href="#automated-installation-acceptance" title="Permanent link">&para;</a></h2>
+<p>The manually triggered GitHub Actions all-in-one test installs PostgreSQL, client,
+and worker from the actual setup packages. It then configures an AES-256-GCM
+encrypted local target and makes the installed <code>FleetMiraWorker</code> perform a complete
+backup and restore cycle.</p>
+<p>After the verified backup, the test deliberately changes business data in
+PostgreSQL and a DDD archive file. Following staging, approval, and production
+cutover, canonical table hashes and the file hash must exactly match the baseline.
+It also verifies the commit marker, retained rollback database, and a new worker job
+after cutover. A Markdown/JSON report and sanitised logs are retained as workflow
+artifacts for 14 days.</p>
+<p>WebDAV, Google Drive, UNC/gMSA permissions, and customer-specific security software
+are not reproduced against real services by this test and remain part of VM
+acceptance.</p>
 
 
 

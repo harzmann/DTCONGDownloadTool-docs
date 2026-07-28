@@ -2057,7 +2057,18 @@ the Pro backup described below.</p>
     F --&gt; G["Atomically replace database"]
     G --&gt; H["Restart application and run migrations"]
     H --&gt; I["Reconcile primary archives and backup status"]</code></pre>
-<p>Database replacement is staged for restart if the live connection cannot be closed safely. Failed preflight validation does not create a replacement request.</p>
+<p>Database replacement is staged for restart if the live connection cannot be closed
+safely. Before writing the startup marker, Mira also checks every DDD, record,
+financial, and manifest reference. Missing or damaged archive objects are displayed
+together. With <code>backup.restore</code>, collective confirmation, and a mandatory reason,
+the consistent database can still be restored; references are normalised to safe
+portable target paths and remain visible as requiring repair. Readable damaged files
+are copied unchanged to quarantine. A failed database check never creates a
+replacement request.</p>
+<p>During an Enterprise restore, <code>mira_restore</code> terminates only normal application
+and worker sessions for the controlled PostgreSQL cutover. Active DBA or
+superuser sessions are never terminated automatically. The administrator must
+close them before final approval; otherwise the cutover stops without data loss.</p>
 <h2 id="12-full-disaster-recovery">12. Full disaster recovery<a class="headerlink" href="#12-full-disaster-recovery" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Install a compatible FLEET Mira version in isolation.</li>

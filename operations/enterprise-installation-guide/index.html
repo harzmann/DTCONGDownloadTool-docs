@@ -1808,6 +1808,12 @@
 <li>Verify <code>FleetMiraWorker</code>, its heartbeat and <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code>.</li>
 <li>Configure shared archive, import and document paths and grant the service identity the required UNC and NTFS permissions.</li>
 </ol>
+<p>Before reporting success, Enterprise setup verifies the PostgreSQL 17 tools
+<code>pg_dump</code>, <code>pg_restore</code>, and <code>psql</code>. On an all-in-one server it copies the
+matching runtime directories from the previously installed FLEET Mira
+PostgreSQL Server component; on a separate worker host it installs them from the
+embedded package. A failure aborts setup. The protected diagnostic is
+<code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\postgresql-tools-setup-error.log</code>.</p>
 <h3 id="install-the-clients">Install the clients<a class="headerlink" href="#install-the-clients" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Run only the Enterprise application setup as administrator on every client.</li>
@@ -1822,6 +1828,9 @@
 <li>Multiple workers are supported; advisory locks and leases prevent duplicate processing.</li>
 <li>Monitor <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> plus PostgreSQL and Windows event logs.</li>
 <li>The service starts delayed after a reboot and has configured recovery actions.</li>
+<li>A job becomes terminal <code>FAILED</code> after at most three failed executions. Inspect
+  its queue <code>attempts</code> and <code>error_message</code> instead of waiting for another
+  automatic retry.</li>
 </ul>
 <h2 id="scenario-2-terminal-server-with-all-components">Scenario 2: terminal server with all components<a class="headerlink" href="#scenario-2-terminal-server-with-all-components" title="Permanent link">&para;</a></h2>
 <h3 id="target-topology_1">Target topology<a class="headerlink" href="#target-topology_1" title="Permanent link">&para;</a></h3>
@@ -1859,12 +1868,16 @@
 <li>Stop all other FLEET Mira instances and stop the <code>FleetMiraWorker</code> service on every worker host.</li>
 <li>In Enterprise, open <strong>Enterprise → Migrate SQLite database</strong>.</li>
 <li>Select the SQLite source. The wizard opens it read-only, runs <code>PRAGMA quick_check</code>, and displays table and row counts.</li>
-<li>The mandatory option <strong>Copy DDD, record-document and financial archives to the FLEET Mira ProgramData directory</strong> atomically copies the related files to <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\state</code>. The wizard checks existing targets against the stored SHA-256 values and stops when a reference is missing or changed. Only then are all DDD, document, manifest and financial-archive paths normalized to portable <code>state/...</code> references inside the same PostgreSQL transaction. No new business hashes or signatures are generated.</li>
+<li>The mandatory option <strong>Copy DDD, record-document and financial archives to the FLEET Mira ProgramData directory</strong> first verifies and stages the related files below <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>. All DDD, document, manifest and financial-archive paths are then normalised to portable <code>state/...</code> references inside the same PostgreSQL transaction. Logically deleted references do not block the operation. Missing or damaged active files are shown together; an authorised administrator can continue after entering a mandatory reason. Missing references remain marked for repair and readable damaged files are copied unchanged to quarantine. No new business hashes or signatures are generated.</li>
 <li>Enter user <code>mira_restore</code> and the restore password selected during PostgreSQL setup. These credentials are used only for the current migration and are not stored.</li>
 <li>Confirm replacement of the empty or designated Mira schema. Transfer assumes <code>mira_owner</code> and runs in a PostgreSQL transaction that rolls back on error. The Enterprise worker/backup objects and privileges for <code>mira_app</code> and <code>mira_backup</code> are restored afterwards.</li>
 <li>Restart Enterprise and compare users, vehicles, tachograph records, documents and sample reports with the legacy system.</li>
 <li>Enable the worker only after migration acceptance has been recorded.</li>
 </ol>
+<p>Every run writes a text log and matching JSON report below <code>logs\migration</code>, including
+operation ID, progress, path corrections, warnings, quarantine, and commit or
+rollback. If the database or a verified file changes between preparation and
+execution, the scan must be repeated.</p>
 <h2 id="backup-update-and-rollback">Backup, update and rollback<a class="headerlink" href="#backup-update-and-rollback" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Under <strong>Administration → Backups → Quick Backup</strong>, an authorised administrator can export a PostgreSQL custom dump as a ZIP file to a selected local directory without configuring a backup target. The ZIP contains <code>mira.dump</code> and a checksum manifest. The dialog requests the <code>mira_backup</code> user and password and does not store the password. This diagnostic export contains only the database and does not replace a complete Enterprise backup of the file archives.</li>

@@ -1808,6 +1808,13 @@
 <li>Prüfen Sie den Dienst <code>FleetMiraWorker</code>, seinen Heartbeat und <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code>.</li>
 <li>Konfigurieren Sie gemeinsame Archiv-, Import- und Belegpfade. Gewähren Sie dem Dienstkonto die benötigten UNC- und NTFS-Rechte.</li>
 </ol>
+<p>Das Enterprise-Setup prüft vor dem erfolgreichen Abschluss die PostgreSQL-17-
+Werkzeuge <code>pg_dump</code>, <code>pg_restore</code> und <code>psql</code>. Auf einem All-in-One-Server werden
+die passenden Werkzeugverzeichnisse aus der zuvor installierten FLEET-Mira-
+PostgreSQL-Serverkomponente übernommen; auf einem getrennten Worker-Host werden
+sie aus dem eingebetteten Paket installiert. Bei einem Fehler bricht das Setup
+ab. Die geschützte Diagnose steht unter
+<code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\postgresql-tools-setup-error.log</code>.</p>
 <h3 id="clients-installieren">Clients installieren<a class="headerlink" href="#clients-installieren" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Starten Sie auf jedem Client ausschließlich das Enterprise-Applikationssetup als Administrator.</li>
@@ -1822,6 +1829,9 @@
 <li>Mehrere Worker sind technisch zulässig; Advisory Locks und Leases verhindern doppelte Verarbeitung.</li>
 <li>Überwachen Sie <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\logs\app.log</code> sowie die PostgreSQL- und Windows-Ereignisprotokolle.</li>
 <li>Der Dienst startet nach einem Serverneustart verzögert automatisch und besitzt konfigurierte Recovery-Aktionen.</li>
+<li>Ein Auftrag wird nach höchstens drei fehlgeschlagenen Ausführungen als
+  <code>FAILED</code> beendet. Prüfen Sie dann <code>attempts</code> und <code>error_message</code> in der
+  Worker-Queue, statt auf eine weitere automatische Wiederholung zu warten.</li>
 </ul>
 <h2 id="szenario-2-terminalserver-mit-allen-komponenten">Szenario 2: Terminalserver mit allen Komponenten<a class="headerlink" href="#szenario-2-terminalserver-mit-allen-komponenten" title="Permanent link">&para;</a></h2>
 <h3 id="zielbild_1">Zielbild<a class="headerlink" href="#zielbild_1" title="Permanent link">&para;</a></h3>
@@ -1859,12 +1869,16 @@
 <li>Beenden Sie alle anderen FLEET-Mira-Instanzen und stoppen Sie den Dienst <code>FleetMiraWorker</code> auf allen Worker-Hosts.</li>
 <li>Öffnen Sie in Enterprise <strong>Enterprise → SQLite-Datenbank migrieren</strong>.</li>
 <li>Wählen Sie die SQLite-Quelle. Der Assistent öffnet sie schreibgeschützt, führt <code>PRAGMA quick_check</code> aus und zeigt Tabellen- und Datensatzanzahlen.</li>
-<li>Die verpflichtende Option <strong>DDD-, Dokument- und Finanzarchive in das FLEET-Mira-ProgramData-Verzeichnis kopieren</strong> übernimmt die zugehörigen Dateien atomar nach <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise\state</code>. Der Assistent prüft vorhandene Zieldateien anhand der bestehenden SHA-256-Werte und bricht bei fehlenden oder veränderten Referenzen ab. Erst danach werden alle DDD-, Dokument-, Manifest- und Finanzarchivpfade innerhalb derselben PostgreSQL-Transaktion auf portable <code>state/...</code>-Pfade normalisiert. Es werden keine neuen fachlichen Hashwerte oder Signaturen erzeugt.</li>
+<li>Die verpflichtende Option <strong>DDD-, Dokument- und Finanzarchive in das FLEET-Mira-ProgramData-Verzeichnis kopieren</strong> prüft und staged die zugehörigen Dateien zunächst unter <code>%PROGRAMDATA%\eh-systemhaus\FLEET Mira Enterprise</code>. Alle DDD-, Dokument-, Manifest- und Finanzarchivpfade werden anschließend innerhalb derselben PostgreSQL-Transaktion auf portable <code>state/...</code>-Pfade normalisiert. Logisch gelöschte Referenzen blockieren nicht. Fehlende oder beschädigte aktive Dateien werden gesammelt angezeigt; ein berechtigter Administrator kann nach Pflichtbegründung fortfahren. Fehlende Verweise bleiben als reparaturbedürftig markiert, lesbare beschädigte Dateien werden unverändert quarantänisiert. Neue fachliche Hashwerte oder Signaturen werden nicht erzeugt.</li>
 <li>Geben Sie Benutzer <code>mira_restore</code> und das beim PostgreSQL-Setup festgelegte Restore-Kennwort ein. Diese Zugangsdaten werden ausschließlich für die aktuelle Migration verwendet und nicht gespeichert.</li>
 <li>Bestätigen Sie das Ersetzen des leeren beziehungsweise vorgesehenen Mira-Schemas. Die Übertragung erfolgt als <code>mira_owner</code> in einer PostgreSQL-Transaktion; Fehler führen zum Rollback. Danach werden Enterprise-Worker-/Backupobjekte und die Rechte für <code>mira_app</code> und <code>mira_backup</code> wiederhergestellt.</li>
 <li>Starten Sie Enterprise neu und vergleichen Sie Benutzer, Fahrzeuge, Tachodaten, Belege und Stichprobenberichte mit dem Altsystem.</li>
 <li>Aktivieren Sie den Worker erst nach schriftlicher Abnahme der Migration.</li>
 </ol>
+<p>Jeder Lauf schreibt unter <code>logs\migration</code> ein Textlog und einen gleichnamigen
+JSON-Bericht mit Vorgangs-ID, Fortschritt, Pfadkorrekturen, Warnungen, Quarantäne
+sowie Commit oder Rollback. Ändern sich Datenbank oder geprüfte Dateien zwischen
+Prüfung und Ausführung, muss der Scan wiederholt werden.</p>
 <h2 id="sicherung-update-und-ruckfall">Sicherung, Update und Rückfall<a class="headerlink" href="#sicherung-update-und-ruckfall" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Unter <strong>Administration → Sicherungen → Quick Backup</strong> kann ein berechtigter Administrator unabhängig vom konfigurierten Sicherungsziel einen PostgreSQL-Custom-Dump als ZIP-Datei in ein ausgewähltes lokales Verzeichnis exportieren. Die ZIP-Datei enthält <code>mira.dump</code> und ein Prüfsummenmanifest. Dafür werden Benutzer <code>mira_backup</code> und dessen Kennwort abgefragt; das Kennwort wird nicht gespeichert. Diese Diagnosesicherung enthält ausschließlich die Datenbank und ersetzt keine vollständige Enterprise-Sicherung der Dateiarchive.</li>
