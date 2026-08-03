@@ -1,44 +1,44 @@
 
 <!doctype html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+        <meta name="description" content="User, administrator and integration documentation for FLEET Mira">
       
       
       
-        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/guide/license-checks/">
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/operations/manual-backup-restore/">
       
       
-        <link rel="prev" href="../deadlines-record-documents/">
+        <link rel="prev" href="../cloud-backup-restore/">
       
       
-        <link rel="next" href="../vehicle-costs/">
+        <link rel="next" href="../enterprise-backup-restore/">
       
       
         
-          <link rel="alternate" href="../../../guide/license-checks/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="de">
+          <link rel="alternate" href="../../de/operations/manual-backup-restore/" hreflang="de">
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Führerscheinkontrolle und RFID/NFC - FLEET Mira Dokumentation</title>
+        <title>Backup and restore how-to - FLEET Mira Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,9 +57,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+      <link rel="stylesheet" href="../../stylesheets/image-lightbox.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#fuhrerscheinkontrolle-und-rfidnfc" class="md-skip">
-          Zum Inhalt
+        <a href="#how-to-backup-and-restore" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -99,8 +99,8 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FLEET Mira Documentation" class="md-header__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,13 +114,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            FLEET Mira Dokumentation
+            FLEET Mira Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Führerscheinkontrolle und RFID/NFC
+              Backup and restore how-to
             
           </span>
         </div>
@@ -160,20 +160,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../guide/license-checks/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="de" class="md-select__link">
+            <a href="../../de/operations/manual-backup-restore/" hreflang="de" class="md-select__link">
               Deutsch
             </a>
           </li>
@@ -194,16 +194,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Suche">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -216,7 +216,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suche wird initialisiert
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+    <a href="../.." title="FLEET Mira Documentation" class="md-nav__button md-logo" aria-label="FLEET Mira Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    FLEET Mira Dokumentation
+    FLEET Mira Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -270,14 +270,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Start
+    Home
   
 
     
@@ -304,7 +304,7 @@
   <span class="md-ellipsis">
     
   
-    Produktübersicht
+    Product overview
   
 
     
@@ -331,7 +331,7 @@
   <span class="md-ellipsis">
     
   
-    Benutzerhandbuch
+    User manual
   
 
     
@@ -348,8 +348,6 @@
       
   
   
-    
-  
   
   
     
@@ -362,11 +360,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -376,7 +374,7 @@
   <span class="md-ellipsis">
     
   
-    Detaillierte Anleitungen
+    Detailed guides
   
 
     
@@ -387,12 +385,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Detaillierte Anleitungen
+    Detailed guides
   
 
           </label>
@@ -405,14 +403,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../tachodata-overviews/" class="md-nav__link">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Tachodaten-Auswertungen
+    Tachodata evaluations
   
 
     
@@ -433,14 +431,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../drivercard-analysis/" class="md-nav__link">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Fahrerkarten-Auswertung
+    Driver-card analysis
   
 
     
@@ -461,14 +459,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../vehicle-unit-analysis/" class="md-nav__link">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Massenspeicher-Auswertung
+    Vehicle-unit analysis
   
 
     
@@ -489,183 +487,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../deadlines-record-documents/" class="md-nav__link">
+      <a href="../../guide/deadlines-record-documents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Fälligkeiten und Akten-Dokumente
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Führerscheinkontrolle und RFID/NFC
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Führerscheinkontrolle und RFID/NFC
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#voraussetzungen-und-stammdaten" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Voraussetzungen und Stammdaten
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rfidnfc-zuordnen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        RFID/NFC zuordnen
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kontrolle-am-pcsc-leser" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kontrolle am PC/SC-Leser
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auswertung-und-klarfalle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Auswertung und Klärfälle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#benachrichtigung-ausgabe-und-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Benachrichtigung, Ausgabe und Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typische-fehler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Typische Fehler
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vehicle-costs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fahrzeugkosten und Gutschriften
+    Deadlines and record documents
   
 
     
@@ -686,14 +515,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../foreign-invoices/" class="md-nav__link">
+      <a href="../../guide/license-checks/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Fremdrechnungen
+    Driving-licence checks and RFID/NFC
   
 
     
@@ -714,14 +543,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../leasing-contracts/" class="md-nav__link">
+      <a href="../../guide/vehicle-costs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Leasingverträge
+    Vehicle costs and credits
   
 
     
@@ -742,14 +571,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../einvoice-import/" class="md-nav__link">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    E-Rechnung und XRechnung importieren
+    Foreign invoices
   
 
     
@@ -770,14 +599,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../cost-reporting/" class="md-nav__link">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Kostenanalyse und Reporting
+    Lease contracts
   
 
     
@@ -798,14 +627,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../violation-dashboard/" class="md-nav__link">
+      <a href="../../guide/einvoice-import/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Verstoß-Dashboard und Fahrerbelehrungen
+    E-invoice and XRechnung import
   
 
     
@@ -826,14 +655,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../report-dashboard/" class="md-nav__link">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Berichts-Dashboard
+    Cost analysis and reporting
   
 
     
@@ -854,14 +683,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../position-maps/" class="md-nav__link">
+      <a href="../../guide/violation-dashboard/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Positionskarten
+    Violation dashboard and driver instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Position maps
   
 
     
@@ -896,7 +781,7 @@
   <span class="md-ellipsis">
     
   
-    Administratoren- und Integratorenhandbuch
+    Administrator and integrator guide
   
 
     
@@ -939,7 +824,7 @@
   <span class="md-ellipsis">
     
   
-    Schnittstellen
+    APIs
   
 
     
@@ -955,7 +840,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Schnittstellen
+    APIs
   
 
           </label>
@@ -1003,7 +888,7 @@
   <span class="md-ellipsis">
     
   
-    FiBu REST API
+    Accounting REST API
   
 
     
@@ -1054,7 +939,7 @@
   <span class="md-ellipsis">
     
   
-    Integrationen
+    Integrations
   
 
     
@@ -1070,7 +955,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Integrationen
+    Integrations
   
 
           </label>
@@ -1090,7 +975,7 @@
   <span class="md-ellipsis">
     
   
-    FiBu CSV/ZIP
+    Accounting CSV/ZIP
   
 
     
@@ -1118,7 +1003,7 @@
   <span class="md-ellipsis">
     
   
-    Tachographen-Parser
+    Tachograph parser
   
 
     
@@ -1146,7 +1031,7 @@
   <span class="md-ellipsis">
     
   
-    GPS-server.net-Telematik
+    GPS-server.net telematics
   
 
     
@@ -1197,7 +1082,7 @@
   <span class="md-ellipsis">
     
   
-    Architektur
+    Architecture
   
 
     
@@ -1213,7 +1098,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Architektur
+    Architecture
   
 
           </label>
@@ -1233,7 +1118,7 @@
   <span class="md-ellipsis">
     
   
-    Datenbankschema V2
+    Database schema V2
   
 
     
@@ -1261,7 +1146,7 @@
   <span class="md-ellipsis">
     
   
-    Tachographendaten: Speicherung und Zugriff
+    Tachograph data storage and access
   
 
     
@@ -1289,7 +1174,7 @@
   <span class="md-ellipsis">
     
   
-    Asynchrone UI und Hintergrunddienste
+    Asynchronous UI and background services
   
 
     
@@ -1314,8 +1199,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -1326,11 +1213,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
@@ -1340,7 +1227,7 @@
   <span class="md-ellipsis">
     
   
-    Betrieb
+    Operations
   
 
     
@@ -1351,12 +1238,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Betrieb
+    Operations
   
 
           </label>
@@ -1369,14 +1256,172 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/cloud-backup-restore/" class="md-nav__link">
+      <a href="../cloud-backup-restore/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Archivierung, Backup und Wiederherstellung
+    Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choose-the-backup-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose the backup type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip64-or-backup-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZIP64 or backup directory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-complete-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a complete backup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perform-a-complete-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perform a complete restore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relocate-the-data-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relocate the data root
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise backup and restore
   
 
     
@@ -1397,70 +1442,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+      <a href="../enterprise-installation-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How-to Datensicherung und Wiederherstellung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Backup und Wiederherstellung
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operations/enterprise-installation-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enterprise-Installationsanleitung
+    Enterprise installation guide
   
 
     
@@ -1494,7 +1483,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1503,15 +1492,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#voraussetzungen-und-stammdaten" class="md-nav__link">
+  <a href="#choose-the-backup-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Voraussetzungen und Stammdaten
+        Choose the backup type
       
     </span>
   </a>
@@ -1519,10 +1508,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rfidnfc-zuordnen" class="md-nav__link">
+  <a href="#zip64-or-backup-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RFID/NFC zuordnen
+        ZIP64 or backup directory
       
     </span>
   </a>
@@ -1530,10 +1519,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kontrolle-am-pcsc-leser" class="md-nav__link">
+  <a href="#create-a-complete-backup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kontrolle am PC/SC-Leser
+        Create a complete backup
       
     </span>
   </a>
@@ -1541,10 +1530,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auswertung-und-klarfalle" class="md-nav__link">
+  <a href="#perform-a-complete-restore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Auswertung und Klärfälle
+        Perform a complete restore
       
     </span>
   </a>
@@ -1552,21 +1541,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#benachrichtigung-ausgabe-und-audit" class="md-nav__link">
+  <a href="#relocate-the-data-root" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benachrichtigung, Ausgabe und Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typische-fehler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Typische Fehler
+        Relocate the data root
       
     </span>
   </a>
@@ -1590,64 +1568,86 @@
 
 
 
-<h1 id="fuhrerscheinkontrolle-und-rfidnfc">Führerscheinkontrolle und RFID/NFC<a class="headerlink" href="#fuhrerscheinkontrolle-und-rfidnfc" title="Permanent link">&para;</a></h1>
-<p>Die Führerscheinkontrolle verbindet die in der Personalakte hinterlegte Prüfpflicht mit einer RFID-/NFC-Kennung am Führerschein. Erfolgreiche Kontrollen aktualisieren automatisch den Folgetermin; eine manuelle Erledigung der systemverwalteten Fälligkeit ist nicht vorgesehen.</p>
-<h2 id="voraussetzungen-und-stammdaten">Voraussetzungen und Stammdaten<a class="headerlink" href="#voraussetzungen-und-stammdaten" title="Permanent link">&para;</a></h2>
-<p>Öffnen Sie <strong>Fuhrpark-Management &gt; Personal</strong>, markieren Sie die Person und wählen Sie <strong>Bearbeiten</strong>. Pflegen Sie mindestens Personalnummer, Name und – soweit vorhanden – Führerscheinnummer und ausstellende Behörde. Aktivieren Sie <strong>Regelmäßige Führerscheinkontrolle erforderlich</strong> und legen Sie das Intervall in Tagen fest. Zulässig sind 1 bis 3650 Tage; der übliche Ausgangswert beträgt 28 Tage.</p>
-<p>In der Personalakte zeigt <strong>Stammdaten</strong> das anonymisierte Geburtsdatum, die Führerscheindaten, die FSK-Pflicht und das Prüfintervall. <strong>Fälligkeiten</strong> enthält den daraus automatisch berechneten Termin.</p>
-<h2 id="rfidnfc-zuordnen">RFID/NFC zuordnen<a class="headerlink" href="#rfidnfc-zuordnen" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Öffnen Sie die Personalakte oder <strong>Personal &gt; FSK-Auswertung</strong> und markieren Sie die Person.</li>
-<li>Wählen Sie <strong>RFID/NFC zuordnen</strong>.</li>
-<li>Legen Sie den Chip auf einen PC/SC-kompatiblen Leser und prüfen Sie UID, Leser und Person im Bestätigungsdialog.</li>
-<li>Speichern Sie die Zuordnung. Eine UID kann gleichzeitig nur einer Person zugeordnet sein; eine neue UID beendet die bisherige aktive Zuordnung nachvollziehbar.</li>
-</ol>
-<p>Die PC/SC-UID wird in der üblichen Byte-Reihenfolge angezeigt und gespeichert. Beispielsweise erscheint die vom Leser byteverkehrt gelieferte Folge <code>A3 BC 06 02 00 03 04 E0</code> als <code>E0 04 03 00 02 06 BC A3</code>.</p>
-<p><img alt="RFID-Historie der Personalakte" src="../../assets/screenshots/person-rfid-history.png" />
-<em>Abbildung: Aktive und beendete UID-Zuordnungen mit Gültigkeitszeitraum.</em></p>
-<h2 id="kontrolle-am-pcsc-leser">Kontrolle am PC/SC-Leser<a class="headerlink" href="#kontrolle-am-pcsc-leser" title="Permanent link">&para;</a></h2>
-<p>Öffnen Sie die Personalakte oder die FSK-Auswertung und wählen Sie <strong>FSK per PC/SC</strong>. FLEET Mira akzeptiert die Kontrolle nur, wenn die gelesene UID der ausgewählten Person zum Kontrollzeitpunkt aktiv zugeordnet ist. Bestätigen Sie anschließend die Speicherung. Der Datensatz enthält UTC-Zeit, Methode, Station, Ergebnis und ausführenden Benutzer.</p>
-<p><img alt="Führerscheinkontrollen in der Personalakte" src="../../assets/screenshots/person-license-checks.png" />
-<em>Abbildung: Kontrollhistorie mit UID, Methode, Station und Ergebnis.</em></p>
-<p>Eine erfolgreiche Kontrolle erledigt den bisherigen Systemtermin und berechnet den nächsten Termin aus Kontrollzeitpunkt plus Prüfintervall. Fehlender Leser, Zeitüberschreitung, unbekannte UID oder eine UID einer anderen Person erzeugen keine erfolgreiche Kontrolle.</p>
-<h2 id="auswertung-und-klarfalle">Auswertung und Klärfälle<a class="headerlink" href="#auswertung-und-klarfalle" title="Permanent link">&para;</a></h2>
-<p>Unter <strong>Personal &gt; FSK-Auswertung</strong> filtern Sie nach Name, Status, FSK-Pflicht, vorhandener RFID-Zuordnung, E-Mail und Terminbereich. Die Tabelle zeigt letzten Kontrollzeitpunkt, nächsten Termin, Resttage und Status. Über das Kontextmenü öffnen Sie die Personalakte, ordnen eine UID zu oder starten eine Kontrolle.</p>
-<p><img alt="Termin- und Statusauswertung" src="../../assets/screenshots/license-check-evaluation.png" /></p>
-<p>RFID-CSV-Zeilen eines Terminals werden automatisch zugeordnet, wenn für UID und Kontrollzeitpunkt eine eindeutige aktive Zuordnung existiert. Unbekannte oder zeitlich nicht passende UIDs erscheinen unter <strong>RFID-Prüfliste</strong>. Berechtigte Benutzer können den Fall einer Person zuordnen oder mit Pflichtgrund verwerfen; die Originalzeile bleibt nachvollziehbar.</p>
-<h2 id="benachrichtigung-ausgabe-und-audit">Benachrichtigung, Ausgabe und Audit<a class="headerlink" href="#benachrichtigung-ausgabe-und-audit" title="Permanent link">&para;</a></h2>
-<p>Aus der FSK-Auswertung können berechtigte Benutzer eine E-Mail-Vorschau erzeugen oder eine Erinnerung sofort senden. Druckvorschau und PDF verwenden die sichtbaren Filter und Spalten. Änderungen an FSK-Regel, UID-Zuordnung, Kontrolle, Folgetermin und Klärfall werden im Objekt- beziehungsweise globalen Audit protokolliert.</p>
-<p>Für die Anzeige ist <code>fleet.read</code> ausreichend. UID-Zuordnung, PC/SC-Kontrolle und Klärfälle benötigen <code>fsk.check</code>; der manuelle Versand benötigt <code>fsk.notify</code>.</p>
-<h2 id="typische-fehler">Typische Fehler<a class="headerlink" href="#typische-fehler" title="Permanent link">&para;</a></h2>
+<h1 id="how-to-backup-and-restore">How-to: backup and restore<a class="headerlink" href="#how-to-backup-and-restore" title="Permanent link">&para;</a></h1>
+<p>This how-to covers manual backup and restore in Basic and Pro. Enterprise uses the
+separate <a href="../enterprise-backup-restore/">Enterprise procedure</a> for PostgreSQL and
+its worker.</p>
+<h2 id="choose-the-backup-type">Choose the backup type<a class="headerlink" href="#choose-the-backup-type" title="Permanent link">&para;</a></h2>
+<p>Open <strong>Administration → Backups → Quick Backup</strong>:</p>
+<ul>
+<li><strong>Database only</strong> creates a diagnostic ZIP with a consistent SQLite snapshot,
+  manifest, size and SHA-256. It contains no file archives.</li>
+<li><strong>Complete manual backup</strong> contains the snapshot and every active DDD, financial
+  and record-document file referenced by it, including object manifests.</li>
+</ul>
+<p>A manual complete backup configures no durable target and creates no queue,
+retention rule or automatic retry.</p>
+<h2 id="zip64-or-backup-directory">ZIP64 or backup directory<a class="headerlink" href="#zip64-or-backup-directory" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Meldung oder Zustand</th>
-<th>Maßnahme</th>
+<th>Format</th>
+<th>Best for</th>
+<th>Completeness check</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Kein PC/SC-Leser</td>
-<td>Windows-Treiber und Leser prüfen, Leser neu verbinden und den Vorgang erneut öffnen.</td>
+<td>ZIP64</td>
+<td>a portable single file, transport and offline storage; supports files larger than 4 GB</td>
+<td>temporary creation, complete read-back, then atomic rename</td>
 </tr>
 <tr>
-<td>UID gehört nicht zur Person</td>
-<td>Keine Kontrolle speichern; Zuordnung und ausgewählte Personalakte prüfen.</td>
-</tr>
-<tr>
-<td>RFID fehlt</td>
-<td>Zuerst eine aktive UID zuordnen.</td>
-</tr>
-<tr>
-<td>Termin lässt sich nicht manuell erledigen</td>
-<td>Eine erfolgreiche Kontrolle erfassen oder die FSK-Pflicht in den Stammdaten deaktivieren.</td>
-</tr>
-<tr>
-<td>CSV-Zeile bleibt offen</td>
-<td>Kontrollzeitpunkt und damalige UID-Gültigkeit prüfen und den Klärfall bearbeiten.</td>
+<td>Backup directory</td>
+<td>large data sets and interruption-prone UNC connections</td>
+<td>shared manifest; <code>COMPLETE</code> marker is written last</td>
 </tr>
 </tbody>
 </table>
+<p>Both formats use the same logical structure and versioned <code>manifest.json</code>. A
+missing completeness marker, damaged ZIP structure or mismatching hash makes the
+set invalid.</p>
+<h2 id="create-a-complete-backup">Create a complete backup<a class="headerlink" href="#create-a-complete-backup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <strong>Complete manual backup</strong> and ZIP64 or directory.</li>
+<li>Select a local destination or UNC path. WebDAV and Google Drive belong only to
+   Pro automatic backups.</li>
+<li>If required, enable AES-256-GCM. Export and confirm the recovery key before
+   starting, and store it separately from the backup set.</li>
+<li>Review the content preview and start the run.</li>
+<li>Wait for file and byte progress plus read-back verification to finish. Use only
+   a set with a successful summary.</li>
+</ol>
+<p>An interrupted directory has no <code>COMPLETE</code> marker; a temporary ZIP is not a valid
+backup. Regularly test free space, UNC access and an isolated restore.</p>
+<h2 id="perform-a-complete-restore">Perform a complete restore<a class="headerlink" href="#perform-a-complete-restore" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Stop imports and retain the current database and archives as a rollback copy.</li>
+<li>Open <strong>Administration → Backups → Restore …</strong>.</li>
+<li>Select the ZIP64 file or the root of a backup directory.</li>
+<li>For an encrypted set, select the separately stored recovery key.</li>
+<li>Enter the restore reason and start validation.</li>
+<li>The wizard validates format, completeness, key, database and every hash, then
+   prepares database and archives in staging.</li>
+<li>Archive targets come from the current configuration. Absolute source paths
+   stored in the set are never reused as restore destinations.</li>
+<li>Restart FLEET Mira to activate the atomically staged database. Check the audit
+   log, table contents and representative DDD, financial and record documents.</li>
+</ol>
+<p>A wrong key, missing object, damaged ZIP structure or checksum failure stops the
+operation before activation. Keep the source set, logs and rollback copy until the
+recovery has been documented and accepted.</p>
+<h2 id="relocate-the-data-root">Relocate the data root<a class="headerlink" href="#relocate-the-data-root" title="Permanent link">&para;</a></h2>
+<p>Open <strong>Administration → Settings → Relocate data root …</strong> and choose an empty
+directory on a fixed local drive. The wizard stops local writers, copies and
+hashes every file, normalises internal paths, and restarts FLEET Mira through the
+new bootstrap locator. PostgreSQL and deliberately external archives are not
+moved. A locally installed Enterprise worker is stopped and restarted after
+startup validation. Failed startup validation automatically switches the locator
+back to the old root.</p>
+<p>After successful startup, choose <strong>Retain old root</strong> or <strong>remove permanently</strong>.
+Retain is the safe default. A failure before cutover leaves the old root active;
+after cancellation, restart restores the local services.</p>
 
 
 
@@ -1671,7 +1671,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Zurück zum Seitenanfang
+  Back to top
 </button>
         
       </main>
@@ -1707,12 +1707,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../../javascripts/image-lightbox.js"></script>
+        <script src="../../javascripts/image-lightbox.js"></script>
       
     
   </body>

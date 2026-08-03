@@ -710,6 +710,34 @@
   
   
     <li class="md-nav__item">
+      <a href="guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1100,6 +1128,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1317,6 +1373,34 @@
     
   
     Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
   
 
     
@@ -1564,8 +1648,10 @@
 <li>Regions: Germany (<code>de-DE</code>), Austria (<code>de-AT</code>), Switzerland (<code>de-CH</code>), United Kingdom (<code>en-GB</code>), United States (<code>en-US</code>), France (<code>fr-FR</code>), Italy (<code>it-IT</code>), Spain (<code>es-ES</code>), Portugal (<code>pt-PT</code>), Poland (<code>pl-PL</code>), Romania (<code>ro-RO</code>), Netherlands (<code>nl-NL</code>), Denmark (<code>da-DK</code>), Czechia (<code>cs-CZ</code>), Hungary (<code>hu-HU</code>), Slovenia (<code>sl-SI</code>), Croatia (<code>hr-HR</code>), Finland (<code>fi-FI</code>), Norway (<code>nb-NO</code>), Sweden (<code>sv-SE</code>), Latvia (<code>lv-LV</code>), Lithuania (<code>lt-LT</code>), Estonia (<code>et-EE</code>), Slovakia (<code>sk-SK</code>), Bulgaria (<code>bg-BG</code>) and Greece (<code>el-GR</code>)</li>
 </ul>
 </li>
-<li><strong>Optional backup</strong> of local tachograph and financial archives plus the database to filesystem, WebDAV or Google Drive targets, including restore workflows</li>
+<li><strong>Manual complete backup for Basic and Pro</strong> as a ZIP64 file or directory on local/UNC destinations, plus optional automatic Pro backup to filesystem, WebDAV or Google Drive targets</li>
+<li><strong>Guided data-root relocation</strong> with complete read-back and hash verification in every edition</li>
 <li><strong>Application-wide auditing</strong> with one central, filterable audit log</li>
+<li><strong>GPS-server.net telematics for Pro and Enterprise</strong> with object assignment, position history, maps, events and qualified daily odometer readings; see the <a href="integration/gps-server/">integration guide</a></li>
 <li><strong>Complete compliance history</strong> for imports, checks, assignments, changes and exports</li>
 <li><strong>GDPR-compliant data processing</strong> through role-based access, protected credentials and traceable procedures</li>
 </ul>
@@ -1611,7 +1697,7 @@
 <li>Original C and M files remain byte-for-byte traceable through hashes and the immutable local archive.</li>
 <li>Signature results are stored per signed section; invalid or unverifiable files are quarantined without being deleted.</li>
 <li>Business changes and automatic imports are recorded in the global audit log.</li>
-<li>All tachograph calculations use UTC. Region settings change formatting only.</li>
+<li>Tachograph source data remains stored unchanged in UTC. Display and calculations use UTC by default; when <strong>Use local time for activities and calculations</strong> is enabled, display, day/week boundaries and compliance evaluations use the time zone selected under <strong>System → Settings</strong>. Region settings independently affect formatting only.</li>
 <li>Optional backup is one-way from the local primary archives to one configured target.</li>
 <li>Locally verified financial originals can be verified and booked independently of backup status.</li>
 <li>UI layout, language and region are stored per user.</li>

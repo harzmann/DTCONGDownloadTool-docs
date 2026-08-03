@@ -762,6 +762,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1152,6 +1180,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1369,6 +1425,34 @@
     
   
     Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
   
 
     
@@ -1827,6 +1911,11 @@
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
+<td>Leasingverträge mit Faktor-Vorkalkulation, Vertragsrate, Zahlungsplan, Dokumenten und Istkosten</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
 <td>Lokales, hashverifiziertes Finanzbelegarchiv, Prüfung, Buchung und Audit</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
@@ -1922,6 +2011,11 @@
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
+<td>↳ Drei Leasingberichte nach Fahrzeug, Vertragsende und Lieferant</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
 <td>Native Listenansicht, Druck und PDF-Ausgabe</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
@@ -1965,6 +2059,11 @@
 <td><strong>Backup und Wiederherstellung</strong></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Manuelle Komplettsicherung und Restore als ZIP64 oder Ordner, lokal/UNC</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
 </tr>
 <tr>
 <td>Lokales/Dateisystem-/UNC-Backup und Restore 💎</td>
@@ -2051,12 +2150,13 @@
 <ul>
 <li>zeit-, kilometer- und kombiniert auslösbare Fahrzeugfälligkeiten mit Vorläufen, Wiederholungen, Kilometerdatenqualität sowie Personal-/Fuhrparkberichten;</li>
 <li>Akten-Dokumente für Personal und Fahrzeuge mit Drag&amp;Drop, Versionen, Metadaten, Vorschau, eigener Aufbewahrungsfrist, Sicherung und Audit;</li>
-<li>zielunabhängiges Quick Backup für Basic/Pro-SQLite sowie Enterprise-PostgreSQL-Diagnosen;</li>
+<li>zielunabhängiges Quick Backup für Basic/Pro mit DB-Diagnose oder vollständigem ZIP64-/Ordner-Set sowie Enterprise-PostgreSQL-Diagnosen;</li>
+<li>geführter, verifizierter Umzug des lokalen Datenstamms in allen Editionen;</li>
 <li>vollständiges aktenbezogenes Audit für Fälligkeiten, Dokumente, Führerscheinkontrollen, Tachodatenverknüpfungen, Kilometerstände, Kosten, Rechnungen, Belege und Exporte;</li>
 <li>sprachabhängige Eingabehilfen bei weiterhin unabhängiger regionaler Formatierung von Datum, Zeit und Zahlen;</li>
 <li>übliche PC/SC-Byte-Reihenfolge der RFID-/NFC-UID bei Anzeige, Zuordnung und Kontrolle.</li>
 </ul>
-<p>Die <a href="../guide/report-dashboard/">Berichts-Dashboard-Anleitung</a> zeigt alle acht Berichtsmasken mit Zweckbeschreibung, Stimulsoft-Vorschau und verlinktem PDF. Die <a href="../guide/violation-dashboard/">Verstoß-Dashboard-Anleitung</a> dokumentiert Risikomaske, Verstoßbericht und Fahrerbelehrung mit anonymisierten Demodaten.</p>
+<p>Die <a href="../guide/report-dashboard/">Berichts-Dashboard-Anleitung</a> beschreibt zwölf Arbeitszeit-, Fahrleistungs-, Rückkehr- und Fälligkeitsberichte. Die <a href="../guide/violation-dashboard/">Verstoß-Dashboard-Anleitung</a> dokumentiert Risikomaske, Verstoßbericht und Fahrerbelehrung mit anonymisierten Demodaten.</p>
 <h2 id="datenfluss">Datenfluss<a class="headerlink" href="#datenfluss" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[FTP, DLT-API oder manueller Import] --&gt; B[Hash und unverändertes lokales Archiv]

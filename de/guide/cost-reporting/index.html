@@ -601,6 +601,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../einvoice-import/" class="md-nav__link">
         
   
@@ -1082,6 +1110,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1319,6 +1375,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
         
   
@@ -1470,15 +1554,17 @@
 <p>Die KPI-Leiste unterscheidet <strong>Gesamtkosten</strong>, <strong>auswertbare Kosten</strong>, <strong>auswertbare Kilometer</strong>, <strong>Kosten/km</strong> und <strong>Datenbasis</strong>. Gesamtkosten bleiben vollständig sichtbar, während Kosten/km nur gemeinsam belastbare Fahrzeug-Monate verwendet.</p>
 <h2 id="kilometerbasis">Kilometerbasis<a class="headerlink" href="#kilometerbasis" title="Permanent link">&para;</a></h2>
 <p>M-Dateien liefern für jeden enthaltenen UTC-Tag einen Tagesabschluss-Kilometerstand. FLEET Mira speichert diesen Wert als Grenze zum Folgetag um <code>00:00 UTC</code>. C-Daten aus Fahrzeugnutzungen, Orts- und Drei-Stunden-GNSS-Datensätzen ergänzen die Historie.</p>
-<p>Die M-Zeitreihe ist maßgeblich und wird ausschließlich anhand anderer signaturgültiger M-Stände plausibilisiert. Manuelle und C-Stände können fehlende exakte Periodengrenzen ergänzen, einen vorhandenen M-Stand jedoch weder ersetzen noch entwerten.</p>
+<p>Kostenanalyse und Fahrleistungsberichte verwenden denselben <code>OdometerBoundaryResolver</code>. Zulässig sind ausschließlich qualifizierte Werte mit <strong>VALID</strong> oder <strong>WARNING</strong>; manuelle, unbekannte, unbestätigte und konfliktbehaftete Werte bleiben ausgeschlossen.</p>
 <p>Die Quellenpriorität lautet:</p>
 <ol>
 <li>signaturgültiger M-Tagesabschluss;</li>
-<li>freigegebener manueller Stand;</li>
-<li>plausibilisierte C-Daten;</li>
-<li>sonstige Importe.</li>
+<li>GPS-server-Telematik-Sensor;</li>
+<li>C-Fahrzeugnutzung;</li>
+<li>C-Ort;</li>
+<li>C-GNSS-3h;</li>
+<li>GPS-server-Telematik-GPS.</li>
 </ol>
-<p>Kosten je Kilometer werden auf Ebene eines Fahrzeug-Monats berechnet. Der erste und letzte Monat werden dabei auf den ausgewählten Zeitraum zugeschnitten. Ein Fahrzeug-Monat fließt nur ein, wenn er mindestens eine Kostenbuchung, belastbare UTC-Grenzstände und eine positive Fahrleistung besitzt. Fehlende Werte werden nicht interpoliert und nicht als null behandelt.</p>
+<p>Kosten je Kilometer werden auf Ebene eines Fahrzeug-Monats berechnet. Der erste und letzte Monat werden dabei auf den ausgewählten Zeitraum zugeschnitten. Ein Fahrzeug-Monat fließt nur ein, wenn er mindestens eine Kostenbuchung, belastbare Periodengrenzen und eine positive Fahrleistung besitzt. Fehlende Grenzen folgen derselben administrativen Regel wie die Fahrleistungsberichte: unvollständig, interpoliert oder begrenzt extrapoliert. Für eine fehlende Anfangsgrenze kann die zentrale Policy anhand der ersten qualifizierten Folgetage rückwärts extrapolieren; für eine fehlende Endgrenze rechnet sie von vorherigen Werten vorwärts. Im laufenden lokalen Tag wird ein vorhandener qualifizierter Ist-Stand verwendet; andernfalls kann die zentrale Policy bis zum aktuellen Berechnungszeitpunkt extrapolieren. So stehen dieselben geschätzten Kilometer auch für Kosten/km zur Verfügung. Anfangs- und Endstand werden zuerst auf ganze Kilometer gerundet; die Differenz ist danach exakt Endstand minus Anfangsstand. Der Bericht <strong>Kilometerstände pro Fahrzeug und Tag</strong> macht dieselben Grenzen und Schätzstützen einzeln prüfbar.</p>
 <p>Die Gesamtkosten enthalten weiterhin alle Kosten des ausgewählten Zeitraums. <strong>Auswertbare Kosten</strong>, <strong>auswertbare Kilometer</strong> und <strong>Kosten/km</strong> enthalten dagegen nur gemeinsam auswertbare Fahrzeug-Monate. Fahrzeuge oder Monate ohne Kosten beziehungsweise Kilometer verhindern deshalb nicht mehr die Berechnung für vollständige Teilmengen.</p>
 <p>Die Abdeckung wird als Anzahl auswertbarer kostenführender Fahrzeug-Monate dargestellt. Der Spaltenkopf erklärt die Kennzahl allgemein; der Tooltip jedes Werts nennt die tatsächliche Anzahl vorhandener und auswertbarer Kostenmonate sowie die konkreten Monats-/Kilometerwarnungen des Fahrzeugs. Die Oberfläche bezeichnet eine vollständige Abdeckung als <strong>Vollständig</strong>, eine auswertbare Teilmenge als <strong>Teilweise</strong> und fehlende Kosten/km-Basis trotz vorhandener Kosten als <strong>Kilometerdaten fehlen</strong>. <strong>Keine Kosten</strong> und <strong>Keine Daten</strong> kennzeichnen einzelne Fahrzeuge oder Monate ohne Kosten beziehungsweise ohne beide Datenarten.</p>
 <p>Über <strong>Tachographendaten übernehmen</strong> werden ältere M-Dateien ohne Tageskilometer erneut verarbeitet. Nicht eindeutig über FIN oder Kennzeichen zuordenbare Werte bleiben in der Klärungsliste sichtbar.</p>

@@ -710,6 +710,34 @@
   
   
     <li class="md-nav__item">
+      <a href="guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1100,6 +1128,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1317,6 +1373,34 @@
     
   
     Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
   
 
     
@@ -1564,8 +1648,10 @@
 <li>Regionen: Deutschland (<code>de-DE</code>), Österreich (<code>de-AT</code>), Schweiz (<code>de-CH</code>), Vereinigtes Königreich (<code>en-GB</code>), Vereinigte Staaten (<code>en-US</code>), Frankreich (<code>fr-FR</code>), Italien (<code>it-IT</code>), Spanien (<code>es-ES</code>), Portugal (<code>pt-PT</code>), Polen (<code>pl-PL</code>), Rumänien (<code>ro-RO</code>), Niederlande (<code>nl-NL</code>), Dänemark (<code>da-DK</code>), Tschechien (<code>cs-CZ</code>), Ungarn (<code>hu-HU</code>), Slowenien (<code>sl-SI</code>), Kroatien (<code>hr-HR</code>), Finnland (<code>fi-FI</code>), Norwegen (<code>nb-NO</code>), Schweden (<code>sv-SE</code>), Lettland (<code>lv-LV</code>), Litauen (<code>lt-LT</code>), Estland (<code>et-EE</code>), Slowakei (<code>sk-SK</code>), Bulgarien (<code>bg-BG</code>) und Griechenland (<code>el-GR</code>)</li>
 </ul>
 </li>
-<li><strong>Optionales Backup</strong> der lokalen Tachodaten- und Finanzarchive sowie der Datenbank auf Dateisystem-, WebDAV- oder Google-Drive-Ziele einschließlich Wiederherstellung</li>
+<li><strong>Manuelle Komplettsicherung für Basic und Pro</strong> als ZIP64-Datei oder Ordner auf lokalen/UNC-Zielen sowie optionale automatische Pro-Sicherung auf Dateisystem-, WebDAV- oder Google-Drive-Ziele</li>
+<li><strong>Geführter Datenstamm-Umzug</strong> mit vollständiger Rücklese- und Hashprüfung in allen Editionen</li>
 <li><strong>Anwendungsweite Auditierung</strong> mit zentralem, filterbarem Audit-Log</li>
+<li><strong>GPS-server.net-Telematik für Pro und Enterprise</strong> mit Objektzuordnung, Positionshistorie, Karte, Ereignissen und qualifizierten Tageskilometerständen; siehe <a href="integration/gps-server/">Integrationsanleitung</a></li>
 <li><strong>Lückenlose Compliancehistorie</strong> für Importe, Prüfungen, Zuordnungen, Änderungen und Exporte</li>
 <li><strong>DSGVO-konforme Datenverarbeitung</strong> durch rollenbasierte Zugriffe, geschützte Zugangsdaten und nachvollziehbare Verfahrensabläufe</li>
 </ul>
@@ -1611,7 +1697,7 @@
 <li>Originale C- und M-Dateien bleiben über Hashwerte und das unveränderte lokale Archiv nachweisbar.</li>
 <li>Signaturergebnisse werden je signierter Sektion gespeichert; ungültige oder nicht prüfbare Dateien werden quarantänisiert, aber nicht gelöscht.</li>
 <li>Fachliche Änderungen und automatische Importe werden im globalen Audit protokolliert.</li>
-<li>Tachographenberechnungen verwenden ausschließlich UTC. Regionseinstellungen verändern nur die Darstellung.</li>
+<li>Tachographen-Quelldaten bleiben unverändert in UTC gespeichert. Standardmäßig erfolgen Darstellung und Berechnungen in UTC; ist <strong>Lokale Zeit für Aktivitäten und Berechnungen verwenden</strong> aktiviert, verwenden Darstellung, Tages-/Wochengrenzen und Compliance-Auswertungen die unter <strong>System → Einstellungen</strong> gewählte Zeitzone. Regionseinstellungen beeinflussen davon unabhängig nur die Formatierung.</li>
 <li>Optionales Backup arbeitet einseitig von den führenden lokalen Archiven zu genau einem aktiven Ziel.</li>
 <li>Lokal verifizierte Finanzbelege können unabhängig vom Backupstatus geprüft und gebucht werden.</li>
 <li>UI-Layout, Sprache und Region werden benutzerbezogen gespeichert.</li>

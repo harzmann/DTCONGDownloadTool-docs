@@ -622,6 +622,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kilometerstandsermittlung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kilometerstandsermittlung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -688,6 +699,17 @@
     <span class="md-ellipsis">
       
         Fremdrechnungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leasingvertrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leasingverträge
       
     </span>
   </a>
@@ -986,6 +1008,34 @@
     
   
     Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
   
 
     
@@ -1396,6 +1446,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1613,6 +1691,34 @@
     
   
     Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
   
 
     
@@ -1954,6 +2060,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#kilometerstandsermittlung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kilometerstandsermittlung
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2020,6 +2137,17 @@
     <span class="md-ellipsis">
       
         Fremdrechnungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leasingvertrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leasingverträge
       
     </span>
   </a>
@@ -2102,6 +2230,7 @@
 <li><a href="../guide/license-checks/">Führerscheinkontrolle und RFID/NFC</a></li>
 <li><a href="../guide/vehicle-costs/">Fahrzeugkosten und Gutschriften</a></li>
 <li><a href="../guide/foreign-invoices/">Fremdrechnungen – Workflow und alle Tabs</a></li>
+<li><a href="../guide/leasing-contracts/">Leasingverträge, Faktorberechnung und Berichte</a></li>
 <li><a href="../guide/einvoice-import/">E‑Rechnung und XRechnung importieren</a></li>
 <li><a href="../guide/cost-reporting/">Kostenanalyse und Reporting</a></li>
 <li><a href="../guide/position-maps/">Positionskarten für C- und M-Daten</a></li>
@@ -2160,9 +2289,9 @@
 <p>Unter <strong>Administration → Tasks</strong> konfigurieren Sie Quellen, Dateimuster, Rekursion, Zeitplan, Archivverhalten und optional den strengen Cloud-Backupmodus. <strong>Sofort starten</strong> zeigt je Quelle Status, Fortschritt und laufend aktualisierte Logmeldungen. RFID-Terminaldateien benötigen das Muster <code>RFID_*.CSV</code>.</p>
 <p>Die Option <strong>Administration → Einstellungen → USB-Wechseldatenträger automatisch importieren</strong> durchsucht neu eingesteckte Datenträger rekursiv nach DDD- und <code>RFID*.CSV</code>-Dateien. Sie wirkt nur, solange FLEET Mira geöffnet ist oder im System-Tray läuft; die Quelldateien bleiben auf dem Datenträger erhalten.</p>
 <h3 id="datenstamm-und-speicherpfade">Datenstamm und Speicherpfade<a class="headerlink" href="#datenstamm-und-speicherpfade" title="Permanent link">&para;</a></h3>
-<p>Unter <strong>Administration → Einstellungen</strong> sehen Administratoren den aktiven Datenstamm sowie die vollständig aufgelösten Pfade für Logs, SQLite, DDD-Archive, Dokumentarchive und Finanzarchive. Die Felder sind bewusst schreibgeschützt: Ein einzelner geänderter Pfad würde Dateien, Datenbankreferenzen und Zugriffsrechte auseinanderlaufen lassen. Bis der kontrollierte Umzugsassistent verfügbar ist, dürfen diese Pfade weder in der Einstellungsmaske noch über die Rohkonfiguration verändert werden. In Enterprise wird der SQLite-Pfad lediglich als nicht verwendet angezeigt, weil die Datenbank in PostgreSQL liegt.</p>
+<p>Unter <strong>Administration → Einstellungen</strong> sehen Administratoren den aktiven Datenstamm sowie die vollständig aufgelösten Pfade für Logs, SQLite, DDD-Archive, Dokumentarchive und Finanzarchive. Die Felder bleiben schreibgeschützt, damit Dateien, Datenbankreferenzen und Zugriffsrechte nicht getrennt werden. Mit <strong>Datenstamm umziehen …</strong> kopiert und verifiziert ein geführter Assistent den gesamten lokalen Stamm, normalisiert interne Pfade und startet FLEET Mira über den neuen maschinenweiten Locator neu. Das Ziel muss leer und auf einem festen lokalen Laufwerk liegen. In Enterprise wird nur der lokale App-Stamm verschoben; PostgreSQL und bewusst externe Archive bleiben unverändert.</p>
 <h3 id="quick-backup-und-zentrale-sicherungsauftrage">Quick Backup und zentrale Sicherungsaufträge<a class="headerlink" href="#quick-backup-und-zentrale-sicherungsauftrage" title="Permanent link">&para;</a></h3>
-<p>Unter <strong>Administration → Sicherungen → Quick Backup</strong> erzeugen Basic und Pro ohne konfiguriertes Sicherungsziel eine konsistente, zurückgelesene SQLite-ZIP-Datei mit SHA-256-Manifest. Die ZIP-Datei enthält nur die Datenbank; DDD-, Finanz- und Akten-Dokumentarchive müssen getrennt geschützt werden.</p>
+<p>Unter <strong>Administration → Sicherungen → Quick Backup</strong> wählen Basic und Pro zwischen <strong>Nur Datenbank</strong> und <strong>Vollständige manuelle Sicherung</strong>. Die DB-Variante bleibt eine konsistente, zurückgelesene Diagnose-ZIP. Die Komplettsicherung enthält zusätzlich aktive DDD-, Finanz- und Akten-Dokumentarchive samt Manifesten und kann als portable ZIP64-Datei oder als Sicherungsordner auf einem lokalen beziehungsweise UNC-Ziel geschrieben werden. Optional verschlüsselte Sets benötigen einen separat exportierten Recovery-Key. Der Wiederherstellungsassistent unterstützt beide Formate.</p>
 <p>In Enterprise fragt Quick Backup die eigenen Backup-Zugangsdaten ab und erzeugt über den Worker einen PostgreSQL-Custom-Dump. Vollständige Enterprise-Sicherungsaufträge verarbeiten zusätzlich die konfigurierten DDD-, Finanz- und Akten-Dokumentarchive. Das Schließen des Enterprise-Clients bricht einen bereits vom <code>FleetMiraWorker</code> angenommenen Auftrag nicht ab.</p>
 <p><img alt="Sicherungskonfiguration und Status" src="../assets/screenshots/backup.png" />
 <em>Abbildung: Sicherungskonfiguration, Prüfstatus und manuelle Aktionen.</em></p>
@@ -2208,7 +2337,7 @@
 </tr>
 <tr>
 <td>Aktivitäten</td>
-<td>sortierbare UTC-Intervalle mit C-/M-Datenlage</td>
+<td>sortierbare Aktivitätsintervalle in der konfigurierten Zeitbasis mit C-/M-Datenlage</td>
 </tr>
 <tr>
 <td>Tages-/Wochengrafik</td>
@@ -2240,7 +2369,7 @@
 </tr>
 </tbody>
 </table>
-<p>Der Filter <strong>Datenlage</strong> unterscheidet alle Aktivitäten, C und M vorhanden, nur Fahrerkarte und nur Massenspeicher. Die Gegenquelle dient ausschließlich als Vergleichsnachweis und ersetzt die gewählte Basisdatei nicht. Alle Tachographenberechnungen verwenden UTC.</p>
+<p>Der Filter <strong>Datenlage</strong> unterscheidet alle Aktivitäten, C und M vorhanden, nur Fahrerkarte und nur Massenspeicher. Die Gegenquelle dient ausschließlich als Vergleichsnachweis und ersetzt die gewählte Basisdatei nicht. Tachographen-Quelldaten bleiben unverändert in UTC gespeichert. Standardmäßig erfolgen Darstellung und Berechnungen in UTC. Ist unter <strong>System → Einstellungen</strong> die Option <strong>Lokale Zeit für Aktivitäten und Berechnungen verwenden</strong> aktiviert, verwenden Darstellung, Tages-/Wochengrenzen und Compliance-Auswertungen stattdessen die dort gewählte Zeitzone. Sommer-/Winterzeitübergänge ändern weder die Quelldaten noch die tatsächlich verstrichene Dauer.</p>
 <h2 id="7-massenspeicher-auswertung">7. Massenspeicher-Auswertung<a class="headerlink" href="#7-massenspeicher-auswertung" title="Permanent link">&para;</a></h2>
 <p><img alt="Wochengrafik der Massenspeicher-Auswertung" src="../assets/screenshots/vehicle-unit-analysis.png" />
 <em>Abbildung: Massenspeicher-Auswertung für ein ausgewähltes M-Archiv.</em></p>
@@ -2274,7 +2403,72 @@
 <h3 id="fahrzeugakte">Fahrzeugakte<a class="headerlink" href="#fahrzeugakte" title="Permanent link">&para;</a></h3>
 <p><img alt="Fahrzeugakte" src="../assets/screenshots/vehicle-record.png" />
 <em>Abbildung: Fahrzeugakte mit Tachodaten-, Finanz- und Positionsreitern.</em></p>
-<p>Tabs enthalten Fälligkeiten, Dokumente, Kosten/Gutschriften, Fremdrechnungen, Tachodatenbezüge, M-Dateien, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen und Audit. Das Kontextmenü des Audit-Reiters entspricht dem globalen Audit-Protokoll und ermöglicht das Öffnen des zugehörigen Datensatzes, die XML-Treeview sowie das Kopieren von Details, Zeilen und Zellen. Dokumente verwenden dasselbe revisionsnahe Archiv- und Backupziel wie die konfigurierte lokale, UNC- oder Cloud-Sicherung. Die aggregierten Fachtabellen blenden die technische Quellspalte standardmäßig aus; das Quellarchiv bleibt über das Kontextmenü erreichbar. Identische technische Daten werden einmal mit ihrer Quellenanzahl und dem vollständigen Detailbaum dargestellt. Die Positionsliste lässt sich gemeinsam auf der Karte öffnen.</p>
+<p>Tabs enthalten Fälligkeiten, Dokumente, Kosten/Gutschriften, Fremdrechnungen, Leasing, Positionen und Audit. Tachodatenbezüge, Massenspeicherdateien, Tages-/Wochenansicht, Verstöße, Fahrer/Aktivitäten, Ereignisse/Störungen, Geschwindigkeiten, technische Daten und Kalibrierungen sind unter <strong>Tachodaten</strong> gruppiert. Im Reiter <strong>Stammdaten</strong> öffnet <strong>Fahrzeug bearbeiten</strong> das vorhandene modale Fahrzeugformular. Dort erscheinen außerdem der letzte verlässliche Kilometerstand mit Quelle und Qualität sowie der letzte bekannte Klartextstandort. Bei aktiver Telematikzuordnung öffnet <strong>Telematik öffnen</strong> einen eigenen Arbeitstab mit aktuellem Standort, Routenverlauf, gemeinsamer Positionsliste und Ereignissen.</p>
+<p>Die Positionsliste führt Tachograf- und Telematiknachweise zeitlich sortiert zusammen und kennzeichnet die Quelle; ein Quellenfilter schränkt die Ansicht ein. Der Telematik-Routenverlauf verbindet ausschließlich Telematikpunkte, während Tachografpositionen als Referenzmarker eingeblendet werden können. Das Kontextmenü des Audit-Reiters entspricht dem globalen Audit-Protokoll und ermöglicht das Öffnen des zugehörigen Datensatzes, die XML-Treeview sowie das Kopieren von Details, Zeilen und Zellen. Dokumente verwenden dasselbe revisionsnahe Archiv- und Backupziel wie die konfigurierte lokale, UNC- oder Cloud-Sicherung. Die aggregierten Fachtabellen blenden die technische Quellspalte standardmäßig aus; das Quellarchiv bleibt über das Kontextmenü erreichbar.</p>
+<h3 id="kilometerstandsermittlung">Kilometerstandsermittlung<a class="headerlink" href="#kilometerstandsermittlung" title="Permanent link">&para;</a></h3>
+<p>FLEET Mira verwendet für Fahrleistungsberichte und Kosten je Kilometer dieselbe zentrale Kilometerstandsermittlung. Die systemweiten Berechnungsregeln werden unter <strong>Administration → Kostenanalyse → Berechnungsparameter → Kilometerstandsermittlung</strong> gepflegt. Der Anbieter-Tab <strong>Administration → Telematik → GPS-server.net</strong> enthält zusätzlich die Aufbewahrung der Telematik-Tagesstände; über <strong>Kilometerregeln</strong> kann dort für ein einzelnes zugeordnetes Fahrzeug eine abweichende Regel aktiviert werden.</p>
+<p>Die im Standarddialog gezeigten Einstellungen bedeuten:</p>
+<table>
+<thead>
+<tr>
+<th>Einstellung</th>
+<th style="text-align: right;">Standard</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Detailaufbewahrung (Tage)</strong></td>
+<td style="text-align: right;">28</td>
+<td>Positionspunkte und Sensorparameter werden nach 28 Tagen bereinigt. Qualifizierte Tageskilometerstände sind davon nicht betroffen.</td>
+</tr>
+<tr>
+<td><strong>Tageskilometerstände aufbewahren (Jahre)</strong></td>
+<td style="text-align: right;">6</td>
+<td>Verdichtete Telematik-Tagesstände bleiben sechs Jahre erhalten. Zulässig sind 1 bis 20 Jahre; <strong>Unbegrenzt</strong> deaktiviert diese Löschung.</td>
+</tr>
+<tr>
+<td><strong>Fehlende Periodengrenzen</strong></td>
+<td style="text-align: right;">Extrapolieren</td>
+<td>Fehlt an einer Tages- oder Monatsgrenze ein ausreichend aktueller echter Stand, wird nach den folgenden Regeln geschätzt. Das gilt auch für den bereits begonnenen aktuellen Tag. Alternativen sind <strong>Interpolieren</strong> und <strong>Unvollständig</strong>.</td>
+</tr>
+<tr>
+<td><strong>Schätzbasis (Tage)</strong></td>
+<td style="text-align: right;">14</td>
+<td>Für eine Extrapolation werden je nach Richtung bis zu 14 plausible Tagesdistanzen vor oder nach der fehlenden Grenze betrachtet.</td>
+</tr>
+<tr>
+<td><strong>Mindestanzahl Tageswerte</strong></td>
+<td style="text-align: right;">3</td>
+<td>Eine Extrapolation benötigt mindestens drei verwertbare Tagesdistanzen.</td>
+</tr>
+<tr>
+<td><strong>Maximale Schätzlücke (Tage)</strong></td>
+<td style="text-align: right;">7</td>
+<td>Die Entfernung zwischen echtem Stützpunkt und fehlender Grenze darf höchstens sieben Tage betragen. Bei einer Interpolation gilt die Grenze auf beiden Seiten.</td>
+</tr>
+</tbody>
+</table>
+<p>Zuerst sucht FLEET Mira in den letzten 24 Stunden vor der Periodengrenze einen qualifizierten echten Stand. Bei mehreren Quellen gilt verbindlich folgende Priorität:</p>
+<ol>
+<li>M-Datei, Tagesabschluss (<code>M_MIDNIGHT</code>)</li>
+<li>Telematik-Sensor (<code>GPS_SERVER_SENSOR</code>)</li>
+<li>C-Datei, Fahrzeugnutzung (<code>C_VEHICLE_USE</code>)</li>
+<li>C-Datei, Ort (<code>C_PLACE</code>)</li>
+<li>C-Datei, dreistündige GNSS-Position (<code>C_GNSS_3H</code>)</li>
+<li>Telematik-GPS (<code>GPS_SERVER_GPS</code>)</li>
+</ol>
+<p>Nur Werte mit Qualität <strong>Gültig</strong> oder <strong>Warnung</strong> werden verwendet. Unbestätigte, unbekannte, manuelle oder konfliktbehaftete Werte bleiben ausgeschlossen. Innerhalb derselben Quelle gewinnt der jüngste Messwert. Ein höher priorisierter Wert kann deshalb einen geringfügig neueren Wert einer niedrigeren Quelle verdrängen, solange er nicht älter als 24 Stunden ist.</p>
+<p><strong>Beispiel Quellenpriorität:</strong> Für die Grenze am 1. Juli um 00:00 Uhr liegen ein M-Tagesabschluss mit 80.000 km von 23:58 Uhr und ein Telematik-Sensorwert mit 80.005 km von 23:59 Uhr vor. Beide sind aktuell und qualifiziert; verwendet werden 80.000 km aus der M-Datei. Fehlt der M-Wert, wird der Sensorwert verwendet.</p>
+<p>Bei <strong>Interpolieren</strong> werden der letzte qualifizierte Stand vor und der erste qualifizierte Stand nach der Grenze linear verbunden. Beide Stützwerte müssen innerhalb der maximalen Schätzlücke liegen, zusammenpassen und dürfen keinen Kilometer-Rücksprung ergeben:</p>
+<p><code>Schätzwert = vorheriger Stand + Zeitanteil × (nachfolgender Stand − vorheriger Stand)</code></p>
+<p><strong>Beispiel Interpolation:</strong> Am 10. Juli um 00:00 Uhr sind 120.000 km und am 14. Juli um 00:00 Uhr 120.800 km belegt. Für den 12. Juli sind zwei von vier Tagen vergangen. Der interpolierte Stand beträgt <code>120.000 + 2/4 × 800 = 120.400 km</code>.</p>
+<p>Bei <strong>Extrapolieren</strong> berechnet FLEET Mira aus den plausiblen Tagesdistanzen der Schätzbasis den Median. Für eine fehlende Endgrenze wird vom letzten echten Stand vorwärts gerechnet. Fehlt die Anfangsgrenze und liegen erst danach qualifizierte Werte vor, wird dieselbe Logik spiegelbildlich vom ersten echten Stand rückwärts angewendet. Tagesraten unter 0 oder über 1.800 km werden verworfen; unterschiedliche GPS-Kilometerarten werden nicht miteinander vermischt:</p>
+<p><code>Schätzwert = letzter echter Stand + Median der Tagesdistanzen × Schätzlücke</code></p>
+<p><code>Anfangsstand = erster nachfolgender echter Stand − Median der Tagesdistanzen × Schätzlücke</code></p>
+<p><strong>Beispiel mit den Standardeinstellungen:</strong> Der letzte echte Stand am 12. Juli beträgt 120.000 km. Die verwertbaren Tagesdistanzen der vorherigen 14 Tage sind 180, 200 und 220 km; ihr Median beträgt 200 km. Für die Grenze am 15. Juli beträgt die Lücke drei Tage. FLEET Mira ermittelt <code>120.000 + 200 × 3 = 120.600 km</code>. Bei nur zwei verwertbaren Tagesdistanzen oder einer Lücke von acht Tagen wäre mit den gezeigten Einstellungen keine Schätzung zulässig; die Grenze bliebe unvollständig.</p>
+<p><strong>Beispiel Anfangsgrenze:</strong> Der erste qualifizierte Stand nach dem Monatsbeginn liegt am 2. Juli um 00:00 Uhr bei 80.200 km. Drei nachfolgende plausible Tagesdistanzen ergeben einen Median von 180 km. Für die einen Tag zurückliegende Monatsgrenze wird <code>80.200 − 180 × 1 = 80.020 km</code> als Anfangsstand ermittelt.</p>
+<p>Schätzwerte werden nicht als echte Kilometerstände gespeichert. Ergebnis, Methode, Stützwerte, Messzeitpunkte, Schätzdistanz und Algorithmusversion werden im Bericht nachvollziehbar ausgewiesen. Anfangs- und Endgrenze verwenden dieselbe konfigurierte Strategie und dieselben Qualitätsgrenzen. Beide Stände werden jeweils auf ganze Kilometer gerundet; die Differenz wird anschließend exakt als <strong>Endstand − Anfangsstand</strong> gebildet. Für den laufenden lokalen Tag verwendet FLEET Mira zuerst den jüngsten qualifizierten tatsächlichen Stand dieses Tages. Fehlt ein solcher Wert und ist <strong>Extrapolieren</strong> eingestellt, wird der Stand bis zum aktuellen Berechnungszeitpunkt geschätzt, nicht bis zur zukünftigen Mitternacht. Diese zentrale Endgrenze verwenden Tages-, Monats- und Gesamtfahrleistung sowie die Kostenanalyse gemeinsam. Ist keine zulässige Schätzung möglich, bleibt ein vorhandener letzter tatsächlicher Periodenstand als teilweise Abdeckung nutzbar. Weitere Einzelheiten und den Tagesnachweis bietet <a href="../guide/report-dashboard/">Berichts-Dashboard</a>; die identische Verwendung für Kosten je Kilometer beschreibt <a href="../guide/cost-reporting/">Kostenanalyse und Reporting</a>.</p>
 <h2 id="9-falligkeiten-und-downloadtermine">9. Fälligkeiten und Downloadtermine<a class="headerlink" href="#9-falligkeiten-und-downloadtermine" title="Permanent link">&para;</a></h2>
 <p>Personal- und Fahrzeugauswertung sind getrennt, verwenden aber dieselbe sortier-/filterbare Komponente. Personalfälligkeiten bleiben zeitbezogen. Fahrzeugfälligkeiten können zeitbezogen, kilometerbezogen oder kombiniert angelegt werden; bei einer kombinierten Fälligkeit entscheidet die zuerst erreichte Grenze. Zeit- und Kilometer-Vorlauf sowie Wiederholungsintervalle lassen sich je Fälligkeit oder als Standard der Fälligkeitsart festlegen.</p>
 <p>Die Fahrzeugauswertung zeigt den letzten verlässlichen Kilometerstand, Messzeitpunkt und Quelle sowie Ziel-, Restkilometer, auslösende Bedingung und Datenqualität. Sie kann nach Fälligkeitsart, Status, Basis, Auslöser, Kilometerqualität und Auswertbarkeit gefiltert werden. Fehlt bei einer kombinierten Fälligkeit ein gültiger Kilometerstand, bleibt die Zeitbedingung auswertbar und die Kilometerbedingung wird als teilweise auswertbar gekennzeichnet. Farben:</p>
@@ -2320,13 +2514,15 @@
     E --&gt; F[Buchen]
     F --&gt; G[FiBu-Export per REST oder CSV/ZIP]</code></pre>
 <p>Die Statuszeile vergleicht Gesamtbrutto, Splitbetrag und Differenz. Null ist grün; jede Centabweichung rot und sperrt die Prüfung. Rechnungspositionen übernehmen Belegdatum als Beleg-/Gültigkeitsdatum und sind immer variabel. Gebuchte Datensätze sind unveränderlich; Korrekturen erfolgen per Storno oder verknüpfter Gutschrift.</p>
+<h3 id="leasingvertrage">Leasingverträge<a class="headerlink" href="#leasingvertrage" title="Permanent link">&para;</a></h3>
+<p>Unter <strong>Fuhrpark → Leasingverträge</strong> verwalten Sie Vertragsdaten, faktorbasierte Vorkalkulation, separat maßgebliche Vertragsrate, Zahlungsplan, Dokumente und verknüpfte Istkosten. Einzelheiten zu Faktorformeln, M-Daten-Fahrleistung und den drei Leasingberichten enthält <a href="../guide/leasing-contracts/">Leasingverträge</a>.</p>
 <h3 id="erechnungxrechnung">E‑Rechnung/XRechnung<a class="headerlink" href="#erechnungxrechnung" title="Permanent link">&para;</a></h3>
 <p><strong>Fuhrpark → XRechnung importieren</strong> führt durch KoSIT-Validierung, Rechnungs- und Lieferantendaten, Fahrzeug-/Kostenartzuordnung, Positionssplits und Summenabgleich. Erst die bestätigte Übernahme legt atomar einen Fremdrechnungsentwurf und die lokal verifizierten Original-, XML- und Prüfberichtobjekte an. Einzelheiten enthält <a href="../guide/einvoice-import/">E‑Rechnung und XRechnung importieren</a>.</p>
 <h2 id="13-audit-berichte-und-logs">13. Audit, Berichte und Logs<a class="headerlink" href="#13-audit-berichte-und-logs" title="Permanent link">&para;</a></h2>
 <p>Das globale Audit unter <strong>Administration → Audit</strong> vereinigt Geräte-, Tachodaten- und Fuhrparkereignisse. Filter stehen nach Datum, Benutzer, Aktion und Text zur Verfügung. Doppelklick öffnet das aktuell zugehörige Fachobjekt, wenn die stabile ID auflösbar ist. Strukturierte JSON-/XML-Details können als Baum geöffnet, als JSON exportiert und gedruckt werden. Navigation wird nicht auditiert.</p>
 <p><img alt="Globales Audit-Log" src="../assets/screenshots/audit.png" />
 <em>Abbildung: Globales Audit-Log mit objektbezogener Navigation.</em></p>
-<p>Unter <strong>Fuhrpark → Verstoß-Dashboard 💎</strong> stehen periodenbezogene Risikobewertung, Verstoßdetails, Dashboard-Bericht und revisionssichere Fahrerbelehrung bereit. <strong>Fuhrpark → Berichts-Dashboard 💎</strong> enthält acht Arbeitszeit-, Rückkehr- und Fälligkeitsberichte mit Favoriten, Laufhistorie sowie PDF-/Excel-Ausgabe. Alle Bildschirmmasken, Zweckbeschreibungen und Stimulsoft-PDF-Beispiele zeigen <a href="../guide/violation-dashboard/">Verstoß-Dashboard und Fahrerbelehrungen</a> sowie <a href="../guide/report-dashboard/">Berichts-Dashboard</a>.</p>
+<p>Unter <strong>Fuhrpark → Verstoß-Dashboard 💎</strong> stehen periodenbezogene Risikobewertung, Verstoßdetails, Dashboard-Bericht und revisionssichere Fahrerbelehrung bereit. <strong>Fuhrpark → Berichts-Dashboard 💎</strong> enthält fünfzehn Arbeitszeit-, Fahrleistungs-, Leasing-, Rückkehr- und Fälligkeitsberichte mit Favoriten, Laufhistorie sowie PDF-/Excel-Ausgabe. Alle Bildschirmmasken, Zweckbeschreibungen und Stimulsoft-PDF-Beispiele zeigen <a href="../guide/violation-dashboard/">Verstoß-Dashboard und Fahrerbelehrungen</a> sowie <a href="../guide/report-dashboard/">Berichts-Dashboard</a>.</p>
 <p>Fälligkeits- und Auswertungslisten unterstützen Vorschau, Systemdruck und PDF. Ausgegeben werden sichtbare gefilterte Zeilen/Spalten.</p>
 <p><strong>Administration → Logs</strong> zeigt <code>app.log</code>, REST-Logs und native Crashdiagnose. Technische Logtexte sind unabhängig von der UI-Sprache Englisch.</p>
 <h2 id="14-systray-und-beenden">14. Systray und Beenden<a class="headerlink" href="#14-systray-und-beenden" title="Permanent link">&para;</a></h2>

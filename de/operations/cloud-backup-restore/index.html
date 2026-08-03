@@ -16,7 +16,7 @@
         <link rel="prev" href="../../architecture/async-ui-background-services/">
       
       
-        <link rel="next" href="../enterprise-backup-restore/">
+        <link rel="next" href="../manual-backup-restore/">
       
       
         
@@ -599,6 +599,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -976,6 +1004,34 @@
     
   
     Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
   
 
     
@@ -1485,6 +1541,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enterprise-backup-restore/" class="md-nav__link">
         
   
@@ -1941,13 +2025,19 @@ financial_archive_dir/
 <p>Der Import bereitet Empfangsoriginal, bei Hybrid-PDF das eingebettete XML und den Validierungsbericht gemeinsam vor. Erst wenn alle erforderlichen Objekte lokal verifiziert sind, werden Rechnung, Positionen, Zuordnungen und Dokumentverweise bestätigt. Ein Fehler entfernt temporäre Objekte und lässt keine Teilrechnung zurück.</p>
 <h2 id="6-backupziel-einrichten">6. Backupziel einrichten<a class="headerlink" href="#6-backupziel-einrichten" title="Permanent link">&para;</a></h2>
 <h3 id="zielunabhangiges-quick-backup">Zielunabhängiges Quick Backup<a class="headerlink" href="#zielunabhangiges-quick-backup" title="Permanent link">&para;</a></h3>
-<p>Basic und Pro können unter <strong>Administration → Sicherungen → Quick Backup</strong> jederzeit
-eine konsistente SQLite-Datenbanksicherung als lokale ZIP-Datei erstellen. Das ZIP
-enthält <code>archive.db</code> und ein Manifest mit SHA-256, Größe und Prüfergebnis. Dafür ist
-kein Backupziel erforderlich.</p>
-<p>Das Quick Backup enthält keine DDD-, PDF-, Finanz- oder Dokumentarchive. Für eine
-vollständige Sicherung müssen deshalb zusätzlich die konfigurierten Archivordner
-kopiert oder die nachfolgend beschriebene Pro-Sicherung verwendet werden.</p>
+<p>Basic und Pro öffnen unter <strong>Administration → Sicherungen → Quick Backup</strong> einen
+Assistenten. <strong>Nur Datenbank</strong> erzeugt weiterhin die lokale Diagnose-ZIP mit
+<code>archive.db</code> und SHA-256-Manifest. <strong>Vollständige manuelle Sicherung</strong> nimmt
+zusätzlich alle in diesem Snapshot referenzierten aktiven DDD-, Finanz- und
+Akten-Dokumentobjekte samt Manifesten auf. Als Ausgabe stehen eine portable
+ZIP64-Datei und ein versionierter Sicherungsordner zur Verfügung.</p>
+<p>Der manuelle Assistent speichert ausschließlich lokal oder auf einem UNC-Pfad und
+legt weder Sicherungsziel noch Warteschlangen- oder Retentionsauftrag an. Bei
+optionaler AES-256-GCM-Verschlüsselung muss der Recovery-Key vor dem Start separat
+exportiert werden. Beide Formate werden vollständig zurückgelesen und können über
+<strong>Wiederherstellung …</strong> geöffnet werden; unvollständige Sets und fehlerhafte
+Prüfsummen werden abgewiesen. Das ausführliche Verfahren beschreibt das
+<a href="../manual-backup-restore/">How-to Datensicherung und Wiederherstellung</a>.</p>
 <p>Unter <strong>Administration → Backups</strong> kann genau ein aktives Ziel eingerichtet werden:</p>
 <ul>
 <li><code>LOCAL_FILESYSTEM</code>: zweites lokales Laufwerk oder UNC-/NAS-Freigabe;</li>

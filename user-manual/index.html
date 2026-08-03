@@ -622,6 +622,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#odometer-determination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Odometer determination
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -688,6 +699,17 @@
     <span class="md-ellipsis">
       
         Foreign invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lease-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lease contracts
       
     </span>
   </a>
@@ -986,6 +1008,34 @@
     
   
     Foreign invoices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
   
 
     
@@ -1396,6 +1446,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1613,6 +1691,34 @@
     
   
     Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
   
 
     
@@ -1954,6 +2060,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#odometer-determination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Odometer determination
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2020,6 +2137,17 @@
     <span class="md-ellipsis">
       
         Foreign invoices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lease-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lease contracts
       
     </span>
   </a>
@@ -2102,6 +2230,7 @@
 <li><a href="../guide/license-checks/">Driving-licence checks and RFID/NFC</a></li>
 <li><a href="../guide/vehicle-costs/">Vehicle costs and credits</a></li>
 <li><a href="../guide/foreign-invoices/">Foreign invoices – workflow and every tab</a></li>
+<li><a href="../guide/leasing-contracts/">Lease contracts, factor calculation and reports</a></li>
 <li><a href="../guide/einvoice-import/">E-invoice and XRechnung import</a></li>
 <li><a href="../guide/cost-reporting/">Cost analysis and reporting</a></li>
 <li><a href="../guide/position-maps/">Position maps for C and M data</a></li>
@@ -2160,9 +2289,9 @@
 <p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
 <p>The <strong>Administration → Settings → Automatically import USB removable drives</strong> option recursively scans newly inserted drives for DDD and <code>RFID*.CSV</code> files. It operates only while FLEET Mira is open or running in the system tray; source files remain on the drive.</p>
 <h3 id="data-root-and-storage-paths">Data root and storage paths<a class="headerlink" href="#data-root-and-storage-paths" title="Permanent link">&para;</a></h3>
-<p>Under <strong>Administration → Settings</strong>, administrators can see the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These fields are intentionally read-only: changing one path in isolation would separate files, database references and access permissions. Until the controlled relocation wizard is available, these paths cannot be changed through either the settings page or raw configuration. Enterprise displays the SQLite path as unused because its database is held in PostgreSQL.</p>
+<p>Under <strong>Administration → Settings</strong>, administrators can see the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These fields remain read-only so files, database references and access permissions cannot be separated. <strong>Relocate data root …</strong> opens a guided wizard that copies and verifies the complete local root, normalises internal paths and restarts FLEET Mira through the new machine-wide locator. The target must be empty and on a fixed local drive. Enterprise moves only its local application root; PostgreSQL and deliberately external archives remain in place.</p>
 <h3 id="quick-backup-and-central-backup-jobs">Quick Backup and central backup jobs<a class="headerlink" href="#quick-backup-and-central-backup-jobs" title="Permanent link">&para;</a></h3>
-<p>Under <strong>Administration → Backups → Quick Backup</strong>, Basic and Pro create a consistent, read-back-verified SQLite ZIP with a SHA-256 manifest without requiring a configured backup target. The ZIP contains the database only; DDD, financial and record-document archives must be protected separately.</p>
+<p>Under <strong>Administration → Backups → Quick Backup</strong>, Basic and Pro choose between <strong>Database only</strong> and <strong>Complete manual backup</strong>. The database option remains a consistent, read-back-verified diagnostic ZIP. The complete backup also contains active DDD, financial and record-document archives with their manifests and can be written as either a portable ZIP64 file or a backup directory on a local or UNC destination. Optionally encrypted sets require a separately exported recovery key. The restore wizard supports both formats.</p>
 <p>In Enterprise, Quick Backup requests the dedicated backup credentials and creates a PostgreSQL custom dump through the worker. Complete Enterprise backup jobs additionally process the configured DDD, financial and record-document archives. Closing the Enterprise client does not cancel a job already accepted by <code>FleetMiraWorker</code>.</p>
 <p><img alt="Backup configuration and status" src="../assets/screenshots/backup.png" />
 <em>Figure: Backup configuration, verification state and manual actions.</em></p>
@@ -2208,7 +2337,7 @@
 </tr>
 <tr>
 <td>Activities</td>
-<td>sortable intervals with UTC timestamps and C/M availability</td>
+<td>sortable activity intervals in the configured time basis with C/M availability</td>
 </tr>
 <tr>
 <td>Day / Week</td>
@@ -2240,7 +2369,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <strong>Data availability</strong> filter distinguishes all activities, C and M available, driver card only and vehicle unit only. The other source is comparison evidence; it never replaces the selected base file. All displayed tachograph calculations use UTC.</p>
+<p>The <strong>Data availability</strong> filter distinguishes all activities, C and M available, driver card only and vehicle unit only. The other source is comparison evidence; it never replaces the selected base file. Tachograph source data remains stored unchanged in UTC. Display and calculations use UTC by default. When <strong>Use local time for activities and calculations</strong> is enabled under <strong>System → Settings</strong>, display, day/week boundaries and compliance evaluations instead use the selected time zone. Daylight-saving transitions change neither source values nor elapsed durations.</p>
 <h2 id="7-vehicle-unit-analysis">7. Vehicle-unit analysis<a class="headerlink" href="#7-vehicle-unit-analysis" title="Permanent link">&para;</a></h2>
 <p><img alt="Vehicle-unit week timeline" src="../assets/screenshots/vehicle-unit-analysis.png" />
 <em>Figure: Vehicle-unit analysis for one selected M archive.</em></p>
@@ -2273,7 +2402,73 @@
 <h3 id="vehicle-record">Vehicle record<a class="headerlink" href="#vehicle-record" title="Permanent link">&para;</a></h3>
 <p><img alt="Vehicle record" src="../assets/screenshots/vehicle-record.png" />
 <em>Figure: Vehicle record with tachograph, finance and position tabs.</em></p>
-<p>Tabs include deadlines, documents, costs/credits, foreign invoices, tachograph links, M files, drivers/activities, events/faults, speed, technical data, calibrations, positions and audit. The Audit tab uses the same context menu as the global Audit Log: open the related record, show the XML tree view, or copy details, rows and cells. Record documents use the same audit-oriented archive and configured local, UNC or cloud backup destination. Aggregate functional tables hide the source-file column by default; the source archive remains available from the context menu. Identical technical records appear once with their source count and complete detail tree. Position rows can be opened together on the map.</p>
+<p>The <strong>Master data</strong> tab opens the existing modal vehicle form through <strong>Edit vehicle</strong>. It also shows the latest reliable odometer reading with its source and quality, and the last known human-readable location. With an active telematics assignment, <strong>Open telematics</strong> opens a dedicated workspace for current location, route history, combined positions and events.</p>
+<p>The Positions tab globally merges tachograph and telematics evidence, clearly labels its source and provides a source filter. Only telematics points form the route line in Route history; tachograph positions can be shown as reference markers.</p>
+<p>Tabs include deadlines, documents, costs/credits, foreign invoices, lease, positions and audit. Tachograph links, mass-memory files, day/week views, infringements, drivers/activities, events/faults, speeds, technical data and calibrations are grouped below <strong>Tachodata</strong>. The Audit tab uses the same context menu as the global Audit Log: open the related record, show the XML tree view, or copy details, rows and cells. Record documents use the same audit-oriented archive and configured local, UNC or cloud backup destination. Aggregate functional tables hide the source-file column by default; the source archive remains available from the context menu. Identical technical records appear once with their source count and complete detail tree. Position rows can be opened together on the map.</p>
+<h3 id="odometer-determination">Odometer determination<a class="headerlink" href="#odometer-determination" title="Permanent link">&para;</a></h3>
+<p>FLEET Mira uses the same central odometer resolver for mileage reports and cost per kilometre. Manage the system-wide calculation rules under <strong>Administration → Cost analysis → Calculation parameters → Odometer determination</strong>. The provider tab <strong>Administration → Telematics → GPS-server.net</strong> additionally controls retention of telematics daily readings; use <strong>Mileage rules</strong> there to enable an override for an individual linked vehicle.</p>
+<p>The settings shown in the standard dialog have the following meaning:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th style="text-align: right;">Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position detail retention (days)</strong></td>
+<td style="text-align: right;">28</td>
+<td>Position points and sensor parameters are purged after 28 days. Qualified daily odometer readings are retained separately.</td>
+</tr>
+<tr>
+<td><strong>Retain daily odometer readings (years)</strong></td>
+<td style="text-align: right;">6</td>
+<td>Consolidated telematics daily readings are retained for six years. The permitted range is 1 to 20 years; <strong>Unlimited</strong> disables this purge.</td>
+</tr>
+<tr>
+<td><strong>Missing period boundaries</strong></td>
+<td style="text-align: right;">Extrapolate</td>
+<td>If a day or month has no sufficiently recent actual reading at its boundary, the following rules estimate it. This also applies to the current day once it has started. The alternatives are <strong>Interpolate</strong> and <strong>Incomplete</strong>.</td>
+</tr>
+<tr>
+<td><strong>Estimation basis (days)</strong></td>
+<td style="text-align: right;">14</td>
+<td>Depending on direction, extrapolation considers up to 14 plausible daily distances before or after the missing boundary.</td>
+</tr>
+<tr>
+<td><strong>Minimum daily values</strong></td>
+<td style="text-align: right;">3</td>
+<td>At least three usable daily distances are required for extrapolation.</td>
+</tr>
+<tr>
+<td><strong>Maximum estimation gap (days)</strong></td>
+<td style="text-align: right;">7</td>
+<td>The gap between the actual support reading and the missing boundary must not exceed seven days. For interpolation, this limit applies on both sides.</td>
+</tr>
+</tbody>
+</table>
+<p>FLEET Mira first searches the 24 hours before the period boundary for a qualified actual reading. If several sources are available, the following priority is mandatory:</p>
+<ol>
+<li>M-file midnight reading (<code>M_MIDNIGHT</code>)</li>
+<li>Telematics sensor (<code>GPS_SERVER_SENSOR</code>)</li>
+<li>C-file vehicle use (<code>C_VEHICLE_USE</code>)</li>
+<li>C-file place (<code>C_PLACE</code>)</li>
+<li>C-file three-hour GNSS position (<code>C_GNSS_3H</code>)</li>
+<li>Telematics GPS (<code>GPS_SERVER_GPS</code>)</li>
+</ol>
+<p>Only readings with quality <strong>Valid</strong> or <strong>Warning</strong> are eligible. Unverified, unknown, manual or conflicting readings are excluded. The newest reading wins within the same source. A higher-priority reading can therefore override a slightly newer lower-priority reading as long as it is not older than 24 hours.</p>
+<p><strong>Source-priority example:</strong> At the 1 July 00:00 boundary, an M-file midnight reading of 80,000 km was measured at 23:58 and a telematics sensor reading of 80,005 km at 23:59. Both are recent and qualified, so the M-file value of 80,000 km is used. If the M-file value is absent, the sensor value is used.</p>
+<p>With <strong>Interpolate</strong>, the resolver draws a straight line between the latest qualified reading before the boundary and the first qualified reading after it. Both support readings must lie within the maximum estimation gap, must be compatible and must not produce an odometer rollback:</p>
+<p><code>Estimated value = previous reading + elapsed share × (following reading − previous reading)</code></p>
+<p><strong>Interpolation example:</strong> A reading of 120,000 km is available for 10 July 00:00 and 120,800 km for 14 July 00:00. Two of the four days have elapsed at the 12 July boundary. The interpolated reading is <code>120,000 + 2/4 × 800 = 120,400 km</code>.</p>
+<p>With <strong>Extrapolate</strong>, FLEET Mira calculates the median of the plausible daily distances in the estimation basis. A missing closing boundary is projected forwards from the latest actual reading. If the opening boundary is missing and qualified readings only follow it, the same logic is applied symmetrically backwards from the first actual reading. Daily rates below 0 or above 1,800 km are rejected, and different GPS odometer kinds are not mixed:</p>
+<p><code>Estimated value = latest actual reading + median daily distance × estimation gap</code></p>
+<p><code>Opening reading = first following actual reading − median daily distance × estimation gap</code></p>
+<p><strong>Example using the default settings:</strong> The latest actual reading on 12 July is 120,000 km. The usable daily distances in the preceding 14 days are 180, 200 and 220 km, giving a median of 200 km. The gap to the 15 July boundary is three days. FLEET Mira calculates <code>120,000 + 200 × 3 = 120,600 km</code>. With only two usable daily distances or an eight-day gap, the displayed settings would not permit an estimate and the boundary would remain incomplete.</p>
+<p><strong>Opening-boundary example:</strong> The first qualified reading after the start of the month is 80,200 km at 2 July 00:00. Three subsequent plausible daily distances have a median of 180 km. For the month boundary one day earlier, FLEET Mira derives an opening reading of <code>80,200 − 180 × 1 = 80,020 km</code>.</p>
+<p>Estimated values are not stored as actual odometer readings. The report exposes the result, method, support readings, measurement times, estimation distance and algorithm version. Opening and closing boundaries use the same configured strategy and quality limits. Both readings are rounded to whole kilometres first; the difference is then calculated exactly as <strong>closing − opening</strong>. For the current local day, FLEET Mira first uses the latest qualified actual reading from that day. If none exists and <strong>Extrapolate</strong> is configured, the reading is estimated up to the current calculation instant, not to the future midnight boundary. Daily, monthly and overall mileage and cost analysis share this central closing boundary. If no permitted estimate can be produced, an existing latest actual period reading remains usable as partial coverage. See <a href="../guide/report-dashboard/">Report dashboard</a> for the detailed daily audit and <a href="../guide/cost-reporting/">Cost analysis and reporting</a> for the identical use in cost per kilometre.</p>
 <h2 id="9-deadlines-and-download-due-dates">9. Deadlines and download due dates<a class="headerlink" href="#9-deadlines-and-download-due-dates" title="Permanent link">&para;</a></h2>
 <p>Personnel and vehicle deadline evaluations are separate but use the same sortable/filterable component. Personnel deadlines remain time-based. Vehicle deadlines can be time-based, mileage-based or combined; a combined deadline becomes due when the first limit is reached. Time and mileage lead values and recurrence intervals can be configured per deadline or as due-type defaults.</p>
 <p>The fleet evaluation displays the latest reliable odometer reading, measurement time and source, target and remaining mileage, trigger and data quality. Filters cover due type, status, basis, trigger, mileage quality and evaluability. If a combined deadline has no valid mileage reading, its time condition remains usable while the mileage condition is marked only partially evaluable. Colours mean:</p>
@@ -2325,13 +2520,15 @@
     E --&gt; F[Book]
     F --&gt; G[REST or CSV/ZIP accounting export]</code></pre>
 <p>The status row compares gross invoice amount, split amount and difference. Zero difference is green; any cent difference is red and blocks verification. Invoice-bound positions inherit the invoice date for document/valid-from/valid-to and are always variable. Booked data is immutable; corrections use cancellation or linked credits.</p>
+<h3 id="lease-contracts">Lease contracts<a class="headerlink" href="#lease-contracts" title="Permanent link">&para;</a></h3>
+<p>Use <strong>Fleet → Lease contracts</strong> to manage contract data, factor-based pre-calculation, the independently authoritative contract rate, payment schedule, documents and linked actual costs. <a href="../guide/leasing-contracts/">Lease contracts</a> explains the factor formulas, M-data mileage evidence and all three leasing reports.</p>
 <h3 id="e-invoicexrechnung">E-invoice/XRechnung<a class="headerlink" href="#e-invoicexrechnung" title="Permanent link">&para;</a></h3>
 <p><strong>Fleet → Import XRechnung</strong> guides users through KoSIT validation, invoice and supplier data, vehicle/category allocation, line splitting and totals reconciliation. Only confirmed creation atomically writes a foreign-invoice draft and locally verified original, XML and report objects. See <a href="../guide/einvoice-import/">E-invoice and XRechnung import</a>.</p>
 <h2 id="13-audit-reports-and-logs">13. Audit, reports and logs<a class="headerlink" href="#13-audit-reports-and-logs" title="Permanent link">&para;</a></h2>
 <p>The global audit under <strong>Administration → Audit</strong> combines device, tachograph and fleet events. Filter by date, user, action or text. Double-click an entry to open its current related object when the stable ID can be resolved. Structured JSON/XML details can be opened as a tree, exported as JSON and printed. Navigation itself is not audited.</p>
 <p><img alt="Global audit log" src="../assets/screenshots/audit.png" />
 <em>Figure: Global audit log with object-based navigation.</em></p>
-<p><strong>Fleet → Violation dashboard 💎</strong> provides period-based risk scoring, detailed findings, a dashboard report and tamper-evident driver instructions. <strong>Fleet → Report dashboard 💎</strong> contains eight working-time, return and deadline reports with favourites, run history and PDF/Excel output. All screens, purpose descriptions and Stimulsoft PDF examples are shown in <a href="../guide/violation-dashboard/">Violation dashboard and driver instructions</a> and <a href="../guide/report-dashboard/">Report dashboard</a>.</p>
+<p><strong>Fleet → Violation dashboard 💎</strong> provides period-based risk scoring, detailed findings, a dashboard report and tamper-evident driver instructions. <strong>Fleet → Report dashboard 💎</strong> contains fifteen working-time, mileage, leasing, return and deadline reports with favourites, run history and PDF/Excel output. All screens, purpose descriptions and Stimulsoft PDF examples are shown in <a href="../guide/violation-dashboard/">Violation dashboard and driver instructions</a> and <a href="../guide/report-dashboard/">Report dashboard</a>.</p>
 <p>Deadline and evaluation grids support print preview, system printing and PDF. Only visible filtered rows and columns are included.</p>
 <p><strong>Administration → Logs</strong> shows <code>app.log</code>, REST logs and native crash diagnostics. Logs use English technical messages regardless of the selected UI language.</p>
 <h2 id="14-tray-and-shutdown">14. Tray and shutdown<a class="headerlink" href="#14-tray-and-shutdown" title="Permanent link">&para;</a></h2>

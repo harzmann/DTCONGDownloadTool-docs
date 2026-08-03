@@ -599,6 +599,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1008,6 +1036,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Backup und Notfallwiederherstellung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenstamm-kontrolliert-umziehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenstamm kontrolliert umziehen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1018,6 +1063,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="12. REST und Integrationen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gps-servernet-fahrzeug-aus-der-klarungsliste-ubernehmen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS-server.net: Fahrzeug aus der Klärungsliste übernehmen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1296,6 +1358,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1513,6 +1603,34 @@
     
   
     Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
   
 
     
@@ -1818,6 +1936,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Backup und Notfallwiederherstellung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datenstamm-kontrolliert-umziehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datenstamm kontrolliert umziehen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1828,6 +1963,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="12. REST und Integrationen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gps-servernet-fahrzeug-aus-der-klarungsliste-ubernehmen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS-server.net: Fahrzeug aus der Klärungsliste übernehmen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2120,9 +2272,11 @@
 <p><img alt="Globales Audit im Diagnosekontext" src="../assets/screenshots/audit.png" />
 <em>Abbildung: Auditnachweise im Zusammenspiel mit der technischen Diagnose.</em></p>
 <p>Der UI-Heartbeat schreibt <code>UI_STALL</code>, wenn die Ereignisschleife länger als eine Sekunde blockiert. Nach Erholung folgt die Dauer. Job-, Request- und Korrelations-IDs verbinden UI-, Dienst- und Auditvorgänge.</p>
+<p>GPS-server-Hintergrundläufe starten in Pro erst nach Abschluss der Anmeldung. Ein historischer Lauf respektiert gespeicherte Coverage auch dann, wenn sein Fortschrittscursor fehlt. Beim Beenden wartet die Oberfläche nur kurz auf einen laufenden Anbieteraufruf; ein nicht sofort abbrechbarer TLS-Request darf das Fenster nicht minutenlang blockieren. Für die Diagnose sind der <code>main_stack</code> eines <code>UI_STALL</code>, der aktive <code>UI_JOB</code> sowie <code>TELEMATICS_HISTORY_RESULT</code> mit <code>provider_windows</code> und <code>cached_intervals</code> gemeinsam auszuwerten.</p>
 <h2 id="8-ui-jobbetrieb">8. UI-Jobbetrieb<a class="headerlink" href="#8-ui-jobbetrieb" title="Permanent link">&para;</a></h2>
 <p>Teure Abfragen/Berechnungen verwenden workerlokale SQLite-Verbindungen; Qt-Widgets werden nur im GUI-Thread verändert. Leseaufträge, serialisierte Schreibaufträge und niedrig priorisiertes Vorladen nutzen getrennte Spuren. Neue Filter-/Datumsanforderungen brechen alte Generationen ab; das Schließen eines Tabs bricht dessen Aufträge ab.</p>
 <p>Performanceprobleme werden über Warte-, Datenbank-, Rechen-, Render- und Gesamtdauer analysiert. <code>processEvents()</code>-Schleifen oder modale Wartefenster dürfen nicht als Ersatz für Hintergrundarbeit zurückkehren.</p>
+<p>Die native Positionskarte fasst Routenlinien in wenigen Grafikpfaden zusammen, begrenzt sichtbare Einzelmarker und liest Kacheln aus dem lokalen Cache in kleinen Takten. Dadurch bleibt die Qt-Ereignisschleife auch bei großen, datenbankseitig reduzierten Routen bedienbar.</p>
 <h2 id="9-fuhrerscheinkontrolle-und-benachrichtigung">9. Führerscheinkontrolle und Benachrichtigung<a class="headerlink" href="#9-fuhrerscheinkontrolle-und-benachrichtigung" title="Permanent link">&para;</a></h2>
 <p>PC/SC liest die UID mit <code>FF CA 00 00 00</code> und normalisiert Großbuchstaben-Hex. Eine UID ist höchstens einer Person aktiv zugeordnet; eine Person besitzt höchstens eine aktive UID.</p>
 <p>Terminal-CSV: <code>UID;DD.MM.YYYY;HH:mm:ss;Hostname</code>. Datei-/Zeilenfingerprints sichern Idempotenz. Unbekannte, inaktive oder zeitlich unpassende UIDs bleiben Klärfälle.</p>
@@ -2134,10 +2288,40 @@
 <p>Originale sind keine SQLite-BLOBs. Das Belegarchiv übernimmt, hasht, lädt hoch, liest zurück und verifiziert. Metadaten enthalten Ziel, Remote-Pfad/-ID, Hash, Größe, Version und Retention. Ein Ziel kann nicht gelöscht werden, solange Belege darauf verweisen.</p>
 <p>FiBu-Übergabe: <a href="../api/accounting-rest/">REST</a> oder <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Nur gebuchte Datensätze sind exportierbar; REST verwendet eine persistente idempotente Outbox.</p>
 <h2 id="11-backup-und-notfallwiederherstellung">11. Backup und Notfallwiederherstellung<a class="headerlink" href="#11-backup-und-notfallwiederherstellung" title="Permanent link">&para;</a></h2>
-<p>Genau ein Google-Drive- oder HTTPS-WebDAV-Ziel kann aktiv sein. AES-256-GCM ist optional und vorausgewählt. Vor Aktivierung ist Recovery-Key-Export/-Bestätigung Pflicht.</p>
+<p>Basic und Pro öffnen über <strong>Administration → Sicherungen → Quick Backup</strong> einen
+geführten Assistenten. <strong>Nur Datenbank</strong> bleibt eine Diagnose-ZIP.
+<strong>Vollständige manuelle Sicherung</strong> enthält den konsistenten SQLite-Snapshot sowie
+aktive DDD-, Finanz- und Akten-Dokumentarchive samt Manifesten. Der Benutzer wählt
+bei jedem Lauf zwischen einer portablen ZIP64-Datei und einem Sicherungsordner.
+Zulässig sind lokale und UNC-Ziele; WebDAV und Google Drive werden in diesem
+Assistenten nicht angeboten. AES-256-GCM ist optional, der Recovery-Key muss vorher
+separat exportiert werden. Die Wiederherstellung akzeptiert beide Formate, prüft
+Vollständigkeitskennzeichen, Schlüssel und sämtliche SHA-256-Werte und normalisiert
+Archivpfade auf die aktuell konfigurierte Ablage.</p>
+<p>In Pro kann zusätzlich genau ein lokales/UNC-, Google-Drive- oder
+HTTPS-WebDAV-Ziel für automatische Sicherungen aktiv sein. Deren Warteschlange,
+Aufbewahrung und Zeitplanung bleiben vom manuellen Assistenten getrennt.</p>
 <p><img alt="Administration von Backupziel, Warteschlange und Wiederherstellung" src="../assets/screenshots/backup.png" />
 <em>Abbildung: Administration von Cloudziel, Backupwarteschlange und Restore.</em></p>
 <p>Archive werden unmittelbar gesichert, DB-Snapshots standardmäßig 02:00 UTC. Retention: 30 Tages- und 12 Monatsstände. DDD-Cloudobjekte werden nie automatisch gelöscht. Details: <a href="../operations/cloud-backup-restore/">Cloud-Backup und Restore</a>.</p>
+<p>Der vollständige Bedien- und Prüfablauf steht im
+<a href="../operations/manual-backup-restore/">How-to Datensicherung und Wiederherstellung</a>.</p>
+<h3 id="datenstamm-kontrolliert-umziehen">Datenstamm kontrolliert umziehen<a class="headerlink" href="#datenstamm-kontrolliert-umziehen" title="Permanent link">&para;</a></h3>
+<p>Die Aktion <strong>Administration → Einstellungen → Datenstamm umziehen …</strong> erfordert
+<code>settings.manage</code> und ist in allen Editionen verfügbar. Das Ziel muss ein leeres,
+absolutes Verzeichnis auf einem festen lokalen Laufwerk sein. UNC-Pfade, gemappte
+Netzlaufwerke, Wechseldatenträger, überlappende Verzeichnisse und ungeeignete
+Reparse-Ziele werden abgewiesen.</p>
+<p>Der Assistent hält lokale Schreibdienste an, kopiert alle Dateien, liest sie per
+Größe und SHA-256 zurück, normalisiert interne Pfade und aktiviert anschließend den
+maschinenweiten Bootstrap-Locator atomar. Basic und Pro prüfen zusätzlich SQLite
+und Fremdschlüssel. Enterprise verschiebt nur den lokalen App-Stamm; PostgreSQL
+und bewusst externe Archive bleiben unverändert; ein lokal installierter
+<code>FleetMiraWorker</code> wird für den Umzug angehalten und nach der Startprüfung wieder
+gestartet. Scheitert die Startprüfung, wird der Locator automatisch auf den alten
+Stamm zurückgesetzt. Nach erfolgreichem Neustart kann
+der alte Stamm behalten oder ausdrücklich endgültig entfernt werden. Standard ist
+<strong>Behalten</strong>.</p>
 <p>SSO-Aktivierung, Entra-Konfiguration und Identitätszuordnungen liegen in SQLite und sind damit Bestandteil des Datenbanksnapshots. Der zentrale Google-Client ist Teil des Software-Builds; Provider-Tokens werden nicht gesichert. Nach einer Wiederherstellung sind lokaler Notfallzugang und beide SSO-Verfahren erneut zu testen. Microsoft Entra bleibt auch nach einem erfolgreichen Restore im Beta-Status, bis WAM, Browser-Fallback, MFA und Conditional Access im wiederhergestellten Kundenkontext dokumentiert abgenommen wurden.</p>
 <p>Mindestens vierteljährlich sind Datenbanksnapshot und repräsentative C-/M-Objekte isoliert wiederherzustellen, Hash/Integrität zu prüfen und das Ergebnis zu dokumentieren.</p>
 <h2 id="12-rest-und-integrationen">12. REST und Integrationen<a class="headerlink" href="#12-rest-und-integrationen" title="Permanent link">&para;</a></h2>
@@ -2147,6 +2331,18 @@
 <li>Mobile FSK-Endpunkte bilden bei Aktivierung eine separate Fleet-API.</li>
 </ul>
 <p>Lokale Entwicklungsendpunkte dürfen nicht direkt öffentlich erreichbar sein. Externe APIs benötigen Authentifizierung, TLS, Rate-Limit und Netzwerkzugriffskontrolle.</p>
+<h3 id="gps-servernet-fahrzeug-aus-der-klarungsliste-ubernehmen">GPS-server.net: Fahrzeug aus der Klärungsliste übernehmen<a class="headerlink" href="#gps-servernet-fahrzeug-aus-der-klarungsliste-ubernehmen" title="Permanent link">&para;</a></h3>
+<p>Unter <strong>Administration → Telematik → GPS-server.net</strong> kann ein Administrator mit <code>telematics.reconcile</code> und <code>fleet.manage</code> ein noch nicht zugeordnetes Objekt auswählen und über <strong>Fahrzeug aus GPS-server-Objekt anlegen</strong> in den Fahrzeugstamm übernehmen. Der Tab <strong>Telematik</strong> bündelt die angebundenen Anbieter; jeder Connector erhält darin einen eigenen Untertab. Kennzeichen und FIN werden ausschließlich vorausgefüllt und vor dem Speichern angezeigt. Eine gültige FIN aus <code>io256</code> der letzten Positionsmeldung ist eine Anbieterbeobachtung, kein verifizierter Fahrzeugnachweis. Dubletten nach FIN oder Kennzeichen werden blockiert.</p>
+<p>Die systemweiten Rechenregeln werden unter <strong>Administration → Kostenanalyse →
+Berechnungsparameter → Kilometerstandsermittlung</strong> gepflegt: standardmäßig
+Extrapolation mit 14 Tagen Schätzbasis, mindestens drei Tageswerten und maximal
+sieben Tagen Lücke. Der Anbieter-Tab enthält weiterhin die Aufbewahrung der
+Telematik-Tagesstände; standardmäßig sechs Jahre, wobei null Jahre unbegrenzt
+bedeutet. Über <strong>Kilometerregeln</strong> kann für ein zugeordnetes Fahrzeug eine
+abweichende Richtlinie hinterlegt oder wieder auf den Systemstandard
+zurückgestellt werden. Die Klärungsliste zeigt letzten Tagesstand, Qualität und
+Projektionsstatus.</p>
+<p>Die optionale Online-Ermittlung von Hersteller und Modell überträgt die FIN erst nach einer ausdrücklichen Bestätigung an NHTSA vPIC. Wegen der eingeschränkten Abdeckung europäischer Fahrzeuge müssen die vorgeschlagenen Werte fachlich geprüft werden. Der vollständige Ablauf, Quellenkennzeichnungen und Betriebsgrenzen stehen in der <a href="../integration/gps-server/#fahrzeug-aus-einem-gps-server-objekt-anlegen">GPS-server.net-Integrationsanleitung</a>.</p>
 <h2 id="13-technische-legacy-kennungen">13. Technische Legacy-Kennungen<a class="headerlink" href="#13-technische-legacy-kennungen" title="Permanent link">&para;</a></h2>
 <p>Der sichtbare Produktname ist <strong>FLEET Mira</strong>. Aus Kompatibilitätsgründen bleiben erhalten:</p>
 <ul>

@@ -599,6 +599,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1008,6 +1036,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Backup and disaster recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-data-root-relocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlled data-root relocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1018,6 +1063,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="12. REST and integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gps-servernet-creating-a-vehicle-from-the-reconciliation-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS-server.net: creating a vehicle from the reconciliation list
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1296,6 +1358,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1513,6 +1603,34 @@
     
   
     Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
   
 
     
@@ -1818,6 +1936,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Backup and disaster recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled-data-root-relocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlled data-root relocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1828,6 +1963,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="12. REST and integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gps-servernet-creating-a-vehicle-from-the-reconciliation-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPS-server.net: creating a vehicle from the reconciliation list
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2121,9 +2273,11 @@
 <p><img alt="Global audit and diagnostic context" src="../assets/screenshots/audit.png" />
 <em>Figure: Audit evidence used together with technical diagnostics.</em></p>
 <p>The UI heartbeat logs <code>UI_STALL</code> if the main event loop is blocked for more than one second. A recovery entry records the duration. Use job/request/correlation IDs to join UI, service and audit events.</p>
+<p>In Pro, GPS-server background runs start only after authentication has completed. A historical run honours stored coverage even when its progress cursor is missing. During shutdown, the UI waits only briefly for an active provider call; a TLS request that cannot be interrupted immediately must not freeze the window for minutes. Diagnose incidents by correlating the <code>main_stack</code> of <code>UI_STALL</code>, the active <code>UI_JOB</code>, and <code>TELEMATICS_HISTORY_RESULT</code> with its <code>provider_windows</code> and <code>cached_intervals</code>.</p>
 <h2 id="8-ui-job-operation">8. UI job operation<a class="headerlink" href="#8-ui-job-operation" title="Permanent link">&para;</a></h2>
 <p>Expensive reads/calculations use worker-local SQLite connections. Qt widgets are changed only in the GUI thread. Read jobs, serialised writes and low-priority prefetch use separate lanes. New filter/date requests cancel stale generations; tab closure cancels owned work.</p>
 <p>Performance incidents should be investigated by separating queue, database, compute, render and total time from the job log. Do not reintroduce <code>processEvents()</code> loops or modal busy dialogs for long work.</p>
+<p>The native position map combines route lines into a small number of graphics paths, limits visible individual markers, and reads local cache tiles in small turns. This keeps the Qt event loop responsive even for large routes already reduced by the database query.</p>
 <h2 id="9-driving-licence-checks-and-notifications">9. Driving-licence checks and notifications<a class="headerlink" href="#9-driving-licence-checks-and-notifications" title="Permanent link">&para;</a></h2>
 <p>PC/SC reads UID with <code>FF CA 00 00 00</code>, normalises to uppercase hexadecimal and assigns at most one active UID per person. A UID cannot be active for multiple persons.</p>
 <p>Terminal CSV fields are <code>UID;DD.MM.YYYY;HH:mm:ss;hostname</code>. File- and row-level fingerprints provide idempotency. Unknown/inactive/time-incompatible UIDs remain clarification records.</p>
@@ -2135,10 +2289,38 @@
 <p>Original documents are never SQLite BLOBs. The financial vault stages, hashes, uploads, reads back and verifies each object. Metadata stores target, remote path/ID, hash, size, version and retention. Target deletion is blocked while documents reference it.</p>
 <p>Accounting delivery is available through <a href="../api/accounting-rest/">REST</a> and <a href="../integration/accounting-csv-zip/">CSV/ZIP</a>. Only booked records are exportable. REST uses a persistent idempotent outbox.</p>
 <h2 id="11-backup-and-disaster-recovery">11. Backup and disaster recovery<a class="headerlink" href="#11-backup-and-disaster-recovery" title="Permanent link">&para;</a></h2>
-<p>Exactly one Google Drive or HTTPS WebDAV target may be active. Client-side AES-256-GCM is optional and preselected. Activation requires exporting and confirming a recovery key.</p>
+<p>Basic and Pro open a guided wizard through <strong>Administration → Backups → Quick
+Backup</strong>. <strong>Database only</strong> remains a diagnostic ZIP. <strong>Complete manual backup</strong>
+contains the consistent SQLite snapshot and all active DDD, financial and
+record-document archives with their manifests. Each run can produce either a
+portable ZIP64 file or a backup directory. Local and UNC destinations are allowed;
+WebDAV and Google Drive are not offered by this wizard. AES-256-GCM is optional
+and requires a separately exported recovery key. Restore accepts both formats,
+validates completeness, key and every SHA-256 value, and normalises archive paths
+to the currently configured locations.</p>
+<p>Pro may additionally have one local/UNC, Google Drive or HTTPS WebDAV target for
+automatic backups. Its queue, retention and schedule remain separate from the
+manual wizard.</p>
 <p><img alt="Backup target, queue and restore administration" src="../assets/screenshots/backup.png" />
 <em>Figure: Cloud target, backup queue and restore administration.</em></p>
 <p>Archives are backed up asynchronously when a target is configured; database snapshots default to 02:00 UTC. Retention keeps 30 daily and 12 monthly database states. DDD backup objects are never automatically removed. Details and runbooks are in <a href="../operations/cloud-backup-restore/">Archiving, backup and restore</a>.</p>
+<p>The complete operator and verification procedure is in the
+<a href="../operations/manual-backup-restore/">Backup and restore how-to</a>.</p>
+<h3 id="controlled-data-root-relocation">Controlled data-root relocation<a class="headerlink" href="#controlled-data-root-relocation" title="Permanent link">&para;</a></h3>
+<p><strong>Administration → Settings → Relocate data root …</strong> requires <code>settings.manage</code>
+and is available in every edition. The target must be an empty, absolute directory
+on a fixed local drive. UNC paths, mapped network drives, removable media,
+overlapping directories and unsuitable reparse targets are rejected.</p>
+<p>The wizard stops local writers, copies every file, reads it back by size and
+SHA-256, normalises internal paths and atomically activates the machine-wide
+bootstrap locator. Basic and Pro additionally check SQLite integrity and foreign
+keys. Enterprise relocates only the local application root; PostgreSQL and
+deliberately external archives remain in place; a locally installed
+<code>FleetMiraWorker</code> is stopped for the move and restarted after startup validation.
+If startup validation fails, the locator is automatically switched back to the
+old root. After a successful restart, the
+old root can be retained or explicitly removed permanently. <strong>Retain</strong> is the
+default.</p>
 <p>SSO activation, Entra configuration and identity assignments are stored in SQLite and are therefore included in database snapshots. The central Google client is part of the software build; provider tokens are not backed up. Test local emergency access and both SSO methods after every restore. Microsoft Entra remains beta after a successful restore until WAM, browser fallback, MFA and Conditional Access have been documented and accepted in the restored customer context.</p>
 <p>At least quarterly, restore a database snapshot and representative C/M objects to an isolated test directory, verify hashes/integrity and document the result.</p>
 <h2 id="12-rest-and-integrations">12. REST and integrations<a class="headerlink" href="#12-rest-and-integrations" title="Permanent link">&para;</a></h2>
@@ -2148,6 +2330,17 @@
 <li>Mobile licence-check endpoints remain a separate fleet API surface when enabled.</li>
 </ul>
 <p>Do not expose a local development endpoint directly to the Internet. Place authentication, TLS, rate limiting and network access controls in front of any externally reachable API.</p>
+<h3 id="gps-servernet-creating-a-vehicle-from-the-reconciliation-list">GPS-server.net: creating a vehicle from the reconciliation list<a class="headerlink" href="#gps-servernet-creating-a-vehicle-from-the-reconciliation-list" title="Permanent link">&para;</a></h3>
+<p>Under <strong>Administration → Telematics → GPS-server.net</strong>, an administrator with <code>telematics.reconcile</code> and <code>fleet.manage</code> can select an unassigned object and choose <strong>Create vehicle from GPS-server object</strong>. The <strong>Telematics</strong> tab groups the connected providers, with each connector placed on its own subtab. Registration and VIN are only prefilled and remain visible for review before saving. A valid VIN from <code>io256</code> in the latest position message is a provider observation, not verified vehicle evidence. Duplicate VINs or registrations are blocked.</p>
+<p>Manage the system-wide calculation rules under <strong>Administration → Cost analysis
+→ Calculation parameters → Odometer determination</strong>: by default, extrapolation
+uses a 14-day basis, at least three daily values and a maximum seven-day gap.
+The provider tab continues to control retention of telematics daily readings;
+the default is six years and zero means unlimited. <strong>Odometer rules</strong> can store
+a vehicle-specific override for a linked vehicle or restore the system
+default. The reconciliation table shows the latest daily reading, quality and
+projection state.</p>
+<p>The optional online manufacturer/model lookup sends the VIN to NHTSA vPIC only after explicit confirmation. Because European vehicle coverage is limited, every suggested value requires business review. The complete procedure, source labels and operating boundaries are in the <a href="../integration/gps-server/#creating-a-vehicle-from-a-gps-server-object">GPS-server.net integration guide</a>.</p>
 <h2 id="13-legacy-technical-identifiers">13. Legacy technical identifiers<a class="headerlink" href="#13-legacy-technical-identifiers" title="Permanent link">&para;</a></h2>
 <p>The visible product is <strong>FLEET Mira</strong>. The following are intentionally retained for compatibility:</p>
 <ul>

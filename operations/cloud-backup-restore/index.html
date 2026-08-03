@@ -16,7 +16,7 @@
         <link rel="prev" href="../../architecture/async-ui-background-services/">
       
       
-        <link rel="next" href="../enterprise-backup-restore/">
+        <link rel="next" href="../manual-backup-restore/">
       
       
         
@@ -599,6 +599,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -976,6 +1004,34 @@
     
   
     Tachograph parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
   
 
     
@@ -1485,6 +1541,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../enterprise-backup-restore/" class="md-nav__link">
         
   
@@ -1941,13 +2025,17 @@ financial_archive_dir/
 <p>Import prepares the received original, embedded XML for a hybrid PDF, and validation report as one unit. Invoice, lines, allocations and document relationships are committed only after every required object is locally verified. Failure removes temporary objects and leaves no partial invoice.</p>
 <h2 id="6-configure-a-backup-target">6. Configure a backup target<a class="headerlink" href="#6-configure-a-backup-target" title="Permanent link">&para;</a></h2>
 <h3 id="target-independent-quick-backup">Target-independent Quick Backup<a class="headerlink" href="#target-independent-quick-backup" title="Permanent link">&para;</a></h3>
-<p>Basic and Pro can create a consistent SQLite database backup as a local ZIP at any
-time under <strong>Administration → Backups → Quick Backup</strong>. The ZIP contains
-<code>archive.db</code> and a manifest with SHA-256, size and verification result. No backup
-target is required.</p>
-<p>Quick Backup does not contain DDD, PDF, financial or record-document archives. A
-complete backup must therefore also copy the configured archive directories or use
-the Pro backup described below.</p>
+<p>Basic and Pro open a wizard under <strong>Administration → Backups → Quick Backup</strong>.
+<strong>Database only</strong> retains the local diagnostic ZIP containing <code>archive.db</code> and its
+SHA-256 manifest. <strong>Complete manual backup</strong> also includes every active DDD,
+financial and record-document object referenced by that snapshot, including their
+manifests. Output can be a portable ZIP64 file or a versioned backup directory.</p>
+<p>The manual wizard writes only to a local or UNC path and creates no configured
+target, durable queue or retention job. Optional AES-256-GCM encryption requires
+the recovery key to be exported separately before backup starts. Both formats are
+fully read back and can be opened through <strong>Restore …</strong>; incomplete sets and
+checksum failures are rejected. See the
+<a href="../manual-backup-restore/">Backup and restore how-to</a> for the complete procedure.</p>
 <p>Exactly one active target can be configured under <strong>Administration → Backups</strong>:</p>
 <ul>
 <li><code>LOCAL_FILESYSTEM</code>: a second local drive or UNC/NAS share;</li>

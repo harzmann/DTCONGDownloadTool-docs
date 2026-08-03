@@ -745,6 +745,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -1135,6 +1163,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1352,6 +1408,34 @@
     
   
     Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
   
 
     
@@ -1682,6 +1766,11 @@
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
+<td>Lease contracts with factor pre-calculation, actual rate, schedule, documents and actual costs</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
 <td>Audit trail for GoBD-compliant financial procedures</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
@@ -1767,6 +1856,11 @@
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
+<td>↳ Three leasing reports by vehicle, contract end and supplier</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
 <td>Native list printing and PDF output</td>
 <td style="text-align: center;">✅</td>
 <td style="text-align: center;">✅</td>
@@ -1846,7 +1940,7 @@
 </tr>
 <tr>
 <td>Backup</td>
-<td>SQLite snapshot plus configured archive backup</td>
+<td>SQLite diagnostic snapshot or manual complete ZIP64/directory set; Pro additionally provides configured archive backup</td>
 <td>PostgreSQL custom dump plus DDD, financial and record-document archives</td>
 </tr>
 </tbody>
@@ -1856,12 +1950,13 @@
 <ul>
 <li>time-based, mileage-based and combined fleet deadlines, including lead values, recurrence, odometer quality and personnel/fleet reports;</li>
 <li>record documents for people and vehicles with drag-and-drop, versions, metadata, preview, independent retention, backup and audit;</li>
-<li>target-independent Quick Backup for Basic/Pro SQLite and Enterprise PostgreSQL diagnostics;</li>
+<li>target-independent Quick Backup for Basic/Pro database diagnostics or complete ZIP64/directory sets and Enterprise PostgreSQL diagnostics;</li>
+<li>guided, verified relocation of the local data root in every edition;</li>
 <li>complete record-level audit coverage for deadlines, documents, licence checks, tachograph links, odometer readings, costs, invoices, evidence and exports;</li>
 <li>language-specific field guidance while region settings independently control date, time and number formatting;</li>
 <li>conventional PC/SC RFID/NFC UID byte order for display, assignment and checks.</li>
 </ul>
-<p>The <a href="../guide/report-dashboard/">Report dashboard guide</a> shows all eight report screens with a purpose statement, Stimulsoft preview and linked PDF. The <a href="../guide/violation-dashboard/">Violation dashboard guide</a> documents the risk screen, violation report and driver instruction using anonymised demo data.</p>
+<p>The <a href="../guide/report-dashboard/">Report dashboard guide</a> describes twelve working-time, mileage, return and deadline reports. The <a href="../guide/violation-dashboard/">Violation dashboard guide</a> documents the risk screen, violation report and driver instruction using anonymised demo data.</p>
 <h2 id="data-flows">Data flows<a class="headerlink" href="#data-flows" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>flowchart TD
     A[FTP, DLT API or manual import] --&gt; B[Hash and immutable local archive]

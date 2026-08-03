@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/architecture/database-schema-v2/">
       
       
-        <link rel="prev" href="../../integration/drivercard-parser/">
+        <link rel="prev" href="../../integration/gps-server/">
       
       
         <link rel="next" href="../tachograph-data-storage/">
@@ -599,6 +599,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/einvoice-import/" class="md-nav__link">
         
   
@@ -976,6 +1004,34 @@
     
   
     Tachograph parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
   
 
     
@@ -1698,6 +1754,34 @@
     
   
     Archiving, backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
   
 
     
@@ -2964,6 +3048,26 @@
 <td>Vehicle/category allocation, validity period, signed amounts, tax, workflow, and reversal links.</td>
 </tr>
 <tr>
+<td><code>fleet_lease_contract</code></td>
+<td>Vehicle/supplier lease terms, factor inputs, authoritative actual rate, mileage evidence and lifecycle.</td>
+</tr>
+<tr>
+<td><code>fleet_lease_component</code></td>
+<td>Recurring and one-time contract components, including effective-factor relevance.</td>
+</tr>
+<tr>
+<td><code>fleet_lease_schedule_item</code></td>
+<td>Reproducible planned payment schedule generated from contract terms.</td>
+</tr>
+<tr>
+<td><code>fleet_lease_document_link</code></td>
+<td>Links a contract to immutable documents from its vehicle record.</td>
+</tr>
+<tr>
+<td><code>fleet_lease_cost_link</code></td>
+<td>Links actual vehicle cost or credit positions, including invoice positions, to a contract.</td>
+</tr>
+<tr>
 <td><code>fleet_financial_document</code></td>
 <td>Local original/manifest identity, SHA-256, archive status, optional backup state, retention, legal hold, and supersession.</td>
 </tr>
@@ -3093,8 +3197,8 @@
 <td><code>fleet_notification_rule</code>, <code>fleet_notification_recipient</code>, <code>fleet_notification_delivery</code></td>
 </tr>
 <tr>
-<td>Finance/e-invoice</td>
-<td><code>fleet_supplier</code>, <code>fleet_cost_category</code>, <code>fleet_foreign_invoice</code>, <code>fleet_vehicle_cost_entry</code>, <code>fleet_financial_document</code>, <code>fleet_einvoice_import</code>, <code>fleet_einvoice_line</code>, <code>fleet_einvoice_allocation</code>, <code>fleet_finance_export</code>, <code>fleet_finance_settings</code></td>
+<td>Finance/e-invoice/leasing</td>
+<td><code>fleet_supplier</code>, <code>fleet_cost_category</code>, <code>fleet_foreign_invoice</code>, <code>fleet_vehicle_cost_entry</code>, <code>fleet_financial_document</code>, <code>fleet_einvoice_import</code>, <code>fleet_einvoice_line</code>, <code>fleet_einvoice_allocation</code>, <code>fleet_finance_export</code>, <code>fleet_finance_settings</code>, <code>fleet_lease_contract</code>, <code>fleet_lease_component</code>, <code>fleet_lease_schedule_item</code>, <code>fleet_lease_document_link</code>, <code>fleet_lease_cost_link</code></td>
 </tr>
 <tr>
 <td>Reporting</td>

@@ -601,6 +601,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lease contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../einvoice-import/" class="md-nav__link">
         
   
@@ -1082,6 +1110,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net telematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1319,6 +1375,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup and restore how-to
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/enterprise-backup-restore/" class="md-nav__link">
         
   
@@ -1470,15 +1554,17 @@
 <p>The KPI strip separates <strong>Total cost</strong>, <strong>eligible cost</strong>, <strong>eligible kilometres</strong>, <strong>cost/km</strong> and <strong>data basis</strong>. Total cost remains complete while cost/km uses only jointly reliable vehicle-months.</p>
 <h2 id="mileage-basis">Mileage basis<a class="headerlink" href="#mileage-basis" title="Permanent link">&para;</a></h2>
 <p>M files provide an end-of-day odometer value for each included UTC day. FLEET Mira stores it at the following day's <code>00:00 UTC</code> boundary. Vehicle-use, place and three-hour GNSS records from C files supplement the history.</p>
-<p>The M-file series is authoritative and is checked only against other signature-valid M readings. Manual and C-file readings can fill a missing exact period boundary, but they can neither replace nor invalidate an available M reading.</p>
+<p>Cost analysis and mileage reports use the same <code>OdometerBoundaryResolver</code>. Only qualified <strong>VALID</strong> or <strong>WARNING</strong> readings are eligible; manual, unknown, unverified and conflicting values are excluded.</p>
 <p>Source priority is:</p>
 <ol>
 <li>signature-valid M-file midnight reading;</li>
-<li>approved manual reading;</li>
-<li>plausibility-checked C-file reading;</li>
-<li>other imports.</li>
+<li>GPS-server telematics sensor;</li>
+<li>C-file vehicle use;</li>
+<li>C-file place;</li>
+<li>C-file three-hour GNSS;</li>
+<li>GPS-server telematics GPS.</li>
 </ol>
-<p>Cost per kilometre is calculated at vehicle-month level. The first and last month are clipped to the selected range. A vehicle-month is included only when it contains at least one cost entry, reliable UTC boundary readings and positive mileage. Missing values are neither interpolated nor treated as zero.</p>
+<p>Cost per kilometre is calculated at vehicle-month level. The first and last month are clipped to the selected range. A vehicle-month is included only when it contains at least one cost entry, reliable period boundaries and positive mileage. Missing boundaries follow the same administrative rule as mileage reports: incomplete, interpolated or bounded extrapolation. For a missing opening boundary, the central policy can extrapolate backwards from the first qualified following days; for a missing closing boundary, it projects forwards from preceding readings. During the current local day, an available qualified actual reading is used; otherwise the central policy can extrapolate up to the current calculation instant. The same estimated mileage is therefore available to cost/km. Opening and closing readings are rounded to whole kilometres first; the difference is then exactly closing minus opening. The <strong>Odometer readings per vehicle and day</strong> report exposes the same boundaries and estimation supports for direct audit.</p>
 <p>Total cost continues to include every cost in the selected range. <strong>Eligible cost</strong>, <strong>eligible mileage</strong> and <strong>cost/km</strong> include matching vehicle-months only. Vehicles or months without costs or mileage therefore no longer suppress metrics for complete subsets.</p>
 <p>Coverage is shown as eligible cost-bearing vehicle-months. The column heading explains the metric generally; each value's tooltip states the actual number of cost and eligible months and lists the vehicle's concrete monthly mileage warnings. The interface displays <strong>Complete</strong> for full coverage, <strong>Partial</strong> for a usable subset, and <strong>Mileage data missing</strong> when costs exist without a cost/km basis. <strong>No costs</strong> and <strong>No data</strong> identify individual vehicles or months without costs or without either data type.</p>
 <p><strong>Import tachograph data</strong> reparses older M archives that do not yet contain extracted daily odometer values. Values that cannot be matched uniquely by VIN or registration remain visible for resolution.</p>
