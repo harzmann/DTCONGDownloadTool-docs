@@ -2458,8 +2458,8 @@
 </tr>
 <tr>
 <td><code>fleet</code></td>
-<td style="text-align: right;">2</td>
-<td>persons, vehicles, links, due dates, RFID, licence checks, and notifications</td>
+<td style="text-align: right;">5</td>
+<td>persons, vehicles, links, due dates, RFID, licence checks, and notification responsibility routing</td>
 </tr>
 <tr>
 <td><code>finance</code></td>
@@ -2482,9 +2482,19 @@
 <td>targets, replication state, jobs, and database snapshots</td>
 </tr>
 <tr>
+<td><code>task_execution</code></td>
+<td style="text-align: right;">1</td>
+<td>backend-neutral task runs, source snapshots, and per-file outcomes</td>
+</tr>
+<tr>
 <td><code>reporting</code></td>
 <td style="text-align: right;">3</td>
 <td>odometer history, cost-report parameters, and report templates</td>
+</tr>
+<tr>
+<td><code>task_execution</code></td>
+<td style="text-align: right;">1</td>
+<td>task runs, source snapshots, file results, and daily report evidence</td>
 </tr>
 </tbody>
 </table>
@@ -2953,6 +2963,18 @@
 <td><code>processed_files</code></td>
 <td>Download/import idempotency state for source files.</td>
 </tr>
+<tr>
+<td><code>task_execution_run</code></td>
+<td>Durable scheduled/manual task run, trigger, time range, status and totals.</td>
+</tr>
+<tr>
+<td><code>task_execution_source</code></td>
+<td>Per-run source snapshot, availability, error and transfer totals.</td>
+</tr>
+<tr>
+<td><code>task_execution_file</code></td>
+<td>Successful and failed file-level transfer and processing evidence.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="fleet-master-data-and-links">Fleet master data and links<a class="headerlink" href="#fleet-master-data-and-links" title="Permanent link">&para;</a></h3>
@@ -3010,11 +3032,11 @@
 <tbody>
 <tr>
 <td><code>fleet_notification_rule</code></td>
-<td>Enabled rules, schedules, thresholds, and message configuration.</td>
+<td>Enabled rules, schedules, thresholds, message configuration, and fleet/system responsibility routing.</td>
 </tr>
 <tr>
 <td><code>fleet_notification_recipient</code></td>
-<td>Rule recipients and delivery targets.</td>
+<td>Delivery targets with independent fleet-manager and system-manager membership and one shared To/CC type.</td>
 </tr>
 <tr>
 <td><code>fleet_notification_delivery</code></td>
@@ -3166,7 +3188,7 @@
 </tr>
 <tr>
 <td>Device/transfer</td>
-<td><code>customers</code>, <code>locations</code>, <code>devices</code>, <code>device_status_history</code>, <code>device_groups</code>, <code>device_group_members</code>, <code>processed_files</code></td>
+<td><code>customers</code>, <code>locations</code>, <code>devices</code>, <code>device_status_history</code>, <code>device_groups</code>, <code>device_group_members</code>, <code>processed_files</code>, <code>task_execution_run</code>, <code>task_execution_source</code>, <code>task_execution_file</code></td>
 </tr>
 <tr>
 <td>Archive/parser evidence</td>

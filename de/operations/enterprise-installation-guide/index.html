@@ -1789,12 +1789,12 @@
 
 
 <h1 id="enterprise-installationsanleitung-fur-administratoren">Enterprise-Installationsanleitung für Administratoren<a class="headerlink" href="#enterprise-installationsanleitung-fur-administratoren" title="Permanent link">&para;</a></h1>
-<p>Diese Anleitung beschreibt die Installation von FLEET Mira Enterprise 1.1.0-beta7 in zwei unterstützten Topologien. Enterprise verwendet PostgreSQL und darf auf Windows Server sowie in RDP-, Citrix- und vergleichbaren Mehrbenutzerumgebungen ausgeführt werden. Für Server und Terminalserver darf ausschließlich das Enterprise-Setup verwendet werden; das Basic/Pro-Setup sperrt diese Umgebungen.</p>
+<p>Diese Anleitung beschreibt die Installation von FLEET Mira Enterprise 1.1.0-beta8 in zwei unterstützten Topologien. Enterprise verwendet PostgreSQL und darf auf Windows Server sowie in RDP-, Citrix- und vergleichbaren Mehrbenutzerumgebungen ausgeführt werden. Für Server und Terminalserver darf ausschließlich das Enterprise-Setup verwendet werden; das Basic/Pro-Setup sperrt diese Umgebungen.</p>
 <h2 id="installationsdateien">Installationsdateien<a class="headerlink" href="#installationsdateien" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta7/FLEET-Mira-Enterprise-1.1.0-beta7-Setup-x64.exe">Enterprise-Applikationssetup herunterladen</a></li>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta7/FLEET-Mira-PostgreSQL-Server-1.1.0-beta7-Setup-x64.exe">PostgreSQL-Server-Setup herunterladen</a></li>
-<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta7/SHA256SUMS-Enterprise.txt">SHA-256-Prüfsummen herunterladen</a></li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta8/FLEET-Mira-Enterprise-1.1.0-beta8-Setup-x64.exe">Enterprise-Applikationssetup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta8/FLEET-Mira-PostgreSQL-Server-1.1.0-beta8-Setup-x64.exe">PostgreSQL-Server-Setup herunterladen</a></li>
+<li><a href="https://github.com/harzmann/DTCONGDownloadTool-docs/releases/download/v1.1.0-beta8/SHA256SUMS-Enterprise.txt">SHA-256-Prüfsummen herunterladen</a></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Betastatus und Worker-Betrieb</p>
@@ -1825,7 +1825,7 @@
 <ol>
 <li>Melden Sie sich am Windows Server mit lokalen Administratorrechten an.</li>
 <li>Kopieren Sie beide Setups lokal auf den Server und vergleichen Sie deren SHA-256-Werte mit <code>SHA256SUMS-Enterprise.txt</code>.</li>
-<li>Starten Sie <code>FLEET-Mira-PostgreSQL-Server-1.1.0-beta7-Setup-x64.exe</code> als Administrator.</li>
+<li>Starten Sie <code>FLEET-Mira-PostgreSQL-Server-1.1.0-beta8-Setup-x64.exe</code> als Administrator.</li>
 <li>Erfassen Sie Port sowie die Kennwörter für PostgreSQL-Administrator, <code>mira_app</code>, <code>mira_backup</code> und <code>mira_restore</code>. Das Setup installiert PostgreSQL, legt Dienst, Datenbank und Rollen an und importiert anschließend das vollständige, fachlich leere Mira-Anwendungsschema.</li>
 <li>Konfigurieren Sie <code>listen_addresses</code>, <code>pg_hba.conf</code>, DNS und TLS nach Ihrer Sicherheitsrichtlinie. Öffnen Sie TCP 5432 in der Windows-Firewall ausschließlich für die vorgesehenen Client- und Worker-Netze.</li>
 <li>Starten Sie das Enterprise-Setup als Administrator und wählen Sie die Komponente <strong>Fleet Mira Worker</strong>. <code>/COMPONENTS=worker</code> ist die unbeaufsichtigte Entsprechung.</li>

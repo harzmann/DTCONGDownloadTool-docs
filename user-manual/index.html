@@ -2263,13 +2263,16 @@
 <p><img alt="FLEET Mira dashboard with anonymised demonstration data" src="../assets/screenshots/dashboard.png" />
 <em>Figure: Dashboard with anonymised demonstration data and direct navigation figures.</em></p>
 <ul>
-<li><strong>FLEET Mira devices:</strong> total, online and offline devices.</li>
+<li><strong>DLTNG devices:</strong> total, online and offline devices.</li>
 <li><strong>People/Vehicles:</strong> active master records.</li>
 <li><strong>Tachograph files:</strong> total C/M files, backup backlog/errors and latest imports.</li>
 <li><strong>Personnel deadlines / Vehicle deadlines:</strong> upcoming, due today and overdue items.</li>
 <li><strong>Driving-licence checks:</strong> pending clarification, checks due soon, overdue checks and the latest successful check.</li>
 </ul>
 <p>Click an individual figure, not only the card, to open the corresponding pre-filtered list. Select <strong>Refresh dashboard</strong> after major imports when an immediate refresh is needed.</p>
+<p>Basic always shows these six widgets in the fixed default layout. In Pro and Enterprise, <strong>Configure dashboard 💎</strong> opens a personal editing mode on a 6×4 grid. Use the catalogue to show or hide widgets and drag them by their handle. A free area accepts the widget; dropping it on one equally sized widget swaps their positions. <strong>Save</strong> stores the layout for the signed-in user across workstations, <strong>Cancel</strong> discards the draft, and <strong>Restore default</strong> restores all six 2×2 widgets before saving.</p>
+<p><img alt="Personal dashboard configuration" src="../assets/screenshots/dashboard-configuration.png" />
+<em>Figure: Editing mode with the 6×4 grid, widget catalogue and drag handles.</em></p>
 <h2 id="3-device-management">3. Device Management<a class="headerlink" href="#3-device-management" title="Permanent link">&para;</a></h2>
 <p><img alt="Device management" src="../assets/screenshots/device-management.png" />
 <em>Figure: Device list and device-management workspace.</em></p>
@@ -2286,7 +2289,7 @@
 <p>Open <strong>Administration → Sources</strong> to configure FTP, DLT API and SFTP endpoints, local folders, or UNC server shares. Test the connection before assigning a source to a task. Credentials and SFTP key passphrases are protected and do not appear in logs.</p>
 <p><img alt="Download-source management" src="../assets/screenshots/sources.png" />
 <em>Figure: Administration of automatic import sources.</em></p>
-<p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
+<p>Open <strong>Administration → Tasks</strong> to define source selection, file patterns, recursion, schedule, archive behaviour and optional strict cloud-backup mode. <strong>Run now</strong> opens a detailed progress view with one row per source and live log messages. <strong>View latest log</strong> in the context menu opens the most recently stored execution with its trigger, run status, counters, source details and file details; unfinished runs remain visible. RFID terminal CSV files require <code>RFID_*.CSV</code> in the pattern.</p>
 <p>The <strong>Administration → Settings → Automatically import USB removable drives</strong> option recursively scans newly inserted drives for DDD and <code>RFID*.CSV</code> files. It operates only while FLEET Mira is open or running in the system tray; source files remain on the drive.</p>
 <h3 id="data-root-and-storage-paths">Data root and storage paths<a class="headerlink" href="#data-root-and-storage-paths" title="Permanent link">&para;</a></h3>
 <p>Under <strong>Administration → Settings</strong>, administrators can see the active data root and the fully resolved log, SQLite, DDD archive, document archive and financial archive paths. These fields remain read-only so files, database references and access permissions cannot be separated. <strong>Relocate data root …</strong> opens a guided wizard that copies and verifies the complete local root, normalises internal paths and restarts FLEET Mira through the new machine-wide locator. The target must be empty and on a fixed local drive. Enterprise moves only its local application root; PostgreSQL and deliberately external archives remain in place.</p>
@@ -2377,7 +2380,7 @@
 <p>Tabs include drivers, activities, day/week timelines, events/faults, speed, technical data, calibrations, positions/borders/loading, signatures and violations. <strong>Technical data</strong> uses a field tree; <strong>Calibrations</strong> lists calibration time, next calibration, workshop, VIN and registration. Position tabs can open the interactive map.</p>
 <p>“No assigned driver card” means the M file contains slot activity for which no active card-insertion interval with a usable card number was found. It does not mean that a matching C archive is merely missing; the tooltip in day/week views explains this distinction.</p>
 <h2 id="8-fleet-management">8. Fleet Management<a class="headerlink" href="#8-fleet-management" title="Permanent link">&para;</a></h2>
-<p>The left icon navigation opens non-duplicated work tabs. A new session starts with an empty fleet workspace.</p>
+<p>The compact left icon navigation opens non-duplicated work tabs. A <code>+</code> or <code>−</code> to the left of a parent item expands or collapses its children. Right-click provides “Expand all”, “Collapse all” and an individual action for parent items. The state is stored for the signed-in user. Users without a stored preference start with the navigation fully collapsed. A new session starts with an empty fleet workspace.</p>
 <p><img alt="Fleet Management icon navigation and work tabs" src="../assets/screenshots/fleet-navigation.png" />
 <em>Figure: Fleet Management icon navigation and non-duplicated work tabs.</em></p>
 <h3 id="master-data">Master data<a class="headerlink" href="#master-data" title="Permanent link">&para;</a></h3>
@@ -2499,10 +2502,11 @@
 <p>The default check interval is 28 days. Successful PC/SC, terminal CSV and resolved mobile records use the same service and update one managed FSK deadline. Assigning an RFID UID alone is not a check.</p>
 <p>Unknown terminal UIDs remain pending. Assigning them creates the effective check; discarding requires a reason and never creates a permanent RFID assignment.</p>
 <h2 id="11-notifications">11. Notifications<a class="headerlink" href="#11-notifications" title="Permanent link">&para;</a></h2>
-<p>Under <strong>Administration → Notifications</strong>, configure SMTP, responsible recipients, rules/templates and the send log. The system is disabled until SMTP and recipients have been tested and sending is explicitly enabled.</p>
+<p>Under <strong>Administration → Notifications</strong>, configure SMTP, responsible recipients, rules/templates and the send log. Recipients may be assigned to fleet management, system management or both; their To/CC type applies to both assignments. Double-clicking a recipient or rule opens its edit dialog. The system is disabled until SMTP and recipients have been tested and sending is explicitly enabled.</p>
 <p><img alt="Notification rules and templates" src="../assets/screenshots/notifications.png" />
 <em>Figure: Notification rules, templates and schedules.</em></p>
 <p>Standard rules cover weekly information, daily reminders from ten days, urgent reminders from three days, overdue warnings and a daily responsible-person report. Additional rules can distribute violation dashboards to managers and deliver each new driver instruction exactly once with its PDF attachment. Rules may be previewed or sent manually when the user has permission.</p>
+<p>The <strong>Daily task status report</strong> system rule is sent exclusively to system managers at 07:00 each day by default. Immediately before delivery it checks every active DLTNG device and summarises scheduled and manual download tasks from the complete previous day. For each source it shows availability, error details and downloaded, successful, failed and skipped file counts. One UTF-8 CSV lists every successful or failed file; a report with a header-only CSV is also sent on days without a run. Previewing deliberately performs no live device access. Fleet status, cost analysis and violation dashboard reports remain exclusive to fleet managers.</p>
 <h2 id="12-costs-credits-and-foreign-invoices">12. Costs, credits and foreign invoices<a class="headerlink" href="#12-costs-credits-and-foreign-invoices" title="Permanent link">&para;</a></h2>
 <h3 id="direct-vehicle-costs">Direct vehicle costs<a class="headerlink" href="#direct-vehicle-costs" title="Permanent link">&para;</a></h3>
 <p>Open a vehicle record → <strong>Costs / Credits</strong>. Select category and type and enter document date, validity period, net and VAT. <strong>Variable</strong> allocates the full amount to the document date; fixed entries are distributed by day over their complete validity period. Amounts are stored to the cent. Draft, verification, booking, cancellation and credit are covered in <a href="../guide/vehicle-costs/">Vehicle costs and credits</a>.</p>
@@ -2522,6 +2526,8 @@
 <p>The status row compares gross invoice amount, split amount and difference. Zero difference is green; any cent difference is red and blocks verification. Invoice-bound positions inherit the invoice date for document/valid-from/valid-to and are always variable. Booked data is immutable; corrections use cancellation or linked credits.</p>
 <h3 id="lease-contracts">Lease contracts<a class="headerlink" href="#lease-contracts" title="Permanent link">&para;</a></h3>
 <p>Use <strong>Fleet → Lease contracts</strong> to manage contract data, factor-based pre-calculation, the independently authoritative contract rate, payment schedule, documents and linked actual costs. <a href="../guide/leasing-contracts/">Lease contracts</a> explains the factor formulas, M-data mileage evidence and all three leasing reports.</p>
+<p><img alt="Lease contracts with anonymised demo data" src="../assets/screenshots/lease-contracts.png" />
+<em>Figure: Filterable lease-contract overview from the anonymised demo database.</em></p>
 <h3 id="e-invoicexrechnung">E-invoice/XRechnung<a class="headerlink" href="#e-invoicexrechnung" title="Permanent link">&para;</a></h3>
 <p><strong>Fleet → Import XRechnung</strong> guides users through KoSIT validation, invoice and supplier data, vehicle/category allocation, line splitting and totals reconciliation. Only confirmed creation atomically writes a foreign-invoice draft and locally verified original, XML and report objects. See <a href="../guide/einvoice-import/">E-invoice and XRechnung import</a>.</p>
 <h2 id="13-audit-reports-and-logs">13. Audit, reports and logs<a class="headerlink" href="#13-audit-reports-and-logs" title="Permanent link">&para;</a></h2>
