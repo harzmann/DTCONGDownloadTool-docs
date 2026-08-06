@@ -1189,6 +1189,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1617,6 +1645,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1775,6 +1831,34 @@
     
   
     Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
   
 
     
@@ -2239,7 +2323,7 @@
 <h2 id="edition-und-verarbeitungsmodell">Edition und Verarbeitungsmodell<a class="headerlink" href="#edition-und-verarbeitungsmodell" title="Permanent link">&para;</a></h2>
 <p>Basic und Pro verwenden eine lokale SQLite-Datenbank und verarbeiten Hintergrundaufgaben in der Anwendung. Enterprise verwendet ausschließlich PostgreSQL. Der Client stellt zentrale Arbeit in die Datenbankwarteschlange; der eigenständige Dienst <code>FleetMiraWorker</code> führt Importe, Benachrichtigungen, Sicherungen und weitere geplante Aufgaben aus. Derselbe Bedienablauf erzeugt damit dasselbe fachliche Ergebnis, Enterprise-Aufträge können jedoch nach dem Schließen des Clientfensters weiterlaufen.</p>
 <h2 id="1-anmeldung-und-arbeitsbereich">1. Anmeldung und Arbeitsbereich<a class="headerlink" href="#1-anmeldung-und-arbeitsbereich" title="Permanent link">&para;</a></h2>
-<p>Starten Sie FLEET Mira über die installierte Verknüpfung. Nach dem Splash-Screen erscheint die Anmeldung. Eine neue Installation verwendet einmalig <code>admin</code> / <code>admin</code> und verlangt anschließend ein sicheres neues Kennwort. Wenn ein Administrator Single Sign-on eingerichtet und Ihr Konto vorab zugeordnet hat, verwenden Sie stattdessen <strong>Mit Microsoft anmelden</strong> oder <strong>Mit Google anmelden</strong>. <strong>Microsoft Entra ID SSO ist derzeit Beta und noch nicht mit einem realen Kundenmandanten Ende-zu-Ende validiert.</strong> Verwenden Sie bis zur kundenspezifischen Abnahme den lokalen Login als Rückfallmöglichkeit und wenden Sie sich bei Problemen an Ihren Administrator. Einrichtung und Fehlerbehebung beschreibt das <a href="../administrator-integration-guide/#single-sign-on-mit-microsoft-entra-id-und-google">Administratoren- und Integratorenhandbuch</a>.</p>
+<p>Starten Sie FLEET Mira über die installierte Verknüpfung. Der Splash-Screen bleibt während der Startinitialisierung und der anfänglichen Arbeitsbereichsladevorgänge sichtbar. Erst nachdem deren UI-Callbacks vollständig abgearbeitet sind, wird er innerhalb desselben Render-Zyklus nahtlos durch die dann sofort bedienbare Anmeldung ersetzt. Eine neue Installation verwendet einmalig <code>admin</code> / <code>admin</code> und verlangt anschließend ein sicheres neues Kennwort. Wenn ein Administrator Single Sign-on eingerichtet und Ihr Konto vorab zugeordnet hat, verwenden Sie stattdessen <strong>Mit Microsoft anmelden</strong> oder <strong>Mit Google anmelden</strong>. <strong>Microsoft Entra ID SSO ist derzeit Beta und noch nicht mit einem realen Kundenmandanten Ende-zu-Ende validiert.</strong> Verwenden Sie bis zur kundenspezifischen Abnahme den lokalen Login als Rückfallmöglichkeit und wenden Sie sich bei Problemen an Ihren Administrator. Einrichtung und Fehlerbehebung beschreibt das <a href="../administrator-integration-guide/#single-sign-on-mit-microsoft-entra-id-und-google">Administratoren- und Integratorenhandbuch</a>.</p>
 <p><img alt="Splash-Screen von FLEET Mira" src="../assets/screenshots/splash.png" />
 <em>Abbildung: Splash-Screen von FLEET Mira vor der Anmeldung.</em></p>
 <p><img alt="Anmeldung von FLEET Mira" src="../assets/screenshots/login.png" />
@@ -2380,7 +2464,8 @@
 <p>Tabs umfassen Fahrer, Aktivitäten, Tages-/Wochengrafik, Ereignisse/Störungen, Geschwindigkeit, technische Daten, Kalibrierungen, Positionen/Grenzen/Laden, Signaturen und Verstöße. <strong>Technische Daten</strong> werden als Feldbaum dargestellt; <strong>Kalibrierungen</strong> zeigen Kalibrierzeit, nächste Kalibrierung, Werkstatt, FIN und Kennzeichen. Die Positionen öffnen eine interaktive Karte.</p>
 <p>„Ohne zugeordnete Fahrerkarte“ bedeutet, dass die M-Datei für Slot und Zeitraum kein aktives Kartensteckintervall mit verwertbarer Kartennummer enthält. Es bedeutet nicht nur, dass eine passende C-Datei im Archiv fehlt; ein Tooltip erläutert dies in Tages- und Wochenansicht.</p>
 <h2 id="8-fuhrpark-management">8. Fuhrpark-Management<a class="headerlink" href="#8-fuhrpark-management" title="Permanent link">&para;</a></h2>
-<p>Die kompakte linke Iconnavigation öffnet eindeutige Arbeitstabs. Ein <code>+</code> beziehungsweise <code>−</code> links an einem übergeordneten Menüpunkt klappt dessen Unterpunkte ein oder aus. Per Rechtsklick stehen „Alles ausklappen“, „Alles einklappen“ und für übergeordnete Menüpunkte zusätzlich die Einzelaktion zur Verfügung. Der Zustand wird für den angemeldeten Benutzer gespeichert. Benutzer ohne gespeicherte Einstellung starten mit vollständig eingeklappter Navigation. Eine neue Sitzung startet mit leerem Fuhrpark-Arbeitsbereich.</p>
+<p>Die kompakte linke Iconnavigation öffnet eindeutige Arbeitstabs und wird in Fuhrpark und Administration gleich bedient. Ein <code>+</code> beziehungsweise <code>−</code> links an einem übergeordneten Menüpunkt klappt dessen Unterpunkte ein oder aus. Das Kontextmenü zeigt feste Paare für <strong>Menüpunkt ausklappen/einklappen</strong>, <strong>Gruppe ausklappen/einklappen</strong> und <strong>Alles ausklappen/einklappen</strong>; nicht anwendbare Aktionen sind deaktiviert. <strong>Gruppe</strong> wirkt rekursiv auf den vollständigen obersten Teilbaum, also auch auf verschachtelte Bereiche wie Verkehrsverstöße und Fremdrechnungen. Der Zustand wird für den angemeldeten Benutzer gespeichert. Benutzer ohne gespeicherte Einstellung starten mit vollständig eingeklappter Navigation. Eine neue Sitzung startet in beiden Bereichen mit leerem Arbeitsbereich.</p>
+<p>In der Administration bilden <strong>Betrieb</strong>, <strong>Benutzer und Sicherheit</strong>, <strong>Kommunikation und Integrationen</strong> sowie <strong>Finanzen und System</strong> die Parent-Gruppen. Ihre Seiten sind Child-Einträge und öffnen jeweils einen schließbaren, verschiebbaren Arbeitstab rechts. Ein bereits geöffneter Child wird fokussiert statt dupliziert.</p>
 <p><img alt="Iconnavigation und Arbeitstabs des Fuhrpark-Managements" src="../assets/screenshots/fleet-navigation.png" />
 <em>Abbildung: Iconnavigation und eindeutige Arbeitstabs im Fuhrpark-Management.</em></p>
 <h3 id="stammdaten">Stammdaten<a class="headerlink" href="#stammdaten" title="Permanent link">&para;</a></h3>

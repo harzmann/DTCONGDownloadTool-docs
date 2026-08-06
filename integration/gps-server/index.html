@@ -760,6 +760,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1109,6 +1137,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#deleting-a-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting a connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#creating-a-vehicle-from-a-gps-server-object" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1320,6 +1359,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent administration UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1491,6 +1558,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1546,6 +1641,17 @@
   
     <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deleting-a-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting a connection
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#creating-a-vehicle-from-a-gps-server-object" class="md-nav__link">
@@ -1641,6 +1747,8 @@
 <li>Select sensor, GPS or unknown as the odometer type for each object when the API does not identify it unambiguously.</li>
 </ol>
 <p>The base URL is never inferred from the key or hard-coded to a particular GPS-server host. FLEET Mira appends the User API path <code>/api/api.php?api=user</code>.</p>
+<h3 id="deleting-a-connection">Deleting a connection<a class="headerlink" href="#deleting-a-connection" title="Permanent link">&para;</a></h3>
+<p>Select an existing connection and choose <strong>Delete</strong>. After explicit confirmation, FLEET Mira removes the connection together with synchronized objects, time-bound vehicle links, positions, events, coverage intervals and the GPS-server odometer readings projected from that evidence. Vehicle master records and the audit trail are retained. In Pro, the cleanup runs serially in the in-process worker and removes the user-protected API key. Enterprise enqueues an idempotent job; only FleetMiraWorker removes the PostgreSQL data and machine-protected key.</p>
 <h3 id="creating-a-vehicle-from-a-gps-server-object">Creating a vehicle from a GPS-server object<a class="headerlink" href="#creating-a-vehicle-from-a-gps-server-object" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Run at least one object and position synchronisation.</li>

@@ -760,6 +760,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1680,6 +1708,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent administration UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1838,6 +1894,34 @@
     
   
     Enterprise installation guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence administration
   
 
     
@@ -2463,8 +2547,13 @@
 </tr>
 <tr>
 <td><code>finance</code></td>
-<td style="text-align: right;">1</td>
-<td>suppliers, invoices, costs, financial originals, e-invoices, and exports</td>
+<td style="text-align: right;">2</td>
+<td>suppliers, invoices, tax summaries, document analysis, costs, financial originals, e-invoices, and exports</td>
+</tr>
+<tr>
+<td><code>leasing</code></td>
+<td style="text-align: right;">2</td>
+<td>lease contracts, versioned schedules, recurring invoices, occurrences, and reconciliation</td>
 </tr>
 <tr>
 <td><code>vehicle_unit</code></td>
@@ -2535,8 +2624,11 @@
     FLEET_PERSON ||--o{ FLEET_DRIVERCARD_LINK : owns
     FLEET_VEHICLE ||--o{ FLEET_VEHICLE_VU_LINK : owns
     DDD_ARCHIVE ||--o{ FLEET_VEHICLE_VU_LINK : links
+    FLEET_FOREIGN_INVOICE ||--o{ FLEET_FOREIGN_INVOICE_TAX_SUMMARY : taxes
     FLEET_FOREIGN_INVOICE ||--o{ FLEET_VEHICLE_COST_ENTRY : allocates
     FLEET_FINANCIAL_DOCUMENT }o--|| FLEET_FOREIGN_INVOICE : evidences
+    FLEET_RECURRING_INVOICE ||--o{ FLEET_RECURRING_INVOICE_OCCURRENCE : schedules
+    FLEET_LEASE_CONTRACT ||--o{ FLEET_RECURRING_INVOICE : governs
     BACKUP_TARGET ||--o{ BACKUP_ARCHIVE_STATE : replicates</code></pre>
 <p>The schema separates four concerns:</p>
 <ul>
@@ -3063,11 +3155,15 @@
 </tr>
 <tr>
 <td><code>fleet_foreign_invoice</code></td>
-<td>Invoice/credit-note header, dates, totals, workflow, duplicate override, reversal, and audit actors.</td>
+<td>Invoice, credit-note or recurring-invoice header, source, dates, totals, optional uniform VAT rate, workflow, duplicate override, reversal, and audit actors.</td>
+</tr>
+<tr>
+<td><code>fleet_foreign_invoice_tax_summary</code></td>
+<td>Authoritative VAT category, basis, tax and gross totals for uniform and mixed-rate documents.</td>
 </tr>
 <tr>
 <td><code>fleet_vehicle_cost_entry</code></td>
-<td>Vehicle/category allocation, validity period, signed amounts, tax, workflow, and reversal links.</td>
+<td>Vehicle/category allocation, validity period, signed amounts, tax, workflow, reversal, recurring-occurrence and reclassification links.</td>
 </tr>
 <tr>
 <td><code>fleet_lease_contract</code></td>
@@ -3079,7 +3175,7 @@
 </tr>
 <tr>
 <td><code>fleet_lease_schedule_item</code></td>
-<td>Reproducible planned payment schedule generated from contract terms.</td>
+<td>Versioned planned payment schedule with stable instalment identity across contract changes.</td>
 </tr>
 <tr>
 <td><code>fleet_lease_document_link</code></td>
@@ -3088,6 +3184,18 @@
 <tr>
 <td><code>fleet_lease_cost_link</code></td>
 <td>Links actual vehicle cost or credit positions, including invoice positions, to a contract.</td>
+</tr>
+<tr>
+<td><code>fleet_recurring_invoice</code></td>
+<td>Immutable recurring-invoice assignment, repeating amounts, active period, posting mode and contract/schedule references.</td>
+</tr>
+<tr>
+<td><code>fleet_recurring_invoice_mode_change</code></td>
+<td>Audited effective-dated AUTO/MANUAL changes that affect only future unposted periods.</td>
+</tr>
+<tr>
+<td><code>fleet_recurring_invoice_occurrence</code></td>
+<td>Idempotent monthly due item, reconciliation state, worker outcome and resulting cost entry.</td>
 </tr>
 <tr>
 <td><code>fleet_financial_document</code></td>
@@ -3099,7 +3207,7 @@
 </tr>
 <tr>
 <td><code>fleet_einvoice_import</code></td>
-<td>Syntax/profile, original/XML hashes, validator result, documents, and supplier match.</td>
+<td>Syntax/profile, original/XML hashes, validator result, documents, supplier match, contract reference and object references.</td>
 </tr>
 <tr>
 <td><code>fleet_einvoice_line</code></td>
@@ -3110,8 +3218,20 @@
 <td>Cent-accurate line split into vehicle cost entries, including confirmed suggestions.</td>
 </tr>
 <tr>
+<td><code>fleet_invoice_document_analysis</code></td>
+<td>Versioned <code>supplier-invoice-v1</code> local/cloud findings, confidence, evidence and explicit cloud consent.</td>
+</tr>
+<tr>
+<td><code>fleet_invoice_match_feedback</code></td>
+<td>Confirmed and corrected matching signals used by local learning.</td>
+</tr>
+<tr>
+<td><code>fleet_ai_connector_provider</code></td>
+<td>Shared Azure/Vertex provider, region, model, credential reference and connection-test state; secrets remain outside the database.</td>
+</tr>
+<tr>
 <td><code>fleet_finance_export</code></td>
-<td>Durable accounting export/outbox state and retries.</td>
+<td>Durable accounting export/outbox state, correction kind and retries.</td>
 </tr>
 <tr>
 <td><code>fleet_finance_settings</code></td>
@@ -3220,7 +3340,7 @@
 </tr>
 <tr>
 <td>Finance/e-invoice/leasing</td>
-<td><code>fleet_supplier</code>, <code>fleet_cost_category</code>, <code>fleet_foreign_invoice</code>, <code>fleet_vehicle_cost_entry</code>, <code>fleet_financial_document</code>, <code>fleet_einvoice_import</code>, <code>fleet_einvoice_line</code>, <code>fleet_einvoice_allocation</code>, <code>fleet_finance_export</code>, <code>fleet_finance_settings</code>, <code>fleet_lease_contract</code>, <code>fleet_lease_component</code>, <code>fleet_lease_schedule_item</code>, <code>fleet_lease_document_link</code>, <code>fleet_lease_cost_link</code></td>
+<td><code>fleet_supplier</code>, <code>fleet_cost_category</code>, <code>fleet_foreign_invoice</code>, <code>fleet_foreign_invoice_tax_summary</code>, <code>fleet_vehicle_cost_entry</code>, <code>fleet_financial_document</code>, <code>fleet_einvoice_import</code>, <code>fleet_einvoice_line</code>, <code>fleet_einvoice_allocation</code>, <code>fleet_invoice_document_analysis</code>, <code>fleet_invoice_match_feedback</code>, <code>fleet_ai_connector_provider</code>, <code>fleet_finance_export</code>, <code>fleet_finance_settings</code>, <code>fleet_lease_contract</code>, <code>fleet_lease_component</code>, <code>fleet_lease_schedule_item</code>, <code>fleet_lease_document_link</code>, <code>fleet_lease_cost_link</code>, <code>fleet_recurring_invoice</code>, <code>fleet_recurring_invoice_mode_change</code>, <code>fleet_recurring_invoice_occurrence</code></td>
 </tr>
 <tr>
 <td>Reporting</td>

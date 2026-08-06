@@ -677,6 +677,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#beleganalyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beleganalyse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prufen-buchen-und-korrigieren" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -873,6 +884,34 @@
     
   
     Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
   
 
     
@@ -1314,6 +1353,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1485,6 +1552,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1563,6 +1658,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#beleganalyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beleganalyse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prufen-buchen-und-korrigieren" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1615,18 +1721,21 @@
 <h1 id="fremdrechnungen">Fremdrechnungen<a class="headerlink" href="#fremdrechnungen" title="Permanent link">&para;</a></h1>
 <p>Eine Fremdrechnung wird per Doppelklick als eigener Arbeitstab geöffnet. Die Statuszeile zeigt Workflow, Gültigkeit, lokalen Beleg- und Exportstatus sowie Gesamt netto/brutto, Splitbetrag und Differenz. Grün bedeutet centgenauen Ausgleich; Rot blockiert die Prüfung.</p>
 <h2 id="rechnungskopf-und-lieferant">Rechnungskopf und Lieferant<a class="headerlink" href="#rechnungskopf-und-lieferant" title="Permanent link">&para;</a></h2>
-<p>Legen Sie unter <strong>Fuhrpark &gt; Fremdrechnungen &gt; Neu</strong> den Lieferanten, Dokumentart, Belegnummer und -datum, Liefer-/Gültigkeitszeitraum, Zahlungsziel, Netto und Steuer an. Bei Gutschrift oder Storno wählen Sie zusätzlich den Bezug zur Ursprungsrechnung. Umgekehrte Zeiträume und widersprüchliche Summen werden abgewiesen.</p>
+<p>Legen Sie unter <strong>Fuhrpark &gt; Fremdrechnungen &gt; Neu</strong> den Lieferanten, Dokumentart, Rechnungsart, Belegnummer und -datum, Liefer-/Gültigkeitszeitraum und Zahlungsziel an. In der manuellen Steuertabelle erfassen Sie je Steuersatz die Bemessungsgrundlage; Netto-, Umsatzsteuer- und Bruttosumme berechnet FLEET Mira schreibgeschützt mit kaufmännischer Cent-Rundung. Ein Satz von 19 % ist vorbelegt, weitere Sätze einschließlich 0 % sind möglich. Bei Gutschrift oder Storno wählen Sie zusätzlich den Bezug zur Ursprungsrechnung.</p>
 <p><img alt="Lieferant einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-supplier.png" /></p>
-<p>Der Tab <strong>Lieferant</strong> zeigt die zum Beleg verwendeten Stamm- und E‑Rechnungskennungen. Die Gruppe <strong>Belegdaten</strong> ergänzt Belegnummer, Belegdatum, Leistungs-/Lieferdatum und Gültig-von/-bis. Änderungen erfolgen im Lieferantenstamm und verändern keine bereits gebuchte Rechnung rückwirkend.</p>
+<p>Der Tab <strong>Lieferant</strong> zeigt die zum Beleg verwendeten Stamm- und E‑Rechnungskennungen. Die Gruppe <strong>Belegdaten</strong> ergänzt Belegnummer, Datumswerte, Steuersatz beziehungsweise Steueraufschlüsselung sowie Netto-, Umsatzsteuer- und Bruttosumme.</p>
 <h2 id="positionen">Positionen<a class="headerlink" href="#positionen" title="Permanent link">&para;</a></h2>
 <p><img alt="Positionen einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-positions.png" /></p>
 <p>Jede Position gehört genau einem Fahrzeug und einer Kostenart. Belegdatum, Gültig von/bis und <strong>Variabel</strong> werden aus dem Rechnungskopf übernommen und sind gesperrt. Kosten erhöhen, Gutschriften vermindern den Splitbetrag. Die Summe aller Positionen muss das Rechnungsbrutto centgenau erreichen.</p>
+<p>Bei Sammelrechnungen verteilt <strong>Position verteilen</strong> einen Ausgangsbetrag auf beliebig viele Fahrzeuge. FLEET Mira verteilt den gegebenenfalls entstehenden Umsatzsteuer-Cent deterministisch. Eine falsche Zuordnung wird im Entwurf direkt geändert. Nach Buchung erzeugt <strong>Zuordnung korrigieren</strong> eine Gegenbuchung auf dem falschen und eine Neubuchung auf dem richtigen Fahrzeug; bei bereits exportierten Daten entsteht ein eigener <code>RECLASSIFICATION</code>-Korrekturexport.</p>
 <h2 id="originalbelege">Originalbelege<a class="headerlink" href="#originalbelege" title="Permanent link">&para;</a></h2>
 <p><img alt="Originalbelege einer Fremdrechnung" src="../../assets/screenshots/foreign-invoice-original-documents.png" /></p>
 <p><strong>Originalbeleg hinzufügen</strong> schreibt die Datei zuerst atomar in das lokale Finanzarchiv, liest sie zurück und verifiziert SHA-256. Erst der Status <strong>Lokal verifiziert</strong> schaltet Prüfung, Buchung, Vorschau und Export frei. <strong>Belege jetzt sichern</strong> repliziert offene Objekte optional auf das konfigurierte Backupziel; ein fehlendes externes Backup blockiert den Workflow nicht. Vorschauen verwenden eine temporäre Kopie.</p>
 <h2 id="erechnung">E‑Rechnung<a class="headerlink" href="#erechnung" title="Permanent link">&para;</a></h2>
 <p><img alt="Importierte E‑Rechnungsdaten" src="../../assets/screenshots/foreign-invoice-einvoice.png" /></p>
 <p>Bei einem strukturierten Import zeigt dieser Tab Syntax, Profil, Validator, Fehler/Warnungen und alle Quellzeilen samt Anzahl ihrer Zuordnungen. Original, strukturiertes XML und KoSIT-Bericht bleiben als getrennte, verifizierte Dokumentrollen erhalten. Der geführte Import ist in <a href="../einvoice-import/">E‑Rechnung und XRechnung importieren</a> beschrieben.</p>
+<h2 id="beleganalyse">Beleganalyse<a class="headerlink" href="#beleganalyse" title="Permanent link">&para;</a></h2>
+<p>Bildhafte PDFs und Scans werden zunächst lokal über eingebetteten Text beziehungsweise Tesseract-OCR analysiert. Regeln und bestätigte historische Zuordnungen liefern ausschließlich Vorschläge für Lieferant, Fahrzeug und Leasingvertrag. Eine Cloudanalyse über den unter <strong>Administration &gt; KI-Connector</strong> konfigurierten Azure- oder Vertex-Provider benötigt für jedes Dokument eine ausdrückliche Zustimmung. Original, Hash, Ergebnis, Modell, Konfidenz und Fundstellen bleiben gemeinsam nachvollziehbar; keine Zuordnung wird automatisch bestätigt.</p>
 <h2 id="prufen-buchen-und-korrigieren">Prüfen, buchen und korrigieren<a class="headerlink" href="#prufen-buchen-und-korrigieren" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Kopf und Positionen im Status <strong>Entwurf</strong> vollständig erfassen.</li>

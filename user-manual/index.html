@@ -1189,6 +1189,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1617,6 +1645,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent administration UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1775,6 +1831,34 @@
     
   
     Enterprise installation guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence administration
   
 
     
@@ -2239,7 +2323,7 @@
 <h2 id="edition-and-processing-model">Edition and processing model<a class="headerlink" href="#edition-and-processing-model" title="Permanent link">&para;</a></h2>
 <p>Basic and Pro use a local SQLite database and process background tasks in the application. Enterprise uses PostgreSQL exclusively. Its client places central work in the database queue; the independent <code>FleetMiraWorker</code> service performs imports, notifications, backup and other scheduled work. The same user workflow therefore produces the same business result, but Enterprise jobs may continue after the client window is closed.</p>
 <h2 id="1-sign-in-and-workspace">1. Sign-in and workspace<a class="headerlink" href="#1-sign-in-and-workspace" title="Permanent link">&para;</a></h2>
-<p>Start FLEET Mira from the installed shortcut. The splash screen is followed by the sign-in dialog. A new installation uses <code>admin</code> / <code>admin</code> once and forces a secure replacement password. If an administrator has configured SSO and pre-assigned your account, select <strong>Sign in with Microsoft</strong> or <strong>Sign in with Google</strong> instead. <strong>Microsoft Entra ID SSO is currently beta and has not yet been validated end-to-end with a real customer tenant.</strong> Keep local sign-in available as a fallback until customer-specific acceptance is complete and contact your administrator if sign-in fails. Setup and troubleshooting are covered by the <a href="../administrator-integration-guide/#single-sign-on-with-microsoft-entra-id-and-google">Administrator and integrator guide</a>.</p>
+<p>Start FLEET Mira from the installed shortcut. The splash screen remains visible throughout startup initialization and the initial workspace load wave. Only after its UI callbacks have completed is the splash seamlessly replaced, within the same render cycle, by the immediately interactive sign-in dialog. A new installation uses <code>admin</code> / <code>admin</code> once and forces a secure replacement password. If an administrator has configured SSO and pre-assigned your account, select <strong>Sign in with Microsoft</strong> or <strong>Sign in with Google</strong> instead. <strong>Microsoft Entra ID SSO is currently beta and has not yet been validated end-to-end with a real customer tenant.</strong> Keep local sign-in available as a fallback until customer-specific acceptance is complete and contact your administrator if sign-in fails. Setup and troubleshooting are covered by the <a href="../administrator-integration-guide/#single-sign-on-with-microsoft-entra-id-and-google">Administrator and integrator guide</a>.</p>
 <p><img alt="FLEET Mira splash screen" src="../assets/screenshots/splash.png" />
 <em>Figure: FLEET Mira splash screen before sign-in.</em></p>
 <p><img alt="FLEET Mira sign-in" src="../assets/screenshots/login.png" />
@@ -2380,7 +2464,8 @@
 <p>Tabs include drivers, activities, day/week timelines, events/faults, speed, technical data, calibrations, positions/borders/loading, signatures and violations. <strong>Technical data</strong> uses a field tree; <strong>Calibrations</strong> lists calibration time, next calibration, workshop, VIN and registration. Position tabs can open the interactive map.</p>
 <p>“No assigned driver card” means the M file contains slot activity for which no active card-insertion interval with a usable card number was found. It does not mean that a matching C archive is merely missing; the tooltip in day/week views explains this distinction.</p>
 <h2 id="8-fleet-management">8. Fleet Management<a class="headerlink" href="#8-fleet-management" title="Permanent link">&para;</a></h2>
-<p>The compact left icon navigation opens non-duplicated work tabs. A <code>+</code> or <code>−</code> to the left of a parent item expands or collapses its children. Right-click provides “Expand all”, “Collapse all” and an individual action for parent items. The state is stored for the signed-in user. Users without a stored preference start with the navigation fully collapsed. A new session starts with an empty fleet workspace.</p>
+<p>The compact left icon navigation opens non-duplicated work tabs and behaves the same in Fleet Management and Administration. A <code>+</code> or <code>−</code> to the left of a parent item expands or collapses its children. The context menu shows fixed pairs for <strong>Expand/Collapse item</strong>, <strong>Expand/Collapse group</strong>, and <strong>Expand/Collapse all</strong>; actions that do not apply are disabled. <strong>Group</strong> recursively affects the complete top-level subtree, including nested areas such as Traffic offences and External invoices. The state is stored for the signed-in user. Users without a stored preference start with the navigation fully collapsed. A new session starts with an empty workspace in both areas.</p>
+<p>In Administration, <strong>Operations</strong>, <strong>Users and security</strong>, <strong>Communication and integrations</strong>, and <strong>Finance and system</strong> are the parent groups. Their pages are child entries and each opens one closable, movable work tab on the right. Selecting an already open child focuses its tab instead of creating a duplicate.</p>
 <p><img alt="Fleet Management icon navigation and work tabs" src="../assets/screenshots/fleet-navigation.png" />
 <em>Figure: Fleet Management icon navigation and non-duplicated work tabs.</em></p>
 <h3 id="master-data">Master data<a class="headerlink" href="#master-data" title="Permanent link">&para;</a></h3>

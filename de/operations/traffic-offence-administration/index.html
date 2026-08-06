@@ -1,0 +1,2063 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Benutzer-, Administratoren- und Integrationsdokumentation für FLEET Mira">
+      
+      
+      
+        <link rel="canonical" href="https://harzmann.github.io/DTCONGDownloadTool-docs/de/operations/traffic-offence-administration/">
+      
+      
+        <link rel="prev" href="../enterprise-installation-guide/">
+      
+      
+      
+        
+          <link rel="alternate" href="../../../operations/traffic-offence-administration/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="de">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Verkehrsverstöße administrieren - FLEET Mira Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/image-lightbox.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#verkehrsverstoe-administrieren" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-header__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FLEET Mira Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Verkehrsverstöße administrieren
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../operations/traffic-offence-administration/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="FLEET Mira Dokumentation" class="md-nav__button md-logo" aria-label="FLEET Mira Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FLEET Mira Dokumentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../product-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produktübersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benutzerhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detaillierte Anleitungen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Detaillierte Anleitungen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/tachodata-overviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachodaten-Auswertungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/drivercard-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrerkarten-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-unit-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Massenspeicher-Auswertung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/deadlines-record-documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fälligkeiten und Akten-Dokumente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/license-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Führerscheinkontrolle und RFID/NFC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/vehicle-costs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fahrzeugkosten und Gutschriften
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/foreign-invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fremdrechnungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/leasing-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leasingverträge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/einvoice-import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Rechnung und XRechnung importieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/cost-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kostenanalyse und Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/violation-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verstoß-Dashboard und Fahrerbelehrungen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/report-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Berichts-Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/position-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrator-integration-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratoren- und Integratorenhandbuch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schnittstellen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/drivercard-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DriverCard REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/accounting-rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrationen
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integrationen
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/accounting-csv-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FiBu CSV/ZIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/drivercard-parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographen-Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/gps-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS-server.net-Telematik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architektur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architektur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/database-schema-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datenbankschema V2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/tachograph-data-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tachographendaten: Speicherung und Zugriff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/async-ui-background-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asynchrone UI und Hintergrunddienste
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Betrieb
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Betrieb
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archivierung, Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to Datensicherung und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Backup und Wiederherstellung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise-installation-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise-Installationsanleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-voraussetzungen-lizenz-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Voraussetzungen, Lizenz und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dokumentarchiv-backup-und-aufbewahrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dokumentarchiv, Backup und Aufbewahrung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lokale-ocr-und-importordner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lokale OCR und Importordner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-generisches-imap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Generisches IMAP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-microsoft-365-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Microsoft 365 OAuth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-google-workspace-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Workspace OAuth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-hetzner-und-andere-anbieter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Hetzner und andere Anbieter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-azure-content-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Azure Content Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-gemini-uber-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Gemini über Vertex AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-zustimmung-und-prufeingang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Zustimmung und Prüfeingang
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-https-fahrerportal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. HTTPS-Fahrerportal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-smtp-und-taglicher-bericht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. SMTP und täglicher Bericht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-end-to-end-abnahme-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. End-to-End-Abnahme Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-end-to-end-abnahme-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. End-to-End-Abnahme Enterprise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fehlerbehebung-rotation-und-offboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fehlerbehebung, Rotation und Offboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduzierbare-produktansichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproduzierbare Produktansichten
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-voraussetzungen-lizenz-und-berechtigungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Voraussetzungen, Lizenz und Berechtigungen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dokumentarchiv-backup-und-aufbewahrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dokumentarchiv, Backup und Aufbewahrung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lokale-ocr-und-importordner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lokale OCR und Importordner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-generisches-imap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Generisches IMAP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-microsoft-365-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Microsoft 365 OAuth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-google-workspace-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Google Workspace OAuth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-hetzner-und-andere-anbieter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Hetzner und andere Anbieter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-azure-content-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Azure Content Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-gemini-uber-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Gemini über Vertex AI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-zustimmung-und-prufeingang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Zustimmung und Prüfeingang
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-https-fahrerportal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. HTTPS-Fahrerportal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-smtp-und-taglicher-bericht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. SMTP und täglicher Bericht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-end-to-end-abnahme-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. End-to-End-Abnahme Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-end-to-end-abnahme-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. End-to-End-Abnahme Enterprise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-fehlerbehebung-rotation-und-offboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fehlerbehebung, Rotation und Offboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproduzierbare-produktansichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproduzierbare Produktansichten
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="verkehrsverstoe-administrieren">Verkehrsverstöße administrieren<a class="headerlink" href="#verkehrsverstoe-administrieren" title="Permanent link">&para;</a></h1>
+<p>Diese Anleitung richtet sich an FLEET-Mira-Administratoren. Das Modul ist in Pro und Enterprise über <code>fleet.traffic_offences</code> verfügbar. OCR- und KI-Ergebnisse sind ausschließlich prüfpflichtige Vorschläge; ohne die ausdrückliche Zustimmung eines berechtigten Benutzers wird kein Dokument an einen Cloudanbieter übertragen.</p>
+<p>Version 1 verwendet ausschließlich generisches IMAP. POP3, JMAP, Microsoft Graph Mail API und Gmail API sind nicht implementiert; spätere Adapter können den protokollneutralen <code>MailboxSourceAdapter</code> ergänzen. Microsoft 365 Copilot ist keine Import- oder Extraktions-Engine. Lokaler Upload, Importordner und OCR funktionieren ohne Mail- oder Cloudanbieter.</p>
+<h2 id="1-voraussetzungen-lizenz-und-berechtigungen">1. Voraussetzungen, Lizenz und Berechtigungen<a class="headerlink" href="#1-voraussetzungen-lizenz-und-berechtigungen" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Aktivieren Sie die Pro- oder Enterprise-Lizenz mit dem Feature <code>fleet.traffic_offences</code>.</li>
+<li>Weisen Sie operativen Benutzern <code>traffic_offences.import</code>, <code>traffic_offences.review_import</code>, <code>traffic_offences.cloud_analyze</code>, <code>traffic_offences.manage</code> und <code>traffic_offences.read</code> nach Bedarf zu.</li>
+<li>Beschränken Sie <code>settings.manage</code> auf Administratoren. Basic zeigt das Modul nicht an.</li>
+<li>Prüfen Sie Datum, Uhrzeit und Region des Benutzerprofils; DatePicker und DateTimePicker verwenden die Benutzerregion unabhängig von der Sprache.</li>
+</ol>
+<h2 id="2-dokumentarchiv-backup-und-aufbewahrung">2. Dokumentarchiv, Backup und Aufbewahrung<a class="headerlink" href="#2-dokumentarchiv-backup-und-aufbewahrung" title="Permanent link">&para;</a></h2>
+<p>Prüfen Sie unter <strong>Administration → Einstellungen</strong> den Dokumentarchivpfad und das Backupziel. Ein importiertes Original wird einmal als <code>TRAFFIC_OFFENCE_IMPORT_ITEM</code> unverändert mit SHA-256 archiviert. Nach der Bestätigung verweist das Vorgangsdokument auf dasselbe Archivobjekt. Sichern Sie Datenbank und Dokumentarchiv gemeinsam und testen Sie die Wiederherstellung. Legen Sie Aufbewahrung, Legal Hold und Löschfreigaben mit Datenschutz und Rechtsberatung fest.</p>
+<h2 id="3-lokale-ocr-und-importordner">3. Lokale OCR und Importordner<a class="headerlink" href="#3-lokale-ocr-und-importordner" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Installieren Sie Tesseract mit den Sprachpaketen <code>deu</code> und <code>eng</code> sowie Poppler (<code>pdftoppm</code>) auf dem Workerhost.</li>
+<li>Öffnen Sie <strong>Administration → Verkehrsverstöße</strong> und tragen Sie den dedizierten Importordner ein.</li>
+<li>Gewähren Sie dem Pro-Benutzer beziehungsweise dem Enterprise-Dienstkonto nur Lesen im Eingangsordner und Schreiben im FLEET-Mira-Datenstamm.</li>
+<li>Legen Sie eine Text-PDF, eine Scan-PDF und ein gedrehtes Bild ab. Alle müssen als Importobjekte im <strong>Prüfeingang</strong> erscheinen.</li>
+</ol>
+<p>Text-PDFs werden direkt gelesen; Scans und Bilder werden lokal verarbeitet. Fehlende Fristen werden nicht errechnet. Ist kein Cloudprovider aktiv, wechselt ein erfolgreich lokal analysiertes Dokument direkt zu <code>REVIEW_REQUIRED</code>.</p>
+<h2 id="4-generisches-imap">4. Generisches IMAP<a class="headerlink" href="#4-generisches-imap" title="Permanent link">&para;</a></h2>
+<p>Alle Anbieter verwenden <code>GenericImapMailboxSource</code>. FLEET Mira öffnet den konfigurierten Ordner read-only, verwendet <code>BODY.PEEK[]</code> und führt keine <code>STORE</code>-, <code>MOVE</code>-, <code>COPY</code>- oder <code>DELETE</code>-Operation aus.</p>
+<ol>
+<li>Richten Sie ein ausschließlich für Behördenpost und Fahrerrückläufe vorgesehenes Postfach ein.</li>
+<li>Öffnen Sie <strong>Administration → Verkehrsverstöße → Generisches IMAP</strong>.</li>
+<li>Wählen Sie ein Profil oder <strong>Other</strong>, und prüfen Sie Host, Port, <code>SSL</code> oder <code>STARTTLS</code>, Ordner und vollständigen Benutzernamen.</li>
+<li>Vergeben Sie eine eindeutige Credential-Referenz. Geheimnisse werden nicht in SQLite/PostgreSQL gespeichert, sondern im DPAPI-Store des Pro-Benutzers beziehungsweise des FleetMiraWorker-Dienstkontos.</li>
+<li>Speichern Sie und führen Sie <strong>Verbindung testen</strong> aus. Der Test prüft TLS, Authentifizierung, Fähigkeiten, read-only Ordnerzugriff und UIDVALIDITY.</li>
+</ol>
+<p>Unverschlüsselte Verbindungen werden abgewiesen. Dubletten werden über Mailbox-ID, UIDVALIDITY, UID, Message-ID sowie Hashes von Rohmail und Anhängen verhindert.</p>
+<h2 id="5-microsoft-365-oauth">5. Microsoft 365 OAuth<a class="headerlink" href="#5-microsoft-365-oauth" title="Permanent link">&para;</a></h2>
+<p>Vorbelegung: <code>outlook.office365.com</code>, Port <code>993</code>, SSL/TLS, XOAUTH2.</p>
+<ol>
+<li>Registrieren Sie eine Entra-Anwendung. Pro verwendet delegiert <code>IMAP.AccessAsUser.All</code> und <code>offline_access</code>; Enterprise verwendet <code>IMAP.AccessAsApp</code> mit Administratorzustimmung.</li>
+<li>Für Enterprise registrieren Sie den Service Principal zusätzlich in Exchange Online und begrenzen den Postfachzugriff über eine Application Access Policy.</li>
+<li>Hinterlegen Sie Benutzername und eine Credential-Referenz. Provisionieren Sie für Pro Client-ID, Refresh-Token und gegebenenfalls Client-Secret; für Enterprise Tenant-ID, Client-ID und Client-Secret im maschinengebundenen Worker-Store.</li>
+<li>Speichern und testen Sie. Benutzername/Kennwort und App-Passwörter werden für Microsoft 365 nicht angeboten.</li>
+</ol>
+<p>Herstellerreferenz: <a href="https://learn.microsoft.com/en-us/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth">Microsoft: IMAP/POP/SMTP mit OAuth authentifizieren</a>.</p>
+<h2 id="6-google-workspace-oauth">6. Google Workspace OAuth<a class="headerlink" href="#6-google-workspace-oauth" title="Permanent link">&para;</a></h2>
+<p>Vorbelegung: <code>imap.gmail.com</code>, Port <code>993</code>, SSL/TLS, XOAUTH2.</p>
+<ol>
+<li>Aktivieren Sie IMAP gemäß der Workspace-Richtlinie und erstellen Sie einen OAuth-Client für Pro oder ein Dienstkonto für Enterprise.</li>
+<li>Pro provisioniert Client-ID und Refresh-Token. Enterprise aktiviert Domain-wide Delegation, erlaubt ausschließlich <code>https://mail.google.com/</code> und provisioniert Dienstkonto-JSON plus delegierten Postfachbenutzer beim FleetMiraWorker.</li>
+<li>Hinterlegen Sie vollständige Mailadresse, Credential-Referenz und Geheimnis; speichern und testen Sie.</li>
+</ol>
+<p>Herstellerreferenz: <a href="https://developers.google.com/workspace/gmail/imap/xoauth2-protocol">Google: XOAUTH2 für IMAP</a>.</p>
+<h2 id="7-hetzner-und-andere-anbieter">7. Hetzner und andere Anbieter<a class="headerlink" href="#7-hetzner-und-andere-anbieter" title="Permanent link">&para;</a></h2>
+<p>Für Hetzner verwenden Sie <code>mail.your-server.de</code>, Port <code>993</code>, SSL/TLS, die vollständige E-Mail-Adresse und das Postfachkennwort. Bei anderen Anbietern konfigurieren Sie Host, Port, Verschlüsselung, Ordner und PASSWORD oder XOAUTH2 frei. STARTTLS ist zulässig, Klartext-IMAP nicht. Siehe <a href="https://docs.hetzner.com/managed/email/set-up-email-account/setting-up-an-email-account/">Hetzner E-Mail-Konfiguration</a> und <a href="https://www.rfc-editor.org/info/rfc9051/">RFC 9051 (IMAP4rev2)</a>.</p>
+<h2 id="8-azure-content-understanding">8. Azure Content Understanding<a class="headerlink" href="#8-azure-content-understanding" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Erstellen Sie eine Azure-AI-Ressource in der datenschutzrechtlich freigegebenen Region und notieren Sie Endpoint und API-Schlüssel beziehungsweise Entra-Credential.</li>
+<li>Öffnen Sie <strong>Administration → KI-Connector</strong>, wählen Sie <code>AZURE_CONTENT_UNDERSTANDING</code>, tragen Sie Endpoint, Region, Modell und die Analysator-ID <code>fleet-mira-traffic-offence-v1</code> ein.</li>
+<li>Provisionieren Sie das Geheimnis. In Enterprise bleibt nur die Credential-Referenz in PostgreSQL.</li>
+<li>Mit <strong>Verbindung testen</strong> wird der versionsgebundene Analysator angelegt/aktualisiert und abgerufen.</li>
+</ol>
+<p>Referenzen: <a href="https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/concepts/analyzer-reference">Analyzer reference</a>, <a href="https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/quickstart/use-rest-api">REST quickstart</a>.</p>
+<h2 id="9-gemini-uber-vertex-ai">9. Gemini über Vertex AI<a class="headerlink" href="#9-gemini-uber-vertex-ai" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Öffnen Sie <strong>Administration → KI-Connector</strong>, wählen Sie <strong>Google Gemini über Vertex AI</strong> und starten Sie <strong>Google-Vertex-Assistent…</strong>.</li>
+<li>Der Assistent erläutert, wo die Projekt-ID in der Google-Cloud-Projektauswahl unter <strong>Projektinformationen</strong> steht. Wählen Sie ein kundeneigenes Projekt mit aktiver Abrechnung und aktivieren Sie die Vertex AI API; direkte Links zur Google Cloud Console und API-Seite sind enthalten.</li>
+<li>Erstellen Sie unter <strong>IAM &amp; Verwaltung → Dienstkonten</strong> ein Dienstkonto mit <code>roles/aiplatform.user</code> oder einer engeren benutzerdefinierten Rolle. Erzeugen Sie unter <strong>Schlüssel</strong> einen JSON-Schlüssel.</li>
+<li>In Pro wählen Sie die unveränderte JSON-Datei aus oder legen sie per Drag-and-drop ab. FLEET Mira validiert und schützt den Inhalt, zeigt den privaten Schlüssel nicht an und speichert keinen Quelldateipfad. Enterprise provisioniert das JSON ausschließlich beim FleetMiraWorker.</li>
+<li>Die Credential-Referenz ist kein Google-Wert, sondern ein frei vergebener stabiler FLEET-Mira-Verweis ohne Kennwort oder Schlüssel; vorgeschlagen wird <code>vertex-traffic-offences-prod</code>.</li>
+<li>Der Assistent schlägt <code>europe-west4</code> und <code>gemini-2.5-flash</code> vor. Beide Werte bleiben wegen regionaler Verfügbarkeit und Modelllebenszyklen editierbar.</li>
+<li>Prüfen Sie die Zusammenfassung und lassen Sie die Verbindung nach dem Speichern testen. Structured Output verwendet das FLEET-Mira-JSON-Schema; Grounding, Google-Suche, Sitzungsfortsetzung und optionale Speicherung bleiben deaktiviert.</li>
+</ol>
+<p>Referenz: <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstart">Vertex AI Generative AI quickstart</a>.</p>
+<h2 id="10-zustimmung-und-prufeingang">10. Zustimmung und Prüfeingang<a class="headerlink" href="#10-zustimmung-und-prufeingang" title="Permanent link">&para;</a></h2>
+<p>Bei IMAP-Eingängen zeigt der Prüfeingang die aus dem <code>From</code>-Header ermittelte Absender-E-Mail-Adresse. Vorhandene Eingänge werden bei der Schemaaktualisierung aus der unverändert archivierten Rohmail ergänzt.</p>
+<p>Nach lokaler Analyse übernimmt die Prüfmaske erkannte Werte unmittelbar in die fachlichen Formularfelder. Eine technische JSON-Rohansicht für lokale oder Cloudvorschläge wird dem Anwender nicht angezeigt; Analyseergebnisse und Fundstellennachweise bleiben intern in der Analysehistorie erhalten. Prüfstatus, Workflowstatus, Fahrerstatus und Dokumentart werden in der Sprache des angemeldeten Benutzers als verständliche Fachbezeichnungen angezeigt; die stabilen technischen Codes bleiben ausschließlich intern erhalten. Ein markierter Prüfvorgang lässt sich über <strong>Bearbeiten</strong> oder per Doppelklick erneut öffnen. Vor jedem Cloudauftrag bestätigt der Benutzer die vollständige Dokumentübertragung sowie die genannten Verarbeitungsbedingungen. Dateiname, SHA-256 und Providerregion werden im Zustimmungsdialog nicht wiederholt, bleiben aber in Konfiguration, Dokumentarchiv und Analysehistorie nachvollziehbar. Die Cloudanalyse läuft anschließend asynchron mit Fortschrittsanzeige; bei Erfolg werden der offene Prüfdialog und der Prüfeingang aktualisiert und eine Abschlussmeldung angezeigt. Provider- oder Workerfehler erzeugen einen sichtbaren Fehlerhinweis und bleiben als technischer Hinweis am Importobjekt erhalten. Ein Fehler löst keinen Wechsel zum anderen Provider aus. Sämtliche Formularfelder sind vor dem Speichern verpflichtend auszufüllen; Ausnahmen für nicht vorhandene oder unlesbare Angaben sind nicht vorgesehen. Eine zunächst leere Antwortfrist wird beim ersten Anklicken des Datepickers mit dem Tagesdatum vorbelegt. Ähnliche Aktenzeichen dürfen weiterhin nur manuell verbunden werden.</p>
+<h2 id="11-https-fahrerportal">11. HTTPS-Fahrerportal<a class="headerlink" href="#11-https-fahrerportal" title="Permanent link">&para;</a></h2>
+<p>Öffnen Sie <strong>Administration → Verkehrsverstöße → Fahrerportal</strong> und tragen Sie die öffentliche HTTPS-Basis-URL, den Pfad zum TLS-Zertifikat und eine frei vergebene, stabile Credential-Referenz ein. Die Referenz enthält kein Geheimnis; sie verweist lediglich auf den geschützten Datensatz aus privatem Schlüssel, Sitzungsschlüssel und optionalem Schlüsselpasswort. Pro kann diese Werte in der Oberfläche benutzergebunden per DPAPI schützen. Bei Enterprise werden sie ausschließlich am FleetMiraWorker unter derselben Referenz maschinengebunden provisioniert und nicht in PostgreSQL gespeichert.</p>
+<p>Veröffentlichen Sie das Portal ausschließlich per HTTPS im freigegebenen LAN/VPN. Prüfen Sie Einmaltoken, Ablauf, Uploadgrenzen und den Zugriff aus dem vorgesehenen Netz. Token werden nur gehasht gespeichert. Nach einer Änderung von Zertifikat oder Schlüssel starten Sie den Worker neu.</p>
+<h2 id="12-smtp-und-taglicher-bericht">12. SMTP und täglicher Bericht<a class="headerlink" href="#12-smtp-und-taglicher-bericht" title="Permanent link">&para;</a></h2>
+<p>Konfigurieren und testen Sie SMTP sowie TO-/CC-Empfänger der Gruppe <code>FLEET_MANAGER</code>. Fahreranfragen werden als Workerjob <code>traffic_offence_driver_notification</code> versendet. Prüfen Sie mit einem Testvorgang, dass der Status erst nach erfolgreichem SMTP-Versand auf „Fahrerantwort ausstehend“ wechselt, Rohmail und PDF in der Verstoßakte erscheinen und ein Fehler als <code>FAILED</code> erhalten bleibt. Bei Enterprise darf der Client den Versand ausschließlich einreihen; der FleetMiraWorker führt ihn aus.</p>
+<p>Vorschau, manueller Versand und automatischer Lauf des täglichen Berichts müssen dieselben vier Abschnitte liefern. Fehlgeschlagene Fahreranfragen gehören zu den technischen Zustellfehlern. Anschriften, Freitext, Tatdetails, Dokumentinhalte und Anlagen dürfen in der Berichtsmail nicht erscheinen.</p>
+<h2 id="13-end-to-end-abnahme-pro">13. End-to-End-Abnahme Pro<a class="headerlink" href="#13-end-to-end-abnahme-pro" title="Permanent link">&para;</a></h2>
+<p>Importieren Sie je ein Dokument per Upload, Ordner und IMAP; prüfen Sie Hash-Deduplizierung, lokale OCR, eine ausdrücklich bestätigte Cloudanalyse, Fundstellen, regionale Datumsfelder, Vorgang/Fälligkeit, Fahrerberechnung, Bericht und 2×2-Widget. Kontrollieren Sie SQLite, In-Process-Worker und benutzergebundenen DPAPI-Store.</p>
+<h2 id="14-end-to-end-abnahme-enterprise">14. End-to-End-Abnahme Enterprise<a class="headerlink" href="#14-end-to-end-abnahme-enterprise" title="Permanent link">&para;</a></h2>
+<p>Verwenden Sie eine disposable PostgreSQL-Datenbank. Der Enterprise Client darf nur Jobs einreihen; IMAP, OCR, Provideraufrufe und Fahrerberechnung müssen im FleetMiraWorker laufen. Prüfen Sie Credential-Referenzen, maschinengebundenen Secret Store, Lease/Idempotenz, Neustartwiederholung und die installierten UI-Szenarien.</p>
+<h2 id="15-fehlerbehebung-rotation-und-offboarding">15. Fehlerbehebung, Rotation und Offboarding<a class="headerlink" href="#15-fehlerbehebung-rotation-und-offboarding" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>FAILED</code> bei lokaler OCR: Tesseract/Poppler, Dateirechte und Dateiformat prüfen.</li>
+<li>IMAP-Anmeldung: TLS-Zertifikatskette, OAuth-Scopes, Consent, Postfachpolicy, UIDVALIDITY und Uhrzeit prüfen.</li>
+<li>Azure/Vertex: Region, Endpoint/Projekt, Rolle, Modell/Analysator und ausgehendes HTTPS prüfen; keine Dokumentinhalte in Tickets oder Logs kopieren.</li>
+<li>Bei Rotation neues Geheimnis unter derselben Referenz provisionieren, Verbindung testen und erst danach das alte Credential sperren.</li>
+<li>Beim Offboarding Polling und Provider deaktivieren, Tokens/Schlüssel beim Anbieter widerrufen, lokale/maschinengebundene Secrets entfernen und den Auditnachweis aufbewahren.</li>
+</ul>
+<p>Die reproduzierbaren FLEET-Mira-Screenshots werden aus den stabilen Widget-IDs <code>trafficOffenceSettingsPanel</code>, <code>trafficOffenceSettingsTabs</code>, <code>trafficOffenceImportInbox</code>, <code>trafficOffenceImportReviewDialog</code> und <code>trafficOffenceReviewOccurredAt</code> erzeugt. Cloudportale werden bewusst nicht abgebildet.</p>
+<h2 id="reproduzierbare-produktansichten">Reproduzierbare Produktansichten<a class="headerlink" href="#reproduzierbare-produktansichten" title="Permanent link">&para;</a></h2>
+<p><img alt="IMAP- und OAuth-Konfiguration" src="../../assets/screenshots/traffic-imap-oauth.png" />
+<img alt="Importordner- und OCR-Test im Prüfeingang" src="../../assets/screenshots/traffic-import-ocr.png" />
+<img alt="Providerverwaltung" src="../../assets/screenshots/traffic-provider-management.png" />
+<img alt="Dokumentzentrierter Prüfeingang" src="../../assets/screenshots/traffic-review-inbox.png" />
+<img alt="Cloud-Zustimmungsdialog" src="../../assets/screenshots/traffic-cloud-consent.png" />
+<img alt="Extraktionsprüfung mit Fundstellen" src="../../assets/screenshots/traffic-extraction-review.png" />
+<img alt="Enterprise-Credential- und Workerübergabe" src="../../assets/screenshots/traffic-enterprise-worker-credentials.png" />
+<img alt="Erfolgreicher End-to-End-Test" src="../../assets/screenshots/traffic-e2e.png" /></p>
+<p>Erzeugen Sie alle Ansichten erneut mit <code>python scripts/capture_traffic_offence_documentation.py</code>. Die Datenbank, Dokumente, Behörden, Kennzeichen und Zugangsdaten dieses Laufs sind vollständig isolierte Dokumentationsmuster.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 eh-systemhaus e.K. / Jörg Harzmann
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../javascripts/image-lightbox.js"></script>
+      
+    
+  </body>
+</html>

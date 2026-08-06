@@ -672,6 +672,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#anlage-aus-dokumenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anlage aus Dokumenten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leasingfaktor-und-tatsachliche-rate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -687,6 +698,17 @@
     <span class="md-ellipsis">
       
         Dokumente, Rechnungen und Fahrleistung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dauerrechnungen-und-monatsbuchungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dauerrechnungen und Monatsbuchungen
       
     </span>
   </a>
@@ -840,6 +862,34 @@
     
   
     Positionskarten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
   
 
     
@@ -1281,6 +1331,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1452,6 +1530,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1497,6 +1603,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#anlage-aus-dokumenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anlage aus Dokumenten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leasingfaktor-und-tatsachliche-rate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1512,6 +1629,17 @@
     <span class="md-ellipsis">
       
         Dokumente, Rechnungen und Fahrleistung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dauerrechnungen-und-monatsbuchungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dauerrechnungen und Monatsbuchungen
       
     </span>
   </a>
@@ -1550,9 +1678,15 @@
 <p>Die Leasingverwaltung verbindet Vertragskonditionen, Vorkalkulation, Zahlungsplan, Fahrzeugdokumente sowie tatsächliche Kosten aus Fremdrechnungen. Sie steht in allen Editionen zur Verfügung; die Berichte im Berichts-Dashboard gehören wie das Dashboard selbst zu Pro und Enterprise.</p>
 <h2 id="vertrag-anlegen-und-offnen">Vertrag anlegen und öffnen<a class="headerlink" href="#vertrag-anlegen-und-offnen" title="Permanent link">&para;</a></h2>
 <p>Öffnen Sie <strong>Fuhrpark → Leasingverträge</strong>. Die Liste kann nach Vertragsnummer, Fahrzeug, Lieferant und Status gefiltert werden. Beim Verweilen über einer Vertragszeile fasst ein Tooltip Vertragsnummer, Fahrzeug, Lieferant, Zeitraum, Laufzeit, Nettorate, Ist-Faktor, Jahres- und Vertragsfahrleistung sowie Status zusammen. <strong>Neu</strong> legt einen Entwurf an; ein Doppelklick öffnet den eigenen Arbeitstab <strong>Leasing: Vertragsnummer</strong>. In einer Fahrzeugakte steht <strong>Leasing</strong> direkt nach <strong>Fremdrechnungen</strong> und verwendet denselben Vertragstooltip. Die bisherigen fahrzeugbezogenen Tachografseiten liegen gesammelt unter <strong>Tachodaten</strong>.</p>
-<p>Ein Vertrag gehört genau zu einem Fahrzeug und einem Lieferanten. Er enthält Vertragsnummer, Art, Beginn, Ende, Laufzeit, Zahlungsweise, Listen- und Anschaffungswert, Sonder- und Schlusszahlung, Restwert, Kilometerkonditionen, Kündigungsdaten und Bemerkungen. Zusatzkomponenten unterscheiden monatliche Leistungen von einmaligen Kosten und kennzeichnen, ob sie in den effektiven Faktor eingehen. Aktivieren erzeugt den verbindlichen Vertragsstatus; beendete und vorzeitig beendete Verträge sind unveränderlich.</p>
+<p>Ein Vertrag gehört genau zu einem Fahrzeug und einem Lieferanten. Er enthält Vertragsnummer, Art, Beginn, Ende, Laufzeit, Zahlungsweise, Listen- und Anschaffungswert, Sonder- und Schlusszahlung, Restwert, Kilometerkonditionen, Kündigungsdaten und Bemerkungen. Fahrzeug, Lieferant, Vertragsnummer, Beginn, Ende, Laufzeit, Listenpreis netto und tatsächliche Leasingrate netto sind mit <code>*</code> gekennzeichnete Pflichtfelder; Listenpreis und Rate müssen auch in einem Entwurf größer als null sein. Zusatzkomponenten unterscheiden monatliche Leistungen von einmaligen Kosten und kennzeichnen, ob sie in den effektiven Faktor eingehen. Aktivieren erzeugt den verbindlichen Vertragsstatus; beendete und vorzeitig beendete Verträge sind unveränderlich.</p>
 <p>Bei einem neuen Vertrag bleiben Fahrzeug und Lieferant zunächst leer und müssen bewusst ausgewählt werden. Vertrags- und Übergabedatum werden mit dem Tagesdatum vorbelegt. Der Vertragsbeginn folgt dem Vertragsdatum; aus Vertragsbeginn und Laufzeit werden Vertragsende sowie geplante Rückgabe berechnet. Die erste Fälligkeit entspricht dem Vertragsbeginn. Das tatsächliche Rückgabedatum bleibt bis zur realen Rückgabe leer. Änderungen an Vertragsdatum, Beginn oder Laufzeit aktualisieren die davon abhängigen Termine unmittelbar.</p>
 <p>Die Fahrzeugauswahl filtert während der Eingabe nach KFZ-Nr., Kennzeichen und FIN. Die Lieferantenauswahl durchsucht Lieferanten-Nr., Name und Kreditorennummer. Groß-/Kleinschreibung sowie Leer- und Trennzeichen müssen bei der Suche nicht exakt eingegeben werden; gespeichert wird erst ein ausdrücklich ausgewählter Treffer.</p>
+<h2 id="anlage-aus-dokumenten">Anlage aus Dokumenten<a class="headerlink" href="#anlage-aus-dokumenten" title="Permanent link">&para;</a></h2>
+<p>Pro und Enterprise bieten neben <strong>Neu</strong> den Einstieg <strong>Aus Dokument</strong>. Die dokumentgestützte Anlage ist eine modale, vorübergehende Sitzung und kann einen Vertrag, eine Dauerrechnung, eine eigenständige XRechnung, ein hybrides PDF sowie ergänzende Bildbelege gemeinsam aufnehmen. Die Originale werden während der Sitzung unveränderlich mit SHA-256 archiviert und nicht an die Backup-Synchronisierung übergeben. Es gibt keine fortsetzbaren Erfassungsentwürfe in der Leasingübersicht.</p>
+<p>Während OCR oder Workeranalyse läuft, bleiben Dokumentliste, Status, Vorschau und <strong>Abbrechen</strong> verfügbar; die Vertragsfelder und <strong>Speichern</strong> sind gesperrt. PDF- und Bilddokumente lassen sich per Doppelklick oder <strong>Öffnen</strong> nach einer erneuten Hashprüfung in der integrierten Vorschau anzeigen. Eine eigene Spalte kennzeichnet XRechnungen und zeigt ihren Validierungsstatus; <strong>Prüfen</strong> startet die KoSIT-Validierung für die ausgewählte XML-Datei oder das eingebettete XML eines Hybrid-PDF erneut. Bei Analysefehlern wird das Formular für die manuelle Erfassung freigegeben. Ein Abbruch des Formulars oder der Abschlussbestätigung warnt vor dem vollständigen Verwerfen. Nach Bestätigung werden Sitzung, Analysen, Reservierungen und lokale Dokumente entfernt; lediglich Benutzer, Zeitpunkt und das Ereignis des Verwerfens bleiben im Audit erhalten. Verwaiste Sitzungen ohne Heartbeat werden nach 30 Minuten automatisch genauso bereinigt.</p>
+<p>Die Analyse verwendet in dieser Reihenfolge valide strukturierte XRechnungs-/ZUGFeRD-Daten, eingebetteten PDF-Text, lokale Regeln und OCR. Abweichende normalisierte Werte werden als Konflikt markiert. Fehlen Pflichtfelder, widersprechen sich Quellen oder liegt die Konfidenz unter 85 Prozent, kann der Benutzer je Dokument ausdrücklich eine Analyse über den <strong>KI-Connector</strong> freigeben. Azure- und Vertex-Ergebnisse ergänzen nur Vorschläge und überschreiben höher priorisierte Quellen nicht stillschweigend. Wert, Konfidenz, Dokument und Fundstelle bleiben in der Erfassung sichtbar.</p>
+<p>Die Vorschläge werden in dasselbe Leasingformular wie bei der manuellen Anlage übernommen. Sichere, unsichere und konfliktbehaftete Werte sind farblich unterschieden; sämtliche Felder bleiben bearbeitbar. Das Prüf-Fenster zeigt Konflikte, fehlende Pflichtwerte und alle Fundstellen getrennt. Offene Zeilen sind vollständig rot, ausgewählte oder ergänzte Zeilen grün; die Feldspalte passt ihre Breite an den Inhalt an. Datum, Ganzzahl, Währung, Prozentsatz und Steueraufschlüsselung werden gemäß der Region des angemeldeten Benutzers angezeigt und mit typgerechten Eingaben bearbeitet, intern aber weiterhin als ISO-Datum, Cent oder Basispunkte gespeichert. Gewählte Konfliktwerte und ergänzte Pflichtwerte werden nur in der laufenden Sitzung zwischengespeichert, in das Formular übernommen und bei einem Abbruch vollständig verworfen. Lieferanten werden vorrangig über USt-IdNr., Endpoint- oder Unternehmenskennung, Fahrzeuge über FIN und danach Kennzeichen abgeglichen. Ein eindeutiger Treffer wird vorausgewählt, aber erst durch den Benutzer bestätigt. <strong>Neu: Fahrzeug</strong> und <strong>Neu: Lieferant</strong> stehen direkt an der jeweiligen Auswahlliste und öffnen die vorhandenen, vorbelegten Stammdatendialoge. Konfigurierte Nummernkreise reservieren lückenbewusst eine editierbare Nummer; ohne aktiven Nummernkreis ist die Nummer manuell zu ergänzen.</p>
+<p>Vor dem Abschluss zeigt FLEET Mira Vertrag, Fahrzeug, Lieferant, Zeitraum, Dauerrechnung, Aktivierung und Buchungsmodus erneut an. Alle Formularwerte sowie neue Stammdaten, Vertragsaktivierung und der Standardmodus <strong>Automatisch buchen</strong> müssen ausdrücklich bestätigt werden. Vertrag, Stammdaten, verifizierte Dauerrechnung, Dokumentverknüpfungen und Monatsvorgänge entstehen anschließend in einer gemeinsamen Transaktion. Ein Fehler hinterlässt keine Teilanlage; derselbe Abschluss kann idempotent wiederholt werden. Ein reiner Vertrag bleibt standardmäßig <strong>Entwurf</strong>. Bei einer Dauerrechnung sind Aktivierung und <code>AUTO</code> vorbelegt; wird die Aktivierung abgewählt, bleibt die verifizierte Rechnung bis zur später bestätigten Aktivierung zugeordnet.</p>
 <p><img alt="Leasingvertragsübersicht" src="../../assets/screenshots/lease-contracts.png" />
 <em>Abbildung: Verträge der anonymisierten Demodatenbank mit Fahrzeug, Lieferant, Laufzeit, Rate und Status.</em></p>
 <p><img alt="Leasingvertragsakte" src="../../assets/screenshots/lease-contract-overview.png" />
@@ -1569,6 +1703,11 @@
 <em>Abbildung: Vorkalkulation, tatsächliche Vertragsrate, Faktoren und Vollkosten des anonymisierten Mustervertrags.</em></p>
 <h2 id="dokumente-rechnungen-und-fahrleistung">Dokumente, Rechnungen und Fahrleistung<a class="headerlink" href="#dokumente-rechnungen-und-fahrleistung" title="Permanent link">&para;</a></h2>
 <p><strong>Dokumente</strong> verknüpft Vertrags-PDFs aus dem Dokumentenarchiv des Fahrzeugs. <strong>Fremdrechnungen</strong> und <strong>Kosten/Gutschriften</strong> zeigen die auf Positionsebene verknüpften tatsächlichen Buchungen; geplante Zahlungen bleiben davon getrennt im Zahlungsplan.</p>
+<h2 id="dauerrechnungen-und-monatsbuchungen">Dauerrechnungen und Monatsbuchungen<a class="headerlink" href="#dauerrechnungen-und-monatsbuchungen" title="Permanent link">&para;</a></h2>
+<p>Eine geprüfte Fremdrechnung der Art <strong>Dauerrechnung</strong> kann im Vertragsregister <strong>Dauerrechnungen</strong> zugeordnet werden. Bei der erstmaligen Zuordnung bestätigt der Benutzer Rechnung, Vertrag und Buchungsmodus. <strong>Automatisch buchen</strong> ist vorausgewählt; alternativ stellt <strong>Manuell prüfen</strong> jede fällige Periode zur Freigabe bereit.</p>
+<p>Die Dauerrechnung beschreibt die wiederkehrende Monatsleistung. FLEET Mira erzeugt daraus stabil identifizierte Soll-Vorgänge mit Leistungsmonat, Fälligkeit, Netto, Umsatzsteuer und Brutto. Im automatischen Modus bucht der Worker eine konfliktfreie fällige Periode genau einmal. Überfällige Perioden werden nach einem Neustart idempotent nachgeholt. Ein inaktiver Vertrag, geänderte Vertragsdaten, fehlende Angaben, Summenfehler, Dubletten oder ungeklärte Abweichungen führen zu <strong>Prüfung erforderlich</strong>, ohne Teilbuchung.</p>
+<p>Der Buchungsmodus lässt sich mit Wirksamkeitsdatum für noch nicht gebuchte Perioden ändern. Bereits gebuchte Monate bleiben unverändert. Die Buchung referenziert die archivierte Dauerrechnung und den Leistungsmonat; das System erfindet keine monatlichen Rechnungsnummern und erfasst keine Bankzahlung.</p>
+<p>Der Zahlungsplan wird bei Vertragsänderungen versioniert. Unveränderte Raten behalten ihre stabile technische Identität. Im Soll-/Ist-Abgleich gilt 0 Cent als exakt und bis 1 Cent je Netto-, Steuer- und Bruttobetrag als dokumentierte Rundung. Größere Abweichungen verlangen einen Grund oder eine Korrektur.</p>
 <p>Die Gesamtkilometer werden als editierbarer Vorschlag aus <code>Kilometer pro Jahr × Laufzeit in Monaten / 12</code> berechnet und kaufmännisch auf volle Kilometer gerundet. Ein vorhandener Vertragswert bleibt beim Öffnen erhalten. Ändert der Anwender Jahresfahrleistung oder Laufzeit, wird der Vorschlag neu berechnet; anschließend kann er weiterhin abweichend überschrieben werden.</p>
 <p>Die Demodatenbank enthält sechs eindeutig als fiktiv gekennzeichnete Verträge. Ihre monatlichen Kosten sind mit den vorhandenen Leasing-Fremdrechnungen verknüpft. Die Vertragsfahrleistung wird aus dem ersten und letzten gültigen <code>M_MIDNIGHT</code>-Kilometerstand im Nachweiszeitraum auf ein Jahr hochgerechnet und auf plausible 5.000-km-Schritte gerundet. Nachweiszeitraum und Kilometerstände bleiben im Vertrag und im PDF sichtbar.</p>
 <h2 id="berichte">Berichte<a class="headerlink" href="#berichte" title="Permanent link">&para;</a></h2>

@@ -672,6 +672,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-a-contract-from-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a contract from documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leasing-factor-and-actual-rate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -687,6 +698,17 @@
     <span class="md-ellipsis">
       
         Documents, invoices and mileage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recurring-invoices-and-monthly-posting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recurring invoices and monthly posting
       
     </span>
   </a>
@@ -840,6 +862,34 @@
     
   
     Position maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence management
   
 
     
@@ -1281,6 +1331,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consistent administration UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1452,6 +1530,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traffic-offence administration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1497,6 +1603,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-a-contract-from-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a contract from documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leasing-factor-and-actual-rate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1512,6 +1629,17 @@
     <span class="md-ellipsis">
       
         Documents, invoices and mileage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recurring-invoices-and-monthly-posting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recurring invoices and monthly posting
       
     </span>
   </a>
@@ -1550,9 +1678,15 @@
 <p>Lease management combines contract terms, pre-calculation, payment schedule, vehicle documents and actual costs from supplier invoices. Contract management is available in every edition; reports in the Report dashboard follow its existing Pro and Enterprise licence boundary.</p>
 <h2 id="creating-and-opening-a-contract">Creating and opening a contract<a class="headerlink" href="#creating-and-opening-a-contract" title="Permanent link">&para;</a></h2>
 <p>Open <strong>Fleet → Lease contracts</strong>. Filter the list by contract number, vehicle, supplier and status. Hovering over a contract row shows a tooltip summarising contract number, vehicle, supplier, period, term, net rate, actual factor, annual and contract mileage, and status. <strong>New</strong> creates a draft; double-click opens the dedicated <strong>Lease: contract number</strong> work tab. A vehicle record contains <strong>Lease</strong> immediately after <strong>Foreign invoices</strong> and uses the same contract tooltip. All vehicle tachograph pages are collected below <strong>Tachodata</strong>.</p>
-<p>One contract belongs to exactly one vehicle and one supplier. It records contract number and type, dates and term, payment timing, list and acquisition values, special and final payments, residual value, mileage terms, termination details and notes. Components distinguish recurring services from one-time charges and identify mandatory amounts included in the effective factor. Activation establishes the binding status; ended and terminated contracts are immutable.</p>
+<p>One contract belongs to exactly one vehicle and one supplier. It records contract number and type, dates and term, payment timing, list and acquisition values, special and final payments, residual value, mileage terms, termination details and notes. Vehicle, supplier, contract number, start, end, term, net list price and actual net lease rate are mandatory fields marked with <code>*</code>; list price and rate must be greater than zero even for a draft. Components distinguish recurring services from one-time charges and identify mandatory amounts included in the effective factor. Activation establishes the binding status; ended and terminated contracts are immutable.</p>
 <p>For a new contract, vehicle and supplier initially remain empty and must be selected deliberately. Contract date and handover date default to the current date. Contract start follows the contract date; contract end and planned return are calculated from contract start and term. The first due date equals contract start. The actual return date remains empty until the vehicle is returned. Changing contract date, start or term immediately updates the dependent dates.</p>
 <p>The vehicle selector filters as the user types by vehicle number, registration and VIN. The supplier selector searches supplier number, name and creditor number. Search input does not need to reproduce case, spaces or separators exactly; only an explicitly selected result is stored.</p>
+<h2 id="creating-a-contract-from-documents">Creating a contract from documents<a class="headerlink" href="#creating-a-contract-from-documents" title="Permanent link">&para;</a></h2>
+<p>In addition to <strong>New</strong>, Pro and Enterprise provide <strong>From document</strong>. Document-assisted entry is a modal, transient session that can combine a contract, recurring invoice, standalone XRechnung, hybrid PDF and supplementary image documents. Originals are archived immutably with SHA-256 during the session and are excluded from backup synchronisation. No resumable intake drafts appear in the lease overview.</p>
+<p>While OCR or worker analysis is running, the document list, status, preview and <strong>Cancel</strong> remain available; contract fields and <strong>Save</strong> are disabled. PDF and image documents open by double-click or <strong>Open</strong> in the integrated preview after another hash verification. A dedicated column identifies XRechnung documents and shows their validation status; <strong>Verify</strong> reruns KoSIT validation for the selected XML file or the embedded XML in a hybrid PDF. Analysis errors release the form for fully manual entry. Cancelling either the form or final confirmation warns before discarding everything. After confirmation, the session, analyses, reservations and local documents are removed; only the user, timestamp and discard event remain in the audit. Orphaned sessions without a heartbeat are discarded in the same way after 30 minutes.</p>
+<p>Analysis uses valid structured XRechnung/ZUGFeRD data first, followed by embedded PDF text, local rules and OCR. Different normalised values are marked as conflicts. If a required field is missing, sources disagree or confidence is below 85 percent, the user can explicitly approve an analysis through the <strong>AI connector</strong> for each document. Azure and Vertex results only add suggestions and never silently replace a higher-priority source. Value, confidence, document and evidence location remain visible in the intake.</p>
+<p>Suggestions populate the same lease form used for manual creation. Confident, uncertain and conflicting values are visually distinct, and every field remains editable. The review window separates conflicts, missing required values and all evidence locations. Open rows are entirely red and selected or completed rows are green; the field column sizes itself to its content. Dates, integers, currencies, percentages and tax summaries use the authenticated user's region and matching typed editors, while canonical storage remains ISO dates, cents and basis points. Conflict choices and completed required values are stored only in the active session, copied into the form and discarded completely if the intake is cancelled. Suppliers are matched primarily by VAT ID, endpoint or company identifier; vehicles by VIN and then registration. A unique result is preselected but still requires user confirmation. <strong>New: Vehicle</strong> and <strong>New: Supplier</strong> sit next to their respective selectors and open the existing prefilled master-data dialogs. Configured number sequences reserve an editable, deliberately non-reused number; without an active sequence, the number must be entered manually.</p>
+<p>Before completion, FLEET Mira shows the contract, vehicle, supplier, period, recurring invoice, activation choice and posting mode again. All form values, new master data, contract activation and the default <strong>Post automatically</strong> mode require explicit confirmation. Contract, master data, verified recurring invoice, document links and monthly occurrences are then created in one transaction. A failure leaves no partial records, and the same completion request can be repeated idempotently. A contract without a recurring invoice remains a <strong>Draft</strong> by default. With a recurring invoice, activation and <code>AUTO</code> are preselected; if activation is cleared, the verified invoice remains assigned pending a later explicitly confirmed activation.</p>
 <p><img alt="Lease-contract overview" src="../../assets/screenshots/lease-contracts.png" />
 <em>Figure: Contracts from the anonymised demo database with vehicle, supplier, term, rate and status.</em></p>
 <p><img alt="Lease-contract record" src="../../assets/screenshots/lease-contract-overview.png" />
@@ -1569,6 +1703,11 @@
 <em>Figure: Pre-calculation, actual contract rate, factors and full cost for the anonymised sample contract.</em></p>
 <h2 id="documents-invoices-and-mileage">Documents, invoices and mileage<a class="headerlink" href="#documents-invoices-and-mileage" title="Permanent link">&para;</a></h2>
 <p><strong>Documents</strong> links contract PDFs from the vehicle's document archive. <strong>Foreign invoices</strong> and <strong>Costs/Credits</strong> show actual postings linked at cost-position level; planned payments remain separate in the schedule.</p>
+<h2 id="recurring-invoices-and-monthly-posting">Recurring invoices and monthly posting<a class="headerlink" href="#recurring-invoices-and-monthly-posting" title="Permanent link">&para;</a></h2>
+<p>A verified supplier invoice of type <strong>Recurring invoice</strong> can be assigned from the contract's <strong>Recurring invoices</strong> tab. During the initial assignment, the user confirms the invoice, contract and posting mode. <strong>Post automatically</strong> is selected by default; <strong>Review manually</strong> presents each due period for approval instead.</p>
+<p>The recurring invoice describes the repeating monthly supply. FLEET Mira creates stably identified occurrences with service month, due date, net, VAT and gross amounts. In automatic mode, the worker posts each complete, conflict-free due period exactly once. Overdue periods are caught up idempotently after a restart. An inactive contract, changed contract data, missing fields, total mismatch, duplicate period or unresolved variance moves the occurrence to <strong>Review required</strong> without a partial posting.</p>
+<p>The posting mode can be changed with an effective date for future unposted periods. Posted months remain unchanged. The posting references the archived recurring invoice and service month; it does not invent monthly invoice numbers or record bank payments.</p>
+<p>The payment schedule is versioned when a contract changes. Unchanged instalments retain their stable technical identity. In planned/actual reconciliation, zero cents is exact and up to one cent in each of net, VAT and gross is a documented rounding variance. Larger variances require a reason or correction.</p>
 <p>Total mileage is proposed as an editable value using <code>annual mileage × term in months / 12</code>, commercially rounded to whole kilometres. An existing contract value is retained when the dialog opens. Changing annual mileage or term recalculates the proposal, which can then still be overwritten with a different contractual value.</p>
 <p>The demo database contains six clearly marked fictitious contracts. Their monthly costs link to the existing leasing supplier invoices. Contract mileage is annualised from the first and last valid <code>M_MIDNIGHT</code> odometer readings in the evidence period and rounded to plausible 5,000-km steps. The evidence period and odometer readings remain visible in both the record and PDF.</p>
 <h2 id="reports">Reports<a class="headerlink" href="#reports" title="Permanent link">&para;</a></h2>

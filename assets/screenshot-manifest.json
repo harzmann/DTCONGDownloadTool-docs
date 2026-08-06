@@ -4,7 +4,7 @@
     "feature": "audit",
     "file": "audit.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -13,7 +13,7 @@
     "feature": "backup",
     "file": "backup.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -88,7 +88,7 @@
     "feature": "dashboard",
     "file": "dashboard.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-08-04",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -97,7 +97,7 @@
     "feature": "dashboard-configuration",
     "file": "dashboard-configuration.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-08-04",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -106,7 +106,7 @@
     "feature": "deadlines",
     "file": "deadlines.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -115,7 +115,7 @@
     "feature": "device-management",
     "file": "device-management.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -135,7 +135,7 @@
     "feature": "drivercard-analysis",
     "file": "drivercard-analysis.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -254,7 +254,7 @@
     "feature": "fleet-navigation",
     "file": "fleet-navigation.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -329,7 +329,7 @@
     "feature": "foreign-invoices",
     "file": "foreign-invoices.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -371,7 +371,7 @@
     "feature": "license-check-evaluation",
     "file": "license-check-evaluation.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -380,7 +380,7 @@
     "feature": "login",
     "file": "login.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -389,7 +389,7 @@
     "feature": "notifications",
     "file": "notifications.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -409,7 +409,7 @@
     "feature": "people",
     "file": "people.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -429,7 +429,7 @@
     "feature": "person-record",
     "file": "person-record.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -449,7 +449,7 @@
     "feature": "profile",
     "file": "profile.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -559,7 +559,7 @@
     "feature": "settings",
     "file": "settings.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -568,7 +568,7 @@
     "feature": "sources",
     "file": "sources.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -577,7 +577,7 @@
     "feature": "splash",
     "file": "splash.png",
     "source_profile": "product-asset",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -586,7 +586,7 @@
     "feature": "sso",
     "file": "sso.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -595,7 +595,7 @@
     "feature": "suppliers",
     "file": "suppliers.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -604,7 +604,7 @@
     "feature": "tachodata-archive",
     "file": "tachodata-archive.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -657,7 +657,79 @@
     "feature": "tasks",
     "file": "tasks.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-cloud-consent",
+    "file": "traffic-cloud-consent.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-e2e",
+    "file": "traffic-e2e.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-enterprise-worker-credentials",
+    "file": "traffic-enterprise-worker-credentials.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-extraction-review",
+    "file": "traffic-extraction-review.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-imap-oauth",
+    "file": "traffic-imap-oauth.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-import-ocr",
+    "file": "traffic-import-ocr.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-provider-management",
+    "file": "traffic-provider-management.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "de",
+    "feature": "traffic-review-inbox",
+    "file": "traffic-review-inbox.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -666,7 +738,7 @@
     "feature": "users",
     "file": "users.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -697,7 +769,7 @@
     "feature": "vehicle-record",
     "file": "vehicle-record.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -717,7 +789,7 @@
     "feature": "vehicle-unit-analysis",
     "file": "vehicle-unit-analysis.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -858,7 +930,7 @@
     "feature": "vehicles",
     "file": "vehicles.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -953,7 +1025,7 @@
     "feature": "audit",
     "file": "audit.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -962,7 +1034,7 @@
     "feature": "backup",
     "file": "backup.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1037,7 +1109,7 @@
     "feature": "dashboard",
     "file": "dashboard.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-08-04",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1046,7 +1118,7 @@
     "feature": "dashboard-configuration",
     "file": "dashboard-configuration.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-08-04",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1055,7 +1127,7 @@
     "feature": "deadlines",
     "file": "deadlines.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1064,7 +1136,7 @@
     "feature": "device-management",
     "file": "device-management.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1084,7 +1156,7 @@
     "feature": "drivercard-analysis",
     "file": "drivercard-analysis.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1203,7 +1275,7 @@
     "feature": "fleet-navigation",
     "file": "fleet-navigation.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1278,7 +1350,7 @@
     "feature": "foreign-invoices",
     "file": "foreign-invoices.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1320,7 +1392,7 @@
     "feature": "license-check-evaluation",
     "file": "license-check-evaluation.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1329,7 +1401,7 @@
     "feature": "login",
     "file": "login.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1338,7 +1410,7 @@
     "feature": "notifications",
     "file": "notifications.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1358,7 +1430,7 @@
     "feature": "people",
     "file": "people.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1378,7 +1450,7 @@
     "feature": "person-record",
     "file": "person-record.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1398,7 +1470,7 @@
     "feature": "profile",
     "file": "profile.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1508,7 +1580,7 @@
     "feature": "settings",
     "file": "settings.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1517,7 +1589,7 @@
     "feature": "sources",
     "file": "sources.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1526,7 +1598,7 @@
     "feature": "splash",
     "file": "splash.png",
     "source_profile": "product-asset",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1535,7 +1607,7 @@
     "feature": "sso",
     "file": "sso.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1544,7 +1616,7 @@
     "feature": "suppliers",
     "file": "suppliers.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1553,7 +1625,7 @@
     "feature": "tachodata-archive",
     "file": "tachodata-archive.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1606,7 +1678,79 @@
     "feature": "tasks",
     "file": "tasks.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-cloud-consent",
+    "file": "traffic-cloud-consent.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-e2e",
+    "file": "traffic-e2e.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-enterprise-worker-credentials",
+    "file": "traffic-enterprise-worker-credentials.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-extraction-review",
+    "file": "traffic-extraction-review.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-imap-oauth",
+    "file": "traffic-imap-oauth.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-import-ocr",
+    "file": "traffic-import-ocr.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-provider-management",
+    "file": "traffic-provider-management.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
+    "anonymized": true,
+    "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
+  },
+  {
+    "language": "en",
+    "feature": "traffic-review-inbox",
+    "file": "traffic-review-inbox.png",
+    "source_profile": "isolated-traffic-demo",
+    "captured_on": "2026-08-05",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1615,7 +1759,7 @@
     "feature": "users",
     "file": "users.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1646,7 +1790,7 @@
     "feature": "vehicle-record",
     "file": "vehicle-record.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1666,7 +1810,7 @@
     "feature": "vehicle-unit-analysis",
     "file": "vehicle-unit-analysis.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },
@@ -1807,7 +1951,7 @@
     "feature": "vehicles",
     "file": "vehicles.png",
     "source_profile": "isolated-demo",
-    "captured_on": "2026-07-28",
+    "captured_on": "2026-08-06",
     "anonymized": true,
     "anonymization_revision": "fleet-mira-docs-v2-birth-dates"
   },

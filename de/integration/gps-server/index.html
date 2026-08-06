@@ -760,6 +760,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/traffic-offence-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße-Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1109,6 +1137,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#verbindung-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verbindung löschen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fahrzeug-aus-einem-gps-server-objekt-anlegen" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1320,6 +1359,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/administration-ui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Einheitliches Administrations-UI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1491,6 +1558,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/traffic-offence-administration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verkehrsverstöße administrieren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1546,6 +1641,17 @@
   
     <nav class="md-nav" aria-label="Einrichtung">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verbindung-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verbindung löschen
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#fahrzeug-aus-einem-gps-server-objekt-anlegen" class="md-nav__link">
@@ -1641,6 +1747,8 @@
 <li>Legen Sie die Kilometerquelle je Objekt als Sensor, GPS oder unbekannt fest, wenn sie nicht eindeutig von der API geliefert wird.</li>
 </ol>
 <p>Die Basis-URL wird nicht aus dem Schlüssel abgeleitet und niemals auf einen bestimmten GPS-server-Host fest codiert. FLEET Mira ergänzt den User-API-Pfad <code>/api/api.php?api=user</code>.</p>
+<h3 id="verbindung-loschen">Verbindung löschen<a class="headerlink" href="#verbindung-loschen" title="Permanent link">&para;</a></h3>
+<p>Wählen Sie eine vorhandene Verbindung aus und klicken Sie auf <strong>Löschen</strong>. Nach der ausdrücklichen Bestätigung entfernt FLEET Mira die Verbindung einschließlich synchronisierter Objekte, zeitlicher Fahrzeugzuordnungen, Positionen, Ereignisse, Abdeckungsintervalle und der daraus projizierten GPS-server-Kilometerstände. Die angelegten Fahrzeugstammdaten und der Auditnachweis bleiben erhalten. In Pro läuft die Bereinigung serialisiert im In-Process-Worker und entfernt den benutzergebunden geschützten API-Schlüssel. Enterprise stellt einen idempotenten Auftrag ein; ausschließlich FleetMiraWorker entfernt die PostgreSQL-Daten und den maschinengeschützten Schlüssel.</p>
 <h3 id="fahrzeug-aus-einem-gps-server-objekt-anlegen">Fahrzeug aus einem GPS-server-Objekt anlegen<a class="headerlink" href="#fahrzeug-aus-einem-gps-server-objekt-anlegen" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Führen Sie mindestens eine Objekt- und Positionssynchronisierung aus.</li>
